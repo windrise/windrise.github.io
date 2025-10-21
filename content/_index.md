@@ -116,11 +116,11 @@ sections:
       subtitle: ''
       text: |
         <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YOUR_CLUSTER_ID&cl=ffffff&w=a&t=tt&co=2d78ad&ct=808080&cmo=3acc3a&cmn=ff5353"></script>
+          <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=YOUR_MAP_ID&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
         </div>
 
         <p style="text-align: center; color: #666; font-size: 0.9em;">
-          Thank you for visiting! This map shows where my visitors come from around the world.
+          Thank you for visiting! This 3D globe shows real-time visitor locations around the world.
         </p>
     design:
       columns: '1'

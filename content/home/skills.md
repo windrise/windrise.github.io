@@ -7,35 +7,35 @@ title: Skills
 subtitle:
 
 feature:
-  - description: 'PyTorch, TensorFlow, Keras, scikit-learn'
+  - description: '3D Gaussians, NeRF, Masked Autoencoders, Self-supervised Learning'
+    icon: brain
+    icon_pack: fas
+    name: 3D Representation Learning
+
+  - description: 'PyTorch, CUDA Programming, Differentiable Rendering, 3DGS'
     icon: python
     icon_pack: fab
-    name: Deep Learning
+    name: Deep Learning Frameworks
 
-  - description: 'Medical Image Segmentation, Object Detection, Image Classification'
+  - description: 'CT/MRI Reconstruction, Cardiac Imaging, Coronary Artery Analysis'
+    icon: heartbeat
+    icon_pack: fas
+    name: Medical Image Analysis
+
+  - description: 'GAN, Image Registration, Motion Tracking, Sparse-view Reconstruction'
     icon: chart-line
     icon_pack: fas
     name: Computer Vision
 
-  - description: 'Data Analysis, Visualization, Statistical Modeling'
-    icon: database
-    icon_pack: fas
-    name: Data Science
-
-  - description: 'Python, C++, MATLAB, R'
+  - description: 'Python, C++, CUDA, MATLAB'
     icon: code
     icon_pack: fas
-    name: Programming
+    name: Programming Languages
 
-  - description: 'Git, Docker, Linux, HPC Clusters'
+  - description: 'Git, Docker, Linux, HPC Clusters, Siemens Healthcare Systems'
     icon: cog
     icon_pack: fas
     name: Tools & Platforms
-
-  - description: 'Paper Writing, Presentation, Collaboration'
-    icon: users
-    icon_pack: fas
-    name: Research & Communication
 
 design:
   columns: '2'

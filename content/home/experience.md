@@ -9,50 +9,68 @@ subtitle:
 date_format: Jan 2006
 
 experience:
-  - title: PhD Candidate
+  - title: PhD Candidate in Biomedical Engineering
     company: University of Science and Technology of China
     company_url: 'https://www.ustc.edu.cn/'
     company_logo: ''
     location: Hefei, China
-    date_start: '2020-09-01'
+    date_start: '2023-08-01'
     date_end: ''
     description: |2-
-        Research focus on:
+        Research focus on 3D/4D medical image reconstruction:
 
-        * Medical image segmentation and analysis
-        * Deep learning for computer vision
-        * Transfer learning and domain adaptation
-        * Collaborating with hospitals on clinical AI applications
+        * Supervised by Prof. S. Kevin Zhou and Prof. Gao-Jun Teng
+        * Developing 3D Gaussian representations for medical imaging
+        * 4D cardiac motion tracking from dynamic MRI
+        * Sparse-view coronary artery reconstruction from X-ray
+        * Self-supervised learning for volumetric medical images
+        * Collaborations with hospitals and Siemens Healthcare
 
   - title: Research Intern
-    company: AI Research Lab
-    company_url: ''
+    company: Tencent Youtu Tianyan Lab
+    company_url: 'https://youtu.qq.com/'
     company_logo: ''
-    location: Beijing, China
-    date_start: '2024-06-01'
-    date_end: '2024-09-01'
+    location: Shenzhen, China
+    date_start: '2021-10-01'
+    date_end: '2023-04-01'
     description: |2-
-        Responsibilities:
+        Research on sEMG-based exoskeleton control:
 
-        * Developed deep learning models for medical image analysis
-        * Collaborated with cross-functional teams on AI projects
-        * Published research findings in top-tier conferences
-        * Mentored junior researchers and interns
+        * Supervised by Dr. Yefeng Zheng
+        * Surface EMG signal acquisition and processing
+        * Joint trajectory prediction from sEMG signals
+        * Adaptive PID control for lower limb exoskeleton
+        * Filed 1 patent on joint angle prediction
 
-  - title: Master's Student
-    company: Your University
-    company_url: ''
+  - title: Master's Student in Electronic Science and Technology
+    company: Southern University of Science and Technology
+    company_url: 'https://www.sustech.edu.cn/'
     company_logo: ''
-    location: City, Country
-    date_start: '2018-09-01'
-    date_end: '2020-06-01'
+    location: Shenzhen, China
+    date_start: '2020-09-01'
+    date_end: '2023-06-01'
     description: |2-
-        Academic achievements:
+        Research on physiological signal pattern recognition:
 
-        * Focused on computer vision and machine learning
-        * Thesis on deep learning for image classification
-        * Teaching assistant for AI and ML courses
-        * GPA: 3.8/4.0
+        * Supervised by Prof. Mingming Zhang and Prof. Yefeng Zheng
+        * Published 2 first-author papers in IEEE T-FS (Q1, IF=10.07) and IEEE T-Cyb (Q1, IF=9.4)
+        * Muscle synergy-driven approach for continuous joint movement prediction
+        * Gait cycle-inspired learning strategy for knee joint trajectory
+
+  - title: Bachelor's Student in Computer Science and Technology
+    company: Xidian University
+    company_url: 'https://www.xidian.edu.cn/'
+    company_logo: ''
+    location: Xi'an, China
+    date_start: '2015-08-01'
+    date_end: '2019-06-01'
+    description: |2-
+        Focus on Computer Vision:
+
+        * National Encouragement Scholarship (3 times)
+        * Outstanding Graduate Award
+        * Provincial Silver Award in "Internet+" Innovation Competition
+        * First Prize in National Mathematical Contest in Modeling
 
 design:
   columns: '2'

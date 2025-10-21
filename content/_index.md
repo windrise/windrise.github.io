@@ -116,11 +116,11 @@ sections:
       subtitle: ''
       text: |
         <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-          <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=YOUR_MAP_ID&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+          <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=jP858m8WAgpTAuXlcxqj5BAL0dTRzLxiZ9iRQRvULck"></script>
         </div>
 
         <p style="text-align: center; color: #666; font-size: 0.9em;">
-          Thank you for visiting! This 3D globe shows real-time visitor locations around the world.
+          Thank you for visiting! This interactive globe shows visitor locations from around the world.
         </p>
     design:
       columns: '1'

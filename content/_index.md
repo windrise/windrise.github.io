@@ -109,4 +109,21 @@ sections:
           captcha: false
     design:
       columns: '2'
+  - block: markdown
+    id: visitor-map
+    content:
+      title: 'Visitor Map'
+      subtitle: ''
+      text: |
+        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+          <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=jP858m8WAgpTAuXlcxqj5BAL0dTRzLxiZ9iRQRvULck"></script>
+        </div>
+
+        <p style="text-align: center; color: #666; font-size: 0.9em;">
+          Thank you for visiting! This interactive globe shows visitor locations from around the world.
+        </p>
+    design:
+      columns: '1'
+      background:
+        color: ''
 ---

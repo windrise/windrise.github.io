@@ -17,7 +17,7 @@ social:
     link: 'mailto:13621369872@163.com'
   - icon: graduation-cap
     icon_pack: fas
-    link: https://scholar.google.com/
+    link: https://scholar.google.com.hk/citations?user=az4zv18AAAAJ&hl=en
   - icon: github
     icon_pack: fab
     link: https://github.com/windrise

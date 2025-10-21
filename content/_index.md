@@ -109,4 +109,21 @@ sections:
           captcha: false
     design:
       columns: '2'
+  - block: markdown
+    id: visitor-map
+    content:
+      title: 'Visitor Map'
+      subtitle: ''
+      text: |
+        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YOUR_CLUSTER_ID&cl=ffffff&w=a&t=tt&co=2d78ad&ct=808080&cmo=3acc3a&cmn=ff5353"></script>
+        </div>
+
+        <p style="text-align: center; color: #666; font-size: 0.9em;">
+          Thank you for visiting! This map shows where my visitors come from around the world.
+        </p>
+    design:
+      columns: '1'
+      background:
+        color: ''
 ---

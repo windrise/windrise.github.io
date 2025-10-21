@@ -46,7 +46,9 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Initialize Hugo Modules
-        run: hugo mod get
+        run: |
+          hugo mod get
+          hugo mod tidy
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production

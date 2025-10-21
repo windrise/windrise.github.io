@@ -69,8 +69,9 @@ sections:
         folders:
           - project
     design:
-      columns: '3'
-      view: showcase
+      columns: '2'
+      view: card
+      flip_alt_rows: false
   - block: contact
     id: contact
     content:
@@ -79,7 +80,7 @@ sections:
       text: |-
         Feel free to reach out to me for research collaboration, academic discussions, or any questions about my work.
       # Contact (add or remove contact options as necessary)
-      email: your.email@example.com
+      email: 13621369872@163.com
       phone:
       appointment_url:
       address:
@@ -95,11 +96,7 @@ sections:
       coordinates:
         latitude:
         longitude:
-      contact_links:
-        - icon: twitter
-          icon_pack: fab
-          name: DM Me
-          link: 'https://twitter.com/yourusername'
+      contact_links: []
       # Automatically link email and phone or display as text?
       autolink: true
       # Email form provider

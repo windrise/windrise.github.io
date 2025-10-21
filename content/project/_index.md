@@ -1,6 +1,6 @@
 ---
 title: Projects
-view: showcase
+view: card
 
 header:
   caption: ""

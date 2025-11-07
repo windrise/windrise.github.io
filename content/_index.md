@@ -114,11 +114,10 @@ sections:
     content:
       title: 'Visitor Map'
       subtitle: ''
-      text: |-
-        <div style="text-align: center; margin: 30px 0;">
-          <iframe src="/visitor-globe.html" width="360" height="300" frameborder="0" scrolling="no" style="border: none; overflow: hidden;"></iframe>
-        </div>
-        <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 10px;">
+      text: |
+        {{< visitor-globe >}}
+
+        <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 20px;">
           Thank you for visiting! This interactive globe shows visitor locations from around the world.
         </p>
     design:

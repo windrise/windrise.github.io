@@ -61,17 +61,17 @@ sections:
     design:
       columns: '2'
       view: citation
-  - block: collection
-    id: projects
-    content:
-      title: Projects
-      filters:
-        folders:
-          - project
-    design:
-      columns: '2'
-      view: card
-      flip_alt_rows: false
+  # - block: collection
+  #   id: projects
+  #   content:
+  #     title: Projects
+  #     filters:
+  #       folders:
+  #         - project
+  #   design:
+  #     columns: '2'
+  #     view: card
+  #     flip_alt_rows: false
   - block: contact
     id: contact
     content:
@@ -114,13 +114,14 @@ sections:
     content:
       title: 'Visitor Map'
       subtitle: ''
-      text: |
-        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-          <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=jP858m8WAgpTAuXlcxqj5BAL0dTRzLxiZ9iRQRvULck"></script>
+      text: |-
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://mapmyvisitors.com/web/1bvjp" title="Visit tracker">
+            <img src="https://mapmyvisitors.com/map.png?d=jP858m8WAgpTAuXlcxqj5BAL0dTRzLxiZ9iRQRvULck&cl=ffffff" style="border: 1px solid #ddd; border-radius: 8px; max-width: 100%;" />
+          </a>
         </div>
-
-        <p style="text-align: center; color: #666; font-size: 0.9em;">
-          Thank you for visiting! This interactive globe shows visitor locations from around the world.
+        <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 10px;">
+          Thank you for visiting! This map shows visitor locations from around the world.
         </p>
     design:
       columns: '1'

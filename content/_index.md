@@ -116,12 +116,10 @@ sections:
       subtitle: ''
       text: |-
         <div style="text-align: center; margin: 30px 0;">
-          <a href="https://mapmyvisitors.com/web/1bvjp" title="Visit tracker">
-            <img src="https://mapmyvisitors.com/map.png?d=jP858m8WAgpTAuXlcxqj5BAL0dTRzLxiZ9iRQRvULck&cl=ffffff" style="border: 1px solid #ddd; border-radius: 8px; max-width: 100%;" />
-          </a>
+          <iframe src="/visitor-globe.html" width="360" height="300" frameborder="0" scrolling="no" style="border: none; overflow: hidden;"></iframe>
         </div>
         <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 10px;">
-          Thank you for visiting! This map shows visitor locations from around the world.
+          Thank you for visiting! This interactive globe shows visitor locations from around the world.
         </p>
     design:
       columns: '1'

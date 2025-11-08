@@ -9,6 +9,7 @@ import os
 import asyncio
 import edge_tts
 from pathlib import Path
+from typing import Dict
 
 
 class AudioGenerator:

@@ -84,6 +84,28 @@ Found **{len(papers)}** relevant papers today. Please review and approve/reject.
     return body
 
 
+def ensure_labels_exist():
+    """Create required labels if they don't exist"""
+    labels = [
+        ("paper-review", "0366d6", "Papers pending review"),
+        ("automated", "bfdadc", "Automated task"),
+        ("approved", "0e8a16", "Approved for addition"),
+        ("rejected", "d93f0b", "Rejected"),
+        ("starred", "fbca04", "Important/starred paper")
+    ]
+
+    for name, color, description in labels:
+        # Try to create label, ignore if it already exists
+        subprocess.run(
+            ["gh", "label", "create", name,
+             "--color", color,
+             "--description", description,
+             "--force"],
+            capture_output=True,
+            text=True
+        )
+
+
 def create_issue(papers: list):
     """Create GitHub issue using gh CLI"""
     if not papers:
@@ -97,6 +119,14 @@ def create_issue(papers: list):
     # Save body to temp file
     with open("/tmp/issue_body.md", "w", encoding='utf-8') as f:
         f.write(body)
+
+    # Ensure labels exist
+    try:
+        print("🏷️  Ensuring labels exist...")
+        ensure_labels_exist()
+    except Exception as e:
+        print(f"⚠️  Warning: Could not create labels: {e}")
+        print("   Proceeding without labels...")
 
     # Create issue using gh CLI
     try:

@@ -1,0 +1,81 @@
+name: Process Approved Papers
+
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process-papers:
+    # Only run when 'approved' label is added to a paper-review issue
+    if: |
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'paper-review')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Process approved papers
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          echo "📝 Processing approved papers from issue #${ISSUE_NUMBER}..."
+          python scripts/process_approved_papers.py --issue-number ${ISSUE_NUMBER}
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📊 Found changes to commit"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  No changes to commit"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Paper Bot"
+          git config user.email "bot@windrise.github.io"
+          git add data/papers/ static/audio/
+          git commit -m "✅ Add approved papers from issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Comment on issue
+        if: steps.check_changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "✅ Approved papers have been processed and added to the collection!
+
+          🔗 Changes will be live on the website in a few minutes after the site rebuilds.
+
+          You can close this issue now."
+
+      - name: Summary
+        run: |
+          echo "✅ Processing complete!"
+          if [[ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]]; then
+            echo "📚 Papers added successfully"
+            echo "🌐 Website will be updated automatically"
+          else
+            echo "ℹ️  No new papers to add"
+          fi

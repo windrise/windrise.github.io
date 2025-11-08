@@ -1,0 +1,81 @@
+name: Daily Paper Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC (8 AM Beijing time)
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  fetch-and-process-papers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Step 1 - Fetch papers from arXiv
+        run: |
+          echo "🔍 Fetching latest papers from arXiv..."
+          python scripts/arxiv_scraper.py --max-results 50 --days 1
+
+      - name: Step 2 - Filter and rank papers
+        run: |
+          echo "🎯 Filtering and ranking papers..."
+          python scripts/smart_filter.py --top-n 10
+
+      - name: Step 3 - Generate AI summaries
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          echo "🤖 Generating AI summaries..."
+          python scripts/generate_summaries.py
+
+      - name: Step 4 - Generate audio
+        run: |
+          echo "🔊 Generating audio files..."
+          python scripts/generate_audio.py
+
+      - name: Step 5 - Create review issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📋 Creating review issue..."
+          python scripts/create_review_issue.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if there are changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Paper Bot"
+          git config user.email "bot@windrise.github.io"
+          git add data/papers/pending/ static/audio/
+          git commit -m "🤖 Daily paper update $(date +%Y-%m-%d)"
+          git push
+
+      - name: Summary
+        run: |
+          echo "✅ Daily paper update complete!"
+          echo "📊 Check the new issue for papers to review"

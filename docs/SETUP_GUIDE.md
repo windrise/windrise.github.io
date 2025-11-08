@@ -111,20 +111,28 @@ python scripts/generate_audio.py
     ↓
     阅读 AI 摘要和评分
     ↓
-    对每篇论文：
-    ✅ 添加标签 "approved" - 批准
-    ❌ 添加标签 "rejected" - 拒绝
-    ⭐ 添加标签 "starred" - 重要
+    对每篇论文决定是否收录：
+    ✅ 值得收录 → 点击右侧 Labels → 选择 "approved"
+    ⭐ 特别重要 → 同时添加 "starred"
+    ❌ 不感兴趣 → 添加 "rejected"
     ↓
-    评论 "approve" 或 "reject"
+09:02 AM - 🤖 自动化立即触发！
     ↓
-09:15 AM - 系统自动处理
+    系统检测到 "approved" 标签
     ↓
-    批准的论文 → 添加到数据库
-    生成思维导图
-    更新网站
+    自动执行：
+    1. 从 pending/ 读取完整论文数据
+    2. 自动分类（3D Gaussian/医学影像/NeRF等）
+    3. 添加到 data/papers/papers.yaml
+    4. 提交更改到 main 分支
+    5. 触发网站重新构建
     ↓
-09:30 AM - 完成！查看更新的网站
+09:05 AM - ✅ 系统在 Issue 下自动评论
+    📝 "Approved papers have been processed and added to the collection!"
+    ↓
+09:10 AM - 🌐 网站自动更新完成！
+    ↓
+    你可以在网站上看到新添加的论文了
 ```
 
 ---
@@ -154,9 +162,11 @@ This paper introduces 3D Gaussian primitives for real-time rendering...
 - State-of-the-art quality
 
 **Actions:**
-- ✅ Approve: Add label `approved`
+- ✅ Approve: 点击右侧 Labels → 选择 `approved` → 自动触发添加
 - ❌ Reject: Add label `rejected`
 - ⭐ Important: Add label `starred`
+
+**重要**: 只要添加 `approved` 标签，系统会在 1-2 分钟内自动处理！
 ```
 
 ---

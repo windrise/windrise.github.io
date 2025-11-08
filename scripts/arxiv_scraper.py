@@ -54,16 +54,16 @@ class ArxivScraper:
 
     def build_query(self, days_back: int = 1) -> str:
         """Build arXiv query string"""
+        # Strategy: Use categories only, filter by keywords in post-processing
+        # This avoids overly restrictive queries
+
         # Build query with categories
         category_queries = [f"cat:{cat}" for cat in self.categories]
         category_str = " OR ".join(category_queries)
 
-        # Build keyword query
-        keyword_queries = [f'ti:"{kw}" OR abs:"{kw}"' for kw in self.keywords[:5]]  # Limit to avoid too complex query
-        keyword_str = " OR ".join(keyword_queries)
-
-        # Combine
-        query = f"({category_str}) AND ({keyword_str})"
+        # Use only categories for broader results
+        # Keywords will be used for relevance scoring, not hard filtering
+        query = f"({category_str})"
 
         return query
 

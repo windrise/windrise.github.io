@@ -236,7 +236,10 @@ class SmartFilter:
         top_papers = scored_papers[:top_n]
 
         print(f"✅ Selected top {len(top_papers)} papers")
-        print(f"   Score range: {top_papers[0]['relevance_score']:.2f} - {top_papers[-1]['relevance_score']:.2f}")
+        if top_papers:
+            print(f"   Score range: {top_papers[0]['relevance_score']:.2f} - {top_papers[-1]['relevance_score']:.2f}")
+        else:
+            print(f"   ⚠️  No papers found matching the criteria")
 
         return top_papers
 

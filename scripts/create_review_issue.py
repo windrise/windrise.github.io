@@ -87,7 +87,8 @@ Found **{len(papers)}** relevant papers today. Please review and approve/reject.
 def create_issue(papers: list):
     """Create GitHub issue using gh CLI"""
     if not papers:
-        print("No papers to review")
+        print("⚠️  No papers to review - skipping issue creation")
+        print("   This might be normal if no relevant papers were found today.")
         return
 
     body = create_issue_body(papers)

@@ -94,7 +94,7 @@ class ArxivScraper:
                 "id": result.entry_id.split('/')[-1],
                 "title": result.title,
                 "authors": [author.name for author in result.authors],
-                "abstract": result.abstract,
+                "abstract": result.summary,  # Changed from result.abstract to result.summary
                 "published": result.published.strftime("%Y-%m-%d"),
                 "updated": result.updated.strftime("%Y-%m-%d"),
                 "categories": result.categories,

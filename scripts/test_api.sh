@@ -63,7 +63,7 @@ try:
     print("   Sending test request...")
     response = client.chat.completions.create(
         messages=[{"role": "user", "content": "Say 'API test successful'"}],
-        model="llama-3.1-70b-versatile",
+        model="llama-3.3-70b-versatile",  # Updated model
         max_tokens=20
     )
 

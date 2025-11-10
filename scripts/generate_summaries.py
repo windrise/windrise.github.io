@@ -23,7 +23,8 @@ class SummaryGenerator:
             raise ValueError("GROQ_API_KEY not found. Please set it in environment or pass as argument.")
 
         self.client = Groq(api_key=self.api_key)
-        self.model = "llama-3.1-70b-versatile"  # Free model
+        # Updated to latest available model (llama-3.1-70b was decommissioned)
+        self.model = "llama-3.3-70b-versatile"  # Latest free model
         self.max_retries = 3
         self.retry_delay = 2  # seconds
 

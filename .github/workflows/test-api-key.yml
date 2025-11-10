@@ -1,0 +1,35 @@
+name: Test API Key
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install groq
+
+      - name: Test API connection
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          echo "Testing GROQ_API_KEY..."
+          if [ -z "$GROQ_API_KEY" ]; then
+            echo "❌ GROQ_API_KEY is not set!"
+            exit 1
+          fi
+
+          echo "✅ GROQ_API_KEY is set (length: ${#GROQ_API_KEY})"
+          echo "   First 4 chars: ${GROQ_API_KEY:0:4}..."
+
+          python scripts/generate_summaries.py --test

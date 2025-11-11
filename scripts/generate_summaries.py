@@ -23,7 +23,8 @@ class SummaryGenerator:
             raise ValueError("GROQ_API_KEY not found. Please set it in environment or pass as argument.")
 
         self.client = Groq(api_key=self.api_key)
-        self.model = "llama-3.1-70b-versatile"  # Free model
+        # Updated to latest available model (llama-3.1-70b was decommissioned)
+        self.model = "llama-3.3-70b-versatile"  # Latest free model
         self.max_retries = 3
         self.retry_delay = 2  # seconds
 
@@ -297,7 +298,7 @@ def test_api_connection(api_key: str):
         client = Groq(api_key=api_key)
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": "Say hello"}],
-            model="llama-3.1-70b-versatile",
+            model="llama-3.3-70b-versatile",  # Updated model
             max_tokens=10
         )
         print("✅ API connection successful!")
@@ -353,11 +354,8 @@ def main():
     # Test API before processing
     print("\n" + "="*60)
     if not test_api_connection(api_key):
-        print("\n⚠️  API test failed. Continue anyway? (y/n): ", end="")
-        response = input().strip().lower()
-        if response != 'y':
-            print("Aborted.")
-            return
+        print("\n⚠️  API test failed, but continuing with fallback mode...")
+        print("   Summaries will use original abstracts instead of AI generation.")
     print("="*60 + "\n")
 
     # Generate summaries

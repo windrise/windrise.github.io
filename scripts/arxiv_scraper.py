@@ -74,7 +74,8 @@ class ArxivScraper:
         query = self.build_query(days_back)
         print(f"Query: {query[:100]}...")
 
-        # Create search
+        # Use new Client API (Search.results is deprecated)
+        client = arxiv.Client()
         search = arxiv.Search(
             query=query,
             max_results=max_results,
@@ -85,36 +86,51 @@ class ArxivScraper:
         papers = []
         cutoff_date = datetime.now() - timedelta(days=days_back)
 
-        for result in search.results():
-            # Check if paper is within date range
-            if result.published.replace(tzinfo=None) < cutoff_date:
-                continue
+        try:
+            # Use client.results() instead of search.results()
+            count = 0
+            for result in client.results(search):
+                # Check if paper is within date range
+                if result.published.replace(tzinfo=None) < cutoff_date:
+                    continue
 
-            paper = {
-                "id": result.entry_id.split('/')[-1],
-                "title": result.title,
-                "authors": [author.name for author in result.authors],
-                "abstract": result.summary,  # Changed from result.abstract to result.summary
-                "published": result.published.strftime("%Y-%m-%d"),
-                "updated": result.updated.strftime("%Y-%m-%d"),
-                "categories": result.categories,
-                "primary_category": result.primary_category,
-                "links": {
-                    "paper": result.entry_id,
-                    "pdf": result.pdf_url,
-                },
-                "arxiv_id": result.entry_id.split('/')[-1],
-                "comment": result.comment if result.comment else "",
-                "journal_ref": result.journal_ref if result.journal_ref else "",
-            }
+                paper = {
+                    "id": result.entry_id.split('/')[-1],
+                    "title": result.title,
+                    "authors": [author.name for author in result.authors],
+                    "abstract": result.summary,
+                    "published": result.published.strftime("%Y-%m-%d"),
+                    "updated": result.updated.strftime("%Y-%m-%d"),
+                    "categories": result.categories,
+                    "primary_category": result.primary_category,
+                    "links": {
+                        "paper": result.entry_id,
+                        "pdf": result.pdf_url,
+                    },
+                    "arxiv_id": result.entry_id.split('/')[-1],
+                    "comment": result.comment if result.comment else "",
+                    "journal_ref": result.journal_ref if result.journal_ref else "",
+                }
 
-            # Check for code availability
-            if result.comment and ("github" in result.comment.lower() or "code" in result.comment.lower()):
-                paper["has_code"] = True
-            else:
-                paper["has_code"] = False
+                # Check for code availability
+                if result.comment and ("github" in result.comment.lower() or "code" in result.comment.lower()):
+                    paper["has_code"] = True
+                else:
+                    paper["has_code"] = False
 
-            papers.append(paper)
+                papers.append(paper)
+                count += 1
+
+                # Stop if we have enough papers
+                if count >= max_results:
+                    break
+
+        except arxiv.UnexpectedEmptyPageError as e:
+            print(f"⚠️  Warning: Hit empty page after {len(papers)} papers")
+            print(f"   This is normal when arXiv has fewer results than requested")
+        except Exception as e:
+            print(f"⚠️  Warning: Error fetching papers: {str(e)}")
+            print(f"   Continuing with {len(papers)} papers already fetched...")
 
         print(f"✅ Found {len(papers)} papers")
         return papers

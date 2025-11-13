@@ -78,21 +78,30 @@ class ArxivScraper:
         client = arxiv.Client()
         search = arxiv.Search(
             query=query,
-            max_results=max_results,
+            max_results=max_results * 2,  # Fetch more to ensure we have enough after filtering
             sort_by=arxiv.SortCriterion.SubmittedDate,
             sort_order=arxiv.SortOrder.Descending
         )
 
         papers = []
         cutoff_date = datetime.now() - timedelta(days=days_back)
+        print(f"   Looking for papers submitted after {cutoff_date.strftime('%Y-%m-%d')}")
 
         try:
             # Use client.results() instead of search.results()
             count = 0
             for result in client.results(search):
+                # Use submitted date (more recent) instead of published date
+                submit_date = result.updated.replace(tzinfo=None)
+
+                # Debug: print first few papers
+                if count < 3:
+                    print(f"   Paper {count+1}: {result.title[:50]}... (submitted: {submit_date.strftime('%Y-%m-%d')})")
+
                 # Check if paper is within date range
-                if result.published.replace(tzinfo=None) < cutoff_date:
-                    continue
+                if submit_date < cutoff_date:
+                    print(f"   ℹ️  Reached papers older than {days_back} days, stopping...")
+                    break
 
                 paper = {
                     "id": result.entry_id.split('/')[-1],
@@ -123,6 +132,7 @@ class ArxivScraper:
 
                 # Stop if we have enough papers
                 if count >= max_results:
+                    print(f"   ℹ️  Collected {count} papers, stopping...")
                     break
 
         except arxiv.UnexpectedEmptyPageError as e:

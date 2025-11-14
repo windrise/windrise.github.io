@@ -143,9 +143,6 @@ class ArxivScraper:
         print(f"✅ Found {len(papers)} papers")
         return papers
 
-        print(f"✅ Found {len(papers)} papers")
-        return papers
-
     def save_candidates(self, papers: List[Dict], output_file: str = "data/papers/pending/candidates.json"):
         """Save candidate papers to JSON file"""
         os.makedirs(os.path.dirname(output_file), exist_ok=True)

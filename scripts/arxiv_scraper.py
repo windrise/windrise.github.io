@@ -11,6 +11,7 @@ import os
 from datetime import datetime, timedelta
 from typing import List, Dict
 import argparse
+import time
 
 
 class ArxivScraper:
@@ -52,18 +53,23 @@ class ArxivScraper:
                 return yaml.safe_load(f)
         return {}
 
-    def build_query(self, days_back: int = 1) -> str:
-        """Build arXiv query string"""
-        # Strategy: Use categories only, filter by keywords in post-processing
-        # This avoids overly restrictive queries
-
-        # Build query with categories
+    def build_query(self, days_back: int = 7) -> str:
+        """Build arXiv query string with date constraint"""
+        # Build category query
         category_queries = [f"cat:{cat}" for cat in self.categories]
         category_str = " OR ".join(category_queries)
 
-        # Use only categories for broader results
-        # Keywords will be used for relevance scoring, not hard filtering
-        query = f"({category_str})"
+        # Important: Use submittedDate in query for better filtering
+        # arXiv format: YYYYMMDD0000 to YYYYMMDD2359
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=days_back)
+
+        # Format dates for arXiv API
+        start_str = start_date.strftime("%Y%m%d") + "0000"
+        end_str = end_date.strftime("%Y%m%d") + "2359"
+
+        # Build query with date range
+        query = f"({category_str}) AND submittedDate:[{start_str} TO {end_str}]"
 
         return query
 

@@ -73,41 +73,34 @@ class ArxivScraper:
 
         return query
 
-    def fetch_papers(self, max_results: int = 50, days_back: int = 1) -> List[Dict]:
+    def fetch_papers(self, max_results: int = 50, days_back: int = 7) -> List[Dict]:
         """Fetch papers from arXiv"""
         print(f"🔍 Fetching papers from last {days_back} day(s)...")
 
         query = self.build_query(days_back)
-        print(f"Query: {query[:100]}...")
+        print(f"Query: {query}")  # Show full query for debugging
 
         # Use new Client API (Search.results is deprecated)
         client = arxiv.Client()
         search = arxiv.Search(
             query=query,
-            max_results=max_results * 2,  # Fetch more to ensure we have enough after filtering
+            max_results=max_results,
             sort_by=arxiv.SortCriterion.SubmittedDate,
             sort_order=arxiv.SortOrder.Descending
         )
 
         papers = []
-        cutoff_date = datetime.now() - timedelta(days=days_back)
-        print(f"   Looking for papers submitted after {cutoff_date.strftime('%Y-%m-%d')}")
 
         try:
             # Use client.results() instead of search.results()
             count = 0
             for result in client.results(search):
-                # Use submitted date (more recent) instead of published date
-                submit_date = result.updated.replace(tzinfo=None)
+                count += 1
 
                 # Debug: print first few papers
-                if count < 3:
-                    print(f"   Paper {count+1}: {result.title[:50]}... (submitted: {submit_date.strftime('%Y-%m-%d')})")
-
-                # Check if paper is within date range
-                if submit_date < cutoff_date:
-                    print(f"   ℹ️  Reached papers older than {days_back} days, stopping...")
-                    break
+                if count <= 3:
+                    submit_date = result.updated.strftime("%Y-%m-%d")
+                    print(f"   Paper {count}: {result.title[:60]}... (date: {submit_date})")
 
                 paper = {
                     "id": result.entry_id.split('/')[-1],
@@ -134,11 +127,10 @@ class ArxivScraper:
                     paper["has_code"] = False
 
                 papers.append(paper)
-                count += 1
 
                 # Stop if we have enough papers
-                if count >= max_results:
-                    print(f"   ℹ️  Collected {count} papers, stopping...")
+                if len(papers) >= max_results:
+                    print(f"   ℹ️  Collected {len(papers)} papers, stopping...")
                     break
 
         except arxiv.UnexpectedEmptyPageError as e:
@@ -147,6 +139,9 @@ class ArxivScraper:
         except Exception as e:
             print(f"⚠️  Warning: Error fetching papers: {str(e)}")
             print(f"   Continuing with {len(papers)} papers already fetched...")
+
+        print(f"✅ Found {len(papers)} papers")
+        return papers
 
         print(f"✅ Found {len(papers)} papers")
         return papers

@@ -259,7 +259,7 @@
 </div>
 
 <!-- Share Modal -->
-<div id="share-modal" class="modal" style="display: none;">
+<div id="share-modal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
       <h3>🔗 Share Selected Papers</h3>
@@ -872,10 +872,14 @@
   height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 2000;
-  display: flex;
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.2s;
+}
+
+.modal.show {
+  display: flex; /* Show when .show class is added */
 }
 
 @keyframes fadeIn {
@@ -1192,7 +1196,7 @@
       // Share modal
       safeAddListener('close-share-modal', 'click', () => {
         const modal = document.getElementById('share-modal');
-        if (modal) modal.style.display = 'none';
+        if (modal) modal.classList.remove('show');
       });
 
       safeAddListener('copy-share-link', 'click', () => {
@@ -1204,7 +1208,7 @@
       if (shareModal) {
         shareModal.addEventListener('click', (e) => {
           if (e.target.id === 'share-modal') {
-            shareModal.style.display = 'none';
+            shareModal.classList.remove('show');
           }
         });
       }
@@ -1322,7 +1326,7 @@
       const shareModal = document.getElementById('share-modal');
 
       if (shareLinkInput) shareLinkInput.value = shareUrl;
-      if (shareModal) shareModal.style.display = 'flex';
+      if (shareModal) shareModal.classList.add('show');
     },
 
     copyShareLink() {

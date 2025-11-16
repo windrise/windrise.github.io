@@ -18,13 +18,13 @@ The mindmap generation feature automatically creates visual representations of p
 #### Generate mindmaps for all papers
 
 ```bash
-python scripts/generate_mindmap.py --output-dir data/papers/mindmaps
+python scripts/generate_mindmap.py
 ```
 
 This will:
 - Read all papers from `data/papers/papers.yaml`
 - Generate individual mindmap files for each paper
-- Save to `data/papers/mindmaps/{paper_id}_mindmap.md`
+- Save to `static/mindmaps/{paper_id}_mindmap.md`
 
 #### Generate mindmap for a specific paper
 
@@ -37,7 +37,7 @@ This will output the mindmap to stdout.
 #### Save specific paper mindmap to file
 
 ```bash
-python scripts/generate_mindmap.py --paper-id <paper-id> --output-dir data/papers/mindmaps
+python scripts/generate_mindmap.py --paper-id <paper-id> --output-dir static/mindmaps
 ```
 
 ### Integration with Hugo
@@ -49,7 +49,7 @@ A Hugo shortcode is available for embedding mindmaps in your pages:
 ```
 
 The shortcode will:
-1. Load the mindmap from `data/papers/mindmaps/{paper_id}_mindmap.md`
+1. Load the mindmap from `static/mindmaps/{paper_id}_mindmap.md`
 2. Render it using Mermaid.js
 3. Display it with a nice container and styling
 
@@ -245,7 +245,7 @@ Edit `scripts/citation_tracker.py` to customize:
 
 ### Mindmap not displaying
 
-1. Check if mindmap file exists: `data/papers/mindmaps/{paper_id}_mindmap.md`
+1. Check if mindmap file exists: `static/mindmaps/{paper_id}_mindmap.md`
 2. Verify Mermaid.js is loaded in your Hugo theme
 3. Check browser console for JavaScript errors
 

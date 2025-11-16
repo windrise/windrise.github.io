@@ -210,7 +210,8 @@ def main():
     )
     parser.add_argument(
         '--output-dir',
-        help='Directory to save individual mindmap files (optional)'
+        default='static/mindmaps',
+        help='Directory to save individual mindmap files (default: static/mindmaps)'
     )
     parser.add_argument(
         '--paper-id',

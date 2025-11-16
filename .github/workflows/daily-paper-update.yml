@@ -54,7 +54,7 @@ jobs:
       - name: Step 4 - Generate mindmaps
         run: |
           echo "🧠 Generating mindmaps..."
-          python scripts/generate_mindmap.py --output-dir data/papers/mindmaps
+          python scripts/generate_mindmap.py
 
       - name: Step 5 - Generate audio
         run: |
@@ -81,8 +81,8 @@ jobs:
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           git config user.name "Paper Bot"
-          git config user.email "bot@windrise.github.io"
-          git add data/papers/pending/ data/papers/mindmaps/ static/audio/
+          git config user.email "Paper Bot"
+          git add data/papers/pending/ static/mindmaps/ static/audio/
           git commit -m "🤖 Daily paper update $(date +%Y-%m-%d)"
           git push
 

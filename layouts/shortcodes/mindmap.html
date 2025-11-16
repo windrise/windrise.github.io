@@ -3,13 +3,13 @@
 
   Usage: {{< mindmap paper_id="paper-id" >}}
 
-  The mindmap file should be at: data/papers/mindmaps/{paper_id}_mindmap.md
+  The mindmap file should be at: static/mindmaps/{paper_id}_mindmap.md
 */}}
 
 {{ $paper_id := .Get "paper_id" }}
 
 {{ if $paper_id }}
-  {{ $mindmap_path := printf "data/papers/mindmaps/%s_mindmap.md" $paper_id }}
+  {{ $mindmap_path := printf "static/mindmaps/%s_mindmap.md" $paper_id }}
   {{ $mindmap_file := os.ReadFile $mindmap_path }}
 
   {{ if $mindmap_file }}

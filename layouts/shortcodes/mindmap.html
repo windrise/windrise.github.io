@@ -1,0 +1,53 @@
+{{/*
+  Mindmap Shortcode - Display Mermaid.js mindmaps for papers
+
+  Usage: {{< mindmap paper_id="paper-id" >}}
+
+  The mindmap file should be at: data/papers/mindmaps/{paper_id}_mindmap.md
+*/}}
+
+{{ $paper_id := .Get "paper_id" }}
+
+{{ if $paper_id }}
+  {{ $mindmap_path := printf "data/papers/mindmaps/%s_mindmap.md" $paper_id }}
+  {{ $mindmap_file := os.ReadFile $mindmap_path }}
+
+  {{ if $mindmap_file }}
+    <div class="mindmap-container" style="margin: 2rem 0;">
+      <div class="mindmap-header" style="margin-bottom: 1rem;">
+        <h3>📊 Paper Mindmap</h3>
+        <p style="color: #666; font-size: 0.9rem;">Interactive visualization of paper structure and key concepts</p>
+      </div>
+
+      <div class="mindmap-content" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; overflow-x: auto;">
+        {{ $mindmap_file | markdownify }}
+      </div>
+
+      <div class="mindmap-footer" style="margin-top: 1rem; font-size: 0.85rem; color: #888;">
+        <p>💡 Tip: Click and drag to explore the mindmap. This visualization is auto-generated from the paper's abstract and contributions.</p>
+      </div>
+    </div>
+  {{ else }}
+    <div class="alert alert-info" style="padding: 1rem; background: #e7f3ff; border-left: 4px solid #2196F3; margin: 1rem 0;">
+      <p style="margin: 0;">🧠 Mindmap not yet generated for this paper.</p>
+    </div>
+  {{ end }}
+{{ else }}
+  <div class="alert alert-warning" style="padding: 1rem; background: #fff3cd; border-left: 4px solid #ffc107; margin: 1rem 0;">
+    <p style="margin: 0;">⚠️ No paper_id specified for mindmap shortcode.</p>
+  </div>
+{{ end }}
+
+<!-- Ensure Mermaid.js is loaded -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    securityLevel: 'loose',
+    mindmap: {
+      padding: 20,
+      useMaxWidth: true
+    }
+  });
+</script>

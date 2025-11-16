@@ -11,6 +11,7 @@ import os
 from datetime import datetime, timedelta
 from typing import List, Dict
 import argparse
+import time
 
 
 class ArxivScraper:
@@ -52,56 +53,54 @@ class ArxivScraper:
                 return yaml.safe_load(f)
         return {}
 
-    def build_query(self, days_back: int = 1) -> str:
-        """Build arXiv query string"""
-        # Strategy: Use categories only, filter by keywords in post-processing
-        # This avoids overly restrictive queries
-
-        # Build query with categories
+    def build_query(self, days_back: int = 7) -> str:
+        """Build arXiv query string with date constraint"""
+        # Build category query
         category_queries = [f"cat:{cat}" for cat in self.categories]
         category_str = " OR ".join(category_queries)
 
-        # Use only categories for broader results
-        # Keywords will be used for relevance scoring, not hard filtering
-        query = f"({category_str})"
+        # Important: Use submittedDate in query for better filtering
+        # arXiv format: YYYYMMDD0000 to YYYYMMDD2359
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=days_back)
+
+        # Format dates for arXiv API
+        start_str = start_date.strftime("%Y%m%d") + "0000"
+        end_str = end_date.strftime("%Y%m%d") + "2359"
+
+        # Build query with date range
+        query = f"({category_str}) AND submittedDate:[{start_str} TO {end_str}]"
 
         return query
 
-    def fetch_papers(self, max_results: int = 50, days_back: int = 1) -> List[Dict]:
+    def fetch_papers(self, max_results: int = 50, days_back: int = 7) -> List[Dict]:
         """Fetch papers from arXiv"""
         print(f"🔍 Fetching papers from last {days_back} day(s)...")
 
         query = self.build_query(days_back)
-        print(f"Query: {query[:100]}...")
+        print(f"Query: {query}")  # Show full query for debugging
 
         # Use new Client API (Search.results is deprecated)
         client = arxiv.Client()
         search = arxiv.Search(
             query=query,
-            max_results=max_results * 2,  # Fetch more to ensure we have enough after filtering
+            max_results=max_results,
             sort_by=arxiv.SortCriterion.SubmittedDate,
             sort_order=arxiv.SortOrder.Descending
         )
 
         papers = []
-        cutoff_date = datetime.now() - timedelta(days=days_back)
-        print(f"   Looking for papers submitted after {cutoff_date.strftime('%Y-%m-%d')}")
 
         try:
             # Use client.results() instead of search.results()
             count = 0
             for result in client.results(search):
-                # Use submitted date (more recent) instead of published date
-                submit_date = result.updated.replace(tzinfo=None)
+                count += 1
 
                 # Debug: print first few papers
-                if count < 3:
-                    print(f"   Paper {count+1}: {result.title[:50]}... (submitted: {submit_date.strftime('%Y-%m-%d')})")
-
-                # Check if paper is within date range
-                if submit_date < cutoff_date:
-                    print(f"   ℹ️  Reached papers older than {days_back} days, stopping...")
-                    break
+                if count <= 3:
+                    submit_date = result.updated.strftime("%Y-%m-%d")
+                    print(f"   Paper {count}: {result.title[:60]}... (date: {submit_date})")
 
                 paper = {
                     "id": result.entry_id.split('/')[-1],
@@ -128,11 +127,10 @@ class ArxivScraper:
                     paper["has_code"] = False
 
                 papers.append(paper)
-                count += 1
 
                 # Stop if we have enough papers
-                if count >= max_results:
-                    print(f"   ℹ️  Collected {count} papers, stopping...")
+                if len(papers) >= max_results:
+                    print(f"   ℹ️  Collected {len(papers)} papers, stopping...")
                     break
 
         except arxiv.UnexpectedEmptyPageError as e:

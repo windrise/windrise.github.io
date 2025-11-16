@@ -1069,56 +1069,66 @@
     },
 
     bindEvents() {
+      // Helper function to safely add event listener
+      const safeAddListener = (id, event, handler) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.addEventListener(event, handler);
+        }
+      };
+
       // Search
       const searchInput = document.getElementById('search-input');
       const clearSearch = document.getElementById('clear-search');
 
-      searchInput.addEventListener('input', (e) => {
-        this.filters.search = e.target.value.toLowerCase();
-        clearSearch.style.display = e.target.value ? 'block' : 'none';
-        this.updateResults();
-      });
+      if (searchInput && clearSearch) {
+        searchInput.addEventListener('input', (e) => {
+          this.filters.search = e.target.value.toLowerCase();
+          clearSearch.style.display = e.target.value ? 'block' : 'none';
+          this.updateResults();
+        });
 
-      clearSearch.addEventListener('click', () => {
-        searchInput.value = '';
-        this.filters.search = '';
-        clearSearch.style.display = 'none';
-        this.updateResults();
-      });
+        clearSearch.addEventListener('click', () => {
+          searchInput.value = '';
+          this.filters.search = '';
+          clearSearch.style.display = 'none';
+          this.updateResults();
+        });
+      }
 
       // Year filters
-      document.getElementById('year-filters').addEventListener('click', (e) => {
+      safeAddListener('year-filters', 'click', (e) => {
         if (e.target.classList.contains('filter-tag')) {
           this.handleYearFilter(e.target);
         }
       });
 
       // Category filters
-      document.getElementById('category-filters').addEventListener('click', (e) => {
+      safeAddListener('category-filters', 'click', (e) => {
         if (e.target.classList.contains('filter-tag')) {
           this.handleCategoryFilter(e.target);
         }
       });
 
       // Quick filters
-      document.getElementById('quick-filters').addEventListener('click', (e) => {
+      safeAddListener('quick-filters', 'click', (e) => {
         if (e.target.classList.contains('filter-tag')) {
           this.handleQuickFilter(e.target);
         }
       });
 
       // Sort
-      document.getElementById('sort-select').addEventListener('change', (e) => {
+      safeAddListener('sort-select', 'change', (e) => {
         this.sortBy = e.target.value;
         this.updateResults();
       });
 
       // Reset
-      document.getElementById('reset-filters').addEventListener('click', () => {
+      safeAddListener('reset-filters', 'click', () => {
         this.resetFilters();
       });
 
-      document.getElementById('clear-all-btn')?.addEventListener('click', () => {
+      safeAddListener('clear-all-btn', 'click', () => {
         this.resetFilters();
       });
 
@@ -1130,79 +1140,90 @@
           const showText = btn.querySelector('.show-text');
           const hideText = btn.querySelector('.hide-text');
 
-          if (expanded) {
-            fullAbstract.style.display = 'none';
-            showText.style.display = 'inline';
-            hideText.style.display = 'none';
-            btn.dataset.expanded = 'false';
-          } else {
-            fullAbstract.style.display = 'block';
-            showText.style.display = 'none';
-            hideText.style.display = 'inline';
-            btn.dataset.expanded = 'true';
+          if (fullAbstract && showText && hideText) {
+            if (expanded) {
+              fullAbstract.style.display = 'none';
+              showText.style.display = 'inline';
+              hideText.style.display = 'none';
+              btn.dataset.expanded = 'false';
+            } else {
+              fullAbstract.style.display = 'block';
+              showText.style.display = 'none';
+              hideText.style.display = 'inline';
+              btn.dataset.expanded = 'true';
+            }
           }
         });
       });
 
       // Selection mode toggle
-      document.getElementById('toggle-selection-mode').addEventListener('click', () => {
+      safeAddListener('toggle-selection-mode', 'click', () => {
         this.toggleSelectionMode();
       });
 
       // Paper selection
       document.querySelectorAll('.paper-select-cb').forEach(cb => {
         cb.addEventListener('change', (e) => {
-          const paperId = e.target.closest('.paper-card').dataset.paperId;
-          if (e.target.checked) {
-            this.selectedPapers.add(paperId);
-          } else {
-            this.selectedPapers.delete(paperId);
+          const card = e.target.closest('.paper-card');
+          if (card) {
+            const paperId = card.dataset.paperId;
+            if (e.target.checked) {
+              this.selectedPapers.add(paperId);
+            } else {
+              this.selectedPapers.delete(paperId);
+            }
+            this.updateSelectionUI();
           }
-          this.updateSelectionUI();
         });
       });
 
       // Selection actions
-      document.getElementById('share-btn').addEventListener('click', () => this.shareSelection());
-      document.getElementById('export-bibtex-btn').addEventListener('click', () => this.exportBibTeX());
-      document.getElementById('export-json-btn').addEventListener('click', () => this.exportJSON());
-      document.getElementById('export-markdown-btn').addEventListener('click', () => this.exportMarkdown());
-      document.getElementById('clear-selection-btn').addEventListener('click', () => this.clearSelection());
+      safeAddListener('share-btn', 'click', () => this.shareSelection());
+      safeAddListener('export-bibtex-btn', 'click', () => this.exportBibTeX());
+      safeAddListener('export-json-btn', 'click', () => this.exportJSON());
+      safeAddListener('export-markdown-btn', 'click', () => this.exportMarkdown());
+      safeAddListener('clear-selection-btn', 'click', () => this.clearSelection());
 
       // Select all visible
-      document.getElementById('select-all-visible').addEventListener('click', () => {
+      safeAddListener('select-all-visible', 'click', () => {
         this.selectAllVisible();
       });
 
       // Share modal
-      document.getElementById('close-share-modal').addEventListener('click', () => {
-        document.getElementById('share-modal').style.display = 'none';
+      safeAddListener('close-share-modal', 'click', () => {
+        const modal = document.getElementById('share-modal');
+        if (modal) modal.style.display = 'none';
       });
 
-      document.getElementById('copy-share-link').addEventListener('click', () => {
+      safeAddListener('copy-share-link', 'click', () => {
         this.copyShareLink();
       });
 
       // Close modal on outside click
-      document.getElementById('share-modal').addEventListener('click', (e) => {
-        if (e.target.id === 'share-modal') {
-          document.getElementById('share-modal').style.display = 'none';
-        }
-      });
+      const shareModal = document.getElementById('share-modal');
+      if (shareModal) {
+        shareModal.addEventListener('click', (e) => {
+          if (e.target.id === 'share-modal') {
+            shareModal.style.display = 'none';
+          }
+        });
+      }
 
       // Back to top
       const backToTop = document.getElementById('back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTop.classList.add('show');
-        } else {
-          backToTop.classList.remove('show');
-        }
-      });
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+          } else {
+            backToTop.classList.remove('show');
+          }
+        });
 
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
     },
 
     toggleSelectionMode() {
@@ -1211,11 +1232,13 @@
       const container = document.getElementById('papers-app');
       const selectAllBtn = document.getElementById('select-all-visible');
 
+      if (!btn || !container) return;
+
       if (this.selectionMode) {
         btn.classList.add('active');
         btn.innerHTML = '<span class="toggle-icon">✕</span> Exit Selection';
         container.classList.add('selection-mode');
-        selectAllBtn.style.display = 'flex';
+        if (selectAllBtn) selectAllBtn.style.display = 'flex';
 
         // Show checkboxes
         document.querySelectorAll('.paper-checkbox').forEach(cb => {
@@ -1225,7 +1248,7 @@
         btn.classList.remove('active');
         btn.innerHTML = '<span class="toggle-icon">☑️</span> Selection Mode';
         container.classList.remove('selection-mode');
-        selectAllBtn.style.display = 'none';
+        if (selectAllBtn) selectAllBtn.style.display = 'none';
 
         // Hide checkboxes
         document.querySelectorAll('.paper-checkbox').forEach(cb => {
@@ -1263,11 +1286,15 @@
       const selectionBar = document.getElementById('selection-bar');
       const countSpan = document.getElementById('selection-count');
 
-      if (count > 0) {
-        selectionBar.style.display = 'block';
-        countSpan.textContent = `${count} paper${count !== 1 ? 's' : ''} selected`;
-      } else {
-        selectionBar.style.display = 'none';
+      if (selectionBar) {
+        if (count > 0) {
+          selectionBar.style.display = 'block';
+          if (countSpan) {
+            countSpan.textContent = `${count} paper${count !== 1 ? 's' : ''} selected`;
+          }
+        } else {
+          selectionBar.style.display = 'none';
+        }
       }
 
       // Update card styling
@@ -1291,23 +1318,30 @@
       const baseUrl = window.location.href.split('#')[0].split('?')[0];
       const shareUrl = `${baseUrl}#selected=${ids}`;
 
-      document.getElementById('share-link-input').value = shareUrl;
-      document.getElementById('share-modal').style.display = 'flex';
+      const shareLinkInput = document.getElementById('share-link-input');
+      const shareModal = document.getElementById('share-modal');
+
+      if (shareLinkInput) shareLinkInput.value = shareUrl;
+      if (shareModal) shareModal.style.display = 'flex';
     },
 
     copyShareLink() {
       const input = document.getElementById('share-link-input');
+      if (!input) return;
+
       input.select();
       document.execCommand('copy');
 
       const btn = document.getElementById('copy-share-link');
-      btn.classList.add('copied');
-      btn.textContent = '✓ Copied!';
+      if (btn) {
+        btn.classList.add('copied');
+        btn.textContent = '✓ Copied!';
 
-      setTimeout(() => {
-        btn.classList.remove('copied');
-        btn.innerHTML = '📋 Copy';
-      }, 2000);
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '📋 Copy';
+        }, 2000);
+      }
     },
 
     loadSelectionFromURL() {
@@ -1416,11 +1450,12 @@
           this.filters.years.add(year);
         }
 
-        document.querySelector('[data-filter="all-years"]').dataset.state = '';
+        const allYearsBtn = document.querySelector('[data-filter="all-years"]');
+        if (allYearsBtn) allYearsBtn.dataset.state = '';
 
         if (this.filters.years.size === 0) {
           this.filters.allYears = true;
-          document.querySelector('[data-filter="all-years"]').dataset.state = 'active';
+          if (allYearsBtn) allYearsBtn.dataset.state = 'active';
         }
       }
 
@@ -1447,11 +1482,12 @@
           this.filters.categories.add(category);
         }
 
-        document.querySelector('[data-filter="all-categories"]').dataset.state = '';
+        const allCategoriesBtn = document.querySelector('[data-filter="all-categories"]');
+        if (allCategoriesBtn) allCategoriesBtn.dataset.state = '';
 
         if (this.filters.categories.size === 0) {
           this.filters.allCategories = true;
-          document.querySelector('[data-filter="all-categories"]').dataset.state = 'active';
+          if (allCategoriesBtn) allCategoriesBtn.dataset.state = 'active';
         }
       }
 
@@ -1474,8 +1510,12 @@
     },
 
     resetFilters() {
-      document.getElementById('search-input').value = '';
-      document.getElementById('clear-search').style.display = 'none';
+      const searchInput = document.getElementById('search-input');
+      const clearSearch = document.getElementById('clear-search');
+      const sortSelect = document.getElementById('sort-select');
+
+      if (searchInput) searchInput.value = '';
+      if (clearSearch) clearSearch.style.display = 'none';
       this.filters.search = '';
 
       this.filters.years.clear();
@@ -1493,7 +1533,7 @@
       });
 
       this.sortBy = 'date-desc';
-      document.getElementById('sort-select').value = 'date-desc';
+      if (sortSelect) sortSelect.value = 'date-desc';
 
       this.updateResults();
     },
@@ -1545,14 +1585,24 @@
       visiblePapers = this.sortPapers(visiblePapers);
 
       const container = document.getElementById('papers-container');
-      visiblePapers.forEach(paper => container.appendChild(paper));
+      const resultsCount = document.getElementById('results-count');
+      const noResults = document.getElementById('no-results');
+
+      if (container) {
+        visiblePapers.forEach(paper => container.appendChild(paper));
+      }
 
       const count = visiblePapers.length;
-      document.getElementById('results-count').innerHTML =
-        `Showing <strong>${count}</strong> paper${count !== 1 ? 's' : ''}`;
+      if (resultsCount) {
+        resultsCount.innerHTML = `Showing <strong>${count}</strong> paper${count !== 1 ? 's' : ''}`;
+      }
 
-      document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
-      container.style.display = count === 0 ? 'none' : 'grid';
+      if (noResults) {
+        noResults.style.display = count === 0 ? 'block' : 'none';
+      }
+      if (container) {
+        container.style.display = count === 0 ? 'none' : 'grid';
+      }
     },
 
     sortPapers(papers) {

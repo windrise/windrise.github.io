@@ -129,7 +129,7 @@
         data-relevance="{{ $paper.relevance_score | default 0 }}"
         data-citation="{{ $paper.citation_count | default 0 }}"
         data-search-text="{{ lower (printf "%s %s %s" $paper.title (delimit $paper.authors " ") ($paper.abstract | default "")) }}"
-        data-paper-data="{{ dict "title" $paper.title "authors" $paper.authors "venue" $paper.venue "year" $paper.year "arxiv_id" ($paper.arxiv_id | default "") "links" $paper.links | jsonify | htmlEscape }}"
+        data-paper-data='{{ dict "title" $paper.title "authors" $paper.authors "venue" ($paper.venue | default "") "year" $paper.year "arxiv_id" ($paper.arxiv_id | default "") "links" $paper.links | jsonify }}'
       >
         <!-- Selection Checkbox -->
         <div class="paper-checkbox" style="display: none;">

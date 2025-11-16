@@ -269,7 +269,7 @@ An AI-powered system that automatically discovers, filters, and manages academic
   - 重置所有过滤器按钮（🔄 Reset All）
   - 返回顶部按钮（↑，滚动 >300px 时显示）
 
-**阶段 3：高级交互功能**
+**阶段 3：高级交互功能** ✅ 选择功能完成
 - ✅ 深色模式支持
   - 自动检测系统主题（`@media (prefers-color-scheme: dark)`）
   - 所有组件完整适配深色模式（Slate 配色）
@@ -278,39 +278,68 @@ An AI-powered system that automatically discovers, filters, and manages academic
 
 - ✅ UI 增强
   - 返回顶部按钮（带渐变背景和悬停动画）
+  - 浮动操作按钮组（返回顶部 + 全选可见论文）
   - 📌 待完成：滚动进度指示器（顶部进度条）
-  - 📌 待完成：浮动操作栏（固定在右下角）
 
-- [ ] 选择和分享模式（待实现）
-  - 多选论文功能（checkbox）
-  - 选中论文预览栏（固定在顶部）
-  - 生成分享链接（URL hash）
-  - 导出选中论文（BibTeX, JSON, Markdown）
+- ✅ **选择和分享模式**（NEW! 刚刚实现）
+  - ✅ 多选论文功能（checkbox，Selection Mode 切换）
+  - ✅ 选中论文预览栏（固定在顶部，sticky positioning）
+  - ✅ 生成分享链接（URL hash: `#selected=id1,id2,id3`）
+  - ✅ 导出选中论文：
+    - BibTeX 格式（.bib 文件）
+    - JSON 格式（.json 文件）
+    - Markdown 格式（.md 文件）
+  - ✅ 分享模态框（复制链接到剪贴板）
+  - ✅ 从 URL 加载选中状态（分享链接支持）
+  - ✅ 全选可见论文功能
 
-**阶段 4：阅读笔记系统** 🎯 未来功能
-- [ ] 笔记数据结构设计
-  - 扩展 papers.yaml 添加 notes 字段
+**阶段 4：阅读笔记系统** 📝 设计已完成，待实现
+
+**设计文档：** `docs/READING_NOTES_DESIGN.md`
+
+- ✅ **笔记数据结构设计**（NEW! 设计已完成）
+  - 完整的 YAML schema 定义
+  - 包含字段：status, priority, progress, rating, notes, highlights, tags, todos
   - 支持 Markdown 格式笔记
-  - 笔记元数据（创建时间、标签、评分）
+  - 笔记元数据（创建时间、更新时间、版本）
   - 笔记与论文关联
 
-- [ ] 笔记编辑界面
-  - 在线 Markdown 编辑器
-  - 实时预览
-  - 自动保存草稿
-  - 笔记模板支持
+- 📋 **笔记编辑界面**（计划中 - Phase 2）
+  - 全屏/侧边栏笔记模态框
+  - 集成 Markdown 编辑器（SimpleMDE 或类似）
+  - 实时预览（Markdown → HTML）
+  - 自动保存草稿（LocalStorage）
+  - 格式化工具栏
+  - 状态管理（to-read, reading, completed）
+  - 进度追踪（0-100%）
+  - 星级评分（1-5 星）
 
-- [ ] 笔记展示
-  - 论文卡片中显示笔记摘要
-  - 专门的笔记视图页面
-  - 笔记搜索和过滤
-  - 笔记时间线
+- 📋 **笔记展示**（计划中 - Phase 3）
+  - 论文卡片显示笔记指示器（badge）
+  - 专门的笔记视图页面（`/papers/notes/`）
+  - 笔记搜索和过滤（按标签、状态、评分）
+  - 笔记时间线和统计
+  - 阅读进度仪表板
 
-- [ ] 笔记高级功能
+- 📋 **笔记高级功能**（计划中 - Phase 3-4）
+  - 高亮系统（带颜色和注释）
+  - 待办事项（To-Do）集成
+  - 标签管理和标签云
   - 笔记导出（Markdown, PDF）
-  - 笔记分享
-  - 笔记标签云
+  - 笔记分享链接
+  - 版本控制和历史记录
   - 笔记统计仪表板
+
+**实施方案：**
+- Phase 1: 基础笔记（文本框 + 状态 + 评分）
+- Phase 2: Markdown 编辑器 + 自动保存
+- Phase 3: 高亮 + 待办 + 标签
+- Phase 4: 协作和高级功能
+
+**存储方案：**
+- Hybrid 模式：LocalStorage（草稿）+ GitHub（持久化）
+- 自动保存：每 5 秒保存到 LocalStorage
+- 手动保存：提交到 `papers.yaml` via GitHub
 
 **阶段 5：可视化增强**
 - [ ] 论文关系图
@@ -386,32 +415,54 @@ An AI-powered system that automatically discovers, filters, and manages academic
 
 **Papers Enhancement - 剩余任务：**
 
-1. **选择和分享功能**（优先级：高）⭐ 下一步
-   - 实现论文多选（checkbox）
-   - 创建分享链接生成器（URL hash）
-   - BibTeX 导出功能
-   - JSON/Markdown 导出
+1. **阅读笔记系统 - Phase 1** ⭐ 下一步（优先级：最高）
+   ```bash
+   # 创建基础笔记组件
+   touch layouts/shortcodes/paper-notes-modal.html
+   touch static/js/notes-manager.js
 
-2. **论文缩略图支持**（优先级：中）
+   # 更新 papers.yaml schema（添加示例）
+   # 参考 docs/READING_NOTES_DESIGN.md
+   ```
+
+   实施步骤：
+   - [ ] 创建笔记模态框 UI
+   - [ ] 添加基础文本编辑区
+   - [ ] 实现状态选择器（to-read, reading, completed）
+   - [ ] 添加星级评分组件
+   - [ ] LocalStorage 保存/加载
+   - [ ] 在论文卡片添加"笔记"按钮
+   - [ ] 显示笔记状态 badge
+
+2. **阅读笔记系统 - Phase 2**（后续）
+   - [ ] 集成 SimpleMDE Markdown 编辑器
+   - [ ] 实时预览功能
+   - [ ] 自动保存（每 5 秒）
+   - [ ] 同步到 GitHub（手动保存按钮）
+
+3. **论文缩略图支持**（优先级：中）
    - 从 arXiv 提取第一页作为缩略图
    - 或使用基于分类的默认图标
    - 添加懒加载（Intersection Observer）
 
-3. **主题切换增强**（优先级：低）
+4. **主题切换增强**（优先级：低）
    - 手动主题切换按钮
    - localStorage 主题持久化
    - 平滑的主题切换动画
-
-4. **阅读笔记系统**（优先级：高，未来功能）
-   - 参考 "阶段 4" 中的详细规划
-   - 扩展 papers.yaml 数据结构
-   - 创建笔记编辑界面（Markdown 编辑器）
-   - 笔记搜索和过滤
 
 5. **可视化增强**（优先级：低）
    - 论文关系图（基于引用）
    - 统计图表（Chart.js）
    - 时间线视图
+
+**已完成功能总结：**
+- ✅ 搜索和过滤系统（完整）
+- ✅ 排序功能（5种排序方式）
+- ✅ 深色模式（自动检测）
+- ✅ 选择和分享功能（URL分享 + 3种导出格式）
+- ✅ 摘要展开/折叠
+- ✅ 响应式设计
+- ✅ 阅读笔记系统设计文档
 
 ---
 

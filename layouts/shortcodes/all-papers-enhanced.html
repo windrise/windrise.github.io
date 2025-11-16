@@ -12,6 +12,33 @@
 
 <div id="papers-app" class="papers-enhanced-container">
 
+  <!-- Selection Preview Bar (Hidden by default) -->
+  <div id="selection-bar" class="selection-bar" style="display: none;">
+    <div class="selection-bar-content">
+      <div class="selection-info">
+        <span class="selection-icon">✓</span>
+        <span id="selection-count">0 papers selected</span>
+      </div>
+      <div class="selection-actions">
+        <button id="share-btn" class="action-btn" title="Share Selection">
+          <span class="btn-icon">🔗</span> Share
+        </button>
+        <button id="export-bibtex-btn" class="action-btn" title="Export as BibTeX">
+          <span class="btn-icon">📄</span> BibTeX
+        </button>
+        <button id="export-json-btn" class="action-btn" title="Export as JSON">
+          <span class="btn-icon">💾</span> JSON
+        </button>
+        <button id="export-markdown-btn" class="action-btn" title="Export as Markdown">
+          <span class="btn-icon">📝</span> Markdown
+        </button>
+        <button id="clear-selection-btn" class="action-btn-danger" title="Clear Selection">
+          <span class="btn-icon">✕</span> Clear
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Search and Filter Bar -->
   <div class="filter-bar">
     <div class="search-container">
@@ -76,9 +103,12 @@
     </div>
   </div>
 
-  <!-- Results Stats -->
+  <!-- Results Stats & Selection Toggle -->
   <div class="results-stats">
     <span id="results-count">Showing <strong>{{ len $papers }}</strong> papers</span>
+    <button id="toggle-selection-mode" class="selection-mode-toggle">
+      <span class="toggle-icon">☑️</span> Selection Mode
+    </button>
   </div>
 
   <!-- Papers Container -->
@@ -90,6 +120,7 @@
       <article
         class="paper-card"
         data-paper-id="{{ $paper.id }}"
+        data-paper-index="{{ $index }}"
         data-year="{{ $paper.year }}"
         data-categories="{{ delimit $paper.categories "," }}"
         data-starred="{{ $paper.starred }}"
@@ -98,7 +129,14 @@
         data-relevance="{{ $paper.relevance_score | default 0 }}"
         data-citation="{{ $paper.citation_count | default 0 }}"
         data-search-text="{{ lower (printf "%s %s %s" $paper.title (delimit $paper.authors " ") $paper.abstract) }}"
+        data-paper-data='{{ dict "title" $paper.title "authors" $paper.authors "venue" $paper.venue "year" $paper.year "arxiv_id" $paper.arxiv_id "links" $paper.links "abstract" $paper.abstract | jsonify }}'
       >
+        <!-- Selection Checkbox -->
+        <div class="paper-checkbox" style="display: none;">
+          <input type="checkbox" class="paper-select-cb" id="cb-{{ $paper.id }}">
+          <label for="cb-{{ $paper.id }}"></label>
+        </div>
+
         <div class="paper-card-inner">
           <!-- Paper Header -->
           <div class="paper-header">
@@ -211,8 +249,31 @@
     </div>
   </div>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" class="back-to-top" title="Back to top">↑</button>
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions">
+    <button id="back-to-top" class="fab" title="Back to top">↑</button>
+    <button id="select-all-visible" class="fab secondary" style="display: none;" title="Select all visible papers">
+      ☑️
+    </button>
+  </div>
+</div>
+
+<!-- Share Modal -->
+<div id="share-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>🔗 Share Selected Papers</h3>
+      <button class="modal-close" id="close-share-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Copy this link to share your selection:</p>
+      <div class="share-link-container">
+        <input type="text" id="share-link-input" class="share-link-input" readonly>
+        <button id="copy-share-link" class="copy-btn">📋 Copy</button>
+      </div>
+      <p class="share-hint">Anyone with this link can see your selected papers</p>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -221,6 +282,99 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
+}
+
+/* Selection Bar */
+.selection-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selection-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.selection-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.selection-icon {
+  font-size: 1.3em;
+  background: rgba(255,255,255,0.2);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.selection-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-btn, .action-btn-danger {
+  padding: 8px 16px;
+  border: 2px solid white;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+}
+
+.action-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+.action-btn-danger {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.2);
+}
+
+.action-btn-danger:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  font-size: 1.1em;
 }
 
 /* Filter Bar */
@@ -326,12 +480,6 @@
   color: white;
 }
 
-.filter-tag[data-state="exclude"] {
-  background: #ff6b6b;
-  border-color: #ff6b6b;
-  color: white;
-}
-
 .sort-select {
   padding: 8px 16px;
   border: 2px solid #e0e0e0;
@@ -366,17 +514,50 @@
   border-color: #ccc;
 }
 
-/* Results Stats */
+/* Results Stats & Selection Toggle */
 .results-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 12px 0;
   margin-bottom: 20px;
   font-size: 15px;
   color: #666;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .results-stats strong {
   color: #667eea;
   font-size: 18px;
+}
+
+.selection-mode-toggle {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+}
+
+.selection-mode-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.selection-mode-toggle.active {
+  background: #ff6b6b;
+}
+
+.toggle-icon {
+  font-size: 1.2em;
 }
 
 /* Papers Container */
@@ -393,6 +574,7 @@
   border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
   opacity: 1;
+  position: relative;
 }
 
 .paper-card:hover {
@@ -403,6 +585,36 @@
 
 .paper-card.hidden {
   display: none;
+}
+
+.paper-card.selected {
+  border-color: #667eea;
+  border-width: 2px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+/* Paper Checkbox */
+.paper-checkbox {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+.paper-select-cb {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.paper-card-inner {
+  margin-left: 0;
+  transition: margin-left 0.3s;
+}
+
+.selection-mode .paper-card-inner {
+  margin-left: 35px;
 }
 
 .paper-title {
@@ -610,13 +822,20 @@
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
 }
 
-/* Back to Top Button */
-.back-to-top {
+/* Floating Action Buttons */
+.floating-actions {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
@@ -627,17 +846,141 @@
   visibility: hidden;
   transition: all 0.3s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  z-index: 1000;
 }
 
-.back-to-top.show {
+.fab.show {
   opacity: 1;
   visibility: visible;
 }
 
-.back-to-top:hover {
-  transform: translateY(-3px);
+.fab:hover {
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.fab.secondary {
+  background: #4ecdc4;
+  font-size: 20px;
+}
+
+/* Share Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.5em;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.share-link-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.share-link-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.9em;
+  background: #f8f9fa;
+}
+
+.copy-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.copy-btn.copied {
+  background: #4ecdc4;
+}
+
+.share-hint {
+  color: #999;
+  font-size: 0.9em;
+  margin-top: 10px;
 }
 
 /* Responsive Design */
@@ -660,12 +1003,25 @@
     align-items: flex-start;
   }
 
-  .back-to-top {
+  .floating-actions {
     bottom: 20px;
     right: 20px;
-    width: 45px;
-    height: 45px;
+  }
+
+  .fab {
+    width: 50px;
+    height: 50px;
     font-size: 20px;
+  }
+
+  .selection-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-stats {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>
@@ -676,6 +1032,9 @@
 
   const app = {
     papers: null,
+    allPapersData: [],
+    selectedPapers: new Set(),
+    selectionMode: false,
     filters: {
       search: '',
       years: new Set(),
@@ -688,8 +1047,25 @@
 
     init() {
       this.papers = document.querySelectorAll('.paper-card');
+      this.collectPapersData();
       this.bindEvents();
+      this.loadSelectionFromURL();
       this.updateResults();
+    },
+
+    collectPapersData() {
+      this.papers.forEach(paper => {
+        try {
+          const dataStr = paper.dataset.paperData;
+          if (dataStr) {
+            const data = JSON.parse(dataStr);
+            data.id = paper.dataset.paperId;
+            this.allPapersData.push(data);
+          }
+        } catch (e) {
+          console.error('Failed to parse paper data:', e);
+        }
+      });
     },
 
     bindEvents() {
@@ -768,6 +1144,52 @@
         });
       });
 
+      // Selection mode toggle
+      document.getElementById('toggle-selection-mode').addEventListener('click', () => {
+        this.toggleSelectionMode();
+      });
+
+      // Paper selection
+      document.querySelectorAll('.paper-select-cb').forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          const paperId = e.target.closest('.paper-card').dataset.paperId;
+          if (e.target.checked) {
+            this.selectedPapers.add(paperId);
+          } else {
+            this.selectedPapers.delete(paperId);
+          }
+          this.updateSelectionUI();
+        });
+      });
+
+      // Selection actions
+      document.getElementById('share-btn').addEventListener('click', () => this.shareSelection());
+      document.getElementById('export-bibtex-btn').addEventListener('click', () => this.exportBibTeX());
+      document.getElementById('export-json-btn').addEventListener('click', () => this.exportJSON());
+      document.getElementById('export-markdown-btn').addEventListener('click', () => this.exportMarkdown());
+      document.getElementById('clear-selection-btn').addEventListener('click', () => this.clearSelection());
+
+      // Select all visible
+      document.getElementById('select-all-visible').addEventListener('click', () => {
+        this.selectAllVisible();
+      });
+
+      // Share modal
+      document.getElementById('close-share-modal').addEventListener('click', () => {
+        document.getElementById('share-modal').style.display = 'none';
+      });
+
+      document.getElementById('copy-share-link').addEventListener('click', () => {
+        this.copyShareLink();
+      });
+
+      // Close modal on outside click
+      document.getElementById('share-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'share-modal') {
+          document.getElementById('share-modal').style.display = 'none';
+        }
+      });
+
       // Back to top
       const backToTop = document.getElementById('back-to-top');
       window.addEventListener('scroll', () => {
@@ -783,9 +1205,199 @@
       });
     },
 
+    toggleSelectionMode() {
+      this.selectionMode = !this.selectionMode;
+      const btn = document.getElementById('toggle-selection-mode');
+      const container = document.getElementById('papers-app');
+      const selectAllBtn = document.getElementById('select-all-visible');
+
+      if (this.selectionMode) {
+        btn.classList.add('active');
+        btn.innerHTML = '<span class="toggle-icon">✕</span> Exit Selection';
+        container.classList.add('selection-mode');
+        selectAllBtn.style.display = 'flex';
+
+        // Show checkboxes
+        document.querySelectorAll('.paper-checkbox').forEach(cb => {
+          cb.style.display = 'block';
+        });
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '<span class="toggle-icon">☑️</span> Selection Mode';
+        container.classList.remove('selection-mode');
+        selectAllBtn.style.display = 'none';
+
+        // Hide checkboxes
+        document.querySelectorAll('.paper-checkbox').forEach(cb => {
+          cb.style.display = 'none';
+        });
+
+        this.clearSelection();
+      }
+    },
+
+    selectAllVisible() {
+      const visiblePapers = Array.from(this.papers).filter(p => !p.classList.contains('hidden'));
+      visiblePapers.forEach(paper => {
+        const paperId = paper.dataset.paperId;
+        this.selectedPapers.add(paperId);
+        const cb = paper.querySelector('.paper-select-cb');
+        if (cb) cb.checked = true;
+      });
+      this.updateSelectionUI();
+    },
+
+    clearSelection() {
+      this.selectedPapers.clear();
+      document.querySelectorAll('.paper-select-cb').forEach(cb => {
+        cb.checked = false;
+      });
+      document.querySelectorAll('.paper-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+      this.updateSelectionUI();
+    },
+
+    updateSelectionUI() {
+      const count = this.selectedPapers.size;
+      const selectionBar = document.getElementById('selection-bar');
+      const countSpan = document.getElementById('selection-count');
+
+      if (count > 0) {
+        selectionBar.style.display = 'block';
+        countSpan.textContent = `${count} paper${count !== 1 ? 's' : ''} selected`;
+      } else {
+        selectionBar.style.display = 'none';
+      }
+
+      // Update card styling
+      this.papers.forEach(paper => {
+        const paperId = paper.dataset.paperId;
+        if (this.selectedPapers.has(paperId)) {
+          paper.classList.add('selected');
+        } else {
+          paper.classList.remove('selected');
+        }
+      });
+    },
+
+    shareSelection() {
+      if (this.selectedPapers.size === 0) {
+        alert('Please select at least one paper');
+        return;
+      }
+
+      const ids = Array.from(this.selectedPapers).join(',');
+      const baseUrl = window.location.href.split('#')[0].split('?')[0];
+      const shareUrl = `${baseUrl}#selected=${ids}`;
+
+      document.getElementById('share-link-input').value = shareUrl;
+      document.getElementById('share-modal').style.display = 'flex';
+    },
+
+    copyShareLink() {
+      const input = document.getElementById('share-link-input');
+      input.select();
+      document.execCommand('copy');
+
+      const btn = document.getElementById('copy-share-link');
+      btn.classList.add('copied');
+      btn.textContent = '✓ Copied!';
+
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '📋 Copy';
+      }, 2000);
+    },
+
+    loadSelectionFromURL() {
+      const hash = window.location.hash;
+      if (hash.startsWith('#selected=')) {
+        const ids = hash.substring(10).split(',');
+        ids.forEach(id => this.selectedPapers.add(id));
+
+        if (this.selectedPapers.size > 0 && !this.selectionMode) {
+          this.toggleSelectionMode();
+        }
+
+        this.updateSelectionUI();
+      }
+    },
+
+    exportBibTeX() {
+      if (this.selectedPapers.size === 0) {
+        alert('Please select at least one paper');
+        return;
+      }
+
+      let bibtex = '';
+      this.selectedPapers.forEach(paperId => {
+        const paperData = this.allPapersData.find(p => p.id === paperId);
+        if (paperData) {
+          const key = `${paperData.authors[0]?.split(' ').pop() || 'Unknown'}${paperData.year}`;
+          bibtex += `@article{${key},\n`;
+          bibtex += `  title={${paperData.title}},\n`;
+          bibtex += `  author={${paperData.authors.join(' and ')}},\n`;
+          bibtex += `  year={${paperData.year}},\n`;
+          if (paperData.venue) bibtex += `  journal={${paperData.venue}},\n`;
+          if (paperData.arxiv_id) bibtex += `  eprint={${paperData.arxiv_id}},\n`;
+          if (paperData.links?.paper) bibtex += `  url={${paperData.links.paper}},\n`;
+          bibtex += `}\n\n`;
+        }
+      });
+
+      this.downloadFile(bibtex, 'papers.bib', 'text/plain');
+    },
+
+    exportJSON() {
+      if (this.selectedPapers.size === 0) {
+        alert('Please select at least one paper');
+        return;
+      }
+
+      const selectedData = this.allPapersData.filter(p => this.selectedPapers.has(p.id));
+      const json = JSON.stringify(selectedData, null, 2);
+      this.downloadFile(json, 'papers.json', 'application/json');
+    },
+
+    exportMarkdown() {
+      if (this.selectedPapers.size === 0) {
+        alert('Please select at least one paper');
+        return;
+      }
+
+      let markdown = '# Selected Papers\n\n';
+      this.selectedPapers.forEach(paperId => {
+        const paperData = this.allPapersData.find(p => p.id === paperId);
+        if (paperData) {
+          markdown += `## ${paperData.title}\n\n`;
+          markdown += `**Authors:** ${paperData.authors.join(', ')}\n\n`;
+          markdown += `**Year:** ${paperData.year}\n\n`;
+          if (paperData.venue) markdown += `**Venue:** ${paperData.venue}\n\n`;
+          if (paperData.abstract) markdown += `**Abstract:** ${paperData.abstract}\n\n`;
+          if (paperData.links?.paper) markdown += `**Paper:** [${paperData.links.paper}](${paperData.links.paper})\n\n`;
+          if (paperData.links?.code) markdown += `**Code:** [${paperData.links.code}](${paperData.links.code})\n\n`;
+          markdown += '---\n\n';
+        }
+      });
+
+      this.downloadFile(markdown, 'papers.md', 'text/markdown');
+    },
+
+    downloadFile(content, filename, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    },
+
     handleYearFilter(btn) {
       if (btn.dataset.filter === 'all-years') {
-        // Clear all year filters
         this.filters.years.clear();
         this.filters.allYears = true;
         document.querySelectorAll('#year-filters .filter-tag').forEach(b => {
@@ -796,7 +1408,6 @@
         const year = btn.dataset.year;
         const state = btn.dataset.state || '';
 
-        // Cycle through states: '' -> 'active' -> ''
         if (state === 'active') {
           btn.dataset.state = '';
           this.filters.years.delete(year);
@@ -805,10 +1416,8 @@
           this.filters.years.add(year);
         }
 
-        // Deactivate "All"
         document.querySelector('[data-filter="all-years"]').dataset.state = '';
 
-        // If no years selected, activate "All"
         if (this.filters.years.size === 0) {
           this.filters.allYears = true;
           document.querySelector('[data-filter="all-years"]').dataset.state = 'active';
@@ -865,19 +1474,16 @@
     },
 
     resetFilters() {
-      // Clear search
       document.getElementById('search-input').value = '';
       document.getElementById('clear-search').style.display = 'none';
       this.filters.search = '';
 
-      // Clear all filters
       this.filters.years.clear();
       this.filters.categories.clear();
       this.filters.quick.clear();
       this.filters.allYears = true;
       this.filters.allCategories = true;
 
-      // Reset UI
       document.querySelectorAll('.filter-tag').forEach(btn => {
         if (btn.dataset.filter === 'all-years' || btn.dataset.filter === 'all-categories') {
           btn.dataset.state = 'active';
@@ -886,7 +1492,6 @@
         }
       });
 
-      // Reset sort
       this.sortBy = 'date-desc';
       document.getElementById('sort-select').value = 'date-desc';
 
@@ -894,7 +1499,6 @@
     },
 
     matchesFilters(paper) {
-      // Search filter
       if (this.filters.search) {
         const searchText = paper.dataset.searchText;
         if (!searchText.includes(this.filters.search)) {
@@ -902,14 +1506,12 @@
         }
       }
 
-      // Year filter
       if (!this.filters.allYears && this.filters.years.size > 0) {
         if (!this.filters.years.has(paper.dataset.year)) {
           return false;
         }
       }
 
-      // Category filter
       if (!this.filters.allCategories && this.filters.categories.size > 0) {
         const paperCategories = paper.dataset.categories.split(',');
         const hasMatch = paperCategories.some(cat => this.filters.categories.has(cat));
@@ -918,7 +1520,6 @@
         }
       }
 
-      // Quick filters
       if (this.filters.quick.has('starred') && paper.dataset.starred !== 'true') {
         return false;
       }
@@ -941,19 +1542,15 @@
         return matches;
       });
 
-      // Sort papers
       visiblePapers = this.sortPapers(visiblePapers);
 
-      // Reorder in DOM
       const container = document.getElementById('papers-container');
       visiblePapers.forEach(paper => container.appendChild(paper));
 
-      // Update count
       const count = visiblePapers.length;
       document.getElementById('results-count').innerHTML =
         `Showing <strong>${count}</strong> paper${count !== 1 ? 's' : ''}`;
 
-      // Show/hide no results
       document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
       container.style.display = count === 0 ? 'none' : 'grid';
     },
@@ -980,7 +1577,6 @@
     }
   };
 
-  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => app.init());
   } else {

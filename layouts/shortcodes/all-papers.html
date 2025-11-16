@@ -1,0 +1,344 @@
+{{- $papers := site.Data.papers.papers -}}
+{{- $categories := site.Data.papers.categories -}}
+
+<div class="all-papers-container">
+  {{- if $papers -}}
+    {{- $papersByCategory := dict -}}
+
+    {{- /* Group papers by their primary category */ -}}
+    {{- range $papers -}}
+      {{- if .categories -}}
+        {{- $primaryCat := index .categories 0 -}}
+        {{- $existing := index $papersByCategory $primaryCat -}}
+        {{- if $existing -}}
+          {{- $papersByCategory = merge $papersByCategory (dict $primaryCat (append $existing .)) -}}
+        {{- else -}}
+          {{- $papersByCategory = merge $papersByCategory (dict $primaryCat (slice .)) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- /* Display papers by category */ -}}
+    {{- range $categories -}}
+      {{- $catPapers := index $papersByCategory .id -}}
+      {{- if $catPapers -}}
+        <div class="category-section" id="{{ .id }}">
+          <h2>
+            <span class="category-icon">{{ .icon }}</span>
+            {{ .name }}
+            <span class="paper-count">({{ len $catPapers }})</span>
+          </h2>
+          <p class="category-description">{{ .description }}</p>
+
+          <div class="papers-grid">
+            {{- $sortedPapers := sort $catPapers "date_added" "desc" -}}
+            {{- range $sortedPapers -}}
+              <div class="paper-card-full">
+                <div class="paper-header">
+                  <h4>
+                    <a href="{{ .links.paper }}" target="_blank" rel="noopener">{{ .title }}</a>
+                    {{- if .starred -}}<span class="star-icon">⭐</span>{{- end -}}
+                  </h4>
+                  <div class="paper-badges">
+                    {{- if .venue -}}<span class="badge venue-badge">{{ .venue }} {{ .year }}</span>{{- end -}}
+                    {{- if .type -}}<span class="badge type-badge">{{ .type }}</span>{{- end -}}
+                  </div>
+                </div>
+
+                <div class="paper-meta">
+                  <span class="authors">
+                    {{- $authors := first 5 .authors -}}
+                    {{- delimit $authors ", " -}}
+                    {{- if gt (len .authors) 5 -}}, et al.{{- end -}}
+                  </span>
+                  {{- if .relevance_score -}}
+                    <span class="relevance-badge">Relevance: {{ printf "%.1f" .relevance_score }}/10</span>
+                  {{- end -}}
+                </div>
+
+                {{- if .ai_summary -}}
+                  <p class="paper-abstract">{{ .ai_summary }}</p>
+                {{- else if .abstract -}}
+                  <p class="paper-abstract">{{ .abstract | truncate 300 }}</p>
+                {{- end -}}
+
+                {{- if .key_contributions -}}
+                  <div class="key-contributions">
+                    <strong>Key Contributions:</strong>
+                    <ul>
+                      {{- range first 3 .key_contributions -}}
+                        <li>{{ . | truncate 150 }}</li>
+                      {{- end -}}
+                    </ul>
+                  </div>
+                {{- end -}}
+
+                <div class="paper-footer">
+                  <div class="paper-links">
+                    {{- if .links.paper -}}
+                      <a href="{{ .links.paper }}" class="btn-link" target="_blank" rel="noopener">📄 Paper</a>
+                    {{- end -}}
+                    {{- if .links.code -}}
+                      <a href="{{ .links.code }}" class="btn-link" target="_blank" rel="noopener">💻 Code</a>
+                    {{- end -}}
+                    {{- if .links.project -}}
+                      <a href="{{ .links.project }}" class="btn-link" target="_blank" rel="noopener">🌐 Project</a>
+                    {{- end -}}
+                    {{- if .links.video -}}
+                      <a href="{{ .links.video }}" class="btn-link" target="_blank" rel="noopener">🎥 Video</a>
+                    {{- end -}}
+                  </div>
+                  <div class="paper-date">
+                    Added: {{ dateFormat "Jan 2, 2006" .date_added }}
+                  </div>
+                </div>
+              </div>
+            {{- end -}}
+          </div>
+        </div>
+      {{- end -}}
+    {{- end -}}
+
+  {{- else -}}
+    <div class="no-papers">
+      <h3>📚 No papers yet!</h3>
+      <p>Papers will appear here once they are approved.</p>
+      <a href="https://github.com/windrise/windrise.github.io/issues?q=is%3Aissue+label%3Apaper-review" target="_blank" class="review-link">
+        🔍 Review Pending Papers
+      </a>
+    </div>
+  {{- end -}}
+</div>
+
+<style>
+.all-papers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-section {
+  margin: 50px 0;
+}
+
+.category-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-icon {
+  font-size: 1.2em;
+}
+
+.paper-count {
+  font-size: 0.6em;
+  color: #666;
+  font-weight: normal;
+}
+
+.category-description {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.05em;
+}
+
+.papers-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.paper-card-full {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.paper-card-full:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+  border-color: #667eea;
+}
+
+.paper-header h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+.paper-header h4 a {
+  color: #2d3748;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.paper-header h4 a:hover {
+  color: #667eea;
+}
+
+.star-icon {
+  margin-left: 8px;
+  font-size: 0.8em;
+}
+
+.paper-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.venue-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.type-badge {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.paper-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.authors {
+  flex: 1;
+}
+
+.relevance-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85em;
+}
+
+.paper-abstract {
+  color: #555;
+  line-height: 1.7;
+  margin: 15px 0;
+}
+
+.key-contributions {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.key-contributions strong {
+  color: #667eea;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.key-contributions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.key-contributions li {
+  margin: 5px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.paper-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.paper-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-link {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.paper-date {
+  font-size: 0.85em;
+  color: #999;
+}
+
+.no-papers {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fafafa;
+  border-radius: 12px;
+}
+
+.no-papers h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.review-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.review-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .paper-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paper-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>

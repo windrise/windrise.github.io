@@ -6,14 +6,14 @@
   {{- if $papers -}}
     {{- /* Group papers by their primary category using scratch */ -}}
     {{- $scratch := newScratch -}}
-    {{- range $papers -}}
-      {{- if .categories -}}
-        {{- $primaryCat := index .categories 0 -}}
+    {{- range $paper := $papers -}}
+      {{- if $paper.categories -}}
+        {{- $primaryCat := index $paper.categories 0 -}}
         {{- $existing := $scratch.Get $primaryCat -}}
         {{- if $existing -}}
-          {{- $scratch.Set $primaryCat (append $existing .) -}}
+          {{- $scratch.Set $primaryCat (append $existing $paper) -}}
         {{- else -}}
-          {{- $scratch.Set $primaryCat (slice .) -}}
+          {{- $scratch.Set $primaryCat (slice $paper) -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}

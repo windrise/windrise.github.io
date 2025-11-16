@@ -4,24 +4,23 @@
 
 <div class="all-papers-container">
   {{- if $papers -}}
-    {{- $papersByCategory := dict -}}
-
-    {{- /* Group papers by their primary category */ -}}
+    {{- /* Group papers by their primary category using scratch */ -}}
+    {{- $scratch := newScratch -}}
     {{- range $papers -}}
       {{- if .categories -}}
         {{- $primaryCat := index .categories 0 -}}
-        {{- $existing := index $papersByCategory $primaryCat -}}
+        {{- $existing := $scratch.Get $primaryCat -}}
         {{- if $existing -}}
-          {{- $papersByCategory = merge $papersByCategory (dict $primaryCat (append $existing .)) -}}
+          {{- $scratch.Set $primaryCat (append $existing .) -}}
         {{- else -}}
-          {{- $papersByCategory = merge $papersByCategory (dict $primaryCat (slice .)) -}}
+          {{- $scratch.Set $primaryCat (slice .) -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
 
     {{- /* Display papers by category */ -}}
     {{- range $categories -}}
-      {{- $catPapers := index $papersByCategory .id -}}
+      {{- $catPapers := $scratch.Get .id -}}
       {{- if $catPapers -}}
         <div class="category-section" id="{{ .id }}">
           <h2>

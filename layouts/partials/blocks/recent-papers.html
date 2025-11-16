@@ -12,7 +12,7 @@
       <p class="section-subtitle">{{ $block.content.subtitle | markdownify }}</p>
     {{- end -}}
 
-    {{- $papers := site.Data.papers.papers -}}
+    {{- $papers := site.Data.papers.papers.papers -}}
     {{- $limit := $block.content.count | default 6 -}}
 
     <div class="recent-papers-container">
@@ -49,7 +49,7 @@
 
             <div class="paper-categories">
               {{- range .categories -}}
-                {{- $cat := index site.Data.papers.categories . -}}
+                {{- $cat := index site.Data.papers.papers.categories . -}}
                 {{- if $cat -}}
                   <span class="category-tag" style="background-color: {{ $cat.color }}20; color: {{ $cat.color }};">
                     {{ $cat.icon }} {{ $cat.name }}

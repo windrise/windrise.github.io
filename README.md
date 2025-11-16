@@ -243,6 +243,108 @@ An AI-powered system that automatically discovers, filters, and manages academic
 
 ### 🚧 Remaining Tasks (Week 3+)
 
+#### Priority 0: Papers Website Enhancement ✅ 核心功能已完成
+
+参考网站：https://mrnerf.github.io/awesome-3D-gaussian-splatting/
+
+**文件：** `layouts/shortcodes/all-papers-enhanced.html`, `static/css/papers-dark-mode.css`
+
+**阶段 1：基础 UI 改进** ✅ 完成
+- ✅ 改进论文卡片布局
+  - 优化卡片样式和悬停效果（translateY(-4px)动画）
+  - 响应式设计优化
+  - 改进的徽章系统（分类、会议、类型、相关性）
+  - 📌 待完成：添加论文缩略图支持（需要 arXiv API 或自动生成）
+
+- ✅ 摘要展开/折叠功能
+  - "Show Abstract" / "Hide Abstract" 按钮
+  - 平滑的展开/收起动画
+  - 切换状态管理（data-expanded）
+
+**阶段 2：搜索和过滤系统** ✅ 完成
+- ✅ 实时搜索功能
+  - 搜索框 UI（带清除按钮 ×）
+  - 实时过滤标题、作者、摘要（基于 data-search-text）
+  - 即时结果更新和计数
+
+- ✅ 高级过滤器
+  - 年份过滤（动态生成所有年份）
+  - 分类/标签多选过滤（带图标和颜色）
+  - 快速过滤器（⭐ Starred、💻 Has Code、🏆 Foundation）
+  - 所有过滤器组合工作
+
+- ✅ 排序功能
+  - 按日期排序（新→旧 / 旧→新）
+  - 按相关性评分排序
+  - 按引用数排序
+  - 按标题字母顺序排序（A-Z）
+
+- ✅ UI 反馈
+  - 结果计数实时更新（"Showing X papers"）
+  - 无结果提示页面
+  - 重置所有过滤器按钮（🔄 Reset All）
+  - 返回顶部按钮（↑，滚动 >300px 时显示）
+
+**阶段 3：高级交互功能**
+- ✅ 深色模式支持
+  - 自动检测系统主题（`@media (prefers-color-scheme: dark)`）
+  - 所有组件完整适配深色模式（Slate 配色）
+  - 优化的深色配色方案（背景 #1e293b，卡片 #0f172a）
+  - 📌 待完成：手动切换开关和 localStorage 主题持久化
+
+- ✅ UI 增强
+  - 返回顶部按钮（带渐变背景和悬停动画）
+  - 📌 待完成：滚动进度指示器（顶部进度条）
+  - 📌 待完成：浮动操作栏（固定在右下角）
+
+- [ ] 选择和分享模式（待实现）
+  - 多选论文功能（checkbox）
+  - 选中论文预览栏（固定在顶部）
+  - 生成分享链接（URL hash）
+  - 导出选中论文（BibTeX, JSON, Markdown）
+
+**阶段 4：阅读笔记系统** 🎯 未来功能
+- [ ] 笔记数据结构设计
+  - 扩展 papers.yaml 添加 notes 字段
+  - 支持 Markdown 格式笔记
+  - 笔记元数据（创建时间、标签、评分）
+  - 笔记与论文关联
+
+- [ ] 笔记编辑界面
+  - 在线 Markdown 编辑器
+  - 实时预览
+  - 自动保存草稿
+  - 笔记模板支持
+
+- [ ] 笔记展示
+  - 论文卡片中显示笔记摘要
+  - 专门的笔记视图页面
+  - 笔记搜索和过滤
+  - 笔记时间线
+
+- [ ] 笔记高级功能
+  - 笔记导出（Markdown, PDF）
+  - 笔记分享
+  - 笔记标签云
+  - 笔记统计仪表板
+
+**阶段 5：可视化增强**
+- [ ] 论文关系图
+  - 基于引用的关系网络
+  - 基于主题的聚类可视化
+  - 交互式探索
+
+- [ ] 统计图表
+  - 每月添加论文趋势
+  - 研究领域分布饼图
+  - 会议/期刊统计
+  - 阅读进度追踪
+
+- [ ] 时间线视图
+  - 论文时间线展示
+  - 研究进展可视化
+  - 里程碑标记
+
 #### Priority 1: Essential Features
 - [x] **Mindmap Generation** ✅ COMPLETED
   - ✅ Auto-generate paper structure visualization
@@ -302,7 +404,38 @@ An AI-powered system that automatically discovers, filters, and manages academic
 
 ### 📝 Next Development Session TODO
 
-When you continue development, start with:
+**Papers Enhancement - 剩余任务：**
+
+1. **选择和分享功能**（优先级：高）⭐ 下一步
+   - 实现论文多选（checkbox）
+   - 创建分享链接生成器（URL hash）
+   - BibTeX 导出功能
+   - JSON/Markdown 导出
+
+2. **论文缩略图支持**（优先级：中）
+   - 从 arXiv 提取第一页作为缩略图
+   - 或使用基于分类的默认图标
+   - 添加懒加载（Intersection Observer）
+
+3. **主题切换增强**（优先级：低）
+   - 手动主题切换按钮
+   - localStorage 主题持久化
+   - 平滑的主题切换动画
+
+4. **阅读笔记系统**（优先级：高，未来功能）
+   - 参考 "阶段 4" 中的详细规划
+   - 扩展 papers.yaml 数据结构
+   - 创建笔记编辑界面（Markdown 编辑器）
+   - 笔记搜索和过滤
+
+5. **可视化增强**（优先级：低）
+   - 论文关系图（基于引用）
+   - 统计图表（Chart.js）
+   - 时间线视图
+
+---
+
+**其他自动化功能 - TODO：**
 
 1. **Local Q&A System** (Priority 2 - Highest Priority)
    ```bash

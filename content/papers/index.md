@@ -4,6 +4,8 @@ type: page
 date: 2025-01-07
 ---
 
+<link rel="stylesheet" href="/css/papers-dark-mode.css">
+
 # 📚 Awesome Papers Collection
 
 A curated collection of papers in my research areas: Medical Imaging, 3D Reconstruction & Gaussian Splatting, updated regularly through automated review workflow.
@@ -33,7 +35,7 @@ A curated collection of papers in my research areas: Medical Imaging, 3D Reconst
 
 ---
 
-{{< all-papers >}}
+{{< all-papers-enhanced >}}
 
 ---
 

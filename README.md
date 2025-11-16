@@ -492,17 +492,23 @@ Priority 1 & 2 features are complete! Next development priorities:
 
 #### **B. Backend Automation Features** (Priority 3)
 
-1. **Enhanced Management Interface**
+1. [x] **Weekly/Monthly Summary Reports** ✅ COMPLETED
+   - ✅ Auto-generate research trend reports
+   - ✅ Top papers of the week/month
+   - ✅ Category distribution and statistics
+   - ✅ Citation growth tracking
+   - ✅ Research highlights and recommendations
+   - ✅ Automated GitHub Actions workflows (weekly & monthly)
+   - ✅ Markdown format reports
+   - Script: `scripts/generate_summary_report.py`
+   - Documentation: `docs/SUMMARY_REPORTS_GUIDE.md`
+   - Future: Email/Slack notifications integration
+
+2. **Enhanced Management Interface**
    - Web-based admin panel (Hugo Admin)
    - CLI tool improvements for batch operations
    - Statistics dashboard
    - Paper tagging and organization
-
-2. **Weekly/Monthly Summary Reports**
-   - Auto-generate research trend reports
-   - Top papers of the week/month
-   - Category breakdowns and visualizations
-   - Email/Slack notifications integration
 
 3. **Paper Recommendations**
    - Recommendation engine based on your collection
@@ -564,6 +570,11 @@ python scripts/query_papers.py -i
 # Start web interface for Q&A
 python scripts/web_qa.py
 
+# Generate summary reports
+python scripts/generate_summary_report.py --period week
+python scripts/generate_summary_report.py --period month
+python scripts/generate_summary_report.py --period both
+
 # Create review issue
 python scripts/create_review_issue.py
 
@@ -580,6 +591,8 @@ Detailed guides available in `/docs/`:
 - `PAPER_AUTOMATION_PLAN.md` - Full automation strategy
 - `PRIORITY1_FEATURES.md` - Mindmap & Citation Tracking guide
 - `QA_SYSTEM_GUIDE.md` - Local Q&A System complete guide
+- `SUMMARY_REPORTS_GUIDE.md` - Weekly/Monthly Reports guide
+- `READING_NOTES_DESIGN.md` - Reading notes system design
 - `TROUBLESHOOTING.md` - Common issues and solutions
 
 ### 🎯 Success Metrics

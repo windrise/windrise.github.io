@@ -1,0 +1,58 @@
+name: Monthly Summary Report
+
+on:
+  schedule:
+    - cron: '0 10 1 * *'  # First day of each month at 10:00 AM UTC (6:00 PM Beijing time)
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Generate monthly report
+        run: |
+          echo "📊 Generating monthly summary report..."
+          python scripts/generate_summary_report.py --period month
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push report
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Report Bot"
+          git config user.email "Report Bot"
+          git add reports/
+          git commit -m "📊 Monthly summary report $(date +%Y-%m-%d)"
+          git push
+
+      - name: Summary
+        run: |
+          echo "✅ Monthly report generated!"
+          if [ -f reports/monthly_report_$(date +%Y-%m-%d).md ]; then
+            echo "📄 Report saved to: reports/monthly_report_$(date +%Y-%m-%d).md"
+          fi

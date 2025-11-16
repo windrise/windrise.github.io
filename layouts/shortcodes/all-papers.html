@@ -4,27 +4,26 @@
 
 <div class="all-papers-container">
   {{- if $papers -}}
-    {{- /* Group papers by their primary category using scratch */ -}}
-    {{- $scratch := newScratch -}}
-    {{- range $paper := $papers -}}
-      {{- if $paper.categories -}}
-        {{- $primaryCat := index $paper.categories 0 -}}
-        {{- $existing := default (slice) ($scratch.Get $primaryCat) -}}
-        {{- $scratch.Set $primaryCat (append $existing $paper) -}}
-      {{- end -}}
-    {{- end -}}
-
     {{- /* Display papers by category */ -}}
-    {{- range $categories -}}
-      {{- $catPapers := $scratch.Get .id -}}
-      {{- if $catPapers -}}
-        <div class="category-section" id="{{ .id }}">
+    {{- range $category := $categories -}}
+      {{- /* Filter papers that belong to this category */ -}}
+      {{- $catPapers := slice -}}
+      {{- range $paper := $papers -}}
+        {{- if $paper.categories -}}
+          {{- $primaryCat := index $paper.categories 0 -}}
+          {{- if eq $primaryCat $category.id -}}
+            {{- $catPapers = $catPapers | append $paper -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt (len $catPapers) 0 -}}
+        <div class="category-section" id="{{ $category.id }}">
           <h2>
-            <span class="category-icon">{{ .icon }}</span>
-            {{ .name }}
+            <span class="category-icon">{{ $category.icon }}</span>
+            {{ $category.name }}
             <span class="paper-count">({{ len $catPapers }})</span>
           </h2>
-          <p class="category-description">{{ .description }}</p>
+          <p class="category-description">{{ $category.description }}</p>
 
           <div class="papers-grid">
             {{- $sortedPapers := sort $catPapers "date_added" "desc" -}}

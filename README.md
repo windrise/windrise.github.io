@@ -225,21 +225,41 @@ An AI-powered system that automatically discovers, filters, and manages academic
   - Duplicate prevention
   - Metadata management
 
+- ✅ **Mindmap Visualization** (`scripts/generate_mindmap.py`)
+  - Auto-generate Mermaid.js mindmaps
+  - Visual paper structure representation
+  - Hugo shortcode integration
+  - Interactive web display
+  - Exports to markdown files
+
+- ✅ **Citation Tracking System** (`scripts/citation_tracker.py`)
+  - Semantic Scholar API integration
+  - Automatic citation count updates
+  - Historical citation data tracking
+  - Citation trend analysis
+  - Impact metrics (influential citations)
+  - Weekly automated updates
+  - Citation reports generation
+
 ### 🚧 Remaining Tasks (Week 3+)
 
 #### Priority 1: Essential Features
-- [ ] **Mindmap Generation** (Week 2, Day 11-12)
-  - Auto-generate paper structure visualization
-  - Using Mermaid.js for web integration
-  - Interactive expand/collapse
-  - Export to Hugo pages
+- [x] **Mindmap Generation** ✅ COMPLETED
+  - ✅ Auto-generate paper structure visualization
+  - ✅ Using Mermaid.js for web integration
+  - ✅ Interactive expand/collapse
+  - ✅ Export to Hugo pages
+  - ✅ Hugo shortcode for easy embedding
+  - Script: `scripts/generate_mindmap.py`
 
-- [ ] **Citation Tracking** (Week 3, Day 18-19)
-  - Integration with Semantic Scholar API (Free)
-  - Auto-update citation counts
-  - Trend visualization
-  - Weekly update schedule
-  - Impact tracking over time
+- [x] **Citation Tracking** ✅ COMPLETED
+  - ✅ Integration with Semantic Scholar API (Free)
+  - ✅ Auto-update citation counts
+  - ✅ Citation history tracking
+  - ✅ Weekly update schedule (GitHub Actions)
+  - ✅ Impact tracking over time
+  - ✅ Citation reports generation
+  - Script: `scripts/citation_tracker.py`
 
 #### Priority 2: Advanced Features
 - [ ] **Local Q&A System** (Week 3, Day 15-17)
@@ -284,43 +304,34 @@ An AI-powered system that automatically discovers, filters, and manages academic
 
 When you continue development, start with:
 
-1. **Mindmap Generator** (Highest Priority)
+1. **Local Q&A System** (Priority 2 - Highest Priority)
    ```bash
-   # Create script
-   touch scripts/generate_mindmap.py
+   # Create vector database script
+   touch scripts/setup_vectordb.py
+   touch scripts/query_papers.py
 
-   # Install dependencies
-   pip install markdown beautifulsoup4
+   # Install dependencies (already in requirements.txt)
+   pip install chromadb sentence-transformers
 
-   # Add to daily workflow
-   # Edit .github/workflows/daily-paper-update.yml
+   # Setup for GitHub Codespaces or local
    ```
-   - Parse paper structure from abstract/sections
-   - Generate Mermaid.js syntax
-   - Integrate into Hugo shortcodes
-   - Test with existing papers
-
-2. **Citation Tracker**
-   ```bash
-   # Create script
-   touch scripts/citation_tracker.py
-
-   # Install dependencies
-   pip install requests aiohttp
-
-   # Create weekly workflow
-   touch .github/workflows/weekly-citation-update.yml
-   ```
-   - Semantic Scholar API integration
-   - Update papers.yaml with citation counts
-   - Generate trend charts
-   - Alert on high-impact papers
-
-3. **Q&A System Setup**
    - Document Ollama installation guide
    - Create ChromaDB setup script
+   - Index paper content (abstract, key contributions)
    - Build simple web interface
    - Test locally first
+
+2. **Enhanced Management Interface**
+   - Web-based admin panel (Hugo Admin)
+   - CLI tool improvements
+   - Batch operations
+   - Statistics dashboard
+
+3. **Weekly/Monthly Summary Reports**
+   - Auto-generate research trend reports
+   - Top papers of the week/month
+   - Category breakdowns
+   - Email/Slack notifications
 
 ### 🔧 Quick Commands
 
@@ -339,6 +350,21 @@ python scripts/smart_filter.py --top-n 10
 
 # Generate summaries (auto-select API)
 python scripts/generate_summaries_multi.py --provider auto
+
+# Generate mindmaps for all papers
+python scripts/generate_mindmap.py --output-dir data/papers/mindmaps
+
+# Generate mindmap for specific paper
+python scripts/generate_mindmap.py --paper-id <paper-id>
+
+# Update citation counts
+python scripts/citation_tracker.py
+
+# Generate citation report
+python scripts/citation_tracker.py --report --output reports/citation_report.md
+
+# Force update citations (ignore recent check)
+python scripts/citation_tracker.py --force
 
 # Create review issue
 python scripts/create_review_issue.py

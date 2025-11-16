@@ -1,0 +1,73 @@
+name: Weekly Citation Update
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Run every Monday at 2 AM UTC (10 AM Beijing time)
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Update citation counts
+        run: |
+          echo "📊 Updating citation counts from Semantic Scholar..."
+          python scripts/citation_tracker.py
+
+      - name: Generate citation report
+        run: |
+          echo "📈 Generating citation report..."
+          python scripts/citation_tracker.py --report --output reports/citation_report_$(date +%Y-%m-%d).md
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if there are changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Citation Bot"
+          git config user.email "bot@windrise.github.io"
+          git add data/papers/papers.yaml reports/
+          git commit -m "📊 Weekly citation update $(date +%Y-%m-%d)"
+          git push
+
+      - name: Create issue with high-impact papers
+        if: steps.check_changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📢 Checking for high-impact papers..."
+          # This will be implemented in the next iteration
+          # For now, just show the report summary
+          head -20 reports/citation_report_$(date +%Y-%m-%d).md
+
+      - name: Summary
+        run: |
+          echo "✅ Weekly citation update complete!"
+          if [ -f reports/citation_report_$(date +%Y-%m-%d).md ]; then
+            echo "📄 Report saved to: reports/citation_report_$(date +%Y-%m-%d).md"
+          fi

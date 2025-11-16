@@ -37,15 +37,15 @@ sections:
         color: ''
       spacing:
         padding: ['20px', '0', '0', '0']
-  - block: recent-papers
-    content:
-      title: '🎯 Latest Reviewed Papers'
-      subtitle: 'Recently approved papers from the collection'
-      count: 6
-    design:
-      columns: '1'
-      spacing:
-        padding: ['0', '0', '0', '0']
+  # - block: recent-papers
+  #   content:
+  #     title: '🎯 Latest Reviewed Papers'
+  #     subtitle: 'Recently approved papers from the collection'
+  #     count: 6
+  #   design:
+  #     columns: '1'
+  #     spacing:
+  #       padding: ['0', '0', '0', '0']
   - block: about.biography
     id: about
     content:

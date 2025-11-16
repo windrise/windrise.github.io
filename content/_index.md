@@ -37,29 +37,15 @@ sections:
         color: ''
       spacing:
         padding: ['20px', '0', '0', '0']
-  - block: markdown
+  - block: recent-papers
     content:
       title: '🎯 Latest Reviewed Papers'
       subtitle: 'Recently approved papers from the collection'
-      text: |
-        <div style="margin: 20px 0;">
-          {{< recent-papers limit="6" >}}
-        </div>
-
-        <div style="text-align: center; margin: 30px 0;">
-          <a href="/papers/" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s;">
-            📚 View All Papers →
-          </a>
-          <a href="https://github.com/windrise/windrise.github.io/issues?q=is%3Aissue+label%3Apaper-review" target="_blank" rel="noopener" style="display: inline-block; padding: 12px 30px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; margin-left: 15px; transition: all 0.3s;">
-            🔍 Review Pending Papers →
-          </a>
-        </div>
+      count: 6
     design:
       columns: '1'
-      background:
-        color: '#fafafa'
       spacing:
-        padding: ['40px', '0', '40px', '0']
+        padding: ['0', '0', '0', '0']
   - block: about.biography
     id: about
     content:

@@ -1,0 +1,242 @@
+{{/* Recent Papers Widget */}}
+{{ $block := .block }}
+{{ $page := .page }}
+
+<div class="recent-papers-section">
+  <div class="container">
+    {{- if $block.content.title -}}
+      <h2 class="section-heading">{{ $block.content.title | markdownify }}</h2>
+    {{- end -}}
+
+    {{- if $block.content.subtitle -}}
+      <p class="section-subtitle">{{ $block.content.subtitle | markdownify }}</p>
+    {{- end -}}
+
+    {{- $papers := site.Data.papers.papers -}}
+    {{- $limit := $block.content.count | default 6 -}}
+
+    <div class="recent-papers-container">
+      {{- if $papers -}}
+        {{- $sortedPapers := sort $papers "date_added" "desc" -}}
+        {{- range first $limit $sortedPapers -}}
+          <div class="paper-card">
+            <div class="paper-header">
+              <h4><a href="{{ .links.paper }}" target="_blank" rel="noopener">{{ .title }}</a></h4>
+              <div class="paper-badges">
+                {{- if .venue -}}<span class="paper-badge venue">{{ .venue }} {{ .year }}</span>{{- end -}}
+                {{- if .type -}}<span class="paper-badge type">{{ .type }}</span>{{- end -}}
+                {{- if .starred -}}<span class="paper-badge starred">⭐ Starred</span>{{- end -}}
+              </div>
+            </div>
+
+            <div class="paper-meta">
+              <span class="authors">
+                {{- $authors := first 3 .authors -}}
+                {{- delimit $authors ", " -}}
+                {{- if gt (len .authors) 3 -}}, et al.{{- end -}}
+              </span>
+              <span class="date">{{ dateFormat "2006-01" .date_added }}</span>
+              {{- if .relevance_score -}}
+                <span class="relevance">Score: {{ printf "%.1f" .relevance_score }}</span>
+              {{- end -}}
+            </div>
+
+            {{- if .ai_summary -}}
+            <p class="paper-abstract">{{ .ai_summary | truncate 200 }}</p>
+            {{- else if .abstract -}}
+            <p class="paper-abstract">{{ .abstract | truncate 200 }}</p>
+            {{- end -}}
+
+            <div class="paper-categories">
+              {{- range .categories -}}
+                {{- $cat := index site.Data.papers.categories . -}}
+                {{- if $cat -}}
+                  <span class="category-tag" style="background-color: {{ $cat.color }}20; color: {{ $cat.color }};">
+                    {{ $cat.icon }} {{ $cat.name }}
+                  </span>
+                {{- end -}}
+              {{- end -}}
+            </div>
+
+            <div class="paper-links">
+              {{- if .links.paper -}}
+                <a href="{{ .links.paper }}" class="paper-link" target="_blank" rel="noopener">📄 Paper</a>
+              {{- end -}}
+              {{- if .links.code -}}
+                <a href="{{ .links.code }}" class="paper-link" target="_blank" rel="noopener">💻 Code</a>
+              {{- end -}}
+              {{- if .links.project -}}
+                <a href="{{ .links.project }}" class="paper-link" target="_blank" rel="noopener">🌐 Project</a>
+              {{- end -}}
+            </div>
+          </div>
+        {{- end -}}
+      {{- else -}}
+        <div class="no-papers">
+          <p>📚 No papers yet. Start by reviewing pending papers!</p>
+        </div>
+      {{- end -}}
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="/papers/" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s;">
+        📚 View All Papers →
+      </a>
+      <a href="https://github.com/windrise/windrise.github.io/issues?q=is%3Aissue+label%3Apaper-review" target="_blank" rel="noopener" style="display: inline-block; padding: 12px 30px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; margin-left: 15px; transition: all 0.3s;">
+        🔍 Review Pending Papers →
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.recent-papers-section {
+  padding: 60px 0;
+  background: #fafafa;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: #2d3748;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+.recent-papers-container {
+  margin: 20px 0;
+}
+
+.paper-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.paper-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.paper-header {
+  margin-bottom: 12px;
+}
+
+.paper-header h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.paper-header h4 a {
+  color: #2d3748;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.paper-header h4 a:hover {
+  color: #667eea;
+}
+
+.paper-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.paper-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.paper-badge.venue {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.paper-badge.type {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.paper-badge.starred {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.paper-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.paper-abstract {
+  color: #555;
+  line-height: 1.6;
+  margin: 12px 0;
+  font-size: 0.9em;
+}
+
+.paper-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.category-tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.paper-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.paper-link {
+  padding: 6px 14px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85em;
+  color: #333;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.paper-link:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.no-papers {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  color: #999;
+}
+</style>

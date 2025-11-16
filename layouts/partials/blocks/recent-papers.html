@@ -48,9 +48,8 @@
             {{- end -}}
 
             <div class="paper-categories">
-              {{- range .categories -}}
-                {{- $cat := index site.Data.papers.papers.categories . -}}
-                {{- if $cat -}}
+              {{- range $catID := .categories -}}
+                {{- range $cat := where site.Data.papers.papers.categories "id" $catID -}}
                   <span class="category-tag" style="background-color: {{ $cat.color }}20; color: {{ $cat.color }};">
                     {{ $cat.icon }} {{ $cat.name }}
                   </span>

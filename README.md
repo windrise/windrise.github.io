@@ -352,7 +352,7 @@ python scripts/smart_filter.py --top-n 10
 python scripts/generate_summaries_multi.py --provider auto
 
 # Generate mindmaps for all papers
-python scripts/generate_mindmap.py --output-dir data/papers/mindmaps
+python scripts/generate_mindmap.py
 
 # Generate mindmap for specific paper
 python scripts/generate_mindmap.py --paper-id <paper-id>

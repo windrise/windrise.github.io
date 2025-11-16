@@ -9,10 +9,10 @@ date: 2025-01-07
 A curated collection of papers in my research areas: Medical Imaging, 3D Reconstruction & Gaussian Splatting, updated regularly through automated review workflow.
 
 <div class="stats-bar">
-  <span class="stat-item">📚 Total Papers: <strong>{{ len site.Data.papers.papers }}</strong></span>
-  <span class="stat-item">🗂️ Categories: <strong>{{ len site.Data.papers.categories }}</strong></span>
-  <span class="stat-item">⭐ Starred: <strong>{{ len (where site.Data.papers.papers "starred" true) }}</strong></span>
-  <span class="stat-item">🕐 Last Updated: <strong>{{ site.Data.papers.metadata.last_updated }}</strong></span>
+  <span class="stat-item">📚 Total Papers: <strong>{{ len site.Data.papers.papers.papers }}</strong></span>
+  <span class="stat-item">🗂️ Categories: <strong>{{ len site.Data.papers.papers.categories }}</strong></span>
+  <span class="stat-item">⭐ Starred: <strong>{{ len (where site.Data.papers.papers.papers "starred" true) }}</strong></span>
+  <span class="stat-item">🕐 Last Updated: <strong>{{ site.Data.papers.papers.metadata.last_updated }}</strong></span>
 </div>
 
 ---
@@ -20,7 +20,7 @@ A curated collection of papers in my research areas: Medical Imaging, 3D Reconst
 ## 🔍 Quick Navigation
 
 <div class="category-nav">
-{{- range site.Data.papers.categories -}}
+{{- range site.Data.papers.papers.categories -}}
   <a href="#{{ .id }}" class="category-badge" style="background-color: {{ .color }};">{{ .icon }} {{ .name }}</a>
 {{- end -}}
 </div>

@@ -533,11 +533,16 @@ Priority 1 & 2 features are complete! Next development priorities:
    - Script: `scripts/analyze_collection.py`
    - Documentation: `docs/ADVANCED_TOOLS_GUIDE.md`
 
-5. **Optional LLM Integration** (Future)
-   - Ollama + Llama 3.1 for natural language Q&A
-   - Generate summaries from multiple papers
-   - Compare and contrast papers automatically
-   - Chat interface for research questions
+5. [x] **LLM-Enhanced Q&A** ✅ COMPLETED
+   - ✅ Natural language question answering
+   - ✅ Uses Gemini or ZhipuAI APIs (你已配置的 API)
+   - ✅ Paper comparison with AI analysis
+   - ✅ Auto-generate literature reviews
+   - ✅ Interactive chat interface
+   - ✅ Context-aware answers from your collection
+   - ✅ Source citations with relevance scores
+   - Script: `scripts/llm_qa.py`
+   - Documentation: `docs/LLM_QA_GUIDE.md`
 
 ### 🔧 Quick Commands
 
@@ -587,6 +592,12 @@ python scripts/query_papers.py -i
 # Start web interface for Q&A
 python scripts/web_qa.py
 
+# LLM-enhanced Q&A (requires API key)
+python scripts/llm_qa.py -i  # Interactive chat mode
+python scripts/llm_qa.py -q "your question"  # Ask specific question
+python scripts/llm_qa.py --compare paper-1 paper-2  # Compare papers
+python scripts/llm_qa.py --review "topic"  # Generate literature review
+
 # Generate summary reports
 python scripts/generate_summary_report.py --period week
 python scripts/generate_summary_report.py --period month
@@ -624,6 +635,7 @@ Detailed guides available in `/docs/`:
 - `PAPER_AUTOMATION_PLAN.md` - Full automation strategy
 - `PRIORITY1_FEATURES.md` - Mindmap & Citation Tracking guide
 - `QA_SYSTEM_GUIDE.md` - Local Q&A System complete guide
+- `LLM_QA_GUIDE.md` - LLM-Enhanced Q&A with Gemini/ZhipuAI
 - `SUMMARY_REPORTS_GUIDE.md` - Weekly/Monthly Reports guide
 - `ADVANCED_TOOLS_GUIDE.md` - Recommendations, Management & Analysis tools
 - `READING_NOTES_DESIGN.md` - Reading notes system design

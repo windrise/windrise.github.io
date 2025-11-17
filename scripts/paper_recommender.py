@@ -13,6 +13,7 @@ This script provides intelligent paper recommendations based on:
 import os
 import sys
 import yaml
+import json
 import argparse
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
@@ -498,6 +499,104 @@ class PaperRecommender:
 
         return report
 
+    def generate_all_recommendations_json(self, output_path: Optional[str] = None,
+                                         max_per_paper: int = 5) -> Dict:
+        """
+        Generate recommendations for all papers in JSON format for web UI.
+
+        Args:
+            output_path: Optional path to save JSON file
+            max_per_paper: Maximum recommendations per paper per category
+
+        Returns:
+            Dictionary mapping paper IDs to their recommendations
+        """
+        all_recommendations = {}
+
+        print(f"Generating recommendations for {len(self.papers)} papers...")
+
+        for i, paper in enumerate(self.papers, 1):
+            paper_id = paper.get('id')
+            if not paper_id:
+                continue
+
+            if i % 5 == 0:
+                print(f"  Progress: {i}/{len(self.papers)}")
+
+            try:
+                # Get recommendations for this paper
+                recs = self.recommend_based_on_paper(paper_id, n=max_per_paper)
+
+                # Simplify structure for JSON
+                simplified_recs = {
+                    'source_paper': {
+                        'id': paper_id,
+                        'title': paper.get('title'),
+                        'year': paper.get('year')
+                    },
+                    'similar_by_content': [
+                        {
+                            'id': p.get('id'),
+                            'title': p.get('title'),
+                            'year': p.get('year'),
+                            'venue': p.get('venue'),
+                            'similarity': p.get('similarity', 0),
+                            'authors': p.get('authors', [])[:3]
+                        }
+                        for p in recs.get('similar_by_content', [])[:max_per_paper]
+                    ],
+                    'same_authors': [
+                        {
+                            'id': p.get('id'),
+                            'title': p.get('title'),
+                            'year': p.get('year'),
+                            'venue': p.get('venue'),
+                            'authors': p.get('authors', [])[:3]
+                        }
+                        for p in recs.get('same_authors', [])[:max_per_paper]
+                    ],
+                    'same_venue': [
+                        {
+                            'id': p.get('id'),
+                            'title': p.get('title'),
+                            'year': p.get('year')
+                        }
+                        for p in recs.get('same_venue', [])[:max_per_paper]
+                    ],
+                    'same_categories': [
+                        {
+                            'id': p.get('id'),
+                            'title': p.get('title'),
+                            'year': p.get('year'),
+                            'venue': p.get('venue')
+                        }
+                        for p in recs.get('same_categories', [])[:max_per_paper]
+                    ]
+                }
+
+                all_recommendations[paper_id] = simplified_recs
+
+            except Exception as e:
+                print(f"  Warning: Failed to generate recommendations for {paper_id}: {e}")
+                continue
+
+        # Add metadata
+        result = {
+            'generated_at': datetime.now().isoformat(),
+            'total_papers': len(self.papers),
+            'papers_with_recommendations': len(all_recommendations),
+            'has_vectordb': self.query_engine is not None,
+            'recommendations': all_recommendations
+        }
+
+        if output_path:
+            os.makedirs(os.path.dirname(output_path) or '.', exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(result, f, indent=2, ensure_ascii=False)
+            print(f"\n✅ Recommendations saved to: {output_path}")
+
+        return result
+
 
 def print_recommendations(recs: Dict, max_per_section: int = 5):
     """Print recommendations in a readable format."""
@@ -588,8 +687,13 @@ def main():
         help='Generate full recommendations report'
     )
     parser.add_argument(
+        '--export-json',
+        action='store_true',
+        help='Export all recommendations as JSON for web UI'
+    )
+    parser.add_argument(
         '--output',
-        help='Output file for report'
+        help='Output file for report or JSON export'
     )
 
     args = parser.parse_args()
@@ -651,6 +755,11 @@ def main():
         if not args.output:
             print(report)
 
+    elif args.export_json:
+        result = recommender.generate_all_recommendations_json(output_path=args.output)
+        if not args.output:
+            print(json.dumps(result, indent=2, ensure_ascii=False))
+
     else:
         parser.print_help()
         print("\nExamples:")
@@ -658,6 +767,7 @@ def main():
         print("  python scripts/paper_recommender.py --track-author 'John Doe'")
         print("  python scripts/paper_recommender.py --trending")
         print("  python scripts/paper_recommender.py --report --output reports/recommendations.md")
+        print("  python scripts/paper_recommender.py --export-json --output static/data/recommendations.json")
 
     return 0
 

@@ -9,6 +9,7 @@ and charts (using ASCII art and Mermaid diagrams for web viewing).
 import os
 import sys
 import yaml
+import json
 import argparse
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -417,6 +418,167 @@ class CollectionAnalyzer:
 
         return report
 
+    def generate_json_data(self, output_path: Optional[str] = None) -> Dict:
+        """
+        Generate analysis data in JSON format for web UI.
+
+        Args:
+            output_path: Optional path to save JSON file
+
+        Returns:
+            Dictionary with all analysis data
+        """
+        # Overview statistics
+        years = [p.get('year') for p in self.papers if p.get('year')]
+        citations = [p.get('citation_count', 0) for p in self.papers]
+        all_authors = []
+        for paper in self.papers:
+            all_authors.extend(paper.get('authors', []))
+        venues = {p.get('venue') for p in self.papers if p.get('venue')}
+        starred = sum(1 for p in self.papers if p.get('starred', False))
+
+        overview = {
+            'total_papers': len(self.papers),
+            'year_range': {
+                'min': min(years) if years else None,
+                'max': max(years) if years else None
+            },
+            'citations': {
+                'total': sum(citations),
+                'average': sum(citations) / len(citations) if citations else 0,
+                'max': max(citations) if citations else 0,
+                'min': min(citations) if citations else 0
+            },
+            'unique_authors': len(set(all_authors)),
+            'unique_venues': len(venues),
+            'starred_papers': starred,
+            'generated_at': datetime.now().isoformat()
+        }
+
+        # Category distribution
+        cat_counts = Counter()
+        for paper in self.papers:
+            for cat in paper.get('categories', []):
+                cat_counts[cat] += 1
+
+        categories_data = []
+        for cat_id, count in cat_counts.most_common():
+            cat_name = cat_id
+            cat_color = '#667eea'
+            for cat in self.categories:
+                if cat['id'] == cat_id:
+                    cat_name = cat['name']
+                    cat_color = cat.get('color', '#667eea')
+                    break
+            categories_data.append({
+                'id': cat_id,
+                'name': cat_name,
+                'count': count,
+                'color': cat_color
+            })
+
+        # Timeline data
+        year_counts = Counter(p.get('year') for p in self.papers if p.get('year'))
+        timeline_data = [
+            {'year': year, 'count': count}
+            for year, count in sorted(year_counts.items())
+        ]
+
+        # Venue distribution
+        venue_counts = Counter(p.get('venue') for p in self.papers if p.get('venue'))
+        venues_data = [
+            {'name': venue, 'count': count}
+            for venue, count in venue_counts.most_common(15)
+        ]
+
+        # Citation distribution
+        citation_buckets = {
+            '0': 0,
+            '1-10': 0,
+            '11-50': 0,
+            '51-100': 0,
+            '101-500': 0,
+            '500+': 0
+        }
+        for cit in citations:
+            if cit == 0:
+                citation_buckets['0'] += 1
+            elif cit <= 10:
+                citation_buckets['1-10'] += 1
+            elif cit <= 50:
+                citation_buckets['11-50'] += 1
+            elif cit <= 100:
+                citation_buckets['51-100'] += 1
+            elif cit <= 500:
+                citation_buckets['101-500'] += 1
+            else:
+                citation_buckets['500+'] += 1
+
+        citations_data = [
+            {'range': k, 'count': v}
+            for k, v in citation_buckets.items()
+        ]
+
+        # Author statistics
+        author_counts = Counter()
+        author_citations = defaultdict(int)
+        for paper in self.papers:
+            paper_citations = paper.get('citation_count', 0)
+            for author in paper.get('authors', []):
+                author_counts[author] += 1
+                author_citations[author] += paper_citations
+
+        authors_data = {
+            'by_papers': [
+                {'name': author, 'count': count}
+                for author, count in author_counts.most_common(15)
+            ],
+            'by_citations': [
+                {'name': author, 'citations': cits}
+                for author, cits in sorted(
+                    author_citations.items(),
+                    key=lambda x: x[1],
+                    reverse=True
+                )[:15]
+            ]
+        }
+
+        # Top papers
+        top_papers = [
+            {
+                'id': p.get('id'),
+                'title': p.get('title'),
+                'year': p.get('year'),
+                'citations': p.get('citation_count', 0),
+                'venue': p.get('venue'),
+                'authors': p.get('authors', [])[:3]  # First 3 authors
+            }
+            for p in sorted(
+                self.papers,
+                key=lambda x: x.get('citation_count', 0),
+                reverse=True
+            )[:10]
+        ]
+
+        # Combine all data
+        json_data = {
+            'overview': overview,
+            'categories': categories_data,
+            'timeline': timeline_data,
+            'venues': venues_data,
+            'citations': citations_data,
+            'authors': authors_data,
+            'top_papers': top_papers
+        }
+
+        if output_path:
+            os.makedirs(os.path.dirname(output_path) or '.', exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(json_data, f, indent=2, ensure_ascii=False)
+            print(f"JSON data saved to: {output_path}")
+
+        return json_data
+
 
 def main():
     """Main entry point."""
@@ -438,6 +600,11 @@ def main():
         default='full',
         help='Type of analysis to perform'
     )
+    parser.add_argument(
+        '--json',
+        action='store_true',
+        help='Export analysis data as JSON for web UI'
+    )
 
     args = parser.parse_args()
 
@@ -449,22 +616,31 @@ def main():
     # Initialize analyzer
     analyzer = CollectionAnalyzer(papers_yaml_path=args.papers_yaml)
 
+    # Export JSON data for web UI
+    if args.json:
+        result = analyzer.generate_json_data(output_path=args.output)
+        if not args.output:
+            print(json.dumps(result, indent=2, ensure_ascii=False))
     # Perform analysis
-    if args.analysis == 'categories':
+    elif args.analysis == 'categories':
         result = analyzer.analyze_categories()
+        print(result)
     elif args.analysis == 'timeline':
         result = analyzer.analyze_timeline()
+        print(result)
     elif args.analysis == 'venues':
         result = analyzer.analyze_venues()
+        print(result)
     elif args.analysis == 'citations':
         result = analyzer.analyze_citations()
+        print(result)
     elif args.analysis == 'authors':
         result = analyzer.analyze_authors()
+        print(result)
     else:  # full
         result = analyzer.generate_full_report(output_path=args.output)
-
-    if not args.output or args.analysis != 'full':
-        print(result)
+        if not args.output:
+            print(result)
 
     return 0
 

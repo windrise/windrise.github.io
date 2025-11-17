@@ -1,0 +1,297 @@
+{{/*
+  Paper Recommendations Shortcode
+  Usage: {{< paper-recommendations paper-id="your-paper-id" >}}
+*/}}
+
+{{ $paperId := .Get "paper-id" }}
+
+<div class="paper-recommendations" id="recommendations-{{ $paperId }}">
+  <h3>📚 Recommended Papers</h3>
+
+  <div id="rec-loading-{{ $paperId }}" class="rec-loading">
+    <div class="loading-spinner"></div>
+    <p>Loading recommendations...</p>
+  </div>
+
+  <div id="rec-content-{{ $paperId }}" class="rec-content" style="display: none;">
+    <!-- Content will be loaded via JavaScript -->
+  </div>
+
+  <div id="rec-error-{{ $paperId }}" class="rec-error" style="display: none;">
+    <p>Recommendations not available at this time.</p>
+  </div>
+</div>
+
+<style>
+.paper-recommendations {
+  margin: 40px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea08 0%, #764ba208 100%);
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.paper-recommendations h3 {
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+}
+
+.rec-loading {
+  text-align: center;
+  padding: 30px;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rec-loading p {
+  margin-top: 15px;
+  color: #666;
+}
+
+.rec-error {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.rec-section {
+  margin-bottom: 30px;
+}
+
+.rec-section h4 {
+  color: #667eea;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rec-item {
+  background: white;
+  border-left: 3px solid #667eea;
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.rec-item:hover {
+  background: #f9f9f9;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.rec-item-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+}
+
+.rec-item-meta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.rec-item-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.similarity-score {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .paper-recommendations {
+    background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+    border-color: #444;
+  }
+
+  .rec-item {
+    background: #2a2a2a;
+    border-color: #667eea;
+  }
+
+  .rec-item:hover {
+    background: #333;
+  }
+
+  .rec-item-title {
+    color: #e0e0e0;
+  }
+
+  .rec-item-meta {
+    color: #aaa;
+  }
+}
+</style>
+
+<script>
+(function() {
+  const paperId = '{{ $paperId }}';
+
+  async function loadRecommendations() {
+    try {
+      const response = await fetch('/data/recommendations.json');
+      const data = await response.json();
+
+      const recommendations = data.recommendations[paperId];
+
+      if (!recommendations) {
+        showError();
+        return;
+      }
+
+      renderRecommendations(recommendations);
+
+    } catch (error) {
+      console.error('Error loading recommendations:', error);
+      showError();
+    }
+  }
+
+  function showError() {
+    document.getElementById('rec-loading-' + paperId).style.display = 'none';
+    document.getElementById('rec-error-' + paperId).style.display = 'block';
+  }
+
+  function renderRecommendations(recs) {
+    const container = document.getElementById('rec-content-' + paperId);
+
+    let html = '';
+
+    // Similar by content
+    if (recs.similar_by_content && recs.similar_by_content.length > 0) {
+      html += `
+        <div class="rec-section">
+          <h4>🔍 Similar Papers (by content)</h4>
+          <div class="rec-list">
+            ${recs.similar_by_content.map(paper => `
+              <div class="rec-item" onclick="location.href='#${paper.id}'">
+                <div class="rec-item-title">${paper.title}</div>
+                <div class="rec-item-meta">
+                  <span class="similarity-score">${(paper.similarity * 100).toFixed(0)}% similar</span>
+                  ${paper.year ? `<span>📅 ${paper.year}</span>` : ''}
+                  ${paper.venue ? `<span>🏛️ ${paper.venue}</span>` : ''}
+                  ${paper.authors && paper.authors.length > 0 ?
+                    `<span>👥 ${paper.authors.join(', ')}</span>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Same authors
+    if (recs.same_authors && recs.same_authors.length > 0) {
+      html += `
+        <div class="rec-section">
+          <h4>👥 More from Same Authors</h4>
+          <div class="rec-list">
+            ${recs.same_authors.map(paper => `
+              <div class="rec-item" onclick="location.href='#${paper.id}'">
+                <div class="rec-item-title">${paper.title}</div>
+                <div class="rec-item-meta">
+                  ${paper.year ? `<span>📅 ${paper.year}</span>` : ''}
+                  ${paper.venue ? `<span>🏛️ ${paper.venue}</span>` : ''}
+                  ${paper.authors && paper.authors.length > 0 ?
+                    `<span>👥 ${paper.authors.join(', ')}</span>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Same venue
+    if (recs.same_venue && recs.same_venue.length > 0) {
+      html += `
+        <div class="rec-section">
+          <h4>🏛️ More from Same Venue</h4>
+          <div class="rec-list">
+            ${recs.same_venue.map(paper => `
+              <div class="rec-item" onclick="location.href='#${paper.id}'">
+                <div class="rec-item-title">${paper.title}</div>
+                <div class="rec-item-meta">
+                  ${paper.year ? `<span>📅 ${paper.year}</span>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // Same categories
+    if (recs.same_categories && recs.same_categories.length > 0) {
+      html += `
+        <div class="rec-section">
+          <h4>📂 Related Papers (same category)</h4>
+          <div class="rec-list">
+            ${recs.same_categories.map(paper => `
+              <div class="rec-item" onclick="location.href='#${paper.id}'">
+                <div class="rec-item-title">${paper.title}</div>
+                <div class="rec-item-meta">
+                  ${paper.year ? `<span>📅 ${paper.year}</span>` : ''}
+                  ${paper.venue ? `<span>🏛️ ${paper.venue}</span>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    if (html === '') {
+      showError();
+      return;
+    }
+
+    container.innerHTML = html;
+    document.getElementById('rec-loading-' + paperId).style.display = 'none';
+    container.style.display = 'block';
+  }
+
+  // Load recommendations when page is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadRecommendations);
+  } else {
+    loadRecommendations();
+  }
+})();
+</script>

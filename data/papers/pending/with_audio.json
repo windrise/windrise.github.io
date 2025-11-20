@@ -3,37 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2511.13571v1",
-      "title": "Opt3DGS: Optimizing 3D Gaussian Splatting with Adaptive Exploration and Curvature-Aware Exploitation",
+      "id": "2511.14633v1",
+      "title": "SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction",
       "authors": [
-        "Ziyang Huang",
-        "Jiagang Chen",
-        "Jin Liu",
-        "Shunping Ji"
+        "Meiying Gu",
+        "Jiawei Zhang",
+        "Jiahe Li",
+        "Xiaohan Yu",
+        "Haonan Luo",
+        "Jin Zheng",
+        "Xiao Bai"
       ],
-      "abstract": "3D Gaussian Splatting (3DGS) has emerged as a leading framework for novel view synthesis, yet its core optimization challenges remain underexplored. We identify two key issues in 3DGS optimization: entrapment in suboptimal local optima and insufficient convergence quality. To address these, we propose Opt3DGS, a robust framework that enhances 3DGS through a two-stage optimization process of adaptive exploration and curvature-guided exploitation. In the exploration phase, an Adaptive Weighted Stochastic Gradient Langevin Dynamics (SGLD) method enhances global search to escape local optima. In the exploitation phase, a Local Quasi-Newton Direction-guided Adam optimizer leverages curvature information for precise and efficient convergence. Extensive experiments on diverse benchmark datasets demonstrate that Opt3DGS achieves state-of-the-art rendering quality by refining the 3DGS optimization process without modifying its underlying representation.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
+      "abstract": "Recent advances in optimizing Gaussian Splatting for scene geometry have enabled efficient reconstruction of detailed surfaces from images. However, when input views are sparse, such optimization is prone to overfitting, leading to suboptimal reconstruction quality. Existing approaches address this challenge by employing flattened Gaussian primitives to better fit surface geometry, combined with depth regularization to alleviate geometric ambiguities under limited viewpoints. Nevertheless, the increased anisotropy inherent in flattened Gaussians exacerbates overfitting in sparse-view scenarios, hindering accurate surface fitting and degrading novel view synthesis performance. In this paper, we propose \\net{}, a method that reconstructs more accurate and detailed surfaces while preserving high-quality novel view rendering. Our key insight is to introduce Stereo Geometry-Texture Alignment, which bridges rendering quality and geometry estimation, thereby jointly enhancing both surface reconstruction and view synthesis. In addition, we present a Pseudo-Feature Enhanced Geometry Consistency that enforces multi-view geometric consistency by incorporating both training and unseen views, effectively mitigating overfitting caused by sparse supervision. Extensive experiments on the DTU, BlendedMVS, and Mip-NeRF360 datasets demonstrate that our method achieves the state-of-the-art performance.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.13571v1",
-        "pdf": "https://arxiv.org/pdf/2511.13571v1"
+        "paper": "http://arxiv.org/abs/2511.14633v1",
+        "pdf": "https://arxiv.org/pdf/2511.14633v1"
       },
-      "arxiv_id": "2511.13571v1",
-      "comment": "Accepted at AAAI 2026 as a Conference Paper",
+      "arxiv_id": "2511.14633v1",
+      "comment": "Accepted at AAAI 2026. Project page: https://miya-oi.github.io/SparseSurf-project",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.177966101694915,
+      "has_code": true,
+      "relevance_score": 4.915254237288136,
       "score_breakdown": {
-        "total_score": 4.18,
+        "total_score": 4.92,
         "field_match": {
-          "score": 1.69,
+          "score": 2.29,
           "matches": [
             "3d gaussian",
-            "gaussian splatting"
+            "gaussian splatting",
+            "nerf"
           ],
           "weight": 0.4
         },
@@ -43,7 +47,76 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advances in optimizing Gaussian Splatting for scene geometry have enabled efficient reconstruction of detailed surfaces from images. However, when input views are sparse, such optimization is prone to overfitting, leading to suboptimal reconstruction quality. Existing approaches address this challenge by employing flattened Gaussian primitives to better fit surface geometry, combined with d...",
+        "key_contributions": [
+          "Recent advances in optimizing Gaussian Splatting for scene geometry have enabled efficient reconstruction of detailed surfaces from images.",
+          "However, when input views are sparse, such optimization is prone to overfitting, leading to suboptimal reconstruction quality.",
+          "Existing approaches address this challenge by employing flattened Gaussian primitives to better fit surface geometry, combined with depth regularization to alleviate geometric ambiguities under limited viewpoints."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2511.14654v1",
+      "title": "Improving segmentation of retinal arteries and veins using cardiac signal in doppler holograms",
+      "authors": [
+        "Marius Dubosc",
+        "Yann Fischer",
+        "Zacharie Auray",
+        "Nicolas Boutry",
+        "Edwin Carlinet",
+        "Michael Atlan",
+        "Thierry Geraud"
+      ],
+      "abstract": "Doppler holography is an emerging retinal imaging technique that captures the dynamic behavior of blood flow with high temporal resolution, enabling quantitative assessment of retinal hemodynamics. This requires accurate segmentation of retinal arteries and veins, but traditional segmentation methods focus solely on spatial information and overlook the temporal richness of holographic data. In this work, we propose a simple yet effective approach for artery-vein segmentation in temporal Doppler holograms using standard segmentation architectures. By incorporating features derived from a dedicated pulse analysis pipeline, our method allows conventional U-Nets to exploit temporal dynamics and achieve performance comparable to more complex attention- or iteration-based models. These findings demonstrate that time-resolved preprocessing can unlock the full potential of deep learning for Doppler holography, opening new perspectives for quantitative exploration of retinal hemodynamics. The dataset is publicly available at https://huggingface.co/datasets/DigitalHolography/",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.14654v1",
+        "pdf": "https://arxiv.org/pdf/2511.14654v1"
+      },
+      "arxiv_id": "2511.14654v1",
+      "comment": "5 pages, 3 figures, 1 table. Submitted to ISBI2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.577966101694915,
+      "score_breakdown": {
+        "total_score": 4.58,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "cardiac",
+            "segmentation",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -52,45 +125,112 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "3D Gaussian Splatting (3DGS) has emerged as a leading framework for novel view synthesis, yet its core optimization challenges remain underexplored. We identify two key issues in 3DGS optimization: entrapment in suboptimal local optima and insufficient convergence quality. To address these, we propose Opt3DGS, a robust framework that enhances 3DGS through a two-stage optimization process of adapti...",
+        "short": "Doppler holography is an emerging retinal imaging technique that captures the dynamic behavior of blood flow with high temporal resolution, enabling quantitative assessment of retinal hemodynamics. This requires accurate segmentation of retinal arteries and veins, but traditional segmentation methods focus solely on spatial information and overlook the temporal richness of holographic data. In thi...",
         "key_contributions": [
-          "3D Gaussian Splatting (3DGS) has emerged as a leading framework for novel view synthesis, yet its core optimization challenges remain underexplored.",
-          "We identify two key issues in 3DGS optimization: entrapment in suboptimal local optima and insufficient convergence quality.",
-          "To address these, we propose Opt3DGS, a robust framework that enhances 3DGS through a two-stage optimization process of adaptive exploration and curvature-guided exploitation."
+          "Doppler holography is an emerging retinal imaging technique that captures the dynamic behavior of blood flow with high temporal resolution, enabling quantitative assessment of retinal hemodynamics.",
+          "This requires accurate segmentation of retinal arteries and veins, but traditional segmentation methods focus solely on spatial information and overlook the temporal richness of holographic data.",
+          "In this work, we propose a simple yet effective approach for artery-vein segmentation in temporal Doppler holograms using standard segmentation architectures."
         ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13571v1.mp3"
+        "provider": "gemini"
       }
     },
     {
-      "id": "2511.13648v1",
-      "title": "PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image",
+      "id": "2511.14639v1",
+      "title": "SLAM-AGS: Slide-Label Aware Multi-Task Pretraining Using Adaptive Gradient Surgery in Computational Cytology",
       "authors": [
-        "Ziang Cao",
-        "Fangzhou Hong",
-        "Zhaoxi Chen",
-        "Liang Pan",
-        "Ziwei Liu"
+        "Marco Acerbis",
+        "Swarnadip Chatterjee",
+        "Christophe Avenel",
+        "Joakim Lindblad"
       ],
-      "abstract": "3D modeling is shifting from static visual representations toward physical, articulated assets that can be directly used in simulation and interaction. However, most existing 3D generation methods overlook key physical and articulation properties, thereby limiting their utility in embodied AI. To bridge this gap, we introduce PhysX-Anything, the first simulation-ready physical 3D generative framework that, given a single in-the-wild image, produces high-quality sim-ready 3D assets with explicit geometry, articulation, and physical attributes. Specifically, we propose the first VLM-based physical 3D generative model, along with a new 3D representation that efficiently tokenizes geometry. It reduces the number of tokens by 193x, enabling explicit geometry learning within standard VLM token budgets without introducing any special tokens during fine-tuning and significantly improving generative quality. In addition, to overcome the limited diversity of existing physical 3D datasets, we construct a new dataset, PhysX-Mobility, which expands the object categories in prior physical 3D datasets by over 2x and includes more than 2K common real-world objects with rich physical annotations. Extensive experiments on PhysX-Mobility and in-the-wild images demonstrate that PhysX-Anything delivers strong generative performance and robust generalization. Furthermore, simulation-based experiments in a MuJoCo-style environment validate that our sim-ready assets can be directly used for contact-rich robotic policy learning. We believe PhysX-Anything can substantially empower a broad range of downstream applications, especially in embodied AI and physics-based simulation.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
+      "abstract": "Computational cytology faces two major challenges: i) instance-level labels are unreliable and prohibitively costly to obtain, ii) witness rates are extremely low. We propose SLAM-AGS, a Slide-Label-Aware Multitask pretraining framework that jointly optimizes (i) a weakly supervised similarity objective on slide-negative patches and (ii) a self-supervised contrastive objective on slide-positive patches, yielding stronger performance on downstream tasks. To stabilize learning, we apply Adaptive Gradient Surgery to tackle conflicting task gradients and prevent model collapse. We integrate the pretrained encoder into an attention-based Multiple Instance Learning aggregator for bag-level prediction and attention-guided retrieval of the most abnormal instances in a bag. On a publicly available bone-marrow cytology dataset, with simulated witness rates from 10% down to 0.5%, SLAM-AGS improves bag-level F1-Score and Top 400 positive cell retrieval over other pretraining methods, with the largest gains at low witness rates, showing that resolving gradient interference enables stable pretraining and better performance on downstream tasks. To facilitate reproducibility, we share our complete implementation and evaluation framework as open source: https://github.com/Ace95/SLAM-AGS.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
       "categories": [
-        "cs.CV",
-        "cs.RO"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.13648v1",
-        "pdf": "https://arxiv.org/pdf/2511.13648v1"
+        "paper": "http://arxiv.org/abs/2511.14639v1",
+        "pdf": "https://arxiv.org/pdf/2511.14639v1"
       },
-      "arxiv_id": "2511.13648v1",
-      "comment": "Project page: https://physx-anything.github.io/",
+      "arxiv_id": "2511.14639v1",
+      "comment": "5 pages, 2 figures, Submitted to ISBI2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.121186440677967,
+      "score_breakdown": {
+        "total_score": 4.12,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Computational cytology faces two major challenges: i) instance-level labels are unreliable and prohibitively costly to obtain, ii) witness rates are extremely low. We propose SLAM-AGS, a Slide-Label-Aware Multitask pretraining framework that jointly optimizes (i) a weakly supervised similarity objective on slide-negative patches and (ii) a self-supervised contrastive objective on slide-positive pa...",
+        "key_contributions": [
+          "Computational cytology faces two major challenges: i) instance-level labels are unreliable and prohibitively costly to obtain, ii) witness rates are extremely low.",
+          "We propose SLAM-AGS, a Slide-Label-Aware Multitask pretraining framework that jointly optimizes (i) a weakly supervised similarity objective on slide-negative patches and (ii) a self-supervised contrastive objective on slide-positive patches, yielding stronger performance on downstream tasks.",
+          "To stabilize learning, we apply Adaptive Gradient Surgery to tackle conflicting task gradients and prevent model collapse."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2511.14659v1",
+      "title": "NORA-1.5: A Vision-Language-Action Model Trained using World Model- and Action-based Preference Rewards",
+      "authors": [
+        "Chia-Yu Hung",
+        "Navonil Majumder",
+        "Haoyuan Deng",
+        "Liu Renhang",
+        "Yankang Ang",
+        "Amir Zadeh",
+        "Chuan Li",
+        "Dorien Herremans",
+        "Ziwei Wang",
+        "Soujanya Poria"
+      ],
+      "abstract": "Vision--language--action (VLA) models have recently shown promising performance on a variety of embodied tasks, yet they still fall short in reliability and generalization, especially when deployed across different embodiments or real-world environments. In this work, we introduce NORA-1.5, a VLA model built from the pre-trained NORA backbone by adding to it a flow-matching-based action expert. This architectural enhancement alone yields substantial performance gains, enabling NORA-1.5 to outperform NORA and several state-of-the-art VLA models across both simulated and real-world benchmarks. To further improve robustness and task success, we develop a set of reward models for post-training VLA policies. Our rewards combine (i) an action-conditioned world model (WM) that evaluates whether generated actions lead toward the desired goal, and (ii) a deviation-from-ground-truth heuristic that distinguishes good actions from poor ones. Using these reward signals, we construct preference datasets and adapt NORA-1.5 to target embodiments through direct preference optimization (DPO). Extensive evaluations show that reward-driven post-training consistently improves performance in both simulation and real-robot settings, demonstrating significant VLA model-reliability gains through simple yet effective reward models. Our findings highlight NORA-1.5 and reward-guided post-training as a viable path toward more dependable embodied agents suitable for real-world deployment.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.14659v1",
+        "pdf": "https://arxiv.org/pdf/2511.14659v1"
+      },
+      "arxiv_id": "2511.14659v1",
+      "comment": "https://declare-lab.github.io/nora-1.5",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.1000000000000005,
@@ -121,67 +261,39 @@
         }
       },
       "ai_summaries": {
-        "short": "3D modeling is shifting from static visual representations toward physical, articulated assets that can be directly used in simulation and interaction. However, most existing 3D generation methods overlook key physical and articulation properties, thereby limiting their utility in embodied AI. To bridge this gap, we introduce PhysX-Anything, the first simulation-ready physical 3D generative framew...",
+        "short": "Vision--language--action (VLA) models have recently shown promising performance on a variety of embodied tasks, yet they still fall short in reliability and generalization, especially when deployed across different embodiments or real-world environments. In this work, we introduce NORA-1.5, a VLA model built from the pre-trained NORA backbone by adding to it a flow-matching-based action expert. Th...",
         "key_contributions": [
-          "3D modeling is shifting from static visual representations toward physical, articulated assets that can be directly used in simulation and interaction.",
-          "However, most existing 3D generation methods overlook key physical and articulation properties, thereby limiting their utility in embodied AI.",
-          "To bridge this gap, we introduce PhysX-Anything, the first simulation-ready physical 3D generative framework that, given a single in-the-wild image, produces high-quality sim-ready 3D assets with explicit geometry, articulation, and physical attributes."
+          "Vision--language--action (VLA) models have recently shown promising performance on a variety of embodied tasks, yet they still fall short in reliability and generalization, especially when deployed across different embodiments or real-world environments.",
+          "In this work, we introduce NORA-1.",
+          "5, a VLA model built from the pre-trained NORA backbone by adding to it a flow-matching-based action expert."
         ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13648v1.mp3"
+        "provider": "gemini"
       }
     },
     {
-      "id": "2511.13719v1",
-      "title": "Scaling Spatial Intelligence with Multimodal Foundation Models",
+      "id": "2511.14742v1",
+      "title": "A Neural Field-Based Approach for View Computation & Data Exploration in 3D Urban Environments",
       "authors": [
-        "Zhongang Cai",
-        "Ruisi Wang",
-        "Chenyang Gu",
-        "Fanyi Pu",
-        "Junxiang Xu",
-        "Yubo Wang",
-        "Wanqi Yin",
-        "Zhitao Yang",
-        "Chen Wei",
-        "Qingping Sun",
-        "Tongxi Zhou",
-        "Jiaqi Li",
-        "Hui En Pang",
-        "Oscar Qian",
-        "Yukun Wei",
-        "Zhiqian Lin",
-        "Xuanke Shi",
-        "Kewang Deng",
-        "Xiaoyang Han",
-        "Zukai Chen",
-        "Xiangyu Fan",
-        "Hanming Deng",
-        "Lewei Lu",
-        "Liang Pan",
-        "Bo Li",
-        "Ziwei Liu",
-        "Quan Wang",
-        "Dahua Lin",
-        "Lei Yang"
+        "Stefan Cobeli",
+        "Kazi Shahrukh Omar",
+        "Rodrigo Valença",
+        "Nivan Ferreira",
+        "Fabio Miranda"
       ],
-      "abstract": "Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in spatial intelligence. In this work, we explore scaling up multimodal foundation models to cultivate spatial intelligence within the SenseNova-SI family, built upon established multimodal foundations including visual understanding models (i.e., Qwen3-VL and InternVL3) and unified understanding and generation models (i.e., Bagel). We take a principled approach to constructing high-performing and robust spatial intelligence by systematically curating SenseNova-SI-8M: eight million diverse data samples under a rigorous taxonomy of spatial capabilities. SenseNova-SI demonstrates unprecedented performance across a broad range of spatial intelligence benchmarks: 68.7% on VSI-Bench, 43.3% on MMSI, 85.6% on MindCube, 54.6% on ViewSpatial, and 50.1% on SITE, while maintaining strong general multimodal understanding (e.g., 84.9% on MMBench-En). More importantly, we analyze the impact of data scaling, discuss early signs of emergent generalization capabilities enabled by diverse data training, analyze the risk of overfitting and language shortcuts, present a preliminary study on spatial chain-of-thought reasoning, and validate the potential downstream application. SenseNova-SI is an ongoing project, and this report will be updated continuously. All newly trained multimodal foundation models are publicly released to facilitate further research in this direction.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
+      "abstract": "Despite the growing availability of 3D urban datasets, extracting insights remains challenging due to computational bottlenecks and the complexity of interacting with data. In fact, the intricate geometry of 3D urban environments results in high degrees of occlusion and requires extensive manual viewpoint adjustments that make large-scale exploration inefficient. To address this, we propose a view-based approach for 3D data exploration, where a vector field encodes views from the environment. To support this approach, we introduce a neural field-based method that constructs an efficient implicit representation of 3D environments. This representation enables both faster direct queries, which consist of the computation of view assessment indices, and inverse queries, which help avoid occlusion and facilitate the search for views that match desired data patterns. Our approach supports key urban analysis tasks such as visibility assessments, solar exposure evaluation, and assessing the visual impact of new developments. We validate our method through quantitative experiments, case studies informed by real-world urban challenges, and feedback from domain experts. Results show its effectiveness in finding desirable viewpoints, analyzing building facade visibility, and evaluating views from outdoor spaces. Code and data are publicly available at https://urbantk.org/neural-3d.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "cs.MM",
-        "cs.RO"
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.13719v1",
-        "pdf": "https://arxiv.org/pdf/2511.13719v1"
+        "paper": "http://arxiv.org/abs/2511.14742v1",
+        "pdf": "https://arxiv.org/pdf/2511.14742v1"
       },
-      "arxiv_id": "2511.13719v1",
-      "comment": "Model: https://huggingface.co/collections/sensenova/sensenova-si; Code: https://github.com/OpenSenseNova/SenseNova-SI",
+      "arxiv_id": "2511.14742v1",
+      "comment": "Accepted at IEEE Transactions on Visualization and Computer Graphics. Code and data are publicly available at https://urbantk.org/neural-3d",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.050000000000001,
@@ -212,251 +324,52 @@
         }
       },
       "ai_summaries": {
-        "short": "Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in spatial intelligence. In this work, we explore scaling up multimodal foundation models to cultivate spatial intelligence within the SenseNova-SI family, built upon established multimodal foundations including visual understanding models (i.e., Qwen3-VL and InternVL3) and unified understanding and gen...",
+        "short": "Despite the growing availability of 3D urban datasets, extracting insights remains challenging due to computational bottlenecks and the complexity of interacting with data. In fact, the intricate geometry of 3D urban environments results in high degrees of occlusion and requires extensive manual viewpoint adjustments that make large-scale exploration inefficient. To address this, we propose a view...",
         "key_contributions": [
-          "Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in spatial intelligence.",
-          "In this work, we explore scaling up multimodal foundation models to cultivate spatial intelligence within the SenseNova-SI family, built upon established multimodal foundations including visual understanding models (i.",
-          "e."
+          "Despite the growing availability of 3D urban datasets, extracting insights remains challenging due to computational bottlenecks and the complexity of interacting with data.",
+          "In fact, the intricate geometry of 3D urban environments results in high degrees of occlusion and requires extensive manual viewpoint adjustments that make large-scale exploration inefficient.",
+          "To address this, we propose a view-based approach for 3D data exploration, where a vector field encodes views from the environment."
         ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13719v1.mp3"
+        "provider": "gemini"
       }
     },
     {
-      "id": "2511.13488v1",
-      "title": "InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE",
+      "id": "2511.14702v1",
+      "title": "Seeing Beyond the Image: ECG and Anatomical Knowledge-Guided Myocardial Scar Segmentation from Late Gadolinium-Enhanced Images",
       "authors": [
-        "Lipeng Wang",
-        "Hongxing Fan",
-        "Haohua Chen",
-        "Zehuan Huang",
-        "Lu Sheng"
+        "Farheen Ramzan",
+        "Yusuf Kiberu",
+        "Nikesh Jathanna",
+        "Meryem Jabrane",
+        "Vicente Grau",
+        "Shahnaz Jamil-Copley",
+        "Richard H. Clayton",
+        "Chen",
+        "Chen"
       ],
-      "abstract": "Generating high-quality human interactions holds significant value for applications like virtual reality and robotics. However, existing methods often fail to preserve unique individual characteristics or fully adhere to textual descriptions. To address these challenges, we introduce InterMoE, a novel framework built on a Dynamic Temporal-Selective Mixture of Experts. The core of InterMoE is a routing mechanism that synergistically uses both high-level text semantics and low-level motion context to dispatch temporal motion features to specialized experts. This allows experts to dynamically determine the selection capacity and focus on critical temporal features, thereby preserving specific individual characteristic identities while ensuring high semantic fidelity. Extensive experiments show that InterMoE achieves state-of-the-art performance in individual-specific high-fidelity 3D human interaction generation, reducing FID scores by 9% on the InterHuman dataset and 22% on InterX.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.13488v1",
-        "pdf": "https://arxiv.org/pdf/2511.13488v1"
-      },
-      "arxiv_id": "2511.13488v1",
-      "comment": "Accepted to AAAI-26. Codes: https://github.com/Lighten001/InterMoE",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Generating high-quality human interactions holds significant value for applications like virtual reality and robotics. However, existing methods often fail to preserve unique individual characteristics or fully adhere to textual descriptions. To address these challenges, we introduce InterMoE, a novel framework built on a Dynamic Temporal-Selective Mixture of Experts. The core of InterMoE is a rou...",
-        "key_contributions": [
-          "Generating high-quality human interactions holds significant value for applications like virtual reality and robotics.",
-          "However, existing methods often fail to preserve unique individual characteristics or fully adhere to textual descriptions.",
-          "To address these challenges, we introduce InterMoE, a novel framework built on a Dynamic Temporal-Selective Mixture of Experts."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13488v1.mp3"
-      }
-    },
-    {
-      "id": "2511.13704v1",
-      "title": "TiViBench: Benchmarking Think-in-Video Reasoning for Video Generative Models",
-      "authors": [
-        "Harold Haodong Chen",
-        "Disen Lan",
-        "Wen-Jie Shu",
-        "Qingyang Liu",
-        "Zihan Wang",
-        "Sirui Chen",
-        "Wenkai Cheng",
-        "Kanghao Chen",
-        "Hongfei Zhang",
-        "Zixin Zhang",
-        "Rongjin Guo",
-        "Yu Cheng",
-        "Ying-Cong Chen"
-      ],
-      "abstract": "The rapid evolution of video generative models has shifted their focus from producing visually plausible outputs to tackling tasks requiring physical plausibility and logical consistency. However, despite recent breakthroughs such as Veo 3's chain-of-frames reasoning, it remains unclear whether these models can exhibit reasoning capabilities similar to large language models (LLMs). Existing benchmarks predominantly evaluate visual fidelity and temporal coherence, failing to capture higher-order reasoning abilities. To bridge this gap, we propose TiViBench, a hierarchical benchmark specifically designed to evaluate the reasoning capabilities of image-to-video (I2V) generation models. TiViBench systematically assesses reasoning across four dimensions: i) Structural Reasoning & Search, ii) Spatial & Visual Pattern Reasoning, iii) Symbolic & Logical Reasoning, and iv) Action Planning & Task Execution, spanning 24 diverse task scenarios across 3 difficulty levels. Through extensive evaluations, we show that commercial models (e.g., Sora 2, Veo 3.1) demonstrate stronger reasoning potential, while open-source models reveal untapped potential that remains hindered by limited training scale and data diversity. To further unlock this potential, we introduce VideoTPO, a simple yet effective test-time strategy inspired by preference optimization. By performing LLM self-analysis on generated candidates to identify strengths and weaknesses, VideoTPO significantly enhances reasoning performance without requiring additional training, data, or reward models. Together, TiViBench and VideoTPO pave the way for evaluating and advancing reasoning in video generation models, setting a foundation for future research in this emerging field.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.13704v1",
-        "pdf": "https://arxiv.org/pdf/2511.13704v1"
-      },
-      "arxiv_id": "2511.13704v1",
-      "comment": "Project: https://haroldchen19.github.io/TiViBench-Page/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The rapid evolution of video generative models has shifted their focus from producing visually plausible outputs to tackling tasks requiring physical plausibility and logical consistency. However, despite recent breakthroughs such as Veo 3's chain-of-frames reasoning, it remains unclear whether these models can exhibit reasoning capabilities similar to large language models (LLMs). Existing benchm...",
-        "key_contributions": [
-          "The rapid evolution of video generative models has shifted their focus from producing visually plausible outputs to tackling tasks requiring physical plausibility and logical consistency.",
-          "However, despite recent breakthroughs such as Veo 3's chain-of-frames reasoning, it remains unclear whether these models can exhibit reasoning capabilities similar to large language models (LLMs).",
-          "Existing benchmarks predominantly evaluate visual fidelity and temporal coherence, failing to capture higher-order reasoning abilities."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13704v1.mp3"
-      }
-    },
-    {
-      "id": "2511.13609v1",
-      "title": "AtlasMorph: Learning conditional deformable templates for brain MRI",
-      "authors": [
-        "Marianne Rakic",
-        "Andrew Hoopes",
-        "S. Mazdak Abulnaga",
-        "Mert R. Sabuncu",
-        "John V. Guttag",
-        "Adrian V. Dalca"
-      ],
-      "abstract": "Deformable templates, or atlases, are images that represent a prototypical anatomy for a population, and are often enhanced with probabilistic anatomical label maps. They are commonly used in medical image analysis for population studies and computational anatomy tasks such as registration and segmentation. Because developing a template is a computationally expensive process, relatively few templates are available. As a result, analysis is often conducted with sub-optimal templates that are not truly representative of the study population, especially when there are large variations within this population. We propose a machine learning framework that uses convolutional registration neural networks to efficiently learn a function that outputs templates conditioned on subject-specific attributes, such as age and sex. We also leverage segmentations, when available, to produce anatomical segmentation maps for the resulting templates. The learned network can also be used to register subject images to the templates. We demonstrate our method on a compilation of 3D brain MRI datasets, and show that it can learn high-quality templates that are representative of populations. We find that annotated conditional templates enable better registration than their unlabeled unconditional counterparts, and outperform other templates construction methods.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
+      "abstract": "Accurate segmentation of myocardial scar from late gadolinium enhanced (LGE) cardiac MRI is essential for evaluating tissue viability, yet remains challenging due to variable contrast and imaging artifacts. Electrocardiogram (ECG) signals provide complementary physiological information, as conduction abnormalities can help localize or suggest scarred myocardial regions. In this work, we propose a novel multimodal framework that integrates ECG-derived electrophysiological information with anatomical priors from the AHA-17 atlas for physiologically consistent LGE-based scar segmentation. As ECGs and LGE-MRIs are not acquired simultaneously, we introduce a Temporal Aware Feature Fusion (TAFF) mechanism that dynamically weights and fuses features based on their acquisition time difference. Our method was evaluated on a clinical dataset and achieved substantial gains over the state-of-the-art image-only baseline (nnU-Net), increasing the average Dice score for scars from 0.6149 to 0.8463 and achieving high performance in both precision (0.9115) and sensitivity (0.9043). These results show that integrating physiological and anatomical knowledge allows the model to \"see beyond the image\", setting a new direction for robust and physiologically grounded cardiac scar segmentation.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
       "categories": [
         "cs.CV",
-        "cs.LG"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.13609v1",
-        "pdf": "https://arxiv.org/pdf/2511.13609v1"
+        "paper": "http://arxiv.org/abs/2511.14702v1",
+        "pdf": "https://arxiv.org/pdf/2511.14702v1"
       },
-      "arxiv_id": "2511.13609v1",
+      "arxiv_id": "2511.14702v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.8813559322033893,
+      "relevance_score": 4.008474576271187,
       "score_breakdown": {
-        "total_score": 3.88,
+        "total_score": 4.01,
         "field_match": {
-          "score": 2.2,
+          "score": 1.27,
           "matches": [
-            "medical image",
-            "segmentation",
-            "registration",
-            "image analysis"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Deformable templates, or atlases, are images that represent a prototypical anatomy for a population, and are often enhanced with probabilistic anatomical label maps. They are commonly used in medical image analysis for population studies and computational anatomy tasks such as registration and segmentation. Because developing a template is a computationally expensive process, relatively few templa...",
-        "key_contributions": [
-          "Deformable templates, or atlases, are images that represent a prototypical anatomy for a population, and are often enhanced with probabilistic anatomical label maps.",
-          "They are commonly used in medical image analysis for population studies and computational anatomy tasks such as registration and segmentation.",
-          "Because developing a template is a computationally expensive process, relatively few templates are available."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13609v1.mp3"
-      }
-    },
-    {
-      "id": "2511.13615v1",
-      "title": "Tissue Aware Nuclei Detection and Classification Model for Histopathology Images",
-      "authors": [
-        "Kesi Xu",
-        "Eleni Chiou",
-        "Ali Varamesh",
-        "Laura Acqualagna",
-        "Nasir Rajpoot"
-      ],
-      "abstract": "Accurate nuclei detection and classification are fundamental to computational pathology, yet existing approaches are hindered by reliance on detailed expert annotations and insufficient use of tissue context. We present Tissue-Aware Nuclei Detection (TAND), a novel framework achieving joint nuclei detection and classification using point-level supervision enhanced by tissue mask conditioning. TAND couples a ConvNeXt-based encoder-decoder with a frozen Virchow-2 tissue segmentation branch, where semantic tissue probabilities selectively modulate the classification stream through a novel multi-scale Spatial Feature-wise Linear Modulation (Spatial-FiLM). On the PUMA benchmark, TAND achieves state-of-the-art performance, surpassing both tissue-agnostic baselines and mask-supervised methods. Notably, our approach demonstrates remarkable improvements in tissue-dependent cell types such as epithelium, endothelium, and stroma. To the best of our knowledge, this is the first method to condition per-cell classification on learned tissue masks, offering a practical pathway to reduce annotation burden.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.13615v1",
-        "pdf": "https://arxiv.org/pdf/2511.13615v1"
-      },
-      "arxiv_id": "2511.13615v1",
-      "comment": "5 pages, 3 figures. Under review",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.853389830508475,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
+            "cardiac",
             "segmentation"
           ],
           "weight": 0.4
@@ -467,7 +380,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -481,49 +394,116 @@
         }
       },
       "ai_summaries": {
-        "short": "Accurate nuclei detection and classification are fundamental to computational pathology, yet existing approaches are hindered by reliance on detailed expert annotations and insufficient use of tissue context. We present Tissue-Aware Nuclei Detection (TAND), a novel framework achieving joint nuclei detection and classification using point-level supervision enhanced by tissue mask conditioning. TAND...",
+        "short": "Accurate segmentation of myocardial scar from late gadolinium enhanced (LGE) cardiac MRI is essential for evaluating tissue viability, yet remains challenging due to variable contrast and imaging artifacts. Electrocardiogram (ECG) signals provide complementary physiological information, as conduction abnormalities can help localize or suggest scarred myocardial regions. In this work, we propose a ...",
         "key_contributions": [
-          "Accurate nuclei detection and classification are fundamental to computational pathology, yet existing approaches are hindered by reliance on detailed expert annotations and insufficient use of tissue context.",
-          "We present Tissue-Aware Nuclei Detection (TAND), a novel framework achieving joint nuclei detection and classification using point-level supervision enhanced by tissue mask conditioning.",
-          "TAND couples a ConvNeXt-based encoder-decoder with a frozen Virchow-2 tissue segmentation branch, where semantic tissue probabilities selectively modulate the classification stream through a novel multi-scale Spatial Feature-wise Linear Modulation (Spatial-FiLM)."
+          "Accurate segmentation of myocardial scar from late gadolinium enhanced (LGE) cardiac MRI is essential for evaluating tissue viability, yet remains challenging due to variable contrast and imaging artifacts.",
+          "Electrocardiogram (ECG) signals provide complementary physiological information, as conduction abnormalities can help localize or suggest scarred myocardial regions.",
+          "In this work, we propose a novel multimodal framework that integrates ECG-derived electrophysiological information with anatomical priors from the AHA-17 atlas for physiologically consistent LGE-based scar segmentation."
         ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13615v1.mp3"
+        "provider": "gemini"
       }
     },
     {
-      "id": "2511.13561v1",
-      "title": "RAC-DMVC: Reliability-Aware Contrastive Deep Multi-View Clustering under Multi-Source Noise",
+      "id": "2511.14540v1",
+      "title": "Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction",
       "authors": [
-        "Shihao Dong",
-        "Yue Liu",
-        "Xiaotong Zhou",
-        "Yuhui Zheng",
-        "Huiying Xu",
-        "Xinzhong Zhu"
+        "Hao Tian",
+        "Chenyangguang Zhang",
+        "Rui Liu",
+        "Wen Shen",
+        "Xiaolin Qin"
       ],
-      "abstract": "Multi-view clustering (MVC), which aims to separate the multi-view data into distinct clusters in an unsupervised manner, is a fundamental yet challenging task. To enhance its applicability in real-world scenarios, this paper addresses a more challenging task: MVC under multi-source noises, including missing noise and observation noise. To this end, we propose a novel framework, Reliability-Aware Contrastive Deep Multi-View Clustering (RAC-DMVC), which constructs a reliability graph to guide robust representation learning under noisy environments. Specifically, to address observation noise, we introduce a cross-view reconstruction to enhances robustness at the data level, and a reliability-aware noise contrastive learning to mitigates bias in positive and negative pairs selection caused by noisy representations. To handle missing noise, we design a dual-attention imputation to capture shared information across views while preserving view-specific features. In addition, a self-supervised cluster distillation module further refines the learned representations and improves the clustering performance. Extensive experiments on five benchmark datasets demonstrate that RAC-DMVC outperforms SOTA methods on multiple evaluation metrics and maintains excellent performance under varying ratios of noise.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
+      "abstract": "This paper focuses on a challenging setting of simultaneously modeling geometry and appearance of hand-object interaction scenes without any object priors. We follow the trend of dynamic 3D Gaussian Splatting based methods, and address several significant challenges. To model complex hand-object interaction with mutual occlusion and edge blur, we present interaction-aware hand-object Gaussians with newly introduced optimizable parameters aiming to adopt piecewise linear hypothesis for clearer structural representation. Moreover, considering the complementarity and tightness of hand shape and object shape during interaction dynamics, we incorporate hand information into object deformation field, constructing interaction-aware dynamic fields to model flexible motions. To further address difficulties in the optimization process, we propose a progressive strategy that handles dynamic regions and static background step by step. Correspondingly, explicit regularizations are designed to stabilize the hand-object representations for smooth motion transition, physical interaction reality, and coherent lighting. Experiments show that our approach surpasses existing dynamic 3D-GS-based methods and achieves state-of-the-art performance in reconstructing dynamic hand-object interaction.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.13561v1",
-        "pdf": "https://arxiv.org/pdf/2511.13561v1"
+        "paper": "http://arxiv.org/abs/2511.14540v1",
+        "pdf": "https://arxiv.org/pdf/2511.14540v1"
       },
-      "arxiv_id": "2511.13561v1",
-      "comment": "",
+      "arxiv_id": "2511.14540v1",
+      "comment": "11 pages, 6 figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.8211864406779656,
+      "relevance_score": 3.9279661016949152,
       "score_breakdown": {
-        "total_score": 3.82,
+        "total_score": 3.93,
         "field_match": {
-          "score": 0.68,
+          "score": 1.69,
           "matches": [
-            "self-supervised"
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "This paper focuses on a challenging setting of simultaneously modeling geometry and appearance of hand-object interaction scenes without any object priors. We follow the trend of dynamic 3D Gaussian Splatting based methods, and address several significant challenges. To model complex hand-object interaction with mutual occlusion and edge blur, we present interaction-aware hand-object Gaussians wit...",
+        "key_contributions": [
+          "This paper focuses on a challenging setting of simultaneously modeling geometry and appearance of hand-object interaction scenes without any object priors.",
+          "We follow the trend of dynamic 3D Gaussian Splatting based methods, and address several significant challenges.",
+          "To model complex hand-object interaction with mutual occlusion and edge blur, we present interaction-aware hand-object Gaussians with newly introduced optimizable parameters aiming to adopt piecewise linear hypothesis for clearer structural representation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2511.14599v1",
+      "title": "CCSD: Cross-Modal Compositional Self-Distillation for Robust Brain Tumor Segmentation with Missing Modalities",
+      "authors": [
+        "Dongqing Xie",
+        "Yonghuang Wu",
+        "Zisheng Ai",
+        "Jun Min",
+        "Zhencun Jiang",
+        "Shaojin Geng",
+        "Lei Wang"
+      ],
+      "abstract": "The accurate segmentation of brain tumors from multi-modal MRI is critical for clinical diagnosis and treatment planning. While integrating complementary information from various MRI sequences is a common practice, the frequent absence of one or more modalities in real-world clinical settings poses a significant challenge, severely compromising the performance and generalizability of deep learning-based segmentation models. To address this challenge, we propose a novel Cross-Modal Compositional Self-Distillation (CCSD) framework that can flexibly handle arbitrary combinations of input modalities. CCSD adopts a shared-specific encoder-decoder architecture and incorporates two self-distillation strategies: (i) a hierarchical modality self-distillation mechanism that transfers knowledge across modality hierarchies to reduce semantic discrepancies, and (ii) a progressive modality combination distillation approach that enhances robustness to missing modalities by simulating gradual modality dropout during training. Extensive experiments on public brain tumor segmentation benchmarks demonstrate that CCSD achieves state-of-the-art performance across various missing-modality scenarios, with strong generalization and stability.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.14599v1",
+        "pdf": "https://arxiv.org/pdf/2511.14599v1"
+      },
+      "arxiv_id": "2511.14599v1",
+      "comment": "9 pages, 5 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.9228813559322027,
+      "score_breakdown": {
+        "total_score": 3.92,
+        "field_match": {
+          "score": 0.93,
+          "matches": [
+            "segmentation",
+            "deep learning"
           ],
           "weight": 0.4
         },
@@ -547,44 +527,107 @@
         }
       },
       "ai_summaries": {
-        "short": "Multi-view clustering (MVC), which aims to separate the multi-view data into distinct clusters in an unsupervised manner, is a fundamental yet challenging task. To enhance its applicability in real-world scenarios, this paper addresses a more challenging task: MVC under multi-source noises, including missing noise and observation noise. To this end, we propose a novel framework, Reliability-Aware ...",
+        "short": "The accurate segmentation of brain tumors from multi-modal MRI is critical for clinical diagnosis and treatment planning. While integrating complementary information from various MRI sequences is a common practice, the frequent absence of one or more modalities in real-world clinical settings poses a significant challenge, severely compromising the performance and generalizability of deep learning...",
         "key_contributions": [
-          "Multi-view clustering (MVC), which aims to separate the multi-view data into distinct clusters in an unsupervised manner, is a fundamental yet challenging task.",
-          "To enhance its applicability in real-world scenarios, this paper addresses a more challenging task: MVC under multi-source noises, including missing noise and observation noise.",
-          "To this end, we propose a novel framework, Reliability-Aware Contrastive Deep Multi-View Clustering (RAC-DMVC), which constructs a reliability graph to guide robust representation learning under noisy environments."
+          "The accurate segmentation of brain tumors from multi-modal MRI is critical for clinical diagnosis and treatment planning.",
+          "While integrating complementary information from various MRI sequences is a common practice, the frequent absence of one or more modalities in real-world clinical settings poses a significant challenge, severely compromising the performance and generalizability of deep learning-based segmentation models.",
+          "To address this challenge, we propose a novel Cross-Modal Compositional Self-Distillation (CCSD) framework that can flexibly handle arbitrary combinations of input modalities."
         ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13561v1.mp3"
+        "provider": "gemini"
       }
     },
     {
-      "id": "2511.13649v1",
-      "title": "Distribution Matching Distillation Meets Reinforcement Learning",
+      "id": "2511.14761v1",
+      "title": "ARC Is a Vision Problem!",
       "authors": [
-        "Dengyang Jiang",
-        "Dongyang Liu",
-        "Zanyi Wang",
-        "Qilong Wu",
-        "Xin Jin",
-        "David Liu",
-        "Zhen Li",
-        "Mengmeng Wang",
-        "Peng Gao",
-        "Harry Yang"
+        "Keya Hu",
+        "Ali Cy",
+        "Linlu Qiu",
+        "Xiaoman Delores Ding",
+        "Runqian Wang",
+        "Yeyin Eva Zhu",
+        "Jacob Andreas",
+        "Kaiming He"
       ],
-      "abstract": "Distribution Matching Distillation (DMD) distills a pre-trained multi-step diffusion model to a few-step one to improve inference efficiency. However, the performance of the latter is often capped by the former. To circumvent this dilemma, we propose DMDR, a novel framework that combines Reinforcement Learning (RL) techniques into the distillation process. We show that for the RL of the few-step generator, the DMD loss itself is a more effective regularization compared to the traditional ones. In turn, RL can help to guide the mode coverage process in DMD more effectively. These allow us to unlock the capacity of the few-step generator by conducting distillation and RL simultaneously. Meanwhile, we design the dynamic distribution guidance and dynamic renoise sampling training strategies to improve the initial distillation process. The experiments demonstrate that DMDR can achieve leading visual quality, prompt coherence among few-step methods, and even exhibit performance that exceeds the multi-step teacher.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
+      "abstract": "The Abstraction and Reasoning Corpus (ARC) is designed to promote research on abstract reasoning, a fundamental aspect of human intelligence. Common approaches to ARC treat it as a language-oriented problem, addressed by large language models (LLMs) or recurrent reasoning models. However, although the puzzle-like tasks in ARC are inherently visual, existing research has rarely approached the problem from a vision-centric perspective. In this work, we formulate ARC within a vision paradigm, framing it as an image-to-image translation problem. To incorporate visual priors, we represent the inputs on a \"canvas\" that can be processed like natural images. It is then natural for us to apply standard vision architectures, such as a vanilla Vision Transformer (ViT), to perform image-to-image mapping. Our model is trained from scratch solely on ARC data and generalizes to unseen tasks through test-time training. Our framework, termed Vision ARC (VARC), achieves 60.4% accuracy on the ARC-1 benchmark, substantially outperforming existing methods that are also trained from scratch. Our results are competitive with those of leading LLMs and close the gap to average human performance.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.13649v1",
-        "pdf": "https://arxiv.org/pdf/2511.13649v1"
+        "paper": "http://arxiv.org/abs/2511.14761v1",
+        "pdf": "https://arxiv.org/pdf/2511.14761v1"
       },
-      "arxiv_id": "2511.13649v1",
-      "comment": "The synergy of reinforcement learning and distribution matching distillation. See more: https://github.com/vvvvvjdy/dmdr",
+      "arxiv_id": "2511.14761v1",
+      "comment": "Technical Report. Project webpage: https://github.com/lillian039/VARC",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The Abstraction and Reasoning Corpus (ARC) is designed to promote research on abstract reasoning, a fundamental aspect of human intelligence. Common approaches to ARC treat it as a language-oriented problem, addressed by large language models (LLMs) or recurrent reasoning models. However, although the puzzle-like tasks in ARC are inherently visual, existing research has rarely approached the probl...",
+        "key_contributions": [
+          "The Abstraction and Reasoning Corpus (ARC) is designed to promote research on abstract reasoning, a fundamental aspect of human intelligence.",
+          "Common approaches to ARC treat it as a language-oriented problem, addressed by large language models (LLMs) or recurrent reasoning models.",
+          "However, although the puzzle-like tasks in ARC are inherently visual, existing research has rarely approached the problem from a vision-centric perspective."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2511.14719v1",
+      "title": "Zero-shot Synthetic Video Realism Enhancement via Structure-aware Denoising",
+      "authors": [
+        "Yifan Wang",
+        "Liya Ji",
+        "Zhanghan Ke",
+        "Harry Yang",
+        "Ser-Nam Lim",
+        "Qifeng Chen"
+      ],
+      "abstract": "We propose an approach to enhancing synthetic video realism, which can re-render synthetic videos from a simulator in photorealistic fashion. Our realism enhancement approach is a zero-shot framework that focuses on preserving the multi-level structures from synthetic videos into the enhanced one in both spatial and temporal domains, built upon a diffusion video foundational model without further fine-tuning. Specifically, we incorporate an effective modification to have the generation/denoising process conditioned on estimated structure-aware information from the synthetic video, such as depth maps, semantic maps, and edge maps, by an auxiliary model, rather than extracting the information from a simulator. This guidance ensures that the enhanced videos are consistent with the original synthetic video at both the structural and semantic levels. Our approach is a simple yet general and powerful approach to enhancing synthetic video realism: we show that our approach outperforms existing baselines in structural consistency with the original video while maintaining state-of-the-art photorealism quality in our experiments.",
+      "published": "2025-11-18",
+      "updated": "2025-11-18",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.14719v1",
+        "pdf": "https://arxiv.org/pdf/2511.14719v1"
+      },
+      "arxiv_id": "2511.14719v1",
+      "comment": "Project Page: https://wyf0824.github.io/Video_Realism_Enhancement/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8,
@@ -615,101 +658,13 @@
         }
       },
       "ai_summaries": {
-        "short": "Distribution Matching Distillation (DMD) distills a pre-trained multi-step diffusion model to a few-step one to improve inference efficiency. However, the performance of the latter is often capped by the former. To circumvent this dilemma, we propose DMDR, a novel framework that combines Reinforcement Learning (RL) techniques into the distillation process. We show that for the RL of the few-step g...",
+        "short": "We propose an approach to enhancing synthetic video realism, which can re-render synthetic videos from a simulator in photorealistic fashion. Our realism enhancement approach is a zero-shot framework that focuses on preserving the multi-level structures from synthetic videos into the enhanced one in both spatial and temporal domains, built upon a diffusion video foundational model without further ...",
         "key_contributions": [
-          "Distribution Matching Distillation (DMD) distills a pre-trained multi-step diffusion model to a few-step one to improve inference efficiency.",
-          "However, the performance of the latter is often capped by the former.",
-          "To circumvent this dilemma, we propose DMDR, a novel framework that combines Reinforcement Learning (RL) techniques into the distillation process."
+          "We propose an approach to enhancing synthetic video realism, which can re-render synthetic videos from a simulator in photorealistic fashion.",
+          "Our realism enhancement approach is a zero-shot framework that focuses on preserving the multi-level structures from synthetic videos into the enhanced one in both spatial and temporal domains, built upon a diffusion video foundational model without further fine-tuning.",
+          "Specifically, we incorporate an effective modification to have the generation/denoising process conditioned on estimated structure-aware information from the synthetic video, such as depth maps, semantic maps, and edge maps, by an auxiliary model, rather than extracting the information from a simulator."
         ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13649v1.mp3"
-      }
-    },
-    {
-      "id": "2511.13655v1",
-      "title": "OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation",
-      "authors": [
-        "Henry Herzog",
-        "Favyen Bastani",
-        "Yawen Zhang",
-        "Gabriel Tseng",
-        "Joseph Redmon",
-        "Hadrien Sablon",
-        "Ryan Park",
-        "Jacob Morrison",
-        "Alexandra Buraczynski",
-        "Karen Farley",
-        "Joshua Hansen",
-        "Andrew Howe",
-        "Patrick Alan Johnson",
-        "Mark Otterlee",
-        "Ted Schmitt",
-        "Hunter Pitelka",
-        "Stephen Daspit",
-        "Rachel Ratner",
-        "Christopher Wilhelm",
-        "Sebastian Wood",
-        "Mike Jacobi",
-        "Hannah Kerner",
-        "Evan Shelhamer",
-        "Ali Farhadi",
-        "Ranjay Krishna",
-        "Patrick Beukema"
-      ],
-      "abstract": "Earth observation data presents a unique challenge: it is spatial like images, sequential like video or text, and highly multimodal. We present OlmoEarth: a multimodal, spatio-temporal foundation model that employs a novel self-supervised learning formulation, masking strategy, and loss all designed for the Earth observation domain. OlmoEarth achieves state-of-the-art performance compared to 12 other foundation models across a variety of research benchmarks and real-world tasks from external partners. When evaluating embeddings OlmoEarth achieves the best performance on 15 out of 24 tasks, and with full fine-tuning it is the best on 19 of 29 tasks. We deploy OlmoEarth as the backbone of an end-to-end platform for data collection, labeling, training, and inference of Earth observation models. The OlmoEarth Platform puts frontier foundation models and powerful data management tools into the hands of non-profits and NGOs working to solve the world's biggest problems. OlmoEarth source code, training data, and pre-trained weights are available at $\\href{https://github.com/allenai/olmoearth_pretrain}{\\text{https://github.com/allenai/olmoearth_pretrain}}$.",
-      "published": "2025-11-17",
-      "updated": "2025-11-17",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.13655v1",
-        "pdf": "https://arxiv.org/pdf/2511.13655v1"
-      },
-      "arxiv_id": "2511.13655v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.771186440677966,
-      "score_breakdown": {
-        "total_score": 3.77,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Earth observation data presents a unique challenge: it is spatial like images, sequential like video or text, and highly multimodal. We present OlmoEarth: a multimodal, spatio-temporal foundation model that employs a novel self-supervised learning formulation, masking strategy, and loss all designed for the Earth observation domain. OlmoEarth achieves state-of-the-art performance compared to 12 ot...",
-        "key_contributions": [
-          "Earth observation data presents a unique challenge: it is spatial like images, sequential like video or text, and highly multimodal.",
-          "We present OlmoEarth: a multimodal, spatio-temporal foundation model that employs a novel self-supervised learning formulation, masking strategy, and loss all designed for the Earth observation domain.",
-          "OlmoEarth achieves state-of-the-art performance compared to 12 other foundation models across a variety of research benchmarks and real-world tasks from external partners."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.13655v1.mp3"
+        "provider": "gemini"
       }
     }
   ]

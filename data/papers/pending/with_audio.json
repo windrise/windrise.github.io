@@ -3,45 +3,44 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2511.15600v1",
-      "title": "US-X Complete: A Multi-Modal Approach to Anatomical 3D Shape Recovery",
+      "id": "2511.16546v1",
+      "title": "Progressive Supernet Training for Efficient Visual Autoregressive Modeling",
       "authors": [
-        "Miruna-Alexandra Gafencu",
-        "Yordanka Velikova",
-        "Nassir Navab",
-        "Mohammad Farid Azampour"
+        "Xiaoyue Chen",
+        "Yuling Shi",
+        "Kaiyuan Li",
+        "Huandong Wang",
+        "Yong Li",
+        "Xiaodong Gu",
+        "Xinlei Chen",
+        "Mingbao Lin"
       ],
-      "abstract": "Ultrasound offers a radiation-free, cost-effective solution for real-time visualization of spinal landmarks, paraspinal soft tissues and neurovascular structures, making it valuable for intraoperative guidance during spinal procedures. However, ultrasound suffers from inherent limitations in visualizing complete vertebral anatomy, in particular vertebral bodies, due to acoustic shadowing effects caused by bone. In this work, we present a novel multi-modal deep learning method for completing occluded anatomical structures in 3D ultrasound by leveraging complementary information from a single X-ray image. To enable training, we generate paired training data consisting of: (1) 2D lateral vertebral views that simulate X-ray scans, and (2) 3D partial vertebrae representations that mimic the limited visibility and occlusions encountered during ultrasound spine imaging. Our method integrates morphological information from both imaging modalities and demonstrates significant improvements in vertebral reconstruction (p < 0.001) compared to state of art in 3D ultrasound vertebral completion. We perform phantom studies as an initial step to future clinical translation, and achieve a more accurate, complete volumetric lumbar spine visualization overlayed on the ultrasound scan without the need for registration with preoperative modalities such as computed tomography. This demonstrates that integrating a single X-ray projection mitigates ultrasound's key limitation while preserving its strengths as the primary imaging modality. Code and data can be found at https://github.com/miruna20/US-X-Complete",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
+      "abstract": "Visual Auto-Regressive (VAR) models significantly reduce inference steps through the \"next-scale\" prediction paradigm. However, progressive multi-scale generation incurs substantial memory overhead due to cumulative KV caching, limiting practical deployment.\n  We observe a scale-depth asymmetric dependency in VAR: early scales exhibit extreme sensitivity to network depth, while later scales remain robust to depth reduction. Inspired by this, we propose VARiant: by equidistant sampling, we select multiple subnets ranging from 16 to 2 layers from the original 30-layer VAR-d30 network. Early scales are processed by the full network, while later scales utilize subnet. Subnet and the full network share weights, enabling flexible depth adjustment within a single model.\n  However, weight sharing between subnet and the entire network can lead to optimization conflicts. To address this, we propose a progressive training strategy that breaks through the Pareto frontier of generation quality for both subnets and the full network under fixed-ratio training, achieving joint optimality.\n  Experiments on ImageNet demonstrate that, compared to the pretrained VAR-d30 (FID 1.95), VARiant-d16 and VARiant-d8 achieve nearly equivalent quality (FID 2.05/2.12) while reducing memory consumption by 40-65%. VARiant-d2 achieves 3.5 times speedup and 80% memory reduction at moderate quality cost (FID 2.97). In terms of deployment, VARiant's single-model architecture supports zero-cost runtime depth switching and provides flexible deployment options from high quality to extreme efficiency, catering to diverse application scenarios.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
       "categories": [
-        "cs.CV",
-        "cs.LG"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.15600v1",
-        "pdf": "https://arxiv.org/pdf/2511.15600v1"
+        "paper": "http://arxiv.org/abs/2511.16546v1",
+        "pdf": "https://arxiv.org/pdf/2511.16546v1"
       },
-      "arxiv_id": "2511.15600v1",
-      "comment": "Accepted at the Workshop on Shape in Medical Imaging at MICCAI 2025",
+      "arxiv_id": "2511.16546v1",
+      "comment": "Submitted to CVPR 2025. 10 pages, 7 figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.860169491525424,
+      "relevance_score": 4.300000000000001,
       "score_breakdown": {
-        "total_score": 4.86,
+        "total_score": 4.3,
         "field_match": {
-          "score": 1.53,
-          "matches": [
-            "volumetric",
-            "registration",
-            "deep learning"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "MICCAI",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -54,54 +53,90 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Ultrasound offers a radiation-free, cost-effective solution for real-time visualization of spinal landmarks, paraspinal soft tissues and neurovascular structures, making it valuable for intraoperative guidance during spinal procedures. However, ultrasound suffers from inherent limitations in visualizing complete vertebral anatomy, in particular vertebral bodies, due to acoustic shadowing effects c...",
+        "short": "Visual Auto-Regressive (VAR) models significantly reduce inference steps through the \"next-scale\" prediction paradigm. However, progressive multi-scale generation incurs substantial memory overhead due to cumulative KV caching, limiting practical deployment.\n  We observe a scale-depth asymmetric dependency in VAR: early scales exhibit extreme sensitivity to network depth, while later scales remain...",
         "key_contributions": [
-          "Ultrasound offers a radiation-free, cost-effective solution for real-time visualization of spinal landmarks, paraspinal soft tissues and neurovascular structures, making it valuable for intraoperative guidance during spinal procedures.",
-          "However, ultrasound suffers from inherent limitations in visualizing complete vertebral anatomy, in particular vertebral bodies, due to acoustic shadowing effects caused by bone.",
-          "In this work, we present a novel multi-modal deep learning method for completing occluded anatomical structures in 3D ultrasound by leveraging complementary information from a single X-ray image."
+          "Visual Auto-Regressive (VAR) models significantly reduce inference steps through the \"next-scale\" prediction paradigm.",
+          "However, progressive multi-scale generation incurs substantial memory overhead due to cumulative KV caching, limiting practical deployment.",
+          "We observe a scale-depth asymmetric dependency in VAR: early scales exhibit extreme sensitivity to network depth, while later scales remain robust to depth reduction."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.15600v1.mp3"
+        "audio_url": "/audio/2511.16546v1.mp3"
       }
     },
     {
-      "id": "2511.15704v1",
-      "title": "In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data",
+      "id": "2511.16518v1",
+      "title": "MiMo-Embodied: X-Embodied Foundation Model Technical Report",
       "authors": [
-        "Xiongyi Cai",
-        "Ri-Zhao Qiu",
-        "Geng Chen",
-        "Lai Wei",
-        "Isabella Liu",
-        "Tianshu Huang",
-        "Xuxin Cheng",
-        "Xiaolong Wang"
+        "Xiaoshuai Hao",
+        "Lei Zhou",
+        "Zhijian Huang",
+        "Zhiwen Hou",
+        "Yingbo Tang",
+        "Lingfeng Zhang",
+        "Guang Li",
+        "Zheng Lu",
+        "Shuhuai Ren",
+        "Xianhui Meng",
+        "Yuchen Zhang",
+        "Jing Wu",
+        "Jinghui Lu",
+        "Chenxu Dang",
+        "Jiayi Guan",
+        "Jianhua Wu",
+        "Zhiyi Hou",
+        "Hanbing Li",
+        "Shumeng Xia",
+        "Mingliang Zhou",
+        "Yinan Zheng",
+        "Zihao Yue",
+        "Shuhao Gu",
+        "Hao Tian",
+        "Yuannan Shen",
+        "Jianwei Cui",
+        "Wen Zhang",
+        "Shaoqing Xu",
+        "Bing Wang",
+        "Haiyang Sun",
+        "Zeyu Zhu",
+        "Yuncheng Jiang",
+        "Zibin Guo",
+        "Chuhong Gong",
+        "Chaofan Zhang",
+        "Wenbo Ding",
+        "Kun Ma",
+        "Guang Chen",
+        "Rui Cai",
+        "Diyun Xiang",
+        "Heng Qu",
+        "Fuli Luo",
+        "Hangjun Ye",
+        "Long Chen"
       ],
-      "abstract": "Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
+      "abstract": "We open-source MiMo-Embodied, the first cross-embodied foundation model to successfully integrate and achieve state-of-the-art performance in both Autonomous Driving and Embodied AI. MiMo-Embodied sets new records across 17 embodied AI benchmarks in Task Planning, Affordance Prediction and Spatial Understanding, while also excelling in 12 autonomous driving benchmarks across Environmental Perception, Status Prediction, and Driving Planning. Across these tasks, MiMo-Embodied significantly outperforms existing open-source, closed-source, and specialized baselines. Our results indicate that through multi-stage learning, curated data construction, and CoT/RL fine-tuning, these two domains exhibit strong positive transfer and mutually reinforce one another. We provide a detailed analysis of our model design and training methodologies to facilitate further research. Code and models are available at https://github.com/XiaomiMiMo/MiMo-Embodied.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
       "categories": [
         "cs.RO",
-        "cs.AI",
+        "cs.CL",
         "cs.CV"
       ],
       "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.15704v1",
-        "pdf": "https://arxiv.org/pdf/2511.15704v1"
+        "paper": "http://arxiv.org/abs/2511.16518v1",
+        "pdf": "https://arxiv.org/pdf/2511.16518v1"
       },
-      "arxiv_id": "2511.15704v1",
-      "comment": "Project webpage: https://xiongyicai.github.io/In-N-On/",
+      "arxiv_id": "2511.16518v1",
+      "comment": "Code: https://github.com/XiaomiMiMo/MiMo-Embodied Model: https://huggingface.co/XiaomiMiMo/MiMo-Embodied-7B",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.3,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.3,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -113,7 +148,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -127,466 +162,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on...",
+        "short": "We open-source MiMo-Embodied, the first cross-embodied foundation model to successfully integrate and achieve state-of-the-art performance in both Autonomous Driving and Embodied AI. MiMo-Embodied sets new records across 17 embodied AI benchmarks in Task Planning, Affordance Prediction and Spatial Understanding, while also excelling in 12 autonomous driving benchmarks across Environmental Percepti...",
         "key_contributions": [
-          "Egocentric videos are a valuable and scalable data source to learn manipulation policies.",
-          "However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential.",
-          "This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data."
+          "We open-source MiMo-Embodied, the first cross-embodied foundation model to successfully integrate and achieve state-of-the-art performance in both Autonomous Driving and Embodied AI.",
+          "MiMo-Embodied sets new records across 17 embodied AI benchmarks in Task Planning, Affordance Prediction and Spatial Understanding, while also excelling in 12 autonomous driving benchmarks across Environmental Perception, Status Prediction, and Driving Planning.",
+          "Across these tasks, MiMo-Embodied significantly outperforms existing open-source, closed-source, and specialized baselines."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.15704v1.mp3"
+        "audio_url": "/audio/2511.16518v1.mp3"
       }
     },
     {
-      "id": "2511.15690v1",
-      "title": "MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping",
+      "id": "2511.16418v1",
+      "title": "End-to-End Motion Capture from Rigid Body Markers with Geodesic Loss",
       "authors": [
-        "Yushi Huang",
-        "Zining Wang",
-        "Zhihang Yuan",
-        "Yifu Ding",
-        "Ruihao Gong",
-        "Jinyang Guo",
-        "Xianglong Liu",
-        "Jun Zhang"
+        "Hai Lan",
+        "Zongyan Li",
+        "Jianmin Hu",
+        "Jialing Yang",
+        "Houde Dai"
       ],
-      "abstract": "Mixture-of-Experts (MoE) Multimodal large language models (MLLMs) excel at vision-language tasks, but they suffer from high computational inefficiency. To reduce inference overhead, expert skipping methods have been proposed to deactivate redundant experts based on the current input tokens. However, we find that applying these methods-originally designed for unimodal large language models (LLMs)-to MLLMs results in considerable performance degradation. This is primarily because such methods fail to account for the heterogeneous contributions of experts across MoE layers and modality-specific behaviors of tokens within these layers. Motivated by these findings, we propose MoDES, the first training-free framework that adaptively skips experts to enable efficient and accurate MoE MLLM inference. It incorporates a globally-modulated local gating (GMLG) mechanism that integrates global layer-wise importance into local routing probabilities to accurately estimate per-token expert importance. A dual-modality thresholding (DMT) method is then applied, which processes tokens from each modality separately, to derive the skipping schedule. To set the optimal thresholds, we introduce a frontier search algorithm that exploits monotonicity properties, cutting convergence time from several days to a few hours. Extensive experiments for 3 model series across 13 benchmarks demonstrate that MoDES far outperforms previous approaches. For instance, when skipping 88% experts for Qwen3-VL-MoE-30B-A3B-Instruct, the performance boost is up to 10.67% (97.33% vs. 86.66%). Furthermore, MoDES significantly enhances inference speed, improving the prefilling time by 2.16$\\times$ and the decoding time by 1.26$\\times$.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
+      "abstract": "Marker-based optical motion capture (MoCap), while long regarded as the gold standard for accuracy, faces practical challenges, such as time-consuming preparation and marker identification ambiguity, due to its reliance on dense marker configurations, which fundamentally limit its scalability. To address this, we introduce a novel fundamental unit for MoCap, the Rigid Body Marker (RBM), which provides unambiguous 6-DoF data and drastically simplifies setup. Leveraging this new data modality, we develop a deep-learning-based regression model that directly estimates SMPL parameters under a geodesic loss. This end-to-end approach matches the performance of optimization-based methods while requiring over an order of magnitude less computation. Trained on synthesized data from the AMASS dataset, our end-to-end model achieves state-of-the-art accuracy in body pose estimation. Real-world data captured using a Vicon optical tracking system further demonstrates the practical viability of our approach. Overall, the results show that combining sparse 6-DoF RBM with a manifold-aware geodesic loss yields a practical and high-fidelity solution for real-time MoCap in graphics, virtual reality, and biomechanics.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
       "categories": [
         "cs.CV",
-        "cs.CL"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.15690v1",
-        "pdf": "https://arxiv.org/pdf/2511.15690v1"
-      },
-      "arxiv_id": "2511.15690v1",
-      "comment": "Code will be released upon acceptance",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Mixture-of-Experts (MoE) Multimodal large language models (MLLMs) excel at vision-language tasks, but they suffer from high computational inefficiency. To reduce inference overhead, expert skipping methods have been proposed to deactivate redundant experts based on the current input tokens. However, we find that applying these methods-originally designed for unimodal large language models (LLMs)-t...",
-        "key_contributions": [
-          "Mixture-of-Experts (MoE) Multimodal large language models (MLLMs) excel at vision-language tasks, but they suffer from high computational inefficiency.",
-          "To reduce inference overhead, expert skipping methods have been proposed to deactivate redundant experts based on the current input tokens.",
-          "However, we find that applying these methods-originally designed for unimodal large language models (LLMs)-to MLLMs results in considerable performance degradation."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.15690v1.mp3"
-      }
-    },
-    {
-      "id": "2511.15567v1",
-      "title": "Computer-Use Agents as Judges for Generative User Interface",
-      "authors": [
-        "Kevin Qinghong Lin",
-        "Siyuan Hu",
-        "Linjie Li",
-        "Zhengyuan Yang",
-        "Lijuan Wang",
-        "Philip Torr",
-        "Mike Zheng Shou"
-      ],
-      "abstract": "Computer-Use Agents (CUA) are becoming increasingly capable of autonomously operating digital environments through Graphical User Interfaces (GUI). Yet, most GUI remain designed primarily for humans--prioritizing aesthetics and usability--forcing agents to adopt human-oriented behaviors that are unnecessary for efficient task execution. At the same time, rapid advances in coding-oriented language models (Coder) have transformed automatic GUI design. This raises a fundamental question: Can CUA as judges to assist Coder for automatic GUI design? To investigate, we introduce AUI-Gym, a benchmark for Automatic GUI development spanning 52 applications across diverse domains. Using language models, we synthesize 1560 tasks that simulate real-world scenarios. To ensure task reliability, we further develop a verifier that programmatically checks whether each task is executable within its environment. Building on this, we propose a Coder-CUA in Collaboration framework: the Coder acts as Designer, generating and revising websites, while the CUA serves as Judge, evaluating functionality and refining designs. Success is measured not by visual appearance, but by task solvability and CUA navigation success rate. To turn CUA feedback into usable guidance, we design a CUA Dashboard that compresses multi-step navigation histories into concise visual summaries, offering interpretable guidance for iterative redesign. By positioning agents as both designers and judges, our framework shifts interface design toward agent-native efficiency and reliability. Our work takes a step toward shifting agents from passive use toward active participation in digital environments. Our code and dataset are available at https://github.com/showlab/AUI.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
-      "categories": [
-        "cs.CV",
-        "cs.CL",
         "cs.HC"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.15567v1",
-        "pdf": "https://arxiv.org/pdf/2511.15567v1"
+        "paper": "http://arxiv.org/abs/2511.16418v1",
+        "pdf": "https://arxiv.org/pdf/2511.16418v1"
       },
-      "arxiv_id": "2511.15567v1",
-      "comment": "Project: https://showlab.github.io/AUI Github: https://github.com/showlab/AUI",
+      "arxiv_id": "2511.16418v1",
+      "comment": "The source code is available in : https://github.com/wer010/GLRBM-Mocap",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.25,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Computer-Use Agents (CUA) are becoming increasingly capable of autonomously operating digital environments through Graphical User Interfaces (GUI). Yet, most GUI remain designed primarily for humans--prioritizing aesthetics and usability--forcing agents to adopt human-oriented behaviors that are unnecessary for efficient task execution. At the same time, rapid advances in coding-oriented language ...",
-        "key_contributions": [
-          "Computer-Use Agents (CUA) are becoming increasingly capable of autonomously operating digital environments through Graphical User Interfaces (GUI).",
-          "Yet, most GUI remain designed primarily for humans--prioritizing aesthetics and usability--forcing agents to adopt human-oriented behaviors that are unnecessary for efficient task execution.",
-          "At the same time, rapid advances in coding-oriented language models (Coder) have transformed automatic GUI design."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.15567v1.mp3"
-      }
-    },
-    {
-      "id": "2511.15622v1",
-      "title": "The SA-FARI Dataset: Segment Anything in Footage of Animals for Recognition and Identification",
-      "authors": [
-        "Dante Francisco Wasmuht",
-        "Otto Brookes",
-        "Maximillian Schall",
-        "Pablo Palencia",
-        "Chris Beirne",
-        "Tilo Burghardt",
-        "Majid Mirmehdi",
-        "Hjalmar Kühl",
-        "Mimi Arandjelovic",
-        "Sam Pottie",
-        "Peter Bermant",
-        "Brandon Asheim",
-        "Yi Jin Toh",
-        "Adam Elzinga",
-        "Jason Holmberg",
-        "Andrew Whitworth",
-        "Eleanor Flatt",
-        "Laura Gustafson",
-        "Chaitanya Ryali",
-        "Yuan-Ting Hu",
-        "Baishan Guo",
-        "Andrew Westbury",
-        "Kate Saenko",
-        "Didac Suris"
-      ],
-      "abstract": "Automated video analysis is critical for wildlife conservation. A foundational task in this domain is multi-animal tracking (MAT), which underpins applications such as individual re-identification and behavior recognition. However, existing datasets are limited in scale, constrained to a few species, or lack sufficient temporal and geographical diversity - leaving no suitable benchmark for training general-purpose MAT models applicable across wild animal populations. To address this, we introduce SA-FARI, the largest open-source MAT dataset for wild animals. It comprises 11,609 camera trap videos collected over approximately 10 years (2014-2024) from 741 locations across 4 continents, spanning 99 species categories. Each video is exhaustively annotated culminating in ~46 hours of densely annotated footage containing 16,224 masklet identities and 942,702 individual bounding boxes, segmentation masks, and species labels. Alongside the task-specific annotations, we publish anonymized camera trap locations for each video. Finally, we present comprehensive benchmarks on SA-FARI using state-of-the-art vision-language models for detection and tracking, including SAM 3, evaluated with both species-specific and generic animal prompts. We also compare against vision-only methods developed specifically for wildlife analysis. SA-FARI is the first large-scale dataset to combine high species diversity, multi-region coverage, and high-quality spatio-temporal annotations, offering a new foundation for advancing generalizable multianimal tracking in the wild. The dataset is available at $\\href{https://www.conservationxlabs.com/sa-fari}{\\text{conservationxlabs.com/SA-FARI}}$.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.15622v1",
-        "pdf": "https://arxiv.org/pdf/2511.15622v1"
-      },
-      "arxiv_id": "2511.15622v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9033898305084747,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Automated video analysis is critical for wildlife conservation. A foundational task in this domain is multi-animal tracking (MAT), which underpins applications such as individual re-identification and behavior recognition. However, existing datasets are limited in scale, constrained to a few species, or lack sufficient temporal and geographical diversity - leaving no suitable benchmark for trainin...",
-        "key_contributions": [
-          "Automated video analysis is critical for wildlife conservation.",
-          "A foundational task in this domain is multi-animal tracking (MAT), which underpins applications such as individual re-identification and behavior recognition.",
-          "However, existing datasets are limited in scale, constrained to a few species, or lack sufficient temporal and geographical diversity - leaving no suitable benchmark for training general-purpose MAT models applicable across wild animal populations."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.15622v1.mp3"
-      }
-    },
-    {
-      "id": "2511.15429v1",
-      "title": "WarNav: An Autonomous Driving Benchmark for Segmentation of Navigable Zones in War Scenes",
-      "authors": [
-        "Marc-Emmanuel Coupvent des Graviers",
-        "Hejer Ammar",
-        "Christophe Guettier",
-        "Yann Dumortier",
-        "Romaric Audigier"
-      ],
-      "abstract": "We introduce WarNav, a novel real-world dataset constructed from images of the open-source DATTALION repository, specifically tailored to enable the development and benchmarking of semantic segmentation models for autonomous ground vehicle navigation in unstructured, conflict-affected environments. This dataset addresses a critical gap between conventional urban driving resources and the unique operational scenarios encountered by unmanned systems in hazardous and damaged war-zones. We detail the methodological challenges encountered, ranging from data heterogeneity to ethical considerations, providing guidance for future efforts that target extreme operational contexts. To establish performance references, we report baseline results on WarNav using several state-of-the-art semantic segmentation models trained on structured urban scenes. We further analyse the impact of training data environments and propose a first step towards effective navigability in challenging environments with the constraint of having no annotation of the targeted images. Our goal is to foster impactful research that enhances the robustness and safety of autonomous vehicles in high-risk scenarios while being frugal in annotated data.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.15429v1",
-        "pdf": "https://arxiv.org/pdf/2511.15429v1"
-      },
-      "arxiv_id": "2511.15429v1",
-      "comment": "Accepted at CAID (Conference on Artificial Intelligence for Defence)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9033898305084747,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We introduce WarNav, a novel real-world dataset constructed from images of the open-source DATTALION repository, specifically tailored to enable the development and benchmarking of semantic segmentation models for autonomous ground vehicle navigation in unstructured, conflict-affected environments. This dataset addresses a critical gap between conventional urban driving resources and the unique op...",
-        "key_contributions": [
-          "We introduce WarNav, a novel real-world dataset constructed from images of the open-source DATTALION repository, specifically tailored to enable the development and benchmarking of semantic segmentation models for autonomous ground vehicle navigation in unstructured, conflict-affected environments.",
-          "This dataset addresses a critical gap between conventional urban driving resources and the unique operational scenarios encountered by unmanned systems in hazardous and damaged war-zones.",
-          "We detail the methodological challenges encountered, ranging from data heterogeneity to ethical considerations, providing guidance for future efforts that target extreme operational contexts."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.15429v1.mp3"
-      }
-    },
-    {
-      "id": "2511.15700v1",
-      "title": "First Frame Is the Place to Go for Video Content Customization",
-      "authors": [
-        "Jingxi Chen",
-        "Zongxia Li",
-        "Zhichao Liu",
-        "Guangyao Shi",
-        "Xiyang Wu",
-        "Fuxiao Liu",
-        "Cornelia Fermuller",
-        "Brandon Y. Feng",
-        "Yiannis Aloimonos"
-      ],
-      "abstract": "What role does the first frame play in video generation models? Traditionally, it's viewed as the spatial-temporal starting point of a video, merely a seed for subsequent animation. In this work, we reveal a fundamentally different perspective: video models implicitly treat the first frame as a conceptual memory buffer that stores visual entities for later reuse during generation. Leveraging this insight, we show that it's possible to achieve robust and generalized video content customization in diverse scenarios, using only 20-50 training examples without architectural changes or large-scale finetuning. This unveils a powerful, overlooked capability of video generation models for reference-based video customization.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.15700v1",
-        "pdf": "https://arxiv.org/pdf/2511.15700v1"
-      },
-      "arxiv_id": "2511.15700v1",
-      "comment": "Project Website: https://firstframego.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "What role does the first frame play in video generation models? Traditionally, it's viewed as the spatial-temporal starting point of a video, merely a seed for subsequent animation. In this work, we reveal a fundamentally different perspective: video models implicitly treat the first frame as a conceptual memory buffer that stores visual entities for later reuse during generation. Leveraging this ...",
-        "key_contributions": [
-          "What role does the first frame play in video generation models? Traditionally, it's viewed as the spatial-temporal starting point of a video, merely a seed for subsequent animation.",
-          "In this work, we reveal a fundamentally different perspective: video models implicitly treat the first frame as a conceptual memory buffer that stores visual entities for later reuse during generation.",
-          "Leveraging this insight, we show that it's possible to achieve robust and generalized video content customization in diverse scenarios, using only 20-50 training examples without architectural changes or large-scale finetuning."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.15700v1.mp3"
-      }
-    },
-    {
-      "id": "2511.15535v1",
-      "title": "A Hybrid CNN-ViT-GNN Framework with GAN-Based Augmentation for Intelligent Weed Detection in Precision Agriculture",
-      "authors": [
-        "Pandiyaraju V",
-        "Abishek Karthik",
-        "Sreya Mynampati",
-        "Poovarasan L",
-        "D. Saraswathi"
-      ],
-      "abstract": "The task of weed detection is an essential element of precision agriculture since accurate species identification allows a farmer to selectively apply herbicides and fits into sustainable agriculture crop management. This paper proposes a hybrid deep learning framework recipe for weed detection that utilizes Convolutional Neural Networks (CNNs), Vision Transformers (ViTs), and Graph Neural Networks (GNNs) to build robustness to multiple field conditions. A Generative Adversarial Network (GAN)-based augmentation method was imposed to balance class distributions and better generalize the model. Further, a self-supervised contrastive pre-training method helps to learn more features from limited annotated data. Experimental results yield superior results with 99.33% accuracy, precision, recall, and F1-score on multi-benchmark datasets. The proposed model architecture enables local, global, and relational feature representations and offers high interpretability and adaptability. Practically, the framework allows real-time, efficient deployment to edge devices for automated weed detecting, reducing over-reliance on herbicides and providing scalable, sustainable precision-farming options.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.15535v1",
-        "pdf": "https://arxiv.org/pdf/2511.15535v1"
-      },
-      "arxiv_id": "2511.15535v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.690677966101695,
-      "score_breakdown": {
-        "total_score": 3.69,
-        "field_match": {
-          "score": 1.1,
-          "matches": [
-            "self-supervised",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The task of weed detection is an essential element of precision agriculture since accurate species identification allows a farmer to selectively apply herbicides and fits into sustainable agriculture crop management. This paper proposes a hybrid deep learning framework recipe for weed detection that utilizes Convolutional Neural Networks (CNNs), Vision Transformers (ViTs), and Graph Neural Network...",
-        "key_contributions": [
-          "The task of weed detection is an essential element of precision agriculture since accurate species identification allows a farmer to selectively apply herbicides and fits into sustainable agriculture crop management.",
-          "This paper proposes a hybrid deep learning framework recipe for weed detection that utilizes Convolutional Neural Networks (CNNs), Vision Transformers (ViTs), and Graph Neural Networks (GNNs) to build robustness to multiple field conditions.",
-          "A Generative Adversarial Network (GAN)-based augmentation method was imposed to balance class distributions and better generalize the model."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.15535v1.mp3"
-      }
-    },
-    {
-      "id": "2511.15440v1",
-      "title": "A Dataset and Baseline for Deep Learning-Based Visual Quality Inspection in Remanufacturing",
-      "authors": [
-        "Johannes C. Bauer",
-        "Paul Geng",
-        "Stephan Trattnig",
-        "Petr Dokládal",
-        "Rüdiger Daub"
-      ],
-      "abstract": "Remanufacturing describes a process where worn products are restored to like-new condition and it offers vast ecological and economic potentials. A key step is the quality inspection of disassembled components, which is mostly done manually due to the high variety of parts and defect patterns. Deep neural networks show great potential to automate such visual inspection tasks but struggle to generalize to new product variants, components, or defect patterns. To tackle this challenge, we propose a novel image dataset depicting typical gearbox components in good and defective condition from two automotive transmissions. Depending on the train-test split of the data, different distribution shifts are generated to benchmark the generalization ability of a classification model. We evaluate different models using the dataset and propose a contrastive regularization loss to enhance model robustness. The results obtained demonstrate the ability of the loss to improve generalisation to unseen types of components.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.15440v1",
-        "pdf": "https://arxiv.org/pdf/2511.15440v1"
-      },
-      "arxiv_id": "2511.15440v1",
-      "comment": "",
-      "journal_ref": "2025 IEEE 30th International Conference on Emerging Technologies and Factory Automation (ETFA)",
-      "has_code": false,
-      "relevance_score": 3.669491525423729,
-      "score_breakdown": {
-        "total_score": 3.67,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "deep learning"
-          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -599,6 +216,201 @@
           "weight": 0.15
         },
         "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Marker-based optical motion capture (MoCap), while long regarded as the gold standard for accuracy, faces practical challenges, such as time-consuming preparation and marker identification ambiguity, due to its reliance on dense marker configurations, which fundamentally limit its scalability. To address this, we introduce a novel fundamental unit for MoCap, the Rigid Body Marker (RBM), which prov...",
+        "key_contributions": [
+          "Marker-based optical motion capture (MoCap), while long regarded as the gold standard for accuracy, faces practical challenges, such as time-consuming preparation and marker identification ambiguity, due to its reliance on dense marker configurations, which fundamentally limit its scalability.",
+          "To address this, we introduce a novel fundamental unit for MoCap, the Rigid Body Marker (RBM), which provides unambiguous 6-DoF data and drastically simplifies setup.",
+          "Leveraging this new data modality, we develop a deep-learning-based regression model that directly estimates SMPL parameters under a geodesic loss."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.16418v1.mp3"
+      }
+    },
+    {
+      "id": "2511.16669v1",
+      "title": "Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO",
+      "authors": [
+        "Junhao Cheng",
+        "Liang Hou",
+        "Xin Tao",
+        "Jing Liao"
+      ],
+      "abstract": "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment. Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.g., imagine teaching someone to tie a tie using only text), we identify an underutilized opportunity to extend video as a new answer modality for Next-Event Prediction (NEP), formalized as Video-Next-Event Prediction (VNEP). While the established NEP task takes a video with a procedural or predictive question as input to predict the next event in text, VNEP requires dynamic video responses. This shift from telling to showing unlocks more intuitive and customized answers for procedural learning and creative exploration. However, this task remains challenging for existing models, as it demands an understanding of multimodal input, instruction-conditioned reasoning, and the generation of video with visual and semantic consistency. To address this, we introduce VANS, a model that leverages reinforcement learning to align a Vision-Language Model (VLM) with a Video Diffusion Model (VDM) for VNEP. The core of VANS is our proposed Joint-GRPO that orchestrates the VLM and VDM to function as a unit. Driven by a shared reward on their respective output, it optimizes the VLM to produce captions that are both accurate and friendly to visualize, while guiding the VDM to generate videos that are faithful to these captions and the input visual context. To enable this learning, we craft VANS-Data-100K, a dedicated dataset for the VNEP task. Experiments on procedural and predictive benchmarks demonstrate that VANS achieves state-of-the-art performance in both video event prediction and visualization. Codes are released in https://github.com/KlingTeam/VANS.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.16669v1",
+        "pdf": "https://arxiv.org/pdf/2511.16669v1"
+      },
+      "arxiv_id": "2511.16669v1",
+      "comment": "Project page: https://video-as-answer.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.15,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment. Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.g., imagine teaching someone to tie a tie using only text), we identify an underutilized opportunity to extend video as a new an...",
+        "key_contributions": [
+          "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment.",
+          "Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.",
+          "g."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.16669v1.mp3"
+      }
+    },
+    {
+      "id": "2511.16595v1",
+      "title": "TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding",
+      "authors": [
+        "Boshen Xu",
+        "Zihan Xiao",
+        "Jiaze Li",
+        "Jianzhong Ju",
+        "Zhenbo Luo",
+        "Jian Luan",
+        "Qin Jin"
+      ],
+      "abstract": "We introduce TimeViper, a hybrid vision-language model designed to tackle challenges of long video understanding. Processing long videos demands both an efficient model architecture and an effective mechanism for handling extended temporal contexts. To this end, TimeViper adopts a hybrid Mamba-Transformer backbone that combines the efficiency of state-space models with the expressivity of attention mechanisms. Through this hybrid design, we reveal the vision-to-text information aggregation phenomenon, where information progressively flows from vision tokens to text tokens across increasing LLM depth, resulting in severe vision token redundancy. Motivated by this observation, we propose TransV, a token information transfer module that transfers and compresses vision tokens into instruction tokens while maintaining multimodal understanding capabilities. This design enables TimeViper to process hour-long videos exceeding 10,000 frames. Extensive experiments across multiple benchmarks demonstrate that TimeViper competes with state-of-the-art models while extending frame numbers. We further analyze attention behaviors of both Mamba and Transformer layers, offering new insights into hybrid model interpretability. This work represents an initial step towards developing, interpreting, and compressing hybrid Mamba-Transformer architectures.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.16595v1",
+        "pdf": "https://arxiv.org/pdf/2511.16595v1"
+      },
+      "arxiv_id": "2511.16595v1",
+      "comment": "Project page: https://xuboshen.github.io/TimeViper",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We introduce TimeViper, a hybrid vision-language model designed to tackle challenges of long video understanding. Processing long videos demands both an efficient model architecture and an effective mechanism for handling extended temporal contexts. To this end, TimeViper adopts a hybrid Mamba-Transformer backbone that combines the efficiency of state-space models with the expressivity of attentio...",
+        "key_contributions": [
+          "We introduce TimeViper, a hybrid vision-language model designed to tackle challenges of long video understanding.",
+          "Processing long videos demands both an efficient model architecture and an effective mechanism for handling extended temporal contexts.",
+          "To this end, TimeViper adopts a hybrid Mamba-Transformer backbone that combines the efficiency of state-space models with the expressivity of attention mechanisms."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.16595v1.mp3"
+      }
+    },
+    {
+      "id": "2511.16542v1",
+      "title": "EOGS++: Earth Observation Gaussian Splatting with Internal Camera Refinement and Direct Panchromatic Rendering",
+      "authors": [
+        "Pierrick Bournez",
+        "Luca Savant Aira",
+        "Thibaud Ehret",
+        "Gabriele Facciolo"
+      ],
+      "abstract": "Recently, 3D Gaussian Splatting has been introduced as a compelling alternative to NeRF for Earth observation, offering com- petitive reconstruction quality with significantly reduced training times. In this work, we extend the Earth Observation Gaussian Splatting (EOGS) framework to propose EOGS++, a novel method tailored for satellite imagery that directly operates on raw high-resolution panchromatic data without requiring external preprocessing. Furthermore, leveraging optical flow techniques we embed bundle adjustment directly within the training process, avoiding reliance on external optimization tools while improving camera pose estimation. We also introduce several improvements to the original implementation, including early stopping and TSDF post-processing, all contributing to sharper reconstructions and better geometric accuracy. Experiments on the IARPA 2016 and DFC2019 datasets demonstrate that EOGS++ achieves state-of-the-art performance in terms of reconstruction quality and effi- ciency, outperforming the original EOGS method and other NeRF-based methods while maintaining the computational advantages of Gaussian Splatting. Our model demonstrates an improvement from 1.33 to 1.19 mean MAE errors on buildings compared to the original EOGS models",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.16542v1",
+        "pdf": "https://arxiv.org/pdf/2511.16542v1"
+      },
+      "arxiv_id": "2511.16542v1",
+      "comment": "8 pages, ISPRS",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.115254237288136,
+      "score_breakdown": {
+        "total_score": 4.12,
+        "field_match": {
+          "score": 2.29,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "nerf"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
           "score": 3.0,
           "has_code": false,
           "weight": 0.1
@@ -609,48 +421,248 @@
         }
       },
       "ai_summaries": {
-        "short": "Remanufacturing describes a process where worn products are restored to like-new condition and it offers vast ecological and economic potentials. A key step is the quality inspection of disassembled components, which is mostly done manually due to the high variety of parts and defect patterns. Deep neural networks show great potential to automate such visual inspection tasks but struggle to genera...",
+        "short": "Recently, 3D Gaussian Splatting has been introduced as a compelling alternative to NeRF for Earth observation, offering com- petitive reconstruction quality with significantly reduced training times. In this work, we extend the Earth Observation Gaussian Splatting (EOGS) framework to propose EOGS++, a novel method tailored for satellite imagery that directly operates on raw high-resolution panchro...",
         "key_contributions": [
-          "Remanufacturing describes a process where worn products are restored to like-new condition and it offers vast ecological and economic potentials.",
-          "A key step is the quality inspection of disassembled components, which is mostly done manually due to the high variety of parts and defect patterns.",
-          "Deep neural networks show great potential to automate such visual inspection tasks but struggle to generalize to new product variants, components, or defect patterns."
+          "Recently, 3D Gaussian Splatting has been introduced as a compelling alternative to NeRF for Earth observation, offering com- petitive reconstruction quality with significantly reduced training times.",
+          "In this work, we extend the Earth Observation Gaussian Splatting (EOGS) framework to propose EOGS++, a novel method tailored for satellite imagery that directly operates on raw high-resolution panchromatic data without requiring external preprocessing.",
+          "Furthermore, leveraging optical flow techniques we embed bundle adjustment directly within the training process, avoiding reliance on external optimization tools while improving camera pose estimation."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.15440v1.mp3"
+        "audio_url": "/audio/2511.16542v1.mp3"
       }
     },
     {
-      "id": "2511.15597v1",
-      "title": "Learning from Mistakes: Loss-Aware Memory Enhanced Continual Learning for LiDAR Place Recognition",
+      "id": "2511.16668v1",
+      "title": "V-ReasonBench: Toward Unified Reasoning Benchmark Suite for Video Generation Models",
       "authors": [
-        "Xufei Wang",
-        "Junqiao Zhao",
-        "Siyue Tao",
-        "Qiwen Gu",
-        "Wonbong Kim",
-        "Tiantian Feng"
+        "Yang Luo",
+        "Xuanlei Zhao",
+        "Baijiong Lin",
+        "Lingting Zhu",
+        "Liyao Tang",
+        "Yuqi Liu",
+        "Ying-Cong Chen",
+        "Shengju Qian",
+        "Xin Wang",
+        "Yang You"
       ],
-      "abstract": "LiDAR place recognition plays a crucial role in SLAM, robot navigation, and autonomous driving. However, existing LiDAR place recognition methods often struggle to adapt to new environments without forgetting previously learned knowledge, a challenge widely known as catastrophic forgetting. To address this issue, we propose KDF+, a novel continual learning framework for LiDAR place recognition that extends the KDF paradigm with a loss-aware sampling strategy and a rehearsal enhancement mechanism. The proposed sampling strategy estimates the learning difficulty of each sample via its loss value and selects samples for replay according to their estimated difficulty. Harder samples, which tend to encode more discriminative information, are sampled with higher probability while maintaining distributional coverage across the dataset. In addition, the rehearsal enhancement mechanism encourages memory samples to be further refined during new-task training by slightly reducing their loss relative to previous tasks, thereby reinforcing long-term knowledge retention. Extensive experiments across multiple benchmarks demonstrate that KDF+ consistently outperforms existing continual learning methods and can be seamlessly integrated into state-of-the-art continual learning for LiDAR place recognition frameworks to yield significant and stable performance gains. The code will be available at https://github.com/repo/KDF-plus.",
-      "published": "2025-11-19",
-      "updated": "2025-11-19",
+      "abstract": "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation. We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics. The benchmark is built from both synthetic and real-world image sequences and provides a diverse set of answer-verifiable tasks that are reproducible, scalable, and unambiguous. Evaluations of six state-of-the-art video models reveal clear dimension-wise differences, with strong variation in structured, spatial, pattern-based, and physical reasoning. We further compare video models with strong image models, analyze common hallucination behaviors, and study how video duration affects Chain-of-Frames reasoning. Overall, V-ReasonBench offers a unified and reproducible framework for measuring video reasoning and aims to support the development of models with more reliable, human-aligned reasoning skills.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.15597v1",
-        "pdf": "https://arxiv.org/pdf/2511.15597v1"
+        "paper": "http://arxiv.org/abs/2511.16668v1",
+        "pdf": "https://arxiv.org/pdf/2511.16668v1"
       },
-      "arxiv_id": "2511.15597v1",
-      "comment": "8 pages, 4 figures",
+      "arxiv_id": "2511.16668v1",
+      "comment": "Project Page: https://oahzxl.github.io/VReasonBench",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.65,
+      "has_code": true,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation. We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics. The benchmark is built from...",
+        "key_contributions": [
+          "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation.",
+          "We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics.",
+          "The benchmark is built from both synthetic and real-world image sequences and provides a diverse set of answer-verifiable tasks that are reproducible, scalable, and unambiguous."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.16668v1.mp3"
+      }
+    },
+    {
+      "id": "2511.16674v1",
+      "title": "Dataset Distillation for Pre-Trained Self-Supervised Vision Models",
+      "authors": [
+        "George Cazenavette",
+        "Antonio Torralba",
+        "Vincent Sitzmann"
+      ],
+      "abstract": "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples. Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models. In contrast, state-of-the-art vision approaches are increasingly building on large, pre-trained self-supervised models rather than training from scratch. In this paper, we investigate the problem of distilling datasets that enable us to optimally train linear probes on top of such large, pre-trained vision models. We introduce a method of dataset distillation for this task called Linear Gradient Matching that optimizes the synthetic images such that, when passed through a pre-trained feature extractor, they induce gradients in the linear classifier similar to those produced by the real data. Our method yields synthetic data that outperform all real-image baselines and, remarkably, generalize across pre-trained vision models, enabling us, for instance, to train a linear CLIP probe that performs competitively using a dataset distilled via a DINO backbone. Further, we show that our distilled datasets are exceptionally effective for fine-grained classification and provide a valuable tool for model interpretability, predicting, among other things, how similar two models' embedding spaces are under the platonic representation hypothesis or whether a model is sensitive to spurious correlations in adversarial datasets.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.16674v1",
+        "pdf": "https://arxiv.org/pdf/2511.16674v1"
+      },
+      "arxiv_id": "2511.16674v1",
+      "comment": "Accepted at NeurIPS 2025. Project page: https://linear-gradient-matching.github.io/ Code: https://github.com/GeorgeCazenavette/linear-gradient-matching",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9711864406779656,
+      "score_breakdown": {
+        "total_score": 3.97,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples. Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models. In contrast, state-of-the-art vision approaches are increasingly building on larg...",
+        "key_contributions": [
+          "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples.",
+          "Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models.",
+          "In contrast, state-of-the-art vision approaches are increasingly building on large, pre-trained self-supervised models rather than training from scratch."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.16674v1.mp3"
+      }
+    },
+    {
+      "id": "2511.16592v1",
+      "title": "gfnx: Fast and Scalable Library for Generative Flow Networks in JAX",
+      "authors": [
+        "Daniil Tiapkin",
+        "Artem Agarkov",
+        "Nikita Morozov",
+        "Ian Maksimov",
+        "Askar Tsyganov",
+        "Timofei Gritsaev",
+        "Sergey Samsonov"
+      ],
+      "abstract": "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX. gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets. We include synthetic hypergrids, multiple sequence generation environments with various editing regimes and particular reward designs for molecular generation, phylogenetic tree construction, Bayesian structure learning, and sampling from the Ising model energy. Across different tasks, gfnx achieves significant wall-clock speedups compared to Pytorch-based benchmarks (such as torchgfn library) and author implementations. For example, gfnx achieves up to 55 times speedup on CPU-based sequence generation environments, and up to 80 times speedup with the GPU-based Bayesian network structure learning setup. Our package provides a diverse set of benchmarks and aims to standardize empirical evaluation and accelerate research and applications of GFlowNets. The library is available on GitHub (https://github.com/d-tiapkin/gfnx) and on pypi (https://pypi.org/project/gfnx/). Documentation is available on https://gfnx.readthedocs.io.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.16592v1",
+        "pdf": "https://arxiv.org/pdf/2511.16592v1"
+      },
+      "arxiv_id": "2511.16592v1",
+      "comment": "GitHub: https://github.com/d-tiapkin/gfnx | Documentation: https://gfnx.readthedocs.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9499999999999997,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX. gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets. We include synthetic hypergrids, multiple sequence generation environments with various editin...",
+        "key_contributions": [
+          "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX.",
+          "gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets.",
+          "We include synthetic hypergrids, multiple sequence generation environments with various editing regimes and particular reward designs for molecular generation, phylogenetic tree construction, Bayesian structure learning, and sampling from the Ising model energy."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.16592v1.mp3"
+      }
+    },
+    {
+      "id": "2511.16521v1",
+      "title": "YOWO: You Only Walk Once to Jointly Map An Indoor Scene and Register Ceiling-mounted Cameras",
+      "authors": [
+        "Fan Yang",
+        "Sosuke Yamao",
+        "Ikuo Kusajima",
+        "Atsunori Moteki",
+        "Shoichi Masui",
+        "Shan Jiang"
+      ],
+      "abstract": "Using ceiling-mounted cameras (CMCs) for indoor visual capturing opens up a wide range of applications. However, registering CMCs to the target scene layout presents a challenging task. While manual registration with specialized tools is inefficient and costly, automatic registration with visual localization may yield poor results when visual ambiguity exists. To alleviate these issues, we propose a novel solution for jointly mapping an indoor scene and registering CMCs to the scene layout. Our approach involves equipping a mobile agent with a head-mounted RGB-D camera to traverse the entire scene once and synchronize CMCs to capture this mobile agent. The egocentric videos generate world-coordinate agent trajectories and the scene layout, while the videos of CMCs provide pseudo-scale agent trajectories and CMC relative poses. By correlating all the trajectories with their corresponding timestamps, the CMC relative poses can be aligned to the world-coordinate scene layout. Based on this initialization, a factor graph is customized to enable the joint optimization of ego-camera poses, scene layout, and CMC poses. We also develop a new dataset, setting the first benchmark for collaborative scene mapping and CMC registration (https://sites.google.com/view/yowo/home). Experimental results indicate that our method not only effectively accomplishes two tasks within a unified framework, but also jointly enhances their performance. We thus provide a reliable tool to facilitate downstream position-aware applications.",
+      "published": "2025-11-20",
+      "updated": "2025-11-20",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.16521v1",
+        "pdf": "https://arxiv.org/pdf/2511.16521v1"
+      },
+      "arxiv_id": "2511.16521v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.9033898305084747,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "registration"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -668,19 +680,19 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "LiDAR place recognition plays a crucial role in SLAM, robot navigation, and autonomous driving. However, existing LiDAR place recognition methods often struggle to adapt to new environments without forgetting previously learned knowledge, a challenge widely known as catastrophic forgetting. To address this issue, we propose KDF+, a novel continual learning framework for LiDAR place recognition tha...",
+        "short": "Using ceiling-mounted cameras (CMCs) for indoor visual capturing opens up a wide range of applications. However, registering CMCs to the target scene layout presents a challenging task. While manual registration with specialized tools is inefficient and costly, automatic registration with visual localization may yield poor results when visual ambiguity exists. To alleviate these issues, we propose...",
         "key_contributions": [
-          "LiDAR place recognition plays a crucial role in SLAM, robot navigation, and autonomous driving.",
-          "However, existing LiDAR place recognition methods often struggle to adapt to new environments without forgetting previously learned knowledge, a challenge widely known as catastrophic forgetting.",
-          "To address this issue, we propose KDF+, a novel continual learning framework for LiDAR place recognition that extends the KDF paradigm with a loss-aware sampling strategy and a rehearsal enhancement mechanism."
+          "Using ceiling-mounted cameras (CMCs) for indoor visual capturing opens up a wide range of applications.",
+          "However, registering CMCs to the target scene layout presents a challenging task.",
+          "While manual registration with specialized tools is inefficient and costly, automatic registration with visual localization may yield poor results when visual ambiguity exists."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.15597v1.mp3"
+        "audio_url": "/audio/2511.16521v1.mp3"
       }
     }
   ]

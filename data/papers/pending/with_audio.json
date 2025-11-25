@@ -3,143 +3,40 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2511.16546v1",
-      "title": "Progressive Supernet Training for Efficient Visual Autoregressive Modeling",
+      "id": "2511.17354v1",
+      "title": "DSeq-JEPA: Discriminative Sequential Joint-Embedding Predictive Architecture",
       "authors": [
-        "Xiaoyue Chen",
-        "Yuling Shi",
-        "Kaiyuan Li",
-        "Huandong Wang",
-        "Yong Li",
-        "Xiaodong Gu",
-        "Xinlei Chen",
-        "Mingbao Lin"
+        "Xiangteng He",
+        "Shunsuke Sakai",
+        "Kun Yuan",
+        "Nicolas Padoy",
+        "Tatsuhito Hasegawa",
+        "Leonid Sigal"
       ],
-      "abstract": "Visual Auto-Regressive (VAR) models significantly reduce inference steps through the \"next-scale\" prediction paradigm. However, progressive multi-scale generation incurs substantial memory overhead due to cumulative KV caching, limiting practical deployment.\n  We observe a scale-depth asymmetric dependency in VAR: early scales exhibit extreme sensitivity to network depth, while later scales remain robust to depth reduction. Inspired by this, we propose VARiant: by equidistant sampling, we select multiple subnets ranging from 16 to 2 layers from the original 30-layer VAR-d30 network. Early scales are processed by the full network, while later scales utilize subnet. Subnet and the full network share weights, enabling flexible depth adjustment within a single model.\n  However, weight sharing between subnet and the entire network can lead to optimization conflicts. To address this, we propose a progressive training strategy that breaks through the Pareto frontier of generation quality for both subnets and the full network under fixed-ratio training, achieving joint optimality.\n  Experiments on ImageNet demonstrate that, compared to the pretrained VAR-d30 (FID 1.95), VARiant-d16 and VARiant-d8 achieve nearly equivalent quality (FID 2.05/2.12) while reducing memory consumption by 40-65%. VARiant-d2 achieves 3.5 times speedup and 80% memory reduction at moderate quality cost (FID 2.97). In terms of deployment, VARiant's single-model architecture supports zero-cost runtime depth switching and provides flexible deployment options from high quality to extreme efficiency, catering to diverse application scenarios.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "Image-based Joint-Embedding Predictive Architecture (I-JEPA) learns visual representations by predicting latent embeddings of masked regions from visible context. However, it treats all regions uniformly and independently, lacking an explicit notion of where or in what order predictions should be made. Inspired by human visual perception, which deploys attention selectively and sequentially from the most informative to secondary regions, we propose DSeq-JEPA, a Discriminative Sequential Joint-Embedding Predictive Architecture that bridges predictive and autoregressive self-supervised learning, integrating JEPA-style latent prediction with GPT-style sequential reasoning. Specifically, DSeq-JEPA (i) first identifies primary discriminative regions based on a transformer-derived saliency map, emphasizing the distribution of visual importance, and then (ii) predicts subsequent regions in this discriminative order, progressively forming a curriculum-like semantic progression from primary to secondary cues -- a form of GPT-style pre-training. Extensive experiments across diverse tasks, including image classification (ImageNet), fine-grained visual categorization (iNaturalist21, CUB-200-2011, Stanford-Cars), detection and segmentation (MS-COCO, ADE20K), and low-level reasoning tasks (Clevr/Count, Clevr/Dist), demonstrate that DSeq-JEPA consistently focuses on more discriminative and generalizable representations than I-JEPA variants. Project page: https://github.com/SkyShunsuke/DSeq-JEPA.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16546v1",
-        "pdf": "https://arxiv.org/pdf/2511.16546v1"
+        "paper": "http://arxiv.org/abs/2511.17354v1",
+        "pdf": "https://arxiv.org/pdf/2511.17354v1"
       },
-      "arxiv_id": "2511.16546v1",
-      "comment": "Submitted to CVPR 2025. 10 pages, 7 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.300000000000001,
-      "score_breakdown": {
-        "total_score": 4.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Visual Auto-Regressive (VAR) models significantly reduce inference steps through the \"next-scale\" prediction paradigm. However, progressive multi-scale generation incurs substantial memory overhead due to cumulative KV caching, limiting practical deployment.\n  We observe a scale-depth asymmetric dependency in VAR: early scales exhibit extreme sensitivity to network depth, while later scales remain...",
-        "key_contributions": [
-          "Visual Auto-Regressive (VAR) models significantly reduce inference steps through the \"next-scale\" prediction paradigm.",
-          "However, progressive multi-scale generation incurs substantial memory overhead due to cumulative KV caching, limiting practical deployment.",
-          "We observe a scale-depth asymmetric dependency in VAR: early scales exhibit extreme sensitivity to network depth, while later scales remain robust to depth reduction."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.16546v1.mp3"
-      }
-    },
-    {
-      "id": "2511.16518v1",
-      "title": "MiMo-Embodied: X-Embodied Foundation Model Technical Report",
-      "authors": [
-        "Xiaoshuai Hao",
-        "Lei Zhou",
-        "Zhijian Huang",
-        "Zhiwen Hou",
-        "Yingbo Tang",
-        "Lingfeng Zhang",
-        "Guang Li",
-        "Zheng Lu",
-        "Shuhuai Ren",
-        "Xianhui Meng",
-        "Yuchen Zhang",
-        "Jing Wu",
-        "Jinghui Lu",
-        "Chenxu Dang",
-        "Jiayi Guan",
-        "Jianhua Wu",
-        "Zhiyi Hou",
-        "Hanbing Li",
-        "Shumeng Xia",
-        "Mingliang Zhou",
-        "Yinan Zheng",
-        "Zihao Yue",
-        "Shuhao Gu",
-        "Hao Tian",
-        "Yuannan Shen",
-        "Jianwei Cui",
-        "Wen Zhang",
-        "Shaoqing Xu",
-        "Bing Wang",
-        "Haiyang Sun",
-        "Zeyu Zhu",
-        "Yuncheng Jiang",
-        "Zibin Guo",
-        "Chuhong Gong",
-        "Chaofan Zhang",
-        "Wenbo Ding",
-        "Kun Ma",
-        "Guang Chen",
-        "Rui Cai",
-        "Diyun Xiang",
-        "Heng Qu",
-        "Fuli Luo",
-        "Hangjun Ye",
-        "Long Chen"
-      ],
-      "abstract": "We open-source MiMo-Embodied, the first cross-embodied foundation model to successfully integrate and achieve state-of-the-art performance in both Autonomous Driving and Embodied AI. MiMo-Embodied sets new records across 17 embodied AI benchmarks in Task Planning, Affordance Prediction and Spatial Understanding, while also excelling in 12 autonomous driving benchmarks across Environmental Perception, Status Prediction, and Driving Planning. Across these tasks, MiMo-Embodied significantly outperforms existing open-source, closed-source, and specialized baselines. Our results indicate that through multi-stage learning, curated data construction, and CoT/RL fine-tuning, these two domains exhibit strong positive transfer and mutually reinforce one another. We provide a detailed analysis of our model design and training methodologies to facilitate further research. Code and models are available at https://github.com/XiaomiMiMo/MiMo-Embodied.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
-      "categories": [
-        "cs.RO",
-        "cs.CL",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.16518v1",
-        "pdf": "https://arxiv.org/pdf/2511.16518v1"
-      },
-      "arxiv_id": "2511.16518v1",
-      "comment": "Code: https://github.com/XiaomiMiMo/MiMo-Embodied Model: https://huggingface.co/XiaomiMiMo/MiMo-Embodied-7B",
+      "arxiv_id": "2511.17354v1",
+      "comment": "Project page: https://github.com/SkyShunsuke/DSeq-JEPA",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.3,
+      "relevance_score": 4.274576271186441,
       "score_breakdown": {
-        "total_score": 4.3,
+        "total_score": 4.27,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.19,
+          "matches": [
+            "self-supervised",
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -148,7 +45,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -157,115 +54,55 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We open-source MiMo-Embodied, the first cross-embodied foundation model to successfully integrate and achieve state-of-the-art performance in both Autonomous Driving and Embodied AI. MiMo-Embodied sets new records across 17 embodied AI benchmarks in Task Planning, Affordance Prediction and Spatial Understanding, while also excelling in 12 autonomous driving benchmarks across Environmental Percepti...",
+        "short": "Image-based Joint-Embedding Predictive Architecture (I-JEPA) learns visual representations by predicting latent embeddings of masked regions from visible context. However, it treats all regions uniformly and independently, lacking an explicit notion of where or in what order predictions should be made. Inspired by human visual perception, which deploys attention selectively and sequentially from t...",
         "key_contributions": [
-          "We open-source MiMo-Embodied, the first cross-embodied foundation model to successfully integrate and achieve state-of-the-art performance in both Autonomous Driving and Embodied AI.",
-          "MiMo-Embodied sets new records across 17 embodied AI benchmarks in Task Planning, Affordance Prediction and Spatial Understanding, while also excelling in 12 autonomous driving benchmarks across Environmental Perception, Status Prediction, and Driving Planning.",
-          "Across these tasks, MiMo-Embodied significantly outperforms existing open-source, closed-source, and specialized baselines."
+          "Image-based Joint-Embedding Predictive Architecture (I-JEPA) learns visual representations by predicting latent embeddings of masked regions from visible context.",
+          "However, it treats all regions uniformly and independently, lacking an explicit notion of where or in what order predictions should be made.",
+          "Inspired by human visual perception, which deploys attention selectively and sequentially from the most informative to secondary regions, we propose DSeq-JEPA, a Discriminative Sequential Joint-Embedding Predictive Architecture that bridges predictive and autoregressive self-supervised learning, integrating JEPA-style latent prediction with GPT-style sequential reasoning."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16518v1.mp3"
+        "audio_url": "/audio/2511.17354v1.mp3"
       }
     },
     {
-      "id": "2511.16418v1",
-      "title": "End-to-End Motion Capture from Rigid Body Markers with Geodesic Loss",
+      "id": "2511.17442v1",
+      "title": "REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing",
       "authors": [
-        "Hai Lan",
-        "Zongyan Li",
-        "Jianmin Hu",
-        "Jialing Yang",
-        "Houde Dai"
+        "Binger Chen",
+        "Tacettin Emre Bök",
+        "Behnood Rasti",
+        "Volker Markl",
+        "Begüm Demir"
       ],
-      "abstract": "Marker-based optical motion capture (MoCap), while long regarded as the gold standard for accuracy, faces practical challenges, such as time-consuming preparation and marker identification ambiguity, due to its reliance on dense marker configurations, which fundamentally limit its scalability. To address this, we introduce a novel fundamental unit for MoCap, the Rigid Body Marker (RBM), which provides unambiguous 6-DoF data and drastically simplifies setup. Leveraging this new data modality, we develop a deep-learning-based regression model that directly estimates SMPL parameters under a geodesic loss. This end-to-end approach matches the performance of optimization-based methods while requiring over an order of magnitude less computation. Trained on synthesized data from the AMASS dataset, our end-to-end model achieves state-of-the-art accuracy in body pose estimation. Real-world data captured using a Vicon optical tracking system further demonstrates the practical viability of our approach. Overall, the results show that combining sparse 6-DoF RBM with a manifold-aware geodesic loss yields a practical and high-fidelity solution for real-time MoCap in graphics, virtual reality, and biomechanics.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "Foundation Models (FMs) are increasingly used in remote sensing (RS) for tasks such as environmental monitoring, disaster assessment, and land-use mapping. These models include unimodal vision encoders trained on a single data modality and multimodal architectures trained on combinations of SAR, multispectral, hyperspectral, and image-text data. They support diverse RS tasks including semantic segmentation, image classification, change detection, and visual question answering. However, selecting an appropriate remote sensing foundation model (RSFM) remains difficult due to scattered documentation, heterogeneous formats, and varied deployment constraints. We introduce the RSFM Database (RS-FMD), a structured resource covering over 150 RSFMs spanning multiple data modalities, resolutions, and learning paradigms. Built on RS-FMD, we present REMSA, the first LLM-based agent for automated RSFM selection from natural language queries. REMSA interprets user requirements, resolves missing constraints, ranks candidate models using in-context learning, and provides transparent justifications. We also propose a benchmark of 75 expert-verified RS query scenarios, producing 900 configurations under an expert-centered evaluation protocol. REMSA outperforms several baselines, including naive agents, dense retrieval, and unstructured RAG-based LLMs. It operates entirely on publicly available metadata and does not access private or sensitive data.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
         "cs.CV",
-        "cs.HC"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16418v1",
-        "pdf": "https://arxiv.org/pdf/2511.16418v1"
+        "paper": "http://arxiv.org/abs/2511.17442v1",
+        "pdf": "https://arxiv.org/pdf/2511.17442v1"
       },
-      "arxiv_id": "2511.16418v1",
-      "comment": "The source code is available in : https://github.com/wer010/GLRBM-Mocap",
+      "arxiv_id": "2511.17442v1",
+      "comment": "Code and data available at https://github.com/be-chen/REMSA",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.25,
+      "relevance_score": 4.203389830508474,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 4.2,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Marker-based optical motion capture (MoCap), while long regarded as the gold standard for accuracy, faces practical challenges, such as time-consuming preparation and marker identification ambiguity, due to its reliance on dense marker configurations, which fundamentally limit its scalability. To address this, we introduce a novel fundamental unit for MoCap, the Rigid Body Marker (RBM), which prov...",
-        "key_contributions": [
-          "Marker-based optical motion capture (MoCap), while long regarded as the gold standard for accuracy, faces practical challenges, such as time-consuming preparation and marker identification ambiguity, due to its reliance on dense marker configurations, which fundamentally limit its scalability.",
-          "To address this, we introduce a novel fundamental unit for MoCap, the Rigid Body Marker (RBM), which provides unambiguous 6-DoF data and drastically simplifies setup.",
-          "Leveraging this new data modality, we develop a deep-learning-based regression model that directly estimates SMPL parameters under a geodesic loss."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.16418v1.mp3"
-      }
-    },
-    {
-      "id": "2511.16669v1",
-      "title": "Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO",
-      "authors": [
-        "Junhao Cheng",
-        "Liang Hou",
-        "Xin Tao",
-        "Jing Liao"
-      ],
-      "abstract": "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment. Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.g., imagine teaching someone to tie a tie using only text), we identify an underutilized opportunity to extend video as a new answer modality for Next-Event Prediction (NEP), formalized as Video-Next-Event Prediction (VNEP). While the established NEP task takes a video with a procedural or predictive question as input to predict the next event in text, VNEP requires dynamic video responses. This shift from telling to showing unlocks more intuitive and customized answers for procedural learning and creative exploration. However, this task remains challenging for existing models, as it demands an understanding of multimodal input, instruction-conditioned reasoning, and the generation of video with visual and semantic consistency. To address this, we introduce VANS, a model that leverages reinforcement learning to align a Vision-Language Model (VLM) with a Video Diffusion Model (VDM) for VNEP. The core of VANS is our proposed Joint-GRPO that orchestrates the VLM and VDM to function as a unit. Driven by a shared reward on their respective output, it optimizes the VLM to produce captions that are both accurate and friendly to visualize, while guiding the VDM to generate videos that are faithful to these captions and the input visual context. To enable this learning, we craft VANS-Data-100K, a dedicated dataset for the VNEP task. Experiments on procedural and predictive benchmarks demonstrate that VANS achieves state-of-the-art performance in both video event prediction and visualization. Codes are released in https://github.com/KlingTeam/VANS.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.16669v1",
-        "pdf": "https://arxiv.org/pdf/2511.16669v1"
-      },
-      "arxiv_id": "2511.16669v1",
-      "comment": "Project page: https://video-as-answer.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.15,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -283,56 +120,56 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment. Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.g., imagine teaching someone to tie a tie using only text), we identify an underutilized opportunity to extend video as a new an...",
+        "short": "Foundation Models (FMs) are increasingly used in remote sensing (RS) for tasks such as environmental monitoring, disaster assessment, and land-use mapping. These models include unimodal vision encoders trained on a single data modality and multimodal architectures trained on combinations of SAR, multispectral, hyperspectral, and image-text data. They support diverse RS tasks including semantic seg...",
         "key_contributions": [
-          "While language models have become impactful in many real-world applications, video generation remains largely confined to entertainment.",
-          "Motivated by video's inherent capacity to demonstrate physical-world information that is difficult to convey through language alone (e.",
-          "g."
+          "Foundation Models (FMs) are increasingly used in remote sensing (RS) for tasks such as environmental monitoring, disaster assessment, and land-use mapping.",
+          "These models include unimodal vision encoders trained on a single data modality and multimodal architectures trained on combinations of SAR, multispectral, hyperspectral, and image-text data.",
+          "They support diverse RS tasks including semantic segmentation, image classification, change detection, and visual question answering."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16669v1.mp3"
+        "audio_url": "/audio/2511.17442v1.mp3"
       }
     },
     {
-      "id": "2511.16595v1",
-      "title": "TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding",
+      "id": "2511.17421v1",
+      "title": "Preventing Shortcut Learning in Medical Image Analysis through Intermediate Layer Knowledge Distillation from Specialist Teachers",
       "authors": [
-        "Boshen Xu",
-        "Zihan Xiao",
-        "Jiaze Li",
-        "Jianzhong Ju",
-        "Zhenbo Luo",
-        "Jian Luan",
-        "Qin Jin"
+        "Christopher Boland",
+        "Sotirios Tsaftaris",
+        "Sonia Dahdouh"
       ],
-      "abstract": "We introduce TimeViper, a hybrid vision-language model designed to tackle challenges of long video understanding. Processing long videos demands both an efficient model architecture and an effective mechanism for handling extended temporal contexts. To this end, TimeViper adopts a hybrid Mamba-Transformer backbone that combines the efficiency of state-space models with the expressivity of attention mechanisms. Through this hybrid design, we reveal the vision-to-text information aggregation phenomenon, where information progressively flows from vision tokens to text tokens across increasing LLM depth, resulting in severe vision token redundancy. Motivated by this observation, we propose TransV, a token information transfer module that transfers and compresses vision tokens into instruction tokens while maintaining multimodal understanding capabilities. This design enables TimeViper to process hour-long videos exceeding 10,000 frames. Extensive experiments across multiple benchmarks demonstrate that TimeViper competes with state-of-the-art models while extending frame numbers. We further analyze attention behaviors of both Mamba and Transformer layers, offering new insights into hybrid model interpretability. This work represents an initial step towards developing, interpreting, and compressing hybrid Mamba-Transformer architectures.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "Deep learning models are prone to learning shortcut solutions to problems using spuriously correlated yet irrelevant features of their training data. In high-risk applications such as medical image analysis, this phenomenon may prevent models from using clinically meaningful features when making predictions, potentially leading to poor robustness and harm to patients. We demonstrate that different types of shortcuts (those that are diffuse and spread throughout the image, as well as those that are localized to specific areas) manifest distinctly across network layers and can, therefore, be more effectively targeted through mitigation strategies that target the intermediate layers. We propose a novel knowledge distillation framework that leverages a teacher network fine-tuned on a small subset of task-relevant data to mitigate shortcut learning in a student network trained on a large dataset corrupted with a bias feature. Through extensive experiments on CheXpert, ISIC 2017, and SimBA datasets using various architectures (ResNet-18, AlexNet, DenseNet-121, and 3D CNNs), we demonstrate consistent improvements over traditional Empirical Risk Minimization, augmentation-based bias-mitigation, and group-based bias-mitigation approaches. In many cases, we achieve comparable performance with a baseline model trained on bias-free data, even on out-of-distribution test data. Our results demonstrate the practical applicability of our approach to real-world medical imaging scenarios where bias annotations are limited and shortcut features are difficult to identify a priori.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.CL"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16595v1",
-        "pdf": "https://arxiv.org/pdf/2511.16595v1"
+        "paper": "http://arxiv.org/abs/2511.17421v1",
+        "pdf": "https://arxiv.org/pdf/2511.17421v1"
       },
-      "arxiv_id": "2511.16595v1",
-      "comment": "Project page: https://xuboshen.github.io/TimeViper",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1499999999999995,
+      "arxiv_id": "2511.17421v1",
+      "comment": "Accepted for publication at the Journal of Machine Learning for Biomedical Imaging (MELBA) https://melba-journal.org/2025:020",
+      "journal_ref": "Machine.Learning.for.Biomedical.Imaging. 3 (2025)",
+      "has_code": false,
+      "relevance_score": 4.149152542372882,
       "score_breakdown": {
         "total_score": 4.15,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.37,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "deep learning",
+            "image analysis"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -341,62 +178,65 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 7.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We introduce TimeViper, a hybrid vision-language model designed to tackle challenges of long video understanding. Processing long videos demands both an efficient model architecture and an effective mechanism for handling extended temporal contexts. To this end, TimeViper adopts a hybrid Mamba-Transformer backbone that combines the efficiency of state-space models with the expressivity of attentio...",
+        "short": "Deep learning models are prone to learning shortcut solutions to problems using spuriously correlated yet irrelevant features of their training data. In high-risk applications such as medical image analysis, this phenomenon may prevent models from using clinically meaningful features when making predictions, potentially leading to poor robustness and harm to patients. We demonstrate that different...",
         "key_contributions": [
-          "We introduce TimeViper, a hybrid vision-language model designed to tackle challenges of long video understanding.",
-          "Processing long videos demands both an efficient model architecture and an effective mechanism for handling extended temporal contexts.",
-          "To this end, TimeViper adopts a hybrid Mamba-Transformer backbone that combines the efficiency of state-space models with the expressivity of attention mechanisms."
+          "Deep learning models are prone to learning shortcut solutions to problems using spuriously correlated yet irrelevant features of their training data.",
+          "In high-risk applications such as medical image analysis, this phenomenon may prevent models from using clinically meaningful features when making predictions, potentially leading to poor robustness and harm to patients.",
+          "We demonstrate that different types of shortcuts (those that are diffuse and spread throughout the image, as well as those that are localized to specific areas) manifest distinctly across network layers and can, therefore, be more effectively targeted through mitigation strategies that target the intermediate layers."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16595v1.mp3"
+        "audio_url": "/audio/2511.17421v1.mp3"
       }
     },
     {
-      "id": "2511.16542v1",
-      "title": "EOGS++: Earth Observation Gaussian Splatting with Internal Camera Refinement and Direct Panchromatic Rendering",
+      "id": "2511.17322v1",
+      "title": "NoPe-NeRF++: Local-to-Global Optimization of NeRF with No Pose Prior",
       "authors": [
-        "Pierrick Bournez",
-        "Luca Savant Aira",
-        "Thibaud Ehret",
-        "Gabriele Facciolo"
+        "Dongbo Shi",
+        "Shen Cao",
+        "Bojian Wu",
+        "Jinhui Guo",
+        "Lubin Fan",
+        "Renjie Chen",
+        "Ligang Liu",
+        "Jieping Ye"
       ],
-      "abstract": "Recently, 3D Gaussian Splatting has been introduced as a compelling alternative to NeRF for Earth observation, offering com- petitive reconstruction quality with significantly reduced training times. In this work, we extend the Earth Observation Gaussian Splatting (EOGS) framework to propose EOGS++, a novel method tailored for satellite imagery that directly operates on raw high-resolution panchromatic data without requiring external preprocessing. Furthermore, leveraging optical flow techniques we embed bundle adjustment directly within the training process, avoiding reliance on external optimization tools while improving camera pose estimation. We also introduce several improvements to the original implementation, including early stopping and TSDF post-processing, all contributing to sharper reconstructions and better geometric accuracy. Experiments on the IARPA 2016 and DFC2019 datasets demonstrate that EOGS++ achieves state-of-the-art performance in terms of reconstruction quality and effi- ciency, outperforming the original EOGS method and other NeRF-based methods while maintaining the computational advantages of Gaussian Splatting. Our model demonstrates an improvement from 1.33 to 1.19 mean MAE errors on buildings compared to the original EOGS models",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "In this paper, we introduce NoPe-NeRF++, a novel local-to-global optimization algorithm for training Neural Radiance Fields (NeRF) without requiring pose priors. Existing methods, particularly NoPe-NeRF, which focus solely on the local relationships within images, often struggle to recover accurate camera poses in complex scenarios. To overcome the challenges, our approach begins with a relative pose initialization with explicit feature matching, followed by a local joint optimization to enhance the pose estimation for training a more robust NeRF representation. This method significantly improves the quality of initial poses. Additionally, we introduce global optimization phase that incorporates geometric consistency constraints through bundle adjustment, which integrates feature trajectories to further refine poses and collectively boost the quality of NeRF. Notably, our method is the first work that seamlessly combines the local and global cues with NeRF, and outperforms state-of-the-art methods in both pose estimation accuracy and novel view synthesis. Extensive evaluations on benchmark datasets demonstrate our superior performance and robustness, even in challenging scenes, thus validating our design choices.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16542v1",
-        "pdf": "https://arxiv.org/pdf/2511.16542v1"
+        "paper": "http://arxiv.org/abs/2511.17322v1",
+        "pdf": "https://arxiv.org/pdf/2511.17322v1"
       },
-      "arxiv_id": "2511.16542v1",
-      "comment": "8 pages, ISPRS",
-      "journal_ref": "",
+      "arxiv_id": "2511.17322v1",
+      "comment": "",
+      "journal_ref": "Eurographics 2025",
       "has_code": false,
-      "relevance_score": 4.115254237288136,
+      "relevance_score": 4.1245762711864415,
       "score_breakdown": {
         "total_score": 4.12,
         "field_match": {
-          "score": 2.29,
+          "score": 1.19,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting",
+            "neural radiance",
             "nerf"
           ],
           "weight": 0.4
@@ -407,7 +247,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -421,49 +261,177 @@
         }
       },
       "ai_summaries": {
-        "short": "Recently, 3D Gaussian Splatting has been introduced as a compelling alternative to NeRF for Earth observation, offering com- petitive reconstruction quality with significantly reduced training times. In this work, we extend the Earth Observation Gaussian Splatting (EOGS) framework to propose EOGS++, a novel method tailored for satellite imagery that directly operates on raw high-resolution panchro...",
+        "short": "In this paper, we introduce NoPe-NeRF++, a novel local-to-global optimization algorithm for training Neural Radiance Fields (NeRF) without requiring pose priors. Existing methods, particularly NoPe-NeRF, which focus solely on the local relationships within images, often struggle to recover accurate camera poses in complex scenarios. To overcome the challenges, our approach begins with a relative p...",
         "key_contributions": [
-          "Recently, 3D Gaussian Splatting has been introduced as a compelling alternative to NeRF for Earth observation, offering com- petitive reconstruction quality with significantly reduced training times.",
-          "In this work, we extend the Earth Observation Gaussian Splatting (EOGS) framework to propose EOGS++, a novel method tailored for satellite imagery that directly operates on raw high-resolution panchromatic data without requiring external preprocessing.",
-          "Furthermore, leveraging optical flow techniques we embed bundle adjustment directly within the training process, avoiding reliance on external optimization tools while improving camera pose estimation."
+          "In this paper, we introduce NoPe-NeRF++, a novel local-to-global optimization algorithm for training Neural Radiance Fields (NeRF) without requiring pose priors.",
+          "Existing methods, particularly NoPe-NeRF, which focus solely on the local relationships within images, often struggle to recover accurate camera poses in complex scenarios.",
+          "To overcome the challenges, our approach begins with a relative pose initialization with explicit feature matching, followed by a local joint optimization to enhance the pose estimation for training a more robust NeRF representation."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16542v1.mp3"
+        "audio_url": "/audio/2511.17322v1.mp3"
       }
     },
     {
-      "id": "2511.16668v1",
-      "title": "V-ReasonBench: Toward Unified Reasoning Benchmark Suite for Video Generation Models",
+      "id": "2511.17209v1",
+      "title": "Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers",
       "authors": [
-        "Yang Luo",
-        "Xuanlei Zhao",
-        "Baijiong Lin",
-        "Lingting Zhu",
-        "Liyao Tang",
-        "Yuqi Liu",
-        "Ying-Cong Chen",
-        "Shengju Qian",
-        "Xin Wang",
-        "Yang You"
+        "Cris Claessens",
+        "Christiaan Viviers",
+        "Giacomo D'Amicantonio",
+        "Egor Bondarev",
+        "Fons van der Sommen"
       ],
-      "abstract": "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation. We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics. The benchmark is built from both synthetic and real-world image sequences and provides a diverse set of answer-verifiable tasks that are reproducible, scalable, and unambiguous. Evaluations of six state-of-the-art video models reveal clear dimension-wise differences, with strong variation in structured, spatial, pattern-based, and physical reasoning. We further compare video models with strong image models, analyze common hallucination behaviors, and study how video duration affects Chain-of-Frames reasoning. Overall, V-ReasonBench offers a unified and reproducible framework for measuring video reasoning and aims to support the development of models with more reliable, human-aligned reasoning skills.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "We introduce SPECTRE, a fully transformer-based foundation model for volumetric computed tomography (CT). Our Self-Supervised & Cross-Modal Pretraining for CT Representation Extraction (SPECTRE) approach utilizes scalable 3D Vision Transformer architectures and modern self-supervised and vision-language pretraining strategies to learn general-purpose CT representations. Volumetric CT poses unique challenges, such as extreme token scaling, geometric anisotropy, and weak or noisy clinical supervision, that make standard transformer and contrastive learning recipes ineffective out of the box. The framework jointly optimizes a local transformer for high-resolution volumetric feature extraction and a global transformer for whole-scan context modeling, making large-scale 3D attention computationally tractable. Notably, SPECTRE is trained exclusively on openly available CT datasets, demonstrating that high-performing, generalizable representations can be achieved without relying on private data. Pretraining combines DINO-style self-distillation with SigLIP-based vision-language alignment using paired radiology reports, yielding features that are both geometrically consistent and clinically meaningful. Across multiple CT benchmarks, SPECTRE consistently outperforms prior CT foundation models in both zero-shot and fine-tuned settings, establishing SPECTRE as a scalable, open, and fully transformer-based foundation model for 3D medical imaging.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16668v1",
-        "pdf": "https://arxiv.org/pdf/2511.16668v1"
+        "paper": "http://arxiv.org/abs/2511.17209v1",
+        "pdf": "https://arxiv.org/pdf/2511.17209v1"
       },
-      "arxiv_id": "2511.16668v1",
-      "comment": "Project Page: https://oahzxl.github.io/VReasonBench",
+      "arxiv_id": "2511.17209v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.063559322033899,
+      "score_breakdown": {
+        "total_score": 4.06,
+        "field_match": {
+          "score": 2.03,
+          "matches": [
+            "medical imaging",
+            "self-supervised",
+            "volumetric"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We introduce SPECTRE, a fully transformer-based foundation model for volumetric computed tomography (CT). Our Self-Supervised & Cross-Modal Pretraining for CT Representation Extraction (SPECTRE) approach utilizes scalable 3D Vision Transformer architectures and modern self-supervised and vision-language pretraining strategies to learn general-purpose CT representations. Volumetric CT poses unique ...",
+        "key_contributions": [
+          "We introduce SPECTRE, a fully transformer-based foundation model for volumetric computed tomography (CT).",
+          "Our Self-Supervised & Cross-Modal Pretraining for CT Representation Extraction (SPECTRE) approach utilizes scalable 3D Vision Transformer architectures and modern self-supervised and vision-language pretraining strategies to learn general-purpose CT representations.",
+          "Volumetric CT poses unique challenges, such as extreme token scaling, geometric anisotropy, and weak or noisy clinical supervision, that make standard transformer and contrastive learning recipes ineffective out of the box."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.17209v1.mp3"
+      }
+    },
+    {
+      "id": "2511.17217v1",
+      "title": "Dual-domain Adaptation Networks for Realistic Image Super-resolution",
+      "authors": [
+        "Chaowei Fang",
+        "Bolin Fu",
+        "De Cheng",
+        "Lechao Cheng",
+        "Guanbin Li"
+      ],
+      "abstract": "Realistic image super-resolution (SR) focuses on transforming real-world low-resolution (LR) images into high-resolution (HR) ones, handling more complex degradation patterns than synthetic SR tasks. This is critical for applications like surveillance, medical imaging, and consumer electronics. However, current methods struggle with limited real-world LR-HR data, impacting the learning of basic image features. Pre-trained SR models from large-scale synthetic datasets offer valuable prior knowledge, which can improve generalization, speed up training, and reduce the need for extensive real-world data in realistic SR tasks. In this paper, we introduce a novel approach, Dual-domain Adaptation Networks, which is able to efficiently adapt pre-trained image SR models from simulated to real-world datasets. To achieve this target, we first set up a spatial-domain adaptation strategy through selectively updating parameters of pre-trained models and employing the low-rank adaptation technique to adjust frozen parameters. Recognizing that image super-resolution involves recovering high-frequency components, we further integrate a frequency domain adaptation branch into the adapted model, which combines the spectral data of the input and the spatial-domain backbone's intermediate features to infer HR frequency maps, enhancing the SR result. Experimental evaluations on public realistic image SR benchmarks, including RealSR, D2CRealSR, and DRealSR, demonstrate the superiority of our proposed method over existing state-of-the-art models. Codes are available at: https://github.com/dummerchen/DAN.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.17217v1",
+        "pdf": "https://arxiv.org/pdf/2511.17217v1"
+      },
+      "arxiv_id": "2511.17217v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.055084745762712,
+      "score_breakdown": {
+        "total_score": 4.06,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "medical imaging"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Realistic image super-resolution (SR) focuses on transforming real-world low-resolution (LR) images into high-resolution (HR) ones, handling more complex degradation patterns than synthetic SR tasks. This is critical for applications like surveillance, medical imaging, and consumer electronics. However, current methods struggle with limited real-world LR-HR data, impacting the learning of basic im...",
+        "key_contributions": [
+          "Realistic image super-resolution (SR) focuses on transforming real-world low-resolution (LR) images into high-resolution (HR) ones, handling more complex degradation patterns than synthetic SR tasks.",
+          "This is critical for applications like surveillance, medical imaging, and consumer electronics.",
+          "However, current methods struggle with limited real-world LR-HR data, impacting the learning of basic image features."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.17217v1.mp3"
+      }
+    },
+    {
+      "id": "2511.17249v1",
+      "title": "FlexiFlow: decomposable flow matching for generation of flexible molecular ensemble",
+      "authors": [
+        "Riccardo Tedoldi",
+        "Ola Engkvist",
+        "Patrick Bryant",
+        "Hossein Azizpour",
+        "Jon Paul Janet",
+        "Alessandro Tibo"
+      ],
+      "abstract": "Sampling useful three-dimensional molecular structures along with their most favorable conformations is a key challenge in drug discovery. Current state-of-the-art 3D de-novo design flow matching or diffusion-based models are limited to generating a single conformation. However, the conformational landscape of a molecule determines its observable properties and how tightly it is able to bind to a given protein target. By generating a representative set of low-energy conformers, we can more directly assess these properties and potentially improve the ability to generate molecules with desired thermodynamic observables. Towards this aim, we propose FlexiFlow, a novel architecture that extends flow-matching models, allowing for the joint sampling of molecules along with multiple conformations while preserving both equivariance and permutation invariance. We demonstrate the effectiveness of our approach on the QM9 and GEOM Drugs datasets, achieving state-of-the-art results in molecular generation tasks. Our results show that FlexiFlow can generate valid, unstrained, unique, and novel molecules with high fidelity to the training data distribution, while also capturing the conformational diversity of molecules. Moreover, we show that our model can generate conformational ensembles that provide similar coverage to state-of-the-art physics-based methods at a fraction of the inference time. Finally, FlexiFlow can be successfully transferred to the protein-conditioned ligand generation task, even when the dataset contains only static pockets without accompanying conformations.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.17249v1",
+        "pdf": "https://arxiv.org/pdf/2511.17249v1"
+      },
+      "arxiv_id": "2511.17249v1",
+      "comment": "Preprint. Code to be released upon full publication",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.050000000000001,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -484,54 +452,55 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation. We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics. The benchmark is built from...",
+        "short": "Sampling useful three-dimensional molecular structures along with their most favorable conformations is a key challenge in drug discovery. Current state-of-the-art 3D de-novo design flow matching or diffusion-based models are limited to generating a single conformation. However, the conformational landscape of a molecule determines its observable properties and how tightly it is able to bind to a ...",
         "key_contributions": [
-          "Recent progress in generative video models, such as Veo-3, has shown surprising zero-shot reasoning abilities, creating a growing need for systematic and reliable evaluation.",
-          "We introduce V-ReasonBench, a benchmark designed to assess video reasoning across four key dimensions: structured problem-solving, spatial cognition, pattern-based inference, and physical dynamics.",
-          "The benchmark is built from both synthetic and real-world image sequences and provides a diverse set of answer-verifiable tasks that are reproducible, scalable, and unambiguous."
+          "Sampling useful three-dimensional molecular structures along with their most favorable conformations is a key challenge in drug discovery.",
+          "Current state-of-the-art 3D de-novo design flow matching or diffusion-based models are limited to generating a single conformation.",
+          "However, the conformational landscape of a molecule determines its observable properties and how tightly it is able to bind to a given protein target."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16668v1.mp3"
+        "audio_url": "/audio/2511.17249v1.mp3"
       }
     },
     {
-      "id": "2511.16674v1",
-      "title": "Dataset Distillation for Pre-Trained Self-Supervised Vision Models",
+      "id": "2511.17198v1",
+      "title": "Designing Domain-Specific Agents via Hierarchical Task Abstraction Mechanism",
       "authors": [
-        "George Cazenavette",
-        "Antonio Torralba",
-        "Vincent Sitzmann"
+        "Kaiyu Li",
+        "Jiayu Wang",
+        "Zhi Wang",
+        "Hui Qiao",
+        "Weizhan Zhang",
+        "Deyu Meng",
+        "Xiangyong Cao"
       ],
-      "abstract": "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples. Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models. In contrast, state-of-the-art vision approaches are increasingly building on large, pre-trained self-supervised models rather than training from scratch. In this paper, we investigate the problem of distilling datasets that enable us to optimally train linear probes on top of such large, pre-trained vision models. We introduce a method of dataset distillation for this task called Linear Gradient Matching that optimizes the synthetic images such that, when passed through a pre-trained feature extractor, they induce gradients in the linear classifier similar to those produced by the real data. Our method yields synthetic data that outperform all real-image baselines and, remarkably, generalize across pre-trained vision models, enabling us, for instance, to train a linear CLIP probe that performs competitively using a dataset distilled via a DINO backbone. Further, we show that our distilled datasets are exceptionally effective for fine-grained classification and provide a valuable tool for model interpretability, predicting, among other things, how similar two models' embedding spaces are under the platonic representation hypothesis or whether a model is sensitive to spurious correlations in adversarial datasets.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "LLM-driven agents, particularly those using general frameworks like ReAct or human-inspired role-playing, often struggle in specialized domains that necessitate rigorously structured workflows. Fields such as remote sensing, requiring specialized tools (e.g., correction, spectral indices calculation), and multi-step procedures (e.g., numerous intermediate products and optional steps), significantly challenge generalized approaches. To address this gap, we introduce a novel agent design framework centered on a Hierarchical Task Abstraction Mechanism (HTAM). Specifically, HTAM moves beyond emulating social roles, instead structuring multi-agent systems into a logical hierarchy that mirrors the intrinsic task-dependency graph of a given domain. This task-centric architecture thus enforces procedural correctness and decomposes complex problems into sequential layers, where each layer's sub-agents operate on the outputs of the preceding layers. We instantiate this framework as EarthAgent, a multi-agent system tailored for complex geospatial analysis. To evaluate such complex planning capabilities, we build GeoPlan-bench, a comprehensive benchmark of realistic, multi-step geospatial planning tasks. It is accompanied by a suite of carefully designed metrics to evaluate tool selection, path similarity, and logical completeness. Experiments show that EarthAgent substantially outperforms a range of established single- and multi-agent systems. Our work demonstrates that aligning agent architecture with a domain's intrinsic task structure is a critical step toward building robust and reliable specialized autonomous systems.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
-        "cs.CV",
         "cs.AI",
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16674v1",
-        "pdf": "https://arxiv.org/pdf/2511.16674v1"
+        "paper": "http://arxiv.org/abs/2511.17198v1",
+        "pdf": "https://arxiv.org/pdf/2511.17198v1"
       },
-      "arxiv_id": "2511.16674v1",
-      "comment": "Accepted at NeurIPS 2025. Project page: https://linear-gradient-matching.github.io/ Code: https://github.com/GeorgeCazenavette/linear-gradient-matching",
+      "arxiv_id": "2511.17198v1",
+      "comment": "Page: https://earth-insights.github.io/EarthAgent",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9711864406779656,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 3.97,
+        "total_score": 4.0,
         "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -540,7 +509,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -554,46 +523,120 @@
         }
       },
       "ai_summaries": {
-        "short": "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples. Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models. In contrast, state-of-the-art vision approaches are increasingly building on larg...",
+        "short": "LLM-driven agents, particularly those using general frameworks like ReAct or human-inspired role-playing, often struggle in specialized domains that necessitate rigorously structured workflows. Fields such as remote sensing, requiring specialized tools (e.g., correction, spectral indices calculation), and multi-step procedures (e.g., numerous intermediate products and optional steps), significantl...",
         "key_contributions": [
-          "The task of dataset distillation aims to find a small set of synthetic images such that training a model on them reproduces the performance of the same model trained on a much larger dataset of real samples.",
-          "Existing distillation methods focus on synthesizing datasets that enable training randomly initialized models.",
-          "In contrast, state-of-the-art vision approaches are increasingly building on large, pre-trained self-supervised models rather than training from scratch."
+          "LLM-driven agents, particularly those using general frameworks like ReAct or human-inspired role-playing, often struggle in specialized domains that necessitate rigorously structured workflows.",
+          "Fields such as remote sensing, requiring specialized tools (e.",
+          "g."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16674v1.mp3"
+        "audio_url": "/audio/2511.17198v1.mp3"
       }
     },
     {
-      "id": "2511.16592v1",
-      "title": "gfnx: Fast and Scalable Library for Generative Flow Networks in JAX",
+      "id": "2511.17484v1",
+      "title": "Radar2Shape: 3D Shape Reconstruction from High-Frequency Radar using Multiresolution Signed Distance Functions",
       "authors": [
-        "Daniil Tiapkin",
-        "Artem Agarkov",
-        "Nikita Morozov",
-        "Ian Maksimov",
-        "Askar Tsyganov",
-        "Timofei Gritsaev",
-        "Sergey Samsonov"
+        "Neel Sortur",
+        "Justin Goodwin",
+        "Purvik Patel",
+        "Luis Enrique Martinez",
+        "Tzofi Klinghoffer",
+        "Rajmonda S. Caceres",
+        "Robin Walters"
       ],
-      "abstract": "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX. gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets. We include synthetic hypergrids, multiple sequence generation environments with various editing regimes and particular reward designs for molecular generation, phylogenetic tree construction, Bayesian structure learning, and sampling from the Ising model energy. Across different tasks, gfnx achieves significant wall-clock speedups compared to Pytorch-based benchmarks (such as torchgfn library) and author implementations. For example, gfnx achieves up to 55 times speedup on CPU-based sequence generation environments, and up to 80 times speedup with the GPU-based Bayesian network structure learning setup. Our package provides a diverse set of benchmarks and aims to standardize empirical evaluation and accelerate research and applications of GFlowNets. The library is available on GitHub (https://github.com/d-tiapkin/gfnx) and on pypi (https://pypi.org/project/gfnx/). Documentation is available on https://gfnx.readthedocs.io.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
+      "abstract": "Determining the shape of 3D objects from high-frequency radar signals is analytically complex but critical for commercial and aerospace applications. Previous deep learning methods have been applied to radar modeling; however, they often fail to represent arbitrary shapes or have difficulty with real-world radar signals which are collected over limited viewing angles. Existing methods in optical 3D reconstruction can generate arbitrary shapes from limited camera views, but struggle when they naively treat the radar signal as a camera view. In this work, we present Radar2Shape, a denoising diffusion model that handles a partially observable radar signal for 3D reconstruction by correlating its frequencies with multiresolution shape features. Our method consists of a two-stage approach: first, Radar2Shape learns a regularized latent space with hierarchical resolutions of shape features, and second, it diffuses into this latent space by conditioning on the frequencies of the radar signal in an analogous coarse-to-fine manner. We demonstrate that Radar2Shape can successfully reconstruct arbitrary 3D shapes even from partially-observed radar signals, and we show robust generalization to two different simulation methods and real-world data. Additionally, we release two synthetic benchmark datasets to encourage future research in the high-frequency radar domain so that models like Radar2Shape can safely be adapted into real-world radar systems.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.16592v1",
-        "pdf": "https://arxiv.org/pdf/2511.16592v1"
+        "paper": "http://arxiv.org/abs/2511.17484v1",
+        "pdf": "https://arxiv.org/pdf/2511.17484v1"
       },
-      "arxiv_id": "2511.16592v1",
-      "comment": "GitHub: https://github.com/d-tiapkin/gfnx | Documentation: https://gfnx.readthedocs.io",
+      "arxiv_id": "2511.17484v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.856779661016949,
+      "score_breakdown": {
+        "total_score": 3.86,
+        "field_match": {
+          "score": 1.02,
+          "matches": [
+            "3d reconstruction",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Determining the shape of 3D objects from high-frequency radar signals is analytically complex but critical for commercial and aerospace applications. Previous deep learning methods have been applied to radar modeling; however, they often fail to represent arbitrary shapes or have difficulty with real-world radar signals which are collected over limited viewing angles. Existing methods in optical 3...",
+        "key_contributions": [
+          "Determining the shape of 3D objects from high-frequency radar signals is analytically complex but critical for commercial and aerospace applications.",
+          "Previous deep learning methods have been applied to radar modeling; however, they often fail to represent arbitrary shapes or have difficulty with real-world radar signals which are collected over limited viewing angles.",
+          "Existing methods in optical 3D reconstruction can generate arbitrary shapes from limited camera views, but struggle when they naively treat the radar signal as a camera view."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2511.17484v1.mp3"
+      }
+    },
+    {
+      "id": "2511.17405v1",
+      "title": "Beyond Multiple Choice: A Hybrid Framework for Unifying Robust Evaluation and Verifiable Reasoning Training",
+      "authors": [
+        "Yesheng Liu",
+        "Hao Li",
+        "Haiyu Xu",
+        "Baoqi Pei",
+        "Jiahao Wang",
+        "Mingxuan Zhao",
+        "Jingshu Zheng",
+        "Zheqi He",
+        "JG Yao",
+        "Bowen Qin",
+        "Xi Yang",
+        "Jiajun Zhang"
+      ],
+      "abstract": "Multiple-choice question answering (MCQA) has been a popular format for evaluating and reinforcement fine-tuning (RFT) of modern multimodal language models. Its constrained output format allows for simplified, deterministic automatic verification. However, we find that the options may leak exploitable signals, which makes the accuracy metrics unreliable for indicating real capabilities and encourages explicit or implicit answer guessing behaviors during RFT. We propose ReVeL (Rewrite and Verify by LLM), a framework that rewrites multiple-choice questions into open-form questions while keeping answers verifiable whenever possible. The framework categorizes questions according to different answer types, apply different rewriting and verification schemes, respectively. When applied for RFT, we converted 20k MCQA examples and use GRPO to finetune Qwen2.5-VL models. Models trained on ReVeL-OpenQA match MCQA accuracy on multiple-choice benchmarks and improve OpenQA accuracy by about six percentage points, indicating better data efficiency and more robust reward signals than MCQA-based training. When used for evaluation, ReVeL also reveals up to 20 percentage points of score inflation in MCQA benchmarks (relative to OpenQA), improves judging accuracy, and reduces both cost and latency. We will release code and data publicly.",
+      "published": "2025-11-21",
+      "updated": "2025-11-21",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.17405v1",
+        "pdf": "https://arxiv.org/pdf/2511.17405v1"
+      },
+      "arxiv_id": "2511.17405v1",
+      "comment": "Project url: https://flageval-baai.github.io/ReVeL/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9499999999999997,
+      "relevance_score": 3.8499999999999996,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -614,85 +657,19 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX. gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets. We include synthetic hypergrids, multiple sequence generation environments with various editin...",
+        "short": "Multiple-choice question answering (MCQA) has been a popular format for evaluating and reinforcement fine-tuning (RFT) of modern multimodal language models. Its constrained output format allows for simplified, deterministic automatic verification. However, we find that the options may leak exploitable signals, which makes the accuracy metrics unreliable for indicating real capabilities and encoura...",
         "key_contributions": [
-          "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX.",
-          "gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets.",
-          "We include synthetic hypergrids, multiple sequence generation environments with various editing regimes and particular reward designs for molecular generation, phylogenetic tree construction, Bayesian structure learning, and sampling from the Ising model energy."
+          "Multiple-choice question answering (MCQA) has been a popular format for evaluating and reinforcement fine-tuning (RFT) of modern multimodal language models.",
+          "Its constrained output format allows for simplified, deterministic automatic verification.",
+          "However, we find that the options may leak exploitable signals, which makes the accuracy metrics unreliable for indicating real capabilities and encourages explicit or implicit answer guessing behaviors during RFT."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.16592v1.mp3"
-      }
-    },
-    {
-      "id": "2511.16521v1",
-      "title": "YOWO: You Only Walk Once to Jointly Map An Indoor Scene and Register Ceiling-mounted Cameras",
-      "authors": [
-        "Fan Yang",
-        "Sosuke Yamao",
-        "Ikuo Kusajima",
-        "Atsunori Moteki",
-        "Shoichi Masui",
-        "Shan Jiang"
-      ],
-      "abstract": "Using ceiling-mounted cameras (CMCs) for indoor visual capturing opens up a wide range of applications. However, registering CMCs to the target scene layout presents a challenging task. While manual registration with specialized tools is inefficient and costly, automatic registration with visual localization may yield poor results when visual ambiguity exists. To alleviate these issues, we propose a novel solution for jointly mapping an indoor scene and registering CMCs to the scene layout. Our approach involves equipping a mobile agent with a head-mounted RGB-D camera to traverse the entire scene once and synchronize CMCs to capture this mobile agent. The egocentric videos generate world-coordinate agent trajectories and the scene layout, while the videos of CMCs provide pseudo-scale agent trajectories and CMC relative poses. By correlating all the trajectories with their corresponding timestamps, the CMC relative poses can be aligned to the world-coordinate scene layout. Based on this initialization, a factor graph is customized to enable the joint optimization of ego-camera poses, scene layout, and CMC poses. We also develop a new dataset, setting the first benchmark for collaborative scene mapping and CMC registration (https://sites.google.com/view/yowo/home). Experimental results indicate that our method not only effectively accomplishes two tasks within a unified framework, but also jointly enhances their performance. We thus provide a reliable tool to facilitate downstream position-aware applications.",
-      "published": "2025-11-20",
-      "updated": "2025-11-20",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.16521v1",
-        "pdf": "https://arxiv.org/pdf/2511.16521v1"
-      },
-      "arxiv_id": "2511.16521v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9033898305084747,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "registration"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Using ceiling-mounted cameras (CMCs) for indoor visual capturing opens up a wide range of applications. However, registering CMCs to the target scene layout presents a challenging task. While manual registration with specialized tools is inefficient and costly, automatic registration with visual localization may yield poor results when visual ambiguity exists. To alleviate these issues, we propose...",
-        "key_contributions": [
-          "Using ceiling-mounted cameras (CMCs) for indoor visual capturing opens up a wide range of applications.",
-          "However, registering CMCs to the target scene layout presents a challenging task.",
-          "While manual registration with specialized tools is inefficient and costly, automatic registration with visual localization may yield poor results when visual ambiguity exists."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.16521v1.mp3"
+        "audio_url": "/audio/2511.17405v1.mp3"
       }
     }
   ]

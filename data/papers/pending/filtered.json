@@ -3,38 +3,103 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2511.17354v1",
-      "title": "DSeq-JEPA: Discriminative Sequential Joint-Embedding Predictive Architecture",
+      "id": "2511.19425v1",
+      "title": "SAM3-Adapter: Efficient Adaptation of Segment Anything 3 for Camouflage Object Segmentation, Shadow Detection, and Medical Image Segmentation",
       "authors": [
-        "Xiangteng He",
-        "Shunsuke Sakai",
-        "Kun Yuan",
-        "Nicolas Padoy",
-        "Tatsuhito Hasegawa",
-        "Leonid Sigal"
+        "Tianrun Chen",
+        "Runlong Cao",
+        "Xinda Yu",
+        "Lanyun Zhu",
+        "Chaotao Ding",
+        "Deyi Ji",
+        "Cheng Chen",
+        "Qi Zhu",
+        "Chunyan Xu",
+        "Papa Mao",
+        "Ying Zang"
       ],
-      "abstract": "Image-based Joint-Embedding Predictive Architecture (I-JEPA) learns visual representations by predicting latent embeddings of masked regions from visible context. However, it treats all regions uniformly and independently, lacking an explicit notion of where or in what order predictions should be made. Inspired by human visual perception, which deploys attention selectively and sequentially from the most informative to secondary regions, we propose DSeq-JEPA, a Discriminative Sequential Joint-Embedding Predictive Architecture that bridges predictive and autoregressive self-supervised learning, integrating JEPA-style latent prediction with GPT-style sequential reasoning. Specifically, DSeq-JEPA (i) first identifies primary discriminative regions based on a transformer-derived saliency map, emphasizing the distribution of visual importance, and then (ii) predicts subsequent regions in this discriminative order, progressively forming a curriculum-like semantic progression from primary to secondary cues -- a form of GPT-style pre-training. Extensive experiments across diverse tasks, including image classification (ImageNet), fine-grained visual categorization (iNaturalist21, CUB-200-2011, Stanford-Cars), detection and segmentation (MS-COCO, ADE20K), and low-level reasoning tasks (Clevr/Count, Clevr/Dist), demonstrate that DSeq-JEPA consistently focuses on more discriminative and generalizable representations than I-JEPA variants. Project page: https://github.com/SkyShunsuke/DSeq-JEPA.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
+      "abstract": "The rapid rise of large-scale foundation models has reshaped the landscape of image segmentation, with models such as Segment Anything achieving unprecedented versatility across diverse vision tasks. However, previous generations-including SAM and its successor-still struggle with fine-grained, low-level segmentation challenges such as camouflaged object detection, medical image segmentation, cell image segmentation, and shadow detection. To address these limitations, we originally proposed SAM-Adapter in 2023, demonstrating substantial gains on these difficult scenarios. With the emergence of Segment Anything 3 (SAM3)-a more efficient and higher-performing evolution with a redesigned architecture and improved training pipeline-we revisit these long-standing challenges. In this work, we present SAM3-Adapter, the first adapter framework tailored for SAM3 that unlocks its full segmentation capability. SAM3-Adapter not only reduces computational overhead but also consistently surpasses both SAM and SAM2-based solutions, establishing new state-of-the-art results across multiple downstream tasks, including medical imaging, camouflaged (concealed) object segmentation, and shadow detection. Built upon the modular and composable design philosophy of the original SAM-Adapter, SAM3-Adapter provides stronger generalizability, richer task adaptability, and significantly improved segmentation precision. Extensive experiments confirm that integrating SAM3 with our adapter yields superior accuracy, robustness, and efficiency compared to all prior SAM-based adaptations. We hope SAM3-Adapter can serve as a foundation for future research and practical segmentation applications. Code, pre-trained models, and data processing pipelines are available.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.17354v1",
-        "pdf": "https://arxiv.org/pdf/2511.17354v1"
+        "paper": "http://arxiv.org/abs/2511.19425v1",
+        "pdf": "https://arxiv.org/pdf/2511.19425v1"
       },
-      "arxiv_id": "2511.17354v1",
-      "comment": "Project page: https://github.com/SkyShunsuke/DSeq-JEPA",
+      "arxiv_id": "2511.19425v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.313559322033898,
+      "score_breakdown": {
+        "total_score": 4.31,
+        "field_match": {
+          "score": 2.03,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2511.19418v1",
+      "title": "Chain-of-Visual-Thought: Teaching VLMs to See and Think Better with Continuous Visual Tokens",
+      "authors": [
+        "Yiming Qin",
+        "Bomin Wei",
+        "Jiaxin Ge",
+        "Konstantinos Kallidromitis",
+        "Stephanie Fu",
+        "Trevor Darrell",
+        "Xudong Wang"
+      ],
+      "abstract": "Vision-Language Models (VLMs) excel at reasoning in linguistic space but struggle with perceptual understanding that requires dense visual perception, e.g., spatial reasoning and geometric awareness. This limitation stems from the fact that current VLMs have limited mechanisms to capture dense visual information across spatial dimensions. We introduce Chain-of-Visual-Thought (COVT), a framework that enables VLMs to reason not only in words but also through continuous visual tokens-compact latent representations that encode rich perceptual cues. Within a small budget of roughly 20 tokens, COVT distills knowledge from lightweight vision experts, capturing complementary properties such as 2D appearance, 3D geometry, spatial layout, and edge structure. During training, the VLM with COVT autoregressively predicts these visual tokens to reconstruct dense supervision signals (e.g., depth, segmentation, edges, and DINO features). At inference, the model reasons directly in the continuous visual token space, preserving efficiency while optionally decoding dense predictions for interpretability. Evaluated across more than ten diverse perception benchmarks, including CV-Bench, MMVP, RealWorldQA, MMStar, WorldMedQA, and HRBench, integrating COVT into strong VLMs such as Qwen2.5-VL and LLaVA consistently improves performance by 3% to 16% and demonstrates that compact continuous visual thinking enables more precise, grounded, and interpretable multimodal intelligence.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.19418v1",
+        "pdf": "https://arxiv.org/pdf/2511.19418v1"
+      },
+      "arxiv_id": "2511.19418v1",
+      "comment": "Project page: https://wakalsprojectpage.github.io/comt-website/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.274576271186441,
+      "relevance_score": 4.053389830508475,
       "score_breakdown": {
-        "total_score": 4.27,
+        "total_score": 4.05,
         "field_match": {
-          "score": 1.19,
+          "score": 0.51,
           "matches": [
-            "self-supervised",
             "segmentation"
           ],
           "weight": 0.4
@@ -54,45 +119,44 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2511.17442v1",
-      "title": "REMSA: An LLM Agent for Foundation Model Selection in Remote Sensing",
+      "id": "2511.19319v1",
+      "title": "SyncMV4D: Synchronized Multi-view Joint Diffusion of Appearance and Motion for Hand-Object Interaction Synthesis",
       "authors": [
-        "Binger Chen",
-        "Tacettin Emre Bök",
-        "Behnood Rasti",
-        "Volker Markl",
-        "Begüm Demir"
+        "Lingwei Dang",
+        "Zonghan Li",
+        "Juntong Li",
+        "Hongwen Zhang",
+        "Liang An",
+        "Yebin Liu",
+        "Qingyao Wu"
       ],
-      "abstract": "Foundation Models (FMs) are increasingly used in remote sensing (RS) for tasks such as environmental monitoring, disaster assessment, and land-use mapping. These models include unimodal vision encoders trained on a single data modality and multimodal architectures trained on combinations of SAR, multispectral, hyperspectral, and image-text data. They support diverse RS tasks including semantic segmentation, image classification, change detection, and visual question answering. However, selecting an appropriate remote sensing foundation model (RSFM) remains difficult due to scattered documentation, heterogeneous formats, and varied deployment constraints. We introduce the RSFM Database (RS-FMD), a structured resource covering over 150 RSFMs spanning multiple data modalities, resolutions, and learning paradigms. Built on RS-FMD, we present REMSA, the first LLM-based agent for automated RSFM selection from natural language queries. REMSA interprets user requirements, resolves missing constraints, ranks candidate models using in-context learning, and provides transparent justifications. We also propose a benchmark of 75 expert-verified RS query scenarios, producing 900 configurations under an expert-centered evaluation protocol. REMSA outperforms several baselines, including naive agents, dense retrieval, and unstructured RAG-based LLMs. It operates entirely on publicly available metadata and does not access private or sensitive data.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
+      "abstract": "Hand-Object Interaction (HOI) generation plays a critical role in advancing applications across animation and robotics. Current video-based methods are predominantly single-view, which impedes comprehensive 3D geometry perception and often results in geometric distortions or unrealistic motion patterns. While 3D HOI approaches can generate dynamically plausible motions, their dependence on high-quality 3D data captured in controlled laboratory settings severely limits their generalization to real-world scenarios. To overcome these limitations, we introduce SyncMV4D, the first model that jointly generates synchronized multi-view HOI videos and 4D motions by unifying visual prior, motion dynamics, and multi-view geometry. Our framework features two core innovations: (1) a Multi-view Joint Diffusion (MJD) model that co-generates HOI videos and intermediate motions, and (2) a Diffusion Points Aligner (DPA) that refines the coarse intermediate motion into globally aligned 4D metric point tracks. To tightly couple 2D appearance with 4D dynamics, we establish a closed-loop, mutually enhancing cycle. During the diffusion denoising process, the generated video conditions the refinement of the 4D motion, while the aligned 4D point tracks are reprojected to guide next-step joint generation. Experimentally, our method demonstrates superior performance to state-of-the-art alternatives in visual realism, motion plausibility, and multi-view consistency.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.17442v1",
-        "pdf": "https://arxiv.org/pdf/2511.17442v1"
+        "paper": "http://arxiv.org/abs/2511.19319v1",
+        "pdf": "https://arxiv.org/pdf/2511.19319v1"
       },
-      "arxiv_id": "2511.17442v1",
-      "comment": "Code and data available at https://github.com/be-chen/REMSA",
+      "arxiv_id": "2511.19319v1",
+      "comment": "Project Page: https://droliven.github.io/SyncMV4D",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.203389830508474,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.05,
         "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -110,55 +174,52 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2511.17421v1",
-      "title": "Preventing Shortcut Learning in Medical Image Analysis through Intermediate Layer Knowledge Distillation from Specialist Teachers",
+      "id": "2511.19434v1",
+      "title": "Breaking the Likelihood-Quality Trade-off in Diffusion Models by Merging Pretrained Experts",
       "authors": [
-        "Christopher Boland",
-        "Sotirios Tsaftaris",
-        "Sonia Dahdouh"
+        "Yasin Esfandiari",
+        "Stefan Bauer",
+        "Sebastian U. Stich",
+        "Andrea Dittadi"
       ],
-      "abstract": "Deep learning models are prone to learning shortcut solutions to problems using spuriously correlated yet irrelevant features of their training data. In high-risk applications such as medical image analysis, this phenomenon may prevent models from using clinically meaningful features when making predictions, potentially leading to poor robustness and harm to patients. We demonstrate that different types of shortcuts (those that are diffuse and spread throughout the image, as well as those that are localized to specific areas) manifest distinctly across network layers and can, therefore, be more effectively targeted through mitigation strategies that target the intermediate layers. We propose a novel knowledge distillation framework that leverages a teacher network fine-tuned on a small subset of task-relevant data to mitigate shortcut learning in a student network trained on a large dataset corrupted with a bias feature. Through extensive experiments on CheXpert, ISIC 2017, and SimBA datasets using various architectures (ResNet-18, AlexNet, DenseNet-121, and 3D CNNs), we demonstrate consistent improvements over traditional Empirical Risk Minimization, augmentation-based bias-mitigation, and group-based bias-mitigation approaches. In many cases, we achieve comparable performance with a baseline model trained on bias-free data, even on out-of-distribution test data. Our results demonstrate the practical applicability of our approach to real-world medical imaging scenarios where bias annotations are limited and shortcut features are difficult to identify a priori.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
+      "abstract": "Diffusion models for image generation often exhibit a trade-off between perceptual sample quality and data likelihood: training objectives emphasizing high-noise denoising steps yield realistic images but poor likelihoods, whereas likelihood-oriented training overweights low-noise steps and harms visual fidelity. We introduce a simple plug-and-play sampling method that combines two pretrained diffusion experts by switching between them along the denoising trajectory. Specifically, we apply an image-quality expert at high noise levels to shape global structure, then switch to a likelihood expert at low noise levels to refine pixel statistics. The approach requires no retraining or fine-tuning -- only the choice of an intermediate switching step. On CIFAR-10 and ImageNet32, the merged model consistently matches or outperforms its base components, improving or preserving both likelihood and sample quality relative to each expert alone. These results demonstrate that expert switching across noise levels is an effective way to break the likelihood-quality trade-off in image diffusion models.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.LG",
+        "stat.ML"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.17421v1",
-        "pdf": "https://arxiv.org/pdf/2511.17421v1"
+        "paper": "http://arxiv.org/abs/2511.19434v1",
+        "pdf": "https://arxiv.org/pdf/2511.19434v1"
       },
-      "arxiv_id": "2511.17421v1",
-      "comment": "Accepted for publication at the Journal of Machine Learning for Biomedical Imaging (MELBA) https://melba-journal.org/2025:020",
-      "journal_ref": "Machine.Learning.for.Biomedical.Imaging. 3 (2025)",
+      "arxiv_id": "2511.19434v1",
+      "comment": "ICLR 2025 DeLTa workshop",
+      "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.149152542372882,
+      "relevance_score": 4.05,
       "score_breakdown": {
-        "total_score": 4.15,
+        "total_score": 4.05,
         "field_match": {
-          "score": 2.37,
-          "matches": [
-            "medical image",
-            "medical imaging",
-            "deep learning",
-            "image analysis"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -167,104 +228,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2511.17322v1",
-      "title": "NoPe-NeRF++: Local-to-Global Optimization of NeRF with No Pose Prior",
-      "authors": [
-        "Dongbo Shi",
-        "Shen Cao",
-        "Bojian Wu",
-        "Jinhui Guo",
-        "Lubin Fan",
-        "Renjie Chen",
-        "Ligang Liu",
-        "Jieping Ye"
-      ],
-      "abstract": "In this paper, we introduce NoPe-NeRF++, a novel local-to-global optimization algorithm for training Neural Radiance Fields (NeRF) without requiring pose priors. Existing methods, particularly NoPe-NeRF, which focus solely on the local relationships within images, often struggle to recover accurate camera poses in complex scenarios. To overcome the challenges, our approach begins with a relative pose initialization with explicit feature matching, followed by a local joint optimization to enhance the pose estimation for training a more robust NeRF representation. This method significantly improves the quality of initial poses. Additionally, we introduce global optimization phase that incorporates geometric consistency constraints through bundle adjustment, which integrates feature trajectories to further refine poses and collectively boost the quality of NeRF. Notably, our method is the first work that seamlessly combines the local and global cues with NeRF, and outperforms state-of-the-art methods in both pose estimation accuracy and novel view synthesis. Extensive evaluations on benchmark datasets demonstrate our superior performance and robustness, even in challenging scenes, thus validating our design choices.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.17322v1",
-        "pdf": "https://arxiv.org/pdf/2511.17322v1"
-      },
-      "arxiv_id": "2511.17322v1",
-      "comment": "",
-      "journal_ref": "Eurographics 2025",
-      "has_code": false,
-      "relevance_score": 4.1245762711864415,
-      "score_breakdown": {
-        "total_score": 4.12,
-        "field_match": {
-          "score": 1.19,
-          "matches": [
-            "neural radiance",
-            "nerf"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
           "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2511.17209v1",
-      "title": "Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers",
+      "id": "2511.19235v1",
+      "title": "IDSplat: Instance-Decomposed 3D Gaussian Splatting for Driving Scenes",
       "authors": [
-        "Cris Claessens",
-        "Christiaan Viviers",
-        "Giacomo D'Amicantonio",
-        "Egor Bondarev",
-        "Fons van der Sommen"
+        "Carl Lindström",
+        "Mahan Rafidashti",
+        "Maryam Fatemi",
+        "Lars Hammarstrand",
+        "Martin R. Oswald",
+        "Lennart Svensson"
       ],
-      "abstract": "We introduce SPECTRE, a fully transformer-based foundation model for volumetric computed tomography (CT). Our Self-Supervised & Cross-Modal Pretraining for CT Representation Extraction (SPECTRE) approach utilizes scalable 3D Vision Transformer architectures and modern self-supervised and vision-language pretraining strategies to learn general-purpose CT representations. Volumetric CT poses unique challenges, such as extreme token scaling, geometric anisotropy, and weak or noisy clinical supervision, that make standard transformer and contrastive learning recipes ineffective out of the box. The framework jointly optimizes a local transformer for high-resolution volumetric feature extraction and a global transformer for whole-scan context modeling, making large-scale 3D attention computationally tractable. Notably, SPECTRE is trained exclusively on openly available CT datasets, demonstrating that high-performing, generalizable representations can be achieved without relying on private data. Pretraining combines DINO-style self-distillation with SigLIP-based vision-language alignment using paired radiology reports, yielding features that are both geometrically consistent and clinically meaningful. Across multiple CT benchmarks, SPECTRE consistently outperforms prior CT foundation models in both zero-shot and fine-tuned settings, establishing SPECTRE as a scalable, open, and fully transformer-based foundation model for 3D medical imaging.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
+      "abstract": "Reconstructing dynamic driving scenes is essential for developing autonomous systems through sensor-realistic simulation. Although recent methods achieve high-fidelity reconstructions, they either rely on costly human annotations for object trajectories or use time-varying representations without explicit object-level decomposition, leading to intertwined static and dynamic elements that hinder scene separation. We present IDSplat, a self-supervised 3D Gaussian Splatting framework that reconstructs dynamic scenes with explicit instance decomposition and learnable motion trajectories, without requiring human annotations. Our key insight is to model dynamic objects as coherent instances undergoing rigid transformations, rather than unstructured time-varying primitives. For instance decomposition, we employ zero-shot, language-grounded video tracking anchored to 3D using lidar, and estimate consistent poses via feature correspondences. We introduce a coordinated-turn smoothing scheme to obtain temporally and physically consistent motion trajectories, mitigating pose misalignments and tracking failures, followed by joint optimization of object poses and Gaussian parameters. Experiments on the Waymo Open Dataset demonstrate that our method achieves competitive reconstruction quality while maintaining instance-level decomposition and generalizes across diverse sequences and view densities without retraining, making it practical for large-scale autonomous driving applications. Code will be released.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.17209v1",
-        "pdf": "https://arxiv.org/pdf/2511.17209v1"
+        "paper": "http://arxiv.org/abs/2511.19235v1",
+        "pdf": "https://arxiv.org/pdf/2511.19235v1"
       },
-      "arxiv_id": "2511.17209v1",
+      "arxiv_id": "2511.19235v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.063559322033899,
+      "relevance_score": 4.049152542372882,
       "score_breakdown": {
-        "total_score": 4.06,
+        "total_score": 4.05,
         "field_match": {
-          "score": 2.03,
+          "score": 2.37,
           "matches": [
-            "medical imaging",
-            "self-supervised",
-            "volumetric"
+            "3d gaussian",
+            "gaussian splatting",
+            "self-supervised"
           ],
           "weight": 0.4
         },
@@ -274,7 +277,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -289,204 +292,40 @@
       }
     },
     {
-      "id": "2511.17217v1",
-      "title": "Dual-domain Adaptation Networks for Realistic Image Super-resolution",
+      "id": "2511.19367v1",
+      "title": "An Anatomy Aware Hybrid Deep Learning Framework for Lung Cancer Tumor Stage Classification",
       "authors": [
-        "Chaowei Fang",
-        "Bolin Fu",
-        "De Cheng",
-        "Lechao Cheng",
-        "Guanbin Li"
+        "Saniah Kayenat Chowdhury",
+        "Rusab Sarmun",
+        "Muhammad E. H. Chowdhury",
+        "Sohaib Bassam Zoghoul",
+        "Israa Al-Hashimi",
+        "Adam Mushtak",
+        "Amith Khandakar"
       ],
-      "abstract": "Realistic image super-resolution (SR) focuses on transforming real-world low-resolution (LR) images into high-resolution (HR) ones, handling more complex degradation patterns than synthetic SR tasks. This is critical for applications like surveillance, medical imaging, and consumer electronics. However, current methods struggle with limited real-world LR-HR data, impacting the learning of basic image features. Pre-trained SR models from large-scale synthetic datasets offer valuable prior knowledge, which can improve generalization, speed up training, and reduce the need for extensive real-world data in realistic SR tasks. In this paper, we introduce a novel approach, Dual-domain Adaptation Networks, which is able to efficiently adapt pre-trained image SR models from simulated to real-world datasets. To achieve this target, we first set up a spatial-domain adaptation strategy through selectively updating parameters of pre-trained models and employing the low-rank adaptation technique to adjust frozen parameters. Recognizing that image super-resolution involves recovering high-frequency components, we further integrate a frequency domain adaptation branch into the adapted model, which combines the spectral data of the input and the spatial-domain backbone's intermediate features to infer HR frequency maps, enhancing the SR result. Experimental evaluations on public realistic image SR benchmarks, including RealSR, D2CRealSR, and DRealSR, demonstrate the superiority of our proposed method over existing state-of-the-art models. Codes are available at: https://github.com/dummerchen/DAN.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
+      "abstract": "Accurate lung cancer tumor staging is crucial for prognosis and treatment planning. However, it remains challenging for end-to-end deep learning approaches, as such approaches often overlook spatial and anatomical information that are central to the tumor-node-metastasis system. The tumor stage depends on multiple quantitative criteria, including the tumor size and its proximity to the nearest anatomical structures, and small variations can alter the staging outcome. We propose a medically grounded hybrid pipeline that performs staging by explicitly measuring the tumor's size and distance properties rather than treating it as a pure image classification task. Our method employs specialized encoder-decoder networks to precisely segment the lung and adjacent anatomy, including the lobes, tumor, mediastinum, and diaphragm. Subsequently, we extract the necessary tumor properties, i.e. measure the largest tumor dimension and calculate the distance between the tumor and neighboring anatomical structures by a quantitative analysis of the segmentation masks. Finally, we apply rule-based tumor staging aligned with the medical guidelines. This novel framework has been evaluated on the Lung-PET-CT-Dx dataset, demonstrating superior performance compared to traditional deep learning models, achieving an overall classification accuracy of 91.36%. We report the per-stage F1-scores of 0.93 (T1), 0.89 (T2), 0.96 (T3), and 0.90 (T4), a critical evaluation aspect often omitted in prior literature. To our knowledge, this is the first study that embeds explicit clinical context into tumor stage classification. Unlike standard convolutional neural networks that operate in an uninterpretable \"black box\" manner, our method offers both state-of-the-art performance and transparent decision support.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.17217v1",
-        "pdf": "https://arxiv.org/pdf/2511.17217v1"
+        "paper": "http://arxiv.org/abs/2511.19367v1",
+        "pdf": "https://arxiv.org/pdf/2511.19367v1"
       },
-      "arxiv_id": "2511.17217v1",
+      "arxiv_id": "2511.19367v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.055084745762712,
+      "relevance_score": 4.022881355932203,
       "score_breakdown": {
-        "total_score": 4.06,
+        "total_score": 4.02,
         "field_match": {
-          "score": 0.76,
+          "score": 0.93,
           "matches": [
-            "medical imaging"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2511.17249v1",
-      "title": "FlexiFlow: decomposable flow matching for generation of flexible molecular ensemble",
-      "authors": [
-        "Riccardo Tedoldi",
-        "Ola Engkvist",
-        "Patrick Bryant",
-        "Hossein Azizpour",
-        "Jon Paul Janet",
-        "Alessandro Tibo"
-      ],
-      "abstract": "Sampling useful three-dimensional molecular structures along with their most favorable conformations is a key challenge in drug discovery. Current state-of-the-art 3D de-novo design flow matching or diffusion-based models are limited to generating a single conformation. However, the conformational landscape of a molecule determines its observable properties and how tightly it is able to bind to a given protein target. By generating a representative set of low-energy conformers, we can more directly assess these properties and potentially improve the ability to generate molecules with desired thermodynamic observables. Towards this aim, we propose FlexiFlow, a novel architecture that extends flow-matching models, allowing for the joint sampling of molecules along with multiple conformations while preserving both equivariance and permutation invariance. We demonstrate the effectiveness of our approach on the QM9 and GEOM Drugs datasets, achieving state-of-the-art results in molecular generation tasks. Our results show that FlexiFlow can generate valid, unstrained, unique, and novel molecules with high fidelity to the training data distribution, while also capturing the conformational diversity of molecules. Moreover, we show that our model can generate conformational ensembles that provide similar coverage to state-of-the-art physics-based methods at a fraction of the inference time. Finally, FlexiFlow can be successfully transferred to the protein-conditioned ligand generation task, even when the dataset contains only static pockets without accompanying conformations.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.17249v1",
-        "pdf": "https://arxiv.org/pdf/2511.17249v1"
-      },
-      "arxiv_id": "2511.17249v1",
-      "comment": "Preprint. Code to be released upon full publication",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2511.17198v1",
-      "title": "Designing Domain-Specific Agents via Hierarchical Task Abstraction Mechanism",
-      "authors": [
-        "Kaiyu Li",
-        "Jiayu Wang",
-        "Zhi Wang",
-        "Hui Qiao",
-        "Weizhan Zhang",
-        "Deyu Meng",
-        "Xiangyong Cao"
-      ],
-      "abstract": "LLM-driven agents, particularly those using general frameworks like ReAct or human-inspired role-playing, often struggle in specialized domains that necessitate rigorously structured workflows. Fields such as remote sensing, requiring specialized tools (e.g., correction, spectral indices calculation), and multi-step procedures (e.g., numerous intermediate products and optional steps), significantly challenge generalized approaches. To address this gap, we introduce a novel agent design framework centered on a Hierarchical Task Abstraction Mechanism (HTAM). Specifically, HTAM moves beyond emulating social roles, instead structuring multi-agent systems into a logical hierarchy that mirrors the intrinsic task-dependency graph of a given domain. This task-centric architecture thus enforces procedural correctness and decomposes complex problems into sequential layers, where each layer's sub-agents operate on the outputs of the preceding layers. We instantiate this framework as EarthAgent, a multi-agent system tailored for complex geospatial analysis. To evaluate such complex planning capabilities, we build GeoPlan-bench, a comprehensive benchmark of realistic, multi-step geospatial planning tasks. It is accompanied by a suite of carefully designed metrics to evaluate tool selection, path similarity, and logical completeness. Experiments show that EarthAgent substantially outperforms a range of established single- and multi-agent systems. Our work demonstrates that aligning agent architecture with a domain's intrinsic task structure is a critical step toward building robust and reliable specialized autonomous systems.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
-      "categories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.17198v1",
-        "pdf": "https://arxiv.org/pdf/2511.17198v1"
-      },
-      "arxiv_id": "2511.17198v1",
-      "comment": "Page: https://earth-insights.github.io/EarthAgent",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2511.17484v1",
-      "title": "Radar2Shape: 3D Shape Reconstruction from High-Frequency Radar using Multiresolution Signed Distance Functions",
-      "authors": [
-        "Neel Sortur",
-        "Justin Goodwin",
-        "Purvik Patel",
-        "Luis Enrique Martinez",
-        "Tzofi Klinghoffer",
-        "Rajmonda S. Caceres",
-        "Robin Walters"
-      ],
-      "abstract": "Determining the shape of 3D objects from high-frequency radar signals is analytically complex but critical for commercial and aerospace applications. Previous deep learning methods have been applied to radar modeling; however, they often fail to represent arbitrary shapes or have difficulty with real-world radar signals which are collected over limited viewing angles. Existing methods in optical 3D reconstruction can generate arbitrary shapes from limited camera views, but struggle when they naively treat the radar signal as a camera view. In this work, we present Radar2Shape, a denoising diffusion model that handles a partially observable radar signal for 3D reconstruction by correlating its frequencies with multiresolution shape features. Our method consists of a two-stage approach: first, Radar2Shape learns a regularized latent space with hierarchical resolutions of shape features, and second, it diffuses into this latent space by conditioning on the frequencies of the radar signal in an analogous coarse-to-fine manner. We demonstrate that Radar2Shape can successfully reconstruct arbitrary 3D shapes even from partially-observed radar signals, and we show robust generalization to two different simulation methods and real-world data. Additionally, we release two synthetic benchmark datasets to encourage future research in the high-frequency radar domain so that models like Radar2Shape can safely be adapted into real-world radar systems.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.17484v1",
-        "pdf": "https://arxiv.org/pdf/2511.17484v1"
-      },
-      "arxiv_id": "2511.17484v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.856779661016949,
-      "score_breakdown": {
-        "total_score": 3.86,
-        "field_match": {
-          "score": 1.02,
-          "matches": [
-            "3d reconstruction",
+            "segmentation",
             "deep learning"
           ],
           "weight": 0.4
@@ -497,7 +336,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -506,50 +345,50 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2511.17405v1",
-      "title": "Beyond Multiple Choice: A Hybrid Framework for Unifying Robust Evaluation and Verifiable Reasoning Training",
+      "id": "2511.19183v1",
+      "title": "nnActive: A Framework for Evaluation of Active Learning in 3D Biomedical Segmentation",
       "authors": [
-        "Yesheng Liu",
-        "Hao Li",
-        "Haiyu Xu",
-        "Baoqi Pei",
-        "Jiahao Wang",
-        "Mingxuan Zhao",
-        "Jingshu Zheng",
-        "Zheqi He",
-        "JG Yao",
-        "Bowen Qin",
-        "Xi Yang",
-        "Jiajun Zhang"
+        "Carsten T. Lüth",
+        "Jeremias Traub",
+        "Kim-Celine Kahl",
+        "Till J. Bungert",
+        "Lukas Klein",
+        "Lars Krämer",
+        "Paul F. Jaeger",
+        "Fabian Isensee",
+        "Klaus Maier-Hein"
       ],
-      "abstract": "Multiple-choice question answering (MCQA) has been a popular format for evaluating and reinforcement fine-tuning (RFT) of modern multimodal language models. Its constrained output format allows for simplified, deterministic automatic verification. However, we find that the options may leak exploitable signals, which makes the accuracy metrics unreliable for indicating real capabilities and encourages explicit or implicit answer guessing behaviors during RFT. We propose ReVeL (Rewrite and Verify by LLM), a framework that rewrites multiple-choice questions into open-form questions while keeping answers verifiable whenever possible. The framework categorizes questions according to different answer types, apply different rewriting and verification schemes, respectively. When applied for RFT, we converted 20k MCQA examples and use GRPO to finetune Qwen2.5-VL models. Models trained on ReVeL-OpenQA match MCQA accuracy on multiple-choice benchmarks and improve OpenQA accuracy by about six percentage points, indicating better data efficiency and more robust reward signals than MCQA-based training. When used for evaluation, ReVeL also reveals up to 20 percentage points of score inflation in MCQA benchmarks (relative to OpenQA), improves judging accuracy, and reduces both cost and latency. We will release code and data publicly.",
-      "published": "2025-11-21",
-      "updated": "2025-11-21",
+      "abstract": "Semantic segmentation is crucial for various biomedical applications, yet its reliance on large annotated datasets presents a bottleneck due to the high cost and specialized expertise required for manual labeling. Active Learning (AL) aims to mitigate this challenge by querying only the most informative samples, thereby reducing annotation effort. However, in the domain of 3D biomedical imaging, there is no consensus on whether AL consistently outperforms Random sampling. Four evaluation pitfalls hinder the current methodological assessment. These are (1) restriction to too few datasets and annotation budgets, (2) using 2D models on 3D images without partial annotations, (3) Random baseline not being adapted to the task, and (4) measuring annotation cost only in voxels. In this work, we introduce nnActive, an open-source AL framework that overcomes these pitfalls by (1) means of a large scale study spanning four biomedical imaging datasets and three label regimes, (2) extending nnU-Net by using partial annotations for training with 3D patch-based query selection, (3) proposing Foreground Aware Random sampling strategies tackling the foreground-background class imbalance of medical images and (4) propose the foreground efficiency metric, which captures the low annotation cost of background-regions. We reveal the following findings: (A) while all AL methods outperform standard Random sampling, none reliably surpasses an improved Foreground Aware Random sampling; (B) benefits of AL depend on task specific parameters; (C) Predictive Entropy is overall the best performing AL method, but likely requires the most annotation effort; (D) AL performance can be improved with more compute intensive design choices. As a holistic, open-source framework, nnActive can serve as a catalyst for research and application of AL in 3D biomedical imaging. Code is at: https://github.com/MIC-DKFZ/nnActive",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
       "categories": [
-        "cs.CL",
-        "cs.AI"
+        "cs.CV"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.17405v1",
-        "pdf": "https://arxiv.org/pdf/2511.17405v1"
+        "paper": "http://arxiv.org/abs/2511.19183v1",
+        "pdf": "https://arxiv.org/pdf/2511.19183v1"
       },
-      "arxiv_id": "2511.17405v1",
-      "comment": "Project url: https://flageval-baai.github.io/ReVeL/",
+      "arxiv_id": "2511.19183v1",
+      "comment": "Accepted at TMLR",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
+      "has_code": false,
+      "relevance_score": 4.013559322033899,
       "score_breakdown": {
-        "total_score": 3.85,
+        "total_score": 4.01,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.03,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -562,12 +401,182 @@
           "weight": 0.15
         },
         "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2511.19426v1",
+      "title": "Ref-SAM3D: Bridging SAM3D with Text for Reference 3D Reconstruction",
+      "authors": [
+        "Yun Zhou",
+        "Yaoting Wang",
+        "Guangquan Jie",
+        "Jinyu Liu",
+        "Henghui Ding"
+      ],
+      "abstract": "SAM3D has garnered widespread attention for its strong 3D object reconstruction capabilities. However, a key limitation remains: SAM3D cannot reconstruct specific objects referred to by textual descriptions, a capability that is essential for practical applications such as 3D editing, game development, and virtual environments. To address this gap, we introduce Ref-SAM3D, a simple yet effective extension to SAM3D that incorporates textual descriptions as a high-level prior, enabling text-guided 3D reconstruction from a single RGB image. Through extensive qualitative experiments, we show that Ref-SAM3D, guided only by natural language and a single 2D view, delivers competitive and high-fidelity zero-shot reconstruction performance. Our results demonstrate that Ref-SAM3D effectively bridges the gap between 2D visual cues and 3D geometric understanding, offering a more flexible and accessible paradigm for reference-guided 3D reconstruction. Code is available at: https://github.com/FudanCVL/Ref-SAM3D.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.19426v1",
+        "pdf": "https://arxiv.org/pdf/2511.19426v1"
+      },
+      "arxiv_id": "2511.19426v1",
+      "comment": "Code: https://github.com/FudanCVL/Ref-SAM3D",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.98728813559322,
+      "score_breakdown": {
+        "total_score": 3.99,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
           "score": 10.0,
           "has_code": true,
           "weight": 0.1
         },
         "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2511.19294v1",
+      "title": "DensifyBeforehand: LiDAR-assisted Content-aware Densification for Efficient and Quality 3D Gaussian Splatting",
+      "authors": [
+        "Phurtivilai Patt",
+        "Leyang Huang",
+        "Yinqiang Zhang",
+        "Yang Lei"
+      ],
+      "abstract": "This paper addresses the limitations of existing 3D Gaussian Splatting (3DGS) methods, particularly their reliance on adaptive density control, which can lead to floating artifacts and inefficient resource usage. We propose a novel densify beforehand approach that enhances the initialization of 3D scenes by combining sparse LiDAR data with monocular depth estimation from corresponding RGB images. Our ROI-aware sampling scheme prioritizes semantically and geometrically important regions, yielding a dense point cloud that improves visual fidelity and computational efficiency. This densify beforehand approach bypasses the adaptive density control that may introduce redundant Gaussians in the original pipeline, allowing the optimization to focus on the other attributes of 3D Gaussian primitives, reducing overlap while enhancing visual quality. Our method achieves comparable results to state-of-the-art techniques while significantly lowering resource consumption and training time. We validate our approach through extensive comparisons and ablation studies on four newly collected datasets, showcasing its effectiveness in preserving regions of interest in complex scenes.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.19294v1",
+        "pdf": "https://arxiv.org/pdf/2511.19294v1"
+      },
+      "arxiv_id": "2511.19294v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.977966101694915,
+      "score_breakdown": {
+        "total_score": 3.98,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2511.19198v1",
+      "title": "Three-Dimensional Anatomical Data Generation Based on Artificial Neural Networks",
+      "authors": [
+        "Ann-Sophia Müller",
+        "Moonkwang Jeong",
+        "Meng Zhang",
+        "Jiyuan Tian",
+        "Arkadiusz Miernik",
+        "Stefanie Speidel",
+        "Tian Qiu"
+      ],
+      "abstract": "Surgical planning and training based on machine learning requires a large amount of 3D anatomical models reconstructed from medical imaging, which is currently one of the major bottlenecks. Obtaining these data from real patients and during surgery is very demanding, if even possible, due to legal, ethical, and technical challenges. It is especially difficult for soft tissue organs with poor imaging contrast, such as the prostate. To overcome these challenges, we present a novel workflow for automated 3D anatomical data generation using data obtained from physical organ models. We additionally use a 3D Generative Adversarial Network (GAN) to obtain a manifold of 3D models useful for other downstream machine learning tasks that rely on 3D data. We demonstrate our workflow using an artificial prostate model made of biomimetic hydrogels with imaging contrast in multiple zones. This is used to physically simulate endoscopic surgery. For evaluation and 3D data generation, we place it into a customized ultrasound scanner that records the prostate before and after the procedure. A neural network is trained to segment the recorded ultrasound images, which outperforms conventional, non-learning-based computer vision techniques in terms of intersection over union (IoU). Based on the segmentations, a 3D mesh model is reconstructed, and performance feedback is provided.",
+      "published": "2025-11-24",
+      "updated": "2025-11-24",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2511.19198v1",
+        "pdf": "https://arxiv.org/pdf/2511.19198v1"
+      },
+      "arxiv_id": "2511.19198v1",
+      "comment": "6 pages, 4 figures, 1 table, IEEE International Conference on Intelligent Robots and Systems (IROS)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.9279661016949152,
+      "score_breakdown": {
+        "total_score": 3.93,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "medical imaging",
+            "segmentation",
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
           "weight": 0.1
         }
       }

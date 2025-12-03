@@ -3,101 +3,45 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2511.23170v1",
-      "title": "PowerCLIP: Powerset Alignment for Contrastive Pre-Training",
+      "id": "2512.01913v1",
+      "title": "Disentangling Progress in Medical Image Registration: Beyond Trend-Driven Architectures towards Domain-Specific Strategies",
       "authors": [
-        "Masaki Kawamura",
-        "Nakamasa Inoue",
-        "Rintaro Yanagi",
-        "Hirokatsu Kataoka",
-        "Rio Yokota"
+        "Bailiang Jian",
+        "Jiazhen Pan",
+        "Rohit Jena",
+        "Morteza Ghahremani",
+        "Hongwei Bran Li",
+        "Daniel Rueckert",
+        "Christian Wachinger",
+        "Benedikt Wiestler"
       ],
-      "abstract": "Contrastive vision-language pre-training frameworks such as CLIP have demonstrated impressive zero-shot performance across a range of vision-language tasks. Recent studies have shown that aligning individual text tokens with specific image patches or regions enhances fine-grained compositional understanding. However, it remains challenging to capture compositional semantics that span multiple image regions. To address this limitation, we propose PowerCLIP, a novel contrastive pre-training framework enhanced by powerset alignment, which exhaustively optimizes region-to-phrase alignments by minimizing the loss defined between powersets of image regions and textual parse trees. Since the naive powerset construction incurs exponential computational cost due to the combinatorial explosion in the number of region subsets, we introduce efficient non-linear aggregators (NLAs) that reduce complexity from O(2^M) to O(M) with respect to the number of regions M, while approximating the exact loss value with arbitrary precision. Our extensive experiments demonstrate that PowerCLIP outperforms state-of-the-art methods in zero-shot classification and retrieval tasks, underscoring the compositionality and robustness of our approach. Our code will be made publicly available.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "Medical image registration drives quantitative analysis across organs, modalities, and patient populations. Recent deep learning methods often combine low-level \"trend-driven\" computational blocks from computer vision, such as large-kernel CNNs, Transformers, and state-space models, with high-level registration-specific designs like motion pyramids, correlation layers, and iterative refinement. Yet, their relative contributions remain unclear and entangled. This raises a central question: should future advances in registration focus on importing generic architectural trends or on refining domain-specific design principles? Through a modular framework spanning brain, lung, cardiac, and abdominal registration, we systematically disentangle the influence of these two paradigms. Our evaluation reveals that low-level \"trend-driven\" computational blocks offer only marginal or inconsistent gains, while high-level registration-specific designs consistently deliver more accurate, smoother, and more robust deformations. These domain priors significantly elevate the performance of a standard U-Net baseline, far more than variants incorporating \"trend-driven\" blocks, achieving an average relative improvement of $\\sim3\\%$. All models and experiments are released within a transparent, modular benchmark that enables plug-and-play comparison for new architectures and registration tasks (https://github.com/BailiangJ/rethink-reg). This dynamic and extensible platform establishes a common ground for reproducible and fair evaluation, inviting the community to isolate genuine methodological contributions from domain priors. Our findings advocate a shift in research emphasis: from following architectural trends to embracing domain-specific design principles as the true drivers of progress in learning-based medical image registration.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
+        "eess.IV",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "eess.IV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23170v1",
-        "pdf": "https://arxiv.org/pdf/2511.23170v1"
+        "paper": "http://arxiv.org/abs/2512.01913v1",
+        "pdf": "https://arxiv.org/pdf/2512.01913v1"
       },
-      "arxiv_id": "2511.23170v1",
-      "comment": "Submitted to CVPR 2026",
+      "arxiv_id": "2512.01913v1",
+      "comment": "Submitted to Medical Image Analysis. Journal Extension of arXiv:2407.19274",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.5,
-      "score_breakdown": {
-        "total_score": 4.5,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Contrastive vision-language pre-training frameworks such as CLIP have demonstrated impressive zero-shot performance across a range of vision-language tasks. Recent studies have shown that aligning individual text tokens with specific image patches or regions enhances fine-grained compositional understanding. However, it remains challenging to capture compositional semantics that span multiple imag...",
-        "key_contributions": [
-          "Contrastive vision-language pre-training frameworks such as CLIP have demonstrated impressive zero-shot performance across a range of vision-language tasks.",
-          "Recent studies have shown that aligning individual text tokens with specific image patches or regions enhances fine-grained compositional understanding.",
-          "However, it remains challenging to capture compositional semantics that span multiple image regions."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.23170v1.mp3"
-      }
-    },
-    {
-      "id": "2511.23332v1",
-      "title": "UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes",
-      "authors": [
-        "Shuo Ni",
-        "Di Wang",
-        "He Chen",
-        "Haonan Guo",
-        "Ning Zhang",
-        "Jing Zhang"
-      ],
-      "abstract": "Instruction-driven segmentation in remote sensing generates masks from guidance, offering great potential for accessible and generalizable applications. However, existing methods suffer from fragmented task formulations and limited instruction data, hindering effective understanding and generalization. To address these issues, we introduce GeoSeg-1M, the first million-scale dataset for remote sensing instruction-driven segmentation, constructed via an automatic mask filtering and instruction generation pipeline that synthesizes referring, interactive, and reasoning segmentation instructions from multiple public datasets. GeoSeg-1M contains 590K images, 117 categories, and 1.1M image-mask-instruction triplets. Building upon this foundation, we further curate GeoSeg-Bench, a challenging benchmark designed to evaluate contextual understanding and reasoning capabilities across diverse instruction-driven tasks and complex geospatial scenes. Furthermore, we present UniGeoSeg, a unified framework that serves as a strong baseline, incorporating task-aware text enhancement, latent knowledge memory, and a progressive training strategy to facilitate multi-task learning. Extensive experiments demonstrate the state-of-the-art performance of UniGeoSeg across GeoSeg-Bench and diverse public benchmarks, while exhibiting strong zero-shot generalization. Datasets and source code were released at https://github.com/MiliLab/UniGeoSeg.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.23332v1",
-        "pdf": "https://arxiv.org/pdf/2511.23332v1"
-      },
-      "arxiv_id": "2511.23332v1",
-      "comment": "Datasets and source code were released at https://github.com/MiliLab/UniGeoSeg",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.453389830508475,
+      "relevance_score": 4.452542372881356,
       "score_breakdown": {
         "total_score": 4.45,
         "field_match": {
-          "score": 0.51,
+          "score": 2.88,
           "matches": [
-            "segmentation"
+            "medical image",
+            "cardiac",
+            "registration",
+            "deep learning",
+            "computer vision"
           ],
           "weight": 0.4
         },
@@ -107,73 +51,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Instruction-driven segmentation in remote sensing generates masks from guidance, offering great potential for accessible and generalizable applications. However, existing methods suffer from fragmented task formulations and limited instruction data, hindering effective understanding and generalization. To address these issues, we introduce GeoSeg-1M, the first million-scale dataset for remote sens...",
-        "key_contributions": [
-          "Instruction-driven segmentation in remote sensing generates masks from guidance, offering great potential for accessible and generalizable applications.",
-          "However, existing methods suffer from fragmented task formulations and limited instruction data, hindering effective understanding and generalization.",
-          "To address these issues, we introduce GeoSeg-1M, the first million-scale dataset for remote sensing instruction-driven segmentation, constructed via an automatic mask filtering and instruction generation pipeline that synthesizes referring, interactive, and reasoning segmentation instructions from multiple public datasets."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.23332v1.mp3"
-      }
-    },
-    {
-      "id": "2511.23220v1",
-      "title": "Instruction Tuning of Large Language Models for Tabular Data Generation-in One Day",
-      "authors": [
-        "Milad Abdollahzadeh",
-        "Abdul Raheem",
-        "Zilong Zhao",
-        "Uzair Javaid",
-        "Kevin Yee",
-        "Nalam Venkata Abhishek",
-        "Tram Truong-Huu",
-        "Biplab Sikdar"
-      ],
-      "abstract": "Tabular instruction tuning has emerged as a promising research direction for improving LLMs understanding of tabular data. However, the majority of existing works only consider question-answering and reasoning tasks over tabular data, leaving tabular data generation largely unnoticed. In this work, for the first time, we explore the efficacy of instruction tuning in improving LLMs tabular data generation capabilities. More specifically, given the high data and computation requirements of tabular instruction tuning, we aim to address the possibility of instruction tuning for tabular data generation with limited data and computational resources. To achieve this, we first create a high-quality instruction dataset for tabular data, enabling efficient LLM comprehension. We then instruction-tune an open-source LLM (Llama3.1-8B-Instruct) on the training set of this dataset to improve its tabular data generation performance. Our experimental results show that by using our high-quality dataset and instruction-tuning on only 7K instructions with an A100 GPU, for less than 6 hours, we achieve tabular data generation performance on par with the most capable commercial LLM, GPT-4o.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.23220v1",
-        "pdf": "https://arxiv.org/pdf/2511.23220v1"
-      },
-      "arxiv_id": "2511.23220v1",
-      "comment": "Accepted International Conference on Machine Learning (ICML 2025), 1st Workshop on Foundation Models for Structured Data",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -187,124 +65,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Tabular instruction tuning has emerged as a promising research direction for improving LLMs understanding of tabular data. However, the majority of existing works only consider question-answering and reasoning tasks over tabular data, leaving tabular data generation largely unnoticed. In this work, for the first time, we explore the efficacy of instruction tuning in improving LLMs tabular data gen...",
+        "short": "Medical image registration drives quantitative analysis across organs, modalities, and patient populations. Recent deep learning methods often combine low-level \"trend-driven\" computational blocks from computer vision, such as large-kernel CNNs, Transformers, and state-space models, with high-level registration-specific designs like motion pyramids, correlation layers, and iterative refinement. Ye...",
         "key_contributions": [
-          "Tabular instruction tuning has emerged as a promising research direction for improving LLMs understanding of tabular data.",
-          "However, the majority of existing works only consider question-answering and reasoning tasks over tabular data, leaving tabular data generation largely unnoticed.",
-          "In this work, for the first time, we explore the efficacy of instruction tuning in improving LLMs tabular data generation capabilities."
+          "Medical image registration drives quantitative analysis across organs, modalities, and patient populations.",
+          "Recent deep learning methods often combine low-level \"trend-driven\" computational blocks from computer vision, such as large-kernel CNNs, Transformers, and state-space models, with high-level registration-specific designs like motion pyramids, correlation layers, and iterative refinement.",
+          "Yet, their relative contributions remain unclear and entangled."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23220v1.mp3"
+        "audio_url": "/audio/2512.01913v1.mp3"
       }
     },
     {
-      "id": "2511.23473v1",
-      "title": "ThetaEvolve: Test-time Learning on Open Problems",
+      "id": "2512.02006v1",
+      "title": "MV-TAP: Tracking Any Point in Multi-View Videos",
       "authors": [
-        "Yiping Wang",
-        "Shao-Rong Su",
-        "Zhiyuan Zeng",
-        "Eva Xu",
-        "Liliang Ren",
-        "Xinyu Yang",
-        "Zeyi Huang",
-        "Xuehai He",
-        "Luyao Ma",
-        "Baolin Peng",
-        "Hao Cheng",
-        "Pengcheng He",
-        "Weizhu Chen",
-        "Shuohang Wang",
-        "Simon Shaolei Du",
-        "Yelong Shen"
+        "Jahyeok Koo",
+        "Inès Hyeonsu Kim",
+        "Mungyeom Kim",
+        "Junghyun Park",
+        "Seohyun Park",
+        "Jaeyeong Kim",
+        "Jung Yi",
+        "Seokju Cho",
+        "Seungryong Kim"
       ],
-      "abstract": "Recent advances in large language models (LLMs) have enabled breakthroughs in mathematical discovery, exemplified by AlphaEvolve, a closed-source system that evolves programs to improve bounds on open problems. However, it relies on ensembles of frontier LLMs to achieve new bounds and is a pure inference system that models cannot internalize the evolving strategies. We introduce ThetaEvolve, an open-source framework that simplifies and extends AlphaEvolve to efficiently scale both in-context learning and Reinforcement Learning (RL) at test time, allowing models to continually learn from their experiences in improving open optimization problems. ThetaEvolve features a single LLM, a large program database for enhanced exploration, batch sampling for higher throughput, lazy penalties to discourage stagnant outputs, and optional reward shaping for stable training signals, etc. ThetaEvolve is the first evolving framework that enable a small open-source model, like DeepSeek-R1-0528-Qwen3-8B, to achieve new best-known bounds on open problems (circle packing and first auto-correlation inequality) mentioned in AlphaEvolve. Besides, across two models and four open tasks, we find that ThetaEvolve with RL at test-time consistently outperforms inference-only baselines, and the model indeed learns evolving capabilities, as the RL-trained checkpoints demonstrate faster progress and better final performance on both trained target task and other unseen tasks. We release our code publicly: https://github.com/ypwang61/ThetaEvolve",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2511.23473v1",
-        "pdf": "https://arxiv.org/pdf/2511.23473v1"
-      },
-      "arxiv_id": "2511.23473v1",
-      "comment": "30 pages, link: https://github.com/ypwang61/ThetaEvolve",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in large language models (LLMs) have enabled breakthroughs in mathematical discovery, exemplified by AlphaEvolve, a closed-source system that evolves programs to improve bounds on open problems. However, it relies on ensembles of frontier LLMs to achieve new bounds and is a pure inference system that models cannot internalize the evolving strategies. We introduce ThetaEvolve, an op...",
-        "key_contributions": [
-          "Recent advances in large language models (LLMs) have enabled breakthroughs in mathematical discovery, exemplified by AlphaEvolve, a closed-source system that evolves programs to improve bounds on open problems.",
-          "However, it relies on ensembles of frontier LLMs to achieve new bounds and is a pure inference system that models cannot internalize the evolving strategies.",
-          "We introduce ThetaEvolve, an open-source framework that simplifies and extends AlphaEvolve to efficiently scale both in-context learning and Reinforcement Learning (RL) at test time, allowing models to continually learn from their experiences in improving open optimization problems."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2511.23473v1.mp3"
-      }
-    },
-    {
-      "id": "2511.23429v1",
-      "title": "Hunyuan-GameCraft-2: Instruction-following Interactive Game World Model",
-      "authors": [
-        "Junshu Tang",
-        "Jiacheng Liu",
-        "Jiaqi Li",
-        "Longhuang Wu",
-        "Haoyu Yang",
-        "Penghao Zhao",
-        "Siruis Gong",
-        "Xiang Yuan",
-        "Shuai Shao",
-        "Qinglin Lu"
-      ],
-      "abstract": "Recent advances in generative world models have enabled remarkable progress in creating open-ended game environments, evolving from static scene synthesis toward dynamic, interactive simulation. However, current approaches remain limited by rigid action schemas and high annotation costs, restricting their ability to model diverse in-game interactions and player-driven dynamics. To address these challenges, we introduce Hunyuan-GameCraft-2, a new paradigm of instruction-driven interaction for generative game world modeling. Instead of relying on fixed keyboard inputs, our model allows users to control game video contents through natural language prompts, keyboard, or mouse signals, enabling flexible and semantically rich interaction within generated worlds. We formally defined the concept of interactive video data and developed an automated process to transform large-scale, unstructured text-video pairs into causally aligned interactive datasets. Built upon a 14B image-to-video Mixture-of-Experts(MoE) foundation model, our model incorporates a text-driven interaction injection mechanism for fine-grained control over camera motion, character behavior, and environment dynamics. We introduce an interaction-focused benchmark, InterBench, to evaluate interaction performance comprehensively. Extensive experiments demonstrate that our model generates temporally coherent and causally grounded interactive game videos that faithfully respond to diverse and free-form user instructions such as \"open the door\", \"draw a torch\", or \"trigger an explosion\".",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "Multi-view camera systems enable rich observations of complex real-world scenes, and understanding dynamic objects in multi-view settings has become central to various applications. In this work, we present MV-TAP, a novel point tracker that tracks points across multi-view videos of dynamic scenes by leveraging cross-view information. MV-TAP utilizes camera geometry and a cross-view attention mechanism to aggregate spatio-temporal information across views, enabling more complete and reliable trajectory estimation in multi-view videos. To support this task, we construct a large-scale synthetic training dataset and real-world evaluation sets tailored for multi-view tracking. Extensive experiments demonstrate that MV-TAP outperforms existing point-tracking methods on challenging benchmarks, establishing an effective baseline for advancing research in multi-view point tracking.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23429v1",
-        "pdf": "https://arxiv.org/pdf/2511.23429v1"
+        "paper": "http://arxiv.org/abs/2512.02006v1",
+        "pdf": "https://arxiv.org/pdf/2512.02006v1"
       },
-      "arxiv_id": "2511.23429v1",
-      "comment": "Technical Report, Project page:https://hunyuan-gamecraft-2.github.io/",
+      "arxiv_id": "2512.02006v1",
+      "comment": "Project Page: https://cvlab-kaist.github.io/MV-TAP/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.050000000000001,
+      "relevance_score": 4.15,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.15,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -325,51 +127,123 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent advances in generative world models have enabled remarkable progress in creating open-ended game environments, evolving from static scene synthesis toward dynamic, interactive simulation. However, current approaches remain limited by rigid action schemas and high annotation costs, restricting their ability to model diverse in-game interactions and player-driven dynamics. To address these ch...",
+        "short": "Multi-view camera systems enable rich observations of complex real-world scenes, and understanding dynamic objects in multi-view settings has become central to various applications. In this work, we present MV-TAP, a novel point tracker that tracks points across multi-view videos of dynamic scenes by leveraging cross-view information. MV-TAP utilizes camera geometry and a cross-view attention mech...",
         "key_contributions": [
-          "Recent advances in generative world models have enabled remarkable progress in creating open-ended game environments, evolving from static scene synthesis toward dynamic, interactive simulation.",
-          "However, current approaches remain limited by rigid action schemas and high annotation costs, restricting their ability to model diverse in-game interactions and player-driven dynamics.",
-          "To address these challenges, we introduce Hunyuan-GameCraft-2, a new paradigm of instruction-driven interaction for generative game world modeling."
+          "Multi-view camera systems enable rich observations of complex real-world scenes, and understanding dynamic objects in multi-view settings has become central to various applications.",
+          "In this work, we present MV-TAP, a novel point tracker that tracks points across multi-view videos of dynamic scenes by leveraging cross-view information.",
+          "MV-TAP utilizes camera geometry and a cross-view attention mechanism to aggregate spatio-temporal information across views, enabling more complete and reliable trajectory estimation in multi-view videos."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23429v1.mp3"
+        "audio_url": "/audio/2512.02006v1.mp3"
       }
     },
     {
-      "id": "2511.23260v1",
-      "title": "Time Series Forecasting via Direct Per-Step Probability Distribution Modeling",
+      "id": "2512.01970v1",
+      "title": "From Atomic to Composite: Reinforcement Learning Enables Generalization in Complementary Reasoning",
       "authors": [
-        "Linghao Kong",
-        "Xiaopeng Hong"
+        "Sitao Cheng",
+        "Xunjian Yin",
+        "Ruiwen Zhou",
+        "Yuxuan Li",
+        "Xinyi Wang",
+        "Liangming Pan",
+        "William Yang Wang",
+        "Victor Zhong"
       ],
-      "abstract": "Deep neural network-based time series prediction models have recently demonstrated superior capabilities in capturing complex temporal dependencies. However, it is challenging for these models to account for uncertainty associated with their predictions, because they directly output scalar values at each time step. To address such a challenge, we propose a novel model named interleaved dual-branch Probability Distribution Network (interPDN), which directly constructs discrete probability distributions per step instead of a scalar. The regression output at each time step is derived by computing the expectation of the predictive distribution on a predefined support set. To mitigate prediction anomalies, a dual-branch architecture is introduced with interleaved support sets, augmented by coarse temporal-scale branches for long-term trend forecasting. Outputs from another branch are treated as auxiliary signals to impose self-supervised consistency constraints on the current branch's prediction. Extensive experiments on multiple real-world datasets demonstrate the superior performance of interPDN.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "The mechanism by which RL contributes to reasoning capabilities-whether it incentivizes the synthesis of new skills or merely amplifies existing behaviors-remains a subject of intense debate. In this work, we investigate this question through the lens of Complementary Reasoning, a complex task that requires integrating internal parametric knowledge with external contextual information. Using a controlled synthetic dataset of human biographies, we strictly decouple this ability into two atomic skills: Parametric Reasoning (relying on internal knowledge) and Contextual Reasoning (depending on external information). To rigorously assess capability boundaries, we evaluate generalization across three distinct levels of difficulty: I.I.D., Composition, and Zero-shot settings. We find that while SFT is sufficient for in-distribution performance, it struggles with O.O.D. generalization, particularly in Zero-shot settings where relational combinations are novel. Crucially, we identify the SFT Generalization Paradox: Models supervised solely on the composite task achieve near-perfect in-distribution accuracy but collapse on out-of-distribution generalization, indicating their reliance on rote memorization of path shortcuts. In contrast, we find that RL acts as a reasoning synthesizer rather than a probability amplifier. However, we uncover a strict atomic prerequisite: RL can only synthesize these complex strategies if the base model has first mastered the independent atomic skills (Parametric and Contextual) via SFT. These findings challenge the view of RL as a mere amplifier, suggesting that given sufficient atomic foundations, RL can actively synthesize complex reasoning strategies from learned primitives without explicit supervision on such complex strategies. This indicates that decoupled atomic training followed by RL offers a scalable path to generalization for complex reasoning tasks.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.AI",
+        "cs.CL"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23260v1",
-        "pdf": "https://arxiv.org/pdf/2511.23260v1"
+        "paper": "http://arxiv.org/abs/2512.01970v1",
+        "pdf": "https://arxiv.org/pdf/2512.01970v1"
       },
-      "arxiv_id": "2511.23260v1",
-      "comment": "16 pages, 8 figures. This is the preprint version of the paper and supplemental material to appear in AAAI, 2026. Please cite the final published version. Code is available at https://github.com/leonardokong486/interPDN",
+      "arxiv_id": "2512.01970v1",
+      "comment": "Work in Progress. Code and data will be available at https://github.com/sitaocheng/from_atomic_to_composite",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.021186440677965,
+      "relevance_score": 4.1499999999999995,
       "score_breakdown": {
-        "total_score": 4.02,
+        "total_score": 4.15,
         "field_match": {
-          "score": 0.68,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The mechanism by which RL contributes to reasoning capabilities-whether it incentivizes the synthesis of new skills or merely amplifies existing behaviors-remains a subject of intense debate. In this work, we investigate this question through the lens of Complementary Reasoning, a complex task that requires integrating internal parametric knowledge with external contextual information. Using a con...",
+        "key_contributions": [
+          "The mechanism by which RL contributes to reasoning capabilities-whether it incentivizes the synthesis of new skills or merely amplifies existing behaviors-remains a subject of intense debate.",
+          "In this work, we investigate this question through the lens of Complementary Reasoning, a complex task that requires integrating internal parametric knowledge with external contextual information.",
+          "Using a controlled synthetic dataset of human biographies, we strictly decouple this ability into two atomic skills: Parametric Reasoning (relying on internal knowledge) and Contextual Reasoning (depending on external information)."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.01970v1.mp3"
+      }
+    },
+    {
+      "id": "2512.01771v1",
+      "title": "Robust Rigid and Non-Rigid Medical Image Registration Using Learnable Edge Kernels",
+      "authors": [
+        "Ahsan Raza Siyal",
+        "Markus Haltmeier",
+        "Ruth Steiger",
+        "Malik Galijasevic",
+        "Elke Ruth Gizewski",
+        "Astrid Ellen Grams"
+      ],
+      "abstract": "Medical image registration is crucial for various clinical and research applications including disease diagnosis or treatment planning which require alignment of images from different modalities, time points, or subjects. Traditional registration techniques often struggle with challenges such as contrast differences, spatial distortions, and modality-specific variations. To address these limitations, we propose a method that integrates learnable edge kernels with learning-based rigid and non-rigid registration techniques. Unlike conventional layers that learn all features without specific bias, our approach begins with a predefined edge detection kernel, which is then perturbed with random noise. These kernels are learned during training to extract optimal edge features tailored to the task. This adaptive edge detection enhances the registration process by capturing diverse structural features critical in medical imaging. To provide clearer insight into the contribution of each component in our design, we introduce four variant models for rigid registration and four variant models for non-rigid registration. We evaluated our approach using a dataset provided by the Medical University across three setups: rigid registration without skull removal, with skull removal, and non-rigid registration. Additionally, we assessed performance on two publicly available datasets. Across all experiments, our method consistently outperformed state-of-the-art techniques, demonstrating its potential to improve multi-modal image alignment and anatomical structure analysis.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.01771v1",
+        "pdf": "https://arxiv.org/pdf/2512.01771v1"
+      },
+      "arxiv_id": "2512.01771v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.063559322033899,
+      "score_breakdown": {
+        "total_score": 4.06,
+        "field_match": {
+          "score": 2.03,
           "matches": [
-            "self-supervised"
+            "medical image",
+            "medical imaging",
+            "registration"
           ],
           "weight": 0.4
         },
@@ -379,7 +253,72 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Medical image registration is crucial for various clinical and research applications including disease diagnosis or treatment planning which require alignment of images from different modalities, time points, or subjects. Traditional registration techniques often struggle with challenges such as contrast differences, spatial distortions, and modality-specific variations. To address these limitatio...",
+        "key_contributions": [
+          "Medical image registration is crucial for various clinical and research applications including disease diagnosis or treatment planning which require alignment of images from different modalities, time points, or subjects.",
+          "Traditional registration techniques often struggle with challenges such as contrast differences, spatial distortions, and modality-specific variations.",
+          "To address these limitations, we propose a method that integrates learnable edge kernels with learning-based rigid and non-rigid registration techniques."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.01771v1.mp3"
+      }
+    },
+    {
+      "id": "2512.01827v1",
+      "title": "CauSight: Learning to Supersense for Visual Causal Discovery",
+      "authors": [
+        "Yize Zhang",
+        "Meiqi Chen",
+        "Sirui Chen",
+        "Bo Peng",
+        "Yanxi Zhang",
+        "Tianyu Li",
+        "Chaochao Lu"
+      ],
+      "abstract": "Causal thinking enables humans to understand not just what is seen, but why it happens. To replicate this capability in modern AI systems, we introduce the task of visual causal discovery. It requires models to infer cause-and-effect relations among visual entities across diverse scenarios instead of merely perceiving their presence. To this end, we first construct the Visual Causal Graph dataset (VCG-32K), a large-scale collection of over 32,000 images annotated with entity-level causal graphs, and further develop CauSight, a novel vision-language model to perform visual causal discovery through causally aware reasoning. Our training recipe integrates three components: (1) training data curation from VCG-32K, (2) Tree-of-Causal-Thought (ToCT) for synthesizing reasoning trajectories, and (3) reinforcement learning with a designed causal reward to refine the reasoning policy. Experiments show that CauSight outperforms GPT-4.1 on visual causal discovery, achieving over a threefold performance boost (21% absolute gain). Our code, model, and dataset are fully open-sourced at project page: https://github.com/OpenCausaLab/CauSight.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.01827v1",
+        "pdf": "https://arxiv.org/pdf/2512.01827v1"
+      },
+      "arxiv_id": "2512.01827v1",
+      "comment": "project page: https://github.com/OpenCausaLab/CauSight",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -388,54 +327,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Deep neural network-based time series prediction models have recently demonstrated superior capabilities in capturing complex temporal dependencies. However, it is challenging for these models to account for uncertainty associated with their predictions, because they directly output scalar values at each time step. To address such a challenge, we propose a novel model named interleaved dual-branch...",
+        "short": "Causal thinking enables humans to understand not just what is seen, but why it happens. To replicate this capability in modern AI systems, we introduce the task of visual causal discovery. It requires models to infer cause-and-effect relations among visual entities across diverse scenarios instead of merely perceiving their presence. To this end, we first construct the Visual Causal Graph dataset ...",
         "key_contributions": [
-          "Deep neural network-based time series prediction models have recently demonstrated superior capabilities in capturing complex temporal dependencies.",
-          "However, it is challenging for these models to account for uncertainty associated with their predictions, because they directly output scalar values at each time step.",
-          "To address such a challenge, we propose a novel model named interleaved dual-branch Probability Distribution Network (interPDN), which directly constructs discrete probability distributions per step instead of a scalar."
+          "Causal thinking enables humans to understand not just what is seen, but why it happens.",
+          "To replicate this capability in modern AI systems, we introduce the task of visual causal discovery.",
+          "It requires models to infer cause-and-effect relations among visual entities across diverse scenarios instead of merely perceiving their presence."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23260v1.mp3"
+        "audio_url": "/audio/2512.01827v1.mp3"
       }
     },
     {
-      "id": "2511.23475v1",
-      "title": "AnyTalker: Scaling Multi-Person Talking Video Generation with Interactivity Refinement",
+      "id": "2512.02020v1",
+      "title": "EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI",
       "authors": [
-        "Zhizhou Zhong",
-        "Yicheng Ji",
-        "Zhe Kong",
-        "Yiying Liu",
-        "Jiarui Wang",
-        "Jiasun Feng",
-        "Lupeng Liu",
-        "Xiangyi Wang",
-        "Yanjia Li",
-        "Yuqing She",
-        "Ying Qin",
-        "Huan Li",
-        "Shuiyang Mao",
-        "Wei Liu",
-        "Wenhan Luo"
+        "Jianlei Chang",
+        "Ruofeng Mei",
+        "Wei Ke",
+        "Xiangyu Xu"
       ],
-      "abstract": "Recently, multi-person video generation has started to gain prominence. While a few preliminary works have explored audio-driven multi-person talking video generation, they often face challenges due to the high costs of diverse multi-person data collection and the difficulty of driving multiple identities with coherent interactivity. To address these challenges, we propose AnyTalker, a multi-person generation framework that features an extensible multi-stream processing architecture. Specifically, we extend Diffusion Transformer's attention block with a novel identity-aware attention mechanism that iteratively processes identity-audio pairs, allowing arbitrary scaling of drivable identities. Besides, training multi-person generative models demands massive multi-person data. Our proposed training pipeline depends solely on single-person videos to learn multi-person speaking patterns and refines interactivity with only a few real multi-person clips. Furthermore, we contribute a targeted metric and dataset designed to evaluate the naturalness and interactivity of the generated multi-person videos. Extensive experiments demonstrate that AnyTalker achieves remarkable lip synchronization, visual quality, and natural interactivity, striking a favorable balance between data costs and identity scalability.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "Generative modeling has recently shown remarkable promise for visuomotor policy learning, enabling flexible and expressive control across diverse embodied AI tasks. However, existing generative policies often struggle with data inefficiency, requiring large-scale demonstrations, and sampling inefficiency, incurring slow action generation during inference. We introduce EfficientFlow, a unified framework for efficient embodied AI with flow-based policy learning. To enhance data efficiency, we bring equivariance into flow matching. We theoretically prove that when using an isotropic Gaussian prior and an equivariant velocity prediction network, the resulting action distribution remains equivariant, leading to improved generalization and substantially reduced data demands. To accelerate sampling, we propose a novel acceleration regularization strategy. As direct computation of acceleration is intractable for marginal flow trajectories, we derive a novel surrogate loss that enables stable and scalable training using only conditional trajectories. Across a wide range of robotic manipulation benchmarks, the proposed algorithm achieves competitive or superior performance under limited data while offering dramatically faster inference. These results highlight EfficientFlow as a powerful and efficient paradigm for high-performance embodied AI.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
-        "cs.CV"
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23475v1",
-        "pdf": "https://arxiv.org/pdf/2511.23475v1"
+        "paper": "http://arxiv.org/abs/2512.02020v1",
+        "pdf": "https://arxiv.org/pdf/2512.02020v1"
       },
-      "arxiv_id": "2511.23475v1",
-      "comment": "Homepage: https://hkust-c4g.github.io/AnyTalker-homepage",
+      "arxiv_id": "2512.02020v1",
+      "comment": "Accepted by AAAI 2026. Project Page: https://efficientflow.github.io/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8499999999999996,
@@ -466,45 +397,54 @@
         }
       },
       "ai_summaries": {
-        "short": "Recently, multi-person video generation has started to gain prominence. While a few preliminary works have explored audio-driven multi-person talking video generation, they often face challenges due to the high costs of diverse multi-person data collection and the difficulty of driving multiple identities with coherent interactivity. To address these challenges, we propose AnyTalker, a multi-perso...",
+        "short": "Generative modeling has recently shown remarkable promise for visuomotor policy learning, enabling flexible and expressive control across diverse embodied AI tasks. However, existing generative policies often struggle with data inefficiency, requiring large-scale demonstrations, and sampling inefficiency, incurring slow action generation during inference. We introduce EfficientFlow, a unified fram...",
         "key_contributions": [
-          "Recently, multi-person video generation has started to gain prominence.",
-          "While a few preliminary works have explored audio-driven multi-person talking video generation, they often face challenges due to the high costs of diverse multi-person data collection and the difficulty of driving multiple identities with coherent interactivity.",
-          "To address these challenges, we propose AnyTalker, a multi-person generation framework that features an extensible multi-stream processing architecture."
+          "Generative modeling has recently shown remarkable promise for visuomotor policy learning, enabling flexible and expressive control across diverse embodied AI tasks.",
+          "However, existing generative policies often struggle with data inefficiency, requiring large-scale demonstrations, and sampling inefficiency, incurring slow action generation during inference.",
+          "We introduce EfficientFlow, a unified framework for efficient embodied AI with flow-based policy learning."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23475v1.mp3"
+        "audio_url": "/audio/2512.02020v1.mp3"
       }
     },
     {
-      "id": "2511.23150v1",
-      "title": "Cascaded Robust Rectification for Arbitrary Document Images",
+      "id": "2512.02009v1",
+      "title": "AirSim360: A Panoramic Simulation Platform within Drone View",
       "authors": [
-        "Chaoyun Wang",
-        "Quanxin Huang",
-        "I-Chao Shen",
-        "Takeo Igarashi",
-        "Nanning Zheng",
-        "Caigui Jiang"
+        "Xian Ge",
+        "Yuling Pan",
+        "Yuhang Zhang",
+        "Xiang Li",
+        "Weijun Zhang",
+        "Dizhe Zhang",
+        "Zhaoliang Wan",
+        "Xin Lin",
+        "Xiangkai Zhang",
+        "Juntao Liang",
+        "Jason Li",
+        "Wenjie Jiang",
+        "Bo Du",
+        "Ming-Hsuan Yang",
+        "Lu Qi"
       ],
-      "abstract": "Document rectification in real-world scenarios poses significant challenges due to extreme variations in camera perspectives and physical distortions. Driven by the insight that complex transformations can be decomposed and resolved progressively, we introduce a novel multi-stage framework that progressively reverses distinct distortion types in a coarse-to-fine manner. Specifically, our framework first performs a global affine transformation to correct perspective distortions arising from the camera's viewpoint, then rectifies geometric deformations resulting from physical paper curling and folding, and finally employs a content-aware iterative process to eliminate fine-grained content distortions. To address limitations in existing evaluation protocols, we also propose two enhanced metrics: layout-aligned OCR metrics (AED/ACER) for a stable assessment that decouples geometric rectification quality from the layout analysis errors of OCR engines, and masked AD/AAD (AD-M/AAD-M) tailored for accurately evaluating geometric distortions in documents with incomplete boundaries. Extensive experiments show that our method establishes new state-of-the-art performance on multiple challenging benchmarks, yielding a substantial reduction of 14.1\\%--34.7\\% in the AAD metric and demonstrating superior efficacy in real-world applications. The code will be publicly available at https://github.com/chaoyunwang/ArbDR.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "The field of 360-degree omnidirectional understanding has been receiving increasing attention for advancing spatial intelligence. However, the lack of large-scale and diverse data remains a major limitation. In this work, we propose AirSim360, a simulation platform for omnidirectional data from aerial viewpoints, enabling wide-ranging scene sampling with drones. Specifically, AirSim360 focuses on three key aspects: a render-aligned data and labeling paradigm for pixel-level geometric, semantic, and entity-level understanding; an interactive pedestrian-aware system for modeling human behavior; and an automated trajectory generation paradigm to support navigation tasks. Furthermore, we collect more than 60K panoramic samples and conduct extensive experiments across various tasks to demonstrate the effectiveness of our simulator. Unlike existing simulators, our work is the first to systematically model the 4D real world under an omnidirectional setting. The entire platform, including the toolkit, plugins, and collected datasets, will be made publicly available at https://insta360-research-team.github.io/AirSim360-website.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23150v1",
-        "pdf": "https://arxiv.org/pdf/2511.23150v1"
+        "paper": "http://arxiv.org/abs/2512.02009v1",
+        "pdf": "https://arxiv.org/pdf/2512.02009v1"
       },
-      "arxiv_id": "2511.23150v1",
-      "comment": "",
+      "arxiv_id": "2512.02009v1",
+      "comment": "Project Website: https://insta360-research-team.github.io/AirSim360-website/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.6999999999999997,
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
       "score_breakdown": {
-        "total_score": 3.7,
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -516,61 +456,132 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Document rectification in real-world scenarios poses significant challenges due to extreme variations in camera perspectives and physical distortions. Driven by the insight that complex transformations can be decomposed and resolved progressively, we introduce a novel multi-stage framework that progressively reverses distinct distortion types in a coarse-to-fine manner. Specifically, our framework...",
+        "short": "The field of 360-degree omnidirectional understanding has been receiving increasing attention for advancing spatial intelligence. However, the lack of large-scale and diverse data remains a major limitation. In this work, we propose AirSim360, a simulation platform for omnidirectional data from aerial viewpoints, enabling wide-ranging scene sampling with drones. Specifically, AirSim360 focuses on ...",
         "key_contributions": [
-          "Document rectification in real-world scenarios poses significant challenges due to extreme variations in camera perspectives and physical distortions.",
-          "Driven by the insight that complex transformations can be decomposed and resolved progressively, we introduce a novel multi-stage framework that progressively reverses distinct distortion types in a coarse-to-fine manner.",
-          "Specifically, our framework first performs a global affine transformation to correct perspective distortions arising from the camera's viewpoint, then rectifies geometric deformations resulting from physical paper curling and folding, and finally employs a content-aware iterative process to eliminate fine-grained content distortions."
+          "The field of 360-degree omnidirectional understanding has been receiving increasing attention for advancing spatial intelligence.",
+          "However, the lack of large-scale and diverse data remains a major limitation.",
+          "In this work, we propose AirSim360, a simulation platform for omnidirectional data from aerial viewpoints, enabling wide-ranging scene sampling with drones."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23150v1.mp3"
+        "audio_url": "/audio/2512.02009v1.mp3"
       }
     },
     {
-      "id": "2511.23264v1",
-      "title": "BanglaSentNet: An Explainable Hybrid Deep Learning Framework for Multi-Aspect Sentiment Analysis with Cross-Domain Transfer Learning",
+      "id": "2512.02015v1",
+      "title": "Generative Video Motion Editing with 3D Point Tracks",
       "authors": [
-        "Ariful Islam",
-        "Md Rifat Hossen",
-        "Tanvir Mahmud"
+        "Yao-Chih Lee",
+        "Zhoutong Zhang",
+        "Jiahui Huang",
+        "Jui-Hsien Wang",
+        "Joon-Young Lee",
+        "Jia-Bin Huang",
+        "Eli Shechtman",
+        "Zhengqi Li"
       ],
-      "abstract": "Multi-aspect sentiment analysis of Bangla e-commerce reviews remains challenging due to limited annotated datasets, morphological complexity, code-mixing phenomena, and domain shift issues, affecting 300 million Bangla-speaking users. Existing approaches lack explainability and cross-domain generalization capabilities crucial for practical deployment. We present BanglaSentNet, an explainable hybrid deep learning framework integrating LSTM, BiLSTM, GRU, and BanglaBERT through dynamic weighted ensemble learning for multi-aspect sentiment classification. We introduce a dataset of 8,755 manually annotated Bangla product reviews across four aspects (Quality, Service, Price, Decoration) from major Bangladeshi e-commerce platforms. Our framework incorporates SHAP-based feature attribution and attention visualization for transparent insights. BanglaSentNet achieves 85% accuracy and 0.88 F1-score, outperforming standalone deep learning models by 3-7% and traditional approaches substantially. The explainability suite achieves 9.4/10 interpretability score with 87.6% human agreement. Cross-domain transfer learning experiments reveal robust generalization: zero-shot performance retains 67-76% effectiveness across diverse domains (BanglaBook reviews, social media, general e-commerce, news headlines); few-shot learning with 500-1000 samples achieves 90-95% of full fine-tuning performance, significantly reducing annotation costs. Real-world deployment demonstrates practical utility for Bangladeshi e-commerce platforms, enabling data-driven decision-making for pricing optimization, service improvement, and customer experience enhancement. This research establishes a new state-of-the-art benchmark for Bangla sentiment analysis, advances ensemble learning methodologies for low-resource languages, and provides actionable solutions for commercial applications.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "Camera and object motions are central to a video's narrative. However, precisely editing these captured motions remains a significant challenge, especially under complex object movements. Current motion-controlled image-to-video (I2V) approaches often lack full-scene context for consistent video editing, while video-to-video (V2V) methods provide viewpoint changes or basic object translation, but offer limited control over fine-grained object motion. We present a track-conditioned V2V framework that enables joint editing of camera and object motion. We achieve this by conditioning a video generation model on a source video and paired 3D point tracks representing source and target motions. These 3D tracks establish sparse correspondences that transfer rich context from the source video to new motions while preserving spatiotemporal coherence. Crucially, compared to 2D tracks, 3D tracks provide explicit depth cues, allowing the model to resolve depth order and handle occlusions for precise motion editing. Trained in two stages on synthetic and real data, our model supports diverse motion edits, including joint camera/object manipulation, motion transfer, and non-rigid deformation, unlocking new creative potential in video editing.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
-        "cs.LG",
-        "cs.CL"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23264v1",
-        "pdf": "https://arxiv.org/pdf/2511.23264v1"
+        "paper": "http://arxiv.org/abs/2512.02015v1",
+        "pdf": "https://arxiv.org/pdf/2512.02015v1"
       },
-      "arxiv_id": "2511.23264v1",
-      "comment": "Submitted to Springer Nature Computer Science (SNCS) as an extended version of our ICDSAIA 2025 conference paper",
+      "arxiv_id": "2512.02015v1",
+      "comment": "Project page: https://edit-by-track.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Camera and object motions are central to a video's narrative. However, precisely editing these captured motions remains a significant challenge, especially under complex object movements. Current motion-controlled image-to-video (I2V) approaches often lack full-scene context for consistent video editing, while video-to-video (V2V) methods provide viewpoint changes or basic object translation, but ...",
+        "key_contributions": [
+          "Camera and object motions are central to a video's narrative.",
+          "However, precisely editing these captured motions remains a significant challenge, especially under complex object movements.",
+          "Current motion-controlled image-to-video (I2V) approaches often lack full-scene context for consistent video editing, while video-to-video (V2V) methods provide viewpoint changes or basic object translation, but offer limited control over fine-grained object motion."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.02015v1.mp3"
+      }
+    },
+    {
+      "id": "2512.01850v1",
+      "title": "Register Any Point: Scaling 3D Point Cloud Registration by Flow Matching",
+      "authors": [
+        "Yue Pan",
+        "Tao Sun",
+        "Liyuan Zhu",
+        "Lucas Nunes",
+        "Iro Armeni",
+        "Jens Behley",
+        "Cyrill Stachniss"
+      ],
+      "abstract": "Point cloud registration aligns multiple unposed point clouds into a common frame, and is a core step for 3D reconstruction and robot localization. In this work, we cast registration as conditional generation: a learned continuous, point-wise velocity field transports noisy points to a registered scene, from which the pose of each view is recovered. Unlike previous methods that conduct correspondence matching to estimate the transformation between a pair of point clouds and then optimize the pairwise transformations to realize multi-view registration, our model directly generates the registered point cloud. With a lightweight local feature extractor and test-time rigidity enforcement, our approach achieves state-of-the-art results on pairwise and multi-view registration benchmarks, particularly with low overlap, and generalizes across scales and sensor modalities. It further supports downstream tasks including relocalization, multi-robot SLAM, and multi-session map merging. Source code available at: https://github.com/PRBonn/RAP.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.01850v1",
+        "pdf": "https://arxiv.org/pdf/2512.01850v1"
+      },
+      "arxiv_id": "2512.01850v1",
+      "comment": "22 pages",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.6694915254237284,
+      "relevance_score": 3.7906779661016947,
       "score_breakdown": {
-        "total_score": 3.67,
+        "total_score": 3.79,
         "field_match": {
-          "score": 0.42,
+          "score": 1.1,
           "matches": [
-            "deep learning"
+            "3d reconstruction",
+            "registration"
           ],
           "weight": 0.4
         },
@@ -589,55 +600,55 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Multi-aspect sentiment analysis of Bangla e-commerce reviews remains challenging due to limited annotated datasets, morphological complexity, code-mixing phenomena, and domain shift issues, affecting 300 million Bangla-speaking users. Existing approaches lack explainability and cross-domain generalization capabilities crucial for practical deployment. We present BanglaSentNet, an explainable hybri...",
+        "short": "Point cloud registration aligns multiple unposed point clouds into a common frame, and is a core step for 3D reconstruction and robot localization. In this work, we cast registration as conditional generation: a learned continuous, point-wise velocity field transports noisy points to a registered scene, from which the pose of each view is recovered. Unlike previous methods that conduct corresponde...",
         "key_contributions": [
-          "Multi-aspect sentiment analysis of Bangla e-commerce reviews remains challenging due to limited annotated datasets, morphological complexity, code-mixing phenomena, and domain shift issues, affecting 300 million Bangla-speaking users.",
-          "Existing approaches lack explainability and cross-domain generalization capabilities crucial for practical deployment.",
-          "We present BanglaSentNet, an explainable hybrid deep learning framework integrating LSTM, BiLSTM, GRU, and BanglaBERT through dynamic weighted ensemble learning for multi-aspect sentiment classification."
+          "Point cloud registration aligns multiple unposed point clouds into a common frame, and is a core step for 3D reconstruction and robot localization.",
+          "In this work, we cast registration as conditional generation: a learned continuous, point-wise velocity field transports noisy points to a registered scene, from which the pose of each view is recovered.",
+          "Unlike previous methods that conduct correspondence matching to estimate the transformation between a pair of point clouds and then optimize the pairwise transformations to realize multi-view registration, our model directly generates the registered point cloud."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23264v1.mp3"
+        "audio_url": "/audio/2512.01850v1.mp3"
       }
     },
     {
-      "id": "2511.23227v1",
-      "title": "PointCNN++: Performant Convolution on Native Points",
+      "id": "2512.02017v1",
+      "title": "Visual Sync: Multi-Camera Synchronization via Cross-View Object Motion",
       "authors": [
-        "Lihan Li",
-        "Haofeng Zhong",
-        "Rui Bu",
-        "Mingchao Sun",
-        "Wenzheng Chen",
-        "Baoquan Chen",
-        "Yangyan Li"
+        "Shaowei Liu",
+        "David Yifan Yao",
+        "Saurabh Gupta",
+        "Shenlong Wang"
       ],
-      "abstract": "Existing convolutional learning methods for 3D point cloud data are divided into two paradigms: point-based methods that preserve geometric precision but often face performance challenges, and voxel-based methods that achieve high efficiency through quantization at the cost of geometric fidelity. This loss of precision is a critical bottleneck for tasks such as point cloud registration. We propose PointCNN++, a novel architectural design that fundamentally mitigates this precision-performance trade-off. It \\textbf{generalizes sparse convolution from voxels to points}, treating voxel-based convolution as a specialized, degraded case of our more general point-based convolution. First, we introduce a point-centric convolution where the receptive field is centered on the original, high-precision point coordinates. Second, to make this high-fidelity operation performant, we design a computational strategy that operates \\textbf{natively} on points. We formulate the convolution on native points as a Matrix-Vector Multiplication and Reduction (MVMR) problem, for which we develop a dedicated, highly-optimized GPU kernel. Experiments demonstrate that PointCNN++ \\textbf{uses an order of magnitude less memory and is several times faster} than representative point-based methods. Furthermore, when used as a simple replacement for the voxel-based backbones it generalizes, it \\textbf{significantly improves point cloud registration accuracies while proving both more memory-efficient and faster}. PointCNN++ shows that preserving geometric detail and achieving high performance are not mutually exclusive, paving the way for a new class of 3D learning with high fidelity and efficiency. Our code will be open sourced.",
-      "published": "2025-11-28",
-      "updated": "2025-11-28",
+      "abstract": "Today, people can easily record memorable moments, ranging from concerts, sports events, lectures, family gatherings, and birthday parties with multiple consumer cameras. However, synchronizing these cross-camera streams remains challenging. Existing methods assume controlled settings, specific targets, manual correction, or costly hardware. We present VisualSync, an optimization framework based on multi-view dynamics that aligns unposed, unsynchronized videos at millisecond accuracy. Our key insight is that any moving 3D point, when co-visible in two cameras, obeys epipolar constraints once properly synchronized. To exploit this, VisualSync leverages off-the-shelf 3D reconstruction, feature matching, and dense tracking to extract tracklets, relative poses, and cross-view correspondences. It then jointly minimizes the epipolar error to estimate each camera's time offset. Experiments on four diverse, challenging datasets show that VisualSync outperforms baseline methods, achieving an median synchronization error below 50 ms.",
+      "published": "2025-12-01",
+      "updated": "2025-12-01",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2511.23227v1",
-        "pdf": "https://arxiv.org/pdf/2511.23227v1"
+        "paper": "http://arxiv.org/abs/2512.02017v1",
+        "pdf": "https://arxiv.org/pdf/2512.02017v1"
       },
-      "arxiv_id": "2511.23227v1",
-      "comment": "",
+      "arxiv_id": "2512.02017v1",
+      "comment": "Accepted to NeurIPS 2025. Project page: https://stevenlsw.github.io/visualsync/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.653389830508474,
+      "has_code": true,
+      "relevance_score": 3.7872881355932204,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 3.79,
         "field_match": {
-          "score": 0.51,
+          "score": 0.59,
           "matches": [
-            "registration"
+            "3d reconstruction"
           ],
           "weight": 0.4
         },
@@ -647,12 +658,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -661,14 +672,14 @@
         }
       },
       "ai_summaries": {
-        "short": "Existing convolutional learning methods for 3D point cloud data are divided into two paradigms: point-based methods that preserve geometric precision but often face performance challenges, and voxel-based methods that achieve high efficiency through quantization at the cost of geometric fidelity. This loss of precision is a critical bottleneck for tasks such as point cloud registration. We propose...",
+        "short": "Today, people can easily record memorable moments, ranging from concerts, sports events, lectures, family gatherings, and birthday parties with multiple consumer cameras. However, synchronizing these cross-camera streams remains challenging. Existing methods assume controlled settings, specific targets, manual correction, or costly hardware. We present VisualSync, an optimization framework based o...",
         "key_contributions": [
-          "Existing convolutional learning methods for 3D point cloud data are divided into two paradigms: point-based methods that preserve geometric precision but often face performance challenges, and voxel-based methods that achieve high efficiency through quantization at the cost of geometric fidelity.",
-          "This loss of precision is a critical bottleneck for tasks such as point cloud registration.",
-          "We propose PointCNN++, a novel architectural design that fundamentally mitigates this precision-performance trade-off."
+          "Today, people can easily record memorable moments, ranging from concerts, sports events, lectures, family gatherings, and birthday parties with multiple consumer cameras.",
+          "However, synchronizing these cross-camera streams remains challenging.",
+          "Existing methods assume controlled settings, specific targets, manual correction, or costly hardware."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2511.23227v1.mp3"
+        "audio_url": "/audio/2512.02017v1.mp3"
       }
     }
   ]

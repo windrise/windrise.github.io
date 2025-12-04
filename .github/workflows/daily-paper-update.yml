@@ -81,10 +81,23 @@ jobs:
         if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           git config user.name "Paper Bot"
-          git config user.email "Paper Bot"
+          git config user.email "paper-bot@users.noreply.github.com"
           git add data/papers/pending/ static/mindmaps/ static/audio/
           git commit -m "🤖 Daily paper update $(date +%Y-%m-%d)"
-          git push
+          # Pull latest changes and rebase to avoid conflicts
+          git pull --rebase origin main || true
+          # Retry push up to 3 times with exponential backoff
+          for i in {1..3}; do
+            if git push origin main; then
+              echo "✅ Successfully pushed changes"
+              exit 0
+            fi
+            echo "⚠️ Push failed, retrying in $((2**i)) seconds..."
+            sleep $((2**i))
+            git pull --rebase origin main || true
+          done
+          echo "❌ Failed to push after 3 attempts"
+          exit 1
 
       - name: Summary
         run: |

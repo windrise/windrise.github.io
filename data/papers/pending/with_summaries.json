@@ -3,170 +3,48 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.03018v1",
-      "title": "AutoBrep: Autoregressive B-Rep Generation with Unified Topology and Geometry",
+      "id": "2512.04021v1",
+      "title": "C3G: Learning Compact 3D Representations with 2K Gaussians",
       "authors": [
-        "Xiang Xu",
-        "Pradeep Kumar Jayaraman",
-        "Joseph G. Lambourne",
-        "Yilin Liu",
-        "Durvesh Malpure",
-        "Pete Meltzer"
+        "Honggyu An",
+        "Jaewoo Jung",
+        "Mungyeom Kim",
+        "Sunghwan Hong",
+        "Chaehyun Kim",
+        "Kazumi Fukuda",
+        "Minkyeong Jeon",
+        "Jisang Han",
+        "Takuya Narihira",
+        "Hyuna Ko",
+        "Junsu Kim",
+        "Yuki Mitsufuji",
+        "Seungryong Kim"
       ],
-      "abstract": "The boundary representation (B-Rep) is the standard data structure used in Computer-Aided Design (CAD) for defining solid models. Despite recent progress, directly generating B-Reps end-to-end with precise geometry and watertight topology remains a challenge. This paper presents AutoBrep, a novel Transformer model that autoregressively generates B-Reps with high quality and validity. AutoBrep employs a unified tokenization scheme that encodes both geometric and topological characteristics of a B-Rep model as a sequence of discrete tokens. Geometric primitives (i.e., surfaces and curves) are encoded as latent geometry tokens, and their structural relationships are defined as special topological reference tokens. Sequence order in AutoBrep naturally follows a breadth first traversal of the B-Rep face adjacency graph. At inference time, neighboring faces and edges along with their topological structure are progressively generated. Extensive experiments demonstrate the advantages of our unified representation when coupled with next-token prediction for B-Rep generation. AutoBrep outperforms baselines with better quality and watertightness. It is also highly scalable to complex solids with good fidelity and inference speed. We further show that autocompleting B-Reps is natively supported through our unified tokenization, enabling user-controllable CAD generation with minimal changes. Code is available at https://github.com/AutodeskAILab/AutoBrep.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
+      "abstract": "Reconstructing and understanding 3D scenes from unposed sparse views in a feed-forward manner remains as a challenging task in 3D computer vision. Recent approaches use per-pixel 3D Gaussian Splatting for reconstruction, followed by a 2D-to-3D feature lifting stage for scene understanding. However, they generate excessive redundant Gaussians, causing high memory overhead and sub-optimal multi-view feature aggregation, leading to degraded novel view synthesis and scene understanding performance. We propose C3G, a novel feed-forward framework that estimates compact 3D Gaussians only at essential spatial locations, minimizing redundancy while enabling effective feature lifting. We introduce learnable tokens that aggregate multi-view features through self-attention to guide Gaussian generation, ensuring each Gaussian integrates relevant visual features across views. We then exploit the learned attention patterns for Gaussian decoding to efficiently lift features. Extensive experiments on pose-free novel view synthesis, 3D open-vocabulary segmentation, and view-invariant feature aggregation demonstrate our approach's effectiveness. Results show that a compact yet geometrically meaningful representation is sufficient for high-quality scene reconstruction and understanding, achieving superior memory efficiency and feature fidelity compared to existing methods.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.03018v1",
-        "pdf": "https://arxiv.org/pdf/2512.03018v1"
+        "paper": "http://arxiv.org/abs/2512.04021v1",
+        "pdf": "https://arxiv.org/pdf/2512.04021v1"
       },
-      "arxiv_id": "2512.03018v1",
-      "comment": "Accepted to Siggraph Asia 2025",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.5,
-      "score_breakdown": {
-        "total_score": 4.5,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "SIGGRAPH",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The boundary representation (B-Rep) is the standard data structure used in Computer-Aided Design (CAD) for defining solid models. Despite recent progress, directly generating B-Reps end-to-end with precise geometry and watertight topology remains a challenge. This paper presents AutoBrep, a novel Transformer model that autoregressively generates B-Reps with high quality and validity. AutoBrep empl...",
-        "key_contributions": [
-          "The boundary representation (B-Rep) is the standard data structure used in Computer-Aided Design (CAD) for defining solid models.",
-          "Despite recent progress, directly generating B-Reps end-to-end with precise geometry and watertight topology remains a challenge.",
-          "This paper presents AutoBrep, a novel Transformer model that autoregressively generates B-Reps with high quality and validity."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.02912v1",
-      "title": "Hypothesis Testing for Generalized Thurstone Models",
-      "authors": [
-        "Anuran Makur",
-        "Japneet Singh"
-      ],
-      "abstract": "In this work, we develop a hypothesis testing framework to determine whether pairwise comparison data is generated by an underlying \\emph{generalized Thurstone model} $\\mathcal{T}_F$ for a given choice function $F$. While prior work has predominantly focused on parameter estimation and uncertainty quantification for such models, we address the fundamental problem of minimax hypothesis testing for $\\mathcal{T}_F$ models. We formulate this testing problem by introducing a notion of separation distance between general pairwise comparison models and the class of $\\mathcal{T}_F$ models. We then derive upper and lower bounds on the critical threshold for testing that depend on the topology of the observation graph. For the special case of complete observation graphs, this threshold scales as $Θ((nk)^{-1/2})$, where $n$ is the number of agents and $k$ is the number of comparisons per pair. Furthermore, we propose a hypothesis test based on our separation distance, construct confidence intervals, establish time-uniform bounds on the probabilities of type I and II errors using reverse martingale techniques, and derive minimax lower bounds using information-theoretic methods. Finally, we validate our results through experiments on synthetic and real-world datasets.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
-      "categories": [
-        "cs.LG",
-        "math.ST",
-        "stat.ML"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.02912v1",
-        "pdf": "https://arxiv.org/pdf/2512.02912v1"
-      },
-      "arxiv_id": "2512.02912v1",
-      "comment": "35 pages, 9 figures",
-      "journal_ref": "42nd International Conference on Machine Learning (ICML 2025)",
-      "has_code": false,
-      "relevance_score": 4.15,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "In this work, we develop a hypothesis testing framework to determine whether pairwise comparison data is generated by an underlying \\emph{generalized Thurstone model} $\\mathcal{T}_F$ for a given choice function $F$. While prior work has predominantly focused on parameter estimation and uncertainty quantification for such models, we address the fundamental problem of minimax hypothesis testing for ...",
-        "key_contributions": [
-          "In this work, we develop a hypothesis testing framework to determine whether pairwise comparison data is generated by an underlying \\emph{generalized Thurstone model} $\\mathcal{T}_F$ for a given choice function $F$.",
-          "While prior work has predominantly focused on parameter estimation and uncertainty quantification for such models, we address the fundamental problem of minimax hypothesis testing for $\\mathcal{T}_F$ models.",
-          "We formulate this testing problem by introducing a notion of separation distance between general pairwise comparison models and the class of $\\mathcal{T}_F$ models."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.03043v1",
-      "title": "OneThinker: All-in-one Reasoning Model for Image and Video",
-      "authors": [
-        "Kaituo Feng",
-        "Manyuan Zhang",
-        "Hongyu Li",
-        "Kaixuan Fan",
-        "Shuang Chen",
-        "Yilei Jiang",
-        "Dian Zheng",
-        "Peiwen Sun",
-        "Yiyuan Zhang",
-        "Haoze Sun",
-        "Yan Feng",
-        "Peng Pei",
-        "Xunliang Cai",
-        "Xiangyu Yue"
-      ],
-      "abstract": "Reinforcement learning (RL) has recently achieved remarkable success in eliciting visual reasoning within Multimodal Large Language Models (MLLMs). However, existing approaches typically train separate models for different tasks and treat image and video reasoning as disjoint domains. This results in limited scalability toward a multimodal reasoning generalist, which restricts practical versatility and hinders potential knowledge sharing across tasks and modalities. To this end, we propose OneThinker, an all-in-one reasoning model that unifies image and video understanding across diverse fundamental visual tasks, including question answering, captioning, spatial and temporal grounding, tracking, and segmentation. To achieve this, we construct the OneThinker-600k training corpus covering all these tasks and employ commercial models for CoT annotation, resulting in OneThinker-SFT-340k for SFT cold start. Furthermore, we propose EMA-GRPO to handle reward heterogeneity in multi-task RL by tracking task-wise moving averages of reward standard deviations for balanced optimization. Extensive experiments on diverse visual benchmarks show that OneThinker delivers strong performance on 31 benchmarks, across 10 fundamental visual understanding tasks. Moreover, it exhibits effective knowledge transfer between certain tasks and preliminary zero-shot generalization ability, marking a step toward a unified multimodal reasoning generalist. All code, model, and data are released.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.03043v1",
-        "pdf": "https://arxiv.org/pdf/2512.03043v1"
-      },
-      "arxiv_id": "2512.03043v1",
-      "comment": "Project page: https://github.com/tulerfeng/OneThinker",
+      "arxiv_id": "2512.04021v1",
+      "comment": "Project Page : https://cvlab-kaist.github.io/C3G/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.103389830508474,
+      "relevance_score": 4.850847457627118,
       "score_breakdown": {
-        "total_score": 4.1,
+        "total_score": 4.85,
         "field_match": {
-          "score": 0.51,
+          "score": 2.63,
           "matches": [
-            "segmentation"
+            "3d gaussian",
+            "gaussian splatting",
+            "segmentation",
+            "computer vision"
           ],
           "weight": 0.4
         },
@@ -185,118 +63,116 @@
           "weight": 0.1
         },
         "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Reconstructing and understanding 3D scenes from unposed sparse views in a feed-forward manner remains as a challenging task in 3D computer vision. Recent approaches use per-pixel 3D Gaussian Splatting for reconstruction, followed by a 2D-to-3D feature lifting stage for scene understanding. However, they generate excessive redundant Gaussians, causing high memory overhead and sub-optimal multi-view...",
+        "key_contributions": [
+          "Reconstructing and understanding 3D scenes from unposed sparse views in a feed-forward manner remains as a challenging task in 3D computer vision.",
+          "Recent approaches use per-pixel 3D Gaussian Splatting for reconstruction, followed by a 2D-to-3D feature lifting stage for scene understanding.",
+          "However, they generate excessive redundant Gaussians, causing high memory overhead and sub-optimal multi-view feature aggregation, leading to degraded novel view synthesis and scene understanding performance."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.03804v1",
+      "title": "EfficientECG: Cross-Attention with Feature Fusion for Efficient Electrocardiogram Classification",
+      "authors": [
+        "Hanhui Deng",
+        "Xinglin Li",
+        "Jie Luo",
+        "Zhanpeng Jin",
+        "Di Wu"
+      ],
+      "abstract": "Electrocardiogram is a useful diagnostic signal that can detect cardiac abnormalities by measuring the electrical activity generated by the heart. Due to its rapid, non-invasive, and richly informative characteristics, ECG has many emerging applications. In this paper, we study novel deep learning technologies to effectively manage and analyse ECG data, with the aim of building a diagnostic model, accurately and quickly, that can substantially reduce the burden on medical workers. Unlike the existing ECG models that exhibit a high misdiagnosis rate, our deep learning approaches can automatically extract the features of ECG data through end-to-end training. Specifically, we first devise EfficientECG, an accurate and lightweight classification model for ECG analysis based on the existing EfficientNet model, which can effectively handle high-frequency long-sequence ECG data with various leading types. On top of that, we next propose a cross-attention-based feature fusion model of EfficientECG for analysing multi-lead ECG data with multiple features (e.g., gender and age). Our evaluations on representative ECG datasets validate the superiority of our model against state-of-the-art works in terms of high precision, multi-feature fusion, and lightweights.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.03804v1",
+        "pdf": "https://arxiv.org/pdf/2512.03804v1"
+      },
+      "arxiv_id": "2512.03804v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.395762711864407,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 1.86,
+          "matches": [
+            "cardiac",
+            "heart",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reinforcement learning (RL) has recently achieved remarkable success in eliciting visual reasoning within Multimodal Large Language Models (MLLMs). However, existing approaches typically train separate models for different tasks and treat image and video reasoning as disjoint domains. This results in limited scalability toward a multimodal reasoning generalist, which restricts practical versatilit...",
+        "short": "Electrocardiogram is a useful diagnostic signal that can detect cardiac abnormalities by measuring the electrical activity generated by the heart. Due to its rapid, non-invasive, and richly informative characteristics, ECG has many emerging applications. In this paper, we study novel deep learning technologies to effectively manage and analyse ECG data, with the aim of building a diagnostic model,...",
         "key_contributions": [
-          "Reinforcement learning (RL) has recently achieved remarkable success in eliciting visual reasoning within Multimodal Large Language Models (MLLMs).",
-          "However, existing approaches typically train separate models for different tasks and treat image and video reasoning as disjoint domains.",
-          "This results in limited scalability toward a multimodal reasoning generalist, which restricts practical versatility and hinders potential knowledge sharing across tasks and modalities."
+          "Electrocardiogram is a useful diagnostic signal that can detect cardiac abnormalities by measuring the electrical activity generated by the heart.",
+          "Due to its rapid, non-invasive, and richly informative characteristics, ECG has many emerging applications.",
+          "In this paper, we study novel deep learning technologies to effectively manage and analyse ECG data, with the aim of building a diagnostic model, accurately and quickly, that can substantially reduce the burden on medical workers."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.02727v1",
-      "title": "DF-Mamba: Deformable State Space Modeling for 3D Hand Pose Estimation in Interactions",
+      "id": "2512.04084v1",
+      "title": "SimFlow: Simplified and End-to-End Training of Latent Normalizing Flows",
       "authors": [
-        "Yifan Zhou",
-        "Takehiko Ohkawa",
-        "Guwenxiao Zhou",
-        "Kanoko Goto",
-        "Takumi Hirose",
-        "Yusuke Sekikawa",
-        "Nakamasa Inoue"
+        "Qinyu Zhao",
+        "Guangting Zheng",
+        "Tao Yang",
+        "Rui Zhu",
+        "Xingjian Leng",
+        "Stephen Gould",
+        "Liang Zheng"
       ],
-      "abstract": "Modeling daily hand interactions often struggles with severe occlusions, such as when two hands overlap, which highlights the need for robust feature learning in 3D hand pose estimation (HPE). To handle such occluded hand images, it is vital to effectively learn the relationship between local image features (e.g., for occluded joints) and global context (e.g., cues from inter-joints, inter-hands, or the scene). However, most current 3D HPE methods still rely on ResNet for feature extraction, and such CNN's inductive bias may not be optimal for 3D HPE due to its limited capability to model the global context. To address this limitation, we propose an effective and efficient framework for visual feature extraction in 3D HPE using recent state space modeling (i.e., Mamba), dubbed Deformable Mamba (DF-Mamba). DF-Mamba is designed to capture global context cues beyond standard convolution through Mamba's selective state modeling and the proposed deformable state scanning. Specifically, for local features after convolution, our deformable scanning aggregates these features within an image while selectively preserving useful cues that represent the global context. This approach significantly improves the accuracy of structured 3D HPE, with comparable inference speed to ResNet-50. Our experiments involve extensive evaluations on five divergent datasets including single-hand and two-hand scenarios, hand-only and hand-object interactions, as well as RGB and depth-based estimation. DF-Mamba outperforms the latest image backbones, including VMamba and Spatial-Mamba, on all datasets and achieves state-of-the-art performance.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.02727v1",
-        "pdf": "https://arxiv.org/pdf/2512.02727v1"
-      },
-      "arxiv_id": "2512.02727v1",
-      "comment": "Accepted to WACV 2026. Project page: https://tkhkaeio.github.io/projects/25-dfmamba/index.html",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Modeling daily hand interactions often struggles with severe occlusions, such as when two hands overlap, which highlights the need for robust feature learning in 3D hand pose estimation (HPE). To handle such occluded hand images, it is vital to effectively learn the relationship between local image features (e.g., for occluded joints) and global context (e.g., cues from inter-joints, inter-hands, ...",
-        "key_contributions": [
-          "Modeling daily hand interactions often struggles with severe occlusions, such as when two hands overlap, which highlights the need for robust feature learning in 3D hand pose estimation (HPE).",
-          "To handle such occluded hand images, it is vital to effectively learn the relationship between local image features (e.",
-          "g."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.03045v1",
-      "title": "CAMEO: Correspondence-Attention Alignment for Multi-View Diffusion Models",
-      "authors": [
-        "Minkyung Kwon",
-        "Jinhyeok Choi",
-        "Jiho Park",
-        "Seonghu Jeon",
-        "Jinhyuk Jang",
-        "Junyoung Seo",
-        "Minseop Kwak",
-        "Jin-Hwa Kim",
-        "Seungryong Kim"
-      ],
-      "abstract": "Multi-view diffusion models have recently emerged as a powerful paradigm for novel view synthesis, yet the underlying mechanism that enables their view-consistency remains unclear. In this work, we first verify that the attention maps of these models acquire geometric correspondence throughout training, attending to the geometrically corresponding regions across reference and target views for view-consistent generation. However, this correspondence signal remains incomplete, with its accuracy degrading under large viewpoint changes. Building on these findings, we introduce CAMEO, a simple yet effective training technique that directly supervises attention maps using geometric correspondence to enhance both the training efficiency and generation quality of multi-view diffusion models. Notably, supervising a single attention layer is sufficient to guide the model toward learning precise correspondences, thereby preserving the geometry and structure of reference images, accelerating convergence, and improving novel view synthesis performance. CAMEO reduces the number of training iterations required for convergence by half while achieving superior performance at the same iteration counts. We further demonstrate that CAMEO is model-agnostic and can be applied to any multi-view diffusion model.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
+      "abstract": "Normalizing Flows (NFs) learn invertible mappings between the data and a Gaussian distribution. Prior works usually suffer from two limitations. First, they add random noise to training samples or VAE latents as data augmentation, introducing complex pipelines including extra noising and denoising steps. Second, they use a pretrained and frozen VAE encoder, resulting in suboptimal reconstruction and generation quality. In this paper, we find that the two issues can be solved in a very simple way: just fixing the variance (which would otherwise be predicted by the VAE encoder) to a constant (e.g., 0.5). On the one hand, this method allows the encoder to output a broader distribution of tokens and the decoder to learn to reconstruct clean images from the augmented token distribution, avoiding additional noise or denoising design. On the other hand, fixed variance simplifies the VAE evidence lower bound, making it stable to train an NF with a VAE jointly. On the ImageNet $256 \\times 256$ generation task, our model SimFlow obtains a gFID score of 2.15, outperforming the state-of-the-art method STARFlow (gFID 2.40). Moreover, SimFlow can be seamlessly integrated with the end-to-end representation alignment (REPA-E) method and achieves an improved gFID of 1.91, setting a new state of the art among NFs.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.03045v1",
-        "pdf": "https://arxiv.org/pdf/2512.03045v1"
+        "paper": "http://arxiv.org/abs/2512.04084v1",
+        "pdf": "https://arxiv.org/pdf/2512.04084v1"
       },
-      "arxiv_id": "2512.03045v1",
-      "comment": "Project page: https://cvlab-kaist.github.io/CAMEO/",
+      "arxiv_id": "2512.04084v1",
+      "comment": "Project Page: https://qinyu-allen-zhao.github.io/SimFlow/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.95,
+      "relevance_score": 4.1,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -308,7 +184,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -322,115 +198,50 @@
         }
       },
       "ai_summaries": {
-        "short": "Multi-view diffusion models have recently emerged as a powerful paradigm for novel view synthesis, yet the underlying mechanism that enables their view-consistency remains unclear. In this work, we first verify that the attention maps of these models acquire geometric correspondence throughout training, attending to the geometrically corresponding regions across reference and target views for view...",
+        "short": "Normalizing Flows (NFs) learn invertible mappings between the data and a Gaussian distribution. Prior works usually suffer from two limitations. First, they add random noise to training samples or VAE latents as data augmentation, introducing complex pipelines including extra noising and denoising steps. Second, they use a pretrained and frozen VAE encoder, resulting in suboptimal reconstruction a...",
         "key_contributions": [
-          "Multi-view diffusion models have recently emerged as a powerful paradigm for novel view synthesis, yet the underlying mechanism that enables their view-consistency remains unclear.",
-          "In this work, we first verify that the attention maps of these models acquire geometric correspondence throughout training, attending to the geometrically corresponding regions across reference and target views for view-consistent generation.",
-          "However, this correspondence signal remains incomplete, with its accuracy degrading under large viewpoint changes."
+          "Normalizing Flows (NFs) learn invertible mappings between the data and a Gaussian distribution.",
+          "Prior works usually suffer from two limitations.",
+          "First, they add random noise to training samples or VAE latents as data augmentation, introducing complex pipelines including extra noising and denoising steps."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.03041v1",
-      "title": "MultiShotMaster: A Controllable Multi-Shot Video Generation Framework",
+      "id": "2512.03848v1",
+      "title": "PULSE: A Unified Multi-Task Architecture for Cardiac Segmentation, Diagnosis, and Few-Shot Cross-Modality Clinical Adaptation",
       "authors": [
-        "Qinghe Wang",
-        "Xiaoyu Shi",
-        "Baolu Li",
-        "Weikang Bian",
-        "Quande Liu",
-        "Huchuan Lu",
-        "Xintao Wang",
-        "Pengfei Wan",
-        "Kun Gai",
-        "Xu Jia"
+        "Hania Ghouse",
+        "Maryam Alsharqi",
+        "Farhad R. Nezami",
+        "Muzammil Behzad"
       ],
-      "abstract": "Current video generation techniques excel at single-shot clips but struggle to produce narrative multi-shot videos, which require flexible shot arrangement, coherent narrative, and controllability beyond text prompts. To tackle these challenges, we propose MultiShotMaster, a framework for highly controllable multi-shot video generation. We extend a pretrained single-shot model by integrating two novel variants of RoPE. First, we introduce Multi-Shot Narrative RoPE, which applies explicit phase shift at shot transitions, enabling flexible shot arrangement while preserving the temporal narrative order. Second, we design Spatiotemporal Position-Aware RoPE to incorporate reference tokens and grounding signals, enabling spatiotemporal-grounded reference injection. In addition, to overcome data scarcity, we establish an automated data annotation pipeline to extract multi-shot videos, captions, cross-shot grounding signals and reference images. Our framework leverages the intrinsic architectural properties to support multi-shot video generation, featuring text-driven inter-shot consistency, customized subject with motion control, and background-driven customized scene. Both shot count and duration are flexibly configurable. Extensive experiments demonstrate the superior performance and outstanding controllability of our framework.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.03041v1",
-        "pdf": "https://arxiv.org/pdf/2512.03041v1"
-      },
-      "arxiv_id": "2512.03041v1",
-      "comment": "Project Page: https://qinghew.github.io/MultiShotMaster",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Current video generation techniques excel at single-shot clips but struggle to produce narrative multi-shot videos, which require flexible shot arrangement, coherent narrative, and controllability beyond text prompts. To tackle these challenges, we propose MultiShotMaster, a framework for highly controllable multi-shot video generation. We extend a pretrained single-shot model by integrating two n...",
-        "key_contributions": [
-          "Current video generation techniques excel at single-shot clips but struggle to produce narrative multi-shot videos, which require flexible shot arrangement, coherent narrative, and controllability beyond text prompts.",
-          "To tackle these challenges, we propose MultiShotMaster, a framework for highly controllable multi-shot video generation.",
-          "We extend a pretrained single-shot model by integrating two novel variants of RoPE."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.02932v1",
-      "title": "EGGS: Exchangeable 2D/3D Gaussian Splatting for Geometry-Appearance Balanced Novel View Synthesis",
-      "authors": [
-        "Yancheng Zhang",
-        "Guangyu Sun",
-        "Chen Chen"
-      ],
-      "abstract": "Novel view synthesis (NVS) is crucial in computer vision and graphics, with wide applications in AR, VR, and autonomous driving. While 3D Gaussian Splatting (3DGS) enables real-time rendering with high appearance fidelity, it suffers from multi-view inconsistencies, limiting geometric accuracy. In contrast, 2D Gaussian Splatting (2DGS) enforces multi-view consistency but compromises texture details. To address these limitations, we propose Exchangeable Gaussian Splatting (EGGS), a hybrid representation that integrates 2D and 3D Gaussians to balance appearance and geometry. To achieve this, we introduce Hybrid Gaussian Rasterization for unified rendering, Adaptive Type Exchange for dynamic adaptation between 2D and 3D Gaussians, and Frequency-Decoupled Optimization that effectively exploits the strengths of each type of Gaussian representation. Our CUDA-accelerated implementation ensures efficient training and inference. Extensive experiments demonstrate that EGGS outperforms existing methods in rendering quality, geometric accuracy, and efficiency, providing a practical solution for high-quality NVS.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
+      "abstract": "Cardiac image analysis remains fragmented across tasks: anatomical segmentation, disease classification, and grounded clinical report generation are typically handled by separate networks trained under different data regimes. No existing framework unifies these objectives within a single architecture while retaining generalization across imaging modalities and datasets. We introduce PULSE, a multi-task vision-language framework built on self-supervised representations and optimized through a composite supervision strategy that balances region overlap learning, pixel wise classification fidelity, and boundary aware IoU refinement. A multi-scale token reconstruction decoder enables anatomical segmentation, while shared global representations support disease classification and clinically grounded text output allowing the model to transition from pixels to structures and finally clinical reasoning within one architecture. Unlike prior task-specific pipelines, PULSE learns task-invariant cardiac priors, generalizes robustly across datasets, and can be adapted to new imaging modalities with minimal supervision. This moves the field closer to a scalable, foundation style cardiac analysis framework.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
       "categories": [
         "cs.CV",
         "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.02932v1",
-        "pdf": "https://arxiv.org/pdf/2512.02932v1"
+        "paper": "http://arxiv.org/abs/2512.03848v1",
+        "pdf": "https://arxiv.org/pdf/2512.03848v1"
       },
-      "arxiv_id": "2512.02932v1",
+      "arxiv_id": "2512.03848v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.9474576271186437,
+      "relevance_score": 3.9991525423728818,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.0,
         "field_match": {
-          "score": 2.12,
+          "score": 2.37,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "computer vision"
+            "cardiac",
+            "self-supervised",
+            "segmentation",
+            "image analysis"
           ],
           "weight": 0.4
         },
@@ -449,45 +260,175 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Novel view synthesis (NVS) is crucial in computer vision and graphics, with wide applications in AR, VR, and autonomous driving. While 3D Gaussian Splatting (3DGS) enables real-time rendering with high appearance fidelity, it suffers from multi-view inconsistencies, limiting geometric accuracy. In contrast, 2D Gaussian Splatting (2DGS) enforces multi-view consistency but compromises texture detail...",
+        "short": "Cardiac image analysis remains fragmented across tasks: anatomical segmentation, disease classification, and grounded clinical report generation are typically handled by separate networks trained under different data regimes. No existing framework unifies these objectives within a single architecture while retaining generalization across imaging modalities and datasets. We introduce PULSE, a multi...",
         "key_contributions": [
-          "Novel view synthesis (NVS) is crucial in computer vision and graphics, with wide applications in AR, VR, and autonomous driving.",
-          "While 3D Gaussian Splatting (3DGS) enables real-time rendering with high appearance fidelity, it suffers from multi-view inconsistencies, limiting geometric accuracy.",
-          "In contrast, 2D Gaussian Splatting (2DGS) enforces multi-view consistency but compromises texture details."
+          "Cardiac image analysis remains fragmented across tasks: anatomical segmentation, disease classification, and grounded clinical report generation are typically handled by separate networks trained under different data regimes.",
+          "No existing framework unifies these objectives within a single architecture while retaining generalization across imaging modalities and datasets.",
+          "We introduce PULSE, a multi-task vision-language framework built on self-supervised representations and optimized through a composite supervision strategy that balances region overlap learning, pixel wise classification fidelity, and boundary aware IoU refinement."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.03010v1",
-      "title": "SurfFill: Completion of LiDAR Point Clouds via Gaussian Surfel Splatting",
+      "id": "2512.04048v1",
+      "title": "Stable Signer: Hierarchical Sign Language Generative Model",
       "authors": [
-        "Svenja Strobel",
-        "Matthias Innmann",
-        "Bernhard Egger",
-        "Marc Stamminger",
-        "Linus Franke"
+        "Sen Fang",
+        "Yalin Feng",
+        "Hongbin Zhong",
+        "Yanxin Zhang",
+        "Dimitris N. Metaxas"
       ],
-      "abstract": "LiDAR-captured point clouds are often considered the gold standard in active 3D reconstruction. While their accuracy is exceptional in flat regions, the capturing is susceptible to miss small geometric structures and may fail with dark, absorbent materials. Alternatively, capturing multiple photos of the scene and applying 3D photogrammetry can infer these details as they often represent feature-rich regions. However, the accuracy of LiDAR for featureless regions is rarely reached. Therefore, we suggest combining the strengths of LiDAR and camera-based capture by introducing SurfFill: a Gaussian surfel-based LiDAR completion scheme. We analyze LiDAR capturings and attribute LiDAR beam divergence as a main factor for artifacts, manifesting mostly at thin structures and edges. We use this insight to introduce an ambiguity heuristic for completed scans by evaluating the change in density in the point cloud. This allows us to identify points close to missed areas, which we can then use to grow additional points from to complete the scan. For this point growing, we constrain Gaussian surfel reconstruction [Huang et al. 2024] to focus optimization and densification on these ambiguous areas. Finally, Gaussian primitives of the reconstruction in ambiguous areas are extracted and sampled for points to complete the point cloud. To address the challenges of large-scale reconstruction, we extend this pipeline with a divide-and-conquer scheme for building-sized point cloud completion. We evaluate on the task of LiDAR point cloud completion of synthetic and real-world scenes and find that our method outperforms previous reconstruction methods.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
+      "abstract": "Sign Language Production (SLP) is the process of converting the complex input text into a real video. Most previous works focused on the Text2Gloss, Gloss2Pose, Pose2Vid stages, and some concentrated on Prompt2Gloss and Text2Avatar stages. However, this field has made slow progress due to the inaccuracy of text conversion, pose generation, and the rendering of poses into real human videos in these stages, resulting in gradually accumulating errors. Therefore, in this paper, we streamline the traditional redundant structure, simplify and optimize the task objective, and design a new sign language generative model called Stable Signer. It redefines the SLP task as a hierarchical generation end-to-end task that only includes text understanding (Prompt2Gloss, Text2Gloss) and Pose2Vid, and executes text understanding through our proposed new Sign Language Understanding Linker called SLUL, and generates hand gestures through the named SLP-MoE hand gesture rendering expert block to end-to-end generate high-quality and multi-style sign language videos. SLUL is trained using the newly developed Semantic-Aware Gloss Masking Loss (SAGM Loss). Its performance has improved by 48.6% compared to the current SOTA generation methods.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
       "categories": [
         "cs.CV",
-        "cs.GR",
-        "cs.RO"
+        "cs.CL",
+        "cs.CY"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.03010v1",
-        "pdf": "https://arxiv.org/pdf/2512.03010v1"
+        "paper": "http://arxiv.org/abs/2512.04048v1",
+        "pdf": "https://arxiv.org/pdf/2512.04048v1"
       },
-      "arxiv_id": "2512.03010v1",
-      "comment": "Project page: https://lfranke.github.io/surffill",
+      "arxiv_id": "2512.04048v1",
+      "comment": "12 pages, 7 figures. More Demo at https://stablesigner.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Sign Language Production (SLP) is the process of converting the complex input text into a real video. Most previous works focused on the Text2Gloss, Gloss2Pose, Pose2Vid stages, and some concentrated on Prompt2Gloss and Text2Avatar stages. However, this field has made slow progress due to the inaccuracy of text conversion, pose generation, and the rendering of poses into real human videos in these...",
+        "key_contributions": [
+          "Sign Language Production (SLP) is the process of converting the complex input text into a real video.",
+          "Most previous works focused on the Text2Gloss, Gloss2Pose, Pose2Vid stages, and some concentrated on Prompt2Gloss and Text2Avatar stages.",
+          "However, this field has made slow progress due to the inaccuracy of text conversion, pose generation, and the rendering of poses into real human videos in these stages, resulting in gradually accumulating errors."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.03918v1",
+      "title": "UniMo: Unifying 2D Video and 3D Human Motion with an Autoregressive Framework",
+      "authors": [
+        "Youxin Pang",
+        "Yong Zhang",
+        "Ruizhi Shao",
+        "Xiang Deng",
+        "Feng Gao",
+        "Xu Xiaoming",
+        "Xiaoming Wei",
+        "Yebin Liu"
+      ],
+      "abstract": "We propose UniMo, an innovative autoregressive model for joint modeling of 2D human videos and 3D human motions within a unified framework, enabling simultaneous generation and understanding of these two modalities for the first time. Current methods predominantly focus on generating one modality given another as the condition or integrating either of them with other modalities such as text and audio. Unifying 2D videos and 3D motions for simultaneous optimization and generation remains largely unexplored, presenting significant challenges due to their substantial structural and distributional differences. Inspired by the LLM's ability to unify different modalities, our method models videos and 3D motions as a unified tokens sequence, utilizing separate embedding layers to mitigate distribution gaps. Additionally, we devise a sequence modeling strategy that integrates two distinct tasks within a single framework, proving the effectiveness of unified modeling. Moreover, to efficiently align with visual tokens and preserve 3D spatial information, we design a novel 3D motion tokenizer with a temporal expansion strategy, using a single VQ-VAE to produce quantized motion tokens. It features multiple expert decoders that handle body shapes, translation, global orientation, and body poses for reliable 3D motion reconstruction. Extensive experiments demonstrate that our method simultaneously generates corresponding videos and motions while performing accurate motion capture. This work taps into the capacity of LLMs to fuse diverse data types, paving the way for integrating human-centric information into existing models and potentially enabling multimodal, controllable joint modeling of humans, objects, and scenes.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.03918v1",
+        "pdf": "https://arxiv.org/pdf/2512.03918v1"
+      },
+      "arxiv_id": "2512.03918v1",
+      "comment": "https://carlyx.github.io/UniMo/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We propose UniMo, an innovative autoregressive model for joint modeling of 2D human videos and 3D human motions within a unified framework, enabling simultaneous generation and understanding of these two modalities for the first time. Current methods predominantly focus on generating one modality given another as the condition or integrating either of them with other modalities such as text and au...",
+        "key_contributions": [
+          "We propose UniMo, an innovative autoregressive model for joint modeling of 2D human videos and 3D human motions within a unified framework, enabling simultaneous generation and understanding of these two modalities for the first time.",
+          "Current methods predominantly focus on generating one modality given another as the condition or integrating either of them with other modalities such as text and audio.",
+          "Unifying 2D videos and 3D motions for simultaneous optimization and generation remains largely unexplored, presenting significant challenges due to their substantial structural and distributional differences."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.04012v1",
+      "title": "Emergent Outlier View Rejection in Visual Geometry Grounded Transformers",
+      "authors": [
+        "Jisang Han",
+        "Sunghwan Hong",
+        "Jaewoo Jung",
+        "Wooseok Jang",
+        "Honggyu An",
+        "Qianqian Wang",
+        "Seungryong Kim",
+        "Chen Feng"
+      ],
+      "abstract": "Reliable 3D reconstruction from in-the-wild image collections is often hindered by \"noisy\" images-irrelevant inputs with little or no view overlap with others. While traditional Structure-from-Motion pipelines handle such cases through geometric verification and outlier rejection, feed-forward 3D reconstruction models lack these explicit mechanisms, leading to degraded performance under in-the-wild conditions. In this paper, we discover that the existing feed-forward reconstruction model, e.g., VGGT, despite lacking explicit outlier-rejection mechanisms or noise-aware training, can inherently distinguish distractor images. Through an in-depth analysis under varying proportions of synthetic distractors, we identify a specific layer that naturally exhibits outlier-suppressing behavior. Further probing reveals that this layer encodes discriminative internal representations that enable an effective noise-filtering capability, which we simply leverage to perform outlier-view rejection in feed-forward 3D reconstruction without any additional fine-tuning or supervision. Extensive experiments on both controlled and in-the-wild datasets demonstrate that this implicit filtering mechanism is consistent and generalizes well across diverse scenarios.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.04012v1",
+        "pdf": "https://arxiv.org/pdf/2512.04012v1"
+      },
+      "arxiv_id": "2512.04012v1",
+      "comment": "Project page: https://cvlab-kaist.github.io/RobustVGGT/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.93728813559322,
@@ -520,56 +461,47 @@
         }
       },
       "ai_summaries": {
-        "short": "LiDAR-captured point clouds are often considered the gold standard in active 3D reconstruction. While their accuracy is exceptional in flat regions, the capturing is susceptible to miss small geometric structures and may fail with dark, absorbent materials. Alternatively, capturing multiple photos of the scene and applying 3D photogrammetry can infer these details as they often represent feature-r...",
+        "short": "Reliable 3D reconstruction from in-the-wild image collections is often hindered by \"noisy\" images-irrelevant inputs with little or no view overlap with others. While traditional Structure-from-Motion pipelines handle such cases through geometric verification and outlier rejection, feed-forward 3D reconstruction models lack these explicit mechanisms, leading to degraded performance under in-the-wil...",
         "key_contributions": [
-          "LiDAR-captured point clouds are often considered the gold standard in active 3D reconstruction.",
-          "While their accuracy is exceptional in flat regions, the capturing is susceptible to miss small geometric structures and may fail with dark, absorbent materials.",
-          "Alternatively, capturing multiple photos of the scene and applying 3D photogrammetry can infer these details as they often represent feature-rich regions."
+          "Reliable 3D reconstruction from in-the-wild image collections is often hindered by \"noisy\" images-irrelevant inputs with little or no view overlap with others.",
+          "While traditional Structure-from-Motion pipelines handle such cases through geometric verification and outlier rejection, feed-forward 3D reconstruction models lack these explicit mechanisms, leading to degraded performance under in-the-wild conditions.",
+          "In this paper, we discover that the existing feed-forward reconstruction model, e."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.03004v1",
-      "title": "DGGT: Feedforward 4D Reconstruction of Dynamic Driving Scenes using Unposed Images",
+      "id": "2512.04034v1",
+      "title": "Domain Feature Collapse: Implications for Out-of-Distribution Detection and Solutions",
       "authors": [
-        "Xiaoxue Chen",
-        "Ziyi Xiong",
-        "Yuantao Chen",
-        "Gen Li",
-        "Nan Wang",
-        "Hongcheng Luo",
-        "Long Chen",
-        "Haiyang Sun",
-        "Bing Wang",
-        "Guang Chen",
-        "Hangjun Ye",
-        "Hongyang Li",
-        "Ya-Qin Zhang",
-        "Hao Zhao"
+        "Hong Yang",
+        "Devroop Kar",
+        "Qi Yu",
+        "Alex Ororbia",
+        "Travis Desell"
       ],
-      "abstract": "Autonomous driving needs fast, scalable 4D reconstruction and re-simulation for training and evaluation, yet most methods for dynamic driving scenes still rely on per-scene optimization, known camera calibration, or short frame windows, making them slow and impractical. We revisit this problem from a feedforward perspective and introduce \\textbf{Driving Gaussian Grounded Transformer (DGGT)}, a unified framework for pose-free dynamic scene reconstruction. We note that the existing formulations, treating camera pose as a required input, limit flexibility and scalability. Instead, we reformulate pose as an output of the model, enabling reconstruction directly from sparse, unposed images and supporting an arbitrary number of views for long sequences. Our approach jointly predicts per-frame 3D Gaussian maps and camera parameters, disentangles dynamics with a lightweight dynamic head, and preserves temporal consistency with a lifespan head that modulates visibility over time. A diffusion-based rendering refinement further reduces motion/interpolation artifacts and improves novel-view quality under sparse inputs. The result is a single-pass, pose-free algorithm that achieves state-of-the-art performance and speed. Trained and evaluated on large-scale driving benchmarks (Waymo, nuScenes, Argoverse2), our method outperforms prior work both when trained on each dataset and in zero-shot transfer across datasets, and it scales well as the number of input frames increases.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
+      "abstract": "Why do state-of-the-art OOD detection methods exhibit catastrophic failure when models are trained on single-domain datasets? We provide the first theoretical explanation for this phenomenon through the lens of information theory. We prove that supervised learning on single-domain data inevitably produces domain feature collapse -- representations where I(x_d; z) = 0, meaning domain-specific information is completely discarded. This is a fundamental consequence of information bottleneck optimization: models trained on single domains (e.g., medical images) learn to rely solely on class-specific features while discarding domain features, leading to catastrophic failure when detecting out-of-domain samples (e.g., achieving only 53% FPR@95 on MNIST). We extend our analysis using Fano's inequality to quantify partial collapse in practical scenarios. To validate our theory, we introduce Domain Bench, a benchmark of single-domain datasets, and demonstrate that preserving I(x_d; z) > 0 through domain filtering (using pretrained representations) resolves the failure mode. While domain filtering itself is conceptually straightforward, its effectiveness provides strong empirical evidence for our information-theoretic framework. Our work explains a puzzling empirical phenomenon, reveals fundamental limitations of supervised learning in narrow domains, and has broader implications for transfer learning and when to fine-tune versus freeze pretrained models.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
       "categories": [
-        "cs.CV"
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.03004v1",
-        "pdf": "https://arxiv.org/pdf/2512.03004v1"
+        "paper": "http://arxiv.org/abs/2512.04034v1",
+        "pdf": "https://arxiv.org/pdf/2512.04034v1"
       },
-      "arxiv_id": "2512.03004v1",
+      "arxiv_id": "2512.04034v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.888983050847457,
+      "relevance_score": 3.8550847457627113,
       "score_breakdown": {
-        "total_score": 3.89,
+        "total_score": 3.86,
         "field_match": {
-          "score": 0.85,
+          "score": 0.76,
           "matches": [
-            "3d gaussian"
+            "medical image"
           ],
           "weight": 0.4
         },
@@ -593,52 +525,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Autonomous driving needs fast, scalable 4D reconstruction and re-simulation for training and evaluation, yet most methods for dynamic driving scenes still rely on per-scene optimization, known camera calibration, or short frame windows, making them slow and impractical. We revisit this problem from a feedforward perspective and introduce \\textbf{Driving Gaussian Grounded Transformer (DGGT)}, a uni...",
+        "short": "Why do state-of-the-art OOD detection methods exhibit catastrophic failure when models are trained on single-domain datasets? We provide the first theoretical explanation for this phenomenon through the lens of information theory. We prove that supervised learning on single-domain data inevitably produces domain feature collapse -- representations where I(x_d; z) = 0, meaning domain-specific infor...",
         "key_contributions": [
-          "Autonomous driving needs fast, scalable 4D reconstruction and re-simulation for training and evaluation, yet most methods for dynamic driving scenes still rely on per-scene optimization, known camera calibration, or short frame windows, making them slow and impractical.",
-          "We revisit this problem from a feedforward perspective and introduce \\textbf{Driving Gaussian Grounded Transformer (DGGT)}, a unified framework for pose-free dynamic scene reconstruction.",
-          "We note that the existing formulations, treating camera pose as a required input, limit flexibility and scalability."
+          "Why do state-of-the-art OOD detection methods exhibit catastrophic failure when models are trained on single-domain datasets? We provide the first theoretical explanation for this phenomenon through the lens of information theory.",
+          "We prove that supervised learning on single-domain data inevitably produces domain feature collapse -- representations where I(x_d; z) = 0, meaning domain-specific information is completely discarded.",
+          "This is a fundamental consequence of information bottleneck optimization: models trained on single domains (e."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.03046v1",
-      "title": "MagicQuillV2: Precise and Interactive Image Editing with Layered Visual Cues",
+      "id": "2512.03913v1",
+      "title": "Hierarchical Vision Language Action Model Using Success and Failure Demonstrations",
       "authors": [
-        "Zichen Liu",
-        "Yue Yu",
-        "Hao Ouyang",
-        "Qiuyu Wang",
-        "Shuailei Ma",
-        "Ka Leong Cheng",
-        "Wen Wang",
-        "Qingyan Bai",
-        "Yuxuan Zhang",
-        "Yanhong Zeng",
-        "Yixuan Li",
-        "Xing Zhu",
-        "Yujun Shen",
-        "Qifeng Chen"
+        "Jeongeun Park",
+        "Jihwan Yoon",
+        "Byungwoo Jeon",
+        "Juhan Park",
+        "Jinwoo Shin",
+        "Namhoon Cho",
+        "Kyungjae Lee",
+        "Sangdoo Yun",
+        "Sungjoon Choi"
       ],
-      "abstract": "We propose MagicQuill V2, a novel system that introduces a \\textbf{layered composition} paradigm to generative image editing, bridging the gap between the semantic power of diffusion models and the granular control of traditional graphics software. While diffusion transformers excel at holistic generation, their use of singular, monolithic prompts fails to disentangle distinct user intentions for content, position, and appearance. To overcome this, our method deconstructs creative intent into a stack of controllable visual cues: a content layer for what to create, a spatial layer for where to place it, a structural layer for how it is shaped, and a color layer for its palette. Our technical contributions include a specialized data generation pipeline for context-aware content integration, a unified control module to process all visual cues, and a fine-tuned spatial branch for precise local editing, including object removal. Extensive experiments validate that this layered approach effectively resolves the user intention gap, granting creators direct, intuitive control over the generative process.",
-      "published": "2025-12-02",
-      "updated": "2025-12-02",
+      "abstract": "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection. However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness. We address this problem by leveraging mixed-quality datasets to learn failure-aware reasoning at planning time. We introduce VINE, a hierarchical vision-language-action model that separates high-level reasoning (System 2) from low-level control (System 1) under a hierarchical reinforcement learning formalism, making failures usable as a structured learning signal rather than noisy supervision. System 2 performs feasibility-guided tree search over a 2D scene-graph abstraction: it proposes subgoal transitions, predicts success probabilities from both successes and failures, and prunes brittle branches before execution, effectively casting plan evaluation as feasibility scoring. The selected subgoal sequence is then passed to System 1, which executes low-level actions without modifying the agent's core skills. Trained entirely from offline teleoperation data, VINE integrates negative experience directly into the decision loop. Across challenging manipulation tasks, this approach consistently improves success rates and robustness, demonstrating that failure data is an essential resource for converting the broad competence of VLAs into robust execution.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
       "categories": [
-        "cs.CV"
+        "cs.RO",
+        "cs.AI"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.03046v1",
-        "pdf": "https://arxiv.org/pdf/2512.03046v1"
+        "paper": "http://arxiv.org/abs/2512.03913v1",
+        "pdf": "https://arxiv.org/pdf/2512.03913v1"
       },
-      "arxiv_id": "2512.03046v1",
-      "comment": "Code and demo available at https://magicquill.art/v2/",
+      "arxiv_id": "2512.03913v1",
+      "comment": "https://vine-vla.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8,
+      "relevance_score": 3.8499999999999996,
       "score_breakdown": {
-        "total_score": 3.8,
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -659,16 +587,81 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We propose MagicQuill V2, a novel system that introduces a \\textbf{layered composition} paradigm to generative image editing, bridging the gap between the semantic power of diffusion models and the granular control of traditional graphics software. While diffusion transformers excel at holistic generation, their use of singular, monolithic prompts fails to disentangle distinct user intentions for ...",
+        "short": "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection. However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness. We address this problem by leveraging mixed-quality datasets to learn failure-a...",
         "key_contributions": [
-          "We propose MagicQuill V2, a novel system that introduces a \\textbf{layered composition} paradigm to generative image editing, bridging the gap between the semantic power of diffusion models and the granular control of traditional graphics software.",
-          "While diffusion transformers excel at holistic generation, their use of singular, monolithic prompts fails to disentangle distinct user intentions for content, position, and appearance.",
-          "To overcome this, our method deconstructs creative intent into a stack of controllable visual cues: a content layer for what to create, a spatial layer for where to place it, a structural layer for how it is shaped, and a color layer for its palette."
+          "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection.",
+          "However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness.",
+          "We address this problem by leveraging mixed-quality datasets to learn failure-aware reasoning at planning time."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.03962v1",
+      "title": "Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction",
+      "authors": [
+        "Evan Bell",
+        "Shijun Liang",
+        "Ismail Alkhouri",
+        "Saiprasad Ravishankar"
+      ],
+      "abstract": "Deep Image Prior (DIP) has recently emerged as a promising one-shot neural-network based image reconstruction method. However, DIP has seen limited application to 3D image reconstruction problems. In this work, we introduce Tada-DIP, a highly effective and fully 3D DIP method for solving 3D inverse problems. By combining input-adaptation and denoising regularization, Tada-DIP produces high-quality 3D reconstructions while avoiding the overfitting phenomenon that is common in DIP. Experiments on sparse-view X-ray computed tomography reconstruction validate the effectiveness of the proposed method, demonstrating that Tada-DIP produces much better reconstructions than training-data-free baselines and achieves reconstruction performance on par with a supervised network trained using a large dataset with fully-sampled volumes.",
+      "published": "2025-12-03",
+      "updated": "2025-12-03",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_category": "eess.IV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.03962v1",
+        "pdf": "https://arxiv.org/pdf/2512.03962v1"
+      },
+      "arxiv_id": "2512.03962v1",
+      "comment": "6 pages, 8 figures, 2025 Asilomar Conference on Signals, Systems, and Computers. Code is available at github.com/evanbell02/Tada-DIP/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8372881355932207,
+      "score_breakdown": {
+        "total_score": 3.84,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Deep Image Prior (DIP) has recently emerged as a promising one-shot neural-network based image reconstruction method. However, DIP has seen limited application to 3D image reconstruction problems. In this work, we introduce Tada-DIP, a highly effective and fully 3D DIP method for solving 3D inverse problems. By combining input-adaptation and denoising regularization, Tada-DIP produces high-quality...",
+        "key_contributions": [
+          "Deep Image Prior (DIP) has recently emerged as a promising one-shot neural-network based image reconstruction method.",
+          "However, DIP has seen limited application to 3D image reconstruction problems.",
+          "In this work, we introduce Tada-DIP, a highly effective and fully 3D DIP method for solving 3D inverse problems."
         ],
         "provider": "gemini"
       }

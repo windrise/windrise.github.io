@@ -3,48 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.04021v1",
-      "title": "C3G: Learning Compact 3D Representations with 2K Gaussians",
+      "id": "2512.05060v1",
+      "title": "4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer",
       "authors": [
-        "Honggyu An",
-        "Jaewoo Jung",
-        "Mungyeom Kim",
-        "Sunghwan Hong",
-        "Chaehyun Kim",
-        "Kazumi Fukuda",
-        "Minkyeong Jeon",
-        "Jisang Han",
-        "Takuya Narihira",
-        "Hyuna Ko",
-        "Junsu Kim",
-        "Yuki Mitsufuji",
-        "Seungryong Kim"
+        "Xianfeng Wu",
+        "Yajing Bai",
+        "Minghan Li",
+        "Xianzu Wu",
+        "Xueqi Zhao",
+        "Zhongyuan Lai",
+        "Wenyu Liu",
+        "Xinggang Wang"
       ],
-      "abstract": "Reconstructing and understanding 3D scenes from unposed sparse views in a feed-forward manner remains as a challenging task in 3D computer vision. Recent approaches use per-pixel 3D Gaussian Splatting for reconstruction, followed by a 2D-to-3D feature lifting stage for scene understanding. However, they generate excessive redundant Gaussians, causing high memory overhead and sub-optimal multi-view feature aggregation, leading to degraded novel view synthesis and scene understanding performance. We propose C3G, a novel feed-forward framework that estimates compact 3D Gaussians only at essential spatial locations, minimizing redundancy while enabling effective feature lifting. We introduce learnable tokens that aggregate multi-view features through self-attention to guide Gaussian generation, ensuring each Gaussian integrates relevant visual features across views. We then exploit the learned attention patterns for Gaussian decoding to efficiently lift features. Extensive experiments on pose-free novel view synthesis, 3D open-vocabulary segmentation, and view-invariant feature aggregation demonstrate our approach's effectiveness. Results show that a compact yet geometrically meaningful representation is sufficient for high-quality scene reconstruction and understanding, achieving superior memory efficiency and feature fidelity compared to existing methods.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
+      "abstract": "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios. However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization, exhibits limited generalization, and is difficult to scale to real-world applications. To address these limitations, we propose 4DLangVGGT, the first Transformer-based feed-forward unified framework for 4D language grounding, that jointly integrates geometric perception and language alignment within a single architecture. 4DLangVGGT has two key components: the 4D Visual Geometry Transformer, StreamVGGT, which captures spatio-temporal geometric representations of dynamic scenes; and the Semantic Bridging Decoder (SBD), which projects geometry-aware features into a language-aligned semantic space, thereby enhancing semantic interpretability while preserving structural fidelity. Unlike prior methods that depend on costly per-scene optimization, 4DLangVGGT can be jointly trained across multiple dynamic scenes and directly applied during inference, achieving both deployment efficiency and strong generalization. This design significantly improves the practicality of large-scale deployment and establishes a new paradigm for open-vocabulary 4D scene understanding. Experiments on HyperNeRF and Neu3D datasets demonstrate that our approach not only generalizes effectively but also achieves state-of-the-art performance, achieving up to 2% gains under per-scene training and 1% improvements under multi-scene training. Our code released in https://github.com/hustvl/4DLangVGGT",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.04021v1",
-        "pdf": "https://arxiv.org/pdf/2512.04021v1"
+        "paper": "http://arxiv.org/abs/2512.05060v1",
+        "pdf": "https://arxiv.org/pdf/2512.05060v1"
       },
-      "arxiv_id": "2512.04021v1",
-      "comment": "Project Page : https://cvlab-kaist.github.io/C3G/",
+      "arxiv_id": "2512.05060v1",
+      "comment": "Code: https://github.com/hustvl/4DLangVGGT, Webpage: https://hustvl.github.io/4DLangVGGT",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.850847457627118,
+      "relevance_score": 4.876271186440678,
       "score_breakdown": {
-        "total_score": 4.85,
+        "total_score": 4.88,
         "field_match": {
-          "score": 2.63,
+          "score": 1.44,
           "matches": [
-            "3d gaussian",
             "gaussian splatting",
-            "segmentation",
-            "computer vision"
+            "nerf"
           ],
           "weight": 0.4
         },
@@ -54,7 +47,204 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios. However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization...",
+        "key_contributions": [
+          "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios.",
+          "However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization, exhibits limited generalization, and is difficult to scale to real-world applications.",
+          "To address these limitations, we propose 4DLangVGGT, the first Transformer-based feed-forward unified framework for 4D language grounding, that jointly integrates geometric perception and language alignment within a single architecture."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05060v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05039v1",
+      "title": "Semantic-Guided Two-Stage GAN for Face Inpainting with Hybrid Perceptual Encoding",
+      "authors": [
+        "Abhigyan Bhattacharya",
+        "Hiranmoy Roy"
+      ],
+      "abstract": "Facial Image inpainting aim is to restore the missing or corrupted regions in face images while preserving identity, structural consistency and photorealistic image quality, a task specifically created for photo restoration. Though there are recent lot of advances in deep generative models, existing methods face problems with large irregular masks, often producing blurry textures on the edges of the masked region, semantic inconsistencies, or unconvincing facial structures due to direct pixel level synthesis approach and limited exploitation of facial priors. In this paper we propose a novel architecture, which address these above challenges through semantic-guided hierarchical synthesis. Our approach starts with a method that organizes and synthesizes information based on meaning, followed by refining the texture. This process gives clear insights into the facial structure before we move on to creating detailed images. In the first stage, we blend two techniques: one that focuses on local features with CNNs and global features with Vision Transformers. This helped us create clear and detailed semantic layouts. In the second stage, we use a Multi-Modal Texture Generator to refine these layouts by pulling in information from different scales, ensuring everything looks cohesive and consistent. The architecture naturally handles arbitrary mask configurations through dynamic attention without maskspecific training. Experiment on two datasets CelebA-HQ and FFHQ shows that our model outperforms other state-of-the-art methods, showing improvements in metrics like LPIPS, PSNR, and SSIM. It produces visually striking results with better semantic preservation, in challenging large-area inpainting situations.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05039v1",
+        "pdf": "https://arxiv.org/pdf/2512.05039v1"
+      },
+      "arxiv_id": "2512.05039v1",
+      "comment": "Submitted for review CVPR-2025",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Facial Image inpainting aim is to restore the missing or corrupted regions in face images while preserving identity, structural consistency and photorealistic image quality, a task specifically created for photo restoration. Though there are recent lot of advances in deep generative models, existing methods face problems with large irregular masks, often producing blurry textures on the edges of t...",
+        "key_contributions": [
+          "Facial Image inpainting aim is to restore the missing or corrupted regions in face images while preserving identity, structural consistency and photorealistic image quality, a task specifically created for photo restoration.",
+          "Though there are recent lot of advances in deep generative models, existing methods face problems with large irregular masks, often producing blurry textures on the edges of the masked region, semantic inconsistencies, or unconvincing facial structures due to direct pixel level synthesis approach and limited exploitation of facial priors.",
+          "In this paper we propose a novel architecture, which address these above challenges through semantic-guided hierarchical synthesis."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05039v1.mp3"
+      }
+    },
+    {
+      "id": "2512.04862v1",
+      "title": "Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing",
+      "authors": [
+        "Maria-Paola Forte",
+        "Nikos Athanasiou",
+        "Giulia Ballardini",
+        "Jan Ulrich Bartels",
+        "Katherine J. Kuchenbecker",
+        "Michael J. Black"
+      ],
+      "abstract": "Capturing accurate 3D human pose in the wild would provide valuable data for training pose estimation and motion generation methods. While video-based estimation approaches have become increasingly accurate, they often fail in common scenarios involving self-contact, such as a hand touching the face. In contrast, wearable bioimpedance sensing can cheaply and unobtrusively measure ground-truth skin-to-skin contact. Consequently, we propose a novel framework that combines visual pose estimators with bioimpedance sensing to capture the 3D pose of people by taking self-contact into account. Our method, BioTUCH, initializes the pose using an off-the-shelf estimator and introduces contact-aware pose optimization during measured self-contact: reprojection error and deviations from the input estimate are minimized while enforcing vertex proximity constraints. We validate our approach using a new dataset of synchronized RGB video, bioimpedance measurements, and 3D motion capture. Testing with three input pose estimators, we demonstrate an average of 11.7% improvement in reconstruction accuracy. We also present a miniature wearable bioimpedance sensor that enables efficient large-scale collection of contact-aware training data for improving pose estimation and generation using BioTUCH. Code and data are available at biotuch.is.tue.mpg.de",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.04862v1",
+        "pdf": "https://arxiv.org/pdf/2512.04862v1"
+      },
+      "arxiv_id": "2512.04862v1",
+      "comment": "* Equal contribution. Minor figure corrections compared to the ICCV 2025 version",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Capturing accurate 3D human pose in the wild would provide valuable data for training pose estimation and motion generation methods. While video-based estimation approaches have become increasingly accurate, they often fail in common scenarios involving self-contact, such as a hand touching the face. In contrast, wearable bioimpedance sensing can cheaply and unobtrusively measure ground-truth skin...",
+        "key_contributions": [
+          "Capturing accurate 3D human pose in the wild would provide valuable data for training pose estimation and motion generation methods.",
+          "While video-based estimation approaches have become increasingly accurate, they often fail in common scenarios involving self-contact, such as a hand touching the face.",
+          "In contrast, wearable bioimpedance sensing can cheaply and unobtrusively measure ground-truth skin-to-skin contact."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.04862v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05112v1",
+      "title": "DraCo: Draft as CoT for Text-to-Image Preview and Rare Concept Generation",
+      "authors": [
+        "Dongzhi Jiang",
+        "Renrui Zhang",
+        "Haodong Li",
+        "Zhuofan Zong",
+        "Ziyu Guo",
+        "Jun He",
+        "Claire Guo",
+        "Junyan Ye",
+        "Rongyao Fang",
+        "Weijia Li",
+        "Rui Liu",
+        "Hongsheng Li"
+      ],
+      "abstract": "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation. However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning. To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning paradigm that fully leverages both textual and visual contents in CoT for better planning and verification. Our method first generates a low-resolution draft image as preview, providing more concrete and structural visual planning and guidance. Then, we employ the model's inherent understanding capability to verify potential semantic misalignments between the draft and input prompt, and performs refinement through selective corrections with super-resolution. In this way, our approach addresses two fundamental challenges: the coarse-grained nature of textual planning and the difficulty in generating rare attribute combinations. To support training, we curate DraCo-240K, aiming to enhance three atomic capabilities spanning general correction, instance manipulation, and layout reorganization. Supported by DraCo-CFG, a specialized classifier-free guidance (CFG) strategy for interleaved reasoning, DraCo achieves a tremendous increase on GenEval (+8%), Imagine-Bench (+0.91), and GenEval++ (+3%), significantly outperforming direct generation and other generation methods empowered by CoT.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05112v1",
+        "pdf": "https://arxiv.org/pdf/2512.05112v1"
+      },
+      "arxiv_id": "2512.05112v1",
+      "comment": "Project Page: https://github.com/CaraJ7/DraCo",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -68,111 +258,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Reconstructing and understanding 3D scenes from unposed sparse views in a feed-forward manner remains as a challenging task in 3D computer vision. Recent approaches use per-pixel 3D Gaussian Splatting for reconstruction, followed by a 2D-to-3D feature lifting stage for scene understanding. However, they generate excessive redundant Gaussians, causing high memory overhead and sub-optimal multi-view...",
+        "short": "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation. However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning. To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning p...",
         "key_contributions": [
-          "Reconstructing and understanding 3D scenes from unposed sparse views in a feed-forward manner remains as a challenging task in 3D computer vision.",
-          "Recent approaches use per-pixel 3D Gaussian Splatting for reconstruction, followed by a 2D-to-3D feature lifting stage for scene understanding.",
-          "However, they generate excessive redundant Gaussians, causing high memory overhead and sub-optimal multi-view feature aggregation, leading to degraded novel view synthesis and scene understanding performance."
+          "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation.",
+          "However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning.",
+          "To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning paradigm that fully leverages both textual and visual contents in CoT for better planning and verification."
         ],
-        "provider": "gemini"
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05112v1.mp3"
       }
     },
     {
-      "id": "2512.03804v1",
-      "title": "EfficientECG: Cross-Attention with Feature Fusion for Efficient Electrocardiogram Classification",
+      "id": "2512.05094v1",
+      "title": "From Generated Human Videos to Physically Plausible Robot Trajectories",
       "authors": [
-        "Hanhui Deng",
-        "Xinglin Li",
-        "Jie Luo",
-        "Zhanpeng Jin",
-        "Di Wu"
+        "James Ni",
+        "Zekai Wang",
+        "Wei Lin",
+        "Amir Bar",
+        "Yann LeCun",
+        "Trevor Darrell",
+        "Jitendra Malik",
+        "Roei Herzig"
       ],
-      "abstract": "Electrocardiogram is a useful diagnostic signal that can detect cardiac abnormalities by measuring the electrical activity generated by the heart. Due to its rapid, non-invasive, and richly informative characteristics, ECG has many emerging applications. In this paper, we study novel deep learning technologies to effectively manage and analyse ECG data, with the aim of building a diagnostic model, accurately and quickly, that can substantially reduce the burden on medical workers. Unlike the existing ECG models that exhibit a high misdiagnosis rate, our deep learning approaches can automatically extract the features of ECG data through end-to-end training. Specifically, we first devise EfficientECG, an accurate and lightweight classification model for ECG analysis based on the existing EfficientNet model, which can effectively handle high-frequency long-sequence ECG data with various leading types. On top of that, we next propose a cross-attention-based feature fusion model of EfficientECG for analysing multi-lead ECG data with multiple features (e.g., gender and age). Our evaluations on representative ECG datasets validate the superiority of our model against state-of-the-art works in terms of high precision, multi-feature fusion, and lightweights.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
+      "abstract": "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic-a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
       "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.03804v1",
-        "pdf": "https://arxiv.org/pdf/2512.03804v1"
-      },
-      "arxiv_id": "2512.03804v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.395762711864407,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 1.86,
-          "matches": [
-            "cardiac",
-            "heart",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Electrocardiogram is a useful diagnostic signal that can detect cardiac abnormalities by measuring the electrical activity generated by the heart. Due to its rapid, non-invasive, and richly informative characteristics, ECG has many emerging applications. In this paper, we study novel deep learning technologies to effectively manage and analyse ECG data, with the aim of building a diagnostic model,...",
-        "key_contributions": [
-          "Electrocardiogram is a useful diagnostic signal that can detect cardiac abnormalities by measuring the electrical activity generated by the heart.",
-          "Due to its rapid, non-invasive, and richly informative characteristics, ECG has many emerging applications.",
-          "In this paper, we study novel deep learning technologies to effectively manage and analyse ECG data, with the aim of building a diagnostic model, accurately and quickly, that can substantially reduce the burden on medical workers."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.04084v1",
-      "title": "SimFlow: Simplified and End-to-End Training of Latent Normalizing Flows",
-      "authors": [
-        "Qinyu Zhao",
-        "Guangting Zheng",
-        "Tao Yang",
-        "Rui Zhu",
-        "Xingjian Leng",
-        "Stephen Gould",
-        "Liang Zheng"
-      ],
-      "abstract": "Normalizing Flows (NFs) learn invertible mappings between the data and a Gaussian distribution. Prior works usually suffer from two limitations. First, they add random noise to training samples or VAE latents as data augmentation, introducing complex pipelines including extra noising and denoising steps. Second, they use a pretrained and frozen VAE encoder, resulting in suboptimal reconstruction and generation quality. In this paper, we find that the two issues can be solved in a very simple way: just fixing the variance (which would otherwise be predicted by the VAE encoder) to a constant (e.g., 0.5). On the one hand, this method allows the encoder to output a broader distribution of tokens and the decoder to learn to reconstruct clean images from the augmented token distribution, avoiding additional noise or denoising design. On the other hand, fixed variance simplifies the VAE evidence lower bound, making it stable to train an NF with a VAE jointly. On the ImageNet $256 \\times 256$ generation task, our model SimFlow obtains a gFID score of 2.15, outperforming the state-of-the-art method STARFlow (gFID 2.40). Moreover, SimFlow can be seamlessly integrated with the end-to-end representation alignment (REPA-E) method and achieves an improved gFID of 1.91, setting a new state of the art among NFs.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
-      "categories": [
+        "cs.RO",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.04084v1",
-        "pdf": "https://arxiv.org/pdf/2512.04084v1"
+        "paper": "http://arxiv.org/abs/2512.05094v1",
+        "pdf": "https://arxiv.org/pdf/2512.05094v1"
       },
-      "arxiv_id": "2512.04084v1",
-      "comment": "Project Page: https://qinyu-allen-zhao.github.io/SimFlow/",
+      "arxiv_id": "2512.05094v1",
+      "comment": "For project website, see https://genmimic.github.io",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1,
+      "relevance_score": 4.199999999999999,
       "score_breakdown": {
-        "total_score": 4.1,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -193,55 +320,53 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Normalizing Flows (NFs) learn invertible mappings between the data and a Gaussian distribution. Prior works usually suffer from two limitations. First, they add random noise to training samples or VAE latents as data augmentation, introducing complex pipelines including extra noising and denoising steps. Second, they use a pretrained and frozen VAE encoder, resulting in suboptimal reconstruction a...",
+        "short": "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are ...",
         "key_contributions": [
-          "Normalizing Flows (NFs) learn invertible mappings between the data and a Gaussian distribution.",
-          "Prior works usually suffer from two limitations.",
-          "First, they add random noise to training samples or VAE latents as data augmentation, introducing complex pipelines including extra noising and denoising steps."
+          "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control.",
+          "To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video.",
+          "To address this, we introduce a two-stage pipeline."
         ],
-        "provider": "gemini"
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05094v1.mp3"
       }
     },
     {
-      "id": "2512.03848v1",
-      "title": "PULSE: A Unified Multi-Task Architecture for Cardiac Segmentation, Diagnosis, and Few-Shot Cross-Modality Clinical Adaptation",
+      "id": "2512.05113v1",
+      "title": "Splannequin: Freezing Monocular Mannequin-Challenge Footage with Dual-Detection Splatting",
       "authors": [
-        "Hania Ghouse",
-        "Maryam Alsharqi",
-        "Farhad R. Nezami",
-        "Muzammil Behzad"
+        "Hao-Jen Chien",
+        "Yi-Chuan Huang",
+        "Chung-Ho Wu",
+        "Wei-Lun Chao",
+        "Yu-Lun Liu"
       ],
-      "abstract": "Cardiac image analysis remains fragmented across tasks: anatomical segmentation, disease classification, and grounded clinical report generation are typically handled by separate networks trained under different data regimes. No existing framework unifies these objectives within a single architecture while retaining generalization across imaging modalities and datasets. We introduce PULSE, a multi-task vision-language framework built on self-supervised representations and optimized through a composite supervision strategy that balances region overlap learning, pixel wise classification fidelity, and boundary aware IoU refinement. A multi-scale token reconstruction decoder enables anatomical segmentation, while shared global representations support disease classification and clinically grounded text output allowing the model to transition from pixels to structures and finally clinical reasoning within one architecture. Unlike prior task-specific pipelines, PULSE learns task-invariant cardiac priors, generalizes robustly across datasets, and can be adapted to new imaging modalities with minimal supervision. This moves the field closer to a scalable, foundation style cardiac analysis framework.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
+      "abstract": "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction. Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection. To achieve this, we introduce a novel application of dynamic Gaussian splatting: the scene is modeled dynamically, which retains nearby temporal variation, and a static scene is rendered by fixing the model's time parameter. However, under this usage, monocular capture with sparse temporal supervision introduces artifacts like ghosting and blur for Gaussians that become unobserved or occluded at weakly supervised timestamps. We propose Splannequin, an architecture-agnostic regularization that detects two states of Gaussian primitives, hidden and defective, and applies temporal anchoring. Under predominantly forward camera motion, hidden states are anchored to their recent well-observed past states, while defective states are anchored to future states with stronger supervision. Our method integrates into existing dynamic Gaussian pipelines via simple loss terms, requires no architectural changes, and adds zero inference overhead. This results in markedly improved visual quality, enabling high-fidelity, user-selectable frozen-time renderings, validated by a 96% user preference. Project page: https://chien90190.github.io/splannequin/",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.03848v1",
-        "pdf": "https://arxiv.org/pdf/2512.03848v1"
+        "paper": "http://arxiv.org/abs/2512.05113v1",
+        "pdf": "https://arxiv.org/pdf/2512.05113v1"
       },
-      "arxiv_id": "2512.03848v1",
-      "comment": "",
+      "arxiv_id": "2512.05113v1",
+      "comment": "WACV 2025. Project page: https://chien90190.github.io/splannequin/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9991525423728818,
+      "has_code": true,
+      "relevance_score": 4.188983050847457,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.19,
         "field_match": {
-          "score": 2.37,
+          "score": 0.85,
           "matches": [
-            "cardiac",
-            "self-supervised",
-            "segmentation",
-            "image analysis"
+            "gaussian splatting"
           ],
           "weight": 0.4
         },
@@ -251,203 +376,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Cardiac image analysis remains fragmented across tasks: anatomical segmentation, disease classification, and grounded clinical report generation are typically handled by separate networks trained under different data regimes. No existing framework unifies these objectives within a single architecture while retaining generalization across imaging modalities and datasets. We introduce PULSE, a multi...",
-        "key_contributions": [
-          "Cardiac image analysis remains fragmented across tasks: anatomical segmentation, disease classification, and grounded clinical report generation are typically handled by separate networks trained under different data regimes.",
-          "No existing framework unifies these objectives within a single architecture while retaining generalization across imaging modalities and datasets.",
-          "We introduce PULSE, a multi-task vision-language framework built on self-supervised representations and optimized through a composite supervision strategy that balances region overlap learning, pixel wise classification fidelity, and boundary aware IoU refinement."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.04048v1",
-      "title": "Stable Signer: Hierarchical Sign Language Generative Model",
-      "authors": [
-        "Sen Fang",
-        "Yalin Feng",
-        "Hongbin Zhong",
-        "Yanxin Zhang",
-        "Dimitris N. Metaxas"
-      ],
-      "abstract": "Sign Language Production (SLP) is the process of converting the complex input text into a real video. Most previous works focused on the Text2Gloss, Gloss2Pose, Pose2Vid stages, and some concentrated on Prompt2Gloss and Text2Avatar stages. However, this field has made slow progress due to the inaccuracy of text conversion, pose generation, and the rendering of poses into real human videos in these stages, resulting in gradually accumulating errors. Therefore, in this paper, we streamline the traditional redundant structure, simplify and optimize the task objective, and design a new sign language generative model called Stable Signer. It redefines the SLP task as a hierarchical generation end-to-end task that only includes text understanding (Prompt2Gloss, Text2Gloss) and Pose2Vid, and executes text understanding through our proposed new Sign Language Understanding Linker called SLUL, and generates hand gestures through the named SLP-MoE hand gesture rendering expert block to end-to-end generate high-quality and multi-style sign language videos. SLUL is trained using the newly developed Semantic-Aware Gloss Masking Loss (SAGM Loss). Its performance has improved by 48.6% compared to the current SOTA generation methods.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
-      "categories": [
-        "cs.CV",
-        "cs.CL",
-        "cs.CY"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.04048v1",
-        "pdf": "https://arxiv.org/pdf/2512.04048v1"
-      },
-      "arxiv_id": "2512.04048v1",
-      "comment": "12 pages, 7 figures. More Demo at https://stablesigner.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Sign Language Production (SLP) is the process of converting the complex input text into a real video. Most previous works focused on the Text2Gloss, Gloss2Pose, Pose2Vid stages, and some concentrated on Prompt2Gloss and Text2Avatar stages. However, this field has made slow progress due to the inaccuracy of text conversion, pose generation, and the rendering of poses into real human videos in these...",
-        "key_contributions": [
-          "Sign Language Production (SLP) is the process of converting the complex input text into a real video.",
-          "Most previous works focused on the Text2Gloss, Gloss2Pose, Pose2Vid stages, and some concentrated on Prompt2Gloss and Text2Avatar stages.",
-          "However, this field has made slow progress due to the inaccuracy of text conversion, pose generation, and the rendering of poses into real human videos in these stages, resulting in gradually accumulating errors."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.03918v1",
-      "title": "UniMo: Unifying 2D Video and 3D Human Motion with an Autoregressive Framework",
-      "authors": [
-        "Youxin Pang",
-        "Yong Zhang",
-        "Ruizhi Shao",
-        "Xiang Deng",
-        "Feng Gao",
-        "Xu Xiaoming",
-        "Xiaoming Wei",
-        "Yebin Liu"
-      ],
-      "abstract": "We propose UniMo, an innovative autoregressive model for joint modeling of 2D human videos and 3D human motions within a unified framework, enabling simultaneous generation and understanding of these two modalities for the first time. Current methods predominantly focus on generating one modality given another as the condition or integrating either of them with other modalities such as text and audio. Unifying 2D videos and 3D motions for simultaneous optimization and generation remains largely unexplored, presenting significant challenges due to their substantial structural and distributional differences. Inspired by the LLM's ability to unify different modalities, our method models videos and 3D motions as a unified tokens sequence, utilizing separate embedding layers to mitigate distribution gaps. Additionally, we devise a sequence modeling strategy that integrates two distinct tasks within a single framework, proving the effectiveness of unified modeling. Moreover, to efficiently align with visual tokens and preserve 3D spatial information, we design a novel 3D motion tokenizer with a temporal expansion strategy, using a single VQ-VAE to produce quantized motion tokens. It features multiple expert decoders that handle body shapes, translation, global orientation, and body poses for reliable 3D motion reconstruction. Extensive experiments demonstrate that our method simultaneously generates corresponding videos and motions while performing accurate motion capture. This work taps into the capacity of LLMs to fuse diverse data types, paving the way for integrating human-centric information into existing models and potentially enabling multimodal, controllable joint modeling of humans, objects, and scenes.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.03918v1",
-        "pdf": "https://arxiv.org/pdf/2512.03918v1"
-      },
-      "arxiv_id": "2512.03918v1",
-      "comment": "https://carlyx.github.io/UniMo/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We propose UniMo, an innovative autoregressive model for joint modeling of 2D human videos and 3D human motions within a unified framework, enabling simultaneous generation and understanding of these two modalities for the first time. Current methods predominantly focus on generating one modality given another as the condition or integrating either of them with other modalities such as text and au...",
-        "key_contributions": [
-          "We propose UniMo, an innovative autoregressive model for joint modeling of 2D human videos and 3D human motions within a unified framework, enabling simultaneous generation and understanding of these two modalities for the first time.",
-          "Current methods predominantly focus on generating one modality given another as the condition or integrating either of them with other modalities such as text and audio.",
-          "Unifying 2D videos and 3D motions for simultaneous optimization and generation remains largely unexplored, presenting significant challenges due to their substantial structural and distributional differences."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.04012v1",
-      "title": "Emergent Outlier View Rejection in Visual Geometry Grounded Transformers",
-      "authors": [
-        "Jisang Han",
-        "Sunghwan Hong",
-        "Jaewoo Jung",
-        "Wooseok Jang",
-        "Honggyu An",
-        "Qianqian Wang",
-        "Seungryong Kim",
-        "Chen Feng"
-      ],
-      "abstract": "Reliable 3D reconstruction from in-the-wild image collections is often hindered by \"noisy\" images-irrelevant inputs with little or no view overlap with others. While traditional Structure-from-Motion pipelines handle such cases through geometric verification and outlier rejection, feed-forward 3D reconstruction models lack these explicit mechanisms, leading to degraded performance under in-the-wild conditions. In this paper, we discover that the existing feed-forward reconstruction model, e.g., VGGT, despite lacking explicit outlier-rejection mechanisms or noise-aware training, can inherently distinguish distractor images. Through an in-depth analysis under varying proportions of synthetic distractors, we identify a specific layer that naturally exhibits outlier-suppressing behavior. Further probing reveals that this layer encodes discriminative internal representations that enable an effective noise-filtering capability, which we simply leverage to perform outlier-view rejection in feed-forward 3D reconstruction without any additional fine-tuning or supervision. Extensive experiments on both controlled and in-the-wild datasets demonstrate that this implicit filtering mechanism is consistent and generalizes well across diverse scenarios.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.04012v1",
-        "pdf": "https://arxiv.org/pdf/2512.04012v1"
-      },
-      "arxiv_id": "2512.04012v1",
-      "comment": "Project page: https://cvlab-kaist.github.io/RobustVGGT/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.93728813559322,
-      "score_breakdown": {
-        "total_score": 3.94,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -461,47 +390,252 @@
         }
       },
       "ai_summaries": {
-        "short": "Reliable 3D reconstruction from in-the-wild image collections is often hindered by \"noisy\" images-irrelevant inputs with little or no view overlap with others. While traditional Structure-from-Motion pipelines handle such cases through geometric verification and outlier rejection, feed-forward 3D reconstruction models lack these explicit mechanisms, leading to degraded performance under in-the-wil...",
+        "short": "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction. Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection. To achieve this, we introduce a novel application of dynamic Gaussi...",
         "key_contributions": [
-          "Reliable 3D reconstruction from in-the-wild image collections is often hindered by \"noisy\" images-irrelevant inputs with little or no view overlap with others.",
-          "While traditional Structure-from-Motion pipelines handle such cases through geometric verification and outlier rejection, feed-forward 3D reconstruction models lack these explicit mechanisms, leading to degraded performance under in-the-wild conditions.",
-          "In this paper, we discover that the existing feed-forward reconstruction model, e."
+          "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction.",
+          "Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection.",
+          "To achieve this, we introduce a novel application of dynamic Gaussian splatting: the scene is modeled dynamically, which retains nearby temporal variation, and a static scene is rendered by fixing the model's time parameter."
         ],
-        "provider": "gemini"
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05113v1.mp3"
       }
     },
     {
-      "id": "2512.04034v1",
-      "title": "Domain Feature Collapse: Implications for Out-of-Distribution Detection and Solutions",
+      "id": "2512.05091v1",
+      "title": "Visual Reasoning Tracer: Object-Level Grounded Reasoning Benchmark",
       "authors": [
-        "Hong Yang",
-        "Devroop Kar",
-        "Qi Yu",
-        "Alex Ororbia",
-        "Travis Desell"
+        "Haobo Yuan",
+        "Yueyi Sun",
+        "Yanwei Li",
+        "Tao Zhang",
+        "Xueqing Deng",
+        "Henghui Ding",
+        "Lu Qi",
+        "Anran Wang",
+        "Xiangtai Li",
+        "Ming-Hsuan Yang"
       ],
-      "abstract": "Why do state-of-the-art OOD detection methods exhibit catastrophic failure when models are trained on single-domain datasets? We provide the first theoretical explanation for this phenomenon through the lens of information theory. We prove that supervised learning on single-domain data inevitably produces domain feature collapse -- representations where I(x_d; z) = 0, meaning domain-specific information is completely discarded. This is a fundamental consequence of information bottleneck optimization: models trained on single domains (e.g., medical images) learn to rely solely on class-specific features while discarding domain features, leading to catastrophic failure when detecting out-of-domain samples (e.g., achieving only 53% FPR@95 on MNIST). We extend our analysis using Fano's inequality to quantify partial collapse in practical scenarios. To validate our theory, we introduce Domain Bench, a benchmark of single-domain datasets, and demonstrate that preserving I(x_d; z) > 0 through domain filtering (using pretrained representations) resolves the failure mode. While domain filtering itself is conceptually straightforward, its effectiveness provides strong empirical evidence for our information-theoretic framework. Our work explains a puzzling empirical phenomenon, reveals fundamental limitations of supervised learning in narrow domains, and has broader implications for transfer learning and when to fine-tune versus freeze pretrained models.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
+      "abstract": "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering. However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.g., pixels, locations) that lead to the result. This contrasts with human intelligence, which naturally operates through a chain of visual reasoning. To address this limitation, we introduce the Visual Reasoning Tracer (VRT) task, which requires models to not only localize the target object but also explicitly predict the intermediate objects that form the reasoning path. To advance research in this area, we contribute: (1) VRT-Bench, a human-annotated benchmark for evaluating visual reasoning; (2) a new metric for assessing the quality of reasoning traces; and (3) VRT-80k, a large-scale dataset for reasoning model training. Our experiments reveal that while existing models often produce the correct final output, they struggle to ground their intermediate reasoning. In contrast, models trained on VRT-80k achieve substantial improvements in tracing the reasoning path.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
       "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05091v1",
+        "pdf": "https://arxiv.org/pdf/2512.05091v1"
+      },
+      "arxiv_id": "2512.05091v1",
+      "comment": "Technical Report; Project Page: https://harboryuan.github.io/visual-reasoning-tracer",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.050000000000001,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering. However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.g., pixels, locations) that lead to the result. T...",
+        "key_contributions": [
+          "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering.",
+          "However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.",
+          "g."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05091v1.mp3"
+      }
+    },
+    {
+      "id": "2512.04815v1",
+      "title": "RobustSplat++: Decoupling Densification, Dynamics, and Illumination for In-the-Wild 3DGS",
+      "authors": [
+        "Chuanyu Fu",
+        "Guanying Chen",
+        "Yuqi Zhang",
+        "Kunbin Yao",
+        "Yuan Xiong",
+        "Chuan Huang",
+        "Shuguang Cui",
+        "Yasuyuki Matsushita",
+        "Xiaochun Cao"
+      ],
+      "abstract": "3D Gaussian Splatting (3DGS) has gained significant attention for its real-time, photo-realistic rendering in novel-view synthesis and 3D modeling. However, existing methods struggle with accurately modeling in-the-wild scenes affected by transient objects and illuminations, leading to artifacts in the rendered images. We identify that the Gaussian densification process, while enhancing scene detail capture, unintentionally contributes to these artifacts by growing additional Gaussians that model transient disturbances and illumination variations. To address this, we propose RobustSplat++, a robust solution based on several critical designs. First, we introduce a delayed Gaussian growth strategy that prioritizes optimizing static scene structure before allowing Gaussian splitting/cloning, mitigating overfitting to transient objects in early optimization. Second, we design a scale-cascaded mask bootstrapping approach that first leverages lower-resolution feature similarity supervision for reliable initial transient mask estimation, taking advantage of its stronger semantic consistency and robustness to noise, and then progresses to high-resolution supervision to achieve more precise mask prediction. Third, we incorporate the delayed Gaussian growth strategy and mask bootstrapping with appearance modeling to handling in-the-wild scenes including transients and illuminations. Extensive experiments on multiple challenging datasets show that our method outperforms existing methods, clearly demonstrating the robustness and effectiveness of our method.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.04815v1",
+        "pdf": "https://arxiv.org/pdf/2512.04815v1"
+      },
+      "arxiv_id": "2512.04815v1",
+      "comment": "arXiv admin note: substantial text overlap with arXiv:2506.02751",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.977966101694915,
+      "score_breakdown": {
+        "total_score": 3.98,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "3D Gaussian Splatting (3DGS) has gained significant attention for its real-time, photo-realistic rendering in novel-view synthesis and 3D modeling. However, existing methods struggle with accurately modeling in-the-wild scenes affected by transient objects and illuminations, leading to artifacts in the rendered images. We identify that the Gaussian densification process, while enhancing scene deta...",
+        "key_contributions": [
+          "3D Gaussian Splatting (3DGS) has gained significant attention for its real-time, photo-realistic rendering in novel-view synthesis and 3D modeling.",
+          "However, existing methods struggle with accurately modeling in-the-wild scenes affected by transient objects and illuminations, leading to artifacts in the rendered images.",
+          "We identify that the Gaussian densification process, while enhancing scene detail capture, unintentionally contributes to these artifacts by growing additional Gaussians that model transient disturbances and illumination variations."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.04815v1.mp3"
+      }
+    },
+    {
+      "id": "2512.04981v1",
+      "title": "Aligned but Stereotypical? The Hidden Influence of System Prompts on Social Bias in LVLM-Based Text-to-Image Models",
+      "authors": [
+        "NaHyeon Park",
+        "Namin An",
+        "Kunhee Kim",
+        "Soyeon Yoon",
+        "Jiahao Huo",
+        "Hyunjung Shim"
+      ],
+      "abstract": "Large vision-language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood. In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models. We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity and evaluate demographic bias across multiple attributes in a systematic manner. Our analysis identifies system prompts, the predefined instructions guiding LVLMs, as a primary driver of biased behavior. Through decoded intermediate representations, token-probability diagnostics, and embedding-association analyses, we reveal how system prompts encode demographic priors that propagate into image synthesis. To this end, we propose FairPro, a training-free meta-prompting framework that enables LVLMs to self-audit and construct fairness-aware system prompts at test time. Experiments on two LVLM-based T2I models, SANA and Qwen-Image, show that FairPro substantially reduces demographic bias while preserving text-image alignment. We believe our findings provide deeper insight into the central role of system prompts in bias propagation and offer a practical, deployable approach for building more socially responsible T2I systems.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
+      "categories": [
+        "cs.CV",
         "cs.LG"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.04034v1",
-        "pdf": "https://arxiv.org/pdf/2512.04034v1"
+        "paper": "http://arxiv.org/abs/2512.04981v1",
+        "pdf": "https://arxiv.org/pdf/2512.04981v1"
       },
-      "arxiv_id": "2512.04034v1",
+      "arxiv_id": "2512.04981v1",
+      "comment": "Project page: https://fairpro-t2i.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Large vision-language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood. In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models. We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity...",
+        "key_contributions": [
+          "Large vision-language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood.",
+          "In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models.",
+          "We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity and evaluate demographic bias across multiple attributes in a systematic manner."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.04981v1.mp3"
+      }
+    },
+    {
+      "id": "2512.04829v1",
+      "title": "Model-Based and Sample-Efficient AI-Assisted Math Discovery in Sphere Packing",
+      "authors": [
+        "Rasul Tutunov",
+        "Alexandre Maraval",
+        "Antoine Grosnit",
+        "Xihan Li",
+        "Jun Wang",
+        "Haitham Bou-Ammar"
+      ],
+      "abstract": "Sphere packing, Hilbert's eighteenth problem, asks for the densest arrangement of congruent spheres in n-dimensional Euclidean space. Although relevant to areas such as cryptography, crystallography, and medical imaging, the problem remains unresolved: beyond a few special dimensions, neither optimal packings nor tight upper bounds are known. Even a major breakthrough in dimension $n=8$, later recognised with a Fields Medal, underscores its difficulty. A leading technique for upper bounds, the three-point method, reduces the problem to solving large, high-precision semidefinite programs (SDPs). Because each candidate SDP may take days to evaluate, standard data-intensive AI approaches are infeasible. We address this challenge by formulating SDP construction as a sequential decision process, the SDP game, in which a policy assembles SDP formulations from a set of admissible components. Using a sample-efficient model-based framework that combines Bayesian optimisation with Monte Carlo Tree Search, we obtain new state-of-the-art upper bounds in dimensions $4-16$, showing that model-based search can advance computational progress in longstanding geometric problems. Together, these results demonstrate that sample-efficient, model-based search can make tangible progress on mathematically rigid, evaluation limited problems, pointing towards a complementary direction for AI-assisted discovery beyond large-scale LLM-driven exploration.",
+      "published": "2025-12-04",
+      "updated": "2025-12-04",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.04829v1",
+        "pdf": "https://arxiv.org/pdf/2512.04829v1"
+      },
+      "arxiv_id": "2512.04829v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.8550847457627113,
+      "relevance_score": 3.8550847457627118,
       "score_breakdown": {
         "total_score": 3.86,
         "field_match": {
           "score": 0.76,
           "matches": [
-            "medical image"
+            "medical imaging"
           ],
           "weight": 0.4
         },
@@ -511,7 +645,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -520,150 +654,19 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Why do state-of-the-art OOD detection methods exhibit catastrophic failure when models are trained on single-domain datasets? We provide the first theoretical explanation for this phenomenon through the lens of information theory. We prove that supervised learning on single-domain data inevitably produces domain feature collapse -- representations where I(x_d; z) = 0, meaning domain-specific infor...",
+        "short": "Sphere packing, Hilbert's eighteenth problem, asks for the densest arrangement of congruent spheres in n-dimensional Euclidean space. Although relevant to areas such as cryptography, crystallography, and medical imaging, the problem remains unresolved: beyond a few special dimensions, neither optimal packings nor tight upper bounds are known. Even a major breakthrough in dimension $n=8$, later rec...",
         "key_contributions": [
-          "Why do state-of-the-art OOD detection methods exhibit catastrophic failure when models are trained on single-domain datasets? We provide the first theoretical explanation for this phenomenon through the lens of information theory.",
-          "We prove that supervised learning on single-domain data inevitably produces domain feature collapse -- representations where I(x_d; z) = 0, meaning domain-specific information is completely discarded.",
-          "This is a fundamental consequence of information bottleneck optimization: models trained on single domains (e."
+          "Sphere packing, Hilbert's eighteenth problem, asks for the densest arrangement of congruent spheres in n-dimensional Euclidean space.",
+          "Although relevant to areas such as cryptography, crystallography, and medical imaging, the problem remains unresolved: beyond a few special dimensions, neither optimal packings nor tight upper bounds are known.",
+          "Even a major breakthrough in dimension $n=8$, later recognised with a Fields Medal, underscores its difficulty."
         ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.03913v1",
-      "title": "Hierarchical Vision Language Action Model Using Success and Failure Demonstrations",
-      "authors": [
-        "Jeongeun Park",
-        "Jihwan Yoon",
-        "Byungwoo Jeon",
-        "Juhan Park",
-        "Jinwoo Shin",
-        "Namhoon Cho",
-        "Kyungjae Lee",
-        "Sangdoo Yun",
-        "Sungjoon Choi"
-      ],
-      "abstract": "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection. However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness. We address this problem by leveraging mixed-quality datasets to learn failure-aware reasoning at planning time. We introduce VINE, a hierarchical vision-language-action model that separates high-level reasoning (System 2) from low-level control (System 1) under a hierarchical reinforcement learning formalism, making failures usable as a structured learning signal rather than noisy supervision. System 2 performs feasibility-guided tree search over a 2D scene-graph abstraction: it proposes subgoal transitions, predicts success probabilities from both successes and failures, and prunes brittle branches before execution, effectively casting plan evaluation as feasibility scoring. The selected subgoal sequence is then passed to System 1, which executes low-level actions without modifying the agent's core skills. Trained entirely from offline teleoperation data, VINE integrates negative experience directly into the decision loop. Across challenging manipulation tasks, this approach consistently improves success rates and robustness, demonstrating that failure data is an essential resource for converting the broad competence of VLAs into robust execution.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.03913v1",
-        "pdf": "https://arxiv.org/pdf/2512.03913v1"
-      },
-      "arxiv_id": "2512.03913v1",
-      "comment": "https://vine-vla.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection. However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness. We address this problem by leveraging mixed-quality datasets to learn failure-a...",
-        "key_contributions": [
-          "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection.",
-          "However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness.",
-          "We address this problem by leveraging mixed-quality datasets to learn failure-aware reasoning at planning time."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.03962v1",
-      "title": "Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction",
-      "authors": [
-        "Evan Bell",
-        "Shijun Liang",
-        "Ismail Alkhouri",
-        "Saiprasad Ravishankar"
-      ],
-      "abstract": "Deep Image Prior (DIP) has recently emerged as a promising one-shot neural-network based image reconstruction method. However, DIP has seen limited application to 3D image reconstruction problems. In this work, we introduce Tada-DIP, a highly effective and fully 3D DIP method for solving 3D inverse problems. By combining input-adaptation and denoising regularization, Tada-DIP produces high-quality 3D reconstructions while avoiding the overfitting phenomenon that is common in DIP. Experiments on sparse-view X-ray computed tomography reconstruction validate the effectiveness of the proposed method, demonstrating that Tada-DIP produces much better reconstructions than training-data-free baselines and achieves reconstruction performance on par with a supervised network trained using a large dataset with fully-sampled volumes.",
-      "published": "2025-12-03",
-      "updated": "2025-12-03",
-      "categories": [
-        "eess.IV",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "eess.IV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.03962v1",
-        "pdf": "https://arxiv.org/pdf/2512.03962v1"
-      },
-      "arxiv_id": "2512.03962v1",
-      "comment": "6 pages, 8 figures, 2025 Asilomar Conference on Signals, Systems, and Computers. Code is available at github.com/evanbell02/Tada-DIP/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8372881355932207,
-      "score_breakdown": {
-        "total_score": 3.84,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Deep Image Prior (DIP) has recently emerged as a promising one-shot neural-network based image reconstruction method. However, DIP has seen limited application to 3D image reconstruction problems. In this work, we introduce Tada-DIP, a highly effective and fully 3D DIP method for solving 3D inverse problems. By combining input-adaptation and denoising regularization, Tada-DIP produces high-quality...",
-        "key_contributions": [
-          "Deep Image Prior (DIP) has recently emerged as a promising one-shot neural-network based image reconstruction method.",
-          "However, DIP has seen limited application to 3D image reconstruction problems.",
-          "In this work, we introduce Tada-DIP, a highly effective and fully 3D DIP method for solving 3D inverse problems."
-        ],
-        "provider": "gemini"
+        "provider": "gemini",
+        "audio_url": "/audio/2512.04829v1.mp3"
       }
     }
   ]

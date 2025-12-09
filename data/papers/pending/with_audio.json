@@ -3,41 +3,39 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.05060v1",
-      "title": "4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer",
+      "id": "2512.05613v1",
+      "title": "DistillFSS: Synthesizing Few-Shot Knowledge into a Lightweight Segmentation Model",
       "authors": [
-        "Xianfeng Wu",
-        "Yajing Bai",
-        "Minghan Li",
-        "Xianzu Wu",
-        "Xueqi Zhao",
-        "Zhongyuan Lai",
-        "Wenyu Liu",
-        "Xinggang Wang"
+        "Pasquale De Marinis",
+        "Pieter M. Blok",
+        "Uzay Kaymak",
+        "Rogier Brussee",
+        "Gennaro Vessio",
+        "Giovanna Castellano"
       ],
-      "abstract": "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios. However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization, exhibits limited generalization, and is difficult to scale to real-world applications. To address these limitations, we propose 4DLangVGGT, the first Transformer-based feed-forward unified framework for 4D language grounding, that jointly integrates geometric perception and language alignment within a single architecture. 4DLangVGGT has two key components: the 4D Visual Geometry Transformer, StreamVGGT, which captures spatio-temporal geometric representations of dynamic scenes; and the Semantic Bridging Decoder (SBD), which projects geometry-aware features into a language-aligned semantic space, thereby enhancing semantic interpretability while preserving structural fidelity. Unlike prior methods that depend on costly per-scene optimization, 4DLangVGGT can be jointly trained across multiple dynamic scenes and directly applied during inference, achieving both deployment efficiency and strong generalization. This design significantly improves the practicality of large-scale deployment and establishes a new paradigm for open-vocabulary 4D scene understanding. Experiments on HyperNeRF and Neu3D datasets demonstrate that our approach not only generalizes effectively but also achieves state-of-the-art performance, achieving up to 2% gains under per-scene training and 1% improvements under multi-scene training. Our code released in https://github.com/hustvl/4DLangVGGT",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
+      "abstract": "Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) seeks to segment unknown classes in unseen domains using only a few annotated examples. This setting is inherently challenging: source and target domains exhibit substantial distribution shifts, label spaces are disjoint, and support images are scarce--making standard episodic methods unreliable and computationally demanding at test time. To address these constraints, we propose DistillFSS, a framework that embeds support-set knowledge directly into a model's parameters through a teacher--student distillation process. By internalizing few-shot reasoning into a dedicated layer within the student network, DistillFSS eliminates the need for support images at test time, enabling fast, lightweight inference, while allowing efficient extension to novel classes in unseen domains through rapid teacher-driven specialization. Combined with fine-tuning, the approach scales efficiently to large support sets and significantly reduces computational overhead. To evaluate the framework under realistic conditions, we introduce a new CD-FSS benchmark spanning medical imaging, industrial inspection, and remote sensing, with disjoint label spaces and variable support sizes. Experiments show that DistillFSS matches or surpasses state-of-the-art baselines, particularly in multi-class and multi-shot scenarios, while offering substantial efficiency gains. The code is available at https://github.com/pasqualedem/DistillFSS.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05060v1",
-        "pdf": "https://arxiv.org/pdf/2512.05060v1"
+        "paper": "http://arxiv.org/abs/2512.05613v1",
+        "pdf": "https://arxiv.org/pdf/2512.05613v1"
       },
-      "arxiv_id": "2512.05060v1",
-      "comment": "Code: https://github.com/hustvl/4DLangVGGT, Webpage: https://hustvl.github.io/4DLangVGGT",
+      "arxiv_id": "2512.05613v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.876271186440678,
+      "has_code": false,
+      "relevance_score": 4.1084745762711865,
       "score_breakdown": {
-        "total_score": 4.88,
+        "total_score": 4.11,
         "field_match": {
-          "score": 1.44,
+          "score": 1.27,
           "matches": [
-            "gaussian splatting",
-            "nerf"
+            "medical imaging",
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -47,67 +45,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
           "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios. However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization...",
-        "key_contributions": [
-          "Constructing 4D language fields is crucial for embodied AI, augmented/virtual reality, and 4D scene understanding, as they provide enriched semantic representations of dynamic environments and enable open-vocabulary querying in complex scenarios.",
-          "However, existing approaches to 4D semantic field construction primarily rely on scene-specific Gaussian splatting, which requires per-scene optimization, exhibits limited generalization, and is difficult to scale to real-world applications.",
-          "To address these limitations, we propose 4DLangVGGT, the first Transformer-based feed-forward unified framework for 4D language grounding, that jointly integrates geometric perception and language alignment within a single architecture."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.05060v1.mp3"
-      }
-    },
-    {
-      "id": "2512.05039v1",
-      "title": "Semantic-Guided Two-Stage GAN for Face Inpainting with Hybrid Perceptual Encoding",
-      "authors": [
-        "Abhigyan Bhattacharya",
-        "Hiranmoy Roy"
-      ],
-      "abstract": "Facial Image inpainting aim is to restore the missing or corrupted regions in face images while preserving identity, structural consistency and photorealistic image quality, a task specifically created for photo restoration. Though there are recent lot of advances in deep generative models, existing methods face problems with large irregular masks, often producing blurry textures on the edges of the masked region, semantic inconsistencies, or unconvincing facial structures due to direct pixel level synthesis approach and limited exploitation of facial priors. In this paper we propose a novel architecture, which address these above challenges through semantic-guided hierarchical synthesis. Our approach starts with a method that organizes and synthesizes information based on meaning, followed by refining the texture. This process gives clear insights into the facial structure before we move on to creating detailed images. In the first stage, we blend two techniques: one that focuses on local features with CNNs and global features with Vision Transformers. This helped us create clear and detailed semantic layouts. In the second stage, we use a Multi-Modal Texture Generator to refine these layouts by pulling in information from different scales, ensuring everything looks cohesive and consistent. The architecture naturally handles arbitrary mask configurations through dynamic attention without maskspecific training. Experiment on two datasets CelebA-HQ and FFHQ shows that our model outperforms other state-of-the-art methods, showing improvements in metrics like LPIPS, PSNR, and SSIM. It produces visually striking results with better semantic preservation, in challenging large-area inpainting situations.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05039v1",
-        "pdf": "https://arxiv.org/pdf/2512.05039v1"
-      },
-      "arxiv_id": "2512.05039v1",
-      "comment": "Submitted for review CVPR-2025",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -121,318 +59,52 @@
         }
       },
       "ai_summaries": {
-        "short": "Facial Image inpainting aim is to restore the missing or corrupted regions in face images while preserving identity, structural consistency and photorealistic image quality, a task specifically created for photo restoration. Though there are recent lot of advances in deep generative models, existing methods face problems with large irregular masks, often producing blurry textures on the edges of t...",
+        "short": "Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) seeks to segment unknown classes in unseen domains using only a few annotated examples. This setting is inherently challenging: source and target domains exhibit substantial distribution shifts, label spaces are disjoint, and support images are scarce--making standard episodic methods unreliable and computationally demanding at test time. To add...",
         "key_contributions": [
-          "Facial Image inpainting aim is to restore the missing or corrupted regions in face images while preserving identity, structural consistency and photorealistic image quality, a task specifically created for photo restoration.",
-          "Though there are recent lot of advances in deep generative models, existing methods face problems with large irregular masks, often producing blurry textures on the edges of the masked region, semantic inconsistencies, or unconvincing facial structures due to direct pixel level synthesis approach and limited exploitation of facial priors.",
-          "In this paper we propose a novel architecture, which address these above challenges through semantic-guided hierarchical synthesis."
+          "Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) seeks to segment unknown classes in unseen domains using only a few annotated examples.",
+          "This setting is inherently challenging: source and target domains exhibit substantial distribution shifts, label spaces are disjoint, and support images are scarce--making standard episodic methods unreliable and computationally demanding at test time.",
+          "To address these constraints, we propose DistillFSS, a framework that embeds support-set knowledge directly into a model's parameters through a teacher--student distillation process."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.05039v1.mp3"
+        "audio_url": "/audio/2512.05613v1.mp3"
       }
     },
     {
-      "id": "2512.04862v1",
-      "title": "Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing",
+      "id": "2512.05941v1",
+      "title": "Zoom in, Click out: Unlocking and Evaluating the Potential of Zooming for GUI Grounding",
       "authors": [
-        "Maria-Paola Forte",
-        "Nikos Athanasiou",
-        "Giulia Ballardini",
-        "Jan Ulrich Bartels",
-        "Katherine J. Kuchenbecker",
-        "Michael J. Black"
+        "Zhiyuan Jiang",
+        "Shenghao Xie",
+        "Wenyi Li",
+        "Wenqiang Zu",
+        "Peihang Li",
+        "Jiahao Qiu",
+        "Siqi Pei",
+        "Lei Ma",
+        "Tiejun Huang",
+        "Mengdi Wang",
+        "Shilong Liu"
       ],
-      "abstract": "Capturing accurate 3D human pose in the wild would provide valuable data for training pose estimation and motion generation methods. While video-based estimation approaches have become increasingly accurate, they often fail in common scenarios involving self-contact, such as a hand touching the face. In contrast, wearable bioimpedance sensing can cheaply and unobtrusively measure ground-truth skin-to-skin contact. Consequently, we propose a novel framework that combines visual pose estimators with bioimpedance sensing to capture the 3D pose of people by taking self-contact into account. Our method, BioTUCH, initializes the pose using an off-the-shelf estimator and introduces contact-aware pose optimization during measured self-contact: reprojection error and deviations from the input estimate are minimized while enforcing vertex proximity constraints. We validate our approach using a new dataset of synchronized RGB video, bioimpedance measurements, and 3D motion capture. Testing with three input pose estimators, we demonstrate an average of 11.7% improvement in reconstruction accuracy. We also present a miniature wearable bioimpedance sensor that enables efficient large-scale collection of contact-aware training data for improving pose estimation and generation using BioTUCH. Code and data are available at biotuch.is.tue.mpg.de",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.04862v1",
-        "pdf": "https://arxiv.org/pdf/2512.04862v1"
-      },
-      "arxiv_id": "2512.04862v1",
-      "comment": "* Equal contribution. Minor figure corrections compared to the ICCV 2025 version",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICCV",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Capturing accurate 3D human pose in the wild would provide valuable data for training pose estimation and motion generation methods. While video-based estimation approaches have become increasingly accurate, they often fail in common scenarios involving self-contact, such as a hand touching the face. In contrast, wearable bioimpedance sensing can cheaply and unobtrusively measure ground-truth skin...",
-        "key_contributions": [
-          "Capturing accurate 3D human pose in the wild would provide valuable data for training pose estimation and motion generation methods.",
-          "While video-based estimation approaches have become increasingly accurate, they often fail in common scenarios involving self-contact, such as a hand touching the face.",
-          "In contrast, wearable bioimpedance sensing can cheaply and unobtrusively measure ground-truth skin-to-skin contact."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.04862v1.mp3"
-      }
-    },
-    {
-      "id": "2512.05112v1",
-      "title": "DraCo: Draft as CoT for Text-to-Image Preview and Rare Concept Generation",
-      "authors": [
-        "Dongzhi Jiang",
-        "Renrui Zhang",
-        "Haodong Li",
-        "Zhuofan Zong",
-        "Ziyu Guo",
-        "Jun He",
-        "Claire Guo",
-        "Junyan Ye",
-        "Rongyao Fang",
-        "Weijia Li",
-        "Rui Liu",
-        "Hongsheng Li"
-      ],
-      "abstract": "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation. However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning. To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning paradigm that fully leverages both textual and visual contents in CoT for better planning and verification. Our method first generates a low-resolution draft image as preview, providing more concrete and structural visual planning and guidance. Then, we employ the model's inherent understanding capability to verify potential semantic misalignments between the draft and input prompt, and performs refinement through selective corrections with super-resolution. In this way, our approach addresses two fundamental challenges: the coarse-grained nature of textual planning and the difficulty in generating rare attribute combinations. To support training, we curate DraCo-240K, aiming to enhance three atomic capabilities spanning general correction, instance manipulation, and layout reorganization. Supported by DraCo-CFG, a specialized classifier-free guidance (CFG) strategy for interleaved reasoning, DraCo achieves a tremendous increase on GenEval (+8%), Imagine-Bench (+0.91), and GenEval++ (+3%), significantly outperforming direct generation and other generation methods empowered by CoT.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
+      "abstract": "Grounding is a fundamental capability for building graphical user interface (GUI) agents. Although existing approaches rely on large-scale bounding box supervision, they still face various challenges, such as cross-platform generalization, complex layout analysis, and fine-grained element localization. In this paper, we investigate zoom as a strong yet underexplored prior for GUI grounding, and propose a training-free method, ZoomClick. By characterizing four key properties of zoom (i.e., pre-zoom, depth, shrink size, minimal crop size), we unlock its full capabilities for dynamic spatial focusing and adaptive context switching. Experiments demonstrate that our method significantly boosts the performance of both general vision-language and specialized GUI grounding models, achieving state-of-the-art results on several mainstream benchmarks; for example, UI-Venus-72B attains a 73.1% success rate on ScreenSpot-Pro. Furthermore, we present GUIZoom-Bench, a benchmark for evaluating model adaptability to zoom, aiming to inspire future research on improving zoom for further training and test-time scaling in GUI grounding tasks.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
       "categories": [
         "cs.CV",
         "cs.AI",
-        "cs.CL",
-        "cs.LG"
+        "cs.CL"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05112v1",
-        "pdf": "https://arxiv.org/pdf/2512.05112v1"
+        "paper": "http://arxiv.org/abs/2512.05941v1",
+        "pdf": "https://arxiv.org/pdf/2512.05941v1"
       },
-      "arxiv_id": "2512.05112v1",
-      "comment": "Project Page: https://github.com/CaraJ7/DraCo",
+      "arxiv_id": "2512.05941v1",
+      "comment": "Code is available at https://github.com/Princeton-AI2-Lab/ZoomClick",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.25,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation. However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning. To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning p...",
-        "key_contributions": [
-          "Recent unified multimodal large language models (MLLMs) have shown impressive capabilities, incorporating chain-of-thought (CoT) reasoning for enhanced text-to-image generation.",
-          "However, existing approaches remain limited, either treating the model merely as a standalone generator or relying on abstract textual planning.",
-          "To this end, we propose Draft-as-CoT (DraCo), a novel interleaved reasoning paradigm that fully leverages both textual and visual contents in CoT for better planning and verification."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.05112v1.mp3"
-      }
-    },
-    {
-      "id": "2512.05094v1",
-      "title": "From Generated Human Videos to Physically Plausible Robot Trajectories",
-      "authors": [
-        "James Ni",
-        "Zekai Wang",
-        "Wei Lin",
-        "Amir Bar",
-        "Yann LeCun",
-        "Trevor Darrell",
-        "Jitendra Malik",
-        "Roei Herzig"
-      ],
-      "abstract": "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic-a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05094v1",
-        "pdf": "https://arxiv.org/pdf/2512.05094v1"
-      },
-      "arxiv_id": "2512.05094v1",
-      "comment": "For project website, see https://genmimic.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are ...",
-        "key_contributions": [
-          "Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control.",
-          "To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video.",
-          "To address this, we introduce a two-stage pipeline."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.05094v1.mp3"
-      }
-    },
-    {
-      "id": "2512.05113v1",
-      "title": "Splannequin: Freezing Monocular Mannequin-Challenge Footage with Dual-Detection Splatting",
-      "authors": [
-        "Hao-Jen Chien",
-        "Yi-Chuan Huang",
-        "Chung-Ho Wu",
-        "Wei-Lun Chao",
-        "Yu-Lun Liu"
-      ],
-      "abstract": "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction. Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection. To achieve this, we introduce a novel application of dynamic Gaussian splatting: the scene is modeled dynamically, which retains nearby temporal variation, and a static scene is rendered by fixing the model's time parameter. However, under this usage, monocular capture with sparse temporal supervision introduces artifacts like ghosting and blur for Gaussians that become unobserved or occluded at weakly supervised timestamps. We propose Splannequin, an architecture-agnostic regularization that detects two states of Gaussian primitives, hidden and defective, and applies temporal anchoring. Under predominantly forward camera motion, hidden states are anchored to their recent well-observed past states, while defective states are anchored to future states with stronger supervision. Our method integrates into existing dynamic Gaussian pipelines via simple loss terms, requires no architectural changes, and adds zero inference overhead. This results in markedly improved visual quality, enabling high-fidelity, user-selectable frozen-time renderings, validated by a 96% user preference. Project page: https://chien90190.github.io/splannequin/",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05113v1",
-        "pdf": "https://arxiv.org/pdf/2512.05113v1"
-      },
-      "arxiv_id": "2512.05113v1",
-      "comment": "WACV 2025. Project page: https://chien90190.github.io/splannequin/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.188983050847457,
-      "score_breakdown": {
-        "total_score": 4.19,
-        "field_match": {
-          "score": 0.85,
-          "matches": [
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction. Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection. To achieve this, we introduce a novel application of dynamic Gaussi...",
-        "key_contributions": [
-          "Synthesizing high-fidelity frozen 3D scenes from monocular Mannequin-Challenge (MC) videos is a unique problem distinct from standard dynamic scene reconstruction.",
-          "Instead of focusing on modeling motion, our goal is to create a frozen scene while strategically preserving subtle dynamics to enable user-controlled instant selection.",
-          "To achieve this, we introduce a novel application of dynamic Gaussian splatting: the scene is modeled dynamically, which retains nearby temporal variation, and a static scene is rendered by fixing the model's time parameter."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.05113v1.mp3"
-      }
-    },
-    {
-      "id": "2512.05091v1",
-      "title": "Visual Reasoning Tracer: Object-Level Grounded Reasoning Benchmark",
-      "authors": [
-        "Haobo Yuan",
-        "Yueyi Sun",
-        "Yanwei Li",
-        "Tao Zhang",
-        "Xueqing Deng",
-        "Henghui Ding",
-        "Lu Qi",
-        "Anran Wang",
-        "Xiangtai Li",
-        "Ming-Hsuan Yang"
-      ],
-      "abstract": "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering. However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.g., pixels, locations) that lead to the result. This contrasts with human intelligence, which naturally operates through a chain of visual reasoning. To address this limitation, we introduce the Visual Reasoning Tracer (VRT) task, which requires models to not only localize the target object but also explicitly predict the intermediate objects that form the reasoning path. To advance research in this area, we contribute: (1) VRT-Bench, a human-annotated benchmark for evaluating visual reasoning; (2) a new metric for assessing the quality of reasoning traces; and (3) VRT-80k, a large-scale dataset for reasoning model training. Our experiments reveal that while existing models often produce the correct final output, they struggle to ground their intermediate reasoning. In contrast, models trained on VRT-80k achieve substantial improvements in tracing the reasoning path.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05091v1",
-        "pdf": "https://arxiv.org/pdf/2512.05091v1"
-      },
-      "arxiv_id": "2512.05091v1",
-      "comment": "Technical Report; Project Page: https://harboryuan.github.io/visual-reasoning-tracer",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -453,116 +125,53 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering. However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.g., pixels, locations) that lead to the result. T...",
-        "key_contributions": [
-          "Recent advances in Multimodal Large Language Models (MLLMs) have significantly improved performance on tasks such as visual grounding and visual question answering.",
-          "However, the reasoning processes of these models remain largely opaque; they typically output only final predictions without revealing the intermediate steps or fine-grained evidence (e.",
-          "g."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.05091v1.mp3"
-      }
-    },
-    {
-      "id": "2512.04815v1",
-      "title": "RobustSplat++: Decoupling Densification, Dynamics, and Illumination for In-the-Wild 3DGS",
-      "authors": [
-        "Chuanyu Fu",
-        "Guanying Chen",
-        "Yuqi Zhang",
-        "Kunbin Yao",
-        "Yuan Xiong",
-        "Chuan Huang",
-        "Shuguang Cui",
-        "Yasuyuki Matsushita",
-        "Xiaochun Cao"
-      ],
-      "abstract": "3D Gaussian Splatting (3DGS) has gained significant attention for its real-time, photo-realistic rendering in novel-view synthesis and 3D modeling. However, existing methods struggle with accurately modeling in-the-wild scenes affected by transient objects and illuminations, leading to artifacts in the rendered images. We identify that the Gaussian densification process, while enhancing scene detail capture, unintentionally contributes to these artifacts by growing additional Gaussians that model transient disturbances and illumination variations. To address this, we propose RobustSplat++, a robust solution based on several critical designs. First, we introduce a delayed Gaussian growth strategy that prioritizes optimizing static scene structure before allowing Gaussian splitting/cloning, mitigating overfitting to transient objects in early optimization. Second, we design a scale-cascaded mask bootstrapping approach that first leverages lower-resolution feature similarity supervision for reliable initial transient mask estimation, taking advantage of its stronger semantic consistency and robustness to noise, and then progresses to high-resolution supervision to achieve more precise mask prediction. Third, we incorporate the delayed Gaussian growth strategy and mask bootstrapping with appearance modeling to handling in-the-wild scenes including transients and illuminations. Extensive experiments on multiple challenging datasets show that our method outperforms existing methods, clearly demonstrating the robustness and effectiveness of our method.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.04815v1",
-        "pdf": "https://arxiv.org/pdf/2512.04815v1"
-      },
-      "arxiv_id": "2512.04815v1",
-      "comment": "arXiv admin note: substantial text overlap with arXiv:2506.02751",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.977966101694915,
-      "score_breakdown": {
-        "total_score": 3.98,
-        "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "3D Gaussian Splatting (3DGS) has gained significant attention for its real-time, photo-realistic rendering in novel-view synthesis and 3D modeling. However, existing methods struggle with accurately modeling in-the-wild scenes affected by transient objects and illuminations, leading to artifacts in the rendered images. We identify that the Gaussian densification process, while enhancing scene deta...",
+        "short": "Grounding is a fundamental capability for building graphical user interface (GUI) agents. Although existing approaches rely on large-scale bounding box supervision, they still face various challenges, such as cross-platform generalization, complex layout analysis, and fine-grained element localization. In this paper, we investigate zoom as a strong yet underexplored prior for GUI grounding, and pr...",
         "key_contributions": [
-          "3D Gaussian Splatting (3DGS) has gained significant attention for its real-time, photo-realistic rendering in novel-view synthesis and 3D modeling.",
-          "However, existing methods struggle with accurately modeling in-the-wild scenes affected by transient objects and illuminations, leading to artifacts in the rendered images.",
-          "We identify that the Gaussian densification process, while enhancing scene detail capture, unintentionally contributes to these artifacts by growing additional Gaussians that model transient disturbances and illumination variations."
+          "Grounding is a fundamental capability for building graphical user interface (GUI) agents.",
+          "Although existing approaches rely on large-scale bounding box supervision, they still face various challenges, such as cross-platform generalization, complex layout analysis, and fine-grained element localization.",
+          "In this paper, we investigate zoom as a strong yet underexplored prior for GUI grounding, and propose a training-free method, ZoomClick."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.04815v1.mp3"
+        "audio_url": "/audio/2512.05941v1.mp3"
       }
     },
     {
-      "id": "2512.04981v1",
-      "title": "Aligned but Stereotypical? The Hidden Influence of System Prompts on Social Bias in LVLM-Based Text-to-Image Models",
+      "id": "2512.05965v1",
+      "title": "EditThinker: Unlocking Iterative Reasoning for Any Image Editor",
       "authors": [
-        "NaHyeon Park",
-        "Namin An",
-        "Kunhee Kim",
-        "Soyeon Yoon",
-        "Jiahao Huo",
-        "Hyunjung Shim"
+        "Hongyu Li",
+        "Manyuan Zhang",
+        "Dian Zheng",
+        "Ziyu Guo",
+        "Yimeng Jia",
+        "Kaituo Feng",
+        "Hao Yu",
+        "Yexin Liu",
+        "Yan Feng",
+        "Peng Pei",
+        "Xunliang Cai",
+        "Linjiang Huang",
+        "Hongsheng Li",
+        "Si Liu"
       ],
-      "abstract": "Large vision-language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood. In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models. We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity and evaluate demographic bias across multiple attributes in a systematic manner. Our analysis identifies system prompts, the predefined instructions guiding LVLMs, as a primary driver of biased behavior. Through decoded intermediate representations, token-probability diagnostics, and embedding-association analyses, we reveal how system prompts encode demographic priors that propagate into image synthesis. To this end, we propose FairPro, a training-free meta-prompting framework that enables LVLMs to self-audit and construct fairness-aware system prompts at test time. Experiments on two LVLM-based T2I models, SANA and Qwen-Image, show that FairPro substantially reduces demographic bias while preserving text-image alignment. We believe our findings provide deeper insight into the central role of system prompts in bias propagation and offer a practical, deployable approach for building more socially responsible T2I systems.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
+      "abstract": "Instruction-based image editing has emerged as a prominent research area, which, benefiting from image generation foundation models, have achieved high aesthetic quality, making instruction-following capability the primary challenge. Existing approaches improve instruction adherence via supervised or reinforcement learning, yet single-turn success rates remain limited due to inherent stochasticity and a lack of deliberation. In this work, we propose a deliberative editing framework to 'think' while they edit, which simulates the human cognitive loop by iteratively executing a Think-while-Edit cycle: Critiquing results and Refining instructions , followed by Repeating the generation until satisfactory. Specifically, we train a single MLLM, EditThinker, to act as the reasoning engine of this framework, which jointly produce the critique score, reasoning process, and refined instructions. We employ reinforcement learning to align the EditThinker's thinking with its editing, thereby generating more targeted instruction improvements. Extensive experiments on four benchmarks demonstrate that our approach significantly improves the instruction-following capability of any image editing model by a large margin. We will release our data construction framework, datasets, and models to benefit the community.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
       "categories": [
-        "cs.CV",
-        "cs.LG"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.04981v1",
-        "pdf": "https://arxiv.org/pdf/2512.04981v1"
+        "paper": "http://arxiv.org/abs/2512.05965v1",
+        "pdf": "https://arxiv.org/pdf/2512.05965v1"
       },
-      "arxiv_id": "2512.04981v1",
-      "comment": "Project page: https://fairpro-t2i.github.io",
+      "arxiv_id": "2512.05965v1",
+      "comment": "Project page: https://appletea233.github.io/think-while-edit",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.9,
@@ -593,49 +202,185 @@
         }
       },
       "ai_summaries": {
-        "short": "Large vision-language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood. In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models. We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity...",
+        "short": "Instruction-based image editing has emerged as a prominent research area, which, benefiting from image generation foundation models, have achieved high aesthetic quality, making instruction-following capability the primary challenge. Existing approaches improve instruction adherence via supervised or reinforcement learning, yet single-turn success rates remain limited due to inherent stochasticity...",
         "key_contributions": [
-          "Large vision-language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood.",
-          "In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models.",
-          "We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity and evaluate demographic bias across multiple attributes in a systematic manner."
+          "Instruction-based image editing has emerged as a prominent research area, which, benefiting from image generation foundation models, have achieved high aesthetic quality, making instruction-following capability the primary challenge.",
+          "Existing approaches improve instruction adherence via supervised or reinforcement learning, yet single-turn success rates remain limited due to inherent stochasticity and a lack of deliberation.",
+          "In this work, we propose a deliberative editing framework to 'think' while they edit, which simulates the human cognitive loop by iteratively executing a Think-while-Edit cycle: Critiquing results and Refining instructions , followed by Repeating the generation until satisfactory."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.04981v1.mp3"
+        "audio_url": "/audio/2512.05965v1.mp3"
       }
     },
     {
-      "id": "2512.04829v1",
-      "title": "Model-Based and Sample-Efficient AI-Assisted Math Discovery in Sphere Packing",
+      "id": "2512.05814v1",
+      "title": "UG-FedDA: Uncertainty-Guided Federated Domain Adaptation for Multi-Center Alzheimer's Disease Detection",
       "authors": [
-        "Rasul Tutunov",
-        "Alexandre Maraval",
-        "Antoine Grosnit",
-        "Xihan Li",
-        "Jun Wang",
-        "Haitham Bou-Ammar"
+        "Fubao Zhu",
+        "Zhanyuan Jia",
+        "Zhiguo Wang",
+        "Huan Huang",
+        "Danyang Sun",
+        "Chuang Han",
+        "Yanting Li",
+        "Jiaofen Nan",
+        "Chen Zhao",
+        "Weihua Zhou"
       ],
-      "abstract": "Sphere packing, Hilbert's eighteenth problem, asks for the densest arrangement of congruent spheres in n-dimensional Euclidean space. Although relevant to areas such as cryptography, crystallography, and medical imaging, the problem remains unresolved: beyond a few special dimensions, neither optimal packings nor tight upper bounds are known. Even a major breakthrough in dimension $n=8$, later recognised with a Fields Medal, underscores its difficulty. A leading technique for upper bounds, the three-point method, reduces the problem to solving large, high-precision semidefinite programs (SDPs). Because each candidate SDP may take days to evaluate, standard data-intensive AI approaches are infeasible. We address this challenge by formulating SDP construction as a sequential decision process, the SDP game, in which a policy assembles SDP formulations from a set of admissible components. Using a sample-efficient model-based framework that combines Bayesian optimisation with Monte Carlo Tree Search, we obtain new state-of-the-art upper bounds in dimensions $4-16$, showing that model-based search can advance computational progress in longstanding geometric problems. Together, these results demonstrate that sample-efficient, model-based search can make tangible progress on mathematically rigid, evaluation limited problems, pointing towards a complementary direction for AI-assisted discovery beyond large-scale LLM-driven exploration.",
-      "published": "2025-12-04",
-      "updated": "2025-12-04",
+      "abstract": "Alzheimer's disease (AD) is an irreversible neurodegenerative disorder, and early diagnosis is critical for timely intervention. However, most existing classification frameworks face challenges in multicenter studies, as they often neglect inter-site heterogeneity and lack mechanisms to quantify uncertainty, which limits their robustness and clinical applicability. To address these issues, we proposed Uncertainty-Guided Federated Domain Adaptation (UG-FedDA), a novel multicenter AD classification framework that integrates uncertainty quantification (UQ) with federated domain adaptation to handle cross-site structure magnetic resonance imaging (MRI) heterogeneity under privacy constraints. Our approach extracts multi-template region-of-interest (RoI) features using a self-attention transformer, capturing both regional representations and their interactions. UQ is integrated to guide feature alignment, mitigating source-target distribution shifts by down-weighting uncertain samples. Experiments are conducted on three public datasets: the Alzheimer's Disease Neuroimaging Initiative (ADNI), the Australian Imaging, Biomarkers and Lifestyle study (AIBL), and the Open Access Series of Imaging Studies (OASIS). UG-FedDA achieved consistent cross-domain improvements in accuracy, sensitivity, and area under the ROC curve across three classification tasks: AD vs. normal controls (NC), mild cognitive impairment (MCI) vs. AD, and NC vs. MCI. For NC vs. AD, UG-FedDA achieves accuracies of 90.54%, 89.04%, and 77.78% on ADNI, AIBL and OASIS datasets, respectively. For MCI vs. AD, accuracies are 80.20% (ADNI), 71.91% (AIBL), and 79.73% (OASIS). For NC vs. MCI, results are 76.87% (ADNI), 73.91% (AIBL), and 83.73% (OASIS). These results demonstrate that the proposed framework not only adapts efficiently across multiple sites but also preserves strict privacy.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
       "categories": [
-        "cs.AI"
+        "cs.CV"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.04829v1",
-        "pdf": "https://arxiv.org/pdf/2512.04829v1"
+        "paper": "http://arxiv.org/abs/2512.05814v1",
+        "pdf": "https://arxiv.org/pdf/2512.05814v1"
       },
-      "arxiv_id": "2512.04829v1",
-      "comment": "",
+      "arxiv_id": "2512.05814v1",
+      "comment": "The code is already available on GitHub: https://github.com/chenzhao2023/UG_FADDA_AlzhemiersClassification",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.8550847457627118,
+      "has_code": true,
+      "relevance_score": 3.9,
       "score_breakdown": {
-        "total_score": 3.86,
+        "total_score": 3.9,
         "field_match": {
-          "score": 0.76,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Alzheimer's disease (AD) is an irreversible neurodegenerative disorder, and early diagnosis is critical for timely intervention. However, most existing classification frameworks face challenges in multicenter studies, as they often neglect inter-site heterogeneity and lack mechanisms to quantify uncertainty, which limits their robustness and clinical applicability. To address these issues, we prop...",
+        "key_contributions": [
+          "Alzheimer's disease (AD) is an irreversible neurodegenerative disorder, and early diagnosis is critical for timely intervention.",
+          "However, most existing classification frameworks face challenges in multicenter studies, as they often neglect inter-site heterogeneity and lack mechanisms to quantify uncertainty, which limits their robustness and clinical applicability.",
+          "To address these issues, we proposed Uncertainty-Guided Federated Domain Adaptation (UG-FedDA), a novel multicenter AD classification framework that integrates uncertainty quantification (UQ) with federated domain adaptation to handle cross-site structure magnetic resonance imaging (MRI) heterogeneity under privacy constraints."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05814v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05774v1",
+      "title": "Active Video Perception: Iterative Evidence Seeking for Agentic Long Video Understanding",
+      "authors": [
+        "Ziyang Wang",
+        "Honglu Zhou",
+        "Shijie Wang",
+        "Junnan Li",
+        "Caiming Xiong",
+        "Silvio Savarese",
+        "Mohit Bansal",
+        "Michael S. Ryoo",
+        "Juan Carlos Niebles"
+      ],
+      "abstract": "Long video understanding (LVU) is challenging because answering real-world queries often depends on sparse, temporally dispersed cues buried in hours of mostly redundant and irrelevant content. While agentic pipelines improve video reasoning capabilities, prevailing frameworks rely on a query-agnostic captioner to perceive video information, which wastes computation on irrelevant content and blurs fine-grained temporal and spatial information. Motivated by active perception theory, we argue that LVU agents should actively decide what, when, and where to observe, and continuously assess whether the current observation is sufficient to answer the query. We present Active Video Perception (AVP), an evidence-seeking framework that treats the video as an interactive environment and acquires compact, queryrelevant evidence directly from pixels. Concretely, AVP runs an iterative plan-observe-reflect process with MLLM agents. In each round, a planner proposes targeted video interactions, an observer executes them to extract time-stamped evidence, and a reflector evaluates the sufficiency of the evidence for the query, either halting with an answer or triggering further observation. Across five LVU benchmarks, AVP achieves highest performance with significant improvements. Notably, AVP outperforms the best agentic method by 5.7% in average accuracy while only requires 18.4% inference time and 12.4% input tokens.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05774v1",
+        "pdf": "https://arxiv.org/pdf/2512.05774v1"
+      },
+      "arxiv_id": "2512.05774v1",
+      "comment": "Website: https://activevideoperception.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Long video understanding (LVU) is challenging because answering real-world queries often depends on sparse, temporally dispersed cues buried in hours of mostly redundant and irrelevant content. While agentic pipelines improve video reasoning capabilities, prevailing frameworks rely on a query-agnostic captioner to perceive video information, which wastes computation on irrelevant content and blurs...",
+        "key_contributions": [
+          "Long video understanding (LVU) is challenging because answering real-world queries often depends on sparse, temporally dispersed cues buried in hours of mostly redundant and irrelevant content.",
+          "While agentic pipelines improve video reasoning capabilities, prevailing frameworks rely on a query-agnostic captioner to perceive video information, which wastes computation on irrelevant content and blurs fine-grained temporal and spatial information.",
+          "Motivated by active perception theory, we argue that LVU agents should actively decide what, when, and where to observe, and continuously assess whether the current observation is sufficient to answer the query."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05774v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05620v1",
+      "title": "Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales",
+      "authors": [
+        "Shikai Qiu",
+        "Zixi Chen",
+        "Hoang Phan",
+        "Qi Lei",
+        "Andrew Gordon Wilson"
+      ],
+      "abstract": "Several recently introduced deep learning optimizers utilizing matrix-level preconditioning have shown promising speedups relative to the current dominant optimizer AdamW, particularly in relatively small-scale experiments. However, efforts to validate and replicate their successes have reported mixed results. To better understand the effectiveness of these optimizers at scale, in this work we investigate how to scale preconditioned optimizers via hyperparameter transfer, building on prior works such as $μ$P. We study how the optimal learning rate and weight decay should scale with model width and depth for a wide range of optimizers, including Shampoo, SOAP, and Muon, accounting for the impact of commonly used techniques such as blocking and grafting. We find that scaling the learning rate according to $μ$P improves transfer, but can still suffer from significant finite-width deviations that cause drifting optimal learning rates, which we show can be mitigated by blocking and explicit spectral normalization. For compute-optimal scaling, we find scaling independent weight decay as $1/\\mathrm{width}$ is nearly optimal across optimizers. Applying these scaling rules, we show Muon and Shampoo consistently achieve $1.4\\times$ and $1.3\\times$ speedup over AdamW for training Llama-architecture language models of sizes ranging from $190$M to $1.4$B, whereas the speedup vanishes rapidly with scale under incorrect scaling. Based on these results and further ablations, we argue that studying optimal hyperparameter transfer is essential for reliably comparing optimizers at scale given a realistic tuning budget.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05620v1",
+        "pdf": "https://arxiv.org/pdf/2512.05620v1"
+      },
+      "arxiv_id": "2512.05620v1",
+      "comment": "NeurIPS 2025. Code available at: https://github.com/charliezchen/scaling-matrix-preconditioning",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8694915254237285,
+      "score_breakdown": {
+        "total_score": 3.87,
+        "field_match": {
+          "score": 0.42,
           "matches": [
-            "medical imaging"
+            "deep learning"
           ],
           "weight": 0.4
         },
@@ -645,7 +390,73 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
           "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Several recently introduced deep learning optimizers utilizing matrix-level preconditioning have shown promising speedups relative to the current dominant optimizer AdamW, particularly in relatively small-scale experiments. However, efforts to validate and replicate their successes have reported mixed results. To better understand the effectiveness of these optimizers at scale, in this work we inv...",
+        "key_contributions": [
+          "Several recently introduced deep learning optimizers utilizing matrix-level preconditioning have shown promising speedups relative to the current dominant optimizer AdamW, particularly in relatively small-scale experiments.",
+          "However, efforts to validate and replicate their successes have reported mixed results.",
+          "To better understand the effectiveness of these optimizers at scale, in this work we investigate how to scale preconditioned optimizers via hyperparameter transfer, building on prior works such as $μ$P."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05620v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05960v1",
+      "title": "AQUA-Net: Adaptive Frequency Fusion and Illumination Aware Network for Underwater Image Enhancement",
+      "authors": [
+        "Munsif Ali",
+        "Najmul Hassan",
+        "Lucia Ventura",
+        "Davide Di Bari",
+        "Simonepietro Canese"
+      ],
+      "abstract": "Underwater images often suffer from severe color distortion, low contrast, and a hazy appearance due to wavelength-dependent light absorption and scattering. Simultaneously, existing deep learning models exhibit high computational complexity, which limits their practical deployment for real-time underwater applications. To address these challenges, this paper presents a novel underwater image enhancement model, called Adaptive Frequency Fusion and Illumination Aware Network (AQUA-Net). It integrates a residual encoder decoder with dual auxiliary branches, which operate in the frequency and illumination domains. The frequency fusion encoder enriches spatial representations with frequency cues from the Fourier domain and preserves fine textures and structural details. Inspired by Retinex, the illumination-aware decoder performs adaptive exposure correction through a learned illumination map that separates reflectance from lighting effects. This joint spatial, frequency, and illumination design enables the model to restore color balance, visual contrast, and perceptual realism under diverse underwater conditions. Additionally, we present a high-resolution, real-world underwater video-derived dataset from the Mediterranean Sea, which captures challenging deep-sea conditions with realistic visual degradations to enable robust evaluation and development of deep learning models. Extensive experiments on multiple benchmark datasets show that AQUA-Net performs on par with SOTA in both qualitative and quantitative evaluations while using less number of parameters. Ablation studies further confirm that the frequency and illumination branches provide complementary contributions that improve visibility and color representation. Overall, the proposed model shows strong generalization capability and robustness, and it provides an effective solution for real-world underwater imaging applications.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05960v1",
+        "pdf": "https://arxiv.org/pdf/2512.05960v1"
+      },
+      "arxiv_id": "2512.05960v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.8194915254237287,
+      "score_breakdown": {
+        "total_score": 3.82,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -654,19 +465,219 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 7.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Sphere packing, Hilbert's eighteenth problem, asks for the densest arrangement of congruent spheres in n-dimensional Euclidean space. Although relevant to areas such as cryptography, crystallography, and medical imaging, the problem remains unresolved: beyond a few special dimensions, neither optimal packings nor tight upper bounds are known. Even a major breakthrough in dimension $n=8$, later rec...",
+        "short": "Underwater images often suffer from severe color distortion, low contrast, and a hazy appearance due to wavelength-dependent light absorption and scattering. Simultaneously, existing deep learning models exhibit high computational complexity, which limits their practical deployment for real-time underwater applications. To address these challenges, this paper presents a novel underwater image enha...",
         "key_contributions": [
-          "Sphere packing, Hilbert's eighteenth problem, asks for the densest arrangement of congruent spheres in n-dimensional Euclidean space.",
-          "Although relevant to areas such as cryptography, crystallography, and medical imaging, the problem remains unresolved: beyond a few special dimensions, neither optimal packings nor tight upper bounds are known.",
-          "Even a major breakthrough in dimension $n=8$, later recognised with a Fields Medal, underscores its difficulty."
+          "Underwater images often suffer from severe color distortion, low contrast, and a hazy appearance due to wavelength-dependent light absorption and scattering.",
+          "Simultaneously, existing deep learning models exhibit high computational complexity, which limits their practical deployment for real-time underwater applications.",
+          "To address these challenges, this paper presents a novel underwater image enhancement model, called Adaptive Frequency Fusion and Illumination Aware Network (AQUA-Net)."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.04829v1.mp3"
+        "audio_url": "/audio/2512.05960v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05936v1",
+      "title": "Synset Signset Germany: a Synthetic Dataset for German Traffic Sign Recognition",
+      "authors": [
+        "Anne Sielemann",
+        "Lena Loercher",
+        "Max-Lion Schumacher",
+        "Stefan Wolf",
+        "Masoud Roschani",
+        "Jens Ziehn"
+      ],
+      "abstract": "In this paper, we present a synthesis pipeline and dataset for training / testing data in the task of traffic sign recognition that combines the advantages of data-driven and analytical modeling: GAN-based texture generation enables data-driven dirt and wear artifacts, rendering unique and realistic traffic sign surfaces, while the analytical scene modulation achieves physically correct lighting and allows detailed parameterization. In particular, the latter opens up applications in the context of explainable AI (XAI) and robustness tests due to the possibility of evaluating the sensitivity to parameter changes, which we demonstrate with experiments. Our resulting synthetic traffic sign recognition dataset Synset Signset Germany contains a total of 105500 images of 211 different German traffic sign classes, including newly published (2020) and thus comparatively rare traffic signs. In addition to a mask and a segmentation image, we also provide extensive metadata including the stochastically selected environment and imaging effect parameters for each image. We evaluate the degree of realism of Synset Signset Germany on the real-world German Traffic Sign Recognition Benchmark (GTSRB) and in comparison to CATERED, a state-of-the-art synthetic traffic sign recognition dataset.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05936v1",
+        "pdf": "https://arxiv.org/pdf/2512.05936v1"
+      },
+      "arxiv_id": "2512.05936v1",
+      "comment": "8 pages, 8 figures, 3 tables",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.8033898305084746,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "In this paper, we present a synthesis pipeline and dataset for training / testing data in the task of traffic sign recognition that combines the advantages of data-driven and analytical modeling: GAN-based texture generation enables data-driven dirt and wear artifacts, rendering unique and realistic traffic sign surfaces, while the analytical scene modulation achieves physically correct lighting a...",
+        "key_contributions": [
+          "In this paper, we present a synthesis pipeline and dataset for training / testing data in the task of traffic sign recognition that combines the advantages of data-driven and analytical modeling: GAN-based texture generation enables data-driven dirt and wear artifacts, rendering unique and realistic traffic sign surfaces, while the analytical scene modulation achieves physically correct lighting and allows detailed parameterization.",
+          "In particular, the latter opens up applications in the context of explainable AI (XAI) and robustness tests due to the possibility of evaluating the sensitivity to parameter changes, which we demonstrate with experiments.",
+          "Our resulting synthetic traffic sign recognition dataset Synset Signset Germany contains a total of 105500 images of 211 different German traffic sign classes, including newly published (2020) and thus comparatively rare traffic signs."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05936v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05665v1",
+      "title": "Interleaved Latent Visual Reasoning with Selective Perceptual Modeling",
+      "authors": [
+        "Shuai Dong",
+        "Siyuan Wang",
+        "Xingyu Liu",
+        "Zhongyu Wei"
+      ],
+      "abstract": "Interleaved reasoning paradigms enhance Multimodal Large Language Models (MLLMs) with visual feedback but are hindered by the prohibitive computational cost of repeatedly re-encoding pixel-dense images. A promising alternative, latent visual reasoning, circumvents this bottleneck yet currently forces a critical trade-off: methods either sacrifice precise perceptual modeling by over-compressing features or fail to model dynamic problems due to static, non-interleaved structures. We introduce Interleaved Latent Visual Reasoning (ILVR), a framework that unifies dynamic state evolution with precise perceptual modeling. ILVR interleaves textual generation with latent visual representations that act as specific, evolving cues for subsequent reasoning. To enable this, we employ a self-supervision strategy where a Momentum Teacher Model selectively distills relevant features from helper images into sparse supervision targets. This adaptive selection mechanism guides the model to autonomously generate context-aware visual signals. Extensive experiments on multimodal reasoning benchmarks demonstrate that ILVR significantly outperforms existing approaches, effectively bridging the gap between fine-grained perception and sequential multimodal reasoning.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05665v1",
+        "pdf": "https://arxiv.org/pdf/2512.05665v1"
+      },
+      "arxiv_id": "2512.05665v1",
+      "comment": "11 pages, 6 figures. Code available at https://github.com/XD111ds/ILVR",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.75,
+      "score_breakdown": {
+        "total_score": 3.75,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Interleaved reasoning paradigms enhance Multimodal Large Language Models (MLLMs) with visual feedback but are hindered by the prohibitive computational cost of repeatedly re-encoding pixel-dense images. A promising alternative, latent visual reasoning, circumvents this bottleneck yet currently forces a critical trade-off: methods either sacrifice precise perceptual modeling by over-compressing fea...",
+        "key_contributions": [
+          "Interleaved reasoning paradigms enhance Multimodal Large Language Models (MLLMs) with visual feedback but are hindered by the prohibitive computational cost of repeatedly re-encoding pixel-dense images.",
+          "A promising alternative, latent visual reasoning, circumvents this bottleneck yet currently forces a critical trade-off: methods either sacrifice precise perceptual modeling by over-compressing features or fail to model dynamic problems due to static, non-interleaved structures.",
+          "We introduce Interleaved Latent Visual Reasoning (ILVR), a framework that unifies dynamic state evolution with precise perceptual modeling."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05665v1.mp3"
+      }
+    },
+    {
+      "id": "2512.05803v1",
+      "title": "3D Path Planning for Robot-assisted Vertebroplasty from Arbitrary Bi-plane X-ray via Differentiable Rendering",
+      "authors": [
+        "Blanca Inigo",
+        "Benjamin D. Killeen",
+        "Rebecca Choi",
+        "Michelle Song",
+        "Ali Uneri",
+        "Majid Khan",
+        "Christopher Bailey",
+        "Axel Krieger",
+        "Mathias Unberath"
+      ],
+      "abstract": "Robotic systems are transforming image-guided interventions by enhancing accuracy and minimizing radiation exposure. A significant challenge in robotic assistance lies in surgical path planning, which often relies on the registration of intraoperative 2D images with preoperative 3D CT scans. This requirement can be burdensome and costly, particularly in procedures like vertebroplasty, where preoperative CT scans are not routinely performed. To address this issue, we introduce a differentiable rendering-based framework for 3D transpedicular path planning utilizing bi-planar 2D X-rays. Our method integrates differentiable rendering with a vertebral atlas generated through a Statistical Shape Model (SSM) and employs a learned similarity loss to refine the SSM shape and pose dynamically, independent of fixed imaging geometries. We evaluated our framework in two stages: first, through vertebral reconstruction from orthogonal X-rays for benchmarking, and second, via clinician-in-the-loop path planning using arbitrary-view X-rays. Our results indicate that our method outperformed a normalized cross-correlation baseline in reconstruction metrics (DICE: 0.75 vs. 0.65) and achieved comparable performance to the state-of-the-art model ReVerteR (DICE: 0.77), while maintaining generalization to arbitrary views. Success rates for bipedicular planning reached 82% with synthetic data and 75% with cadaver data, exceeding the 66% and 31% rates of a 2D-to-3D baseline, respectively. In conclusion, our framework facilitates versatile, CT-free 3D path planning for robot-assisted vertebroplasty, effectively accommodating real-world imaging diversity without the need for preoperative CT scans.",
+      "published": "2025-12-05",
+      "updated": "2025-12-05",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.05803v1",
+        "pdf": "https://arxiv.org/pdf/2512.05803v1"
+      },
+      "arxiv_id": "2512.05803v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.7033898305084745,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "registration"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Robotic systems are transforming image-guided interventions by enhancing accuracy and minimizing radiation exposure. A significant challenge in robotic assistance lies in surgical path planning, which often relies on the registration of intraoperative 2D images with preoperative 3D CT scans. This requirement can be burdensome and costly, particularly in procedures like vertebroplasty, where preope...",
+        "key_contributions": [
+          "Robotic systems are transforming image-guided interventions by enhancing accuracy and minimizing radiation exposure.",
+          "A significant challenge in robotic assistance lies in surgical path planning, which often relies on the registration of intraoperative 2D images with preoperative 3D CT scans.",
+          "This requirement can be burdensome and costly, particularly in procedures like vertebroplasty, where preoperative CT scans are not routinely performed."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.05803v1.mp3"
       }
     }
   ]

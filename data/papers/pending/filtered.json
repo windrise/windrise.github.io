@@ -3,54 +3,52 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.05613v1",
-      "title": "DistillFSS: Synthesizing Few-Shot Knowledge into a Lightweight Segmentation Model",
+      "id": "2512.07807v1",
+      "title": "Lang3D-XL: Language Embedded 3D Gaussians for Large-scale Scenes",
       "authors": [
-        "Pasquale De Marinis",
-        "Pieter M. Blok",
-        "Uzay Kaymak",
-        "Rogier Brussee",
-        "Gennaro Vessio",
-        "Giovanna Castellano"
+        "Shai Krakovsky",
+        "Gal Fiebelman",
+        "Sagie Benaim",
+        "Hadar Averbuch-Elor"
       ],
-      "abstract": "Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) seeks to segment unknown classes in unseen domains using only a few annotated examples. This setting is inherently challenging: source and target domains exhibit substantial distribution shifts, label spaces are disjoint, and support images are scarce--making standard episodic methods unreliable and computationally demanding at test time. To address these constraints, we propose DistillFSS, a framework that embeds support-set knowledge directly into a model's parameters through a teacher--student distillation process. By internalizing few-shot reasoning into a dedicated layer within the student network, DistillFSS eliminates the need for support images at test time, enabling fast, lightweight inference, while allowing efficient extension to novel classes in unseen domains through rapid teacher-driven specialization. Combined with fine-tuning, the approach scales efficiently to large support sets and significantly reduces computational overhead. To evaluate the framework under realistic conditions, we introduce a new CD-FSS benchmark spanning medical imaging, industrial inspection, and remote sensing, with disjoint label spaces and variable support sizes. Experiments show that DistillFSS matches or surpasses state-of-the-art baselines, particularly in multi-class and multi-shot scenarios, while offering substantial efficiency gains. The code is available at https://github.com/pasqualedem/DistillFSS.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "Embedding a language field in a 3D representation enables richer semantic understanding of spatial environments by linking geometry with descriptive meaning. This allows for a more intuitive human-computer interaction, enabling querying or editing scenes using natural language, and could potentially improve tasks like scene retrieval, navigation, and multimodal reasoning. While such capabilities could be transformative, in particular for large-scale scenes, we find that recent feature distillation approaches cannot effectively learn over massive Internet data due to challenges in semantic feature misalignment and inefficiency in memory and runtime. To this end, we propose a novel approach to address these challenges. First, we introduce extremely low-dimensional semantic bottleneck features as part of the underlying 3D Gaussian representation. These are processed by rendering and passing them through a multi-resolution, feature-based, hash encoder. This significantly improves efficiency both in runtime and GPU memory. Second, we introduce an Attenuated Downsampler module and propose several regularizations addressing the semantic misalignment of ground truth 2D features. We evaluate our method on the in-the-wild HolyScenes dataset and demonstrate that it surpasses existing approaches in both performance and efficiency.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05613v1",
-        "pdf": "https://arxiv.org/pdf/2512.05613v1"
+        "paper": "http://arxiv.org/abs/2512.07807v1",
+        "pdf": "https://arxiv.org/pdf/2512.07807v1"
       },
-      "arxiv_id": "2512.05613v1",
-      "comment": "",
+      "arxiv_id": "2512.07807v1",
+      "comment": "Accepted to SIGGRAPH Asia 2025. Project webpage: https://tau-vailab.github.io/Lang3D-XL",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.1084745762711865,
+      "has_code": true,
+      "relevance_score": 5.438983050847457,
       "score_breakdown": {
-        "total_score": 4.11,
+        "total_score": 5.44,
         "field_match": {
-          "score": 1.27,
+          "score": 0.85,
           "matches": [
-            "medical imaging",
-            "segmentation"
+            "3d gaussian"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "SIGGRAPH",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -60,44 +58,97 @@
       }
     },
     {
-      "id": "2512.05941v1",
-      "title": "Zoom in, Click out: Unlocking and Evaluating the Potential of Zooming for GUI Grounding",
+      "id": "2512.07806v1",
+      "title": "Multi-view Pyramid Transformer: Look Coarser to See Broader",
       "authors": [
-        "Zhiyuan Jiang",
-        "Shenghao Xie",
-        "Wenyi Li",
-        "Wenqiang Zu",
-        "Peihang Li",
-        "Jiahao Qiu",
-        "Siqi Pei",
-        "Lei Ma",
-        "Tiejun Huang",
-        "Mengdi Wang",
-        "Shilong Liu"
+        "Gyeongjin Kang",
+        "Seungkwon Yang",
+        "Seungtae Nam",
+        "Younggeun Lee",
+        "Jungwoo Kim",
+        "Eunbyung Park"
       ],
-      "abstract": "Grounding is a fundamental capability for building graphical user interface (GUI) agents. Although existing approaches rely on large-scale bounding box supervision, they still face various challenges, such as cross-platform generalization, complex layout analysis, and fine-grained element localization. In this paper, we investigate zoom as a strong yet underexplored prior for GUI grounding, and propose a training-free method, ZoomClick. By characterizing four key properties of zoom (i.e., pre-zoom, depth, shrink size, minimal crop size), we unlock its full capabilities for dynamic spatial focusing and adaptive context switching. Experiments demonstrate that our method significantly boosts the performance of both general vision-language and specialized GUI grounding models, achieving state-of-the-art results on several mainstream benchmarks; for example, UI-Venus-72B attains a 73.1% success rate on ScreenSpot-Pro. Furthermore, we present GUIZoom-Bench, a benchmark for evaluating model adaptability to zoom, aiming to inspire future research on improving zoom for further training and test-time scaling in GUI grounding tasks.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "We propose Multi-view Pyramid Transformer (MVP), a scalable multi-view transformer architecture that directly reconstructs large 3D scenes from tens to hundreds of images in a single forward pass. Drawing on the idea of ``looking broader to see the whole, looking finer to see the details,\" MVP is built on two core design principles: 1) a local-to-global inter-view hierarchy that gradually broadens the model's perspective from local views to groups and ultimately the full scene, and 2) a fine-to-coarse intra-view hierarchy that starts from detailed spatial representations and progressively aggregates them into compact, information-dense tokens. This dual hierarchy achieves both computational efficiency and representational richness, enabling fast reconstruction of large and complex scenes. We validate MVP on diverse datasets and show that, when coupled with 3D Gaussian Splatting as the underlying 3D representation, it achieves state-of-the-art generalizable reconstruction quality while maintaining high efficiency and scalability across a wide range of view configurations.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05941v1",
-        "pdf": "https://arxiv.org/pdf/2512.05941v1"
+        "paper": "http://arxiv.org/abs/2512.07806v1",
+        "pdf": "https://arxiv.org/pdf/2512.07806v1"
       },
-      "arxiv_id": "2512.05941v1",
-      "comment": "Code is available at https://github.com/Princeton-AI2-Lab/ZoomClick",
+      "arxiv_id": "2512.07806v1",
+      "comment": "Project page: see https://gynjn.github.io/MVP/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.527966101694915,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.53,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.07599v1",
+      "title": "Online Segment Any 3D Thing as Instance Tracking",
+      "authors": [
+        "Hanshi Wang",
+        "Zijian Cai",
+        "Jin Gao",
+        "Yiwei Zhang",
+        "Weiming Hu",
+        "Ke Wang",
+        "Zhipeng Zhang"
+      ],
+      "abstract": "Online, real-time, and fine-grained 3D segmentation constitutes a fundamental capability for embodied intelligent agents to perceive and comprehend their operational environments. Recent advancements employ predefined object queries to aggregate semantic information from Vision Foundation Models (VFMs) outputs that are lifted into 3D point clouds, facilitating spatial information propagation through inter-query interactions. Nevertheless, perception is an inherently dynamic process, rendering temporal understanding a critical yet overlooked dimension within these prevailing query-based pipelines. Therefore, to further unlock the temporal environmental perception capabilities of embodied agents, our work reconceptualizes online 3D segmentation as an instance tracking problem (AutoSeg3D). Our core strategy involves utilizing object queries for temporal information propagation, where long-term instance association promotes the coherence of features and object identities, while short-term instance update enriches instant observations. Given that viewpoint variations in embodied robotics often lead to partial object visibility across frames, this mechanism aids the model in developing a holistic object understanding beyond incomplete instantaneous views. Furthermore, we introduce spatial consistency learning to mitigate the fragmentation problem inherent in VFMs, yielding more comprehensive instance information for enhancing the efficacy of both long-term and short-term temporal learning. The temporal information exchange and consistency learning facilitated by these sparse object queries not only enhance spatial comprehension but also circumvent the computational burden associated with dense temporal point cloud interactions. Our method establishes a new state-of-the-art, surpassing ESAM by 2.8 AP on ScanNet200 and delivering consistent gains on ScanNet, SceneNN, and 3RScan datasets.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.07599v1",
+        "pdf": "https://arxiv.org/pdf/2512.07599v1"
+      },
+      "arxiv_id": "2512.07599v1",
+      "comment": "NeurIPS 2025, Code is at https://github.com/AutoLab-SAI-SJTU/AutoSeg3D",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.203389830508474,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -121,45 +172,43 @@
       }
     },
     {
-      "id": "2512.05965v1",
-      "title": "EditThinker: Unlocking Iterative Reasoning for Any Image Editor",
+      "id": "2512.07674v1",
+      "title": "DIST-CLIP: Arbitrary Metadata and Image Guided MRI Harmonization via Disentangled Anatomy-Contrast Representations",
       "authors": [
-        "Hongyu Li",
-        "Manyuan Zhang",
-        "Dian Zheng",
-        "Ziyu Guo",
-        "Yimeng Jia",
-        "Kaituo Feng",
-        "Hao Yu",
-        "Yexin Liu",
-        "Yan Feng",
-        "Peng Pei",
-        "Xunliang Cai",
-        "Linjiang Huang",
-        "Hongsheng Li",
-        "Si Liu"
+        "Mehmet Yigit Avci",
+        "Pedro Borges",
+        "Virginia Fernandez",
+        "Paul Wright",
+        "Mehmet Yigitsoy",
+        "Sebastien Ourselin",
+        "Jorge Cardoso"
       ],
-      "abstract": "Instruction-based image editing has emerged as a prominent research area, which, benefiting from image generation foundation models, have achieved high aesthetic quality, making instruction-following capability the primary challenge. Existing approaches improve instruction adherence via supervised or reinforcement learning, yet single-turn success rates remain limited due to inherent stochasticity and a lack of deliberation. In this work, we propose a deliberative editing framework to 'think' while they edit, which simulates the human cognitive loop by iteratively executing a Think-while-Edit cycle: Critiquing results and Refining instructions , followed by Repeating the generation until satisfactory. Specifically, we train a single MLLM, EditThinker, to act as the reasoning engine of this framework, which jointly produce the critique score, reasoning process, and refined instructions. We employ reinforcement learning to align the EditThinker's thinking with its editing, thereby generating more targeted instruction improvements. Extensive experiments on four benchmarks demonstrate that our approach significantly improves the instruction-following capability of any image editing model by a large margin. We will release our data construction framework, datasets, and models to benefit the community.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "Deep learning holds immense promise for transforming medical image analysis, yet its clinical generalization remains profoundly limited. A major barrier is data heterogeneity. This is particularly true in Magnetic Resonance Imaging, where scanner hardware differences, diverse acquisition protocols, and varying sequence parameters introduce substantial domain shifts that obscure underlying biological signals. Data harmonization methods aim to reduce these instrumental and acquisition variability, but existing approaches remain insufficient. When applied to imaging data, image-based harmonization approaches are often restricted by the need for target images, while existing text-guided methods rely on simplistic labels that fail to capture complex acquisition details or are typically restricted to datasets with limited variability, failing to capture the heterogeneity of real-world clinical environments. To address these limitations, we propose DIST-CLIP (Disentangled Style Transfer with CLIP Guidance), a unified framework for MRI harmonization that flexibly uses either target images or DICOM metadata for guidance. Our framework explicitly disentangles anatomical content from image contrast, with the contrast representations being extracted using pre-trained CLIP encoders. These contrast embeddings are then integrated into the anatomical content via a novel Adaptive Style Transfer module. We trained and evaluated DIST-CLIP on diverse real-world clinical datasets, and showed significant improvements in performance when compared against state-of-the-art methods in both style translation fidelity and anatomical preservation, offering a flexible solution for style transfer and standardizing MRI data. Our code and weights will be made publicly available upon publication.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05965v1",
-        "pdf": "https://arxiv.org/pdf/2512.05965v1"
+        "paper": "http://arxiv.org/abs/2512.07674v1",
+        "pdf": "https://arxiv.org/pdf/2512.07674v1"
       },
-      "arxiv_id": "2512.05965v1",
-      "comment": "Project page: https://appletea233.github.io/think-while-edit",
+      "arxiv_id": "2512.07674v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
+      "has_code": false,
+      "relevance_score": 4.04406779661017,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 4.04,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.61,
+          "matches": [
+            "medical image",
+            "deep learning",
+            "image analysis"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -168,12 +217,78 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.07776v1",
+      "title": "GorillaWatch: An Automated System for In-the-Wild Gorilla Re-Identification and Population Monitoring",
+      "authors": [
+        "Maximilian Schall",
+        "Felix Leonard Knöfel",
+        "Noah Elias König",
+        "Jan Jonas Kubeler",
+        "Maximilian von Klinski",
+        "Joan Wilhelm Linnemann",
+        "Xiaoshi Liu",
+        "Iven Jelle Schlegelmilch",
+        "Ole Woyciniuk",
+        "Alexandra Schild",
+        "Dante Wasmuht",
+        "Magdalena Bermejo Espinet",
+        "German Illera Basas",
+        "Gerard de Melo"
+      ],
+      "abstract": "Monitoring critically endangered western lowland gorillas is currently hampered by the immense manual effort required to re-identify individuals from vast archives of camera trap footage. The primary obstacle to automating this process has been the lack of large-scale, \"in-the-wild\" video datasets suitable for training robust deep learning models. To address this gap, we introduce a comprehensive benchmark with three novel datasets: Gorilla-SPAC-Wild, the largest video dataset for wild primate re-identification to date; Gorilla-Berlin-Zoo, for assessing cross-domain re-identification generalization; and Gorilla-SPAC-MoT, for evaluating multi-object tracking in camera trap footage. Building on these datasets, we present GorillaWatch, an end-to-end pipeline integrating detection, tracking, and re-identification. To exploit temporal information, we introduce a multi-frame self-supervised pretraining strategy that leverages consistency in tracklets to learn domain-specific features without manual labels. To ensure scientific validity, a differentiable adaptation of AttnLRP verifies that our model relies on discriminative biometric traits rather than background correlations. Extensive benchmarking subsequently demonstrates that aggregating features from large-scale image backbones outperforms specialized video architectures. Finally, we address unsupervised population counting by integrating spatiotemporal constraints into standard clustering to mitigate over-segmentation. We publicly release all code and datasets to facilitate scalable, non-invasive monitoring of endangered species",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.07776v1",
+        "pdf": "https://arxiv.org/pdf/2512.07776v1"
+      },
+      "arxiv_id": "2512.07776v1",
+      "comment": "Accepted at WACV 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.9940677966101696,
+      "score_breakdown": {
+        "total_score": 3.99,
+        "field_match": {
+          "score": 1.61,
+          "matches": [
+            "self-supervised",
+            "segmentation",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -183,41 +298,44 @@
       }
     },
     {
-      "id": "2512.05814v1",
-      "title": "UG-FedDA: Uncertainty-Guided Federated Domain Adaptation for Multi-Center Alzheimer's Disease Detection",
+      "id": "2512.07596v1",
+      "title": "More than Segmentation: Benchmarking SAM 3 for Segmentation, 3D Perception, and Reconstruction in Robotic Surgery",
       "authors": [
-        "Fubao Zhu",
-        "Zhanyuan Jia",
-        "Zhiguo Wang",
-        "Huan Huang",
-        "Danyang Sun",
-        "Chuang Han",
-        "Yanting Li",
-        "Jiaofen Nan",
-        "Chen Zhao",
-        "Weihua Zhou"
+        "Wenzhen Dong",
+        "Jieming Yu",
+        "Yiming Huang",
+        "Hongqiu Wang",
+        "Lei Zhu",
+        "Albert C. S. Chung",
+        "Hongliang Ren",
+        "Long Bai"
       ],
-      "abstract": "Alzheimer's disease (AD) is an irreversible neurodegenerative disorder, and early diagnosis is critical for timely intervention. However, most existing classification frameworks face challenges in multicenter studies, as they often neglect inter-site heterogeneity and lack mechanisms to quantify uncertainty, which limits their robustness and clinical applicability. To address these issues, we proposed Uncertainty-Guided Federated Domain Adaptation (UG-FedDA), a novel multicenter AD classification framework that integrates uncertainty quantification (UQ) with federated domain adaptation to handle cross-site structure magnetic resonance imaging (MRI) heterogeneity under privacy constraints. Our approach extracts multi-template region-of-interest (RoI) features using a self-attention transformer, capturing both regional representations and their interactions. UQ is integrated to guide feature alignment, mitigating source-target distribution shifts by down-weighting uncertain samples. Experiments are conducted on three public datasets: the Alzheimer's Disease Neuroimaging Initiative (ADNI), the Australian Imaging, Biomarkers and Lifestyle study (AIBL), and the Open Access Series of Imaging Studies (OASIS). UG-FedDA achieved consistent cross-domain improvements in accuracy, sensitivity, and area under the ROC curve across three classification tasks: AD vs. normal controls (NC), mild cognitive impairment (MCI) vs. AD, and NC vs. MCI. For NC vs. AD, UG-FedDA achieves accuracies of 90.54%, 89.04%, and 77.78% on ADNI, AIBL and OASIS datasets, respectively. For MCI vs. AD, accuracies are 80.20% (ADNI), 71.91% (AIBL), and 79.73% (OASIS). For NC vs. MCI, results are 76.87% (ADNI), 73.91% (AIBL), and 83.73% (OASIS). These results demonstrate that the proposed framework not only adapts efficiently across multiple sites but also preserves strict privacy.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "The recent Segment Anything Model (SAM) 3 has introduced significant advancements over its predecessor, SAM 2, particularly with the integration of language-based segmentation and enhanced 3D perception capabilities. SAM 3 supports zero-shot segmentation across a wide range of prompts, including point, bounding box, and language-based prompts, allowing for more flexible and intuitive interactions with the model. In this empirical evaluation, we assess the performance of SAM 3 in robot-assisted surgery, benchmarking its zero-shot segmentation with point and bounding box prompts and exploring its effectiveness in dynamic video tracking, alongside its newly introduced language prompt segmentation. While language prompts show potential, their performance in the surgical domain is currently suboptimal, highlighting the need for further domain-specific training. Additionally, we investigate SAM 3's 3D reconstruction abilities, demonstrating its capacity to process surgical scene data and reconstruct 3D anatomical structures from 2D images. Through comprehensive testing on the MICCAI EndoVis 2017 and EndoVis 2018 benchmarks, SAM 3 shows clear improvements over SAM and SAM 2 in both image and video segmentation under spatial prompts, while zero-shot evaluations on SCARED, StereoMIS, and EndoNeRF indicate strong monocular depth estimation and realistic 3D instrument reconstruction, yet also reveal remaining limitations in complex, highly dynamic surgical scenes.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05814v1",
-        "pdf": "https://arxiv.org/pdf/2512.05814v1"
+        "paper": "http://arxiv.org/abs/2512.07596v1",
+        "pdf": "https://arxiv.org/pdf/2512.07596v1"
       },
-      "arxiv_id": "2512.05814v1",
-      "comment": "The code is already available on GitHub: https://github.com/chenzhao2023/UG_FADDA_AlzhemiersClassification",
+      "arxiv_id": "2512.07596v1",
+      "comment": "Technical Report",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
+      "has_code": false,
+      "relevance_score": 3.977966101694915,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 3.98,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.69,
+          "matches": [
+            "3d reconstruction",
+            "nerf",
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -226,12 +344,77 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.07527v1",
+      "title": "From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir Satellite Images",
+      "authors": [
+        "Fei Yu",
+        "Yu Liu",
+        "Luyang Tang",
+        "Mingchao Sun",
+        "Zengye Ge",
+        "Rui Bu",
+        "Yuchao Jin",
+        "Haisen Zhao",
+        "He Sun",
+        "Yangyan Li",
+        "Mu Xu",
+        "Wenzheng Chen",
+        "Baoquan Chen"
+      ],
+      "abstract": "City-scale 3D reconstruction from satellite imagery presents the challenge of extreme viewpoint extrapolation, where our goal is to synthesize ground-level novel views from sparse orbital images with minimal parallax. This requires inferring nearly $90^\\circ$ viewpoint gaps from image sources with severely foreshortened facades and flawed textures, causing state-of-the-art reconstruction engines such as NeRF and 3DGS to fail.\n  To address this problem, we propose two design choices tailored for city structures and satellite inputs. First, we model city geometry as a 2.5D height map, implemented as a Z-monotonic signed distance field (SDF) that matches urban building layouts from top-down viewpoints. This stabilizes geometry optimization under sparse, off-nadir satellite views and yields a watertight mesh with crisp roofs and clean, vertically extruded facades. Second, we paint the mesh appearance from satellite images via differentiable rendering techniques. While the satellite inputs may contain long-range, blurry captures, we further train a generative texture restoration network to enhance the appearance, recovering high-frequency, plausible texture details from degraded inputs.\n  Our method's scalability and robustness are demonstrated through extensive experiments on large-scale urban reconstruction. For example, in our teaser figure, we reconstruct a $4\\,\\mathrm{km}^2$ real-world region from only a few satellite images, achieving state-of-the-art performance in synthesizing photorealistic ground views. The resulting models are not only visually compelling but also serve as high-fidelity, application-ready assets for downstream tasks like urban planning and simulation.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.07527v1",
+        "pdf": "https://arxiv.org/pdf/2512.07527v1"
+      },
+      "arxiv_id": "2512.07527v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.9745762711864407,
+      "score_breakdown": {
+        "total_score": 3.97,
+        "field_match": {
+          "score": 1.19,
+          "matches": [
+            "3d reconstruction",
+            "nerf"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -241,39 +424,39 @@
       }
     },
     {
-      "id": "2512.05774v1",
-      "title": "Active Video Perception: Iterative Evidence Seeking for Agentic Long Video Understanding",
+      "id": "2512.07833v1",
+      "title": "Relational Visual Similarity",
       "authors": [
-        "Ziyang Wang",
-        "Honglu Zhou",
-        "Shijie Wang",
-        "Junnan Li",
-        "Caiming Xiong",
-        "Silvio Savarese",
-        "Mohit Bansal",
-        "Michael S. Ryoo",
-        "Juan Carlos Niebles"
+        "Thao Nguyen",
+        "Sicheng Mo",
+        "Krishna Kumar Singh",
+        "Yilin Wang",
+        "Jing Shi",
+        "Nicholas Kolkin",
+        "Eli Shechtman",
+        "Yong Jae Lee",
+        "Yuheng Li"
       ],
-      "abstract": "Long video understanding (LVU) is challenging because answering real-world queries often depends on sparse, temporally dispersed cues buried in hours of mostly redundant and irrelevant content. While agentic pipelines improve video reasoning capabilities, prevailing frameworks rely on a query-agnostic captioner to perceive video information, which wastes computation on irrelevant content and blurs fine-grained temporal and spatial information. Motivated by active perception theory, we argue that LVU agents should actively decide what, when, and where to observe, and continuously assess whether the current observation is sufficient to answer the query. We present Active Video Perception (AVP), an evidence-seeking framework that treats the video as an interactive environment and acquires compact, queryrelevant evidence directly from pixels. Concretely, AVP runs an iterative plan-observe-reflect process with MLLM agents. In each round, a planner proposes targeted video interactions, an observer executes them to extract time-stamped evidence, and a reflector evaluates the sufficiency of the evidence for the query, either halting with an answer or triggering further observation. Across five LVU benchmarks, AVP achieves highest performance with significant improvements. Notably, AVP outperforms the best agentic method by 5.7% in average accuracy while only requires 18.4% inference time and 12.4% input tokens.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "Humans do not just see attribute similarity -- we also see relational similarity. An apple is like a peach because both are reddish fruit, but the Earth is also like a peach: its crust, mantle, and core correspond to the peach's skin, flesh, and pit. This ability to perceive and recognize relational similarity, is arguable by cognitive scientist to be what distinguishes humans from other species. Yet, all widely used visual similarity metrics today (e.g., LPIPS, CLIP, DINO) focus solely on perceptual attribute similarity and fail to capture the rich, often surprising relational similarities that humans perceive. How can we go beyond the visible content of an image to capture its relational properties? How can we bring images with the same relational logic closer together in representation space? To answer these questions, we first formulate relational image similarity as a measurable problem: two images are relationally similar when their internal relations or functions among visual elements correspond, even if their visual attributes differ. We then curate 114k image-caption dataset in which the captions are anonymized -- describing the underlying relational logic of the scene rather than its surface content. Using this dataset, we finetune a Vision-Language model to measure the relational similarity between images. This model serves as the first step toward connecting images by their underlying relational structure rather than their visible appearance. Our study shows that while relational similarity has a lot of real-world applications, existing image similarity models fail to capture it -- revealing a critical gap in visual computing.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
         "cs.CV",
         "cs.AI",
-        "cs.CL"
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05774v1",
-        "pdf": "https://arxiv.org/pdf/2512.05774v1"
+        "paper": "http://arxiv.org/abs/2512.07833v1",
+        "pdf": "https://arxiv.org/pdf/2512.07833v1"
       },
-      "arxiv_id": "2512.05774v1",
-      "comment": "Website: https://activevideoperception.github.io/",
+      "arxiv_id": "2512.07833v1",
+      "comment": "Project page, data, and code: https://thaoshibe.github.io/relsim",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9,
+      "relevance_score": 3.9499999999999997,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 3.95,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -294,43 +477,48 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.05620v1",
-      "title": "Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales",
+      "id": "2512.07831v1",
+      "title": "UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation",
       "authors": [
-        "Shikai Qiu",
-        "Zixi Chen",
-        "Hoang Phan",
-        "Qi Lei",
-        "Andrew Gordon Wilson"
+        "Jiehui Huang",
+        "Yuechen Zhang",
+        "Xu He",
+        "Yuan Gao",
+        "Zhi Cen",
+        "Bin Xia",
+        "Yan Zhou",
+        "Xin Tao",
+        "Pengfei Wan",
+        "Jiaya Jia"
       ],
-      "abstract": "Several recently introduced deep learning optimizers utilizing matrix-level preconditioning have shown promising speedups relative to the current dominant optimizer AdamW, particularly in relatively small-scale experiments. However, efforts to validate and replicate their successes have reported mixed results. To better understand the effectiveness of these optimizers at scale, in this work we investigate how to scale preconditioned optimizers via hyperparameter transfer, building on prior works such as $μ$P. We study how the optimal learning rate and weight decay should scale with model width and depth for a wide range of optimizers, including Shampoo, SOAP, and Muon, accounting for the impact of commonly used techniques such as blocking and grafting. We find that scaling the learning rate according to $μ$P improves transfer, but can still suffer from significant finite-width deviations that cause drifting optimal learning rates, which we show can be mitigated by blocking and explicit spectral normalization. For compute-optimal scaling, we find scaling independent weight decay as $1/\\mathrm{width}$ is nearly optimal across optimizers. Applying these scaling rules, we show Muon and Shampoo consistently achieve $1.4\\times$ and $1.3\\times$ speedup over AdamW for training Llama-architecture language models of sizes ranging from $190$M to $1.4$B, whereas the speedup vanishes rapidly with scale under incorrect scaling. Based on these results and further ablations, we argue that studying optimal hyperparameter transfer is essential for reliably comparing optimizers at scale given a realistic tuning budget.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "Recent video generation models demonstrate impressive synthesis capabilities but remain limited by single-modality conditioning, constraining their holistic world understanding. This stems from insufficient cross-modal interaction and limited modal diversity for comprehensive world knowledge representation. To address these limitations, we introduce UnityVideo, a unified framework for world-aware video generation that jointly learns across multiple modalities (segmentation masks, human skeletons, DensePose, optical flow, and depth maps) and training paradigms. Our approach features two core components: (1) dynamic noising to unify heterogeneous training paradigms, and (2) a modality switcher with an in-context learner that enables unified processing via modular parameters and contextual learning. We contribute a large-scale unified dataset with 1.3M samples. Through joint optimization, UnityVideo accelerates convergence and significantly enhances zero-shot generalization to unseen data. We demonstrate that UnityVideo achieves superior video quality, consistency, and improved alignment with physical world constraints. Code and data can be found at: https://github.com/dvlab-research/UnityVideo",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05620v1",
-        "pdf": "https://arxiv.org/pdf/2512.05620v1"
+        "paper": "http://arxiv.org/abs/2512.07831v1",
+        "pdf": "https://arxiv.org/pdf/2512.07831v1"
       },
-      "arxiv_id": "2512.05620v1",
-      "comment": "NeurIPS 2025. Code available at: https://github.com/charliezchen/scaling-matrix-preconditioning",
+      "arxiv_id": "2512.07831v1",
+      "comment": "Project Website https://jackailab.github.io/Projects/UnityVideo",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8694915254237285,
+      "relevance_score": 3.903389830508474,
       "score_breakdown": {
-        "total_score": 3.87,
+        "total_score": 3.9,
         "field_match": {
-          "score": 0.42,
+          "score": 0.51,
           "matches": [
-            "deep learning"
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -355,146 +543,43 @@
       }
     },
     {
-      "id": "2512.05960v1",
-      "title": "AQUA-Net: Adaptive Frequency Fusion and Illumination Aware Network for Underwater Image Enhancement",
+      "id": "2512.07802v1",
+      "title": "OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory",
       "authors": [
-        "Munsif Ali",
-        "Najmul Hassan",
-        "Lucia Ventura",
-        "Davide Di Bari",
-        "Simonepietro Canese"
+        "Zhaochong An",
+        "Menglin Jia",
+        "Haonan Qiu",
+        "Zijian Zhou",
+        "Xiaoke Huang",
+        "Zhiheng Liu",
+        "Weiming Ren",
+        "Kumara Kahatapitiya",
+        "Ding Liu",
+        "Sen He",
+        "Chenyang Zhang",
+        "Tao Xiang",
+        "Fanny Yang",
+        "Serge Belongie",
+        "Tian Xie"
       ],
-      "abstract": "Underwater images often suffer from severe color distortion, low contrast, and a hazy appearance due to wavelength-dependent light absorption and scattering. Simultaneously, existing deep learning models exhibit high computational complexity, which limits their practical deployment for real-time underwater applications. To address these challenges, this paper presents a novel underwater image enhancement model, called Adaptive Frequency Fusion and Illumination Aware Network (AQUA-Net). It integrates a residual encoder decoder with dual auxiliary branches, which operate in the frequency and illumination domains. The frequency fusion encoder enriches spatial representations with frequency cues from the Fourier domain and preserves fine textures and structural details. Inspired by Retinex, the illumination-aware decoder performs adaptive exposure correction through a learned illumination map that separates reflectance from lighting effects. This joint spatial, frequency, and illumination design enables the model to restore color balance, visual contrast, and perceptual realism under diverse underwater conditions. Additionally, we present a high-resolution, real-world underwater video-derived dataset from the Mediterranean Sea, which captures challenging deep-sea conditions with realistic visual degradations to enable robust evaluation and development of deep learning models. Extensive experiments on multiple benchmark datasets show that AQUA-Net performs on par with SOTA in both qualitative and quantitative evaluations while using less number of parameters. Ablation studies further confirm that the frequency and illumination branches provide complementary contributions that improve visibility and color representation. Overall, the proposed model shows strong generalization capability and robustness, and it provides an effective solution for real-world underwater imaging applications.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
+      "abstract": "Storytelling in real-world videos often unfolds through multiple shots -- discontinuous yet semantically connected clips that together convey a coherent narrative. However, existing multi-shot video generation (MSV) methods struggle to effectively model long-range cross-shot context, as they rely on limited temporal windows or single keyframe conditioning, leading to degraded performance under complex narratives. In this work, we propose OneStory, enabling global yet compact cross-shot context modeling for consistent and scalable narrative generation. OneStory reformulates MSV as a next-shot generation task, enabling autoregressive shot synthesis while leveraging pretrained image-to-video (I2V) models for strong visual conditioning. We introduce two key modules: a Frame Selection module that constructs a semantically-relevant global memory based on informative frames from prior shots, and an Adaptive Conditioner that performs importance-guided patchification to generate compact context for direct conditioning. We further curate a high-quality multi-shot dataset with referential captions to mirror real-world storytelling patterns, and design effective training strategies under the next-shot paradigm. Finetuned from a pretrained I2V model on our curated 60K dataset, OneStory achieves state-of-the-art narrative coherence across diverse and complex scenes in both text- and image-conditioned settings, enabling controllable and immersive long-form video storytelling.",
+      "published": "2025-12-08",
+      "updated": "2025-12-08",
       "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05960v1",
-        "pdf": "https://arxiv.org/pdf/2512.05960v1"
-      },
-      "arxiv_id": "2512.05960v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.8194915254237287,
-      "score_breakdown": {
-        "total_score": 3.82,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.05936v1",
-      "title": "Synset Signset Germany: a Synthetic Dataset for German Traffic Sign Recognition",
-      "authors": [
-        "Anne Sielemann",
-        "Lena Loercher",
-        "Max-Lion Schumacher",
-        "Stefan Wolf",
-        "Masoud Roschani",
-        "Jens Ziehn"
-      ],
-      "abstract": "In this paper, we present a synthesis pipeline and dataset for training / testing data in the task of traffic sign recognition that combines the advantages of data-driven and analytical modeling: GAN-based texture generation enables data-driven dirt and wear artifacts, rendering unique and realistic traffic sign surfaces, while the analytical scene modulation achieves physically correct lighting and allows detailed parameterization. In particular, the latter opens up applications in the context of explainable AI (XAI) and robustness tests due to the possibility of evaluating the sensitivity to parameter changes, which we demonstrate with experiments. Our resulting synthetic traffic sign recognition dataset Synset Signset Germany contains a total of 105500 images of 211 different German traffic sign classes, including newly published (2020) and thus comparatively rare traffic signs. In addition to a mask and a segmentation image, we also provide extensive metadata including the stochastically selected environment and imaging effect parameters for each image. We evaluate the degree of realism of Synset Signset Germany on the real-world German Traffic Sign Recognition Benchmark (GTSRB) and in comparison to CATERED, a state-of-the-art synthetic traffic sign recognition dataset.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05936v1",
-        "pdf": "https://arxiv.org/pdf/2512.05936v1"
-      },
-      "arxiv_id": "2512.05936v1",
-      "comment": "8 pages, 8 figures, 3 tables",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.8033898305084746,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.05665v1",
-      "title": "Interleaved Latent Visual Reasoning with Selective Perceptual Modeling",
-      "authors": [
-        "Shuai Dong",
-        "Siyuan Wang",
-        "Xingyu Liu",
-        "Zhongyu Wei"
-      ],
-      "abstract": "Interleaved reasoning paradigms enhance Multimodal Large Language Models (MLLMs) with visual feedback but are hindered by the prohibitive computational cost of repeatedly re-encoding pixel-dense images. A promising alternative, latent visual reasoning, circumvents this bottleneck yet currently forces a critical trade-off: methods either sacrifice precise perceptual modeling by over-compressing features or fail to model dynamic problems due to static, non-interleaved structures. We introduce Interleaved Latent Visual Reasoning (ILVR), a framework that unifies dynamic state evolution with precise perceptual modeling. ILVR interleaves textual generation with latent visual representations that act as specific, evolving cues for subsequent reasoning. To enable this, we employ a self-supervision strategy where a Momentum Teacher Model selectively distills relevant features from helper images into sparse supervision targets. This adaptive selection mechanism guides the model to autonomously generate context-aware visual signals. Extensive experiments on multimodal reasoning benchmarks demonstrate that ILVR significantly outperforms existing approaches, effectively bridging the gap between fine-grained perception and sequential multimodal reasoning.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
-      "categories": [
-        "cs.CL",
         "cs.CV"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.05665v1",
-        "pdf": "https://arxiv.org/pdf/2512.05665v1"
+        "paper": "http://arxiv.org/abs/2512.07802v1",
+        "pdf": "https://arxiv.org/pdf/2512.07802v1"
       },
-      "arxiv_id": "2512.05665v1",
-      "comment": "11 pages, 6 figures. Code available at https://github.com/XD111ds/ILVR",
+      "arxiv_id": "2512.07802v1",
+      "comment": "Project Page: https://zhaochongan.github.io/projects/OneStory",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.75,
+      "relevance_score": 3.9,
       "score_breakdown": {
-        "total_score": 3.75,
+        "total_score": 3.9,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -506,72 +591,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
           "score": 10.0,
           "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.05803v1",
-      "title": "3D Path Planning for Robot-assisted Vertebroplasty from Arbitrary Bi-plane X-ray via Differentiable Rendering",
-      "authors": [
-        "Blanca Inigo",
-        "Benjamin D. Killeen",
-        "Rebecca Choi",
-        "Michelle Song",
-        "Ali Uneri",
-        "Majid Khan",
-        "Christopher Bailey",
-        "Axel Krieger",
-        "Mathias Unberath"
-      ],
-      "abstract": "Robotic systems are transforming image-guided interventions by enhancing accuracy and minimizing radiation exposure. A significant challenge in robotic assistance lies in surgical path planning, which often relies on the registration of intraoperative 2D images with preoperative 3D CT scans. This requirement can be burdensome and costly, particularly in procedures like vertebroplasty, where preoperative CT scans are not routinely performed. To address this issue, we introduce a differentiable rendering-based framework for 3D transpedicular path planning utilizing bi-planar 2D X-rays. Our method integrates differentiable rendering with a vertebral atlas generated through a Statistical Shape Model (SSM) and employs a learned similarity loss to refine the SSM shape and pose dynamically, independent of fixed imaging geometries. We evaluated our framework in two stages: first, through vertebral reconstruction from orthogonal X-rays for benchmarking, and second, via clinician-in-the-loop path planning using arbitrary-view X-rays. Our results indicate that our method outperformed a normalized cross-correlation baseline in reconstruction metrics (DICE: 0.75 vs. 0.65) and achieved comparable performance to the state-of-the-art model ReVerteR (DICE: 0.77), while maintaining generalization to arbitrary views. Success rates for bipedicular planning reached 82% with synthetic data and 75% with cadaver data, exceeding the 66% and 31% rates of a 2D-to-3D baseline, respectively. In conclusion, our framework facilitates versatile, CT-free 3D path planning for robot-assisted vertebroplasty, effectively accommodating real-world imaging diversity without the need for preoperative CT scans.",
-      "published": "2025-12-05",
-      "updated": "2025-12-05",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.05803v1",
-        "pdf": "https://arxiv.org/pdf/2512.05803v1"
-      },
-      "arxiv_id": "2512.05803v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.7033898305084745,
-      "score_breakdown": {
-        "total_score": 3.7,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "registration"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
           "weight": 0.1
         },
         "practicality": {

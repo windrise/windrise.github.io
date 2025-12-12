@@ -3,112 +3,42 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.08896v1",
-      "title": "Open Polymer Challenge: Post-Competition Report",
+      "id": "2512.09923v1",
+      "title": "Splatent: Splatting Diffusion Latents for Novel View Synthesis",
       "authors": [
-        "Gang Liu",
-        "Sobin Alosious",
-        "Subhamoy Mahajan",
-        "Eric Inae",
-        "Yihan Zhu",
-        "Yuhan Liu",
-        "Renzheng Zhang",
-        "Jiaxin Xu",
-        "Addison Howard",
-        "Ying Li",
-        "Tengfei Luo",
-        "Meng Jiang"
+        "Or Hirschorn",
+        "Omer Sela",
+        "Inbar Huberman-Spiegelglas",
+        "Netalee Efrat",
+        "Eli Alshan",
+        "Ianir Ideses",
+        "Frederic Devernay",
+        "Yochai Zvik",
+        "Lior Fritz"
       ],
-      "abstract": "Machine learning (ML) offers a powerful path toward discovering sustainable polymer materials, but progress has been limited by the lack of large, high-quality, and openly accessible polymer datasets. The Open Polymer Challenge (OPC) addresses this gap by releasing the first community-developed benchmark for polymer informatics, featuring a dataset with 10K polymers and 5 properties: thermal conductivity, radius of gyration, density, fractional free volume, and glass transition temperature. The challenge centers on multi-task polymer property prediction, a core step in virtual screening pipelines for materials discovery. Participants developed models under realistic constraints that include small data, label imbalance, and heterogeneous simulation sources, using techniques such as feature-based augmentation, transfer learning, self-supervised pretraining, and targeted ensemble strategies. The competition also revealed important lessons about data preparation, distribution shifts, and cross-group simulation consistency, informing best practices for future large-scale polymer datasets. The resulting models, analysis, and released data create a new foundation for molecular AI in polymer science and are expected to accelerate the development of sustainable and energy-efficient materials. Along with the competition, we release the test dataset at https://www.kaggle.com/datasets/alexliu99/neurips-open-polymer-prediction-2025-test-data. We also release the data generation pipeline at https://github.com/sobinalosious/ADEPT, which simulates more than 25 properties, including thermal conductivity, radius of gyration, and density.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
+      "abstract": "Radiance field representations have recently been explored in the latent space of VAEs that are commonly used by diffusion models. This direction offers efficient rendering and seamless integration with diffusion-based pipelines. However, these methods face a fundamental limitation: The VAE latent space lacks multi-view consistency, leading to blurred textures and missing details during 3D reconstruction. Existing approaches attempt to address this by fine-tuning the VAE, at the cost of reconstruction quality, or by relying on pre-trained diffusion models to recover fine-grained details, at the risk of some hallucinations. We present Splatent, a diffusion-based enhancement framework designed to operate on top of 3D Gaussian Splatting (3DGS) in the latent space of VAEs. Our key insight departs from the conventional 3D-centric view: rather than reconstructing fine-grained details in 3D space, we recover them in 2D from input views through multi-view attention mechanisms. This approach preserves the reconstruction quality of pretrained VAEs while achieving faithful detail recovery. Evaluated across multiple benchmarks, Splatent establishes a new state-of-the-art for VAE latent radiance field reconstruction. We further demonstrate that integrating our method with existing feed-forward frameworks, consistently improves detail preservation, opening new possibilities for high-quality sparse-view 3D reconstruction.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
       "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.08896v1",
-        "pdf": "https://arxiv.org/pdf/2512.08896v1"
-      },
-      "arxiv_id": "2512.08896v1",
-      "comment": "The report for the competition: \"NeurIPS - Open Polymer Prediction 2025\". Kaggle Page: https://www.kaggle.com/competitions/neurips-open-polymer-prediction-2025. Website: https://open-polymer-challenge.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.4711864406779664,
-      "score_breakdown": {
-        "total_score": 4.47,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Machine learning (ML) offers a powerful path toward discovering sustainable polymer materials, but progress has been limited by the lack of large, high-quality, and openly accessible polymer datasets. The Open Polymer Challenge (OPC) addresses this gap by releasing the first community-developed benchmark for polymer informatics, featuring a dataset with 10K polymers and 5 properties: thermal condu...",
-        "key_contributions": [
-          "Machine learning (ML) offers a powerful path toward discovering sustainable polymer materials, but progress has been limited by the lack of large, high-quality, and openly accessible polymer datasets.",
-          "The Open Polymer Challenge (OPC) addresses this gap by releasing the first community-developed benchmark for polymer informatics, featuring a dataset with 10K polymers and 5 properties: thermal conductivity, radius of gyration, density, fractional free volume, and glass transition temperature.",
-          "The challenge centers on multi-task polymer property prediction, a core step in virtual screening pipelines for materials discovery."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.08896v1.mp3"
-      }
-    },
-    {
-      "id": "2512.08930v1",
-      "title": "Selfi: Self Improving Reconstruction Engine via 3D Geometric Feature Alignment",
-      "authors": [
-        "Youming Deng",
-        "Songyou Peng",
-        "Junyi Zhang",
-        "Kathryn Heal",
-        "Tiancheng Sun",
-        "John Flynn",
-        "Steve Marschner",
-        "Lucy Chai"
-      ],
-      "abstract": "Novel View Synthesis (NVS) has traditionally relied on models with explicit 3D inductive biases combined with known camera parameters from Structure-from-Motion (SfM) beforehand. Recent vision foundation models like VGGT take an orthogonal approach -- 3D knowledge is gained implicitly through training data and loss objectives, enabling feed-forward prediction of both camera parameters and 3D representations directly from a set of uncalibrated images. While flexible, VGGT features lack explicit multi-view geometric consistency, and we find that improving such 3D feature consistency benefits both NVS and pose estimation tasks. We introduce Selfi, a self-improving 3D reconstruction pipeline via feature alignment, transforming a VGGT backbone into a high-fidelity 3D reconstruction engine by leveraging its own outputs as pseudo-ground-truth. Specifically, we train a lightweight feature adapter using a reprojection-based consistency loss, which distills VGGT outputs into a new geometrically-aligned feature space that captures spatial proximity in 3D. This enables state-of-the-art performance in both NVS and camera pose estimation, demonstrating that feature alignment is a highly beneficial step for downstream 3D reasoning.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
-      "categories": [
-        "cs.CV",
-        "cs.GR"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.08930v1",
-        "pdf": "https://arxiv.org/pdf/2512.08930v1"
+        "paper": "http://arxiv.org/abs/2512.09923v1",
+        "pdf": "https://arxiv.org/pdf/2512.09923v1"
       },
-      "arxiv_id": "2512.08930v1",
-      "comment": "Project Page: https://denghilbert.github.io/selfi/",
+      "arxiv_id": "2512.09923v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.33728813559322,
+      "has_code": false,
+      "relevance_score": 4.5152542372881355,
       "score_breakdown": {
-        "total_score": 4.34,
+        "total_score": 4.52,
         "field_match": {
-          "score": 0.59,
+          "score": 2.29,
           "matches": [
+            "3d gaussian",
+            "gaussian splatting",
             "3d reconstruction"
           ],
           "weight": 0.4
@@ -119,7 +49,400 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Radiance field representations have recently been explored in the latent space of VAEs that are commonly used by diffusion models. This direction offers efficient rendering and seamless integration with diffusion-based pipelines. However, these methods face a fundamental limitation: The VAE latent space lacks multi-view consistency, leading to blurred textures and missing details during 3D reconst...",
+        "key_contributions": [
+          "Radiance field representations have recently been explored in the latent space of VAEs that are commonly used by diffusion models.",
+          "This direction offers efficient rendering and seamless integration with diffusion-based pipelines.",
+          "However, these methods face a fundamental limitation: The VAE latent space lacks multi-view consistency, leading to blurred textures and missing details during 3D reconstruction."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.09923v1.mp3"
+      }
+    },
+    {
+      "id": "2512.09841v1",
+      "title": "ChronusOmni: Improving Time Awareness of Omni Large Language Models",
+      "authors": [
+        "Yijing Chen",
+        "Yihan Wu",
+        "Kaisi Guan",
+        "Yuchen Ren",
+        "Yuyue Wang",
+        "Ruihua Song",
+        "Liyun Ru"
+      ],
+      "abstract": "Time awareness is a fundamental ability of omni large language models, especially for understanding long videos and answering complex questions. Previous approaches mainly target vision-language scenarios and focus on the explicit temporal grounding questions, such as identifying when a visual event occurs or determining what event happens at aspecific time. However, they often make insufficient use of the audio modality, and overlook implicit temporal grounding across modalities--for example, identifying what is visually present when a character speaks, or determining what is said when a visual event occurs--despite such cross-modal temporal relations being prevalent in real-world scenarios. In this paper, we propose ChronusOmni, an omni large language model designed to enhance temporal awareness for both explicit and implicit audiovisual temporal grounding. First, we interleave text-based timestamp tokens with visual and audio representations at each time unit, enabling unified temporal modeling across modalities. Second, to enforce correct temporal ordering and strengthen fine-grained temporal reasoning, we incorporate reinforcement learning with specially designed reward functions. Moreover, we construct ChronusAV, a temporally-accurate, modality-complete, and cross-modal-aligned dataset to support the training and evaluation on audiovisual temporal grounding task. Experimental results demonstrate that ChronusOmni achieves state-of-the-art performance on ChronusAV with more than 30% improvement and top results on most metrics upon other temporal grounding benchmarks. This highlights the strong temporal awareness of our model across modalities, while preserving general video and audio understanding capabilities.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.09841v1",
+        "pdf": "https://arxiv.org/pdf/2512.09841v1"
+      },
+      "arxiv_id": "2512.09841v1",
+      "comment": "Code available at https://github.com/YJCX330/Chronus/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.3,
+      "score_breakdown": {
+        "total_score": 4.3,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
           "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Time awareness is a fundamental ability of omni large language models, especially for understanding long videos and answering complex questions. Previous approaches mainly target vision-language scenarios and focus on the explicit temporal grounding questions, such as identifying when a visual event occurs or determining what event happens at aspecific time. However, they often make insufficient u...",
+        "key_contributions": [
+          "Time awareness is a fundamental ability of omni large language models, especially for understanding long videos and answering complex questions.",
+          "Previous approaches mainly target vision-language scenarios and focus on the explicit temporal grounding questions, such as identifying when a visual event occurs or determining what event happens at aspecific time.",
+          "However, they often make insufficient use of the audio modality, and overlook implicit temporal grounding across modalities--for example, identifying what is visually present when a character speaks, or determining what is said when a visual event occurs--despite such cross-modal temporal relations being prevalent in real-world scenarios."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.09841v1.mp3"
+      }
+    },
+    {
+      "id": "2512.09867v1",
+      "title": "MedForget: Hierarchy-Aware Multimodal Unlearning Testbed for Medical AI",
+      "authors": [
+        "Fengli Wu",
+        "Vaidehi Patil",
+        "Jaehong Yoon",
+        "Yue Zhang",
+        "Mohit Bansal"
+      ],
+      "abstract": "Pretrained Multimodal Large Language Models (MLLMs) are increasingly deployed in medical AI systems for clinical reasoning, diagnosis support, and report generation. However, their training on sensitive patient data raises critical privacy and compliance challenges under regulations such as HIPAA and GDPR, which enforce the \"right to be forgotten\". Unlearning, the process of tuning models to selectively remove the influence of specific training data points, offers a potential solution, yet its effectiveness in complex medical settings remains underexplored. To systematically study this, we introduce MedForget, a Hierarchy-Aware Multimodal Unlearning Testbed with explicit retain and forget splits and evaluation sets containing rephrased variants. MedForget models hospital data as a nested hierarchy (Institution -> Patient -> Study -> Section), enabling fine-grained assessment across eight organizational levels. The benchmark contains 3840 multimodal (image, question, answer) instances, each hierarchy level having a dedicated unlearning target, reflecting distinct unlearning challenges. Experiments with four SOTA unlearning methods on three tasks (generation, classification, cloze) show that existing methods struggle to achieve complete, hierarchy-aware forgetting without reducing diagnostic performance. To test whether unlearning truly deletes hierarchical pathways, we introduce a reconstruction attack that progressively adds hierarchical level context to prompts. Models unlearned at a coarse granularity show strong resistance, while fine-grained unlearning leaves models vulnerable to such reconstruction. MedForget provides a practical, HIPAA-aligned testbed for building compliant medical AI systems.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.09867v1",
+        "pdf": "https://arxiv.org/pdf/2512.09867v1"
+      },
+      "arxiv_id": "2512.09867v1",
+      "comment": "Dataset and Code: https://github.com/fengli-wu/MedForget",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.15,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Pretrained Multimodal Large Language Models (MLLMs) are increasingly deployed in medical AI systems for clinical reasoning, diagnosis support, and report generation. However, their training on sensitive patient data raises critical privacy and compliance challenges under regulations such as HIPAA and GDPR, which enforce the \"right to be forgotten\". Unlearning, the process of tuning models to selec...",
+        "key_contributions": [
+          "Pretrained Multimodal Large Language Models (MLLMs) are increasingly deployed in medical AI systems for clinical reasoning, diagnosis support, and report generation.",
+          "However, their training on sensitive patient data raises critical privacy and compliance challenges under regulations such as HIPAA and GDPR, which enforce the \"right to be forgotten\".",
+          "Unlearning, the process of tuning models to selectively remove the influence of specific training data points, offers a potential solution, yet its effectiveness in complex medical settings remains underexplored."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.09867v1.mp3"
+      }
+    },
+    {
+      "id": "2512.09626v1",
+      "title": "Beyond Sequences: A Benchmark for Atomic Hand-Object Interaction Using a Static RNN Encoder",
+      "authors": [
+        "Yousef Azizi Movahed",
+        "Fatemeh Ziaeetabar"
+      ],
+      "abstract": "Reliably predicting human intent in hand-object interactions is an open challenge for computer vision. Our research concentrates on a fundamental sub-problem: the fine-grained classification of atomic interaction states, namely 'approaching', 'grabbing', and 'holding'. To this end, we introduce a structured data engineering process that converts raw videos from the MANIAC dataset into 27,476 statistical-kinematic feature vectors. Each vector encapsulates relational and dynamic properties from a short temporal window of motion. Our initial hypothesis posited that sequential modeling would be critical, leading us to compare static classifiers (MLPs) against temporal models (RNNs). Counter-intuitively, the key discovery occurred when we set the sequence length of a Bidirectional RNN to one (seq_length=1). This modification converted the network's function, compelling it to act as a high-capacity static feature encoder. This architectural change directly led to a significant accuracy improvement, culminating in a final score of 97.60%. Of particular note, our optimized model successfully overcame the most challenging transitional class, 'grabbing', by achieving a balanced F1-score of 0.90. These findings provide a new benchmark for low-level hand-object interaction recognition using structured, interpretable features and lightweight architectures.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.09626v1",
+        "pdf": "https://arxiv.org/pdf/2512.09626v1"
+      },
+      "arxiv_id": "2512.09626v1",
+      "comment": "Code available at: https://github.com/YousefAMovahed/beyond-sequences-hoi-benchmark",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.119491525423729,
+      "score_breakdown": {
+        "total_score": 4.12,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Reliably predicting human intent in hand-object interactions is an open challenge for computer vision. Our research concentrates on a fundamental sub-problem: the fine-grained classification of atomic interaction states, namely 'approaching', 'grabbing', and 'holding'. To this end, we introduce a structured data engineering process that converts raw videos from the MANIAC dataset into 27,476 stati...",
+        "key_contributions": [
+          "Reliably predicting human intent in hand-object interactions is an open challenge for computer vision.",
+          "Our research concentrates on a fundamental sub-problem: the fine-grained classification of atomic interaction states, namely 'approaching', 'grabbing', and 'holding'.",
+          "To this end, we introduce a structured data engineering process that converts raw videos from the MANIAC dataset into 27,476 statistical-kinematic feature vectors."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.09626v1.mp3"
+      }
+    },
+    {
+      "id": "2512.09925v1",
+      "title": "GAINS: Gaussian-based Inverse Rendering from Sparse Multi-View Captures",
+      "authors": [
+        "Patrick Noras",
+        "Jun Myeong Choi",
+        "Didier Stricker",
+        "Pieter Peers",
+        "Roni Sengupta"
+      ],
+      "abstract": "Recent advances in Gaussian Splatting-based inverse rendering extend Gaussian primitives with shading parameters and physically grounded light transport, enabling high-quality material recovery from dense multi-view captures. However, these methods degrade sharply under sparse-view settings, where limited observations lead to severe ambiguity between geometry, reflectance, and lighting. We introduce GAINS (Gaussian-based Inverse rendering from Sparse multi-view captures), a two-stage inverse rendering framework that leverages learning-based priors to stabilize geometry and material estimation. GAINS first refines geometry using monocular depth/normal and diffusion priors, then employs segmentation, intrinsic image decomposition (IID), and diffusion priors to regularize material recovery. Extensive experiments on synthetic and real-world datasets show that GAINS significantly improves material parameter accuracy, relighting quality, and novel-view synthesis compared to state-of-the-art Gaussian-based inverse rendering methods, especially under sparse-view settings. Project page: https://patrickbail.github.io/gains/",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.09925v1",
+        "pdf": "https://arxiv.org/pdf/2512.09925v1"
+      },
+      "arxiv_id": "2512.09925v1",
+      "comment": "23 pages, 18 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.0423728813559325,
+      "score_breakdown": {
+        "total_score": 4.04,
+        "field_match": {
+          "score": 1.36,
+          "matches": [
+            "gaussian splatting",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advances in Gaussian Splatting-based inverse rendering extend Gaussian primitives with shading parameters and physically grounded light transport, enabling high-quality material recovery from dense multi-view captures. However, these methods degrade sharply under sparse-view settings, where limited observations lead to severe ambiguity between geometry, reflectance, and lighting. We introdu...",
+        "key_contributions": [
+          "Recent advances in Gaussian Splatting-based inverse rendering extend Gaussian primitives with shading parameters and physically grounded light transport, enabling high-quality material recovery from dense multi-view captures.",
+          "However, these methods degrade sharply under sparse-view settings, where limited observations lead to severe ambiguity between geometry, reflectance, and lighting.",
+          "We introduce GAINS (Gaussian-based Inverse rendering from Sparse multi-view captures), a two-stage inverse rendering framework that leverages learning-based priors to stabilize geometry and material estimation."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.09925v1.mp3"
+      }
+    },
+    {
+      "id": "2512.09903v1",
+      "title": "YOPO-Nav: Visual Navigation using 3DGS Graphs from One-Pass Videos",
+      "authors": [
+        "Ryan Meegan",
+        "Adam D'Souza",
+        "Bryan Bo Cao",
+        "Shubham Jain",
+        "Kristin Dana"
+      ],
+      "abstract": "Visual navigation has emerged as a practical alternative to traditional robotic navigation pipelines that rely on detailed mapping and path planning. However, constructing and maintaining 3D maps is often computationally expensive and memory-intensive. We address the problem of visual navigation when exploration videos of a large environment are available. The videos serve as a visual reference, allowing a robot to retrace the explored trajectories without relying on metric maps. Our proposed method, YOPO-Nav (You Only Pass Once), encodes an environment into a compact spatial representation composed of interconnected local 3D Gaussian Splatting (3DGS) models. During navigation, the framework aligns the robot's current visual observation with this representation and predicts actions that guide it back toward the demonstrated trajectory. YOPO-Nav employs a hierarchical design: a visual place recognition (VPR) module provides coarse localization, while the local 3DGS models refine the goal and intermediate poses to generate control actions. To evaluate our approach, we introduce the YOPO-Campus dataset, comprising 4 hours of egocentric video and robot controller inputs from over 6 km of human-teleoperated robot trajectories. We benchmark recent visual navigation methods on trajectories from YOPO-Campus using a Clearpath Jackal robot. Experimental results show YOPO-Nav provides excellent performance in image-goal navigation for real-world scenes on a physical robot. The dataset and code will be made publicly available for visual navigation and scene representation research.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.09903v1",
+        "pdf": "https://arxiv.org/pdf/2512.09903v1"
+      },
+      "arxiv_id": "2512.09903v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.977966101694915,
+      "score_breakdown": {
+        "total_score": 3.98,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Visual navigation has emerged as a practical alternative to traditional robotic navigation pipelines that rely on detailed mapping and path planning. However, constructing and maintaining 3D maps is often computationally expensive and memory-intensive. We address the problem of visual navigation when exploration videos of a large environment are available. The videos serve as a visual reference, a...",
+        "key_contributions": [
+          "Visual navigation has emerged as a practical alternative to traditional robotic navigation pipelines that rely on detailed mapping and path planning.",
+          "However, constructing and maintaining 3D maps is often computationally expensive and memory-intensive.",
+          "We address the problem of visual navigation when exploration videos of a large environment are available."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.09903v1.mp3"
+      }
+    },
+    {
+      "id": "2512.09824v1",
+      "title": "Composing Concepts from Images and Videos via Concept-prompt Binding",
+      "authors": [
+        "Xianghao Kong",
+        "Zeyu Zhang",
+        "Yuwei Guo",
+        "Zhuoran Zhao",
+        "Songchun Zhang",
+        "Anyi Rao"
+      ],
+      "abstract": "Visual concept composition, which aims to integrate different elements from images and videos into a single, coherent visual output, still falls short in accurately extracting complex concepts from visual inputs and flexibly combining concepts from both images and videos. We introduce Bind & Compose, a one-shot method that enables flexible visual concept composition by binding visual concepts with corresponding prompt tokens and composing the target prompt with bound tokens from various sources. It adopts a hierarchical binder structure for cross-attention conditioning in Diffusion Transformers to encode visual concepts into corresponding prompt tokens for accurate decomposition of complex visual concepts. To improve concept-token binding accuracy, we design a Diversify-and-Absorb Mechanism that uses an extra absorbent token to eliminate the impact of concept-irrelevant details when training with diversified prompts. To enhance the compatibility between image and video concepts, we present a Temporal Disentanglement Strategy that decouples the training process of video concepts into two stages with a dual-branch binder structure for temporal modeling. Evaluations demonstrate that our method achieves superior concept consistency, prompt fidelity, and motion quality over existing approaches, opening up new possibilities for visual creativity.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.09824v1",
+        "pdf": "https://arxiv.org/pdf/2512.09824v1"
+      },
+      "arxiv_id": "2512.09824v1",
+      "comment": "Project page: https://refkxh.github.io/BiCo_Webpage/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -133,50 +456,52 @@
         }
       },
       "ai_summaries": {
-        "short": "Novel View Synthesis (NVS) has traditionally relied on models with explicit 3D inductive biases combined with known camera parameters from Structure-from-Motion (SfM) beforehand. Recent vision foundation models like VGGT take an orthogonal approach -- 3D knowledge is gained implicitly through training data and loss objectives, enabling feed-forward prediction of both camera parameters and 3D repre...",
+        "short": "Visual concept composition, which aims to integrate different elements from images and videos into a single, coherent visual output, still falls short in accurately extracting complex concepts from visual inputs and flexibly combining concepts from both images and videos. We introduce Bind & Compose, a one-shot method that enables flexible visual concept composition by binding visual concepts with...",
         "key_contributions": [
-          "Novel View Synthesis (NVS) has traditionally relied on models with explicit 3D inductive biases combined with known camera parameters from Structure-from-Motion (SfM) beforehand.",
-          "Recent vision foundation models like VGGT take an orthogonal approach -- 3D knowledge is gained implicitly through training data and loss objectives, enabling feed-forward prediction of both camera parameters and 3D representations directly from a set of uncalibrated images.",
-          "While flexible, VGGT features lack explicit multi-view geometric consistency, and we find that improving such 3D feature consistency benefits both NVS and pose estimation tasks."
+          "Visual concept composition, which aims to integrate different elements from images and videos into a single, coherent visual output, still falls short in accurately extracting complex concepts from visual inputs and flexibly combining concepts from both images and videos.",
+          "We introduce Bind & Compose, a one-shot method that enables flexible visual concept composition by binding visual concepts with corresponding prompt tokens and composing the target prompt with bound tokens from various sources.",
+          "It adopts a hierarchical binder structure for cross-attention conditioning in Diffusion Transformers to encode visual concepts into corresponding prompt tokens for accurate decomposition of complex visual concepts."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.08930v1.mp3"
+        "audio_url": "/audio/2512.09824v1.mp3"
       }
     },
     {
-      "id": "2512.08625v1",
-      "title": "OpenMonoGS-SLAM: Monocular Gaussian Splatting SLAM with Open-set Semantics",
+      "id": "2512.09801v1",
+      "title": "Modality-Specific Enhancement and Complementary Fusion for Semi-Supervised Multi-Modal Brain Tumor Segmentation",
       "authors": [
-        "Jisang Yoo",
-        "Gyeongjin Kang",
-        "Hyun-kyu Ko",
-        "Hyeonwoo Yu",
-        "Eunbyung Park"
+        "Tien-Dat Chung",
+        "Ba-Thinh Lam",
+        "Thanh-Huy Nguyen",
+        "Thien Nguyen",
+        "Nguyen Lan Vi Vu",
+        "Hoang-Loc Cao",
+        "Phat Kim Huynh",
+        "Min Xu"
       ],
-      "abstract": "Simultaneous Localization and Mapping (SLAM) is a foundational component in robotics, AR/VR, and autonomous systems. With the rising focus on spatial AI in recent years, combining SLAM with semantic understanding has become increasingly important for enabling intelligent perception and interaction. Recent efforts have explored this integration, but they often rely on depth sensors or closed-set semantic models, limiting their scalability and adaptability in open-world environments. In this work, we present OpenMonoGS-SLAM, the first monocular SLAM framework that unifies 3D Gaussian Splatting (3DGS) with open-set semantic understanding. To achieve our goal, we leverage recent advances in Visual Foundation Models (VFMs), including MASt3R for visual geometry and SAM and CLIP for open-vocabulary semantics. These models provide robust generalization across diverse tasks, enabling accurate monocular camera tracking and mapping, as well as a rich understanding of semantics in open-world environments. Our method operates without any depth input or 3D semantic ground truth, relying solely on self-supervised learning objectives. Furthermore, we propose a memory mechanism specifically designed to manage high-dimensional semantic features, which effectively constructs Gaussian semantic feature maps, leading to strong overall performance. Experimental results demonstrate that our approach achieves performance comparable to or surpassing existing baselines in both closed-set and open-set segmentation tasks, all without relying on supplementary sensors such as depth maps or semantic annotations.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
+      "abstract": "Semi-supervised learning (SSL) has become a promising direction for medical image segmentation, enabling models to learn from limited labeled data alongside abundant unlabeled samples. However, existing SSL approaches for multi-modal medical imaging often struggle to exploit the complementary information between modalities due to semantic discrepancies and misalignment across MRI sequences. To address this, we propose a novel semi-supervised multi-modal framework that explicitly enhances modality-specific representations and facilitates adaptive cross-modal information fusion. Specifically, we introduce a Modality-specific Enhancing Module (MEM) to strengthen semantic cues unique to each modality via channel-wise attention, and a learnable Complementary Information Fusion (CIF) module to adaptively exchange complementary knowledge between modalities. The overall framework is optimized using a hybrid objective combining supervised segmentation loss and cross-modal consistency regularization on unlabeled data. Extensive experiments on the BraTS 2019 (HGG subset) demonstrate that our method consistently outperforms strong semi-supervised and multi-modal baselines under 1\\%, 5\\%, and 10\\% labeled data settings, achieving significant improvements in both Dice and Sensitivity scores. Ablation studies further confirm the complementary effects of our proposed MEM and CIF in bridging cross-modality discrepancies and improving segmentation robustness under scarce supervision.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.08625v1",
-        "pdf": "https://arxiv.org/pdf/2512.08625v1"
+        "paper": "http://arxiv.org/abs/2512.09801v1",
+        "pdf": "https://arxiv.org/pdf/2512.09801v1"
       },
-      "arxiv_id": "2512.08625v1",
-      "comment": "8 pages, 4 figures",
+      "arxiv_id": "2512.09801v1",
+      "comment": "9 pages, 3 figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.252542372881356,
+      "relevance_score": 3.9135593220338984,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 3.91,
         "field_match": {
-          "score": 2.88,
+          "score": 2.03,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "self-supervised",
+            "medical image",
+            "medical imaging",
             "segmentation"
           ],
           "weight": 0.4
@@ -201,126 +526,46 @@
         }
       },
       "ai_summaries": {
-        "short": "Simultaneous Localization and Mapping (SLAM) is a foundational component in robotics, AR/VR, and autonomous systems. With the rising focus on spatial AI in recent years, combining SLAM with semantic understanding has become increasingly important for enabling intelligent perception and interaction. Recent efforts have explored this integration, but they often rely on depth sensors or closed-set se...",
+        "short": "Semi-supervised learning (SSL) has become a promising direction for medical image segmentation, enabling models to learn from limited labeled data alongside abundant unlabeled samples. However, existing SSL approaches for multi-modal medical imaging often struggle to exploit the complementary information between modalities due to semantic discrepancies and misalignment across MRI sequences. To add...",
         "key_contributions": [
-          "Simultaneous Localization and Mapping (SLAM) is a foundational component in robotics, AR/VR, and autonomous systems.",
-          "With the rising focus on spatial AI in recent years, combining SLAM with semantic understanding has become increasingly important for enabling intelligent perception and interaction.",
-          "Recent efforts have explored this integration, but they often rely on depth sensors or closed-set semantic models, limiting their scalability and adaptability in open-world environments."
+          "Semi-supervised learning (SSL) has become a promising direction for medical image segmentation, enabling models to learn from limited labeled data alongside abundant unlabeled samples.",
+          "However, existing SSL approaches for multi-modal medical imaging often struggle to exploit the complementary information between modalities due to semantic discrepancies and misalignment across MRI sequences.",
+          "To address this, we propose a novel semi-supervised multi-modal framework that explicitly enhances modality-specific representations and facilitates adaptive cross-modal information fusion."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.08625v1.mp3"
+        "audio_url": "/audio/2512.09801v1.mp3"
       }
     },
     {
-      "id": "2512.08924v1",
-      "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time",
+      "id": "2512.09864v1",
+      "title": "UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving",
       "authors": [
-        "Chuhan Zhang",
-        "Guillaume Le Moing",
-        "Skanda Koppula",
-        "Ignacio Rocco",
-        "Liliane Momeni",
-        "Junyu Xie",
-        "Shuyang Sun",
-        "Rahul Sukthankar",
-        "Joëlle K Barral",
-        "Raia Hadsell",
-        "Zoubin Ghahramani",
-        "Andrew Zisserman",
-        "Junlin Zhang",
-        "Mehdi SM Sajjadi"
+        "Hao Lu",
+        "Ziyang Liu",
+        "Guangfeng Jiang",
+        "Yuanfei Luo",
+        "Sheng Chen",
+        "Yangang Zhang",
+        "Ying-Cong Chen"
       ],
-      "abstract": "Understanding and reconstructing the complex geometry and motion of dynamic scenes from video remains a formidable challenge in computer vision. This paper introduces D4RT, a simple yet powerful feedforward model designed to efficiently solve this task. D4RT utilizes a unified transformer architecture to jointly infer depth, spatio-temporal correspondence, and full camera parameters from a single video. Its core innovation is a novel querying mechanism that sidesteps the heavy computation of dense, per-frame decoding and the complexity of managing multiple, task-specific decoders. Our decoding interface allows the model to independently and flexibly probe the 3D position of any point in space and time. The result is a lightweight and highly scalable method that enables remarkably efficient training and inference. We demonstrate that our approach sets a new state of the art, outperforming previous methods across a wide spectrum of 4D reconstruction tasks. We refer to the project webpage for animated results: https://d4rt-paper.github.io/.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
+      "abstract": "Autonomous driving (AD) systems struggle in long-tail scenarios due to limited world knowledge and weak visual dynamic modeling. Existing vision-language-action (VLA)-based methods cannot leverage unlabeled videos for visual causal learning, while world model-based methods lack reasoning capabilities from large language models. In this paper, we construct multiple specialized datasets providing reasoning and planning annotations for complex scenarios. Then, a unified Understanding-Generation-Planning framework, named UniUGP, is proposed to synergize scene reasoning, future video generation, and trajectory planning through a hybrid expert architecture. By integrating pre-trained VLMs and video generation models, UniUGP leverages visual dynamics and semantic reasoning to enhance planning performance. Taking multi-frame observations and language instructions as input, it produces interpretable chain-of-thought reasoning, physically consistent trajectories, and coherent future videos. We introduce a four-stage training strategy that progressively builds these capabilities across multiple existing AD datasets, along with the proposed specialized datasets. Experiments demonstrate state-of-the-art performance in perception, reasoning, and decision-making, with superior generalization to challenging long-tail situations.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.08924v1",
-        "pdf": "https://arxiv.org/pdf/2512.08924v1"
+        "paper": "http://arxiv.org/abs/2512.09864v1",
+        "pdf": "https://arxiv.org/pdf/2512.09864v1"
       },
-      "arxiv_id": "2512.08924v1",
-      "comment": "Project Page: https://d4rt-paper.github.io/",
+      "arxiv_id": "2512.09864v1",
+      "comment": "Project Page: https://seed-uniugp.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1194915254237285,
+      "relevance_score": 3.8499999999999996,
       "score_breakdown": {
-        "total_score": 4.12,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Understanding and reconstructing the complex geometry and motion of dynamic scenes from video remains a formidable challenge in computer vision. This paper introduces D4RT, a simple yet powerful feedforward model designed to efficiently solve this task. D4RT utilizes a unified transformer architecture to jointly infer depth, spatio-temporal correspondence, and full camera parameters from a single ...",
-        "key_contributions": [
-          "Understanding and reconstructing the complex geometry and motion of dynamic scenes from video remains a formidable challenge in computer vision.",
-          "This paper introduces D4RT, a simple yet powerful feedforward model designed to efficiently solve this task.",
-          "D4RT utilizes a unified transformer architecture to jointly infer depth, spatio-temporal correspondence, and full camera parameters from a single video."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.08924v1.mp3"
-      }
-    },
-    {
-      "id": "2512.08765v1",
-      "title": "Wan-Move: Motion-controllable Video Generation via Latent Trajectory Guidance",
-      "authors": [
-        "Ruihang Chu",
-        "Yefei He",
-        "Zhekai Chen",
-        "Shiwei Zhang",
-        "Xiaogang Xu",
-        "Bin Xia",
-        "Dingdong Wang",
-        "Hongwei Yi",
-        "Xihui Liu",
-        "Hengshuang Zhao",
-        "Yu Liu",
-        "Yingya Zhang",
-        "Yujiu Yang"
-      ],
-      "abstract": "We present Wan-Move, a simple and scalable framework that brings motion control to video generative models. Existing motion-controllable methods typically suffer from coarse control granularity and limited scalability, leaving their outputs insufficient for practical use. We narrow this gap by achieving precise and high-quality motion control. Our core idea is to directly make the original condition features motion-aware for guiding video synthesis. To this end, we first represent object motions with dense point trajectories, allowing fine-grained control over the scene. We then project these trajectories into latent space and propagate the first frame's features along each trajectory, producing an aligned spatiotemporal feature map that tells how each scene element should move. This feature map serves as the updated latent condition, which is naturally integrated into the off-the-shelf image-to-video model, e.g., Wan-I2V-14B, as motion guidance without any architecture change. It removes the need for auxiliary motion encoders and makes fine-tuning base models easily scalable. Through scaled training, Wan-Move generates 5-second, 480p videos whose motion controllability rivals Kling 1.5 Pro's commercial Motion Brush, as indicated by user studies. To support comprehensive evaluation, we further design MoveBench, a rigorously curated benchmark featuring diverse content categories and hybrid-verified annotations. It is distinguished by larger data volume, longer video durations, and high-quality motion annotations. Extensive experiments on MoveBench and the public dataset consistently show Wan-Move's superior motion quality. Code, models, and benchmark data are made publicly available.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.08765v1",
-        "pdf": "https://arxiv.org/pdf/2512.08765v1"
-      },
-      "arxiv_id": "2512.08765v1",
-      "comment": "NeurlPS 2025. Code and data available at https://github.com/ali-vilab/Wan-Move",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1000000000000005,
-      "score_breakdown": {
-        "total_score": 4.1,
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -332,7 +577,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -341,245 +586,45 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We present Wan-Move, a simple and scalable framework that brings motion control to video generative models. Existing motion-controllable methods typically suffer from coarse control granularity and limited scalability, leaving their outputs insufficient for practical use. We narrow this gap by achieving precise and high-quality motion control. Our core idea is to directly make the original conditi...",
+        "short": "Autonomous driving (AD) systems struggle in long-tail scenarios due to limited world knowledge and weak visual dynamic modeling. Existing vision-language-action (VLA)-based methods cannot leverage unlabeled videos for visual causal learning, while world model-based methods lack reasoning capabilities from large language models. In this paper, we construct multiple specialized datasets providing re...",
         "key_contributions": [
-          "We present Wan-Move, a simple and scalable framework that brings motion control to video generative models.",
-          "Existing motion-controllable methods typically suffer from coarse control granularity and limited scalability, leaving their outputs insufficient for practical use.",
-          "We narrow this gap by achieving precise and high-quality motion control."
+          "Autonomous driving (AD) systems struggle in long-tail scenarios due to limited world knowledge and weak visual dynamic modeling.",
+          "Existing vision-language-action (VLA)-based methods cannot leverage unlabeled videos for visual causal learning, while world model-based methods lack reasoning capabilities from large language models.",
+          "In this paper, we construct multiple specialized datasets providing reasoning and planning annotations for complex scenarios."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.08765v1.mp3"
+        "audio_url": "/audio/2512.09864v1.mp3"
       }
     },
     {
-      "id": "2512.08747v1",
-      "title": "A Scalable Pipeline Combining Procedural 3D Graphics and Guided Diffusion for Photorealistic Synthetic Training Data Generation in White Button Mushroom Segmentation",
+      "id": "2512.09629v1",
+      "title": "An End-to-end Planning Framework with Agentic LLMs and PDDL",
       "authors": [
-        "Artúr I. Károly",
-        "Péter Galambos"
+        "Emanuele La Malfa",
+        "Ping Zhu",
+        "Samuele Marro",
+        "Sara Bernardini",
+        "Michael Wooldridge"
       ],
-      "abstract": "Industrial mushroom cultivation increasingly relies on computer vision for monitoring and automated harvesting. However, developing accurate detection and segmentation models requires large, precisely annotated datasets that are costly to produce. Synthetic data provides a scalable alternative, yet often lacks sufficient realism to generalize to real-world scenarios. This paper presents a novel workflow that integrates 3D rendering in Blender with a constrained diffusion model to automatically generate high-quality annotated, photorealistic synthetic images of Agaricus Bisporus mushrooms. This approach preserves full control over 3D scene configuration and annotations while achieving photorealism without the need for specialized computer graphics expertise. We release two synthetic datasets (each containing 6,000 images depicting over 250k mushroom instances) and evaluate Mask R-CNN models trained on them in a zero-shot setting. When tested on two independent real-world datasets (including a newly collected benchmark), our method achieves state-of-the-art segmentation performance (F1 = 0.859 on M18K), despite using only synthetic training data. Although the approach is demonstrated on Agaricus Bisporus mushrooms, the proposed pipeline can be readily adapted to other mushroom species or to other agricultural domains, such as fruit and leaf detection.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
+      "abstract": "We present an end-to-end framework for planning supported by verifiers. An orchestrator receives a human specification written in natural language and converts it into a PDDL (Planning Domain Definition Language) model, where the domain and problem are iteratively refined by sub-modules (agents) to address common planning requirements, such as time constraints and optimality, as well as ambiguities and contradictions that may exist in the human specification. The validated domain and problem are then passed to an external planning engine to generate a plan. The orchestrator and agents are powered by Large Language Models (LLMs) and require no human intervention at any stage of the process. Finally, a module translates the final plan back into natural language to improve human readability while maintaining the correctness of each step. We demonstrate the flexibility and effectiveness of our framework across various domains and tasks, including the Google NaturalPlan benchmark and PlanBench, as well as planning problems like Blocksworld and the Tower of Hanoi (where LLMs are known to struggle even with small instances). Our framework can be integrated with any PDDL planning engine and validator (such as Fast Downward, LPG, POPF, VAL, and uVAL, which we have tested) and represents a significant step toward end-to-end planning aided by LLMs.",
+      "published": "2025-12-10",
+      "updated": "2025-12-10",
       "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.08747v1",
-        "pdf": "https://arxiv.org/pdf/2512.08747v1"
-      },
-      "arxiv_id": "2512.08747v1",
-      "comment": "20 pages, 8 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9228813559322027,
-      "score_breakdown": {
-        "total_score": 3.92,
-        "field_match": {
-          "score": 0.93,
-          "matches": [
-            "segmentation",
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Industrial mushroom cultivation increasingly relies on computer vision for monitoring and automated harvesting. However, developing accurate detection and segmentation models requires large, precisely annotated datasets that are costly to produce. Synthetic data provides a scalable alternative, yet often lacks sufficient realism to generalize to real-world scenarios. This paper presents a novel wo...",
-        "key_contributions": [
-          "Industrial mushroom cultivation increasingly relies on computer vision for monitoring and automated harvesting.",
-          "However, developing accurate detection and segmentation models requires large, precisely annotated datasets that are costly to produce.",
-          "Synthetic data provides a scalable alternative, yet often lacks sufficient realism to generalize to real-world scenarios."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.08747v1.mp3"
-      }
-    },
-    {
-      "id": "2512.08931v1",
-      "title": "Astra: General Interactive World Model with Autoregressive Denoising",
-      "authors": [
-        "Yixuan Zhu",
-        "Jiaqi Feng",
-        "Wenzhao Zheng",
-        "Yuan Gao",
-        "Xin Tao",
-        "Pengfei Wan",
-        "Jie Zhou",
-        "Jiwen Lu"
-      ],
-      "abstract": "Recent advances in diffusion transformers have empowered video generation models to generate high-quality video clips from texts or images. However, world models with the ability to predict long-horizon futures from past observations and actions remain underexplored, especially for general-purpose scenarios and various forms of actions. To bridge this gap, we introduce Astra, an interactive general world model that generates real-world futures for diverse scenarios (e.g., autonomous driving, robot grasping) with precise action interactions (e.g., camera motion, robot action). We propose an autoregressive denoising architecture and use temporal causal attention to aggregate past observations and support streaming outputs. We use a noise-augmented history memory to avoid over-reliance on past frames to balance responsiveness with temporal coherence. For precise action control, we introduce an action-aware adapter that directly injects action signals into the denoising process. We further develop a mixture of action experts that dynamically route heterogeneous action modalities, enhancing versatility across diverse real-world tasks such as exploration, manipulation, and camera control. Astra achieves interactive, consistent, and general long-term video prediction and supports various forms of interactions. Experiments across multiple datasets demonstrate the improvements of Astra in fidelity, long-range prediction, and action alignment over existing state-of-the-art world models.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
-      "categories": [
-        "cs.CV",
         "cs.AI",
         "cs.LG"
       ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.08931v1",
-        "pdf": "https://arxiv.org/pdf/2512.08931v1"
-      },
-      "arxiv_id": "2512.08931v1",
-      "comment": "Code is available at: https://github.com/EternalEvan/Astra",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in diffusion transformers have empowered video generation models to generate high-quality video clips from texts or images. However, world models with the ability to predict long-horizon futures from past observations and actions remain underexplored, especially for general-purpose scenarios and various forms of actions. To bridge this gap, we introduce Astra, an interactive genera...",
-        "key_contributions": [
-          "Recent advances in diffusion transformers have empowered video generation models to generate high-quality video clips from texts or images.",
-          "However, world models with the ability to predict long-horizon futures from past observations and actions remain underexplored, especially for general-purpose scenarios and various forms of actions.",
-          "To bridge this gap, we introduce Astra, an interactive general world model that generates real-world futures for diverse scenarios (e."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.08931v1.mp3"
-      }
-    },
-    {
-      "id": "2512.08920v1",
-      "title": "OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer",
-      "authors": [
-        "Jessica Yin",
-        "Haozhi Qi",
-        "Youngsun Wi",
-        "Sayantan Kundu",
-        "Mike Lambeta",
-        "William Yang",
-        "Changhao Wang",
-        "Tingfan Wu",
-        "Jitendra Malik",
-        "Tess Hellebrekers"
-      ],
-      "abstract": "Human video demonstrations provide abundant training data for learning robot policies, but video alone cannot capture the rich contact signals critical for mastering manipulation. We introduce OSMO, an open-source wearable tactile glove designed for human-to-robot skill transfer. The glove features 12 three-axis tactile sensors across the fingertips and palm and is designed to be compatible with state-of-the-art hand-tracking methods for in-the-wild data collection. We demonstrate that a robot policy trained exclusively on human demonstrations collected with OSMO, without any real robot data, is capable of executing a challenging contact-rich manipulation task. By equipping both the human and the robot with the same glove, OSMO minimizes the visual and tactile embodiment gap, enabling the transfer of continuous shear and normal force feedback while avoiding the need for image inpainting or other vision-based force inference. On a real-world wiping task requiring sustained contact pressure, our tactile-aware policy achieves a 72% success rate, outperforming vision-only baselines by eliminating contact-related failure modes. We release complete hardware designs, firmware, and assembly instructions to support community adoption.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.08920v1",
-        "pdf": "https://arxiv.org/pdf/2512.08920v1"
-      },
-      "arxiv_id": "2512.08920v1",
-      "comment": "Project website: https://jessicayin.github.io/osmo_tactile_glove/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Human video demonstrations provide abundant training data for learning robot policies, but video alone cannot capture the rich contact signals critical for mastering manipulation. We introduce OSMO, an open-source wearable tactile glove designed for human-to-robot skill transfer. The glove features 12 three-axis tactile sensors across the fingertips and palm and is designed to be compatible with s...",
-        "key_contributions": [
-          "Human video demonstrations provide abundant training data for learning robot policies, but video alone cannot capture the rich contact signals critical for mastering manipulation.",
-          "We introduce OSMO, an open-source wearable tactile glove designed for human-to-robot skill transfer.",
-          "The glove features 12 three-axis tactile sensors across the fingertips and palm and is designed to be compatible with state-of-the-art hand-tracking methods for in-the-wild data collection."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.08920v1.mp3"
-      }
-    },
-    {
-      "id": "2512.08826v1",
-      "title": "CARLoS: Retrieval via Concise Assessment Representation of LoRAs at Scale",
-      "authors": [
-        "Shahar Sarfaty",
-        "Adi Haviv",
-        "Uri Hacohen",
-        "Niva Elkin-Koren",
-        "Roi Livni",
-        "Amit H. Bermano"
-      ],
-      "abstract": "The rapid proliferation of generative components, such as LoRAs, has created a vast but unstructured ecosystem. Existing discovery methods depend on unreliable user descriptions or biased popularity metrics, hindering usability. We present CARLoS, a large-scale framework for characterizing LoRAs without requiring additional metadata. Analyzing over 650 LoRAs, we employ them in image generation over a variety of prompts and seeds, as a credible way to assess their behavior. Using CLIP embeddings and their difference to a base-model generation, we concisely define a three-part representation: Directions, defining semantic shift; Strength, quantifying the significance of the effect; and Consistency, quantifying how stable the effect is. Using these representations, we develop an efficient retrieval framework that semantically matches textual queries to relevant LoRAs while filtering overly strong or unstable ones, outperforming textual baselines in automated and human evaluations. While retrieval is our primary focus, the same representation also supports analyses linking Strength and Consistency to legal notions of substantiality and volition, key considerations in copyright, positioning CARLoS as a practical system with broader relevance for LoRA analysis.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
-      "categories": [
-        "cs.AI"
-      ],
       "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.08826v1",
-        "pdf": "https://arxiv.org/pdf/2512.08826v1"
+        "paper": "http://arxiv.org/abs/2512.09629v1",
+        "pdf": "https://arxiv.org/pdf/2512.09629v1"
       },
-      "arxiv_id": "2512.08826v1",
-      "comment": "Paper Page: https://shahar-sarfaty.github.io/CARLoS/",
+      "arxiv_id": "2512.09629v1",
+      "comment": "Code: https://github.com/EmanueleLM/MultiAgentPlanning",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8499999999999996,
@@ -610,79 +655,14 @@
         }
       },
       "ai_summaries": {
-        "short": "The rapid proliferation of generative components, such as LoRAs, has created a vast but unstructured ecosystem. Existing discovery methods depend on unreliable user descriptions or biased popularity metrics, hindering usability. We present CARLoS, a large-scale framework for characterizing LoRAs without requiring additional metadata. Analyzing over 650 LoRAs, we employ them in image generation ove...",
+        "short": "We present an end-to-end framework for planning supported by verifiers. An orchestrator receives a human specification written in natural language and converts it into a PDDL (Planning Domain Definition Language) model, where the domain and problem are iteratively refined by sub-modules (agents) to address common planning requirements, such as time constraints and optimality, as well as ambiguitie...",
         "key_contributions": [
-          "The rapid proliferation of generative components, such as LoRAs, has created a vast but unstructured ecosystem.",
-          "Existing discovery methods depend on unreliable user descriptions or biased popularity metrics, hindering usability.",
-          "We present CARLoS, a large-scale framework for characterizing LoRAs without requiring additional metadata."
+          "We present an end-to-end framework for planning supported by verifiers.",
+          "An orchestrator receives a human specification written in natural language and converts it into a PDDL (Planning Domain Definition Language) model, where the domain and problem are iteratively refined by sub-modules (agents) to address common planning requirements, such as time constraints and optimality, as well as ambiguities and contradictions that may exist in the human specification.",
+          "The validated domain and problem are then passed to an external planning engine to generate a plan."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.08826v1.mp3"
-      }
-    },
-    {
-      "id": "2512.08785v1",
-      "title": "LoFA: Learning to Predict Personalized Priors for Fast Adaptation of Visual Generative Models",
-      "authors": [
-        "Yiming Hao",
-        "Mutian Xu",
-        "Chongjie Ye",
-        "Jie Qin",
-        "Shunlin Lu",
-        "Yipeng Qin",
-        "Xiaoguang Han"
-      ],
-      "abstract": "Personalizing visual generative models to meet specific user needs has gained increasing attention, yet current methods like Low-Rank Adaptation (LoRA) remain impractical due to their demand for task-specific data and lengthy optimization. While a few hypernetwork-based approaches attempt to predict adaptation weights directly, they struggle to map fine-grained user prompts to complex LoRA distributions, limiting their practical applicability. To bridge this gap, we propose LoFA, a general framework that efficiently predicts personalized priors for fast model adaptation. We first identify a key property of LoRA: structured distribution patterns emerge in the relative changes between LoRA and base model parameters. Building on this, we design a two-stage hypernetwork: first predicting relative distribution patterns that capture key adaptation regions, then using these to guide final LoRA weight prediction. Extensive experiments demonstrate that our method consistently predicts high-quality personalized priors within seconds, across multiple tasks and user prompts, even outperforming conventional LoRA that requires hours of processing. Project page: https://jaeger416.github.io/lofa/.",
-      "published": "2025-12-09",
-      "updated": "2025-12-09",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.08785v1",
-        "pdf": "https://arxiv.org/pdf/2512.08785v1"
-      },
-      "arxiv_id": "2512.08785v1",
-      "comment": "Project page: https://jaeger416.github.io/lofa/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Personalizing visual generative models to meet specific user needs has gained increasing attention, yet current methods like Low-Rank Adaptation (LoRA) remain impractical due to their demand for task-specific data and lengthy optimization. While a few hypernetwork-based approaches attempt to predict adaptation weights directly, they struggle to map fine-grained user prompts to complex LoRA distrib...",
-        "key_contributions": [
-          "Personalizing visual generative models to meet specific user needs has gained increasing attention, yet current methods like Low-Rank Adaptation (LoRA) remain impractical due to their demand for task-specific data and lengthy optimization.",
-          "While a few hypernetwork-based approaches attempt to predict adaptation weights directly, they struggle to map fine-grained user prompts to complex LoRA distributions, limiting their practical applicability.",
-          "To bridge this gap, we propose LoFA, a general framework that efficiently predicts personalized priors for fast model adaptation."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.08785v1.mp3"
+        "audio_url": "/audio/2512.09629v1.mp3"
       }
     }
   ]

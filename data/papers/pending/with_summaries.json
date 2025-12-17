@@ -3,105 +3,38 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.11548v1",
-      "title": "SSL-MedSAM2: A Semi-supervised Medical Image Segmentation Framework Powered by Few-shot Learning of SAM2",
+      "id": "2512.13411v1",
+      "title": "Computer vision training dataset generation for robotic environments using Gaussian splatting",
       "authors": [
-        "Zhendi Gong",
-        "Xin Chen"
+        "Patryk Niżeniec",
+        "Marcin Iwanowski"
       ],
-      "abstract": "Despite the success of deep learning based models in medical image segmentation, most state-of-the-art (SOTA) methods perform fully-supervised learning, which commonly rely on large scale annotated training datasets. However, medical image annotation is highly time-consuming, hindering its clinical applications. Semi-supervised learning (SSL) has been emerged as an appealing strategy in training with limited annotations, largely reducing the labelling cost. We propose a novel SSL framework SSL-MedSAM2, which contains a training-free few-shot learning branch TFFS-MedSAM2 based on the pretrained large foundation model Segment Anything Model 2 (SAM2) for pseudo label generation, and an iterative fully-supervised learning branch FSL-nnUNet based on nnUNet for pseudo label refinement. The results on MICCAI2025 challenge CARE-LiSeg (Liver Segmentation) demonstrate an outstanding performance of SSL-MedSAM2 among other methods. The average dice scores on the test set in GED4 and T1 MRI are 0.9710 and 0.9648 respectively, and the Hausdorff distances are 20.07 and 21.97 respectively. The code is available via https://github.com/naisops/SSL-MedSAM2/tree/main.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
+      "abstract": "This paper introduces a novel pipeline for generating large-scale, highly realistic, and automatically labeled datasets for computer vision tasks in robotic environments. Our approach addresses the critical challenges of the domain gap between synthetic and real-world imagery and the time-consuming bottleneck of manual annotation. We leverage 3D Gaussian Splatting (3DGS) to create photorealistic representations of the operational environment and objects. These assets are then used in a game engine where physics simulations create natural arrangements. A novel, two-pass rendering technique combines the realism of splats with a shadow map generated from proxy meshes. This map is then algorithmically composited with the image to add both physically plausible shadows and subtle highlights, significantly enhancing realism. Pixel-perfect segmentation masks are generated automatically and formatted for direct use with object detection models like YOLO. Our experiments show that a hybrid training strategy, combining a small set of real images with a large volume of our synthetic data, yields the best detection and segmentation performance, confirming this as an optimal strategy for efficiently achieving robust and accurate models.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.11548v1",
-        "pdf": "https://arxiv.org/pdf/2512.11548v1"
+        "paper": "http://arxiv.org/abs/2512.13411v1",
+        "pdf": "https://arxiv.org/pdf/2512.13411v1"
       },
-      "arxiv_id": "2512.11548v1",
-      "comment": "Accepted by MICCAI 2025 CARE Challenge, waiting for publication",
+      "arxiv_id": "2512.13411v1",
+      "comment": "Code available at: https://patrykni.github.io/UnitySplat2Data/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.327966101694916,
+      "has_code": true,
+      "relevance_score": 4.850847457627118,
       "score_breakdown": {
-        "total_score": 5.33,
+        "total_score": 4.85,
         "field_match": {
-          "score": 1.69,
-          "matches": [
-            "medical image",
-            "segmentation",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "MICCAI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite the success of deep learning based models in medical image segmentation, most state-of-the-art (SOTA) methods perform fully-supervised learning, which commonly rely on large scale annotated training datasets. However, medical image annotation is highly time-consuming, hindering its clinical applications. Semi-supervised learning (SSL) has been emerged as an appealing strategy in training w...",
-        "key_contributions": [
-          "Despite the success of deep learning based models in medical image segmentation, most state-of-the-art (SOTA) methods perform fully-supervised learning, which commonly rely on large scale annotated training datasets.",
-          "However, medical image annotation is highly time-consuming, hindering its clinical applications.",
-          "Semi-supervised learning (SSL) has been emerged as an appealing strategy in training with limited annotations, largely reducing the labelling cost."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.11624v1",
-      "title": "Fast and Explicit: Slice-to-Volume Reconstruction via 3D Gaussian Primitives with Analytic Point Spread Function Modeling",
-      "authors": [
-        "Maik Dannecker",
-        "Steven Jia",
-        "Nil Stolt-Ansó",
-        "Nadine Girard",
-        "Guillaume Auzias",
-        "François Rousseau",
-        "Daniel Rueckert"
-      ],
-      "abstract": "Recovering high-fidelity 3D images from sparse or degraded 2D images is a fundamental challenge in medical imaging, with broad applications ranging from 3D ultrasound reconstruction to MRI super-resolution. In the context of fetal MRI, high-resolution 3D reconstruction of the brain from motion-corrupted low-resolution 2D acquisitions is a prerequisite for accurate neurodevelopmental diagnosis. While implicit neural representations (INRs) have recently established state-of-the-art performance in self-supervised slice-to-volume reconstruction (SVR), they suffer from a critical computational bottleneck: accurately modeling the image acquisition physics requires expensive stochastic Monte Carlo sampling to approximate the point spread function (PSF). In this work, we propose a shift from neural network based implicit representations to Gaussian based explicit representations. By parameterizing the HR 3D image volume as a field of anisotropic Gaussian primitives, we leverage the property of Gaussians being closed under convolution and thus derive a \\textit{closed-form analytical solution} for the forward model. This formulation reduces the previously intractable acquisition integral to an exact covariance addition ($\\mathbfΣ_{obs} = \\mathbfΣ_{HR} + \\mathbfΣ_{PSF}$), effectively bypassing the need for compute-intensive stochastic sampling while ensuring exact gradient propagation. We demonstrate that our approach matches the reconstruction quality of self-supervised state-of-the-art SVR frameworks while delivering a 5$\\times$--10$\\times$ speed-up on neonatal and fetal data. With convergence often reached in under 30 seconds, our framework paves the way towards translation into clinical routine of real-time fetal 3D MRI. Code will be public at {https://github.com/m-dannecker/Gaussian-Primitives-for-Fast-SVR}.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.11624v1",
-        "pdf": "https://arxiv.org/pdf/2512.11624v1"
-      },
-      "arxiv_id": "2512.11624v1",
-      "comment": "Under Review for MIDL 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.352542372881356,
-      "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 2.88,
+          "score": 2.63,
           "matches": [
             "3d gaussian",
-            "medical imaging",
-            "self-supervised",
-            "3d reconstruction"
+            "gaussian splatting",
+            "segmentation",
+            "computer vision"
           ],
           "weight": 0.4
         },
@@ -111,73 +44,81 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recovering high-fidelity 3D images from sparse or degraded 2D images is a fundamental challenge in medical imaging, with broad applications ranging from 3D ultrasound reconstruction to MRI super-resolution. In the context of fetal MRI, high-resolution 3D reconstruction of the brain from motion-corrupted low-resolution 2D acquisitions is a prerequisite for accurate neurodevelopmental diagnosis. Whi...",
+        "short": "This paper introduces a novel pipeline for generating large-scale, highly realistic, and automatically labeled datasets for computer vision tasks in robotic environments. Our approach addresses the critical challenges of the domain gap between synthetic and real-world imagery and the time-consuming bottleneck of manual annotation. We leverage 3D Gaussian Splatting (3DGS) to create photorealistic r...",
         "key_contributions": [
-          "Recovering high-fidelity 3D images from sparse or degraded 2D images is a fundamental challenge in medical imaging, with broad applications ranging from 3D ultrasound reconstruction to MRI super-resolution.",
-          "In the context of fetal MRI, high-resolution 3D reconstruction of the brain from motion-corrupted low-resolution 2D acquisitions is a prerequisite for accurate neurodevelopmental diagnosis.",
-          "While implicit neural representations (INRs) have recently established state-of-the-art performance in self-supervised slice-to-volume reconstruction (SVR), they suffer from a critical computational bottleneck: accurately modeling the image acquisition physics requires expensive stochastic Monte Carlo sampling to approximate the point spread function (PSF)."
+          "This paper introduces a novel pipeline for generating large-scale, highly realistic, and automatically labeled datasets for computer vision tasks in robotic environments.",
+          "Our approach addresses the critical challenges of the domain gap between synthetic and real-world imagery and the time-consuming bottleneck of manual annotation.",
+          "We leverage 3D Gaussian Splatting (3DGS) to create photorealistic representations of the operational environment and objects."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.11763v1",
-      "title": "Reducing Domain Gap with Diffusion-Based Domain Adaptation for Cell Counting",
+      "id": "2512.13402v1",
+      "title": "End2Reg: Learning Task-Specific Segmentation for Markerless Registration in Spine Surgery",
       "authors": [
-        "Mohammad Dehghanmanshadi",
-        "Wallapak Tavanapong"
+        "Lorenzo Pettinari",
+        "Sidaty El Hadramy",
+        "Michael Wehrli",
+        "Philippe C. Cattin",
+        "Daniel Studer",
+        "Carol C. Hasler",
+        "Maria Licci"
       ],
-      "abstract": "Generating realistic synthetic microscopy images is critical for training deep learning models in label-scarce environments, such as cell counting with many cells per image. However, traditional domain adaptation methods often struggle to bridge the domain gap when synthetic images lack the complex textures and visual patterns of real samples. In this work, we adapt the Inversion-Based Style Transfer (InST) framework originally designed for artistic style transfer to biomedical microscopy images. Our method combines latent-space Adaptive Instance Normalization with stochastic inversion in a diffusion model to transfer the style from real fluorescence microscopy images to synthetic ones, while weakly preserving content structure.\n  We evaluate the effectiveness of our InST-based synthetic dataset for downstream cell counting by pre-training and fine-tuning EfficientNet-B0 models on various data sources, including real data, hard-coded synthetic data, and the public Cell200-s dataset. Models trained with our InST-synthesized images achieve up to 37\\% lower Mean Absolute Error (MAE) compared to models trained on hard-coded synthetic data, and a 52\\% reduction in MAE compared to models trained on Cell200-s (from 53.70 to 25.95 MAE). Notably, our approach also outperforms models trained on real data alone (25.95 vs. 27.74 MAE). Further improvements are achieved when combining InST-synthesized data with lightweight domain adaptation techniques such as DACS with CutMix. These findings demonstrate that InST-based style transfer most effectively reduces the domain gap between synthetic and real microscopy data. Our approach offers a scalable path for enhancing cell counting performance while minimizing manual labeling effort. The source code and resources are publicly available at: https://github.com/MohammadDehghan/InST-Microscopy.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
+      "abstract": "Purpose: Intraoperative navigation in spine surgery demands millimeter-level accuracy. Current systems based on intraoperative radiographic imaging and bone-anchored markers are invasive, radiation-intensive and workflow disruptive. Recent markerless RGB-D registration methods offer a promising alternative, but existing approaches rely on weak segmentation labels to isolate relevant anatomical structures, which can propagate errors throughout registration. Methods: We present End2Reg an end-to-end deep learning framework that jointly optimizes segmentation and registration, eliminating the need for weak segmentation labels and manual steps. The network learns segmentation masks specifically optimized for registration, guided solely by the registration objective without direct segmentation supervision. Results: The proposed framework achieves state-of-the-art performance on ex- and in-vivo benchmarks, reducing median Target Registration Error by 32% to 1.83mm and mean Root Mean Square Error by 45% to 3.95mm, respectively. An ablation study confirms that end-to-end optimization significantly improves registration accuracy. Conclusion: The presented end-to-end RGB-D registration pipeline removes dependency on weak labels and manual steps, advancing towards fully automatic, markerless intraoperative navigation. Code and interactive visualizations are available at: https://lorenzopettinari.github.io/end-2-reg/.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.11763v1",
-        "pdf": "https://arxiv.org/pdf/2512.11763v1"
+        "paper": "http://arxiv.org/abs/2512.13402v1",
+        "pdf": "https://arxiv.org/pdf/2512.13402v1"
       },
-      "arxiv_id": "2512.11763v1",
-      "comment": "Accepted at ICMLA 2025",
+      "arxiv_id": "2512.13402v1",
+      "comment": "Code and interactive visualizations: https://lorenzopettinari.github.io/end-2-reg/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.269491525423729,
+      "has_code": true,
+      "relevance_score": 4.576271186440678,
       "score_breakdown": {
-        "total_score": 4.27,
+        "total_score": 4.58,
         "field_match": {
-          "score": 0.42,
+          "score": 1.44,
           "matches": [
+            "segmentation",
+            "registration",
             "deep learning"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -186,45 +127,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Generating realistic synthetic microscopy images is critical for training deep learning models in label-scarce environments, such as cell counting with many cells per image. However, traditional domain adaptation methods often struggle to bridge the domain gap when synthetic images lack the complex textures and visual patterns of real samples. In this work, we adapt the Inversion-Based Style Trans...",
+        "short": "Purpose: Intraoperative navigation in spine surgery demands millimeter-level accuracy. Current systems based on intraoperative radiographic imaging and bone-anchored markers are invasive, radiation-intensive and workflow disruptive. Recent markerless RGB-D registration methods offer a promising alternative, but existing approaches rely on weak segmentation labels to isolate relevant anatomical str...",
         "key_contributions": [
-          "Generating realistic synthetic microscopy images is critical for training deep learning models in label-scarce environments, such as cell counting with many cells per image.",
-          "However, traditional domain adaptation methods often struggle to bridge the domain gap when synthetic images lack the complex textures and visual patterns of real samples.",
-          "In this work, we adapt the Inversion-Based Style Transfer (InST) framework originally designed for artistic style transfer to biomedical microscopy images."
+          "Purpose: Intraoperative navigation in spine surgery demands millimeter-level accuracy.",
+          "Current systems based on intraoperative radiographic imaging and bone-anchored markers are invasive, radiation-intensive and workflow disruptive.",
+          "Recent markerless RGB-D registration methods offer a promising alternative, but existing approaches rely on weak segmentation labels to isolate relevant anatomical structures, which can propagate errors throughout registration."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.11782v1",
-      "title": "MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator",
+      "id": "2512.13534v1",
+      "title": "Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains",
       "authors": [
-        "Peiqing Yang",
-        "Shangchen Zhou",
-        "Kai Hao",
-        "Qingyi Tao"
+        "Marianne Rakic",
+        "Siyu Gai",
+        "Etienne Chollet",
+        "John V. Guttag",
+        "Adrian V. Dalca"
       ],
-      "abstract": "Video matting remains limited by the scale and realism of existing datasets. While leveraging segmentation data can enhance semantic stability, the lack of effective boundary supervision often leads to segmentation-like mattes lacking fine details. To this end, we introduce a learned Matting Quality Evaluator (MQE) that assesses semantic and boundary quality of alpha mattes without ground truth. It produces a pixel-wise evaluation map that identifies reliable and erroneous regions, enabling fine-grained quality assessment. The MQE scales up video matting in two ways: (1) as an online matting-quality feedback during training to suppress erroneous regions, providing comprehensive supervision, and (2) as an offline selection module for data curation, improving annotation quality by combining the strengths of leading video and image matting models. This process allows us to build a large-scale real-world video matting dataset, VMReal, containing 28K clips and 2.4M frames. To handle large appearance variations in long videos, we introduce a reference-frame training strategy that incorporates long-range frames beyond the local window for effective training. Our MatAnyone 2 achieves state-of-the-art performance on both synthetic and real-world benchmarks, surpassing prior methods across all metrics.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
+      "abstract": "A single biomedical image can be meaningfully segmented in multiple ways, depending on the desired application. For instance, a brain MRI can be segmented according to tissue types, vascular territories, broad anatomical regions, fine-grained anatomy, or pathology, etc. Existing automatic segmentation models typically either (1) support only a single protocol, the one they were trained on, or (2) require labor-intensive manual prompting to specify the desired segmentation. We introduce Pancakes, a framework that, given a new image from a previously unseen domain, automatically generates multi-label segmentation maps for multiple plausible protocols, while maintaining semantic consistency across related images. Pancakes introduces a new problem formulation that is not currently attainable by existing foundation models. In a series of experiments on seven held-out datasets, we demonstrate that our model can significantly outperform existing foundation models in producing several plausible whole-image segmentations, that are semantically coherent across images.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.11782v1",
-        "pdf": "https://arxiv.org/pdf/2512.11782v1"
+        "paper": "http://arxiv.org/abs/2512.13534v1",
+        "pdf": "https://arxiv.org/pdf/2512.13534v1"
       },
-      "arxiv_id": "2512.11782v1",
-      "comment": "Project page: https://pq-yang.github.io/projects/MatAnyone2/",
+      "arxiv_id": "2512.13534v1",
+      "comment": "Accepted at NeurIPS 2025. Code available at: https://github.com/mariannerakic/Pancakes",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.153389830508475,
+      "relevance_score": 4.458474576271187,
       "score_breakdown": {
-        "total_score": 4.15,
+        "total_score": 4.46,
         "field_match": {
-          "score": 0.51,
+          "score": 1.27,
           "matches": [
+            "medical image",
             "segmentation"
           ],
           "weight": 0.4
@@ -249,254 +193,46 @@
         }
       },
       "ai_summaries": {
-        "short": "Video matting remains limited by the scale and realism of existing datasets. While leveraging segmentation data can enhance semantic stability, the lack of effective boundary supervision often leads to segmentation-like mattes lacking fine details. To this end, we introduce a learned Matting Quality Evaluator (MQE) that assesses semantic and boundary quality of alpha mattes without ground truth. I...",
+        "short": "A single biomedical image can be meaningfully segmented in multiple ways, depending on the desired application. For instance, a brain MRI can be segmented according to tissue types, vascular territories, broad anatomical regions, fine-grained anatomy, or pathology, etc. Existing automatic segmentation models typically either (1) support only a single protocol, the one they were trained on, or (2) ...",
         "key_contributions": [
-          "Video matting remains limited by the scale and realism of existing datasets.",
-          "While leveraging segmentation data can enhance semantic stability, the lack of effective boundary supervision often leads to segmentation-like mattes lacking fine details.",
-          "To this end, we introduce a learned Matting Quality Evaluator (MQE) that assesses semantic and boundary quality of alpha mattes without ground truth."
+          "A single biomedical image can be meaningfully segmented in multiple ways, depending on the desired application.",
+          "For instance, a brain MRI can be segmented according to tissue types, vascular territories, broad anatomical regions, fine-grained anatomy, or pathology, etc.",
+          "Existing automatic segmentation models typically either (1) support only a single protocol, the one they were trained on, or (2) require labor-intensive manual prompting to specify the desired segmentation."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.11797v1",
-      "title": "AnchorDream: Repurposing Video Diffusion for Embodiment-Aware Robot Data Synthesis",
+      "id": "2512.13639v1",
+      "title": "Charge: A Comprehensive Novel View Synthesis Benchmark and Dataset to Bind Them All",
       "authors": [
-        "Junjie Ye",
-        "Rong Xue",
-        "Basile Van Hoorick",
-        "Pavel Tokmakov",
-        "Muhammad Zubair Irshad",
-        "Yue Wang",
-        "Vitor Guizilini"
+        "Michal Nazarczuk",
+        "Thomas Tanay",
+        "Arthur Moreau",
+        "Zhensong Zhang",
+        "Eduardo Pérez-Pellitero"
       ],
-      "abstract": "The collection of large-scale and diverse robot demonstrations remains a major bottleneck for imitation learning, as real-world data acquisition is costly and simulators offer limited diversity and fidelity with pronounced sim-to-real gaps. While generative models present an attractive solution, existing methods often alter only visual appearances without creating new behaviors, or suffer from embodiment inconsistencies that yield implausible motions. To address these limitations, we introduce AnchorDream, an embodiment-aware world model that repurposes pretrained video diffusion models for robot data synthesis. AnchorDream conditions the diffusion process on robot motion renderings, anchoring the embodiment to prevent hallucination while synthesizing objects and environments consistent with the robot's kinematics. Starting from only a handful of human teleoperation demonstrations, our method scales them into large, diverse, high-quality datasets without requiring explicit environment modeling. Experiments show that the generated data leads to consistent improvements in downstream policy learning, with relative gains of 36.4% in simulator benchmarks and nearly double performance in real-world studies. These results suggest that grounding generative world models in robot motion provides a practical path toward scaling imitation learning.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.11797v1",
-        "pdf": "https://arxiv.org/pdf/2512.11797v1"
-      },
-      "arxiv_id": "2512.11797v1",
-      "comment": "Project page: https://jay-ye.github.io/AnchorDream/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.15,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The collection of large-scale and diverse robot demonstrations remains a major bottleneck for imitation learning, as real-world data acquisition is costly and simulators offer limited diversity and fidelity with pronounced sim-to-real gaps. While generative models present an attractive solution, existing methods often alter only visual appearances without creating new behaviors, or suffer from emb...",
-        "key_contributions": [
-          "The collection of large-scale and diverse robot demonstrations remains a major bottleneck for imitation learning, as real-world data acquisition is costly and simulators offer limited diversity and fidelity with pronounced sim-to-real gaps.",
-          "While generative models present an attractive solution, existing methods often alter only visual appearances without creating new behaviors, or suffer from embodiment inconsistencies that yield implausible motions.",
-          "To address these limitations, we introduce AnchorDream, an embodiment-aware world model that repurposes pretrained video diffusion models for robot data synthesis."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.11749v1",
-      "title": "SVG-T2I: Scaling Up Text-to-Image Latent Diffusion Model Without Variational Autoencoder",
-      "authors": [
-        "Minglei Shi",
-        "Haolin Wang",
-        "Borui Zhang",
-        "Wenzhao Zheng",
-        "Bohan Zeng",
-        "Ziyang Yuan",
-        "Xiaoshi Wu",
-        "Yuanxing Zhang",
-        "Huan Yang",
-        "Xintao Wang",
-        "Pengfei Wan",
-        "Kun Gai",
-        "Jie Zhou",
-        "Jiwen Lu"
-      ],
-      "abstract": "Visual generation grounded in Visual Foundation Model (VFM) representations offers a highly promising unified pathway for integrating visual understanding, perception, and generation. Despite this potential, training large-scale text-to-image diffusion models entirely within the VFM representation space remains largely unexplored. To bridge this gap, we scale the SVG (Self-supervised representations for Visual Generation) framework, proposing SVG-T2I to support high-quality text-to-image synthesis directly in the VFM feature domain. By leveraging a standard text-to-image diffusion pipeline, SVG-T2I achieves competitive performance, reaching 0.75 on GenEval and 85.78 on DPG-Bench. This performance validates the intrinsic representational power of VFMs for generative tasks. We fully open-source the project, including the autoencoder and generation model, together with their training, inference, evaluation pipelines, and pre-trained weights, to facilitate further research in representation-driven visual generation.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
+      "abstract": "This paper presents a new dataset for Novel View Synthesis, generated from a high-quality, animated film with stunning realism and intricate detail. Our dataset captures a variety of dynamic scenes, complete with detailed textures, lighting, and motion, making it ideal for training and evaluating cutting-edge 4D scene reconstruction and novel view generation models. In addition to high-fidelity RGB images, we provide multiple complementary modalities, including depth, surface normals, object segmentation and optical flow, enabling a deeper understanding of scene geometry and motion. The dataset is organised into three distinct benchmarking scenarios: a dense multi-view camera setup, a sparse camera arrangement, and monocular video sequences, enabling a wide range of experimentation and comparison across varying levels of data sparsity. With its combination of visual richness, high-quality annotations, and diverse experimental setups, this dataset offers a unique resource for pushing the boundaries of view synthesis and 3D vision.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.11749v1",
-        "pdf": "https://arxiv.org/pdf/2512.11749v1"
+        "paper": "http://arxiv.org/abs/2512.13639v1",
+        "pdf": "https://arxiv.org/pdf/2512.13639v1"
       },
-      "arxiv_id": "2512.11749v1",
-      "comment": "Code Repository: https://github.com/KlingTeam/SVG-T2I; Model Weights: https://huggingface.co/KlingTeam/SVG-T2I",
+      "arxiv_id": "2512.13639v1",
+      "comment": "Project page: https://charge-benchmark.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.071186440677966,
+      "relevance_score": 4.403389830508475,
       "score_breakdown": {
-        "total_score": 4.07,
+        "total_score": 4.4,
         "field_match": {
-          "score": 0.68,
+          "score": 0.51,
           "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Visual generation grounded in Visual Foundation Model (VFM) representations offers a highly promising unified pathway for integrating visual understanding, perception, and generation. Despite this potential, training large-scale text-to-image diffusion models entirely within the VFM representation space remains largely unexplored. To bridge this gap, we scale the SVG (Self-supervised representatio...",
-        "key_contributions": [
-          "Visual generation grounded in Visual Foundation Model (VFM) representations offers a highly promising unified pathway for integrating visual understanding, perception, and generation.",
-          "Despite this potential, training large-scale text-to-image diffusion models entirely within the VFM representation space remains largely unexplored.",
-          "To bridge this gap, we scale the SVG (Self-supervised representations for Visual Generation) framework, proposing SVG-T2I to support high-quality text-to-image synthesis directly in the VFM feature domain."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.11800v1",
-      "title": "Moment-Based 3D Gaussian Splatting: Resolving Volumetric Occlusion with Order-Independent Transmittance",
-      "authors": [
-        "Jan U. Müller",
-        "Robin Tim Landsgesell",
-        "Leif Van Holland",
-        "Patrick Stotko",
-        "Reinhard Klein"
-      ],
-      "abstract": "The recent success of 3D Gaussian Splatting (3DGS) has reshaped novel view synthesis by enabling fast optimization and real-time rendering of high-quality radiance fields. However, it relies on simplified, order-dependent alpha blending and coarse approximations of the density integral within the rasterizer, thereby limiting its ability to render complex, overlapping semi-transparent objects. In this paper, we extend rasterization-based rendering of 3D Gaussian representations with a novel method for high-fidelity transmittance computation, entirely avoiding the need for ray tracing or per-pixel sample sorting. Building on prior work in moment-based order-independent transparency, our key idea is to characterize the density distribution along each camera ray with a compact and continuous representation based on statistical moments. To this end, we analytically derive and compute a set of per-pixel moments from all contributing 3D Gaussians. From these moments, a continuous transmittance function is reconstructed for each ray, which is then independently sampled within each Gaussian. As a result, our method bridges the gap between rasterization and physical accuracy by modeling light attenuation in complex translucent media, significantly improving overall reconstruction and rendering quality.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
-      "categories": [
-        "cs.CV",
-        "cs.GR"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.11800v1",
-        "pdf": "https://arxiv.org/pdf/2512.11800v1"
-      },
-      "arxiv_id": "2512.11800v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.0152542372881355,
-      "score_breakdown": {
-        "total_score": 4.02,
-        "field_match": {
-          "score": 2.29,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "volumetric"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The recent success of 3D Gaussian Splatting (3DGS) has reshaped novel view synthesis by enabling fast optimization and real-time rendering of high-quality radiance fields. However, it relies on simplified, order-dependent alpha blending and coarse approximations of the density integral within the rasterizer, thereby limiting its ability to render complex, overlapping semi-transparent objects. In t...",
-        "key_contributions": [
-          "The recent success of 3D Gaussian Splatting (3DGS) has reshaped novel view synthesis by enabling fast optimization and real-time rendering of high-quality radiance fields.",
-          "However, it relies on simplified, order-dependent alpha blending and coarse approximations of the density integral within the rasterizer, thereby limiting its ability to render complex, overlapping semi-transparent objects.",
-          "In this paper, we extend rasterization-based rendering of 3D Gaussian representations with a novel method for high-fidelity transmittance computation, entirely avoiding the need for ray tracing or per-pixel sample sorting."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.11465v1",
-      "title": "DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation",
-      "authors": [
-        "Mohamed Abdelsamad",
-        "Michael Ulrich",
-        "Bin Yang",
-        "Miao Zhang",
-        "Yakov Miron",
-        "Abhinav Valada"
-      ],
-      "abstract": "Recent advances in self-supervised learning (SSL) have shown tremendous potential for learning 3D point cloud representations without human annotations. However, SSL for 3D point clouds still faces critical challenges due to irregular geometry, shortcut-prone reconstruction, and unbalanced semantics distribution. In this work, we propose DOS (Distilling Observable Softmaps), a novel SSL framework that self-distills semantic relevance softmaps only at observable (unmasked) points. This strategy prevents information leakage from masked regions and provides richer supervision than discrete token-to-prototype assignments. To address the challenge of unbalanced semantics in an unsupervised setting, we introduce Zipfian prototypes and incorporate them using a modified Sinkhorn-Knopp algorithm, Zipf-Sinkhorn, which enforces a power-law prior over prototype usage and modulates the sharpness of the target softmap during training. DOS outperforms current state-of-the-art methods on semantic segmentation and 3D object detection across multiple benchmarks, including nuScenes, Waymo, SemanticKITTI, ScanNet, and ScanNet200, without relying on extra data or annotations. Our results demonstrate that observable-point softmaps distillation offers a scalable and effective paradigm for learning robust 3D representations.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.11465v1",
-        "pdf": "https://arxiv.org/pdf/2512.11465v1"
-      },
-      "arxiv_id": "2512.11465v1",
-      "comment": "AAAI-26",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9245762711864405,
-      "score_breakdown": {
-        "total_score": 3.92,
-        "field_match": {
-          "score": 1.19,
-          "matches": [
-            "self-supervised",
             "segmentation"
           ],
           "weight": 0.4
@@ -511,121 +247,62 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in self-supervised learning (SSL) have shown tremendous potential for learning 3D point cloud representations without human annotations. However, SSL for 3D point clouds still faces critical challenges due to irregular geometry, shortcut-prone reconstruction, and unbalanced semantics distribution. In this work, we propose DOS (Distilling Observable Softmaps), a novel SSL framework ...",
-        "key_contributions": [
-          "Recent advances in self-supervised learning (SSL) have shown tremendous potential for learning 3D point cloud representations without human annotations.",
-          "However, SSL for 3D point clouds still faces critical challenges due to irregular geometry, shortcut-prone reconstruction, and unbalanced semantics distribution.",
-          "In this work, we propose DOS (Distilling Observable Softmaps), a novel SSL framework that self-distills semantic relevance softmaps only at observable (unmasked) points."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.11582v1",
-      "title": "Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model",
-      "authors": [
-        "Sam Gijsen",
-        "Marc-Andre Schulz",
-        "Kerstin Ritter"
-      ],
-      "abstract": "The development of foundation models for functional magnetic resonance imaging (fMRI) time series holds significant promise for predicting phenotypes related to disease and cognition. Current models, however, are often trained using a mask-and-reconstruct objective on small brain regions. This focus on low-level information leads to representations that are sensitive to noise and temporal fluctuations, necessitating extensive fine-tuning for downstream tasks. We introduce Brain-Semantoks, a self-supervised framework designed specifically to learn abstract representations of brain dynamics. Its architecture is built on two core innovations: a semantic tokenizer that aggregates noisy regional signals into robust tokens representing functional networks, and a self-distillation objective that enforces representational stability across time. We show that this objective is stabilized through a novel training curriculum, ensuring the model robustly learns meaningful features from low signal-to-noise time series. We demonstrate that learned representations enable strong performance on a variety of downstream tasks even when only using a linear probe. Furthermore, we provide comprehensive scaling analyses indicating more unlabeled data reliably results in out-of-distribution performance gains without domain adaptation.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
-      "categories": [
-        "cs.LG",
-        "cs.CV",
-        "q-bio.NC"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.11582v1",
-        "pdf": "https://arxiv.org/pdf/2512.11582v1"
-      },
-      "arxiv_id": "2512.11582v1",
-      "comment": "Code and pretrained models available at https://github.com/SamGijsen/Brain-Semantoks",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9211864406779657,
-      "score_breakdown": {
-        "total_score": 3.92,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
           "score": 10.0,
           "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The development of foundation models for functional magnetic resonance imaging (fMRI) time series holds significant promise for predicting phenotypes related to disease and cognition. Current models, however, are often trained using a mask-and-reconstruct objective on small brain regions. This focus on low-level information leads to representations that are sensitive to noise and temporal fluctuat...",
+        "short": "This paper presents a new dataset for Novel View Synthesis, generated from a high-quality, animated film with stunning realism and intricate detail. Our dataset captures a variety of dynamic scenes, complete with detailed textures, lighting, and motion, making it ideal for training and evaluating cutting-edge 4D scene reconstruction and novel view generation models. In addition to high-fidelity RG...",
         "key_contributions": [
-          "The development of foundation models for functional magnetic resonance imaging (fMRI) time series holds significant promise for predicting phenotypes related to disease and cognition.",
-          "Current models, however, are often trained using a mask-and-reconstruct objective on small brain regions.",
-          "This focus on low-level information leads to representations that are sensitive to noise and temporal fluctuations, necessitating extensive fine-tuning for downstream tasks."
+          "This paper presents a new dataset for Novel View Synthesis, generated from a high-quality, animated film with stunning realism and intricate detail.",
+          "Our dataset captures a variety of dynamic scenes, complete with detailed textures, lighting, and motion, making it ideal for training and evaluating cutting-edge 4D scene reconstruction and novel view generation models.",
+          "In addition to high-fidelity RGB images, we provide multiple complementary modalities, including depth, surface normals, object segmentation and optical flow, enabling a deeper understanding of scene geometry and motion."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.11799v1",
-      "title": "V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties",
+      "id": "2512.13660v1",
+      "title": "RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics",
       "authors": [
-        "Ye Fang",
-        "Tong Wu",
-        "Valentin Deschaintre",
-        "Duygu Ceylan",
-        "Iliyan Georgiev",
-        "Chun-Hao Paul Huang",
-        "Yiwei Hu",
-        "Xuelin Chen",
-        "Tuanfeng Yang Wang"
+        "Enshen Zhou",
+        "Cheng Chi",
+        "Yibo Li",
+        "Jingkun An",
+        "Jiayuan Zhang",
+        "Shanyu Rong",
+        "Yi Han",
+        "Yuheng Ji",
+        "Mengzhen Liu",
+        "Pengwei Wang",
+        "Zhongyuan Wang",
+        "Lu Sheng",
+        "Shanghang Zhang"
       ],
-      "abstract": "Large-scale video generation models have shown remarkable potential in modeling photorealistic appearance and lighting interactions in real-world scenes. However, a closed-loop framework that jointly understands intrinsic scene properties (e.g., albedo, normal, material, and irradiance), leverages them for video synthesis, and supports editable intrinsic representations remains unexplored. We present V-RGBX, the first end-to-end framework for intrinsic-aware video editing. V-RGBX unifies three key capabilities: (1) video inverse rendering into intrinsic channels, (2) photorealistic video synthesis from these intrinsic representations, and (3) keyframe-based video editing conditioned on intrinsic channels. At the core of V-RGBX is an interleaved conditioning mechanism that enables intuitive, physically grounded video editing through user-selected keyframes, supporting flexible manipulation of any intrinsic modality. Extensive qualitative and quantitative results show that V-RGBX produces temporally consistent, photorealistic videos while propagating keyframe edits across sequences in a physically plausible manner. We demonstrate its effectiveness in diverse applications, including object appearance editing and scene-level relighting, surpassing the performance of prior methods.",
-      "published": "2025-12-12",
-      "updated": "2025-12-12",
+      "abstract": "Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement. However, existing methods struggle with this compositional task. To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and measuring via a universal spatial encoder and a regression-supervised decoder to enhance scale awareness during supervised fine-tuning (SFT). Moreover, RoboTracer advances multi-step metric-grounded reasoning via reinforcement fine-tuning (RFT) with metric-sensitive process rewards, supervising key intermediate perceptual cues to accurately generate spatial traces. To support SFT and RFT training, we introduce TraceSpatial, a large-scale dataset of 30M QA pairs, spanning outdoor/indoor/tabletop scenes and supporting complex reasoning processes (up to 9 steps). We further present TraceSpatial-Bench, a challenging benchmark filling the gap to evaluate spatial tracing. Experimental results show that RoboTracer surpasses baselines in spatial understanding, measuring, and referring, with an average success rate of 79.1%, and also achieves SOTA performance on TraceSpatial-Bench by a large margin, exceeding Gemini-2.5-Pro by 36% accuracy. Notably, RoboTracer can be integrated with various control policies to execute long-horizon, dynamic tasks across diverse robots (UR5, G1 humanoid) in cluttered real-world scenes.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
       "categories": [
+        "cs.RO",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.11799v1",
-        "pdf": "https://arxiv.org/pdf/2512.11799v1"
+        "paper": "http://arxiv.org/abs/2512.13660v1",
+        "pdf": "https://arxiv.org/pdf/2512.13660v1"
       },
-      "arxiv_id": "2512.11799v1",
-      "comment": "Project Page: https://aleafy.github.io/vrgbx",
+      "arxiv_id": "2512.13660v1",
+      "comment": "Project page: https://zhoues.github.io/RoboTracer",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9,
+      "relevance_score": 4.25,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -637,7 +314,74 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement. However, existing methods struggle with this compositional task. To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and meas...",
+        "key_contributions": [
+          "Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement.",
+          "However, existing methods struggle with this compositional task.",
+          "To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and measuring via a universal spatial encoder and a regression-supervised decoder to enhance scale awareness during supervised fine-tuning (SFT)."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.13604v1",
+      "title": "LongVie 2: Multimodal Controllable Ultra-Long Video World Model",
+      "authors": [
+        "Jianxiong Gao",
+        "Zhaoxi Chen",
+        "Xian Liu",
+        "Junhao Zhuang",
+        "Chengming Xu",
+        "Jianfeng Feng",
+        "Yu Qiao",
+        "Yanwei Fu",
+        "Chenyang Si",
+        "Ziwei Liu"
+      ],
+      "abstract": "Building video world models upon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence. A world model should possess three essential properties: controllability, long-term visual quality, and temporal consistency. To this end, we take a progressive approach-first enhancing controllability and then extending toward long-term, high-quality generation. We present LongVie 2, an end-to-end autoregressive framework trained in three stages: (1) Multi-modal guidance, which integrates dense and sparse control signals to provide implicit world-level supervision and improve controllability; (2) Degradation-aware training on the input frame, bridging the gap between training and long-term inference to maintain high visual quality; and (3) History-context guidance, which aligns contextual information across adjacent clips to ensure temporal consistency. We further introduce LongVGenBench, a comprehensive benchmark comprising 100 high-resolution one-minute videos covering diverse real-world and synthetic environments. Extensive experiments demonstrate that LongVie 2 achieves state-of-the-art performance in long-range controllability, temporal coherence, and visual fidelity, and supports continuous video generation lasting up to five minutes, marking a significant step toward unified video world modeling.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.13604v1",
+        "pdf": "https://arxiv.org/pdf/2512.13604v1"
+      },
+      "arxiv_id": "2512.13604v1",
+      "comment": "Project Page: https://vchitect.github.io/LongVie2-project/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.199999999999999,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -651,11 +395,268 @@
         }
       },
       "ai_summaries": {
-        "short": "Large-scale video generation models have shown remarkable potential in modeling photorealistic appearance and lighting interactions in real-world scenes. However, a closed-loop framework that jointly understands intrinsic scene properties (e.g., albedo, normal, material, and irradiance), leverages them for video synthesis, and supports editable intrinsic representations remains unexplored. We pres...",
+        "short": "Building video world models upon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence. A world model should possess three essential properties: controllability, long-term visual quality, and temporal consistency. To this end, we take a progressive approach-first enhancing controllability and then extending toward long-term, hig...",
         "key_contributions": [
-          "Large-scale video generation models have shown remarkable potential in modeling photorealistic appearance and lighting interactions in real-world scenes.",
-          "However, a closed-loop framework that jointly understands intrinsic scene properties (e.",
-          "g."
+          "Building video world models upon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence.",
+          "A world model should possess three essential properties: controllability, long-term visual quality, and temporal consistency.",
+          "To this end, we take a progressive approach-first enhancing controllability and then extending toward long-term, high-quality generation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.13689v1",
+      "title": "LitePT: Lighter Yet Stronger Point Transformer",
+      "authors": [
+        "Yuanwen Yue",
+        "Damien Robert",
+        "Jianyuan Wang",
+        "Sunghwan Hong",
+        "Jan Dirk Wegner",
+        "Christian Rupprecht",
+        "Konrad Schindler"
+      ],
+      "abstract": "Modern neural architectures for 3D point cloud processing contain both convolutional layers and attention blocks, but the best way to assemble them remains unclear. We analyse the role of different computational blocks in 3D point cloud networks and find an intuitive behaviour: convolution is adequate to extract low-level geometry at high-resolution in early layers, where attention is expensive without bringing any benefits; attention captures high-level semantics and context in low-resolution, deep layers more efficiently. Guided by this design principle, we propose a new, improved 3D point cloud backbone that employs convolutions in early stages and switches to attention for deeper layers. To avoid the loss of spatial layout information when discarding redundant convolution layers, we introduce a novel, training-free 3D positional encoding, PointROPE. The resulting LitePT model has $3.6\\times$ fewer parameters, runs $2\\times$ faster, and uses $2\\times$ less memory than the state-of-the-art Point Transformer V3, but nonetheless matches or even outperforms it on a range of tasks and datasets. Code and models are available at: https://github.com/prs-eth/LitePT.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.13689v1",
+        "pdf": "https://arxiv.org/pdf/2512.13689v1"
+      },
+      "arxiv_id": "2512.13689v1",
+      "comment": "Project page: https://litept.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Modern neural architectures for 3D point cloud processing contain both convolutional layers and attention blocks, but the best way to assemble them remains unclear. We analyse the role of different computational blocks in 3D point cloud networks and find an intuitive behaviour: convolution is adequate to extract low-level geometry at high-resolution in early layers, where attention is expensive wi...",
+        "key_contributions": [
+          "Modern neural architectures for 3D point cloud processing contain both convolutional layers and attention blocks, but the best way to assemble them remains unclear.",
+          "We analyse the role of different computational blocks in 3D point cloud networks and find an intuitive behaviour: convolution is adequate to extract low-level geometry at high-resolution in early layers, where attention is expensive without bringing any benefits; attention captures high-level semantics and context in low-resolution, deep layers more efficiently.",
+          "Guided by this design principle, we propose a new, improved 3D point cloud backbone that employs convolutions in early stages and switches to attention for deeper layers."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.13677v1",
+      "title": "JoVA: Unified Multimodal Learning for Joint Video-Audio Generation",
+      "authors": [
+        "Xiaohu Huang",
+        "Hao Zhou",
+        "Qiangpeng Yang",
+        "Shilei Wen",
+        "Kai Han"
+      ],
+      "abstract": "In this paper, we present JoVA, a unified framework for joint video-audio generation. Despite recent encouraging advances, existing methods face two critical limitations. First, most existing approaches can only generate ambient sounds and lack the capability to produce human speech synchronized with lip movements. Second, recent attempts at unified human video-audio generation typically rely on explicit fusion or modality-specific alignment modules, which introduce additional architecture design and weaken the model simplicity of the original transformers. To address these issues, JoVA employs joint self-attention across video and audio tokens within each transformer layer, enabling direct and efficient cross-modal interaction without the need for additional alignment modules. Furthermore, to enable high-quality lip-speech synchronization, we introduce a simple yet effective mouth-area loss based on facial keypoint detection, which enhances supervision on the critical mouth region during training without compromising architectural simplicity. Extensive experiments on benchmarks demonstrate that JoVA outperforms or is competitive with both unified and audio-driven state-of-the-art methods in lip-sync accuracy, speech quality, and overall video-audio generation fidelity. Our results establish JoVA as an elegant framework for high-quality multimodal generation.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.13677v1",
+        "pdf": "https://arxiv.org/pdf/2512.13677v1"
+      },
+      "arxiv_id": "2512.13677v1",
+      "comment": "Project page: \\url{https://visual-ai.github.io/jova}",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "In this paper, we present JoVA, a unified framework for joint video-audio generation. Despite recent encouraging advances, existing methods face two critical limitations. First, most existing approaches can only generate ambient sounds and lack the capability to produce human speech synchronized with lip movements. Second, recent attempts at unified human video-audio generation typically rely on e...",
+        "key_contributions": [
+          "In this paper, we present JoVA, a unified framework for joint video-audio generation.",
+          "Despite recent encouraging advances, existing methods face two critical limitations.",
+          "First, most existing approaches can only generate ambient sounds and lack the capability to produce human speech synchronized with lip movements."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.13636v1",
+      "title": "MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning",
+      "authors": [
+        "Haoyu Fu",
+        "Diankun Zhang",
+        "Zongchuang Zhao",
+        "Jianfeng Cui",
+        "Hongwei Xie",
+        "Bing Wang",
+        "Guang Chen",
+        "Dingkang Liang",
+        "Xiang Bai"
+      ],
+      "abstract": "Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces. To overcome this limitation, we propose MindDrive, a VLA framework comprising a large language model (LLM) with two distinct sets of LoRA parameters. The one LLM serves as a Decision Expert for scenario reasoning and driving decision-making, while the other acts as an Action Expert that dynamically maps linguistic decisions into feasible trajectories. By feeding trajectory-level rewards back into the reasoning space, MindDrive enables trial-and-error learning over a finite set of discrete linguistic driving decisions, instead of operating directly in a continuous action space. This approach effectively balances optimal decision-making in complex scenarios, human-like driving behavior, and efficient exploration in online reinforcement learning. MindDrive achieves strong closed-loop performance on the challenging Bench2Drive benchmark, with a Driving Score (DS) of 78.04 and a Success Rate (SR) of 55.09%. To the best of our knowledge, this is the first work to demonstrate the effectiveness of online reinforcement learning for the VLA model in autonomous driving.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.13636v1",
+        "pdf": "https://arxiv.org/pdf/2512.13636v1"
+      },
+      "arxiv_id": "2512.13636v1",
+      "comment": "16 pages, 12 figures, 6 tables; Project Page: https://xiaomi-mlab.github.io/MindDrive/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is ...",
+        "key_contributions": [
+          "Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion.",
+          "Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning.",
+          "However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.13690v1",
+      "title": "DiffusionBrowser: Interactive Diffusion Previews via Multi-Branch Decoders",
+      "authors": [
+        "Susung Hong",
+        "Chongjian Ge",
+        "Zhifei Zhang",
+        "Jui-Hsien Wang"
+      ],
+      "abstract": "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period. In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising process. Our model can generate multi-modal preview representations that include RGB and scene intrinsics at more than 4$\\times$ real-time speed (less than 1 second for a 4-second video) that convey consistent appearance and motion to the final video. With the trained decoder, we show that it is possible to interactively guide the generation at intermediate noise steps via stochasticity reinjection and modal steering, unlocking a new control capability. Moreover, we systematically probe the model using the learned decoders, revealing how scene, object, and other details are composed and assembled during the otherwise black-box denoising process.",
+      "published": "2025-12-15",
+      "updated": "2025-12-15",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.13690v1",
+        "pdf": "https://arxiv.org/pdf/2512.13690v1"
+      },
+      "arxiv_id": "2512.13690v1",
+      "comment": "Project page: https://susunghong.github.io/DiffusionBrowser",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period. In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising ...",
+        "key_contributions": [
+          "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period.",
+          "In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising process.",
+          "Our model can generate multi-modal preview representations that include RGB and scene intrinsics at more than 4$\\times$ real-time speed (less than 1 second for a 4-second video) that convey consistent appearance and motion to the final video."
         ],
         "provider": "gemini"
       }

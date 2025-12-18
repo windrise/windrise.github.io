@@ -3,38 +3,307 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.13411v1",
-      "title": "Computer vision training dataset generation for robotic environments using Gaussian splatting",
+      "id": "2512.14550v1",
+      "title": "TAT: Task-Adaptive Transformer for All-in-One Medical Image Restoration",
       "authors": [
-        "Patryk Niżeniec",
-        "Marcin Iwanowski"
+        "Zhiwen Yang",
+        "Jiaju Zhang",
+        "Yang Yi",
+        "Jian Liang",
+        "Bingzheng Wei",
+        "Yan Xu"
       ],
-      "abstract": "This paper introduces a novel pipeline for generating large-scale, highly realistic, and automatically labeled datasets for computer vision tasks in robotic environments. Our approach addresses the critical challenges of the domain gap between synthetic and real-world imagery and the time-consuming bottleneck of manual annotation. We leverage 3D Gaussian Splatting (3DGS) to create photorealistic representations of the operational environment and objects. These assets are then used in a game engine where physics simulations create natural arrangements. A novel, two-pass rendering technique combines the realism of splats with a shadow map generated from proxy meshes. This map is then algorithmically composited with the image to add both physically plausible shadows and subtle highlights, significantly enhancing realism. Pixel-perfect segmentation masks are generated automatically and formatted for direct use with object detection models like YOLO. Our experiments show that a hybrid training strategy, combining a small set of real images with a large volume of our synthetic data, yields the best detection and segmentation performance, confirming this as an optimal strategy for efficiently achieving robust and accurate models.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
+      "abstract": "Medical image restoration (MedIR) aims to recover high-quality medical images from their low-quality counterparts. Recent advancements in MedIR have focused on All-in-One models capable of simultaneously addressing multiple different MedIR tasks. However, due to significant differences in both modality and degradation types, using a shared model for these diverse tasks requires careful consideration of two critical inter-task relationships: task interference, which occurs when conflicting gradient update directions arise across tasks on the same parameter, and task imbalance, which refers to uneven optimization caused by varying learning difficulties inherent to each task. To address these challenges, we propose a task-adaptive Transformer (TAT), a novel framework that dynamically adapts to different tasks through two key innovations. First, a task-adaptive weight generation strategy is introduced to mitigate task interference by generating task-specific weight parameters for each task, thereby eliminating potential gradient conflicts on shared weight parameters. Second, a task-adaptive loss balancing strategy is introduced to dynamically adjust loss weights based on task-specific learning difficulties, preventing task domination or undertraining. Extensive experiments demonstrate that our proposed TAT achieves state-of-the-art performance in three MedIR tasks--PET synthesis, CT denoising, and MRI super-resolution--both in task-specific and All-in-One settings. Code is available at https://github.com/Yaziwel/TAT.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
       "categories": [
-        "cs.CV",
-        "cs.GR"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.13411v1",
-        "pdf": "https://arxiv.org/pdf/2512.13411v1"
+        "paper": "http://arxiv.org/abs/2512.14550v1",
+        "pdf": "https://arxiv.org/pdf/2512.14550v1"
       },
-      "arxiv_id": "2512.13411v1",
-      "comment": "Code available at: https://patrykni.github.io/UnitySplat2Data/",
+      "arxiv_id": "2512.14550v1",
+      "comment": "This paper has been accepted by MICCAI 2025",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.850847457627118,
+      "has_code": false,
+      "relevance_score": 4.955084745762711,
+      "score_breakdown": {
+        "total_score": 4.96,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "medical image"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Medical image restoration (MedIR) aims to recover high-quality medical images from their low-quality counterparts. Recent advancements in MedIR have focused on All-in-One models capable of simultaneously addressing multiple different MedIR tasks. However, due to significant differences in both modality and degradation types, using a shared model for these diverse tasks requires careful considerati...",
+        "key_contributions": [
+          "Medical image restoration (MedIR) aims to recover high-quality medical images from their low-quality counterparts.",
+          "Recent advancements in MedIR have focused on All-in-One models capable of simultaneously addressing multiple different MedIR tasks.",
+          "However, due to significant differences in both modality and degradation types, using a shared model for these diverse tasks requires careful consideration of two critical inter-task relationships: task interference, which occurs when conflicting gradient update directions arise across tasks on the same parameter, and task imbalance, which refers to uneven optimization caused by varying learning difficulties inherent to each task."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.14550v1.mp3"
+      }
+    },
+    {
+      "id": "2512.14648v1",
+      "title": "Adaptable Segmentation Pipeline for Diverse Brain Tumors with Radiomic-guided Subtyping and Lesion-Wise Model Ensemble",
+      "authors": [
+        "Daniel Capellán-Martín",
+        "Abhijeet Parida",
+        "Zhifan Jiang",
+        "Nishad Kulkarni",
+        "Krithika Iyer",
+        "Austin Tapp",
+        "Syed Muhammad Anwar",
+        "María J. Ledesma-Carbayo",
+        "Marius George Linguraru"
+      ],
+      "abstract": "Robust and generalizable segmentation of brain tumors on multi-parametric magnetic resonance imaging (MRI) remains difficult because tumor types differ widely. The BraTS 2025 Lighthouse Challenge benchmarks segmentation methods on diverse high-quality datasets of adult and pediatric tumors: multi-consortium international pediatric brain tumor segmentation (PED), preoperative meningioma tumor segmentation (MEN), meningioma radiotherapy segmentation (MEN-RT), and segmentation of pre- and post-treatment brain metastases (MET). We present a flexible, modular, and adaptable pipeline that improves segmentation performance by selecting and combining state-of-the-art models and applying tumor- and lesion-specific processing before and after training. Radiomic features extracted from MRI help detect tumor subtype, ensuring a more balanced training. Custom lesion-level performance metrics determine the influence of each model in the ensemble and optimize post-processing that further refines the predictions, enabling the workflow to tailor every step to each case. On the BraTS testing sets, our pipeline achieved performance comparable to top-ranked algorithms across multiple challenges. These findings confirm that custom lesion-aware processing and model selection yield robust segmentations yet without locking the method to a specific network architecture. Our method has the potential for quantitative tumor measurement in clinical practice, supporting diagnosis and prognosis.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.14648v1",
+        "pdf": "https://arxiv.org/pdf/2512.14648v1"
+      },
+      "arxiv_id": "2512.14648v1",
+      "comment": "12 pages, 5 figures, 3 tables. Algorithm presented at MICCAI BraTS 2025",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.853389830508474,
       "score_breakdown": {
         "total_score": 4.85,
         "field_match": {
-          "score": 2.63,
+          "score": 0.51,
           "matches": [
-            "3d gaussian",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Robust and generalizable segmentation of brain tumors on multi-parametric magnetic resonance imaging (MRI) remains difficult because tumor types differ widely. The BraTS 2025 Lighthouse Challenge benchmarks segmentation methods on diverse high-quality datasets of adult and pediatric tumors: multi-consortium international pediatric brain tumor segmentation (PED), preoperative meningioma tumor segme...",
+        "key_contributions": [
+          "Robust and generalizable segmentation of brain tumors on multi-parametric magnetic resonance imaging (MRI) remains difficult because tumor types differ widely.",
+          "The BraTS 2025 Lighthouse Challenge benchmarks segmentation methods on diverse high-quality datasets of adult and pediatric tumors: multi-consortium international pediatric brain tumor segmentation (PED), preoperative meningioma tumor segmentation (MEN), meningioma radiotherapy segmentation (MEN-RT), and segmentation of pre- and post-treatment brain metastases (MET).",
+          "We present a flexible, modular, and adaptable pipeline that improves segmentation performance by selecting and combining state-of-the-art models and applying tumor- and lesion-specific processing before and after training."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.14648v1.mp3"
+      }
+    },
+    {
+      "id": "2512.14542v1",
+      "title": "HiFi-Portrait: Zero-shot Identity-preserved Portrait Generation with High-fidelity Multi-face Fusion",
+      "authors": [
+        "Yifang Xu",
+        "Benxiang Zhai",
+        "Yunzhuo Sun",
+        "Ming Li",
+        "Yang Li",
+        "Sidan Du"
+      ],
+      "abstract": "Recent advancements in diffusion-based technologies have made significant strides, particularly in identity-preserved portrait generation (IPG). However, when using multiple reference images from the same ID, existing methods typically produce lower-fidelity portraits and struggle to customize face attributes precisely. To address these issues, this paper presents HiFi-Portrait, a high-fidelity method for zero-shot portrait generation. Specifically, we first introduce the face refiner and landmark generator to obtain fine-grained multi-face features and 3D-aware face landmarks. The landmarks include the reference ID and the target attributes. Then, we design HiFi-Net to fuse multi-face features and align them with landmarks, which improves ID fidelity and face control. In addition, we devise an automated pipeline to construct an ID-based dataset for training HiFi-Portrait. Extensive experimental results demonstrate that our method surpasses the SOTA approaches in face similarity and controllability. Furthermore, our method is also compatible with previous SDXL-based works.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.14542v1",
+        "pdf": "https://arxiv.org/pdf/2512.14542v1"
+      },
+      "arxiv_id": "2512.14542v1",
+      "comment": "Accepted by CVPR 2025",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advancements in diffusion-based technologies have made significant strides, particularly in identity-preserved portrait generation (IPG). However, when using multiple reference images from the same ID, existing methods typically produce lower-fidelity portraits and struggle to customize face attributes precisely. To address these issues, this paper presents HiFi-Portrait, a high-fidelity me...",
+        "key_contributions": [
+          "Recent advancements in diffusion-based technologies have made significant strides, particularly in identity-preserved portrait generation (IPG).",
+          "However, when using multiple reference images from the same ID, existing methods typically produce lower-fidelity portraits and struggle to customize face attributes precisely.",
+          "To address these issues, this paper presents HiFi-Portrait, a high-fidelity method for zero-shot portrait generation."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.14542v1.mp3"
+      }
+    },
+    {
+      "id": "2512.14698v1",
+      "title": "TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs",
+      "authors": [
+        "Jun Zhang",
+        "Teng Wang",
+        "Yuying Ge",
+        "Yixiao Ge",
+        "Xinhao Li",
+        "Ying Shan",
+        "Limin Wang"
+      ],
+      "abstract": "This paper does not introduce a novel method but instead establishes a straightforward, incremental, yet essential baseline for video temporal grounding (VTG), a core capability in video understanding. While multimodal large language models (MLLMs) excel at various video understanding tasks, the recipes for optimizing them for VTG remain under-explored. In this paper, we present TimeLens, a systematic investigation into building MLLMs with strong VTG ability, along two primary dimensions: data quality and algorithmic design. We first expose critical quality issues in existing VTG benchmarks and introduce TimeLens-Bench, comprising meticulously re-annotated versions of three popular benchmarks with strict quality criteria. Our analysis reveals dramatic model re-rankings compared to legacy benchmarks, confirming the unreliability of prior evaluation standards. We also address noisy training data through an automated re-annotation pipeline, yielding TimeLens-100K, a large-scale, high-quality training dataset. Building on our data foundation, we conduct in-depth explorations of algorithmic design principles, yielding a series of meaningful insights and effective yet efficient practices. These include interleaved textual encoding for time representation, a thinking-free reinforcement learning with verifiable rewards (RLVR) approach as the training paradigm, and carefully designed recipes for RLVR training. These efforts culminate in TimeLens models, a family of MLLMs with state-of-the-art VTG performance among open-source models and even surpass proprietary models such as GPT-5 and Gemini-2.5-Flash. All codes, data, and models will be released to facilitate future research.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.14698v1",
+        "pdf": "https://arxiv.org/pdf/2512.14698v1"
+      },
+      "arxiv_id": "2512.14698v1",
+      "comment": "Project Page: https://timelens-arc-lab.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "This paper does not introduce a novel method but instead establishes a straightforward, incremental, yet essential baseline for video temporal grounding (VTG), a core capability in video understanding. While multimodal large language models (MLLMs) excel at various video understanding tasks, the recipes for optimizing them for VTG remain under-explored. In this paper, we present TimeLens, a system...",
+        "key_contributions": [
+          "This paper does not introduce a novel method but instead establishes a straightforward, incremental, yet essential baseline for video temporal grounding (VTG), a core capability in video understanding.",
+          "While multimodal large language models (MLLMs) excel at various video understanding tasks, the recipes for optimizing them for VTG remain under-explored.",
+          "In this paper, we present TimeLens, a systematic investigation into building MLLMs with strong VTG ability, along two primary dimensions: data quality and algorithmic design."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.14698v1.mp3"
+      }
+    },
+    {
+      "id": "2512.14406v1",
+      "title": "Broadening View Synthesis of Dynamic Scenes from Constrained Monocular Videos",
+      "authors": [
+        "Le Jiang",
+        "Shaotong Zhu",
+        "Yedi Luo",
+        "Shayda Moezzi",
+        "Sarah Ostadabbas"
+      ],
+      "abstract": "In dynamic Neural Radiance Fields (NeRF) systems, state-of-the-art novel view synthesis methods often fail under significant viewpoint deviations, producing unstable and unrealistic renderings. To address this, we introduce Expanded Dynamic NeRF (ExpanDyNeRF), a monocular NeRF framework that leverages Gaussian splatting priors and a pseudo-ground-truth generation strategy to enable realistic synthesis under large-angle rotations. ExpanDyNeRF optimizes density and color features to improve scene reconstruction from challenging perspectives. We also present the Synthetic Dynamic Multiview (SynDM) dataset, the first synthetic multiview dataset for dynamic scenes with explicit side-view supervision-created using a custom GTA V-based rendering pipeline. Quantitative and qualitative results on SynDM and real-world datasets demonstrate that ExpanDyNeRF significantly outperforms existing dynamic NeRF methods in rendering fidelity under extreme viewpoint shifts. Further details are provided in the supplementary materials.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.14406v1",
+        "pdf": "https://arxiv.org/pdf/2512.14406v1"
+      },
+      "arxiv_id": "2512.14406v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.313559322033898,
+      "score_breakdown": {
+        "total_score": 4.31,
+        "field_match": {
+          "score": 2.03,
+          "matches": [
             "gaussian splatting",
-            "segmentation",
-            "computer vision"
+            "neural radiance",
+            "nerf"
           ],
           "weight": 0.4
         },
@@ -44,67 +313,62 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "This paper introduces a novel pipeline for generating large-scale, highly realistic, and automatically labeled datasets for computer vision tasks in robotic environments. Our approach addresses the critical challenges of the domain gap between synthetic and real-world imagery and the time-consuming bottleneck of manual annotation. We leverage 3D Gaussian Splatting (3DGS) to create photorealistic r...",
+        "short": "In dynamic Neural Radiance Fields (NeRF) systems, state-of-the-art novel view synthesis methods often fail under significant viewpoint deviations, producing unstable and unrealistic renderings. To address this, we introduce Expanded Dynamic NeRF (ExpanDyNeRF), a monocular NeRF framework that leverages Gaussian splatting priors and a pseudo-ground-truth generation strategy to enable realistic synth...",
         "key_contributions": [
-          "This paper introduces a novel pipeline for generating large-scale, highly realistic, and automatically labeled datasets for computer vision tasks in robotic environments.",
-          "Our approach addresses the critical challenges of the domain gap between synthetic and real-world imagery and the time-consuming bottleneck of manual annotation.",
-          "We leverage 3D Gaussian Splatting (3DGS) to create photorealistic representations of the operational environment and objects."
+          "In dynamic Neural Radiance Fields (NeRF) systems, state-of-the-art novel view synthesis methods often fail under significant viewpoint deviations, producing unstable and unrealistic renderings.",
+          "To address this, we introduce Expanded Dynamic NeRF (ExpanDyNeRF), a monocular NeRF framework that leverages Gaussian splatting priors and a pseudo-ground-truth generation strategy to enable realistic synthesis under large-angle rotations.",
+          "ExpanDyNeRF optimizes density and color features to improve scene reconstruction from challenging perspectives."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.13411v1.mp3"
+        "audio_url": "/audio/2512.14406v1.mp3"
       }
     },
     {
-      "id": "2512.13402v1",
-      "title": "End2Reg: Learning Task-Specific Segmentation for Markerless Registration in Spine Surgery",
+      "id": "2512.14440v1",
+      "title": "S2D: Sparse-To-Dense Keymask Distillation for Unsupervised Video Instance Segmentation",
       "authors": [
-        "Lorenzo Pettinari",
-        "Sidaty El Hadramy",
-        "Michael Wehrli",
-        "Philippe C. Cattin",
-        "Daniel Studer",
-        "Carol C. Hasler",
-        "Maria Licci"
+        "Leon Sick",
+        "Lukas Hoyer",
+        "Dominik Engel",
+        "Pedro Hermosilla",
+        "Timo Ropinski"
       ],
-      "abstract": "Purpose: Intraoperative navigation in spine surgery demands millimeter-level accuracy. Current systems based on intraoperative radiographic imaging and bone-anchored markers are invasive, radiation-intensive and workflow disruptive. Recent markerless RGB-D registration methods offer a promising alternative, but existing approaches rely on weak segmentation labels to isolate relevant anatomical structures, which can propagate errors throughout registration. Methods: We present End2Reg an end-to-end deep learning framework that jointly optimizes segmentation and registration, eliminating the need for weak segmentation labels and manual steps. The network learns segmentation masks specifically optimized for registration, guided solely by the registration objective without direct segmentation supervision. Results: The proposed framework achieves state-of-the-art performance on ex- and in-vivo benchmarks, reducing median Target Registration Error by 32% to 1.83mm and mean Root Mean Square Error by 45% to 3.95mm, respectively. An ablation study confirms that end-to-end optimization significantly improves registration accuracy. Conclusion: The presented end-to-end RGB-D registration pipeline removes dependency on weak labels and manual steps, advancing towards fully automatic, markerless intraoperative navigation. Code and interactive visualizations are available at: https://lorenzopettinari.github.io/end-2-reg/.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
+      "abstract": "In recent years, the state-of-the-art in unsupervised video instance segmentation has heavily relied on synthetic video data, generated from object-centric image datasets such as ImageNet. However, video synthesis by artificially shifting and scaling image instance masks fails to accurately model realistic motion in videos, such as perspective changes, movement by parts of one or multiple instances, or camera motion. To tackle this issue, we propose an unsupervised video instance segmentation model trained exclusively on real video data. We start from unsupervised instance segmentation masks on individual video frames. However, these single-frame segmentations exhibit temporal noise and their quality varies through the video. Therefore, we establish temporal coherence by identifying high-quality keymasks in the video by leveraging deep motion priors. The sparse keymask pseudo-annotations are then used to train a segmentation model for implicit mask propagation, for which we propose a Sparse-To-Dense Distillation approach aided by a Temporal DropLoss. After training the final model on the resulting dense labelset, our approach outperforms the current state-of-the-art across various benchmarks.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.13402v1",
-        "pdf": "https://arxiv.org/pdf/2512.13402v1"
+        "paper": "http://arxiv.org/abs/2512.14440v1",
+        "pdf": "https://arxiv.org/pdf/2512.14440v1"
       },
-      "arxiv_id": "2512.13402v1",
-      "comment": "Code and interactive visualizations: https://lorenzopettinari.github.io/end-2-reg/",
+      "arxiv_id": "2512.14440v1",
+      "comment": "Project Page with Code/Models/Demo: https://leonsick.github.io/s2d/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.576271186440678,
+      "relevance_score": 4.253389830508475,
       "score_breakdown": {
-        "total_score": 4.58,
+        "total_score": 4.25,
         "field_match": {
-          "score": 1.44,
+          "score": 0.51,
           "matches": [
-            "segmentation",
-            "registration",
-            "deep learning"
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -123,193 +387,60 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Purpose: Intraoperative navigation in spine surgery demands millimeter-level accuracy. Current systems based on intraoperative radiographic imaging and bone-anchored markers are invasive, radiation-intensive and workflow disruptive. Recent markerless RGB-D registration methods offer a promising alternative, but existing approaches rely on weak segmentation labels to isolate relevant anatomical str...",
-        "key_contributions": [
-          "Purpose: Intraoperative navigation in spine surgery demands millimeter-level accuracy.",
-          "Current systems based on intraoperative radiographic imaging and bone-anchored markers are invasive, radiation-intensive and workflow disruptive.",
-          "Recent markerless RGB-D registration methods offer a promising alternative, but existing approaches rely on weak segmentation labels to isolate relevant anatomical structures, which can propagate errors throughout registration."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.13402v1.mp3"
-      }
-    },
-    {
-      "id": "2512.13534v1",
-      "title": "Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains",
-      "authors": [
-        "Marianne Rakic",
-        "Siyu Gai",
-        "Etienne Chollet",
-        "John V. Guttag",
-        "Adrian V. Dalca"
-      ],
-      "abstract": "A single biomedical image can be meaningfully segmented in multiple ways, depending on the desired application. For instance, a brain MRI can be segmented according to tissue types, vascular territories, broad anatomical regions, fine-grained anatomy, or pathology, etc. Existing automatic segmentation models typically either (1) support only a single protocol, the one they were trained on, or (2) require labor-intensive manual prompting to specify the desired segmentation. We introduce Pancakes, a framework that, given a new image from a previously unseen domain, automatically generates multi-label segmentation maps for multiple plausible protocols, while maintaining semantic consistency across related images. Pancakes introduces a new problem formulation that is not currently attainable by existing foundation models. In a series of experiments on seven held-out datasets, we demonstrate that our model can significantly outperform existing foundation models in producing several plausible whole-image segmentations, that are semantically coherent across images.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.13534v1",
-        "pdf": "https://arxiv.org/pdf/2512.13534v1"
-      },
-      "arxiv_id": "2512.13534v1",
-      "comment": "Accepted at NeurIPS 2025. Code available at: https://github.com/mariannerakic/Pancakes",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.458474576271187,
-      "score_breakdown": {
-        "total_score": 4.46,
-        "field_match": {
-          "score": 1.27,
-          "matches": [
-            "medical image",
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "A single biomedical image can be meaningfully segmented in multiple ways, depending on the desired application. For instance, a brain MRI can be segmented according to tissue types, vascular territories, broad anatomical regions, fine-grained anatomy, or pathology, etc. Existing automatic segmentation models typically either (1) support only a single protocol, the one they were trained on, or (2) ...",
-        "key_contributions": [
-          "A single biomedical image can be meaningfully segmented in multiple ways, depending on the desired application.",
-          "For instance, a brain MRI can be segmented according to tissue types, vascular territories, broad anatomical regions, fine-grained anatomy, or pathology, etc.",
-          "Existing automatic segmentation models typically either (1) support only a single protocol, the one they were trained on, or (2) require labor-intensive manual prompting to specify the desired segmentation."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.13534v1.mp3"
-      }
-    },
-    {
-      "id": "2512.13639v1",
-      "title": "Charge: A Comprehensive Novel View Synthesis Benchmark and Dataset to Bind Them All",
-      "authors": [
-        "Michal Nazarczuk",
-        "Thomas Tanay",
-        "Arthur Moreau",
-        "Zhensong Zhang",
-        "Eduardo Pérez-Pellitero"
-      ],
-      "abstract": "This paper presents a new dataset for Novel View Synthesis, generated from a high-quality, animated film with stunning realism and intricate detail. Our dataset captures a variety of dynamic scenes, complete with detailed textures, lighting, and motion, making it ideal for training and evaluating cutting-edge 4D scene reconstruction and novel view generation models. In addition to high-fidelity RGB images, we provide multiple complementary modalities, including depth, surface normals, object segmentation and optical flow, enabling a deeper understanding of scene geometry and motion. The dataset is organised into three distinct benchmarking scenarios: a dense multi-view camera setup, a sparse camera arrangement, and monocular video sequences, enabling a wide range of experimentation and comparison across varying levels of data sparsity. With its combination of visual richness, high-quality annotations, and diverse experimental setups, this dataset offers a unique resource for pushing the boundaries of view synthesis and 3D vision.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.13639v1",
-        "pdf": "https://arxiv.org/pdf/2512.13639v1"
-      },
-      "arxiv_id": "2512.13639v1",
-      "comment": "Project page: https://charge-benchmark.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.403389830508475,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "This paper presents a new dataset for Novel View Synthesis, generated from a high-quality, animated film with stunning realism and intricate detail. Our dataset captures a variety of dynamic scenes, complete with detailed textures, lighting, and motion, making it ideal for training and evaluating cutting-edge 4D scene reconstruction and novel view generation models. In addition to high-fidelity RG...",
+        "short": "In recent years, the state-of-the-art in unsupervised video instance segmentation has heavily relied on synthetic video data, generated from object-centric image datasets such as ImageNet. However, video synthesis by artificially shifting and scaling image instance masks fails to accurately model realistic motion in videos, such as perspective changes, movement by parts of one or multiple instance...",
         "key_contributions": [
-          "This paper presents a new dataset for Novel View Synthesis, generated from a high-quality, animated film with stunning realism and intricate detail.",
-          "Our dataset captures a variety of dynamic scenes, complete with detailed textures, lighting, and motion, making it ideal for training and evaluating cutting-edge 4D scene reconstruction and novel view generation models.",
-          "In addition to high-fidelity RGB images, we provide multiple complementary modalities, including depth, surface normals, object segmentation and optical flow, enabling a deeper understanding of scene geometry and motion."
+          "In recent years, the state-of-the-art in unsupervised video instance segmentation has heavily relied on synthetic video data, generated from object-centric image datasets such as ImageNet.",
+          "However, video synthesis by artificially shifting and scaling image instance masks fails to accurately model realistic motion in videos, such as perspective changes, movement by parts of one or multiple instances, or camera motion.",
+          "To tackle this issue, we propose an unsupervised video instance segmentation model trained exclusively on real video data."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.13639v1.mp3"
+        "audio_url": "/audio/2512.14440v1.mp3"
       }
     },
     {
-      "id": "2512.13660v1",
-      "title": "RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics",
+      "id": "2512.14352v1",
+      "title": "HGS: Hybrid Gaussian Splatting with Static-Dynamic Decomposition for Compact Dynamic View Synthesis",
       "authors": [
-        "Enshen Zhou",
-        "Cheng Chi",
-        "Yibo Li",
-        "Jingkun An",
-        "Jiayuan Zhang",
-        "Shanyu Rong",
-        "Yi Han",
-        "Yuheng Ji",
-        "Mengzhen Liu",
-        "Pengwei Wang",
-        "Zhongyuan Wang",
-        "Lu Sheng",
-        "Shanghang Zhang"
+        "Kaizhe Zhang",
+        "Yijie Zhou",
+        "Weizhan Zhang",
+        "Caixia Yan",
+        "Haipeng Du",
+        "yugui xie",
+        "Yu-Hui Wen",
+        "Yong-Jin Liu"
       ],
-      "abstract": "Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement. However, existing methods struggle with this compositional task. To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and measuring via a universal spatial encoder and a regression-supervised decoder to enhance scale awareness during supervised fine-tuning (SFT). Moreover, RoboTracer advances multi-step metric-grounded reasoning via reinforcement fine-tuning (RFT) with metric-sensitive process rewards, supervising key intermediate perceptual cues to accurately generate spatial traces. To support SFT and RFT training, we introduce TraceSpatial, a large-scale dataset of 30M QA pairs, spanning outdoor/indoor/tabletop scenes and supporting complex reasoning processes (up to 9 steps). We further present TraceSpatial-Bench, a challenging benchmark filling the gap to evaluate spatial tracing. Experimental results show that RoboTracer surpasses baselines in spatial understanding, measuring, and referring, with an average success rate of 79.1%, and also achieves SOTA performance on TraceSpatial-Bench by a large margin, exceeding Gemini-2.5-Pro by 36% accuracy. Notably, RoboTracer can be integrated with various control policies to execute long-horizon, dynamic tasks across diverse robots (UR5, G1 humanoid) in cluttered real-world scenes.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
+      "abstract": "Dynamic novel view synthesis (NVS) is essential for creating immersive experiences. Existing approaches have advanced dynamic NVS by introducing 3D Gaussian Splatting (3DGS) with implicit deformation fields or indiscriminately assigned time-varying parameters, surpassing NeRF-based methods. However, due to excessive model complexity and parameter redundancy, they incur large model sizes and slow rendering speeds, making them inefficient for real-time applications, particularly on resource-constrained devices. To obtain a more efficient model with fewer redundant parameters, in this paper, we propose Hybrid Gaussian Splatting (HGS), a compact and efficient framework explicitly designed to disentangle static and dynamic regions of a scene within a unified representation. The core innovation of HGS lies in our Static-Dynamic Decomposition (SDD) strategy, which leverages Radial Basis Function (RBF) modeling for Gaussian primitives. Specifically, for dynamic regions, we employ time-dependent RBFs to effectively capture temporal variations and handle abrupt scene changes, while for static regions, we reduce redundancy by sharing temporally invariant parameters. Additionally, we introduce a two-stage training strategy tailored for explicit models to enhance temporal coherence at static-dynamic boundaries. Experimental results demonstrate that our method reduces model size by up to 98% and achieves real-time rendering at up to 125 FPS at 4K resolution on a single RTX 3090 GPU. It further sustains 160 FPS at 1352 * 1014 on an RTX 3050 and has been integrated into the VR system. Moreover, HGS achieves comparable rendering quality to state-of-the-art methods while providing significantly improved visual fidelity for high-frequency details and abrupt scene changes.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
       "categories": [
-        "cs.RO",
-        "cs.CV"
+        "cs.CV",
+        "cs.CG"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.13660v1",
-        "pdf": "https://arxiv.org/pdf/2512.13660v1"
+        "paper": "http://arxiv.org/abs/2512.14352v1",
+        "pdf": "https://arxiv.org/pdf/2512.14352v1"
       },
-      "arxiv_id": "2512.13660v1",
-      "comment": "Project page: https://zhoues.github.io/RoboTracer",
+      "arxiv_id": "2512.14352v1",
+      "comment": "11 pages, 9 figures",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.25,
+      "has_code": false,
+      "relevance_score": 4.215254237288136,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 4.22,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.29,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "nerf"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -318,58 +449,55 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement. However, existing methods struggle with this compositional task. To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and meas...",
+        "short": "Dynamic novel view synthesis (NVS) is essential for creating immersive experiences. Existing approaches have advanced dynamic NVS by introducing 3D Gaussian Splatting (3DGS) with implicit deformation fields or indiscriminately assigned time-varying parameters, surpassing NeRF-based methods. However, due to excessive model complexity and parameter redundancy, they incur large model sizes and slow r...",
         "key_contributions": [
-          "Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement.",
-          "However, existing methods struggle with this compositional task.",
-          "To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and measuring via a universal spatial encoder and a regression-supervised decoder to enhance scale awareness during supervised fine-tuning (SFT)."
+          "Dynamic novel view synthesis (NVS) is essential for creating immersive experiences.",
+          "Existing approaches have advanced dynamic NVS by introducing 3D Gaussian Splatting (3DGS) with implicit deformation fields or indiscriminately assigned time-varying parameters, surpassing NeRF-based methods.",
+          "However, due to excessive model complexity and parameter redundancy, they incur large model sizes and slow rendering speeds, making them inefficient for real-time applications, particularly on resource-constrained devices."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.13660v1.mp3"
+        "audio_url": "/audio/2512.14352v1.mp3"
       }
     },
     {
-      "id": "2512.13604v1",
-      "title": "LongVie 2: Multimodal Controllable Ultra-Long Video World Model",
+      "id": "2512.14423v1",
+      "title": "The Devil is in Attention Sharing: Improving Complex Non-rigid Image Editing Faithfulness via Attention Synergy",
       "authors": [
-        "Jianxiong Gao",
-        "Zhaoxi Chen",
-        "Xian Liu",
-        "Junhao Zhuang",
-        "Chengming Xu",
-        "Jianfeng Feng",
-        "Yu Qiao",
-        "Yanwei Fu",
-        "Chenyang Si",
-        "Ziwei Liu"
+        "Zhuo Chen",
+        "Fanyue Wei",
+        "Runze Xu",
+        "Jingjing Li",
+        "Lixin Duan",
+        "Angela Yao",
+        "Wen Li"
       ],
-      "abstract": "Building video world models upon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence. A world model should possess three essential properties: controllability, long-term visual quality, and temporal consistency. To this end, we take a progressive approach-first enhancing controllability and then extending toward long-term, high-quality generation. We present LongVie 2, an end-to-end autoregressive framework trained in three stages: (1) Multi-modal guidance, which integrates dense and sparse control signals to provide implicit world-level supervision and improve controllability; (2) Degradation-aware training on the input frame, bridging the gap between training and long-term inference to maintain high visual quality; and (3) History-context guidance, which aligns contextual information across adjacent clips to ensure temporal consistency. We further introduce LongVGenBench, a comprehensive benchmark comprising 100 high-resolution one-minute videos covering diverse real-world and synthetic environments. Extensive experiments demonstrate that LongVie 2 achieves state-of-the-art performance in long-range controllability, temporal coherence, and visual fidelity, and supports continuous video generation lasting up to five minutes, marking a significant step toward unified video world modeling.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
+      "abstract": "Training-free image editing with large diffusion models has become practical, yet faithfully performing complex non-rigid edits (e.g., pose or shape changes) remains highly challenging. We identify a key underlying cause: attention collapse in existing attention sharing mechanisms, where either positional embeddings or semantic features dominate visual content retrieval, leading to over-editing or under-editing.To address this issue, we introduce SynPS, a method that Synergistically leverages Positional embeddings and Semantic information for faithful non-rigid image editing. We first propose an editing measurement that quantifies the required editing magnitude at each denoising step. Based on this measurement, we design an attention synergy pipeline that dynamically modulates the influence of positional embeddings, enabling SynPS to balance semantic modifications and fidelity preservation.By adaptively integrating positional and semantic cues, SynPS effectively avoids both over- and under-editing. Extensive experiments on public and newly curated benchmarks demonstrate the superior performance and faithfulness of our approach.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.13604v1",
-        "pdf": "https://arxiv.org/pdf/2512.13604v1"
+        "paper": "http://arxiv.org/abs/2512.14423v1",
+        "pdf": "https://arxiv.org/pdf/2512.14423v1"
       },
-      "arxiv_id": "2512.13604v1",
-      "comment": "Project Page: https://vchitect.github.io/LongVie2-project/",
+      "arxiv_id": "2512.14423v1",
+      "comment": "Project page:https://synps26.github.io/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.199999999999999,
@@ -400,245 +528,50 @@
         }
       },
       "ai_summaries": {
-        "short": "Building video world models upon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence. A world model should possess three essential properties: controllability, long-term visual quality, and temporal consistency. To this end, we take a progressive approach-first enhancing controllability and then extending toward long-term, hig...",
+        "short": "Training-free image editing with large diffusion models has become practical, yet faithfully performing complex non-rigid edits (e.g., pose or shape changes) remains highly challenging. We identify a key underlying cause: attention collapse in existing attention sharing mechanisms, where either positional embeddings or semantic features dominate visual content retrieval, leading to over-editing or...",
         "key_contributions": [
-          "Building video world models upon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence.",
-          "A world model should possess three essential properties: controllability, long-term visual quality, and temporal consistency.",
-          "To this end, we take a progressive approach-first enhancing controllability and then extending toward long-term, high-quality generation."
+          "Training-free image editing with large diffusion models has become practical, yet faithfully performing complex non-rigid edits (e.",
+          "g.",
+          ", pose or shape changes) remains highly challenging."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.13604v1.mp3"
+        "audio_url": "/audio/2512.14423v1.mp3"
       }
     },
     {
-      "id": "2512.13689v1",
-      "title": "LitePT: Lighter Yet Stronger Point Transformer",
+      "id": "2512.14364v1",
+      "title": "Unified Semantic Transformer for 3D Scene Understanding",
       "authors": [
-        "Yuanwen Yue",
-        "Damien Robert",
-        "Jianyuan Wang",
-        "Sunghwan Hong",
-        "Jan Dirk Wegner",
-        "Christian Rupprecht",
-        "Konrad Schindler"
+        "Sebastian Koch",
+        "Johanna Wald",
+        "Hide Matsuki",
+        "Pedro Hermosilla",
+        "Timo Ropinski",
+        "Federico Tombari"
       ],
-      "abstract": "Modern neural architectures for 3D point cloud processing contain both convolutional layers and attention blocks, but the best way to assemble them remains unclear. We analyse the role of different computational blocks in 3D point cloud networks and find an intuitive behaviour: convolution is adequate to extract low-level geometry at high-resolution in early layers, where attention is expensive without bringing any benefits; attention captures high-level semantics and context in low-resolution, deep layers more efficiently. Guided by this design principle, we propose a new, improved 3D point cloud backbone that employs convolutions in early stages and switches to attention for deeper layers. To avoid the loss of spatial layout information when discarding redundant convolution layers, we introduce a novel, training-free 3D positional encoding, PointROPE. The resulting LitePT model has $3.6\\times$ fewer parameters, runs $2\\times$ faster, and uses $2\\times$ less memory than the state-of-the-art Point Transformer V3, but nonetheless matches or even outperforms it on a range of tasks and datasets. Code and models are available at: https://github.com/prs-eth/LitePT.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
+      "abstract": "Holistic 3D scene understanding involves capturing and parsing unstructured 3D environments. Due to the inherent complexity of the real world, existing models have predominantly been developed and limited to be task-specific. We introduce UNITE, a Unified Semantic Transformer for 3D scene understanding, a novel feed-forward neural network that unifies a diverse set of 3D semantic tasks within a single model. Our model operates on unseen scenes in a fully end-to-end manner and only takes a few seconds to infer the full 3D semantic geometry. Our approach is capable of directly predicting multiple semantic attributes, including 3D scene segmentation, instance embeddings, open-vocabulary features, as well as affordance and articulations, solely from RGB images. The method is trained using a combination of 2D distillation, heavily relying on self-supervision and leverages novel multi-view losses designed to ensure 3D view consistency. We demonstrate that UNITE achieves state-of-the-art performance on several different semantic tasks and even outperforms task-specific models, in many cases, surpassing methods that operate on ground truth 3D geometry. See the project website at unite-page.github.io",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.13689v1",
-        "pdf": "https://arxiv.org/pdf/2512.13689v1"
+        "paper": "http://arxiv.org/abs/2512.14364v1",
+        "pdf": "https://arxiv.org/pdf/2512.14364v1"
       },
-      "arxiv_id": "2512.13689v1",
-      "comment": "Project page: https://litept.github.io/",
+      "arxiv_id": "2512.14364v1",
+      "comment": "Project page: https://unite-page.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1499999999999995,
+      "relevance_score": 4.153389830508474,
       "score_breakdown": {
         "total_score": 4.15,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Modern neural architectures for 3D point cloud processing contain both convolutional layers and attention blocks, but the best way to assemble them remains unclear. We analyse the role of different computational blocks in 3D point cloud networks and find an intuitive behaviour: convolution is adequate to extract low-level geometry at high-resolution in early layers, where attention is expensive wi...",
-        "key_contributions": [
-          "Modern neural architectures for 3D point cloud processing contain both convolutional layers and attention blocks, but the best way to assemble them remains unclear.",
-          "We analyse the role of different computational blocks in 3D point cloud networks and find an intuitive behaviour: convolution is adequate to extract low-level geometry at high-resolution in early layers, where attention is expensive without bringing any benefits; attention captures high-level semantics and context in low-resolution, deep layers more efficiently.",
-          "Guided by this design principle, we propose a new, improved 3D point cloud backbone that employs convolutions in early stages and switches to attention for deeper layers."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.13689v1.mp3"
-      }
-    },
-    {
-      "id": "2512.13677v1",
-      "title": "JoVA: Unified Multimodal Learning for Joint Video-Audio Generation",
-      "authors": [
-        "Xiaohu Huang",
-        "Hao Zhou",
-        "Qiangpeng Yang",
-        "Shilei Wen",
-        "Kai Han"
-      ],
-      "abstract": "In this paper, we present JoVA, a unified framework for joint video-audio generation. Despite recent encouraging advances, existing methods face two critical limitations. First, most existing approaches can only generate ambient sounds and lack the capability to produce human speech synchronized with lip movements. Second, recent attempts at unified human video-audio generation typically rely on explicit fusion or modality-specific alignment modules, which introduce additional architecture design and weaken the model simplicity of the original transformers. To address these issues, JoVA employs joint self-attention across video and audio tokens within each transformer layer, enabling direct and efficient cross-modal interaction without the need for additional alignment modules. Furthermore, to enable high-quality lip-speech synchronization, we introduce a simple yet effective mouth-area loss based on facial keypoint detection, which enhances supervision on the critical mouth region during training without compromising architectural simplicity. Extensive experiments on benchmarks demonstrate that JoVA outperforms or is competitive with both unified and audio-driven state-of-the-art methods in lip-sync accuracy, speech quality, and overall video-audio generation fidelity. Our results establish JoVA as an elegant framework for high-quality multimodal generation.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.13677v1",
-        "pdf": "https://arxiv.org/pdf/2512.13677v1"
-      },
-      "arxiv_id": "2512.13677v1",
-      "comment": "Project page: \\url{https://visual-ai.github.io/jova}",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1499999999999995,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "In this paper, we present JoVA, a unified framework for joint video-audio generation. Despite recent encouraging advances, existing methods face two critical limitations. First, most existing approaches can only generate ambient sounds and lack the capability to produce human speech synchronized with lip movements. Second, recent attempts at unified human video-audio generation typically rely on e...",
-        "key_contributions": [
-          "In this paper, we present JoVA, a unified framework for joint video-audio generation.",
-          "Despite recent encouraging advances, existing methods face two critical limitations.",
-          "First, most existing approaches can only generate ambient sounds and lack the capability to produce human speech synchronized with lip movements."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.13677v1.mp3"
-      }
-    },
-    {
-      "id": "2512.13636v1",
-      "title": "MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning",
-      "authors": [
-        "Haoyu Fu",
-        "Diankun Zhang",
-        "Zongchuang Zhao",
-        "Jianfeng Cui",
-        "Hongwei Xie",
-        "Bing Wang",
-        "Guang Chen",
-        "Dingkang Liang",
-        "Xiang Bai"
-      ],
-      "abstract": "Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces. To overcome this limitation, we propose MindDrive, a VLA framework comprising a large language model (LLM) with two distinct sets of LoRA parameters. The one LLM serves as a Decision Expert for scenario reasoning and driving decision-making, while the other acts as an Action Expert that dynamically maps linguistic decisions into feasible trajectories. By feeding trajectory-level rewards back into the reasoning space, MindDrive enables trial-and-error learning over a finite set of discrete linguistic driving decisions, instead of operating directly in a continuous action space. This approach effectively balances optimal decision-making in complex scenarios, human-like driving behavior, and efficient exploration in online reinforcement learning. MindDrive achieves strong closed-loop performance on the challenging Bench2Drive benchmark, with a Driving Score (DS) of 78.04 and a Success Rate (SR) of 55.09%. To the best of our knowledge, this is the first work to demonstrate the effectiveness of online reinforcement learning for the VLA model in autonomous driving.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.13636v1",
-        "pdf": "https://arxiv.org/pdf/2512.13636v1"
-      },
-      "arxiv_id": "2512.13636v1",
-      "comment": "16 pages, 12 figures, 6 tables; Project Page: https://xiaomi-mlab.github.io/MindDrive/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is ...",
-        "key_contributions": [
-          "Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion.",
-          "Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning.",
-          "However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.13636v1.mp3"
-      }
-    },
-    {
-      "id": "2512.13690v1",
-      "title": "DiffusionBrowser: Interactive Diffusion Previews via Multi-Branch Decoders",
-      "authors": [
-        "Susung Hong",
-        "Chongjian Ge",
-        "Zhifei Zhang",
-        "Jui-Hsien Wang"
-      ],
-      "abstract": "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period. In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising process. Our model can generate multi-modal preview representations that include RGB and scene intrinsics at more than 4$\\times$ real-time speed (less than 1 second for a 4-second video) that convey consistent appearance and motion to the final video. With the trained decoder, we show that it is possible to interactively guide the generation at intermediate noise steps via stochasticity reinjection and modal steering, unlocking a new control capability. Moreover, we systematically probe the model using the learned decoders, revealing how scene, object, and other details are composed and assembled during the otherwise black-box denoising process.",
-      "published": "2025-12-15",
-      "updated": "2025-12-15",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.GR",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.13690v1",
-        "pdf": "https://arxiv.org/pdf/2512.13690v1"
-      },
-      "arxiv_id": "2512.13690v1",
-      "comment": "Project page: https://susunghong.github.io/DiffusionBrowser",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -661,14 +594,82 @@
         }
       },
       "ai_summaries": {
-        "short": "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period. In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising ...",
+        "short": "Holistic 3D scene understanding involves capturing and parsing unstructured 3D environments. Due to the inherent complexity of the real world, existing models have predominantly been developed and limited to be task-specific. We introduce UNITE, a Unified Semantic Transformer for 3D scene understanding, a novel feed-forward neural network that unifies a diverse set of 3D semantic tasks within a si...",
         "key_contributions": [
-          "Video diffusion models have revolutionized generative video synthesis, but they are imprecise, slow, and can be opaque during generation -- keeping users in the dark for a prolonged period.",
-          "In this work, we propose DiffusionBrowser, a model-agnostic, lightweight decoder framework that allows users to interactively generate previews at any point (timestep or transformer block) during the denoising process.",
-          "Our model can generate multi-modal preview representations that include RGB and scene intrinsics at more than 4$\\times$ real-time speed (less than 1 second for a 4-second video) that convey consistent appearance and motion to the final video."
+          "Holistic 3D scene understanding involves capturing and parsing unstructured 3D environments.",
+          "Due to the inherent complexity of the real world, existing models have predominantly been developed and limited to be task-specific.",
+          "We introduce UNITE, a Unified Semantic Transformer for 3D scene understanding, a novel feed-forward neural network that unifies a diverse set of 3D semantic tasks within a single model."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.13690v1.mp3"
+        "audio_url": "/audio/2512.14364v1.mp3"
+      }
+    },
+    {
+      "id": "2512.14671v1",
+      "title": "ART: Articulated Reconstruction Transformer",
+      "authors": [
+        "Zizhang Li",
+        "Cheng Zhang",
+        "Zhengqin Li",
+        "Henry Howard-Jenkins",
+        "Zhaoyang Lv",
+        "Chen Geng",
+        "Jiajun Wu",
+        "Richard Newcombe",
+        "Jakob Engel",
+        "Zhao Dong"
+      ],
+      "abstract": "We introduce ART, Articulated Reconstruction Transformer -- a category-agnostic, feed-forward model that reconstructs complete 3D articulated objects from only sparse, multi-state RGB images. Previous methods for articulated object reconstruction either rely on slow optimization with fragile cross-state correspondences or use feed-forward models limited to specific object categories. In contrast, ART treats articulated objects as assemblies of rigid parts, formulating reconstruction as part-based prediction. Our newly designed transformer architecture maps sparse image inputs to a set of learnable part slots, from which ART jointly decodes unified representations for individual parts, including their 3D geometry, texture, and explicit articulation parameters. The resulting reconstructions are physically interpretable and readily exportable for simulation. Trained on a large-scale, diverse dataset with per-part supervision, and evaluated across diverse benchmarks, ART achieves significant improvements over existing baselines and establishes a new state of the art for articulated object reconstruction from image inputs.",
+      "published": "2025-12-16",
+      "updated": "2025-12-16",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.14671v1",
+        "pdf": "https://arxiv.org/pdf/2512.14671v1"
+      },
+      "arxiv_id": "2512.14671v1",
+      "comment": "Project Page: https://kyleleey.github.io/ART/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.050000000000001,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We introduce ART, Articulated Reconstruction Transformer -- a category-agnostic, feed-forward model that reconstructs complete 3D articulated objects from only sparse, multi-state RGB images. Previous methods for articulated object reconstruction either rely on slow optimization with fragile cross-state correspondences or use feed-forward models limited to specific object categories. In contrast, ...",
+        "key_contributions": [
+          "We introduce ART, Articulated Reconstruction Transformer -- a category-agnostic, feed-forward model that reconstructs complete 3D articulated objects from only sparse, multi-state RGB images.",
+          "Previous methods for articulated object reconstruction either rely on slow optimization with fragile cross-state correspondences or use feed-forward models limited to specific object categories.",
+          "In contrast, ART treats articulated objects as assemblies of rigid parts, formulating reconstruction as part-based prediction."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.14671v1.mp3"
       }
     }
   ]

@@ -3,38 +3,90 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.16727v1",
-      "title": "OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition",
+      "id": "2512.17547v1",
+      "title": "G3Splat: Geometrically Consistent Generalizable Gaussian Splatting",
       "authors": [
-        "Haochen Chang",
-        "Pengfei Ren",
-        "Buyuan Zhang",
-        "Da Li",
-        "Tianhao Han",
-        "Haoyang Zhang",
-        "Liang Xie",
-        "Hongbo Chen",
-        "Erwei Yin"
+        "Mehdi Hosseinzadeh",
+        "Shin-Fang Chng",
+        "Yi Xu",
+        "Simon Lucey",
+        "Ian Reid",
+        "Ravi Garg"
       ],
-      "abstract": "Online micro gesture recognition from hand skeletons is critical for VR/AR interaction but faces challenges due to limited public datasets and task-specific algorithms. Micro gestures involve subtle motion patterns, which make constructing datasets with precise skeletons and frame-level annotations difficult. To this end, we develop a multi-view self-supervised pipeline to automatically generate skeleton data, complemented by heuristic rules and expert refinement for semi-automatic annotation. Based on this pipeline, we introduce OMG-Bench, the first large-scale public benchmark for skeleton-based online micro gesture recognition. It features 40 fine-grained gesture classes with 13,948 instances across 1,272 sequences, characterized by subtle motions, rapid dynamics, and continuous execution. To tackle these challenges, we propose Hierarchical Memory-Augmented Transformer (HMATr), an end-to-end framework that unifies gesture detection and classification by leveraging hierarchical memory banks which store frame-level details and window-level semantics to preserve historical context. In addition, it employs learnable position-aware queries initialized from the memory to implicitly encode gesture positions and semantics. Experiments show that HMATr outperforms state-of-the-art methods by 7.6\\% in detection rate, establishing a strong baseline for online micro gesture recognition. Project page: https://omg-bench.github.io/",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
+      "abstract": "3D Gaussians have recently emerged as an effective scene representation for real-time splatting and accurate novel-view synthesis, motivating several works to adapt multi-view structure prediction networks to regress per-pixel 3D Gaussians from images. However, most prior work extends these networks to predict additional Gaussian parameters -- orientation, scale, opacity, and appearance -- while relying almost exclusively on view-synthesis supervision. We show that a view-synthesis loss alone is insufficient to recover geometrically meaningful splats in this setting. We analyze and address the ambiguities of learning 3D Gaussian splats under self-supervision for pose-free generalizable splatting, and introduce G3Splat, which enforces geometric priors to obtain geometrically consistent 3D scene representations. Trained on RE10K, our approach achieves state-of-the-art performance in (i) geometrically consistent reconstruction, (ii) relative pose estimation, and (iii) novel-view synthesis. We further demonstrate strong zero-shot generalization on ScanNet, substantially outperforming prior work in both geometry recovery and relative pose estimation. Code and pretrained models are released on our project page (https://m80hz.github.io/g3splat/).",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
       "categories": [
-        "cs.CV",
-        "cs.HC"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.16727v1",
-        "pdf": "https://arxiv.org/pdf/2512.16727v1"
+        "paper": "http://arxiv.org/abs/2512.17547v1",
+        "pdf": "https://arxiv.org/pdf/2512.17547v1"
       },
-      "arxiv_id": "2512.16727v1",
-      "comment": "Project page: https://omg-bench.github.io/",
+      "arxiv_id": "2512.17547v1",
+      "comment": "Project page: https://m80hz.github.io/g3splat/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.621186440677967,
+      "relevance_score": 4.627966101694915,
       "score_breakdown": {
-        "total_score": 4.62,
+        "total_score": 4.63,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.17612v1",
+      "title": "Self-Supervised Weighted Image Guided Quantitative MRI Super-Resolution",
+      "authors": [
+        "Alireza Samadifardheris",
+        "Dirk H. J. Poot",
+        "Florian Wiesinger",
+        "Stefan Klein",
+        "Juan A. Hernandez-Tamames"
+      ],
+      "abstract": "High-resolution (HR) quantitative MRI (qMRI) relaxometry provides objective tissue characterization but remains clinically underutilized due to lengthy acquisition times. We propose a physics-informed, self-supervised framework for qMRI super-resolution that uses routinely acquired HR weighted MRI (wMRI) scans as guidance, thus, removing the necessity for HR qMRI ground truth during training. We formulate super-resolution as Bayesian maximum a posteriori inference, minimizing two discrepancies: (1) between HR images synthesized from super-resolved qMRI maps and acquired wMRI guides via forward signal models, and (2) between acquired LR qMRI and downsampled predictions. This physics-informed objective allows the models to learn from clinical wMRI without HR qMRI supervision. To validate the concept, we generate training data by synthesizing wMRI guides from HR qMRI using signal equations, then degrading qMRI resolution via k-space truncation. A deep neural network learns the super-resolution mapping. Ablation experiments demonstrate that T1-weighted images primarily enhance T1 maps, T2-weighted images improve T2 maps, and combined guidance optimally enhances all parameters simultaneously. Validation on independently acquired in-vivo data from a different qMRI sequence confirms cross-qMRI sequence generalizability. Models trained on synthetic data can produce super-resolved maps from a 1-minute acquisition with quality comparable to a 5-minute reference scan, leveraging the scanner-independent nature of relaxometry parameters. By decoupling training from HR qMRI requirement, our framework enables fast qMRI acquisitions enhanced via routine clinical images, offering a practical pathway for integrating quantitative relaxometry into clinical workflows with acceptable additional scan time.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.17612v1",
+        "pdf": "https://arxiv.org/pdf/2512.17612v1"
+      },
+      "arxiv_id": "2512.17612v1",
+      "comment": "This work has been submitted to IEEE TMI for possible publication",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.571186440677966,
+      "score_breakdown": {
+        "total_score": 4.57,
         "field_match": {
           "score": 0.68,
           "matches": [
@@ -43,243 +95,12 @@
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "TMI",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.16909v1",
-      "title": "MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Model for Embodied Task Planning",
-      "authors": [
-        "Yuanchen Ju",
-        "Yongyuan Liang",
-        "Yen-Jen Wang",
-        "Nandiraju Gireesh",
-        "Yuanliang Ju",
-        "Seungjae Lee",
-        "Qiao Gu",
-        "Elvis Hsieh",
-        "Furong Huang",
-        "Koushil Sreenath"
-      ],
-      "abstract": "Mobile manipulators in households must both navigate and manipulate. This requires a compact, semantically rich scene representation that captures where objects are, how they function, and which parts are actionable. Scene graphs are a natural choice, yet prior work often separates spatial and functional relations, treats scenes as static snapshots without object states or temporal updates, and overlooks information most relevant for accomplishing the current task. To address these limitations, we introduce MomaGraph, a unified scene representation for embodied agents that integrates spatial-functional relationships and part-level interactive elements. However, advancing such a representation requires both suitable data and rigorous evaluation, which have been largely missing. We thus contribute MomaGraph-Scenes, the first large-scale dataset of richly annotated, task-driven scene graphs in household environments, along with MomaGraph-Bench, a systematic evaluation suite spanning six reasoning capabilities from high-level planning to fine-grained scene understanding. Built upon this foundation, we further develop MomaGraph-R1, a 7B vision-language model trained with reinforcement learning on MomaGraph-Scenes. MomaGraph-R1 predicts task-oriented scene graphs and serves as a zero-shot task planner under a Graph-then-Plan framework. Extensive experiments demonstrate that our model achieves state-of-the-art results among open-source models, reaching 71.6% accuracy on the benchmark (+11.4% over the best baseline), while generalizing across public benchmarks and transferring effectively to real-robot experiments.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.16909v1",
-        "pdf": "https://arxiv.org/pdf/2512.16909v1"
-      },
-      "arxiv_id": "2512.16909v1",
-      "comment": "25 pages, 10 figures. Project page:https://hybridrobotics.github.io/MomaGraph/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.16899v1",
-      "title": "Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image",
-      "authors": [
-        "Yushi Hu",
-        "Reyhane Askari-Hemmat",
-        "Melissa Hall",
-        "Emily Dinan",
-        "Luke Zettlemoyer",
-        "Marjan Ghazvininejad"
-      ],
-      "abstract": "Reward models (RMs) are essential for training large language models (LLMs), but remain underexplored for omni models that handle interleaved image and text sequences. We introduce Multimodal RewardBench 2 (MMRB2), the first comprehensive benchmark for reward models on multimodal understanding and (interleaved) generation. MMRB2 spans four tasks: text-to-image, image editing, interleaved generation, and multimodal reasoning (\"thinking-with-images\"), providing 1,000 expert-annotated preference pairs per task from 23 models and agents across 21 source tasks. MMRB2 is designed with: (1) practical but challenging prompts; (2) responses from state-of-the-art models and agents; and (3) preference pairs with strong human-expert consensus, curated via an ensemble filtering strategy. Using MMRB2, we study existing judges for each subtask, including multimodal LLM-as-a-judge and models trained with human preferences. The latest Gemini 3 Pro attains 75-80% accuracy. GPT-5 and Gemini 2.5 Pro reach 66-75% accuracy, compared to >90% for humans, yet surpass the widely used GPT-4o (59%). The best performing open-source model Qwen3-VL-32B achieves similar accuracies as Gemini 2.5 Flash (64%). We also show that MMRB2 performance strongly correlates with downstream task success using Best-of-N sampling and conduct an in-depth analysis that shows key areas to improve the reward models going forward.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
-      "categories": [
-        "cs.CL",
-        "cs.CV"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.16899v1",
-        "pdf": "https://arxiv.org/pdf/2512.16899v1"
-      },
-      "arxiv_id": "2512.16899v1",
-      "comment": "Code and data available at https://github.com/facebookresearch/MMRB2",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.16874v1",
-      "title": "Pixel Seal: Adversarial-only training for invisible image and video watermarking",
-      "authors": [
-        "Tomáš Souček",
-        "Pierre Fernandez",
-        "Hady Elsahar",
-        "Sylvestre-Alvise Rebuffi",
-        "Valeriu Lacatusu",
-        "Tuan Tran",
-        "Tom Sander",
-        "Alexandre Mourachko"
-      ],
-      "abstract": "Invisible watermarking is essential for tracing the provenance of digital content. However, training state-of-the-art models remains notoriously difficult, with current approaches often struggling to balance robustness against true imperceptibility. This work introduces Pixel Seal, which sets a new state-of-the-art for image and video watermarking. We first identify three fundamental issues of existing methods: (i) the reliance on proxy perceptual losses such as MSE and LPIPS that fail to mimic human perception and result in visible watermark artifacts; (ii) the optimization instability caused by conflicting objectives, which necessitates exhaustive hyperparameter tuning; and (iii) reduced robustness and imperceptibility of watermarks when scaling models to high-resolution images and videos. To overcome these issues, we first propose an adversarial-only training paradigm that eliminates unreliable pixel-wise imperceptibility losses. Second, we introduce a three-stage training schedule that stabilizes convergence by decoupling robustness and imperceptibility. Third, we address the resolution gap via high-resolution adaptation, employing JND-based attenuation and training-time inference simulation to eliminate upscaling artifacts. We thoroughly evaluate the robustness and imperceptibility of Pixel Seal on different image types and across a wide range of transformations, and show clear improvements over the state-of-the-art. We finally demonstrate that the model efficiently adapts to video via temporal watermark pooling, positioning Pixel Seal as a practical and scalable solution for reliable provenance in real-world image and video settings.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CR",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.16874v1",
-        "pdf": "https://arxiv.org/pdf/2512.16874v1"
-      },
-      "arxiv_id": "2512.16874v1",
-      "comment": "Code and model available at https://github.com/facebookresearch/videoseal",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.16706v1",
-      "title": "SDFoam: Signed-Distance Foam for explicit surface reconstruction",
-      "authors": [
-        "Antonella Rech",
-        "Nicola Conci",
-        "Nicola Garau"
-      ],
-      "abstract": "Neural radiance fields (NeRF) have driven impressive progress in view synthesis by using ray-traced volumetric rendering. Splatting-based methods such as 3D Gaussian Splatting (3DGS) provide faster rendering by rasterizing 3D primitives. RadiantFoam (RF) brought ray tracing back, achieving throughput comparable to Gaussian Splatting by organizing radiance with an explicit Voronoi Diagram (VD). Yet, all the mentioned methods still struggle with precise mesh reconstruction. We address this gap by jointly learning an explicit VD with an implicit Signed Distance Field (SDF). The scene is optimized via ray tracing and regularized by an Eikonal objective. The SDF introduces metric-consistent isosurfaces, which, in turn, bias near-surface Voronoi cell faces to align with the zero level set. The resulting model produces crisper, view-consistent surfaces with fewer floaters and improved topology, while preserving photometric quality and maintaining training speed on par with RadiantFoam. Across diverse scenes, our hybrid implicit-explicit formulation, which we name SDFoam, substantially improves mesh reconstruction accuracy (Chamfer distance) with comparable appearance (PSNR, SSIM), without sacrificing efficiency.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
-      "categories": [
-        "cs.CV",
-        "cs.GR"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.16706v1",
-        "pdf": "https://arxiv.org/pdf/2512.16706v1"
-      },
-      "arxiv_id": "2512.16706v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.189830508474576,
-      "score_breakdown": {
-        "total_score": 4.19,
-        "field_match": {
-          "score": 3.47,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "volumetric",
-            "neural radiance",
-            "nerf"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -288,169 +109,45 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.16918v1",
-      "title": "AdaTooler-V: Adaptive Tool-Use for Images and Videos",
-      "authors": [
-        "Chaoyang Wang",
-        "Kaituo Feng",
-        "Dongyang Chen",
-        "Zhongyu Wang",
-        "Zhixun Li",
-        "Sicheng Gao",
-        "Meng Meng",
-        "Xu Zhou",
-        "Manyuan Zhang",
-        "Yuzhang Shang",
-        "Xiangyu Yue"
-      ],
-      "abstract": "Recent advances have shown that multimodal large language models (MLLMs) benefit from multimodal interleaved chain-of-thought (CoT) with vision tool interactions. However, existing open-source models often exhibit blind tool-use reasoning patterns, invoking vision tools even when they are unnecessary, which significantly increases inference overhead and degrades model performance. To this end, we propose AdaTooler-V, an MLLM that performs adaptive tool-use by determining whether a visual problem truly requires tools. First, we introduce AT-GRPO, a reinforcement learning algorithm that adaptively adjusts reward scales based on the Tool Benefit Score of each sample, encouraging the model to invoke tools only when they provide genuine improvements. Moreover, we construct two datasets to support training: AdaTooler-V-CoT-100k for SFT cold start and AdaTooler-V-300k for RL with verifiable rewards across single-image, multi-image, and video data. Experiments across twelve benchmarks demonstrate the strong reasoning capability of AdaTooler-V, outperforming existing methods in diverse visual reasoning tasks. Notably, AdaTooler-V-7B achieves an accuracy of 89.8\\% on the high-resolution benchmark V*, surpassing the commercial proprietary model GPT-4o and Gemini 1.5 Pro. All code, models, and data are released.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.16918v1",
-        "pdf": "https://arxiv.org/pdf/2512.16918v1"
-      },
-      "arxiv_id": "2512.16918v1",
-      "comment": "Project page: https://github.com/CYWang735/AdaTooler-V",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.16842v1",
-      "title": "OPENTOUCH: Bringing Full-Hand Touch to Real-World Interaction",
+      "id": "2512.17605v1",
+      "title": "MGRegBench: A Novel Benchmark Dataset with Anatomical Landmarks for Mammography Image Registration",
       "authors": [
-        "Yuxin Ray Song",
-        "Jinzhou Li",
-        "Rao Fu",
-        "Devin Murphy",
-        "Kaichen Zhou",
-        "Rishi Shiv",
-        "Yaqi Li",
-        "Haoyu Xiong",
-        "Crystal Elaine Owens",
-        "Yilun Du",
-        "Yiyue Luo",
-        "Xianyi Cheng",
-        "Antonio Torralba",
-        "Wojciech Matusik",
-        "Paul Pu Liang"
+        "Svetlana Krasnova",
+        "Emiliya Starikova",
+        "Ilia Naletov",
+        "Andrey Krylov",
+        "Dmitry Sorokin"
       ],
-      "abstract": "The human hand is our primary interface to the physical world, yet egocentric perception rarely knows when, where, or how forcefully it makes contact. Robust wearable tactile sensors are scarce, and no existing in-the-wild datasets align first-person video with full-hand touch. To bridge the gap between visual perception and physical interaction, we present OpenTouch, the first in-the-wild egocentric full-hand tactile dataset, containing 5.1 hours of synchronized video-touch-pose data and 2,900 curated clips with detailed text annotations. Using OpenTouch, we introduce retrieval and classification benchmarks that probe how touch grounds perception and action. We show that tactile signals provide a compact yet powerful cue for grasp understanding, strengthen cross-modal alignment, and can be reliably retrieved from in-the-wild video queries. By releasing this annotated vision-touch-pose dataset and benchmark, we aim to advance multimodal egocentric perception, embodied learning, and contact-rich robotic manipulation.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
+      "abstract": "Robust mammography registration is essential for clinical applications like tracking disease progression and monitoring longitudinal changes in breast tissue. However, progress has been limited by the absence of public datasets and standardized benchmarks. Existing studies are often not directly comparable, as they use private data and inconsistent evaluation frameworks. To address this, we present MGRegBench, a public benchmark dataset for mammogram registration. It comprises over 5,000 image pairs, with 100 containing manual anatomical landmarks and segmentation masks for rigorous evaluation. This makes MGRegBench one of the largest public 2D registration datasets with manual annotations. Using this resource, we benchmarked diverse registration methods including classical (ANTs), learning-based (VoxelMorph, TransMorph), implicit neural representation (IDIR), a classic mammography-specific approach, and a recent state-of-the-art deep learning method MammoRegNet. The implementations were adapted to this modality from the authors' implementations or re-implemented from scratch. Our contributions are: (1) the first public dataset of this scale with manual landmarks and masks for mammography registration; (2) the first like-for-like comparison of diverse methods on this modality; and (3) an extensive analysis of deep learning-based registration. We publicly release our code and data to establish a foundational resource for fair comparisons and catalyze future research. The source code and data are at https://github.com/KourtKardash/MGRegBench.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.RO"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.16842v1",
-        "pdf": "https://arxiv.org/pdf/2512.16842v1"
+        "paper": "http://arxiv.org/abs/2512.17605v1",
+        "pdf": "https://arxiv.org/pdf/2512.17605v1"
       },
-      "arxiv_id": "2512.16842v1",
-      "comment": "https://opentouch-tactile.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.16841v1",
-      "title": "Radiology Report Generation with Layer-Wise Anatomical Attention",
-      "authors": [
-        "Emmanuel D. Muñiz-De-León",
-        "Jorge A. Rosales-de-Golferichs",
-        "Ana S. Muñoz-Rodríguez",
-        "Alejandro I. Trejo-Castro",
-        "Eduardo de Avila-Armenta",
-        "Antonio Martínez-Torteya"
-      ],
-      "abstract": "Automatic radiology report generation is a promising application of multimodal deep learning, aiming to reduce reporting workload and improve consistency. However, current state-of-the-art (SOTA) systems - such as Multimodal AI for Radiology Applications (MAIRA-2) and Medical Pathways Language Model-Multimodal (MedPaLM-M) - depend on large-scale multimodal training, clinical metadata, and multiple imaging views, making them resource-intensive and inaccessible for most settings. We introduce a compact image-to-text architecture that generates the Findings section of chest X-ray reports from a single frontal image. The model combines a frozen Self-Distillation with No Labels v3 (DINOv3) Vision Transformer (ViT) encoder with a Generative Pre-trained Transformer 2 (GPT-2) decoder enhanced by layer-wise anatomical attention. This mechanism integrates lung and heart segmentation masks through hierarchical Gaussian smoothing, biasing attention toward clinically relevant regions without adding trainable parameters. Evaluated on the official Medical Information Mart for Intensive Care-Chest X-ray (MIMIC-CXR) dataset using Chest Radiograph Expert (CheXpert) and Radiology Graph (RadGraph) metrics, our approach achieved substantial gains: CheXpert Macro-F1 for five key pathologies increased by 168% (0.083 -> 0.238) and Micro-F1 by 146% (0.137 -> 0.337), while broader performance across 14 observations improved by 86% (0.170 -> 0.316). Structural coherence also improved, with RadGraph F1 rising by 9.7%. Despite its small size and purely image-conditioned design, the model demonstrates that decoder-level anatomical guidance improves spatial grounding and enhances coherence in clinically relevant regions. The source code is publicly available at: https://github.com/devMuniz02/UDEM-CXR-Reporting-Thesis-2025.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.16841v1",
-        "pdf": "https://arxiv.org/pdf/2512.16841v1"
-      },
-      "arxiv_id": "2512.16841v1",
-      "comment": "11 pages, 6 figures",
+      "arxiv_id": "2512.17605v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.04406779661017,
+      "relevance_score": 4.376271186440678,
       "score_breakdown": {
-        "total_score": 4.04,
+        "total_score": 4.38,
         "field_match": {
-          "score": 1.61,
+          "score": 1.44,
           "matches": [
-            "heart",
             "segmentation",
+            "registration",
             "deep learning"
           ],
           "weight": 0.4
@@ -461,7 +158,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -470,43 +167,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 7.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.16921v1",
-      "title": "Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification",
+      "id": "2512.17541v1",
+      "title": "FLEG: Feed-Forward Language Embedded Gaussian Splatting from Any Views",
       "authors": [
-        "Qihao Liu",
-        "Chengzhi Mao",
-        "Yaojie Liu",
-        "Alan Yuille",
-        "Wen-Sheng Chu"
+        "Qijian Tian",
+        "Xin Tan",
+        "Jiayu Ying",
+        "Xuhong Wang",
+        "Yuan Xie",
+        "Lizhuang Ma"
       ],
-      "abstract": "Conventional evaluation methods for multimodal LLMs (MLLMs) lack interpretability and are often insufficient to fully disclose significant capability gaps across models. To address this, we introduce AuditDM, an automated framework that actively discovers and rectifies MLLM failure modes by auditing their divergence. AuditDM fine-tunes an MLLM as an auditor via reinforcement learning to generate challenging questions and counterfactual images that maximize disagreement among target models. Once trained, the auditor uncovers diverse, interpretable exemplars that reveal model weaknesses and serve as annotation-free data for rectification. When applied to SoTA models like Gemma-3 and PaliGemma-2, AuditDM discovers more than 20 distinct failure types. Fine-tuning on these discoveries consistently improves all models across 16 benchmarks, and enables a 3B model to surpass its 28B counterpart. Our results suggest that as data scaling hits diminishing returns, targeted model auditing offers an effective path to model diagnosis and improvement.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
+      "abstract": "We present FLEG, a feed-forward network that reconstructs language-embedded 3D Gaussians from any views. Previous straightforward solutions combine feed-forward reconstruction with Gaussian heads but suffer from fixed input views and insufficient 3D training data. In contrast, we propose a 3D-annotation-free training framework for 2D-to-3D lifting from arbitrary uncalibrated and unposed multi-view images. Since the framework does not require 3D annotations, we can leverage large-scale video data with easily obtained 2D instance information to enrich semantic embedding. We also propose an instance-guided contrastive learning to align 2D semantics with the 3D representations. In addition, to mitigate the high memory and computational cost of dense views, we further propose a geometry-semantic hierarchical sparsification strategy. Our FLEG efficiently reconstructs language-embedded 3D Gaussian representation in a feed-forward manner from arbitrary sparse or dense views, jointly producing accurate geometry, high-fidelity appearance, and language-aligned semantics. Extensive experiments show that it outperforms existing methods on various related tasks. Project page: https://fangzhou2000.github.io/projects/fleg.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.16921v1",
-        "pdf": "https://arxiv.org/pdf/2512.16921v1"
+        "paper": "http://arxiv.org/abs/2512.17541v1",
+        "pdf": "https://arxiv.org/pdf/2512.17541v1"
       },
-      "arxiv_id": "2512.16921v1",
-      "comment": "project page: https://auditdm.github.io/",
+      "arxiv_id": "2512.17541v1",
+      "comment": "Project page: https://fangzhou2000.github.io/projects/fleg",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.327966101694916,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.33,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -515,7 +215,122 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.17774v1",
+      "title": "MedNeXt-v2: Scaling 3D ConvNeXts for Large-Scale Supervised Representation Learning in Medical Image Segmentation",
+      "authors": [
+        "Saikat Roy",
+        "Yannick Kirchhoff",
+        "Constantin Ulrich",
+        "Maximillian Rokuss",
+        "Tassilo Wald",
+        "Fabian Isensee",
+        "Klaus Maier-Hein"
+      ],
+      "abstract": "Large-scale supervised pretraining is rapidly reshaping 3D medical image segmentation. However, existing efforts focus primarily on increasing dataset size and overlook the question of whether the backbone network is an effective representation learner at scale. In this work, we address this gap by revisiting ConvNeXt-based architectures for volumetric segmentation and introducing MedNeXt-v2, a compound-scaled 3D ConvNeXt that leverages improved micro-architecture and data scaling to deliver state-of-the-art performance. First, we show that routinely used backbones in large-scale pretraining pipelines are often suboptimal. Subsequently, we use comprehensive backbone benchmarking prior to scaling and demonstrate that stronger from scratch performance reliably predicts stronger downstream performance after pretraining. Guided by these findings, we incorporate a 3D Global Response Normalization module and use depth, width, and context scaling to improve our architecture for effective representation learning. We pretrain MedNeXt-v2 on 18k CT volumes and demonstrate state-of-the-art performance when fine-tuning across six challenging CT and MR benchmarks (144 structures), showing consistent gains over seven publicly released pretrained models. Beyond improvements, our benchmarking of these models also reveals that stronger backbones yield better results on similar data, representation scaling disproportionately benefits pathological segmentation, and that modality-specific pretraining offers negligible benefit once full finetuning is applied. In conclusion, our results establish MedNeXt-v2 as a strong backbone for large-scale supervised representation learning in 3D Medical Image Segmentation. Our code and pretrained models are made available with the official nnUNet repository at: https://www.github.com/MIC-DKFZ/nnUNet",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_category": "eess.IV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.17774v1",
+        "pdf": "https://arxiv.org/pdf/2512.17774v1"
+      },
+      "arxiv_id": "2512.17774v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.245762711864407,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 1.86,
+          "matches": [
+            "medical image",
+            "volumetric",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.17838v1",
+      "title": "ReX-MLE: The Autonomous Agent Benchmark for Medical Imaging Challenges",
+      "authors": [
+        "Roshan Kenia",
+        "Xiaoman Zhang",
+        "Pranav Rajpurkar"
+      ],
+      "abstract": "Autonomous coding agents built on large language models (LLMs) can now solve many general software and machine learning tasks, but they remain ineffective on complex, domain-specific scientific problems. Medical imaging is a particularly demanding domain, requiring long training cycles, high-dimensional data handling, and specialized preprocessing and validation pipelines, capabilities not fully measured in existing agent benchmarks. To address this gap, we introduce ReX-MLE, a benchmark of 20 challenges derived from high-impact medical imaging competitions spanning diverse modalities and task types. Unlike prior ML-agent benchmarks, ReX-MLE evaluates full end-to-end workflows, requiring agents to independently manage data preprocessing, model training, and submission under realistic compute and time constraints. Evaluating state-of-the-art agents (AIDE, ML-Master, R&D-Agent) with different LLM backends (GPT-5, Gemini, Claude), we observe a severe performance gap: most submissions rank in the 0th percentile compared to human experts. Failures stem from domain-knowledge and engineering limitations. ReX-MLE exposes these bottlenecks and provides a foundation for developing domain-aware autonomous AI systems.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.17838v1",
+        "pdf": "https://arxiv.org/pdf/2512.17838v1"
+      },
+      "arxiv_id": "2512.17838v1",
+      "comment": "https://github.com/rajpurkarlab/ReX-MLE",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.155084745762712,
+      "score_breakdown": {
+        "total_score": 4.16,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "medical imaging"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -530,29 +345,247 @@
       }
     },
     {
-      "id": "2512.16767v1",
-      "title": "Make-It-Poseable: Feed-forward Latent Posing Model for 3D Humanoid Character Animation",
+      "id": "2512.17773v1",
+      "title": "Pix2NPHM: Learning to Regress NPHM Reconstructions From a Single Image",
       "authors": [
-        "Zhiyang Guo",
-        "Ori Zhang",
-        "Jax Xiang",
-        "Alan Zhao",
-        "Wengang Zhou",
-        "Houqiang Li"
+        "Simon Giebenhain",
+        "Tobias Kirschstein",
+        "Liam Schoneveld",
+        "Davide Davoli",
+        "Zhe Chen",
+        "Matthias Nießner"
       ],
-      "abstract": "Posing 3D characters is a fundamental task in computer graphics and vision. However, existing methods like auto-rigging and pose-conditioned generation often struggle with challenges such as inaccurate skinning weight prediction, topological imperfections, and poor pose conformance, limiting their robustness and generalizability. To overcome these limitations, we introduce Make-It-Poseable, a novel feed-forward framework that reformulates character posing as a latent-space transformation problem. Instead of deforming mesh vertices as in traditional pipelines, our method reconstructs the character in new poses by directly manipulating its latent representation. At the core of our method is a latent posing transformer that manipulates shape tokens based on skeletal motion. This process is facilitated by a dense pose representation for precise control. To ensure high-fidelity geometry and accommodate topological changes, we also introduce a latent-space supervision strategy and an adaptive completion module. Our method demonstrates superior performance in posing quality. It also naturally extends to 3D editing applications like part replacement and refinement.",
-      "published": "2025-12-18",
-      "updated": "2025-12-18",
+      "abstract": "Neural Parametric Head Models (NPHMs) are a recent advancement over mesh-based 3d morphable models (3DMMs) to facilitate high-fidelity geometric detail. However, fitting NPHMs to visual inputs is notoriously challenging due to the expressive nature of their underlying latent space. To this end, we propose Pix2NPHM, a vision transformer (ViT) network that directly regresses NPHM parameters, given a single image as input. Compared to existing approaches, the neural parametric space allows our method to reconstruct more recognizable facial geometry and accurate facial expressions. For broad generalization, we exploit domain-specific ViTs as backbones, which are pretrained on geometric prediction tasks. We train Pix2NPHM on a mixture of 3D data, including a total of over 100K NPHM registrations that enable direct supervision in SDF space, and large-scale 2D video datasets, for which normal estimates serve as pseudo ground truth geometry. Pix2NPHM not only allows for 3D reconstructions at interactive frame rates, it is also possible to improve geometric fidelity by a subsequent inference-time optimization against estimated surface normals and canonical point maps. As a result, we achieve unprecedented face reconstruction quality that can run at scale on in-the-wild data.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.17773v1",
+        "pdf": "https://arxiv.org/pdf/2512.17773v1"
+      },
+      "arxiv_id": "2512.17773v1",
+      "comment": "Project website: https://simongiebenhain.github.io/Pix2NPHM/ , Video: https://www.youtube.com/watch?v=MgpEJC5p1Ts",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.140677966101695,
+      "score_breakdown": {
+        "total_score": 4.14,
+        "field_match": {
+          "score": 1.1,
+          "matches": [
+            "3d reconstruction",
+            "registration"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.17581v1",
+      "title": "Medical Imaging AI Competitions Lack Fairness",
+      "authors": [
+        "Annika Reinke",
+        "Evangelia Christodoulou",
+        "Sthuthi Sadananda",
+        "A. Emre Kavur",
+        "Khrystyna Faryna",
+        "Daan Schouten",
+        "Bennett A. Landman",
+        "Carole Sudre",
+        "Olivier Colliot",
+        "Nick Heller",
+        "Sophie Loizillon",
+        "Martin Maška",
+        "Maëlys Solal",
+        "Arya Yazdan-Panah",
+        "Vilma Bozgo",
+        "Ömer Sümer",
+        "Siem de Jong",
+        "Sophie Fischer",
+        "Michal Kozubek",
+        "Tim Rädsch",
+        "Nadim Hammoud",
+        "Fruzsina Molnár-Gábor",
+        "Steven Hicks",
+        "Michael A. Riegler",
+        "Anindo Saha",
+        "Vajira Thambawita",
+        "Pal Halvorsen",
+        "Amelia Jiménez-Sánchez",
+        "Qingyang Yang",
+        "Veronika Cheplygina",
+        "Sabrina Bottazzi",
+        "Alexander Seitel",
+        "Spyridon Bakas",
+        "Alexandros Karargyris",
+        "Kiran Vaidhya Venkadesh",
+        "Bram van Ginneken",
+        "Lena Maier-Hein"
+      ],
+      "abstract": "Benchmarking competitions are central to the development of artificial intelligence (AI) in medical imaging, defining performance standards and shaping methodological progress. However, it remains unclear whether these benchmarks provide data that are sufficiently representative, accessible, and reusable to support clinically meaningful AI. In this work, we assess fairness along two complementary dimensions: (1) whether challenge datasets are representative of real-world clinical diversity, and (2) whether they are accessible and legally reusable in line with the FAIR principles. To address this question, we conducted a large-scale systematic study of 241 biomedical image analysis challenges comprising 458 tasks across 19 imaging modalities. Our findings show substantial biases in dataset composition, including geographic location, modality-, and problem type-related biases, indicating that current benchmarks do not adequately reflect real-world clinical diversity. Despite their widespread influence, challenge datasets were frequently constrained by restrictive or ambiguous access conditions, inconsistent or non-compliant licensing practices, and incomplete documentation, limiting reproducibility and long-term reuse. Together, these shortcomings expose foundational fairness limitations in our benchmarking ecosystem and highlight a disconnect between leaderboard success and clinical relevance.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.16767v1",
-        "pdf": "https://arxiv.org/pdf/2512.16767v1"
+        "paper": "http://arxiv.org/abs/2512.17581v1",
+        "pdf": "https://arxiv.org/pdf/2512.17581v1"
       },
-      "arxiv_id": "2512.16767v1",
-      "comment": "Project page: https://jasongzy.github.io/Make-It-Poseable/",
+      "arxiv_id": "2512.17581v1",
+      "comment": "Submitted to Nature BME",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.079661016949153,
+      "score_breakdown": {
+        "total_score": 4.08,
+        "field_match": {
+          "score": 1.95,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "image analysis"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.17817v1",
+      "title": "Chorus: Multi-Teacher Pretraining for Holistic 3D Gaussian Scene Encoding",
+      "authors": [
+        "Yue Li",
+        "Qi Ma",
+        "Runyi Yang",
+        "Mengjiao Ma",
+        "Bin Ren",
+        "Nikola Popovic",
+        "Nicu Sebe",
+        "Theo Gevers",
+        "Luc Van Gool",
+        "Danda Pani Paudel",
+        "Martin R. Oswald"
+      ],
+      "abstract": "While 3DGS has emerged as a high-fidelity scene representation, encoding rich, general-purpose features directly from its primitives remains under-explored. We address this gap by introducing Chorus, a multi-teacher pretraining framework that learns a holistic feed-forward 3D Gaussian Splatting (3DGS) scene encoder by distilling complementary signals from 2D foundation models. Chorus employs a shared 3D encoder and teacher-specific projectors to learn from language-aligned, generalist, and object-aware teachers, encouraging a shared embedding space that captures signals from high-level semantics to fine-grained structure.\n  We evaluate Chorus on a wide range of tasks: open-vocabulary semantic and instance segmentation, linear and decoder probing, as well as data-efficient supervision. Besides 3DGS, we also test Chorus on several benchmarks that only support point clouds by pretraining a variant using only Gaussians' centers, colors, estimated normals as inputs. Interestingly, this encoder shows strong transfer and outperforms the point clouds baseline while using 39.9 times fewer training scenes. Finally, we propose a render-and-distill adaptation that facilitates out-of-domain finetuning. Our code and model will be released upon publication.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.17817v1",
+        "pdf": "https://arxiv.org/pdf/2512.17817v1"
+      },
+      "arxiv_id": "2512.17817v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.03135593220339,
+      "score_breakdown": {
+        "total_score": 4.03,
+        "field_match": {
+          "score": 2.2,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.17909v1",
+      "title": "Both Semantics and Reconstruction Matter: Making Representation Encoders Ready for Text-to-Image Generation and Editing",
+      "authors": [
+        "Shilong Zhang",
+        "He Zhang",
+        "Zhifei Zhang",
+        "Chongjian Ge",
+        "Shuchen Xue",
+        "Shaoteng Liu",
+        "Mengwei Ren",
+        "Soo Ye Kim",
+        "Yuqian Zhou",
+        "Qing Liu",
+        "Daniil Pakhomov",
+        "Kai Zhang",
+        "Zhe Lin",
+        "Ping Luo"
+      ],
+      "abstract": "Modern Latent Diffusion Models (LDMs) typically operate in low-level Variational Autoencoder (VAE) latent spaces that are primarily optimized for pixel-level reconstruction. To unify vision generation and understanding, a burgeoning trend is to adopt high-dimensional features from representation encoders as generative latents. However, we empirically identify two fundamental obstacles in this paradigm: (1) the discriminative feature space lacks compact regularization, making diffusion models prone to off-manifold latents that lead to inaccurate object structures; and (2) the encoder's inherently weak pixel-level reconstruction hinders the generator from learning accurate fine-grained geometry and texture. In this paper, we propose a systematic framework to adapt understanding-oriented encoder features for generative tasks. We introduce a semantic-pixel reconstruction objective to regularize the latent space, enabling the compression of both semantic information and fine-grained details into a highly compact representation (96 channels with 16x16 spatial downsampling). This design ensures that the latent space remains semantically rich and achieves state-of-the-art image reconstruction, while remaining compact enough for accurate generation. Leveraging this representation, we design a unified Text-to-Image (T2I) and image editing model. Benchmarking against various feature spaces, we demonstrate that our approach achieves state-of-the-art reconstruction, faster convergence, and substantial performance gains in both T2I and editing tasks, validating that representation encoders can be effectively adapted into robust generative components.",
+      "published": "2025-12-19",
+      "updated": "2025-12-19",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.17909v1",
+        "pdf": "https://arxiv.org/pdf/2512.17909v1"
+      },
+      "arxiv_id": "2512.17909v1",
+      "comment": "Project Page: https://jshilong.github.io/PS-VAE-PAGE/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,

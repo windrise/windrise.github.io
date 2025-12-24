@@ -3,38 +3,99 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.17547v1",
-      "title": "G3Splat: Geometrically Consistent Generalizable Gaussian Splatting",
+      "id": "2512.19527v1",
+      "title": "Deep Learning for Unrelated-Machines Scheduling: Handling Variable Dimensions",
       "authors": [
-        "Mehdi Hosseinzadeh",
-        "Shin-Fang Chng",
-        "Yi Xu",
-        "Simon Lucey",
-        "Ian Reid",
-        "Ravi Garg"
+        "Diego Hitzges",
+        "Guillaume Sagnol"
       ],
-      "abstract": "3D Gaussians have recently emerged as an effective scene representation for real-time splatting and accurate novel-view synthesis, motivating several works to adapt multi-view structure prediction networks to regress per-pixel 3D Gaussians from images. However, most prior work extends these networks to predict additional Gaussian parameters -- orientation, scale, opacity, and appearance -- while relying almost exclusively on view-synthesis supervision. We show that a view-synthesis loss alone is insufficient to recover geometrically meaningful splats in this setting. We analyze and address the ambiguities of learning 3D Gaussian splats under self-supervision for pose-free generalizable splatting, and introduce G3Splat, which enforces geometric priors to obtain geometrically consistent 3D scene representations. Trained on RE10K, our approach achieves state-of-the-art performance in (i) geometrically consistent reconstruction, (ii) relative pose estimation, and (iii) novel-view synthesis. We further demonstrate strong zero-shot generalization on ScanNet, substantially outperforming prior work in both geometry recovery and relative pose estimation. Code and pretrained models are released on our project page (https://m80hz.github.io/g3splat/).",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
+      "abstract": "Deep learning has been effectively applied to many discrete optimization problems. However, learning-based scheduling on unrelated parallel machines remains particularly difficult to design. Not only do the numbers of jobs and machines vary, but each job-machine pair has a unique processing time, dynamically altering feature dimensions. We propose a novel approach with a neural network tailored for offline deterministic scheduling of arbitrary sizes on unrelated machines. The goal is to minimize a complex objective function that includes the makespan and the weighted tardiness of jobs and machines. Unlike existing online approaches, which process jobs sequentially, our method generates a complete schedule considering the entire input at once. The key contribution of this work lies in the sophisticated architecture of our model. By leveraging various NLP-inspired architectures, it effectively processes any number of jobs and machines with varying feature dimensions imposed by unrelated processing times. Our approach enables supervised training on small problem instances while demonstrating strong generalization to much larger scheduling environments. Trained and tested on instances with 8 jobs and 4 machines, costs were only 2.51% above optimal. Across all tested configurations of up to 100 jobs and 10 machines, our network consistently outperformed an advanced dispatching rule, which incurred 22.22% higher costs on average. As our method allows fast retraining with simulated data and adaptation to various scheduling conditions, we believe it has the potential to become a standard approach for learning-based scheduling on unrelated machines and similar problem environments.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.DM"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.19527v1",
+        "pdf": "https://arxiv.org/pdf/2512.19527v1"
+      },
+      "arxiv_id": "2512.19527v1",
+      "comment": "24th IEEE International Conference on Machine Learning and Applications (ICMLA 2025) in Boca Raton, USA. Project page: https://github.com/DiegoHitzges/Deep-Learning-for-Unrelated-Machines-Scheduling . 8 pages, 4 figures, 3 tables",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.1194915254237285,
+      "score_breakdown": {
+        "total_score": 5.12,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Deep learning has been effectively applied to many discrete optimization problems. However, learning-based scheduling on unrelated parallel machines remains particularly difficult to design. Not only do the numbers of jobs and machines vary, but each job-machine pair has a unique processing time, dynamically altering feature dimensions. We propose a novel approach with a neural network tailored fo...",
+        "key_contributions": [
+          "Deep learning has been effectively applied to many discrete optimization problems.",
+          "However, learning-based scheduling on unrelated parallel machines remains particularly difficult to design.",
+          "Not only do the numbers of jobs and machines vary, but each job-machine pair has a unique processing time, dynamically altering feature dimensions."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.19527v1.mp3"
+      }
+    },
+    {
+      "id": "2512.19678v1",
+      "title": "WorldWarp: Propagating 3D Geometry with Asynchronous Video Diffusion",
+      "authors": [
+        "Hanyang Kong",
+        "Xingyi Yang",
+        "Xiaoxu Zheng",
+        "Xinchao Wang"
+      ],
+      "abstract": "Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space. This disconnect causes current methods to struggle with occluded areas and complex camera trajectories. To bridge this gap, we propose WorldWarp, a framework that couples a 3D structural anchor with a 2D generative refiner. To establish geometric grounding, WorldWarp maintains an online 3D geometric cache built via Gaussian Splatting (3DGS). By explicitly warping historical content into novel views, this cache acts as a structural scaffold, ensuring each new frame respects prior geometry. However, static warping inevitably leaves holes and artifacts due to occlusions. We address this using a Spatio-Temporal Diffusion (ST-Diff) model designed for a \"fill-and-revise\" objective. Our key innovation is a spatio-temporal varying noise schedule: blank regions receive full noise to trigger generation, while warped regions receive partial noise to enable refinement. By dynamically updating the 3D cache at every step, WorldWarp maintains consistency across video chunks. Consequently, it achieves state-of-the-art fidelity by ensuring that 3D logic guides structure while diffusion logic perfects texture. Project page: \\href{https://hyokong.github.io/worldwarp-page/}{https://hyokong.github.io/worldwarp-page/}.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.17547v1",
-        "pdf": "https://arxiv.org/pdf/2512.17547v1"
+        "paper": "http://arxiv.org/abs/2512.19678v1",
+        "pdf": "https://arxiv.org/pdf/2512.19678v1"
       },
-      "arxiv_id": "2512.17547v1",
-      "comment": "Project page: https://m80hz.github.io/g3splat/",
+      "arxiv_id": "2512.19678v1",
+      "comment": "Project page: https://hyokong.github.io/worldwarp-page/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.627966101694915,
+      "relevance_score": 4.288983050847458,
       "score_breakdown": {
-        "total_score": 4.63,
+        "total_score": 4.29,
         "field_match": {
-          "score": 1.69,
+          "score": 0.85,
           "matches": [
-            "3d gaussian",
             "gaussian splatting"
           ],
           "weight": 0.4
@@ -59,256 +120,57 @@
         }
       },
       "ai_summaries": {
-        "short": "3D Gaussians have recently emerged as an effective scene representation for real-time splatting and accurate novel-view synthesis, motivating several works to adapt multi-view structure prediction networks to regress per-pixel 3D Gaussians from images. However, most prior work extends these networks to predict additional Gaussian parameters -- orientation, scale, opacity, and appearance -- while r...",
+        "short": "Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space. This disconnect causes current methods to struggle with occluded areas and complex camera trajectories. To bridge this gap, we propose WorldWa...",
         "key_contributions": [
-          "3D Gaussians have recently emerged as an effective scene representation for real-time splatting and accurate novel-view synthesis, motivating several works to adapt multi-view structure prediction networks to regress per-pixel 3D Gaussians from images.",
-          "However, most prior work extends these networks to predict additional Gaussian parameters -- orientation, scale, opacity, and appearance -- while relying almost exclusively on view-synthesis supervision.",
-          "We show that a view-synthesis loss alone is insufficient to recover geometrically meaningful splats in this setting."
+          "Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space.",
+          "This disconnect causes current methods to struggle with occluded areas and complex camera trajectories.",
+          "To bridge this gap, we propose WorldWarp, a framework that couples a 3D structural anchor with a 2D generative refiner."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.17547v1.mp3"
+        "audio_url": "/audio/2512.19678v1.mp3"
       }
     },
     {
-      "id": "2512.17612v1",
-      "title": "Self-Supervised Weighted Image Guided Quantitative MRI Super-Resolution",
+      "id": "2512.19433v1",
+      "title": "dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models",
       "authors": [
-        "Alireza Samadifardheris",
-        "Dirk H. J. Poot",
-        "Florian Wiesinger",
-        "Stefan Klein",
-        "Juan A. Hernandez-Tamames"
+        "Yi Xin",
+        "Siqi Luo",
+        "Qi Qin",
+        "Haoxing Chen",
+        "Kaiwen Zhu",
+        "Zhiwei Zhang",
+        "Yangfan He",
+        "Rongchao Zhang",
+        "Jinbin Bai",
+        "Shuo Cao",
+        "Bin Fu",
+        "Junjun He",
+        "Yihao Liu",
+        "Yuewen Cao",
+        "Xiaohong Liu"
       ],
-      "abstract": "High-resolution (HR) quantitative MRI (qMRI) relaxometry provides objective tissue characterization but remains clinically underutilized due to lengthy acquisition times. We propose a physics-informed, self-supervised framework for qMRI super-resolution that uses routinely acquired HR weighted MRI (wMRI) scans as guidance, thus, removing the necessity for HR qMRI ground truth during training. We formulate super-resolution as Bayesian maximum a posteriori inference, minimizing two discrepancies: (1) between HR images synthesized from super-resolved qMRI maps and acquired wMRI guides via forward signal models, and (2) between acquired LR qMRI and downsampled predictions. This physics-informed objective allows the models to learn from clinical wMRI without HR qMRI supervision. To validate the concept, we generate training data by synthesizing wMRI guides from HR qMRI using signal equations, then degrading qMRI resolution via k-space truncation. A deep neural network learns the super-resolution mapping. Ablation experiments demonstrate that T1-weighted images primarily enhance T1 maps, T2-weighted images improve T2 maps, and combined guidance optimally enhances all parameters simultaneously. Validation on independently acquired in-vivo data from a different qMRI sequence confirms cross-qMRI sequence generalizability. Models trained on synthetic data can produce super-resolved maps from a 1-minute acquisition with quality comparable to a 5-minute reference scan, leveraging the scanner-independent nature of relaxometry parameters. By decoupling training from HR qMRI requirement, our framework enables fast qMRI acquisitions enhanced via routine clinical images, offering a practical pathway for integrating quantitative relaxometry into clinical workflows with acceptable additional scan time.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
+      "abstract": "Diffusion Multi-modal Large Language Models (dMLLMs) have recently emerged as a novel architecture unifying image generation and understanding. However, developing effective and efficient Test-Time Scaling (TTS) methods to unlock their full generative potential remains an underexplored challenge. To address this, we propose dMLLM-TTS, a novel framework operating on two complementary scaling axes: (1) trajectory exploration scaling to enhance the diversity of generated hypotheses, and (2) iterative refinement scaling for stable generation. Conventional TTS approaches typically perform linear search across these two dimensions, incurring substantial computational costs of O(NT) and requiring an external verifier for best-of-N selection. To overcome these limitations, we propose two innovations. First, we design an efficient hierarchical search algorithm with O(N+T) complexity that adaptively expands and prunes sampling trajectories. Second, we introduce a self-verified feedback mechanism that leverages the dMLLMs' intrinsic image understanding capabilities to assess text-image alignment, eliminating the need for external verifier. Extensive experiments on the GenEval benchmark across three representative dMLLMs (e.g., Lumina-DiMOO, MMaDA, Muddit) show that our framework substantially improves generation quality while achieving up to 6x greater efficiency than linear search. Project page: https://github.com/Alpha-VLLM/Lumina-DiMOO.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.17612v1",
-        "pdf": "https://arxiv.org/pdf/2512.17612v1"
+        "paper": "http://arxiv.org/abs/2512.19433v1",
+        "pdf": "https://arxiv.org/pdf/2512.19433v1"
       },
-      "arxiv_id": "2512.17612v1",
-      "comment": "This work has been submitted to IEEE TMI for possible publication",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.571186440677966,
-      "score_breakdown": {
-        "total_score": 4.57,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "TMI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "High-resolution (HR) quantitative MRI (qMRI) relaxometry provides objective tissue characterization but remains clinically underutilized due to lengthy acquisition times. We propose a physics-informed, self-supervised framework for qMRI super-resolution that uses routinely acquired HR weighted MRI (wMRI) scans as guidance, thus, removing the necessity for HR qMRI ground truth during training. We f...",
-        "key_contributions": [
-          "High-resolution (HR) quantitative MRI (qMRI) relaxometry provides objective tissue characterization but remains clinically underutilized due to lengthy acquisition times.",
-          "We propose a physics-informed, self-supervised framework for qMRI super-resolution that uses routinely acquired HR weighted MRI (wMRI) scans as guidance, thus, removing the necessity for HR qMRI ground truth during training.",
-          "We formulate super-resolution as Bayesian maximum a posteriori inference, minimizing two discrepancies: (1) between HR images synthesized from super-resolved qMRI maps and acquired wMRI guides via forward signal models, and (2) between acquired LR qMRI and downsampled predictions."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.17612v1.mp3"
-      }
-    },
-    {
-      "id": "2512.17605v1",
-      "title": "MGRegBench: A Novel Benchmark Dataset with Anatomical Landmarks for Mammography Image Registration",
-      "authors": [
-        "Svetlana Krasnova",
-        "Emiliya Starikova",
-        "Ilia Naletov",
-        "Andrey Krylov",
-        "Dmitry Sorokin"
-      ],
-      "abstract": "Robust mammography registration is essential for clinical applications like tracking disease progression and monitoring longitudinal changes in breast tissue. However, progress has been limited by the absence of public datasets and standardized benchmarks. Existing studies are often not directly comparable, as they use private data and inconsistent evaluation frameworks. To address this, we present MGRegBench, a public benchmark dataset for mammogram registration. It comprises over 5,000 image pairs, with 100 containing manual anatomical landmarks and segmentation masks for rigorous evaluation. This makes MGRegBench one of the largest public 2D registration datasets with manual annotations. Using this resource, we benchmarked diverse registration methods including classical (ANTs), learning-based (VoxelMorph, TransMorph), implicit neural representation (IDIR), a classic mammography-specific approach, and a recent state-of-the-art deep learning method MammoRegNet. The implementations were adapted to this modality from the authors' implementations or re-implemented from scratch. Our contributions are: (1) the first public dataset of this scale with manual landmarks and masks for mammography registration; (2) the first like-for-like comparison of diverse methods on this modality; and (3) an extensive analysis of deep learning-based registration. We publicly release our code and data to establish a foundational resource for fair comparisons and catalyze future research. The source code and data are at https://github.com/KourtKardash/MGRegBench.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.17605v1",
-        "pdf": "https://arxiv.org/pdf/2512.17605v1"
-      },
-      "arxiv_id": "2512.17605v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.376271186440678,
-      "score_breakdown": {
-        "total_score": 4.38,
-        "field_match": {
-          "score": 1.44,
-          "matches": [
-            "segmentation",
-            "registration",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Robust mammography registration is essential for clinical applications like tracking disease progression and monitoring longitudinal changes in breast tissue. However, progress has been limited by the absence of public datasets and standardized benchmarks. Existing studies are often not directly comparable, as they use private data and inconsistent evaluation frameworks. To address this, we presen...",
-        "key_contributions": [
-          "Robust mammography registration is essential for clinical applications like tracking disease progression and monitoring longitudinal changes in breast tissue.",
-          "However, progress has been limited by the absence of public datasets and standardized benchmarks.",
-          "Existing studies are often not directly comparable, as they use private data and inconsistent evaluation frameworks."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.17605v1.mp3"
-      }
-    },
-    {
-      "id": "2512.17541v1",
-      "title": "FLEG: Feed-Forward Language Embedded Gaussian Splatting from Any Views",
-      "authors": [
-        "Qijian Tian",
-        "Xin Tan",
-        "Jiayu Ying",
-        "Xuhong Wang",
-        "Yuan Xie",
-        "Lizhuang Ma"
-      ],
-      "abstract": "We present FLEG, a feed-forward network that reconstructs language-embedded 3D Gaussians from any views. Previous straightforward solutions combine feed-forward reconstruction with Gaussian heads but suffer from fixed input views and insufficient 3D training data. In contrast, we propose a 3D-annotation-free training framework for 2D-to-3D lifting from arbitrary uncalibrated and unposed multi-view images. Since the framework does not require 3D annotations, we can leverage large-scale video data with easily obtained 2D instance information to enrich semantic embedding. We also propose an instance-guided contrastive learning to align 2D semantics with the 3D representations. In addition, to mitigate the high memory and computational cost of dense views, we further propose a geometry-semantic hierarchical sparsification strategy. Our FLEG efficiently reconstructs language-embedded 3D Gaussian representation in a feed-forward manner from arbitrary sparse or dense views, jointly producing accurate geometry, high-fidelity appearance, and language-aligned semantics. Extensive experiments show that it outperforms existing methods on various related tasks. Project page: https://fangzhou2000.github.io/projects/fleg.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.17541v1",
-        "pdf": "https://arxiv.org/pdf/2512.17541v1"
-      },
-      "arxiv_id": "2512.17541v1",
-      "comment": "Project page: https://fangzhou2000.github.io/projects/fleg",
+      "arxiv_id": "2512.19433v1",
+      "comment": "Project page: https://github.com/Alpha-VLLM/Lumina-DiMOO",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.327966101694916,
+      "relevance_score": 4.1499999999999995,
       "score_breakdown": {
-        "total_score": 4.33,
+        "total_score": 4.15,
         "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We present FLEG, a feed-forward network that reconstructs language-embedded 3D Gaussians from any views. Previous straightforward solutions combine feed-forward reconstruction with Gaussian heads but suffer from fixed input views and insufficient 3D training data. In contrast, we propose a 3D-annotation-free training framework for 2D-to-3D lifting from arbitrary uncalibrated and unposed multi-view...",
-        "key_contributions": [
-          "We present FLEG, a feed-forward network that reconstructs language-embedded 3D Gaussians from any views.",
-          "Previous straightforward solutions combine feed-forward reconstruction with Gaussian heads but suffer from fixed input views and insufficient 3D training data.",
-          "In contrast, we propose a 3D-annotation-free training framework for 2D-to-3D lifting from arbitrary uncalibrated and unposed multi-view images."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.17541v1.mp3"
-      }
-    },
-    {
-      "id": "2512.17774v1",
-      "title": "MedNeXt-v2: Scaling 3D ConvNeXts for Large-Scale Supervised Representation Learning in Medical Image Segmentation",
-      "authors": [
-        "Saikat Roy",
-        "Yannick Kirchhoff",
-        "Constantin Ulrich",
-        "Maximillian Rokuss",
-        "Tassilo Wald",
-        "Fabian Isensee",
-        "Klaus Maier-Hein"
-      ],
-      "abstract": "Large-scale supervised pretraining is rapidly reshaping 3D medical image segmentation. However, existing efforts focus primarily on increasing dataset size and overlook the question of whether the backbone network is an effective representation learner at scale. In this work, we address this gap by revisiting ConvNeXt-based architectures for volumetric segmentation and introducing MedNeXt-v2, a compound-scaled 3D ConvNeXt that leverages improved micro-architecture and data scaling to deliver state-of-the-art performance. First, we show that routinely used backbones in large-scale pretraining pipelines are often suboptimal. Subsequently, we use comprehensive backbone benchmarking prior to scaling and demonstrate that stronger from scratch performance reliably predicts stronger downstream performance after pretraining. Guided by these findings, we incorporate a 3D Global Response Normalization module and use depth, width, and context scaling to improve our architecture for effective representation learning. We pretrain MedNeXt-v2 on 18k CT volumes and demonstrate state-of-the-art performance when fine-tuning across six challenging CT and MR benchmarks (144 structures), showing consistent gains over seven publicly released pretrained models. Beyond improvements, our benchmarking of these models also reveals that stronger backbones yield better results on similar data, representation scaling disproportionately benefits pathological segmentation, and that modality-specific pretraining offers negligible benefit once full finetuning is applied. In conclusion, our results establish MedNeXt-v2 as a strong backbone for large-scale supervised representation learning in 3D Medical Image Segmentation. Our code and pretrained models are made available with the official nnUNet repository at: https://www.github.com/MIC-DKFZ/nnUNet",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
-      "categories": [
-        "eess.IV",
-        "cs.AI",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "eess.IV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.17774v1",
-        "pdf": "https://arxiv.org/pdf/2512.17774v1"
-      },
-      "arxiv_id": "2512.17774v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.245762711864407,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 1.86,
-          "matches": [
-            "medical image",
-            "volumetric",
-            "segmentation"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -321,69 +183,6 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Large-scale supervised pretraining is rapidly reshaping 3D medical image segmentation. However, existing efforts focus primarily on increasing dataset size and overlook the question of whether the backbone network is an effective representation learner at scale. In this work, we address this gap by revisiting ConvNeXt-based architectures for volumetric segmentation and introducing MedNeXt-v2, a co...",
-        "key_contributions": [
-          "Large-scale supervised pretraining is rapidly reshaping 3D medical image segmentation.",
-          "However, existing efforts focus primarily on increasing dataset size and overlook the question of whether the backbone network is an effective representation learner at scale.",
-          "In this work, we address this gap by revisiting ConvNeXt-based architectures for volumetric segmentation and introducing MedNeXt-v2, a compound-scaled 3D ConvNeXt that leverages improved micro-architecture and data scaling to deliver state-of-the-art performance."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.17774v1.mp3"
-      }
-    },
-    {
-      "id": "2512.17838v1",
-      "title": "ReX-MLE: The Autonomous Agent Benchmark for Medical Imaging Challenges",
-      "authors": [
-        "Roshan Kenia",
-        "Xiaoman Zhang",
-        "Pranav Rajpurkar"
-      ],
-      "abstract": "Autonomous coding agents built on large language models (LLMs) can now solve many general software and machine learning tasks, but they remain ineffective on complex, domain-specific scientific problems. Medical imaging is a particularly demanding domain, requiring long training cycles, high-dimensional data handling, and specialized preprocessing and validation pipelines, capabilities not fully measured in existing agent benchmarks. To address this gap, we introduce ReX-MLE, a benchmark of 20 challenges derived from high-impact medical imaging competitions spanning diverse modalities and task types. Unlike prior ML-agent benchmarks, ReX-MLE evaluates full end-to-end workflows, requiring agents to independently manage data preprocessing, model training, and submission under realistic compute and time constraints. Evaluating state-of-the-art agents (AIDE, ML-Master, R&D-Agent) with different LLM backends (GPT-5, Gemini, Claude), we observe a severe performance gap: most submissions rank in the 0th percentile compared to human experts. Failures stem from domain-knowledge and engineering limitations. ReX-MLE exposes these bottlenecks and provides a foundation for developing domain-aware autonomous AI systems.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.17838v1",
-        "pdf": "https://arxiv.org/pdf/2512.17838v1"
-      },
-      "arxiv_id": "2512.17838v1",
-      "comment": "https://github.com/rajpurkarlab/ReX-MLE",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.155084745762712,
-      "score_breakdown": {
-        "total_score": 4.16,
-        "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical imaging"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
           "score": 10.0,
           "has_code": true,
           "weight": 0.1
@@ -394,52 +193,51 @@
         }
       },
       "ai_summaries": {
-        "short": "Autonomous coding agents built on large language models (LLMs) can now solve many general software and machine learning tasks, but they remain ineffective on complex, domain-specific scientific problems. Medical imaging is a particularly demanding domain, requiring long training cycles, high-dimensional data handling, and specialized preprocessing and validation pipelines, capabilities not fully m...",
+        "short": "Diffusion Multi-modal Large Language Models (dMLLMs) have recently emerged as a novel architecture unifying image generation and understanding. However, developing effective and efficient Test-Time Scaling (TTS) methods to unlock their full generative potential remains an underexplored challenge. To address this, we propose dMLLM-TTS, a novel framework operating on two complementary scaling axes: ...",
         "key_contributions": [
-          "Autonomous coding agents built on large language models (LLMs) can now solve many general software and machine learning tasks, but they remain ineffective on complex, domain-specific scientific problems.",
-          "Medical imaging is a particularly demanding domain, requiring long training cycles, high-dimensional data handling, and specialized preprocessing and validation pipelines, capabilities not fully measured in existing agent benchmarks.",
-          "To address this gap, we introduce ReX-MLE, a benchmark of 20 challenges derived from high-impact medical imaging competitions spanning diverse modalities and task types."
+          "Diffusion Multi-modal Large Language Models (dMLLMs) have recently emerged as a novel architecture unifying image generation and understanding.",
+          "However, developing effective and efficient Test-Time Scaling (TTS) methods to unlock their full generative potential remains an underexplored challenge.",
+          "To address this, we propose dMLLM-TTS, a novel framework operating on two complementary scaling axes: (1) trajectory exploration scaling to enhance the diversity of generated hypotheses, and (2) iterative refinement scaling for stable generation."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.17838v1.mp3"
+        "audio_url": "/audio/2512.19433v1.mp3"
       }
     },
     {
-      "id": "2512.17773v1",
-      "title": "Pix2NPHM: Learning to Regress NPHM Reconstructions From a Single Image",
+      "id": "2512.19539v1",
+      "title": "StoryMem: Multi-shot Long Video Storytelling with Memory",
       "authors": [
-        "Simon Giebenhain",
-        "Tobias Kirschstein",
-        "Liam Schoneveld",
-        "Davide Davoli",
-        "Zhe Chen",
-        "Matthias Nießner"
+        "Kaiwen Zhang",
+        "Liming Jiang",
+        "Angtian Wang",
+        "Jacob Zhiyuan Fang",
+        "Tiancheng Zhi",
+        "Qing Yan",
+        "Hao Kang",
+        "Xin Lu",
+        "Xingang Pan"
       ],
-      "abstract": "Neural Parametric Head Models (NPHMs) are a recent advancement over mesh-based 3d morphable models (3DMMs) to facilitate high-fidelity geometric detail. However, fitting NPHMs to visual inputs is notoriously challenging due to the expressive nature of their underlying latent space. To this end, we propose Pix2NPHM, a vision transformer (ViT) network that directly regresses NPHM parameters, given a single image as input. Compared to existing approaches, the neural parametric space allows our method to reconstruct more recognizable facial geometry and accurate facial expressions. For broad generalization, we exploit domain-specific ViTs as backbones, which are pretrained on geometric prediction tasks. We train Pix2NPHM on a mixture of 3D data, including a total of over 100K NPHM registrations that enable direct supervision in SDF space, and large-scale 2D video datasets, for which normal estimates serve as pseudo ground truth geometry. Pix2NPHM not only allows for 3D reconstructions at interactive frame rates, it is also possible to improve geometric fidelity by a subsequent inference-time optimization against estimated surface normals and canonical point maps. As a result, we achieve unprecedented face reconstruction quality that can run at scale on in-the-wild data.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
+      "abstract": "Visual storytelling requires generating multi-shot videos with cinematic quality and long-range consistency. Inspired by human memory, we propose StoryMem, a paradigm that reformulates long-form video storytelling as iterative shot synthesis conditioned on explicit visual memory, transforming pre-trained single-shot video diffusion models into multi-shot storytellers. This is achieved by a novel Memory-to-Video (M2V) design, which maintains a compact and dynamically updated memory bank of keyframes from historical generated shots. The stored memory is then injected into single-shot video diffusion models via latent concatenation and negative RoPE shifts with only LoRA fine-tuning. A semantic keyframe selection strategy, together with aesthetic preference filtering, further ensures informative and stable memory throughout generation. Moreover, the proposed framework naturally accommodates smooth shot transitions and customized story generation applications. To facilitate evaluation, we introduce ST-Bench, a diverse benchmark for multi-shot video storytelling. Extensive experiments demonstrate that StoryMem achieves superior cross-shot consistency over previous methods while preserving high aesthetic quality and prompt adherence, marking a significant step toward coherent minute-long video storytelling.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.17773v1",
-        "pdf": "https://arxiv.org/pdf/2512.17773v1"
+        "paper": "http://arxiv.org/abs/2512.19539v1",
+        "pdf": "https://arxiv.org/pdf/2512.19539v1"
       },
-      "arxiv_id": "2512.17773v1",
-      "comment": "Project website: https://simongiebenhain.github.io/Pix2NPHM/ , Video: https://www.youtube.com/watch?v=MgpEJC5p1Ts",
+      "arxiv_id": "2512.19539v1",
+      "comment": "Project page: https://kevin-thu.github.io/StoryMem",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.140677966101695,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 4.14,
+        "total_score": 4.05,
         "field_match": {
-          "score": 1.1,
-          "matches": [
-            "3d reconstruction",
-            "registration"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -448,7 +246,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -457,225 +255,44 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Neural Parametric Head Models (NPHMs) are a recent advancement over mesh-based 3d morphable models (3DMMs) to facilitate high-fidelity geometric detail. However, fitting NPHMs to visual inputs is notoriously challenging due to the expressive nature of their underlying latent space. To this end, we propose Pix2NPHM, a vision transformer (ViT) network that directly regresses NPHM parameters, given a...",
+        "short": "Visual storytelling requires generating multi-shot videos with cinematic quality and long-range consistency. Inspired by human memory, we propose StoryMem, a paradigm that reformulates long-form video storytelling as iterative shot synthesis conditioned on explicit visual memory, transforming pre-trained single-shot video diffusion models into multi-shot storytellers. This is achieved by a novel M...",
         "key_contributions": [
-          "Neural Parametric Head Models (NPHMs) are a recent advancement over mesh-based 3d morphable models (3DMMs) to facilitate high-fidelity geometric detail.",
-          "However, fitting NPHMs to visual inputs is notoriously challenging due to the expressive nature of their underlying latent space.",
-          "To this end, we propose Pix2NPHM, a vision transformer (ViT) network that directly regresses NPHM parameters, given a single image as input."
+          "Visual storytelling requires generating multi-shot videos with cinematic quality and long-range consistency.",
+          "Inspired by human memory, we propose StoryMem, a paradigm that reformulates long-form video storytelling as iterative shot synthesis conditioned on explicit visual memory, transforming pre-trained single-shot video diffusion models into multi-shot storytellers.",
+          "This is achieved by a novel Memory-to-Video (M2V) design, which maintains a compact and dynamically updated memory bank of keyframes from historical generated shots."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.17773v1.mp3"
+        "audio_url": "/audio/2512.19539v1.mp3"
       }
     },
     {
-      "id": "2512.17581v1",
-      "title": "Medical Imaging AI Competitions Lack Fairness",
+      "id": "2512.19693v1",
+      "title": "The Prism Hypothesis: Harmonizing Semantic and Pixel Representations via Unified Autoencoding",
       "authors": [
-        "Annika Reinke",
-        "Evangelia Christodoulou",
-        "Sthuthi Sadananda",
-        "A. Emre Kavur",
-        "Khrystyna Faryna",
-        "Daan Schouten",
-        "Bennett A. Landman",
-        "Carole Sudre",
-        "Olivier Colliot",
-        "Nick Heller",
-        "Sophie Loizillon",
-        "Martin Maška",
-        "Maëlys Solal",
-        "Arya Yazdan-Panah",
-        "Vilma Bozgo",
-        "Ömer Sümer",
-        "Siem de Jong",
-        "Sophie Fischer",
-        "Michal Kozubek",
-        "Tim Rädsch",
-        "Nadim Hammoud",
-        "Fruzsina Molnár-Gábor",
-        "Steven Hicks",
-        "Michael A. Riegler",
-        "Anindo Saha",
-        "Vajira Thambawita",
-        "Pal Halvorsen",
-        "Amelia Jiménez-Sánchez",
-        "Qingyang Yang",
-        "Veronika Cheplygina",
-        "Sabrina Bottazzi",
-        "Alexander Seitel",
-        "Spyridon Bakas",
-        "Alexandros Karargyris",
-        "Kiran Vaidhya Venkadesh",
-        "Bram van Ginneken",
-        "Lena Maier-Hein"
+        "Weichen Fan",
+        "Haiwen Diao",
+        "Quan Wang",
+        "Dahua Lin",
+        "Ziwei Liu"
       ],
-      "abstract": "Benchmarking competitions are central to the development of artificial intelligence (AI) in medical imaging, defining performance standards and shaping methodological progress. However, it remains unclear whether these benchmarks provide data that are sufficiently representative, accessible, and reusable to support clinically meaningful AI. In this work, we assess fairness along two complementary dimensions: (1) whether challenge datasets are representative of real-world clinical diversity, and (2) whether they are accessible and legally reusable in line with the FAIR principles. To address this question, we conducted a large-scale systematic study of 241 biomedical image analysis challenges comprising 458 tasks across 19 imaging modalities. Our findings show substantial biases in dataset composition, including geographic location, modality-, and problem type-related biases, indicating that current benchmarks do not adequately reflect real-world clinical diversity. Despite their widespread influence, challenge datasets were frequently constrained by restrictive or ambiguous access conditions, inconsistent or non-compliant licensing practices, and incomplete documentation, limiting reproducibility and long-term reuse. Together, these shortcomings expose foundational fairness limitations in our benchmarking ecosystem and highlight a disconnect between leaderboard success and clinical relevance.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
+      "abstract": "Deep representations across modalities are inherently intertwined. In this paper, we systematically analyze the spectral characteristics of various semantic and pixel encoders. Interestingly, our study uncovers a highly inspiring and rarely explored correspondence between an encoder's feature spectrum and its functional role: semantic encoders primarily capture low-frequency components that encode abstract meaning, whereas pixel encoders additionally retain high-frequency information that conveys fine-grained detail. This heuristic finding offers a unifying perspective that ties encoder behavior to its underlying spectral structure. We define it as the Prism Hypothesis, where each data modality can be viewed as a projection of the natural world onto a shared feature spectrum, just like the prism. Building on this insight, we propose Unified Autoencoding (UAE), a model that harmonizes semantic structure and pixel details via an innovative frequency-band modulator, enabling their seamless coexistence. Extensive experiments on ImageNet and MS-COCO benchmarks validate that our UAE effectively unifies semantic abstraction and pixel-level fidelity into a single latent space with state-of-the-art performance.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.17581v1",
-        "pdf": "https://arxiv.org/pdf/2512.17581v1"
+        "paper": "http://arxiv.org/abs/2512.19693v1",
+        "pdf": "https://arxiv.org/pdf/2512.19693v1"
       },
-      "arxiv_id": "2512.17581v1",
-      "comment": "Submitted to Nature BME",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.079661016949153,
-      "score_breakdown": {
-        "total_score": 4.08,
-        "field_match": {
-          "score": 1.95,
-          "matches": [
-            "medical image",
-            "medical imaging",
-            "image analysis"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Benchmarking competitions are central to the development of artificial intelligence (AI) in medical imaging, defining performance standards and shaping methodological progress. However, it remains unclear whether these benchmarks provide data that are sufficiently representative, accessible, and reusable to support clinically meaningful AI. In this work, we assess fairness along two complementary ...",
-        "key_contributions": [
-          "Benchmarking competitions are central to the development of artificial intelligence (AI) in medical imaging, defining performance standards and shaping methodological progress.",
-          "However, it remains unclear whether these benchmarks provide data that are sufficiently representative, accessible, and reusable to support clinically meaningful AI.",
-          "In this work, we assess fairness along two complementary dimensions: (1) whether challenge datasets are representative of real-world clinical diversity, and (2) whether they are accessible and legally reusable in line with the FAIR principles."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.17581v1.mp3"
-      }
-    },
-    {
-      "id": "2512.17817v1",
-      "title": "Chorus: Multi-Teacher Pretraining for Holistic 3D Gaussian Scene Encoding",
-      "authors": [
-        "Yue Li",
-        "Qi Ma",
-        "Runyi Yang",
-        "Mengjiao Ma",
-        "Bin Ren",
-        "Nikola Popovic",
-        "Nicu Sebe",
-        "Theo Gevers",
-        "Luc Van Gool",
-        "Danda Pani Paudel",
-        "Martin R. Oswald"
-      ],
-      "abstract": "While 3DGS has emerged as a high-fidelity scene representation, encoding rich, general-purpose features directly from its primitives remains under-explored. We address this gap by introducing Chorus, a multi-teacher pretraining framework that learns a holistic feed-forward 3D Gaussian Splatting (3DGS) scene encoder by distilling complementary signals from 2D foundation models. Chorus employs a shared 3D encoder and teacher-specific projectors to learn from language-aligned, generalist, and object-aware teachers, encouraging a shared embedding space that captures signals from high-level semantics to fine-grained structure.\n  We evaluate Chorus on a wide range of tasks: open-vocabulary semantic and instance segmentation, linear and decoder probing, as well as data-efficient supervision. Besides 3DGS, we also test Chorus on several benchmarks that only support point clouds by pretraining a variant using only Gaussians' centers, colors, estimated normals as inputs. Interestingly, this encoder shows strong transfer and outperforms the point clouds baseline while using 39.9 times fewer training scenes. Finally, we propose a render-and-distill adaptation that facilitates out-of-domain finetuning. Our code and model will be released upon publication.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.17817v1",
-        "pdf": "https://arxiv.org/pdf/2512.17817v1"
-      },
-      "arxiv_id": "2512.17817v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.03135593220339,
-      "score_breakdown": {
-        "total_score": 4.03,
-        "field_match": {
-          "score": 2.2,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "While 3DGS has emerged as a high-fidelity scene representation, encoding rich, general-purpose features directly from its primitives remains under-explored. We address this gap by introducing Chorus, a multi-teacher pretraining framework that learns a holistic feed-forward 3D Gaussian Splatting (3DGS) scene encoder by distilling complementary signals from 2D foundation models. Chorus employs a sha...",
-        "key_contributions": [
-          "While 3DGS has emerged as a high-fidelity scene representation, encoding rich, general-purpose features directly from its primitives remains under-explored.",
-          "We address this gap by introducing Chorus, a multi-teacher pretraining framework that learns a holistic feed-forward 3D Gaussian Splatting (3DGS) scene encoder by distilling complementary signals from 2D foundation models.",
-          "Chorus employs a shared 3D encoder and teacher-specific projectors to learn from language-aligned, generalist, and object-aware teachers, encouraging a shared embedding space that captures signals from high-level semantics to fine-grained structure."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2512.17817v1.mp3"
-      }
-    },
-    {
-      "id": "2512.17909v1",
-      "title": "Both Semantics and Reconstruction Matter: Making Representation Encoders Ready for Text-to-Image Generation and Editing",
-      "authors": [
-        "Shilong Zhang",
-        "He Zhang",
-        "Zhifei Zhang",
-        "Chongjian Ge",
-        "Shuchen Xue",
-        "Shaoteng Liu",
-        "Mengwei Ren",
-        "Soo Ye Kim",
-        "Yuqian Zhou",
-        "Qing Liu",
-        "Daniil Pakhomov",
-        "Kai Zhang",
-        "Zhe Lin",
-        "Ping Luo"
-      ],
-      "abstract": "Modern Latent Diffusion Models (LDMs) typically operate in low-level Variational Autoencoder (VAE) latent spaces that are primarily optimized for pixel-level reconstruction. To unify vision generation and understanding, a burgeoning trend is to adopt high-dimensional features from representation encoders as generative latents. However, we empirically identify two fundamental obstacles in this paradigm: (1) the discriminative feature space lacks compact regularization, making diffusion models prone to off-manifold latents that lead to inaccurate object structures; and (2) the encoder's inherently weak pixel-level reconstruction hinders the generator from learning accurate fine-grained geometry and texture. In this paper, we propose a systematic framework to adapt understanding-oriented encoder features for generative tasks. We introduce a semantic-pixel reconstruction objective to regularize the latent space, enabling the compression of both semantic information and fine-grained details into a highly compact representation (96 channels with 16x16 spatial downsampling). This design ensures that the latent space remains semantically rich and achieves state-of-the-art image reconstruction, while remaining compact enough for accurate generation. Leveraging this representation, we design a unified Text-to-Image (T2I) and image editing model. Benchmarking against various feature spaces, we demonstrate that our approach achieves state-of-the-art reconstruction, faster convergence, and substantial performance gains in both T2I and editing tasks, validating that representation encoders can be effectively adapted into robust generative components.",
-      "published": "2025-12-19",
-      "updated": "2025-12-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.17909v1",
-        "pdf": "https://arxiv.org/pdf/2512.17909v1"
-      },
-      "arxiv_id": "2512.17909v1",
-      "comment": "Project Page: https://jshilong.github.io/PS-VAE-PAGE/",
+      "arxiv_id": "2512.19693v1",
+      "comment": "Code link: https://github.com/WeichenFan/UAE",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -706,14 +323,345 @@
         }
       },
       "ai_summaries": {
-        "short": "Modern Latent Diffusion Models (LDMs) typically operate in low-level Variational Autoencoder (VAE) latent spaces that are primarily optimized for pixel-level reconstruction. To unify vision generation and understanding, a burgeoning trend is to adopt high-dimensional features from representation encoders as generative latents. However, we empirically identify two fundamental obstacles in this para...",
+        "short": "Deep representations across modalities are inherently intertwined. In this paper, we systematically analyze the spectral characteristics of various semantic and pixel encoders. Interestingly, our study uncovers a highly inspiring and rarely explored correspondence between an encoder's feature spectrum and its functional role: semantic encoders primarily capture low-frequency components that encode...",
         "key_contributions": [
-          "Modern Latent Diffusion Models (LDMs) typically operate in low-level Variational Autoencoder (VAE) latent spaces that are primarily optimized for pixel-level reconstruction.",
-          "To unify vision generation and understanding, a burgeoning trend is to adopt high-dimensional features from representation encoders as generative latents.",
-          "However, we empirically identify two fundamental obstacles in this paradigm: (1) the discriminative feature space lacks compact regularization, making diffusion models prone to off-manifold latents that lead to inaccurate object structures; and (2) the encoder's inherently weak pixel-level reconstruction hinders the generator from learning accurate fine-grained geometry and texture."
+          "Deep representations across modalities are inherently intertwined.",
+          "In this paper, we systematically analyze the spectral characteristics of various semantic and pixel encoders.",
+          "Interestingly, our study uncovers a highly inspiring and rarely explored correspondence between an encoder's feature spectrum and its functional role: semantic encoders primarily capture low-frequency components that encode abstract meaning, whereas pixel encoders additionally retain high-frequency information that conveys fine-grained detail."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2512.17909v1.mp3"
+        "audio_url": "/audio/2512.19693v1.mp3"
+      }
+    },
+    {
+      "id": "2512.19673v1",
+      "title": "Bottom-up Policy Optimization: Your Language Model Policy Secretly Contains Internal Policies",
+      "authors": [
+        "Yuqiao Tan",
+        "Minzheng Wang",
+        "Shizhu He",
+        "Huanxuan Liao",
+        "Chengfeng Zhao",
+        "Qiunan Lu",
+        "Tian Liang",
+        "Jun Zhao",
+        "Kang Liu"
+      ],
+      "abstract": "Existing reinforcement learning (RL) approaches treat large language models (LLMs) as a single unified policy, overlooking their internal mechanisms. Understanding how policy evolves across layers and modules is therefore crucial for enabling more targeted optimization and raveling out complex reasoning mechanisms. In this paper, we decompose the language model policy by leveraging the intrinsic split of the Transformer residual stream and the equivalence between the composition of hidden states with the unembedding matrix and the resulting samplable policy. This decomposition reveals Internal Layer Policies, corresponding to contributions from individual layers, and Internal Modular Policies, which align with the self-attention and feed-forward network (FFN) components within each layer. By analyzing the entropy of internal policy, we find that: (a) Early layers keep high entropy for exploration, top layers converge to near-zero entropy for refinement, with convergence patterns varying across model series. (b) LLama's prediction space rapidly converges in the final layer, whereas Qwen-series models, especially Qwen3, exhibit a more human-like, progressively structured reasoning pattern. Motivated by these findings, we propose Bottom-up Policy Optimization (BuPO), a novel RL paradigm that directly optimizes the internal layer policy during early training. By aligning training objective at lower layer, BuPO reconstructs foundational reasoning capabilities and achieves superior performance. Extensive experiments on complex reasoning benchmarks demonstrates the effectiveness of our method. Our code is available at https://github.com/Trae1ounG/BuPO.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.19673v1",
+        "pdf": "https://arxiv.org/pdf/2512.19673v1"
+      },
+      "arxiv_id": "2512.19673v1",
+      "comment": "Preprint. Our code is available at https://github.com/Trae1ounG/BuPO",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Existing reinforcement learning (RL) approaches treat large language models (LLMs) as a single unified policy, overlooking their internal mechanisms. Understanding how policy evolves across layers and modules is therefore crucial for enabling more targeted optimization and raveling out complex reasoning mechanisms. In this paper, we decompose the language model policy by leveraging the intrinsic s...",
+        "key_contributions": [
+          "Existing reinforcement learning (RL) approaches treat large language models (LLMs) as a single unified policy, overlooking their internal mechanisms.",
+          "Understanding how policy evolves across layers and modules is therefore crucial for enabling more targeted optimization and raveling out complex reasoning mechanisms.",
+          "In this paper, we decompose the language model policy by leveraging the intrinsic split of the Transformer residual stream and the equivalence between the composition of hidden states with the unembedding matrix and the resulting samplable policy."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.19673v1.mp3"
+      }
+    },
+    {
+      "id": "2512.19546v1",
+      "title": "ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars",
+      "authors": [
+        "Ziqiao Peng",
+        "Yi Chen",
+        "Yifeng Ma",
+        "Guozhen Zhang",
+        "Zhiyao Sun",
+        "Zixiang Zhou",
+        "Youliang Zhang",
+        "Zhengguang Zhou",
+        "Zhaoxin Fan",
+        "Hongyan Liu",
+        "Yuan Zhou",
+        "Qinglin Lu",
+        "Jun He"
+      ],
+      "abstract": "Despite significant advances in talking avatar generation, existing methods face critical challenges: insufficient text-following capability for diverse actions, lack of temporal alignment between actions and audio content, and dependency on additional control signals such as pose skeletons. We present ActAvatar, a framework that achieves phase-level precision in action control through textual guidance by capturing both action semantics and temporal context. Our approach introduces three core innovations: (1) Phase-Aware Cross-Attention (PACA), which decomposes prompts into a global base block and temporally-anchored phase blocks, enabling the model to concentrate on phase-relevant tokens for precise temporal-semantic alignment; (2) Progressive Audio-Visual Alignment, which aligns modality influence with the hierarchical feature learning process-early layers prioritize text for establishing action structure while deeper layers emphasize audio for refining lip movements, preventing modality interference; (3) A two-stage training strategy that first establishes robust audio-visual correspondence on diverse data, then injects action control through fine-tuning on structured annotations, maintaining both audio-visual alignment and the model's text-following capabilities. Extensive experiments demonstrate that ActAvatar significantly outperforms state-of-the-art methods in both action control and visual quality.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.19546v1",
+        "pdf": "https://arxiv.org/pdf/2512.19546v1"
+      },
+      "arxiv_id": "2512.19546v1",
+      "comment": "Project Page: https://ziqiaopeng.github.io/ActAvatar/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Despite significant advances in talking avatar generation, existing methods face critical challenges: insufficient text-following capability for diverse actions, lack of temporal alignment between actions and audio content, and dependency on additional control signals such as pose skeletons. We present ActAvatar, a framework that achieves phase-level precision in action control through textual gui...",
+        "key_contributions": [
+          "Despite significant advances in talking avatar generation, existing methods face critical challenges: insufficient text-following capability for diverse actions, lack of temporal alignment between actions and audio content, and dependency on additional control signals such as pose skeletons.",
+          "We present ActAvatar, a framework that achieves phase-level precision in action control through textual guidance by capturing both action semantics and temporal context.",
+          "Our approach introduces three core innovations: (1) Phase-Aware Cross-Attention (PACA), which decomposes prompts into a global base block and temporally-anchored phase blocks, enabling the model to concentrate on phase-relevant tokens for precise temporal-semantic alignment; (2) Progressive Audio-Visual Alignment, which aligns modality influence with the hierarchical feature learning process-early layers prioritize text for establishing action structure while deeper layers emphasize audio for refining lip movements, preventing modality interference; (3) A two-stage training strategy that first establishes robust audio-visual correspondence on diverse data, then injects action control through fine-tuning on structured annotations, maintaining both audio-visual alignment and the model's text-following capabilities."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.19546v1.mp3"
+      }
+    },
+    {
+      "id": "2512.19534v1",
+      "title": "SlicerOrbitSurgerySim: An Open-Source Platform for Virtual Registration and Quantitative Comparison of Preformed Orbital Plates",
+      "authors": [
+        "Chi Zhang",
+        "Braedon Gunn",
+        "Andrew M. Read-Fuller"
+      ],
+      "abstract": "Poor adaptation of orbital implants remains a major contributor to postoperative complications and revision surgery. Although preformed orbital plates are widely used to reduce cost and operative time compared with customized implants, surgeons currently lack publicly available tools and standardized metrics to quantitatively compare plate fit across vendors, sizes, and patient anatomy. We developed SlicerOrbitSurgerySim, an open-source extension for the 3D Slicer platform that enables interactive virtual registration, evaluation, and comparison of multiple preformed orbital plates in a patient-specific virtual planning environment. The software generates reproducible quantitative plate-to-orbit distance metrics and visualization tools that support both patient-specific planning and population-level statistical analysis of plate adaptability. By facilitating objective comparison of implant designs and placement strategies, this tool aims to improve preoperative decision-making, reduce intraoperative plate modification, and promote collaborative research and surgical education. Pilot studies, sample datasets, and detailed tutorials are provided to support testing, transparency, and reproducibility.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.19534v1",
+        "pdf": "https://arxiv.org/pdf/2512.19534v1"
+      },
+      "arxiv_id": "2512.19534v1",
+      "comment": "12 pages, 8 figures. Submitted to Journal of Oral and Maxillofacial Surgery. Code: https://github.com/chz31/SlicerOrbitSurgerySim/tree/main",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.903389830508474,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "registration"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Poor adaptation of orbital implants remains a major contributor to postoperative complications and revision surgery. Although preformed orbital plates are widely used to reduce cost and operative time compared with customized implants, surgeons currently lack publicly available tools and standardized metrics to quantitatively compare plate fit across vendors, sizes, and patient anatomy. We develop...",
+        "key_contributions": [
+          "Poor adaptation of orbital implants remains a major contributor to postoperative complications and revision surgery.",
+          "Although preformed orbital plates are widely used to reduce cost and operative time compared with customized implants, surgeons currently lack publicly available tools and standardized metrics to quantitatively compare plate fit across vendors, sizes, and patient anatomy.",
+          "We developed SlicerOrbitSurgerySim, an open-source extension for the 3D Slicer platform that enables interactive virtual registration, evaluation, and comparison of multiple preformed orbital plates in a patient-specific virtual planning environment."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.19534v1.mp3"
+      }
+    },
+    {
+      "id": "2512.19683v1",
+      "title": "From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs",
+      "authors": [
+        "Mingrui Wu",
+        "Zhaozhi Wang",
+        "Fangjinhua Wang",
+        "Jiaolong Yang",
+        "Marc Pollefeys",
+        "Tong Zhang"
+      ],
+      "abstract": "While Multimodal Large Language Models (MLLMs) have achieved impressive performance on semantic tasks, their spatial intelligence--crucial for robust and grounded AI systems--remains underdeveloped. Existing benchmarks fall short of diagnosing this limitation: they either focus on overly simplified qualitative reasoning or rely on domain-specific indoor data, constrained by the lack of outdoor datasets with verifiable metric ground truth. To bridge this gap, we introduce a large-scale benchmark built from pedestrian-perspective videos captured with synchronized stereo cameras, LiDAR, and IMU/GPS sensors. This dataset provides metrically precise 3D information, enabling the automatic generation of spatial reasoning questions that span a hierarchical spectrum--from qualitative relational reasoning to quantitative metric and kinematic understanding. Evaluations reveal that the performance gains observed in structured indoor benchmarks vanish in open-world settings. Further analysis using synthetic abnormal scenes and blinding tests confirms that current MLLMs depend heavily on linguistic priors instead of grounded visual reasoning. Our benchmark thus provides a principled platform for diagnosing these limitations and advancing physically grounded spatial intelligence.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.19683v1",
+        "pdf": "https://arxiv.org/pdf/2512.19683v1"
+      },
+      "arxiv_id": "2512.19683v1",
+      "comment": "Project page: https://harmlesssr.github.io/openbench/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "While Multimodal Large Language Models (MLLMs) have achieved impressive performance on semantic tasks, their spatial intelligence--crucial for robust and grounded AI systems--remains underdeveloped. Existing benchmarks fall short of diagnosing this limitation: they either focus on overly simplified qualitative reasoning or rely on domain-specific indoor data, constrained by the lack of outdoor dat...",
+        "key_contributions": [
+          "While Multimodal Large Language Models (MLLMs) have achieved impressive performance on semantic tasks, their spatial intelligence--crucial for robust and grounded AI systems--remains underdeveloped.",
+          "Existing benchmarks fall short of diagnosing this limitation: they either focus on overly simplified qualitative reasoning or rely on domain-specific indoor data, constrained by the lack of outdoor datasets with verifiable metric ground truth.",
+          "To bridge this gap, we introduce a large-scale benchmark built from pedestrian-perspective videos captured with synchronized stereo cameras, LiDAR, and IMU/GPS sensors."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.19683v1.mp3"
+      }
+    },
+    {
+      "id": "2512.19577v1",
+      "title": "Deep Learning for Primordial $B$-mode Extraction",
+      "authors": [
+        "Eric Guzman",
+        "Joel Meyers"
+      ],
+      "abstract": "The search for primordial gravitational waves is a central goal of cosmic microwave background (CMB) surveys. Isolating the characteristic $B$-mode polarization signal sourced by primordial gravitational waves is challenging for several reasons: the amplitude of the signal is inherently small; astrophysical foregrounds produce $B$-mode polarization contaminating the signal; and secondary $B$-mode polarization fluctuations are produced via the conversion of $E$ modes. Current and future low-noise, multi-frequency observations enable sufficient precision to address the first two of these challenges such that secondary $B$ modes will become the bottleneck for improved constraints on the amplitude of primordial gravitational waves. The dominant source of secondary $B$-mode polarization is gravitational lensing by large scale structure. Various strategies have been developed to estimate the lensing deflection and to reverse its effects the CMB, thus reducing confusion from lensing $B$ modes in the search for primordial gravitational waves. However, a few complications remain. First, there may be additional sources of secondary $B$-mode polarization, for example from patchy reionization or from cosmic polarization rotation. Second, the statistics of delensed CMB maps can become complicated and non-Gaussian, especially when advanced lensing reconstruction techniques are applied. We previously demonstrated how a deep learning network, ResUNet-CMB, can provide nearly optimal simultaneous estimates of multiple sources of secondary $B$-mode polarization. In this paper, we show how deep learning can be applied to estimate and remove multiple sources of secondary $B$-mode polarization, and we further show how this technique can be used in a likelihood analysis to produce nearly optimal, unbiased estimates of the amplitude of primordial gravitational waves.",
+      "published": "2025-12-22",
+      "updated": "2025-12-22",
+      "categories": [
+        "astro-ph.CO",
+        "cs.CV",
+        "stat.ML"
+      ],
+      "primary_category": "astro-ph.CO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.19577v1",
+        "pdf": "https://arxiv.org/pdf/2512.19577v1"
+      },
+      "arxiv_id": "2512.19577v1",
+      "comment": "12 pages, 8 figures. Code available from https://github.com/EEmGuzman/resunet-cmb",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8694915254237285,
+      "score_breakdown": {
+        "total_score": 3.87,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The search for primordial gravitational waves is a central goal of cosmic microwave background (CMB) surveys. Isolating the characteristic $B$-mode polarization signal sourced by primordial gravitational waves is challenging for several reasons: the amplitude of the signal is inherently small; astrophysical foregrounds produce $B$-mode polarization contaminating the signal; and secondary $B$-mode ...",
+        "key_contributions": [
+          "The search for primordial gravitational waves is a central goal of cosmic microwave background (CMB) surveys.",
+          "Isolating the characteristic $B$-mode polarization signal sourced by primordial gravitational waves is challenging for several reasons: the amplitude of the signal is inherently small; astrophysical foregrounds produce $B$-mode polarization contaminating the signal; and secondary $B$-mode polarization fluctuations are produced via the conversion of $E$ modes.",
+          "Current and future low-noise, multi-frequency observations enable sufficient precision to address the first two of these challenges such that secondary $B$ modes will become the bottleneck for improved constraints on the amplitude of primordial gravitational waves."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2512.19577v1.mp3"
       }
     }
   ]

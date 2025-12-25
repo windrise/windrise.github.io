@@ -3,41 +3,169 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.19527v1",
-      "title": "Deep Learning for Unrelated-Machines Scheduling: Handling Variable Dimensions",
+      "id": "2512.20479v1",
+      "title": "UTDesign: A Unified Framework for Stylized Text Editing and Generation in Graphic Design Images",
       "authors": [
-        "Diego Hitzges",
-        "Guillaume Sagnol"
+        "Yiming Zhao",
+        "Yuanpeng Gao",
+        "Yuxuan Luo",
+        "Jiwei Duan",
+        "Shisong Lin",
+        "Longfei Xiong",
+        "Zhouhui Lian"
       ],
-      "abstract": "Deep learning has been effectively applied to many discrete optimization problems. However, learning-based scheduling on unrelated parallel machines remains particularly difficult to design. Not only do the numbers of jobs and machines vary, but each job-machine pair has a unique processing time, dynamically altering feature dimensions. We propose a novel approach with a neural network tailored for offline deterministic scheduling of arbitrary sizes on unrelated machines. The goal is to minimize a complex objective function that includes the makespan and the weighted tardiness of jobs and machines. Unlike existing online approaches, which process jobs sequentially, our method generates a complete schedule considering the entire input at once. The key contribution of this work lies in the sophisticated architecture of our model. By leveraging various NLP-inspired architectures, it effectively processes any number of jobs and machines with varying feature dimensions imposed by unrelated processing times. Our approach enables supervised training on small problem instances while demonstrating strong generalization to much larger scheduling environments. Trained and tested on instances with 8 jobs and 4 machines, costs were only 2.51% above optimal. Across all tested configurations of up to 100 jobs and 10 machines, our network consistently outperformed an advanced dispatching rule, which incurred 22.22% higher costs on average. As our method allows fast retraining with simulated data and adaptation to various scheduling conditions, we believe it has the potential to become a standard approach for learning-based scheduling on unrelated machines and similar problem environments.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "AI-assisted graphic design has emerged as a powerful tool for automating the creation and editing of design elements such as posters, banners, and advertisements. While diffusion-based text-to-image models have demonstrated strong capabilities in visual content generation, their text rendering performance, particularly for small-scale typography and non-Latin scripts, remains limited. In this paper, we propose UTDesign, a unified framework for high-precision stylized text editing and conditional text generation in design images, supporting both English and Chinese scripts. Our framework introduces a novel DiT-based text style transfer model trained from scratch on a synthetic dataset, capable of generating transparent RGBA text foregrounds that preserve the style of reference glyphs. We further extend this model into a conditional text generation framework by training a multi-modal condition encoder on a curated dataset with detailed text annotations, enabling accurate, style-consistent text synthesis conditioned on background images, prompts, and layout specifications. Finally, we integrate our approach into a fully automated text-to-design (T2D) pipeline by incorporating pre-trained text-to-image (T2I) models and an MLLM-based layout planner. Extensive experiments demonstrate that UTDesign achieves state-of-the-art performance among open-source methods in terms of stylistic consistency and text accuracy, and also exhibits unique advantages compared to proprietary commercial approaches. Code and data for this paper are available at https://github.com/ZYM-PKU/UTDesign.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
-        "cs.LG",
-        "cs.DM"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19527v1",
-        "pdf": "https://arxiv.org/pdf/2512.19527v1"
+        "paper": "http://arxiv.org/abs/2512.20479v1",
+        "pdf": "https://arxiv.org/pdf/2512.20479v1"
       },
-      "arxiv_id": "2512.19527v1",
-      "comment": "24th IEEE International Conference on Machine Learning and Applications (ICMLA 2025) in Boca Raton, USA. Project page: https://github.com/DiegoHitzges/Deep-Learning-for-Unrelated-Machines-Scheduling . 8 pages, 4 figures, 3 tables",
+      "arxiv_id": "2512.20479v1",
+      "comment": "22 pages, 25 figures, SIGGRAPH Asia 2025, Conference Paper",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.1194915254237285,
+      "has_code": false,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 5.12,
+        "total_score": 4.55,
         "field_match": {
-          "score": 0.42,
-          "matches": [
-            "deep learning"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "AI-assisted graphic design has emerged as a powerful tool for automating the creation and editing of design elements such as posters, banners, and advertisements. While diffusion-based text-to-image models have demonstrated strong capabilities in visual content generation, their text rendering performance, particularly for small-scale typography and non-Latin scripts, remains limited. In this pape...",
+        "key_contributions": [
+          "AI-assisted graphic design has emerged as a powerful tool for automating the creation and editing of design elements such as posters, banners, and advertisements.",
+          "While diffusion-based text-to-image models have demonstrated strong capabilities in visual content generation, their text rendering performance, particularly for small-scale typography and non-Latin scripts, remains limited.",
+          "In this paper, we propose UTDesign, a unified framework for high-precision stylized text editing and conditional text generation in design images, supporting both English and Chinese scripts."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.20194v1",
+      "title": "Generative Latent Coding for Ultra-Low Bitrate Image Compression",
+      "authors": [
+        "Zhaoyang Jia",
+        "Jiahao Li",
+        "Bin Li",
+        "Houqiang Li",
+        "Yan Lu"
+      ],
+      "abstract": "Most existing image compression approaches perform transform coding in the pixel space to reduce its spatial redundancy. However, they encounter difficulties in achieving both high-realism and high-fidelity at low bitrate, as the pixel-space distortion may not align with human perception. To address this issue, we introduce a Generative Latent Coding (GLC) architecture, which performs transform coding in the latent space of a generative vector-quantized variational auto-encoder (VQ-VAE), instead of in the pixel space. The generative latent space is characterized by greater sparsity, richer semantic and better alignment with human perception, rendering it advantageous for achieving high-realism and high-fidelity compression. Additionally, we introduce a categorical hyper module to reduce the bit cost of hyper-information, and a code-prediction-based supervision to enhance the semantic consistency. Experiments demonstrate that our GLC maintains high visual quality with less than 0.04 bpp on natural images and less than 0.01 bpp on facial images. On the CLIC2020 test set, we achieve the same FID as MS-ILLM with 45% fewer bits. Furthermore, the powerful generative latent space enables various applications built on our GLC pipeline, such as image restoration and style transfer. The code is available at https://github.com/jzyustc/GLC.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.20194v1",
+        "pdf": "https://arxiv.org/pdf/2512.20194v1"
+      },
+      "arxiv_id": "2512.20194v1",
+      "comment": "Accepted at CVPR 2024",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Most existing image compression approaches perform transform coding in the pixel space to reduce its spatial redundancy. However, they encounter difficulties in achieving both high-realism and high-fidelity at low bitrate, as the pixel-space distortion may not align with human perception. To address this issue, we introduce a Generative Latent Coding (GLC) architecture, which performs transform co...",
+        "key_contributions": [
+          "Most existing image compression approaches perform transform coding in the pixel space to reduce its spatial redundancy.",
+          "However, they encounter difficulties in achieving both high-realism and high-fidelity at low bitrate, as the pixel-space distortion may not align with human perception.",
+          "To address this issue, we introduce a Generative Latent Coding (GLC) architecture, which performs transform coding in the latent space of a generative vector-quantized variational auto-encoder (VQ-VAE), instead of in the pixel space."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.20330v1",
+      "title": "Branch Learning in MRI: More Data, More Models, More Training",
+      "authors": [
+        "Yuyang Li",
+        "Yipin Deng",
+        "Zijian Zhou",
+        "Peng Hu"
+      ],
+      "abstract": "We investigated two complementary strategies for multicontrast cardiac MR reconstruction: physics-consistent data-space augmentation (DualSpaceCMR) and parameter-efficient capacity scaling via VQPrompt and Moero. DualSpaceCMR couples image-level transforms with kspace noise and motion simulations while preserving forwardmodel consistency. VQPrompt adds a lightweight bottleneck prompt; Moero embeds a sparse mixture of experts within a deep unrolled network with histogram-based routing.\n  In the multivendor, multisite CMRxRecon25 benchmark, we evaluate fewshot and out-of-distribution generalization. On small datasets, k-space motion-plus-noise improves reconstruction; on the large benchmark it degrades performance, revealing sensitivity to augmentation ratio and schedule. VQPrompt produces modest and consistent gains with negligible memory overhead. Moero continues to improve after early plateaus and maintains baseline-like fewshot and out-of-distribution behavior despite mild overfitting, but sparse routing lowers PyTorch throughput and makes wall clock time the main bottleneck. These results motivate scale-aware augmentation and suggest prompt-based capacity scaling as a practical path, while efficiency improvements are crucial for sparse expert models.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
+      "categories": [
+        "eess.IV"
+      ],
+      "primary_category": "eess.IV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.20330v1",
+        "pdf": "https://arxiv.org/pdf/2512.20330v1"
+      },
+      "arxiv_id": "2512.20330v1",
+      "comment": "STACOM 2025 Challenge paper; Code is available at https://github.com/5o1/Moero",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.105084745762712,
+      "score_breakdown": {
+        "total_score": 4.11,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "cardiac"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -50,122 +178,55 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Deep learning has been effectively applied to many discrete optimization problems. However, learning-based scheduling on unrelated parallel machines remains particularly difficult to design. Not only do the numbers of jobs and machines vary, but each job-machine pair has a unique processing time, dynamically altering feature dimensions. We propose a novel approach with a neural network tailored fo...",
+        "short": "We investigated two complementary strategies for multicontrast cardiac MR reconstruction: physics-consistent data-space augmentation (DualSpaceCMR) and parameter-efficient capacity scaling via VQPrompt and Moero. DualSpaceCMR couples image-level transforms with kspace noise and motion simulations while preserving forwardmodel consistency. VQPrompt adds a lightweight bottleneck prompt; Moero embeds...",
         "key_contributions": [
-          "Deep learning has been effectively applied to many discrete optimization problems.",
-          "However, learning-based scheduling on unrelated parallel machines remains particularly difficult to design.",
-          "Not only do the numbers of jobs and machines vary, but each job-machine pair has a unique processing time, dynamically altering feature dimensions."
+          "We investigated two complementary strategies for multicontrast cardiac MR reconstruction: physics-consistent data-space augmentation (DualSpaceCMR) and parameter-efficient capacity scaling via VQPrompt and Moero.",
+          "DualSpaceCMR couples image-level transforms with kspace noise and motion simulations while preserving forwardmodel consistency.",
+          "VQPrompt adds a lightweight bottleneck prompt; Moero embeds a sparse mixture of experts within a deep unrolled network with histogram-based routing."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.19678v1",
-      "title": "WorldWarp: Propagating 3D Geometry with Asynchronous Video Diffusion",
+      "id": "2512.20619v1",
+      "title": "SemanticGen: Video Generation in Semantic Space",
       "authors": [
-        "Hanyang Kong",
-        "Xingyi Yang",
-        "Xiaoxu Zheng",
-        "Xinchao Wang"
+        "Jianhong Bai",
+        "Xiaoshi Wu",
+        "Xintao Wang",
+        "Fu Xiao",
+        "Yuanxing Zhang",
+        "Qinghe Wang",
+        "Xiaoyu Shi",
+        "Menghan Xia",
+        "Zuozhu Liu",
+        "Haoji Hu",
+        "Pengfei Wan",
+        "Kun Gai"
       ],
-      "abstract": "Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space. This disconnect causes current methods to struggle with occluded areas and complex camera trajectories. To bridge this gap, we propose WorldWarp, a framework that couples a 3D structural anchor with a 2D generative refiner. To establish geometric grounding, WorldWarp maintains an online 3D geometric cache built via Gaussian Splatting (3DGS). By explicitly warping historical content into novel views, this cache acts as a structural scaffold, ensuring each new frame respects prior geometry. However, static warping inevitably leaves holes and artifacts due to occlusions. We address this using a Spatio-Temporal Diffusion (ST-Diff) model designed for a \"fill-and-revise\" objective. Our key innovation is a spatio-temporal varying noise schedule: blank regions receive full noise to trigger generation, while warped regions receive partial noise to enable refinement. By dynamically updating the 3D cache at every step, WorldWarp maintains consistency across video chunks. Consequently, it achieves state-of-the-art fidelity by ensuring that 3D logic guides structure while diffusion logic perfects texture. Project page: \\href{https://hyokong.github.io/worldwarp-page/}{https://hyokong.github.io/worldwarp-page/}.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.19678v1",
-        "pdf": "https://arxiv.org/pdf/2512.19678v1"
-      },
-      "arxiv_id": "2512.19678v1",
-      "comment": "Project page: https://hyokong.github.io/worldwarp-page/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.288983050847458,
-      "score_breakdown": {
-        "total_score": 4.29,
-        "field_match": {
-          "score": 0.85,
-          "matches": [
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space. This disconnect causes current methods to struggle with occluded areas and complex camera trajectories. To bridge this gap, we propose WorldWa...",
-        "key_contributions": [
-          "Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space.",
-          "This disconnect causes current methods to struggle with occluded areas and complex camera trajectories.",
-          "To bridge this gap, we propose WorldWarp, a framework that couples a 3D structural anchor with a 2D generative refiner."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.19433v1",
-      "title": "dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models",
-      "authors": [
-        "Yi Xin",
-        "Siqi Luo",
-        "Qi Qin",
-        "Haoxing Chen",
-        "Kaiwen Zhu",
-        "Zhiwei Zhang",
-        "Yangfan He",
-        "Rongchao Zhang",
-        "Jinbin Bai",
-        "Shuo Cao",
-        "Bin Fu",
-        "Junjun He",
-        "Yihao Liu",
-        "Yuewen Cao",
-        "Xiaohong Liu"
-      ],
-      "abstract": "Diffusion Multi-modal Large Language Models (dMLLMs) have recently emerged as a novel architecture unifying image generation and understanding. However, developing effective and efficient Test-Time Scaling (TTS) methods to unlock their full generative potential remains an underexplored challenge. To address this, we propose dMLLM-TTS, a novel framework operating on two complementary scaling axes: (1) trajectory exploration scaling to enhance the diversity of generated hypotheses, and (2) iterative refinement scaling for stable generation. Conventional TTS approaches typically perform linear search across these two dimensions, incurring substantial computational costs of O(NT) and requiring an external verifier for best-of-N selection. To overcome these limitations, we propose two innovations. First, we design an efficient hierarchical search algorithm with O(N+T) complexity that adaptively expands and prunes sampling trajectories. Second, we introduce a self-verified feedback mechanism that leverages the dMLLMs' intrinsic image understanding capabilities to assess text-image alignment, eliminating the need for external verifier. Extensive experiments on the GenEval benchmark across three representative dMLLMs (e.g., Lumina-DiMOO, MMaDA, Muddit) show that our framework substantially improves generation quality while achieving up to 6x greater efficiency than linear search. Project page: https://github.com/Alpha-VLLM/Lumina-DiMOO.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "State-of-the-art video generative models typically learn the distribution of video latents in the VAE space and map them to pixels using a VAE decoder. While this approach can generate high-quality videos, it suffers from slow convergence and is computationally expensive when generating long videos. In this paper, we introduce SemanticGen, a novel solution to address these limitations by generating videos in the semantic space. Our main insight is that, due to the inherent redundancy in videos, the generation process should begin in a compact, high-level semantic space for global planning, followed by the addition of high-frequency details, rather than directly modeling a vast set of low-level video tokens using bi-directional attention. SemanticGen adopts a two-stage generation process. In the first stage, a diffusion model generates compact semantic video features, which define the global layout of the video. In the second stage, another diffusion model generates VAE latents conditioned on these semantic features to produce the final output. We observe that generation in the semantic space leads to faster convergence compared to the VAE latent space. Our method is also effective and computationally efficient when extended to long video generation. Extensive experiments demonstrate that SemanticGen produces high-quality videos and outperforms state-of-the-art approaches and strong baselines.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19433v1",
-        "pdf": "https://arxiv.org/pdf/2512.19433v1"
+        "paper": "http://arxiv.org/abs/2512.20619v1",
+        "pdf": "https://arxiv.org/pdf/2512.20619v1"
       },
-      "arxiv_id": "2512.19433v1",
-      "comment": "Project page: https://github.com/Alpha-VLLM/Lumina-DiMOO",
+      "arxiv_id": "2512.20619v1",
+      "comment": "Project page: https://jianhongbai.github.io/SemanticGen/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1499999999999995,
+      "relevance_score": 4.1,
       "score_breakdown": {
-        "total_score": 4.15,
+        "total_score": 4.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -186,47 +247,49 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Diffusion Multi-modal Large Language Models (dMLLMs) have recently emerged as a novel architecture unifying image generation and understanding. However, developing effective and efficient Test-Time Scaling (TTS) methods to unlock their full generative potential remains an underexplored challenge. To address this, we propose dMLLM-TTS, a novel framework operating on two complementary scaling axes: ...",
+        "short": "State-of-the-art video generative models typically learn the distribution of video latents in the VAE space and map them to pixels using a VAE decoder. While this approach can generate high-quality videos, it suffers from slow convergence and is computationally expensive when generating long videos. In this paper, we introduce SemanticGen, a novel solution to address these limitations by generatin...",
         "key_contributions": [
-          "Diffusion Multi-modal Large Language Models (dMLLMs) have recently emerged as a novel architecture unifying image generation and understanding.",
-          "However, developing effective and efficient Test-Time Scaling (TTS) methods to unlock their full generative potential remains an underexplored challenge.",
-          "To address this, we propose dMLLM-TTS, a novel framework operating on two complementary scaling axes: (1) trajectory exploration scaling to enhance the diversity of generated hypotheses, and (2) iterative refinement scaling for stable generation."
+          "State-of-the-art video generative models typically learn the distribution of video latents in the VAE space and map them to pixels using a VAE decoder.",
+          "While this approach can generate high-quality videos, it suffers from slow convergence and is computationally expensive when generating long videos.",
+          "In this paper, we introduce SemanticGen, a novel solution to address these limitations by generating videos in the semantic space."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.19539v1",
-      "title": "StoryMem: Multi-shot Long Video Storytelling with Memory",
+      "id": "2512.20606v1",
+      "title": "Repurposing Video Diffusion Transformers for Robust Point Tracking",
       "authors": [
-        "Kaiwen Zhang",
-        "Liming Jiang",
-        "Angtian Wang",
-        "Jacob Zhiyuan Fang",
-        "Tiancheng Zhi",
-        "Qing Yan",
-        "Hao Kang",
-        "Xin Lu",
-        "Xingang Pan"
+        "Soowon Son",
+        "Honggyu An",
+        "Chaehyun Kim",
+        "Hyunah Ko",
+        "Jisu Nam",
+        "Dahyun Chung",
+        "Siyoon Jin",
+        "Jung Yi",
+        "Jaewon Min",
+        "Junhwa Hur",
+        "Seungryong Kim"
       ],
-      "abstract": "Visual storytelling requires generating multi-shot videos with cinematic quality and long-range consistency. Inspired by human memory, we propose StoryMem, a paradigm that reformulates long-form video storytelling as iterative shot synthesis conditioned on explicit visual memory, transforming pre-trained single-shot video diffusion models into multi-shot storytellers. This is achieved by a novel Memory-to-Video (M2V) design, which maintains a compact and dynamically updated memory bank of keyframes from historical generated shots. The stored memory is then injected into single-shot video diffusion models via latent concatenation and negative RoPE shifts with only LoRA fine-tuning. A semantic keyframe selection strategy, together with aesthetic preference filtering, further ensures informative and stable memory throughout generation. Moreover, the proposed framework naturally accommodates smooth shot transitions and customized story generation applications. To facilitate evaluation, we introduce ST-Bench, a diverse benchmark for multi-shot video storytelling. Extensive experiments demonstrate that StoryMem achieves superior cross-shot consistency over previous methods while preserving high aesthetic quality and prompt adherence, marking a significant step toward coherent minute-long video storytelling.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "Point tracking aims to localize corresponding points across video frames, serving as a fundamental task for 4D reconstruction, robotics, and video editing. Existing methods commonly rely on shallow convolutional backbones such as ResNet that process frames independently, lacking temporal coherence and producing unreliable matching costs under challenging conditions. Through systematic analysis, we find that video Diffusion Transformers (DiTs), pre-trained on large-scale real-world videos with spatio-temporal attention, inherently exhibit strong point tracking capability and robustly handle dynamic motions and frequent occlusions. We propose DiTracker, which adapts video DiTs through: (1) query-key attention matching, (2) lightweight LoRA tuning, and (3) cost fusion with a ResNet backbone. Despite training with 8 times smaller batch size, DiTracker achieves state-of-the-art performance on challenging ITTO benchmark and matches or outperforms state-of-the-art models on TAP-Vid benchmarks. Our work validates video DiT features as an effective and efficient foundation for point tracking.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19539v1",
-        "pdf": "https://arxiv.org/pdf/2512.19539v1"
+        "paper": "http://arxiv.org/abs/2512.20606v1",
+        "pdf": "https://arxiv.org/pdf/2512.20606v1"
       },
-      "arxiv_id": "2512.19539v1",
-      "comment": "Project page: https://kevin-thu.github.io/StoryMem",
+      "arxiv_id": "2512.20606v1",
+      "comment": "Project Page: https://cvlab-kaist.github.io/DiTracker/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.050000000000001,
@@ -257,38 +320,102 @@
         }
       },
       "ai_summaries": {
-        "short": "Visual storytelling requires generating multi-shot videos with cinematic quality and long-range consistency. Inspired by human memory, we propose StoryMem, a paradigm that reformulates long-form video storytelling as iterative shot synthesis conditioned on explicit visual memory, transforming pre-trained single-shot video diffusion models into multi-shot storytellers. This is achieved by a novel M...",
+        "short": "Point tracking aims to localize corresponding points across video frames, serving as a fundamental task for 4D reconstruction, robotics, and video editing. Existing methods commonly rely on shallow convolutional backbones such as ResNet that process frames independently, lacking temporal coherence and producing unreliable matching costs under challenging conditions. Through systematic analysis, we...",
         "key_contributions": [
-          "Visual storytelling requires generating multi-shot videos with cinematic quality and long-range consistency.",
-          "Inspired by human memory, we propose StoryMem, a paradigm that reformulates long-form video storytelling as iterative shot synthesis conditioned on explicit visual memory, transforming pre-trained single-shot video diffusion models into multi-shot storytellers.",
-          "This is achieved by a novel Memory-to-Video (M2V) design, which maintains a compact and dynamically updated memory bank of keyframes from historical generated shots."
+          "Point tracking aims to localize corresponding points across video frames, serving as a fundamental task for 4D reconstruction, robotics, and video editing.",
+          "Existing methods commonly rely on shallow convolutional backbones such as ResNet that process frames independently, lacking temporal coherence and producing unreliable matching costs under challenging conditions.",
+          "Through systematic analysis, we find that video Diffusion Transformers (DiTs), pre-trained on large-scale real-world videos with spatio-temporal attention, inherently exhibit strong point tracking capability and robustly handle dynamic motions and frequent occlusions."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.19693v1",
-      "title": "The Prism Hypothesis: Harmonizing Semantic and Pixel Representations via Unified Autoencoding",
+      "id": "2512.20610v1",
+      "title": "FedPOD: the deployable units of training for federated learning",
       "authors": [
-        "Weichen Fan",
-        "Haiwen Diao",
-        "Quan Wang",
-        "Dahua Lin",
-        "Ziwei Liu"
+        "Daewoon Kim",
+        "Si Young Yie",
+        "Jae Sung Lee"
       ],
-      "abstract": "Deep representations across modalities are inherently intertwined. In this paper, we systematically analyze the spectral characteristics of various semantic and pixel encoders. Interestingly, our study uncovers a highly inspiring and rarely explored correspondence between an encoder's feature spectrum and its functional role: semantic encoders primarily capture low-frequency components that encode abstract meaning, whereas pixel encoders additionally retain high-frequency information that conveys fine-grained detail. This heuristic finding offers a unifying perspective that ties encoder behavior to its underlying spectral structure. We define it as the Prism Hypothesis, where each data modality can be viewed as a projection of the natural world onto a shared feature spectrum, just like the prism. Building on this insight, we propose Unified Autoencoding (UAE), a model that harmonizes semantic structure and pixel details via an innovative frequency-band modulator, enabling their seamless coexistence. Extensive experiments on ImageNet and MS-COCO benchmarks validate that our UAE effectively unifies semantic abstraction and pixel-level fidelity into a single latent space with state-of-the-art performance.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "This paper proposes FedPOD (Proportionally Orchestrated Derivative) for optimizing learning efficiency and communication cost in federated learning among multiple clients. Inspired by FedPIDAvg, we define a round-wise task for FedPOD to enhance training efficiency. FedPIDAvg achieved performance improvement by incorporating the training loss reduction for prediction entropy as weights using differential terms. Furthermore, by modeling data distribution with a Poisson distribution and using a PID controller, it reduced communication costs even in skewed data distribution. However, excluding participants classified as outliers based on the Poisson distribution can limit data utilization. Additionally, PID controller requires the same participants to be maintained throughout the federated learning process as it uses previous rounds' learning information in the current round. In our approach, FedPOD addresses these issues by including participants excluded as outliers, eliminating dependency on previous rounds' learning information, and applying a method for calculating validation loss at each round. In this challenge, FedPOD presents comparable performance to FedPIDAvg in metrics of Dice score, 0.78, 0.71 and 0.72 for WT, ET and TC in average, and projected convergence score, 0.74 in average. Furthermore, the concept of FedPOD draws inspiration from Kubernetes' smallest computing unit, POD, designed to be compatible with Kubernetes auto-scaling. Extending round-wise tasks of FedPOD to POD units allows flexible design by applying scale-out similar to Kubernetes' auto-scaling. This work demonstrated the potentials of FedPOD to enhance federated learning by improving efficiency, flexibility, and performance in metrics.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.20610v1",
+        "pdf": "https://arxiv.org/pdf/2512.20610v1"
+      },
+      "arxiv_id": "2512.20610v1",
+      "comment": "12 pages, 12 figures, MICCAI",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.05,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "This paper proposes FedPOD (Proportionally Orchestrated Derivative) for optimizing learning efficiency and communication cost in federated learning among multiple clients. Inspired by FedPIDAvg, we define a round-wise task for FedPOD to enhance training efficiency. FedPIDAvg achieved performance improvement by incorporating the training loss reduction for prediction entropy as weights using differ...",
+        "key_contributions": [
+          "This paper proposes FedPOD (Proportionally Orchestrated Derivative) for optimizing learning efficiency and communication cost in federated learning among multiple clients.",
+          "Inspired by FedPIDAvg, we define a round-wise task for FedPOD to enhance training efficiency.",
+          "FedPIDAvg achieved performance improvement by incorporating the training loss reduction for prediction entropy as weights using differential terms."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.20617v1",
+      "title": "SpatialTree: How Spatial Abilities Branch Out in MLLMs",
+      "authors": [
+        "Yuxi Xiao",
+        "Longfei Li",
+        "Shen Yan",
+        "Xinhang Liu",
+        "Sida Peng",
+        "Yunchao Wei",
+        "Xiaowei Zhou",
+        "Bingyi Kang"
+      ],
+      "abstract": "Cognitive science suggests that spatial ability develops progressively-from perception to reasoning and interaction. Yet in multimodal LLMs (MLLMs), this hierarchy remains poorly understood, as most studies focus on a narrow set of tasks. We introduce SpatialTree, a cognitive-science-inspired hierarchy that organizes spatial abilities into four levels: low-level perception (L1), mental mapping (L2), simulation (L3), and agentic competence (L4). Based on this taxonomy, we construct the first capability-centric hierarchical benchmark, thoroughly evaluating mainstream MLLMs across 27 sub-abilities. The evaluation results reveal a clear structure: L1 skills are largely orthogonal, whereas higher-level skills are strongly correlated, indicating increasing interdependency. Through targeted supervised fine-tuning, we uncover a surprising transfer dynamic-negative transfer within L1, but strong cross-level transfer from low- to high-level abilities with notable synergy. Finally, we explore how to improve the entire hierarchy. We find that naive RL that encourages extensive \"thinking\" is unreliable: it helps complex reasoning but hurts intuitive perception. We propose a simple auto-think strategy that suppresses unnecessary deliberation, enabling RL to consistently improve performance across all levels. By building SpatialTree, we provide a proof-of-concept framework for understanding and systematically scaling spatial abilities in MLLMs.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19693v1",
-        "pdf": "https://arxiv.org/pdf/2512.19693v1"
+        "paper": "http://arxiv.org/abs/2512.20617v1",
+        "pdf": "https://arxiv.org/pdf/2512.20617v1"
       },
-      "arxiv_id": "2512.19693v1",
-      "comment": "Code link: https://github.com/WeichenFan/UAE",
+      "arxiv_id": "2512.20617v1",
+      "comment": "webpage: https://spatialtree.github.io/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -319,44 +446,42 @@
         }
       },
       "ai_summaries": {
-        "short": "Deep representations across modalities are inherently intertwined. In this paper, we systematically analyze the spectral characteristics of various semantic and pixel encoders. Interestingly, our study uncovers a highly inspiring and rarely explored correspondence between an encoder's feature spectrum and its functional role: semantic encoders primarily capture low-frequency components that encode...",
+        "short": "Cognitive science suggests that spatial ability develops progressively-from perception to reasoning and interaction. Yet in multimodal LLMs (MLLMs), this hierarchy remains poorly understood, as most studies focus on a narrow set of tasks. We introduce SpatialTree, a cognitive-science-inspired hierarchy that organizes spatial abilities into four levels: low-level perception (L1), mental mapping (L2...",
         "key_contributions": [
-          "Deep representations across modalities are inherently intertwined.",
-          "In this paper, we systematically analyze the spectral characteristics of various semantic and pixel encoders.",
-          "Interestingly, our study uncovers a highly inspiring and rarely explored correspondence between an encoder's feature spectrum and its functional role: semantic encoders primarily capture low-frequency components that encode abstract meaning, whereas pixel encoders additionally retain high-frequency information that conveys fine-grained detail."
+          "Cognitive science suggests that spatial ability develops progressively-from perception to reasoning and interaction.",
+          "Yet in multimodal LLMs (MLLMs), this hierarchy remains poorly understood, as most studies focus on a narrow set of tasks.",
+          "We introduce SpatialTree, a cognitive-science-inspired hierarchy that organizes spatial abilities into four levels: low-level perception (L1), mental mapping (L2), simulation (L3), and agentic competence (L4)."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.19673v1",
-      "title": "Bottom-up Policy Optimization: Your Language Model Policy Secretly Contains Internal Policies",
+      "id": "2512.20615v1",
+      "title": "Active Intelligence in Video Avatars via Closed-loop World Modeling",
       "authors": [
-        "Yuqiao Tan",
-        "Minzheng Wang",
-        "Shizhu He",
-        "Huanxuan Liao",
-        "Chengfeng Zhao",
-        "Qiunan Lu",
-        "Tian Liang",
-        "Jun Zhao",
-        "Kang Liu"
+        "Xuanhua He",
+        "Tianyu Yang",
+        "Ke Cao",
+        "Ruiqi Wu",
+        "Cheng Meng",
+        "Yong Zhang",
+        "Zhuoliang Kang",
+        "Xiaoming Wei",
+        "Qifeng Chen"
       ],
-      "abstract": "Existing reinforcement learning (RL) approaches treat large language models (LLMs) as a single unified policy, overlooking their internal mechanisms. Understanding how policy evolves across layers and modules is therefore crucial for enabling more targeted optimization and raveling out complex reasoning mechanisms. In this paper, we decompose the language model policy by leveraging the intrinsic split of the Transformer residual stream and the equivalence between the composition of hidden states with the unembedding matrix and the resulting samplable policy. This decomposition reveals Internal Layer Policies, corresponding to contributions from individual layers, and Internal Modular Policies, which align with the self-attention and feed-forward network (FFN) components within each layer. By analyzing the entropy of internal policy, we find that: (a) Early layers keep high entropy for exploration, top layers converge to near-zero entropy for refinement, with convergence patterns varying across model series. (b) LLama's prediction space rapidly converges in the final layer, whereas Qwen-series models, especially Qwen3, exhibit a more human-like, progressively structured reasoning pattern. Motivated by these findings, we propose Bottom-up Policy Optimization (BuPO), a novel RL paradigm that directly optimizes the internal layer policy during early training. By aligning training objective at lower layer, BuPO reconstructs foundational reasoning capabilities and achieves superior performance. Extensive experiments on complex reasoning benchmarks demonstrates the effectiveness of our method. Our code is available at https://github.com/Trae1ounG/BuPO.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "Current video avatar generation methods excel at identity preservation and motion alignment but lack genuine agency, they cannot autonomously pursue long-term goals through adaptive environmental interaction. We address this by introducing L-IVA (Long-horizon Interactive Visual Avatar), a task and benchmark for evaluating goal-directed planning in stochastic generative environments, and ORCA (Online Reasoning and Cognitive Architecture), the first framework enabling active intelligence in video avatars. ORCA embodies Internal World Model (IWM) capabilities through two key innovations: (1) a closed-loop OTAR cycle (Observe-Think-Act-Reflect) that maintains robust state tracking under generative uncertainty by continuously verifying predicted outcomes against actual generations, and (2) a hierarchical dual-system architecture where System 2 performs strategic reasoning with state prediction while System 1 translates abstract plans into precise, model-specific action captions. By formulating avatar control as a POMDP and implementing continuous belief updating with outcome verification, ORCA enables autonomous multi-step task completion in open-domain scenarios. Extensive experiments demonstrate that ORCA significantly outperforms open-loop and non-reflective baselines in task success rate and behavioral coherence, validating our IWM-inspired design for advancing video avatar intelligence from passive animation to active, goal-oriented behavior.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19673v1",
-        "pdf": "https://arxiv.org/pdf/2512.19673v1"
+        "paper": "http://arxiv.org/abs/2512.20615v1",
+        "pdf": "https://arxiv.org/pdf/2512.20615v1"
       },
-      "arxiv_id": "2512.19673v1",
-      "comment": "Preprint. Our code is available at https://github.com/Trae1ounG/BuPO",
+      "arxiv_id": "2512.20615v1",
+      "comment": "Project Page: https://xuanhuahe.github.io/ORCA/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -387,179 +512,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Existing reinforcement learning (RL) approaches treat large language models (LLMs) as a single unified policy, overlooking their internal mechanisms. Understanding how policy evolves across layers and modules is therefore crucial for enabling more targeted optimization and raveling out complex reasoning mechanisms. In this paper, we decompose the language model policy by leveraging the intrinsic s...",
+        "short": "Current video avatar generation methods excel at identity preservation and motion alignment but lack genuine agency, they cannot autonomously pursue long-term goals through adaptive environmental interaction. We address this by introducing L-IVA (Long-horizon Interactive Visual Avatar), a task and benchmark for evaluating goal-directed planning in stochastic generative environments, and ORCA (Onli...",
         "key_contributions": [
-          "Existing reinforcement learning (RL) approaches treat large language models (LLMs) as a single unified policy, overlooking their internal mechanisms.",
-          "Understanding how policy evolves across layers and modules is therefore crucial for enabling more targeted optimization and raveling out complex reasoning mechanisms.",
-          "In this paper, we decompose the language model policy by leveraging the intrinsic split of the Transformer residual stream and the equivalence between the composition of hidden states with the unembedding matrix and the resulting samplable policy."
+          "Current video avatar generation methods excel at identity preservation and motion alignment but lack genuine agency, they cannot autonomously pursue long-term goals through adaptive environmental interaction.",
+          "We address this by introducing L-IVA (Long-horizon Interactive Visual Avatar), a task and benchmark for evaluating goal-directed planning in stochastic generative environments, and ORCA (Online Reasoning and Cognitive Architecture), the first framework enabling active intelligence in video avatars.",
+          "ORCA embodies Internal World Model (IWM) capabilities through two key innovations: (1) a closed-loop OTAR cycle (Observe-Think-Act-Reflect) that maintains robust state tracking under generative uncertainty by continuously verifying predicted outcomes against actual generations, and (2) a hierarchical dual-system architecture where System 2 performs strategic reasoning with state prediction while System 1 translates abstract plans into precise, model-specific action captions."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.19546v1",
-      "title": "ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars",
+      "id": "2512.20377v1",
+      "title": "SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images",
       "authors": [
-        "Ziqiao Peng",
-        "Yi Chen",
-        "Yifeng Ma",
-        "Guozhen Zhang",
-        "Zhiyao Sun",
-        "Zixiang Zhou",
-        "Youliang Zhang",
-        "Zhengguang Zhou",
-        "Zhaoxin Fan",
-        "Hongyan Liu",
-        "Yuan Zhou",
-        "Qinglin Lu",
-        "Jun He"
+        "Linfei Li",
+        "Lin Zhang",
+        "Zhong Wang",
+        "Ying Shen"
       ],
-      "abstract": "Despite significant advances in talking avatar generation, existing methods face critical challenges: insufficient text-following capability for diverse actions, lack of temporal alignment between actions and audio content, and dependency on additional control signals such as pose skeletons. We present ActAvatar, a framework that achieves phase-level precision in action control through textual guidance by capturing both action semantics and temporal context. Our approach introduces three core innovations: (1) Phase-Aware Cross-Attention (PACA), which decomposes prompts into a global base block and temporally-anchored phase blocks, enabling the model to concentrate on phase-relevant tokens for precise temporal-semantic alignment; (2) Progressive Audio-Visual Alignment, which aligns modality influence with the hierarchical feature learning process-early layers prioritize text for establishing action structure while deeper layers emphasize audio for refining lip movements, preventing modality interference; (3) A two-stage training strategy that first establishes robust audio-visual correspondence on diverse data, then injects action control through fine-tuning on structured annotations, maintaining both audio-visual alignment and the model's text-following capabilities. Extensive experiments demonstrate that ActAvatar significantly outperforms state-of-the-art methods in both action control and visual quality.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "Recent advances in generative AI have accelerated the production of ultra-high-resolution visual content, posing significant challenges for efficient compression and real-time decoding on end-user devices. Inspired by 3D Gaussian Splatting, recent 2D Gaussian image models improve representation efficiency, yet existing methods struggle to balance compression ratio and reconstruction fidelity in ultra-high-resolution scenarios. To address this issue, we propose SmartSplat, a highly adaptive and feature-aware GS-based image compression framework that supports arbitrary image resolutions and compression ratios. SmartSplat leverages image-aware features such as gradients and color variances, introducing a Gradient-Color Guided Variational Sampling strategy together with an Exclusion-based Uniform Sampling scheme to improve the non-overlapping coverage of Gaussian primitives in pixel space. In addition, we propose a Scale-Adaptive Gaussian Color Sampling method to enhance color initialization across scales. Through joint optimization of spatial layout, scale, and color initialization, SmartSplat efficiently captures both local structures and global textures using a limited number of Gaussians, achieving high reconstruction quality under strong compression. Extensive experiments on DIV8K and a newly constructed 16K dataset demonstrate that SmartSplat consistently outperforms state-of-the-art methods at comparable compression ratios and exceeds their compression limits, showing strong scalability and practical applicability. The code is publicly available at https://github.com/lif314/SmartSplat.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19546v1",
-        "pdf": "https://arxiv.org/pdf/2512.19546v1"
+        "paper": "http://arxiv.org/abs/2512.20377v1",
+        "pdf": "https://arxiv.org/pdf/2512.20377v1"
       },
-      "arxiv_id": "2512.19546v1",
-      "comment": "Project Page: https://ziqiaopeng.github.io/ActAvatar/",
+      "arxiv_id": "2512.20377v1",
+      "comment": "Accepted by AAAI 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
+      "has_code": false,
+      "relevance_score": 3.877966101694915,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 3.88,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite significant advances in talking avatar generation, existing methods face critical challenges: insufficient text-following capability for diverse actions, lack of temporal alignment between actions and audio content, and dependency on additional control signals such as pose skeletons. We present ActAvatar, a framework that achieves phase-level precision in action control through textual gui...",
-        "key_contributions": [
-          "Despite significant advances in talking avatar generation, existing methods face critical challenges: insufficient text-following capability for diverse actions, lack of temporal alignment between actions and audio content, and dependency on additional control signals such as pose skeletons.",
-          "We present ActAvatar, a framework that achieves phase-level precision in action control through textual guidance by capturing both action semantics and temporal context.",
-          "Our approach introduces three core innovations: (1) Phase-Aware Cross-Attention (PACA), which decomposes prompts into a global base block and temporally-anchored phase blocks, enabling the model to concentrate on phase-relevant tokens for precise temporal-semantic alignment; (2) Progressive Audio-Visual Alignment, which aligns modality influence with the hierarchical feature learning process-early layers prioritize text for establishing action structure while deeper layers emphasize audio for refining lip movements, preventing modality interference; (3) A two-stage training strategy that first establishes robust audio-visual correspondence on diverse data, then injects action control through fine-tuning on structured annotations, maintaining both audio-visual alignment and the model's text-following capabilities."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.19534v1",
-      "title": "SlicerOrbitSurgerySim: An Open-Source Platform for Virtual Registration and Quantitative Comparison of Preformed Orbital Plates",
-      "authors": [
-        "Chi Zhang",
-        "Braedon Gunn",
-        "Andrew M. Read-Fuller"
-      ],
-      "abstract": "Poor adaptation of orbital implants remains a major contributor to postoperative complications and revision surgery. Although preformed orbital plates are widely used to reduce cost and operative time compared with customized implants, surgeons currently lack publicly available tools and standardized metrics to quantitatively compare plate fit across vendors, sizes, and patient anatomy. We developed SlicerOrbitSurgerySim, an open-source extension for the 3D Slicer platform that enables interactive virtual registration, evaluation, and comparison of multiple preformed orbital plates in a patient-specific virtual planning environment. The software generates reproducible quantitative plate-to-orbit distance metrics and visualization tools that support both patient-specific planning and population-level statistical analysis of plate adaptability. By facilitating objective comparison of implant designs and placement strategies, this tool aims to improve preoperative decision-making, reduce intraoperative plate modification, and promote collaborative research and surgical education. Pilot studies, sample datasets, and detailed tutorials are provided to support testing, transparency, and reproducibility.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.19534v1",
-        "pdf": "https://arxiv.org/pdf/2512.19534v1"
-      },
-      "arxiv_id": "2512.19534v1",
-      "comment": "12 pages, 8 figures. Submitted to Journal of Oral and Maxillofacial Surgery. Code: https://github.com/chz31/SlicerOrbitSurgerySim/tree/main",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.903389830508474,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.51,
+          "score": 1.69,
           "matches": [
-            "registration"
+            "3d gaussian",
+            "gaussian splatting"
           ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Poor adaptation of orbital implants remains a major contributor to postoperative complications and revision surgery. Although preformed orbital plates are widely used to reduce cost and operative time compared with customized implants, surgeons currently lack publicly available tools and standardized metrics to quantitatively compare plate fit across vendors, sizes, and patient anatomy. We develop...",
-        "key_contributions": [
-          "Poor adaptation of orbital implants remains a major contributor to postoperative complications and revision surgery.",
-          "Although preformed orbital plates are widely used to reduce cost and operative time compared with customized implants, surgeons currently lack publicly available tools and standardized metrics to quantitatively compare plate fit across vendors, sizes, and patient anatomy.",
-          "We developed SlicerOrbitSurgerySim, an open-source extension for the 3D Slicer platform that enables interactive virtual registration, evaluation, and comparison of multiple preformed orbital plates in a patient-specific virtual planning environment."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.19683v1",
-      "title": "From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs",
-      "authors": [
-        "Mingrui Wu",
-        "Zhaozhi Wang",
-        "Fangjinhua Wang",
-        "Jiaolong Yang",
-        "Marc Pollefeys",
-        "Tong Zhang"
-      ],
-      "abstract": "While Multimodal Large Language Models (MLLMs) have achieved impressive performance on semantic tasks, their spatial intelligence--crucial for robust and grounded AI systems--remains underdeveloped. Existing benchmarks fall short of diagnosing this limitation: they either focus on overly simplified qualitative reasoning or rely on domain-specific indoor data, constrained by the lack of outdoor datasets with verifiable metric ground truth. To bridge this gap, we introduce a large-scale benchmark built from pedestrian-perspective videos captured with synchronized stereo cameras, LiDAR, and IMU/GPS sensors. This dataset provides metrically precise 3D information, enabling the automatic generation of spatial reasoning questions that span a hierarchical spectrum--from qualitative relational reasoning to quantitative metric and kinematic understanding. Evaluations reveal that the performance gains observed in structured indoor benchmarks vanish in open-world settings. Further analysis using synthetic abnormal scenes and blinding tests confirms that current MLLMs depend heavily on linguistic priors instead of grounded visual reasoning. Our benchmark thus provides a principled platform for diagnosing these limitations and advancing physically grounded spatial intelligence.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.19683v1",
-        "pdf": "https://arxiv.org/pdf/2512.19683v1"
-      },
-      "arxiv_id": "2512.19683v1",
-      "comment": "Project page: https://harmlesssr.github.io/openbench/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -572,8 +566,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -582,42 +576,42 @@
         }
       },
       "ai_summaries": {
-        "short": "While Multimodal Large Language Models (MLLMs) have achieved impressive performance on semantic tasks, their spatial intelligence--crucial for robust and grounded AI systems--remains underdeveloped. Existing benchmarks fall short of diagnosing this limitation: they either focus on overly simplified qualitative reasoning or rely on domain-specific indoor data, constrained by the lack of outdoor dat...",
+        "short": "Recent advances in generative AI have accelerated the production of ultra-high-resolution visual content, posing significant challenges for efficient compression and real-time decoding on end-user devices. Inspired by 3D Gaussian Splatting, recent 2D Gaussian image models improve representation efficiency, yet existing methods struggle to balance compression ratio and reconstruction fidelity in ul...",
         "key_contributions": [
-          "While Multimodal Large Language Models (MLLMs) have achieved impressive performance on semantic tasks, their spatial intelligence--crucial for robust and grounded AI systems--remains underdeveloped.",
-          "Existing benchmarks fall short of diagnosing this limitation: they either focus on overly simplified qualitative reasoning or rely on domain-specific indoor data, constrained by the lack of outdoor datasets with verifiable metric ground truth.",
-          "To bridge this gap, we introduce a large-scale benchmark built from pedestrian-perspective videos captured with synchronized stereo cameras, LiDAR, and IMU/GPS sensors."
+          "Recent advances in generative AI have accelerated the production of ultra-high-resolution visual content, posing significant challenges for efficient compression and real-time decoding on end-user devices.",
+          "Inspired by 3D Gaussian Splatting, recent 2D Gaussian image models improve representation efficiency, yet existing methods struggle to balance compression ratio and reconstruction fidelity in ultra-high-resolution scenarios.",
+          "To address this issue, we propose SmartSplat, a highly adaptive and feature-aware GS-based image compression framework that supports arbitrary image resolutions and compression ratios."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.19577v1",
-      "title": "Deep Learning for Primordial $B$-mode Extraction",
+      "id": "2512.20319v1",
+      "title": "Deep Learning Classification of EEG Responses to Multi-Dimensional Transcranial Electrical Stimulation",
       "authors": [
-        "Eric Guzman",
-        "Joel Meyers"
+        "Alexis Pomares Pastor",
+        "Ines Ribeiro Violante",
+        "Gregory Scott"
       ],
-      "abstract": "The search for primordial gravitational waves is a central goal of cosmic microwave background (CMB) surveys. Isolating the characteristic $B$-mode polarization signal sourced by primordial gravitational waves is challenging for several reasons: the amplitude of the signal is inherently small; astrophysical foregrounds produce $B$-mode polarization contaminating the signal; and secondary $B$-mode polarization fluctuations are produced via the conversion of $E$ modes. Current and future low-noise, multi-frequency observations enable sufficient precision to address the first two of these challenges such that secondary $B$ modes will become the bottleneck for improved constraints on the amplitude of primordial gravitational waves. The dominant source of secondary $B$-mode polarization is gravitational lensing by large scale structure. Various strategies have been developed to estimate the lensing deflection and to reverse its effects the CMB, thus reducing confusion from lensing $B$ modes in the search for primordial gravitational waves. However, a few complications remain. First, there may be additional sources of secondary $B$-mode polarization, for example from patchy reionization or from cosmic polarization rotation. Second, the statistics of delensed CMB maps can become complicated and non-Gaussian, especially when advanced lensing reconstruction techniques are applied. We previously demonstrated how a deep learning network, ResUNet-CMB, can provide nearly optimal simultaneous estimates of multiple sources of secondary $B$-mode polarization. In this paper, we show how deep learning can be applied to estimate and remove multiple sources of secondary $B$-mode polarization, and we further show how this technique can be used in a likelihood analysis to produce nearly optimal, unbiased estimates of the amplitude of primordial gravitational waves.",
-      "published": "2025-12-22",
-      "updated": "2025-12-22",
+      "abstract": "A major shortcoming of medical practice is the lack of an objective measure of conscious level. Impairment of consciousness is common, e.g. following brain injury and seizures, which can also interfere with sensory processing and volitional responses. This is also an important pitfall in neurophysiological methods that infer awareness via command following, e.g. using functional MRI or electroencephalography (EEG).\n  Transcranial electrical stimulation (TES) can be employed to non-invasively stimulate the brain, bypassing sensory inputs, and has already showed promising results in providing reliable indicators of brain state. However, current non-invasive solutions have been limited to magnetic stimulation, which is not easily translatable to clinical settings. Our long-term vision is to develop an objective measure of brain state that can be used at the bedside, without requiring patients to understand commands or initiate motor responses.\n  In this study, we demonstrated the feasibility of a framework using Deep Learning algorithms to classify EEG brain responses evoked by a defined multi-dimensional pattern of TES. We collected EEG-TES data from 11 participants and found that delivering transcranial direct current stimulation (tDCS) to posterior cortical areas targeting the angular gyrus elicited an exceptionally reliable brain response. For this paradigm, our best Convolutional Neural Network model reached a 92% classification F1-score on Holdout data from participants never seen during training, significantly surpassing human-level performance at 60-70% accuracy.\n  These findings establish a framework for robust consciousness measurement for clinical use. In this spirit, we documented and open-sourced our datasets and codebase in full, to be used freely by the neuroscience and AI research communities, who may replicate our results with free tools like GitHub, Kaggle, and Colab.",
+      "published": "2025-12-23",
+      "updated": "2025-12-23",
       "categories": [
-        "astro-ph.CO",
-        "cs.CV",
-        "stat.ML"
+        "q-bio.NC",
+        "cs.AI"
       ],
-      "primary_category": "astro-ph.CO",
+      "primary_category": "q-bio.NC",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.19577v1",
-        "pdf": "https://arxiv.org/pdf/2512.19577v1"
+        "paper": "http://arxiv.org/abs/2512.20319v1",
+        "pdf": "https://arxiv.org/pdf/2512.20319v1"
       },
-      "arxiv_id": "2512.19577v1",
-      "comment": "12 pages, 8 figures. Code available from https://github.com/EEmGuzman/resunet-cmb",
+      "arxiv_id": "2512.20319v1",
+      "comment": "For open-sourced datasets and source code, see: https://github.com/alexispomares/DL-EEG-TES",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8694915254237285,
+      "relevance_score": 3.769491525423729,
       "score_breakdown": {
-        "total_score": 3.87,
+        "total_score": 3.77,
         "field_match": {
           "score": 0.42,
           "matches": [
@@ -631,7 +625,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -640,16 +634,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The search for primordial gravitational waves is a central goal of cosmic microwave background (CMB) surveys. Isolating the characteristic $B$-mode polarization signal sourced by primordial gravitational waves is challenging for several reasons: the amplitude of the signal is inherently small; astrophysical foregrounds produce $B$-mode polarization contaminating the signal; and secondary $B$-mode ...",
+        "short": "A major shortcoming of medical practice is the lack of an objective measure of conscious level. Impairment of consciousness is common, e.g. following brain injury and seizures, which can also interfere with sensory processing and volitional responses. This is also an important pitfall in neurophysiological methods that infer awareness via command following, e.g. using functional MRI or electroence...",
         "key_contributions": [
-          "The search for primordial gravitational waves is a central goal of cosmic microwave background (CMB) surveys.",
-          "Isolating the characteristic $B$-mode polarization signal sourced by primordial gravitational waves is challenging for several reasons: the amplitude of the signal is inherently small; astrophysical foregrounds produce $B$-mode polarization contaminating the signal; and secondary $B$-mode polarization fluctuations are produced via the conversion of $E$ modes.",
-          "Current and future low-noise, multi-frequency observations enable sufficient precision to address the first two of these challenges such that secondary $B$ modes will become the bottleneck for improved constraints on the amplitude of primordial gravitational waves."
+          "A major shortcoming of medical practice is the lack of an objective measure of conscious level.",
+          "Impairment of consciousness is common, e.",
+          "g."
         ],
         "provider": "gemini"
       }

@@ -3,43 +3,47 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.20479v1",
-      "title": "UTDesign: A Unified Framework for Stylized Text Editing and Generation in Graphic Design Images",
+      "id": "2512.21135v1",
+      "title": "TGC-Net: A Structure-Aware and Semantically-Aligned Framework for Text-Guided Medical Image Segmentation",
       "authors": [
-        "Yiming Zhao",
-        "Yuanpeng Gao",
-        "Yuxuan Luo",
-        "Jiwei Duan",
-        "Shisong Lin",
-        "Longfei Xiong",
-        "Zhouhui Lian"
+        "Gaoren Lin",
+        "Huangxuan Zhao",
+        "Yuan Xiong",
+        "Lefei Zhang",
+        "Bo Du",
+        "Wentao Zhu"
       ],
-      "abstract": "AI-assisted graphic design has emerged as a powerful tool for automating the creation and editing of design elements such as posters, banners, and advertisements. While diffusion-based text-to-image models have demonstrated strong capabilities in visual content generation, their text rendering performance, particularly for small-scale typography and non-Latin scripts, remains limited. In this paper, we propose UTDesign, a unified framework for high-precision stylized text editing and conditional text generation in design images, supporting both English and Chinese scripts. Our framework introduces a novel DiT-based text style transfer model trained from scratch on a synthetic dataset, capable of generating transparent RGBA text foregrounds that preserve the style of reference glyphs. We further extend this model into a conditional text generation framework by training a multi-modal condition encoder on a curated dataset with detailed text annotations, enabling accurate, style-consistent text synthesis conditioned on background images, prompts, and layout specifications. Finally, we integrate our approach into a fully automated text-to-design (T2D) pipeline by incorporating pre-trained text-to-image (T2I) models and an MLLM-based layout planner. Extensive experiments demonstrate that UTDesign achieves state-of-the-art performance among open-source methods in terms of stylistic consistency and text accuracy, and also exhibits unique advantages compared to proprietary commercial approaches. Code and data for this paper are available at https://github.com/ZYM-PKU/UTDesign.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
+      "abstract": "Text-guided medical segmentation enhances segmentation accuracy by utilizing clinical reports as auxiliary information. However, existing methods typically rely on unaligned image and text encoders, which necessitate complex interaction modules for multimodal fusion. While CLIP provides a pre-aligned multimodal feature space, its direct application to medical imaging is limited by three main issues: insufficient preservation of fine-grained anatomical structures, inadequate modeling of complex clinical descriptions, and domain-specific semantic misalignment. To tackle these challenges, we propose TGC-Net, a CLIP-based framework focusing on parameter-efficient, task-specific adaptations. Specifically, it incorporates a Semantic-Structural Synergy Encoder (SSE) that augments CLIP's ViT with a CNN branch for multi-scale structural refinement, a Domain-Augmented Text Encoder (DATE) that injects large-language-model-derived medical knowledge, and a Vision-Language Calibration Module (VLCM) that refines cross-modal correspondence in a unified feature space. Experiments on five datasets across chest X-ray and thoracic CT modalities demonstrate that TGC-Net achieves state-of-the-art performance with substantially fewer trainable parameters, including notable Dice gains on challenging benchmarks.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.20479v1",
-        "pdf": "https://arxiv.org/pdf/2512.20479v1"
+        "paper": "http://arxiv.org/abs/2512.21135v1",
+        "pdf": "https://arxiv.org/pdf/2512.21135v1"
       },
-      "arxiv_id": "2512.20479v1",
-      "comment": "22 pages, 25 figures, SIGGRAPH Asia 2025, Conference Paper",
+      "arxiv_id": "2512.21135v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.55,
+      "relevance_score": 4.263559322033898,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 4.26,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.03,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "SIGGRAPH",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -52,208 +56,34 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 7.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.20194v1",
-      "title": "Generative Latent Coding for Ultra-Low Bitrate Image Compression",
+      "id": "2512.21337v1",
+      "title": "Beyond Memorization: A Multi-Modal Ordinal Regression Benchmark to Expose Popularity Bias in Vision-Language Models",
       "authors": [
-        "Zhaoyang Jia",
-        "Jiahao Li",
-        "Bin Li",
-        "Houqiang Li",
-        "Yan Lu"
+        "Li-Zhong Szu-Tu",
+        "Ting-Lin Wu",
+        "Chia-Jui Chang",
+        "He Syu",
+        "Yu-Lun Liu"
       ],
-      "abstract": "Most existing image compression approaches perform transform coding in the pixel space to reduce its spatial redundancy. However, they encounter difficulties in achieving both high-realism and high-fidelity at low bitrate, as the pixel-space distortion may not align with human perception. To address this issue, we introduce a Generative Latent Coding (GLC) architecture, which performs transform coding in the latent space of a generative vector-quantized variational auto-encoder (VQ-VAE), instead of in the pixel space. The generative latent space is characterized by greater sparsity, richer semantic and better alignment with human perception, rendering it advantageous for achieving high-realism and high-fidelity compression. Additionally, we introduce a categorical hyper module to reduce the bit cost of hyper-information, and a code-prediction-based supervision to enhance the semantic consistency. Experiments demonstrate that our GLC maintains high visual quality with less than 0.04 bpp on natural images and less than 0.01 bpp on facial images. On the CLIC2020 test set, we achieve the same FID as MS-ILLM with 45% fewer bits. Furthermore, the powerful generative latent space enables various applications built on our GLC pipeline, such as image restoration and style transfer. The code is available at https://github.com/jzyustc/GLC.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
-      "categories": [
-        "cs.CV",
-        "eess.IV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.20194v1",
-        "pdf": "https://arxiv.org/pdf/2512.20194v1"
-      },
-      "arxiv_id": "2512.20194v1",
-      "comment": "Accepted at CVPR 2024",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.20330v1",
-      "title": "Branch Learning in MRI: More Data, More Models, More Training",
-      "authors": [
-        "Yuyang Li",
-        "Yipin Deng",
-        "Zijian Zhou",
-        "Peng Hu"
-      ],
-      "abstract": "We investigated two complementary strategies for multicontrast cardiac MR reconstruction: physics-consistent data-space augmentation (DualSpaceCMR) and parameter-efficient capacity scaling via VQPrompt and Moero. DualSpaceCMR couples image-level transforms with kspace noise and motion simulations while preserving forwardmodel consistency. VQPrompt adds a lightweight bottleneck prompt; Moero embeds a sparse mixture of experts within a deep unrolled network with histogram-based routing.\n  In the multivendor, multisite CMRxRecon25 benchmark, we evaluate fewshot and out-of-distribution generalization. On small datasets, k-space motion-plus-noise improves reconstruction; on the large benchmark it degrades performance, revealing sensitivity to augmentation ratio and schedule. VQPrompt produces modest and consistent gains with negligible memory overhead. Moero continues to improve after early plateaus and maintains baseline-like fewshot and out-of-distribution behavior despite mild overfitting, but sparse routing lowers PyTorch throughput and makes wall clock time the main bottleneck. These results motivate scale-aware augmentation and suggest prompt-based capacity scaling as a practical path, while efficiency improvements are crucial for sparse expert models.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
-      "categories": [
-        "eess.IV"
-      ],
-      "primary_category": "eess.IV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.20330v1",
-        "pdf": "https://arxiv.org/pdf/2512.20330v1"
-      },
-      "arxiv_id": "2512.20330v1",
-      "comment": "STACOM 2025 Challenge paper; Code is available at https://github.com/5o1/Moero",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.105084745762712,
-      "score_breakdown": {
-        "total_score": 4.11,
-        "field_match": {
-          "score": 0.76,
-          "matches": [
-            "cardiac"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.20619v1",
-      "title": "SemanticGen: Video Generation in Semantic Space",
-      "authors": [
-        "Jianhong Bai",
-        "Xiaoshi Wu",
-        "Xintao Wang",
-        "Fu Xiao",
-        "Yuanxing Zhang",
-        "Qinghe Wang",
-        "Xiaoyu Shi",
-        "Menghan Xia",
-        "Zuozhu Liu",
-        "Haoji Hu",
-        "Pengfei Wan",
-        "Kun Gai"
-      ],
-      "abstract": "State-of-the-art video generative models typically learn the distribution of video latents in the VAE space and map them to pixels using a VAE decoder. While this approach can generate high-quality videos, it suffers from slow convergence and is computationally expensive when generating long videos. In this paper, we introduce SemanticGen, a novel solution to address these limitations by generating videos in the semantic space. Our main insight is that, due to the inherent redundancy in videos, the generation process should begin in a compact, high-level semantic space for global planning, followed by the addition of high-frequency details, rather than directly modeling a vast set of low-level video tokens using bi-directional attention. SemanticGen adopts a two-stage generation process. In the first stage, a diffusion model generates compact semantic video features, which define the global layout of the video. In the second stage, another diffusion model generates VAE latents conditioned on these semantic features to produce the final output. We observe that generation in the semantic space leads to faster convergence compared to the VAE latent space. Our method is also effective and computationally efficient when extended to long video generation. Extensive experiments demonstrate that SemanticGen produces high-quality videos and outperforms state-of-the-art approaches and strong baselines.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
+      "abstract": "We expose a significant popularity bias in state-of-the-art vision-language models (VLMs), which achieve up to 34% higher accuracy on famous buildings compared to ordinary ones, indicating a reliance on memorization over generalizable understanding. To systematically investigate this, we introduce the largest open benchmark for this task: the YearGuessr dataset, a collection of 55,546 building images with multi-modal attributes from 157 countries, annotated with continuous ordinal labels of their construction year (1001-2024), GPS data, and page-view counts as a proxy for popularity. Using this dataset, we frame the construction year prediction task as ordinal regression and introduce popularity-aware interval accuracy metrics to quantify this bias. Our resulting benchmark of 30+ models, including our YearCLIP model, confirms that VLMs excel on popular, memorized items but struggle significantly with unrecognized subjects, exposing a critical flaw in their reasoning capabilities. Project page: https://sytwu.github.io/BeyondMemo/",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.20619v1",
-        "pdf": "https://arxiv.org/pdf/2512.20619v1"
+        "paper": "http://arxiv.org/abs/2512.21337v1",
+        "pdf": "https://arxiv.org/pdf/2512.21337v1"
       },
-      "arxiv_id": "2512.20619v1",
-      "comment": "Project page: https://jianhongbai.github.io/SemanticGen/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.20606v1",
-      "title": "Repurposing Video Diffusion Transformers for Robust Point Tracking",
-      "authors": [
-        "Soowon Son",
-        "Honggyu An",
-        "Chaehyun Kim",
-        "Hyunah Ko",
-        "Jisu Nam",
-        "Dahyun Chung",
-        "Siyoon Jin",
-        "Jung Yi",
-        "Jaewon Min",
-        "Junhwa Hur",
-        "Seungryong Kim"
-      ],
-      "abstract": "Point tracking aims to localize corresponding points across video frames, serving as a fundamental task for 4D reconstruction, robotics, and video editing. Existing methods commonly rely on shallow convolutional backbones such as ResNet that process frames independently, lacking temporal coherence and producing unreliable matching costs under challenging conditions. Through systematic analysis, we find that video Diffusion Transformers (DiTs), pre-trained on large-scale real-world videos with spatio-temporal attention, inherently exhibit strong point tracking capability and robustly handle dynamic motions and frequent occlusions. We propose DiTracker, which adapts video DiTs through: (1) query-key attention matching, (2) lightweight LoRA tuning, and (3) cost fusion with a ResNet backbone. Despite training with 8 times smaller batch size, DiTracker achieves state-of-the-art performance on challenging ITTO benchmark and matches or outperforms state-of-the-art models on TAP-Vid benchmarks. Our work validates video DiT features as an effective and efficient foundation for point tracking.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.20606v1",
-        "pdf": "https://arxiv.org/pdf/2512.20606v1"
-      },
-      "arxiv_id": "2512.20606v1",
-      "comment": "Project Page: https://cvlab-kaist.github.io/DiTracker/",
+      "arxiv_id": "2512.21337v1",
+      "comment": "Project page: https://sytwu.github.io/BeyondMemo/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.050000000000001,
@@ -285,83 +115,27 @@
       }
     },
     {
-      "id": "2512.20610v1",
-      "title": "FedPOD: the deployable units of training for federated learning",
+      "id": "2512.21311v1",
+      "title": "Learning to Solve PDEs on Neural Shape Representations",
       "authors": [
-        "Daewoon Kim",
-        "Si Young Yie",
-        "Jae Sung Lee"
+        "Lilian Welschinger",
+        "Yilin Liu",
+        "Zican Wang",
+        "Niloy Mitra"
       ],
-      "abstract": "This paper proposes FedPOD (Proportionally Orchestrated Derivative) for optimizing learning efficiency and communication cost in federated learning among multiple clients. Inspired by FedPIDAvg, we define a round-wise task for FedPOD to enhance training efficiency. FedPIDAvg achieved performance improvement by incorporating the training loss reduction for prediction entropy as weights using differential terms. Furthermore, by modeling data distribution with a Poisson distribution and using a PID controller, it reduced communication costs even in skewed data distribution. However, excluding participants classified as outliers based on the Poisson distribution can limit data utilization. Additionally, PID controller requires the same participants to be maintained throughout the federated learning process as it uses previous rounds' learning information in the current round. In our approach, FedPOD addresses these issues by including participants excluded as outliers, eliminating dependency on previous rounds' learning information, and applying a method for calculating validation loss at each round. In this challenge, FedPOD presents comparable performance to FedPIDAvg in metrics of Dice score, 0.78, 0.71 and 0.72 for WT, ET and TC in average, and projected convergence score, 0.74 in average. Furthermore, the concept of FedPOD draws inspiration from Kubernetes' smallest computing unit, POD, designed to be compatible with Kubernetes auto-scaling. Extending round-wise tasks of FedPOD to POD units allows flexible design by applying scale-out similar to Kubernetes' auto-scaling. This work demonstrated the potentials of FedPOD to enhance federated learning by improving efficiency, flexibility, and performance in metrics.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
+      "abstract": "Solving partial differential equations (PDEs) on shapes underpins many shape analysis and engineering tasks; yet, prevailing PDE solvers operate on polygonal/triangle meshes while modern 3D assets increasingly live as neural representations. This mismatch leaves no suitable method to solve surface PDEs directly within the neural domain, forcing explicit mesh extraction or per-instance residual training, preventing end-to-end workflows. We present a novel, mesh-free formulation that learns a local update operator conditioned on neural (local) shape attributes, enabling surface PDEs to be solved directly where the (neural) data lives. The operator integrates naturally with prevalent neural surface representations, is trained once on a single representative shape, and generalizes across shape and topology variations, enabling accurate, fast inference without explicit meshing or per-instance optimization while preserving differentiability. Across analytic benchmarks (heat equation and Poisson solve on sphere) and real neural assets across different representations, our method slightly outperforms CPM while remaining reasonably close to FEM, and, to our knowledge, delivers the first end-to-end pipeline that solves surface PDEs on both neural and classical surface representations. Code will be released on acceptance.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
       "categories": [
-        "cs.CV",
         "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.20610v1",
-        "pdf": "https://arxiv.org/pdf/2512.20610v1"
+        "paper": "http://arxiv.org/abs/2512.21311v1",
+        "pdf": "https://arxiv.org/pdf/2512.21311v1"
       },
-      "arxiv_id": "2512.20610v1",
-      "comment": "12 pages, 12 figures, MICCAI",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.05,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "MICCAI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.20617v1",
-      "title": "SpatialTree: How Spatial Abilities Branch Out in MLLMs",
-      "authors": [
-        "Yuxi Xiao",
-        "Longfei Li",
-        "Shen Yan",
-        "Xinhang Liu",
-        "Sida Peng",
-        "Yunchao Wei",
-        "Xiaowei Zhou",
-        "Bingyi Kang"
-      ],
-      "abstract": "Cognitive science suggests that spatial ability develops progressively-from perception to reasoning and interaction. Yet in multimodal LLMs (MLLMs), this hierarchy remains poorly understood, as most studies focus on a narrow set of tasks. We introduce SpatialTree, a cognitive-science-inspired hierarchy that organizes spatial abilities into four levels: low-level perception (L1), mental mapping (L2), simulation (L3), and agentic competence (L4). Based on this taxonomy, we construct the first capability-centric hierarchical benchmark, thoroughly evaluating mainstream MLLMs across 27 sub-abilities. The evaluation results reveal a clear structure: L1 skills are largely orthogonal, whereas higher-level skills are strongly correlated, indicating increasing interdependency. Through targeted supervised fine-tuning, we uncover a surprising transfer dynamic-negative transfer within L1, but strong cross-level transfer from low- to high-level abilities with notable synergy. Finally, we explore how to improve the entire hierarchy. We find that naive RL that encourages extensive \"thinking\" is unreliable: it helps complex reasoning but hurts intuitive perception. We propose a simple auto-think strategy that suppresses unnecessary deliberation, enabling RL to consistently improve performance across all levels. By building SpatialTree, we provide a proof-of-concept framework for understanding and systematically scaling spatial abilities in MLLMs.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.20617v1",
-        "pdf": "https://arxiv.org/pdf/2512.20617v1"
-      },
-      "arxiv_id": "2512.20617v1",
-      "comment": "webpage: https://spatialtree.github.io/",
+      "arxiv_id": "2512.21311v1",
+      "comment": "Article webpage link: https://welschinger.github.io/Learning-to-Solve-PDEs-on-Neural-Shape-Representations/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -393,94 +167,38 @@
       }
     },
     {
-      "id": "2512.20615v1",
-      "title": "Active Intelligence in Video Avatars via Closed-loop World Modeling",
+      "id": "2512.21099v1",
+      "title": "TexAvatars : Hybrid Texel-3D Representations for Stable Rigging of Photorealistic Gaussian Head Avatars",
       "authors": [
-        "Xuanhua He",
-        "Tianyu Yang",
-        "Ke Cao",
-        "Ruiqi Wu",
-        "Cheng Meng",
-        "Yong Zhang",
-        "Zhuoliang Kang",
-        "Xiaoming Wei",
-        "Qifeng Chen"
+        "Jaeseong Lee",
+        "Junyeong Ahn",
+        "Taewoong Kang",
+        "Jaegul Choo"
       ],
-      "abstract": "Current video avatar generation methods excel at identity preservation and motion alignment but lack genuine agency, they cannot autonomously pursue long-term goals through adaptive environmental interaction. We address this by introducing L-IVA (Long-horizon Interactive Visual Avatar), a task and benchmark for evaluating goal-directed planning in stochastic generative environments, and ORCA (Online Reasoning and Cognitive Architecture), the first framework enabling active intelligence in video avatars. ORCA embodies Internal World Model (IWM) capabilities through two key innovations: (1) a closed-loop OTAR cycle (Observe-Think-Act-Reflect) that maintains robust state tracking under generative uncertainty by continuously verifying predicted outcomes against actual generations, and (2) a hierarchical dual-system architecture where System 2 performs strategic reasoning with state prediction while System 1 translates abstract plans into precise, model-specific action captions. By formulating avatar control as a POMDP and implementing continuous belief updating with outcome verification, ORCA enables autonomous multi-step task completion in open-domain scenarios. Extensive experiments demonstrate that ORCA significantly outperforms open-loop and non-reflective baselines in task success rate and behavioral coherence, validating our IWM-inspired design for advancing video avatar intelligence from passive animation to active, goal-oriented behavior.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
+      "abstract": "Constructing drivable and photorealistic 3D head avatars has become a central task in AR/XR, enabling immersive and expressive user experiences. With the emergence of high-fidelity and efficient representations such as 3D Gaussians, recent works have pushed toward ultra-detailed head avatars. Existing approaches typically fall into two categories: rule-based analytic rigging or neural network-based deformation fields. While effective in constrained settings, both approaches often fail to generalize to unseen expressions and poses, particularly in extreme reenactment scenarios. Other methods constrain Gaussians to the global texel space of 3DMMs to reduce rendering complexity. However, these texel-based avatars tend to underutilize the underlying mesh structure. They apply minimal analytic deformation and rely heavily on neural regressors and heuristic regularization in UV space, which weakens geometric consistency and limits extrapolation to complex, out-of-distribution deformations. To address these limitations, we introduce TexAvatars, a hybrid avatar representation that combines the explicit geometric grounding of analytic rigging with the spatial continuity of texel space. Our approach predicts local geometric attributes in UV space via CNNs, but drives 3D deformation through mesh-aware Jacobians, enabling smooth and semantically meaningful transitions across triangle boundaries. This hybrid design separates semantic modeling from geometric control, resulting in improved generalization, interpretability, and stability. Furthermore, TexAvatars captures fine-grained expression effects, including muscle-induced wrinkles, glabellar lines, and realistic mouth cavity geometry, with high fidelity. Our method achieves state-of-the-art performance under extreme pose and expression variations, demonstrating strong generalization in challenging head reenactment settings.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
       "categories": [
+        "cs.GR",
+        "cs.AI",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.GR",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.20615v1",
-        "pdf": "https://arxiv.org/pdf/2512.20615v1"
+        "paper": "http://arxiv.org/abs/2512.21099v1",
+        "pdf": "https://arxiv.org/pdf/2512.21099v1"
       },
-      "arxiv_id": "2512.20615v1",
-      "comment": "Project Page: https://xuanhuahe.github.io/ORCA/",
+      "arxiv_id": "2512.21099v1",
+      "comment": "3DV 2026, Project page with videos: https://summertight.github.io/TexAvatars/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 3.9889830508474575,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 3.99,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.20377v1",
-      "title": "SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images",
-      "authors": [
-        "Linfei Li",
-        "Lin Zhang",
-        "Zhong Wang",
-        "Ying Shen"
-      ],
-      "abstract": "Recent advances in generative AI have accelerated the production of ultra-high-resolution visual content, posing significant challenges for efficient compression and real-time decoding on end-user devices. Inspired by 3D Gaussian Splatting, recent 2D Gaussian image models improve representation efficiency, yet existing methods struggle to balance compression ratio and reconstruction fidelity in ultra-high-resolution scenarios. To address this issue, we propose SmartSplat, a highly adaptive and feature-aware GS-based image compression framework that supports arbitrary image resolutions and compression ratios. SmartSplat leverages image-aware features such as gradients and color variances, introducing a Gradient-Color Guided Variational Sampling strategy together with an Exclusion-based Uniform Sampling scheme to improve the non-overlapping coverage of Gaussian primitives in pixel space. In addition, we propose a Scale-Adaptive Gaussian Color Sampling method to enhance color initialization across scales. Through joint optimization of spatial layout, scale, and color initialization, SmartSplat efficiently captures both local structures and global textures using a limited number of Gaussians, achieving high reconstruction quality under strong compression. Extensive experiments on DIV8K and a newly constructed 16K dataset demonstrate that SmartSplat consistently outperforms state-of-the-art methods at comparable compression ratios and exceeds their compression limits, showing strong scalability and practical applicability. The code is publicly available at https://github.com/lif314/SmartSplat.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.20377v1",
-        "pdf": "https://arxiv.org/pdf/2512.20377v1"
-      },
-      "arxiv_id": "2512.20377v1",
-      "comment": "Accepted by AAAI 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.877966101694915,
-      "score_breakdown": {
-        "total_score": 3.88,
-        "field_match": {
-          "score": 1.69,
+          "score": 0.85,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "3d gaussian"
           ],
           "weight": 0.4
         },
@@ -490,7 +208,178 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.21252v1",
+      "title": "DreaMontage: Arbitrary Frame-Guided One-Shot Video Generation",
+      "authors": [
+        "Jiawei Liu",
+        "Junqiao Li",
+        "Jiangfan Deng",
+        "Gen Li",
+        "Siyu Zhou",
+        "Zetao Fang",
+        "Shanshan Lao",
+        "Zengde Deng",
+        "Jianing Zhu",
+        "Tingting Ma",
+        "Jiayi Li",
+        "Yunqiu Wang",
+        "Qian He",
+        "Xinglong Wu"
+      ],
+      "abstract": "The \"one-shot\" technique represents a distinct and sophisticated aesthetic in filmmaking. However, its practical realization is often hindered by prohibitive costs and complex real-world constraints. Although emerging video generation models offer a virtual alternative, existing approaches typically rely on naive clip concatenation, which frequently fails to maintain visual smoothness and temporal coherence. In this paper, we introduce DreaMontage, a comprehensive framework designed for arbitrary frame-guided generation, capable of synthesizing seamless, expressive, and long-duration one-shot videos from diverse user-provided inputs. To achieve this, we address the challenge through three primary dimensions. (i) We integrate a lightweight intermediate-conditioning mechanism into the DiT architecture. By employing an Adaptive Tuning strategy that effectively leverages base training data, we unlock robust arbitrary-frame control capabilities. (ii) To enhance visual fidelity and cinematic expressiveness, we curate a high-quality dataset and implement a Visual Expression SFT stage. In addressing critical issues such as subject motion rationality and transition smoothness, we apply a Tailored DPO scheme, which significantly improves the success rate and usability of the generated content. (iii) To facilitate the production of extended sequences, we design a Segment-wise Auto-Regressive (SAR) inference strategy that operates in a memory-efficient manner. Extensive experiments demonstrate that our approach achieves visually striking and seamlessly coherent one-shot effects while maintaining computational efficiency, empowering users to transform fragmented visual materials into vivid, cohesive one-shot cinematic experiences.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.21252v1",
+        "pdf": "https://arxiv.org/pdf/2512.21252v1"
+      },
+      "arxiv_id": "2512.21252v1",
+      "comment": "Project Page: https://dreamontage.github.io/DreaMontage/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.20996v1",
+      "title": "TrafficSimAgent: A Hierarchical Agent Framework for Autonomous Traffic Simulation with MCP Control",
+      "authors": [
+        "Yuwei Du",
+        "Jun Zhang",
+        "Jie Feng",
+        "Zhicheng Liu",
+        "Jian Yuan",
+        "Yong Li"
+      ],
+      "abstract": "Traffic simulation is important for transportation optimization and policy making. While existing simulators such as SUMO and MATSim offer fully-featured platforms and utilities, users without too much knowledge about these platforms often face significant challenges when conducting experiments from scratch and applying them to their daily work. To solve this challenge, we propose TrafficSimAgent, an LLM-based agent framework that serves as an expert in experiment design and decision optimization for general-purpose traffic simulation tasks. The framework facilitates execution through cross-level collaboration among expert agents: high-level expert agents comprehend natural language instructions with high flexibility, plan the overall experiment workflow, and invoke corresponding MCP-compatible tools on demand; meanwhile, low-level expert agents select optimal action plans for fundamental elements based on real-time traffic conditions. Extensive experiments across multiple scenarios show that TrafficSimAgent effectively executes simulations under various conditions and consistently produces reasonable outcomes even when user instructions are ambiguous. Besides, the carefully designed expert-level autonomous decision-driven optimization in TrafficSimAgent yields superior performance when compared with other systems and SOTA LLM based methods.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.20996v1",
+        "pdf": "https://arxiv.org/pdf/2512.20996v1"
+      },
+      "arxiv_id": "2512.20996v1",
+      "comment": "The code will be available at: https://github.com/tsinghua-fib-lab/TrafficSimAgent",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
           "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.21038v1",
+      "title": "Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising",
+      "authors": [
+        "Yiwen Shan",
+        "Haiyu Zhao",
+        "Peng Hu",
+        "Xi Peng",
+        "Yuanbiao Gou"
+      ],
+      "abstract": "Self-supervised real-world image denoising remains a fundamental challenge, arising from the antagonistic trade-off between decorrelating spatially structured noise and preserving high-frequency details. Existing blind-spot network (BSN) methods rely on pixel-shuffle downsampling (PD) to decorrelate noise, but aggressive downsampling fragments fine structures, while milder downsampling fails to remove correlated noise. To address this, we introduce Next-Scale Prediction (NSP), a novel self-supervised paradigm that decouples noise decorrelation from detail preservation. NSP constructs cross-scale training pairs, where BSN takes low-resolution, fully decorrelated sub-images as input to predict high-resolution targets that retain fine details. As a by-product, NSP naturally supports super-resolution of noisy images without retraining or modification. Extensive experiments demonstrate that NSP achieves state-of-the-art self-supervised denoising performance on real-world benchmarks, significantly alleviating the long-standing conflict between noise decorrelation and detail preservation.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.21038v1",
+        "pdf": "https://arxiv.org/pdf/2512.21038v1"
+      },
+      "arxiv_id": "2512.21038v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.771186440677966,
+      "score_breakdown": {
+        "total_score": 3.77,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -505,35 +394,108 @@
       }
     },
     {
-      "id": "2512.20319v1",
-      "title": "Deep Learning Classification of EEG Responses to Multi-Dimensional Transcranial Electrical Stimulation",
+      "id": "2512.21204v1",
+      "title": "SpidR-Adapt: A Universal Speech Representation Model for Few-Shot Adaptation",
       "authors": [
-        "Alexis Pomares Pastor",
-        "Ines Ribeiro Violante",
-        "Gregory Scott"
+        "Mahi Luthra",
+        "Jiayi Shen",
+        "Maxime Poli",
+        "Angelo Ortiz",
+        "Yosuke Higuchi",
+        "Youssef Benchekroun",
+        "Martin Gleize",
+        "Charles-Eric Saint-James",
+        "Dongyan Lin",
+        "Phillip Rust",
+        "Angel Villar",
+        "Surya Parimi",
+        "Vanessa Stark",
+        "Rashel Moritz",
+        "Juan Pino",
+        "Yann LeCun",
+        "Emmanuel Dupoux"
       ],
-      "abstract": "A major shortcoming of medical practice is the lack of an objective measure of conscious level. Impairment of consciousness is common, e.g. following brain injury and seizures, which can also interfere with sensory processing and volitional responses. This is also an important pitfall in neurophysiological methods that infer awareness via command following, e.g. using functional MRI or electroencephalography (EEG).\n  Transcranial electrical stimulation (TES) can be employed to non-invasively stimulate the brain, bypassing sensory inputs, and has already showed promising results in providing reliable indicators of brain state. However, current non-invasive solutions have been limited to magnetic stimulation, which is not easily translatable to clinical settings. Our long-term vision is to develop an objective measure of brain state that can be used at the bedside, without requiring patients to understand commands or initiate motor responses.\n  In this study, we demonstrated the feasibility of a framework using Deep Learning algorithms to classify EEG brain responses evoked by a defined multi-dimensional pattern of TES. We collected EEG-TES data from 11 participants and found that delivering transcranial direct current stimulation (tDCS) to posterior cortical areas targeting the angular gyrus elicited an exceptionally reliable brain response. For this paradigm, our best Convolutional Neural Network model reached a 92% classification F1-score on Holdout data from participants never seen during training, significantly surpassing human-level performance at 60-70% accuracy.\n  These findings establish a framework for robust consciousness measurement for clinical use. In this spirit, we documented and open-sourced our datasets and codebase in full, to be used freely by the neuroscience and AI research communities, who may replicate our results with free tools like GitHub, Kaggle, and Colab.",
-      "published": "2025-12-23",
-      "updated": "2025-12-23",
+      "abstract": "Human infants, with only a few hundred hours of speech exposure, acquire basic units of new languages, highlighting a striking efficiency gap compared to the data-hungry self-supervised speech models. To address this gap, this paper introduces SpidR-Adapt for rapid adaptation to new languages using minimal unlabeled data. We cast such low-resource speech representation learning as a meta-learning problem and construct a multi-task adaptive pre-training (MAdaPT) protocol which formulates the adaptation process as a bi-level optimization framework. To enable scalable meta-training under this framework, we propose a novel heuristic solution, first-order bi-level optimization (FOBLO), avoiding heavy computation costs. Finally, we stabilize meta-training by using a robust initialization through interleaved supervision which alternates self-supervised and supervised objectives. Empirically, SpidR-Adapt achieves rapid gains in phonemic discriminability (ABX) and spoken language modeling (sWUGGY, sBLIMP, tSC), improving over in-domain language models after training on less than 1h of target-language audio, over $100\\times$ more data-efficient than standard training. These findings highlight a practical, architecture-agnostic path toward biologically inspired, data-efficient representations. We open-source the training code and model checkpoints at https://github.com/facebookresearch/spidr-adapt.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
       "categories": [
-        "q-bio.NC",
+        "cs.CL",
         "cs.AI"
       ],
-      "primary_category": "q-bio.NC",
+      "primary_category": "cs.CL",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.20319v1",
-        "pdf": "https://arxiv.org/pdf/2512.20319v1"
+        "paper": "http://arxiv.org/abs/2512.21204v1",
+        "pdf": "https://arxiv.org/pdf/2512.21204v1"
       },
-      "arxiv_id": "2512.20319v1",
-      "comment": "For open-sourced datasets and source code, see: https://github.com/alexispomares/DL-EEG-TES",
+      "arxiv_id": "2512.21204v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.769491525423729,
+      "has_code": false,
+      "relevance_score": 3.7211864406779656,
       "score_breakdown": {
-        "total_score": 3.77,
+        "total_score": 3.72,
         "field_match": {
-          "score": 0.42,
+          "score": 0.68,
           "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.21284v1",
+      "title": "Surgical Scene Segmentation using a Spike-Driven Video Transformer with Real-Time Potential",
+      "authors": [
+        "Shihao Zou",
+        "Jingjing Li",
+        "Wei Ji",
+        "Jincai Huang",
+        "Kai Wang",
+        "Guo Dan",
+        "Weixin Si",
+        "Yi Pan"
+      ],
+      "abstract": "Modern surgical systems increasingly rely on intelligent scene understanding to provide timely situational awareness for enhanced intra-operative safety. Within this pipeline, surgical scene segmentation plays a central role in accurately perceiving operative events. Although recent deep learning models, particularly large-scale foundation models, achieve remarkable segmentation accuracy, their substantial computational demands and power consumption hinder real-time deployment in resource-constrained surgical environments. To address this limitation, we explore the emerging SNN as a promising paradigm for highly efficient surgical intelligence. However, their performance is still constrained by the scarcity of labeled surgical data and the inherently sparse nature of surgical video representations. To this end, we propose \\textit{SpikeSurgSeg}, the first spike-driven video Transformer framework tailored for surgical scene segmentation with real-time potential on non-GPU platforms. To address the limited availability of surgical annotations, we introduce a surgical-scene masked autoencoding pretraining strategy for SNNs that enables robust spatiotemporal representation learning via layer-wise tube masking. Building on this pretrained backbone, we further adopt a lightweight spike-driven segmentation head that produces temporally consistent predictions while preserving the low-latency characteristics of SNNs. Extensive experiments on EndoVis18 and our in-house SurgBleed dataset demonstrate that SpikeSurgSeg achieves mIoU comparable to SOTA ANN-based models while reducing inference latency by at least $8\\times$. Notably, it delivers over $20\\times$ acceleration relative to most foundation-model baselines, underscoring its potential for time-critical surgical scene segmentation.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.21284v1",
+        "pdf": "https://arxiv.org/pdf/2512.21284v1"
+      },
+      "arxiv_id": "2512.21284v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.672881355932203,
+      "score_breakdown": {
+        "total_score": 3.67,
+        "field_match": {
+          "score": 0.93,
+          "matches": [
+            "segmentation",
             "deep learning"
           ],
           "weight": 0.4
@@ -544,12 +506,74 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.21331v1",
+      "title": "TICON: A Slide-Level Tile Contextualizer for Histopathology Representation Learning",
+      "authors": [
+        "Varun Belagali",
+        "Saarthak Kapse",
+        "Pierre Marza",
+        "Srijan Das",
+        "Zilinghan Li",
+        "Sofiène Boutaj",
+        "Pushpak Pati",
+        "Srikar Yellapragada",
+        "Tarak Nath Nandi",
+        "Ravi K Madduri",
+        "Joel Saltz",
+        "Prateek Prasanna",
+        "Stergios Christodoulidis Maria Vakalopoulou",
+        "Dimitris Samaras"
+      ],
+      "abstract": "The interpretation of small tiles in large whole slide images (WSI) often needs a larger image context. We introduce TICON, a transformer-based tile representation contextualizer that produces rich, contextualized embeddings for ''any'' application in computational pathology. Standard tile encoder-based pipelines, which extract embeddings of tiles stripped from their context, fail to model the rich slide-level information essential for both local and global tasks. Furthermore, different tile-encoders excel at different downstream tasks. Therefore, a unified model is needed to contextualize embeddings derived from ''any'' tile-level foundation model. TICON addresses this need with a single, shared encoder, pretrained using a masked modeling objective to simultaneously unify and contextualize representations from diverse tile-level pathology foundation models. Our experiments demonstrate that TICON-contextualized embeddings significantly improve performance across many different tasks, establishing new state-of-the-art results on tile-level benchmarks (i.e., HEST-Bench, THUNDER, CATCH) and slide-level benchmarks (i.e., Patho-Bench). Finally, we pretrain an aggregator on TICON to form a slide-level foundation model, using only 11K WSIs, outperforming SoTA slide-level foundation models pretrained with up to 350K WSIs.",
+      "published": "2025-12-24",
+      "updated": "2025-12-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.21331v1",
+        "pdf": "https://arxiv.org/pdf/2512.21331v1"
+      },
+      "arxiv_id": "2512.21331v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.65,
+      "score_breakdown": {
+        "total_score": 3.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
           "score": 10.0,
-          "has_code": true,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {

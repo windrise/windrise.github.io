@@ -3,39 +3,46 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.21769v1",
-      "title": "BertsWin: Resolving Topological Sparsity in 3D Masked Autoencoders via Component-Balanced Structural Optimization",
+      "id": "2512.23441v1",
+      "title": "Stochastic Siamese MAE Pretraining for Longitudinal Medical Images",
       "authors": [
-        "Evgeny Alves Limarenko",
-        "Anastasiia Studenikina"
+        "Taha Emre",
+        "Arunava Chakravarty",
+        "Thomas Pinetz",
+        "Dmitrii Lachinov",
+        "Martin J. Menten",
+        "Hendrik Scholl",
+        "Sobha Sivaprasad",
+        "Daniel Rueckert",
+        "Andrew Lotery",
+        "Stefan Sacu",
+        "Ursula Schmidt-Erfurth",
+        "Hrvoje Bogunović"
       ],
-      "abstract": "The application of self-supervised learning (SSL) and Vision Transformers (ViTs) approaches demonstrates promising results in the field of 2D medical imaging, but the use of these methods on 3D volumetric images is fraught with difficulties. Standard Masked Autoencoders (MAE), which are state-of-the-art solution for 2D, have a hard time capturing three-dimensional spatial relationships, especially when 75% of tokens are discarded during pre-training. We propose BertsWin, a hybrid architecture combining full BERT-style token masking using Swin Transformer windows, to enhance spatial context learning in 3D during SSL pre-training. Unlike the classic MAE, which processes only visible areas, BertsWin introduces a complete 3D grid of tokens (masked and visible), preserving the spatial topology. And to smooth out the quadratic complexity of ViT, single-level local Swin windows are used. We introduce a structural priority loss function and evaluate the results of cone beam computed tomography of the temporomandibular joints. The subsequent assessment includes TMJ segmentation on 3D CT scans. We demonstrate that the BertsWin architecture, by maintaining a complete three-dimensional spatial topology, inherently accelerates semantic convergence by a factor of 5.8x compared to standard ViT-MAE baselines. Furthermore, when coupled with our proposed GradientConductor optimizer, the full BertsWin framework achieves a 15-fold reduction in training epochs (44 vs 660) required to reach state-of-the-art reconstruction fidelity. Analysis reveals that BertsWin achieves this acceleration without the computational penalty typically associated with dense volumetric processing. At canonical input resolutions, the architecture maintains theoretical FLOP parity with sparse ViT baselines, resulting in a significant net reduction in total computational resources due to faster convergence.",
-      "published": "2025-12-25",
-      "updated": "2025-12-25",
+      "abstract": "Temporally aware image representations are crucial for capturing disease progression in 3D volumes of longitudinal medical datasets. However, recent state-of-the-art self-supervised learning approaches like Masked Autoencoding (MAE), despite their strong representation learning capabilities, lack temporal awareness. In this paper, we propose STAMP (Stochastic Temporal Autoencoder with Masked Pretraining), a Siamese MAE framework that encodes temporal information through a stochastic process by conditioning on the time difference between the 2 input volumes. Unlike deterministic Siamese approaches, which compare scans from different time points but fail to account for the inherent uncertainty in disease evolution, STAMP learns temporal dynamics stochastically by reframing the MAE reconstruction loss as a conditional variational inference objective. We evaluated STAMP on two OCT and one MRI datasets with multiple visits per patient. STAMP pretrained ViT models outperformed both existing temporal MAE methods and foundation models on different late stage Age-Related Macular Degeneration and Alzheimer's Disease progression prediction which require models to learn the underlying non-deterministic temporal dynamics of the diseases.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
       "categories": [
-        "cs.CV",
         "cs.LG",
-        "eess.IV"
+        "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.21769v1",
-        "pdf": "https://arxiv.org/pdf/2512.21769v1"
+        "paper": "http://arxiv.org/abs/2512.23441v1",
+        "pdf": "https://arxiv.org/pdf/2512.23441v1"
       },
-      "arxiv_id": "2512.21769v1",
-      "comment": "Code available at https://github.com/AlevLab-dev/BertsWinMAE and https://github.com/AlevLab-dev/GCond. Zenodo repository (DOI: 10.5281/zenodo.17916932) contains source images, training logs, trained models, and code",
+      "arxiv_id": "2512.23441v1",
+      "comment": "Under review. Code is available in https://github.com/EmreTaha/STAMP",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.766949152542372,
+      "relevance_score": 4.426271186440678,
       "score_breakdown": {
-        "total_score": 4.77,
+        "total_score": 4.43,
         "field_match": {
-          "score": 2.54,
+          "score": 1.44,
           "matches": [
-            "medical imaging",
-            "self-supervised",
-            "volumetric",
-            "segmentation"
+            "medical image",
+            "self-supervised"
           ],
           "weight": 0.4
         },
@@ -45,7 +52,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -54,47 +61,116 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The application of self-supervised learning (SSL) and Vision Transformers (ViTs) approaches demonstrates promising results in the field of 2D medical imaging, but the use of these methods on 3D volumetric images is fraught with difficulties. Standard Masked Autoencoders (MAE), which are state-of-the-art solution for 2D, have a hard time capturing three-dimensional spatial relationships, especially...",
+        "short": "Temporally aware image representations are crucial for capturing disease progression in 3D volumes of longitudinal medical datasets. However, recent state-of-the-art self-supervised learning approaches like Masked Autoencoding (MAE), despite their strong representation learning capabilities, lack temporal awareness. In this paper, we propose STAMP (Stochastic Temporal Autoencoder with Masked Pretr...",
         "key_contributions": [
-          "The application of self-supervised learning (SSL) and Vision Transformers (ViTs) approaches demonstrates promising results in the field of 2D medical imaging, but the use of these methods on 3D volumetric images is fraught with difficulties.",
-          "Standard Masked Autoencoders (MAE), which are state-of-the-art solution for 2D, have a hard time capturing three-dimensional spatial relationships, especially when 75% of tokens are discarded during pre-training.",
-          "We propose BertsWin, a hybrid architecture combining full BERT-style token masking using Swin Transformer windows, to enhance spatial context learning in 3D during SSL pre-training."
+          "Temporally aware image representations are crucial for capturing disease progression in 3D volumes of longitudinal medical datasets.",
+          "However, recent state-of-the-art self-supervised learning approaches like Masked Autoencoding (MAE), despite their strong representation learning capabilities, lack temporal awareness.",
+          "In this paper, we propose STAMP (Stochastic Temporal Autoencoder with Masked Pretraining), a Siamese MAE framework that encodes temporal information through a stochastic process by conditioning on the time difference between the 2 input volumes."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.21881v1",
-      "title": "SLIM-Brain: A Data- and Training-Efficient Foundation Model for fMRI Data Analysis",
+      "id": "2512.23705v1",
+      "title": "Diffusion Knows Transparency: Repurposing Video Diffusion for Transparent Object Depth and Normal Estimation",
       "authors": [
-        "Mo Wang",
-        "Junfeng Xia",
-        "Wenhao Ye",
-        "Enyu Liu",
-        "Kaining Peng",
-        "Jianfeng Feng",
-        "Quanying Liu",
-        "Hongkai Wen"
+        "Shaocong Xu",
+        "Songlin Wei",
+        "Qizhe Wei",
+        "Zheng Geng",
+        "Hong Li",
+        "Licheng Shen",
+        "Qianpu Sun",
+        "Shu Han",
+        "Bin Ma",
+        "Bohan Li",
+        "Chongjie Ye",
+        "Yuhang Zheng",
+        "Nan Wang",
+        "Saining Zhang",
+        "Hao Zhao"
       ],
-      "abstract": "Foundation models are emerging as a powerful paradigm for fMRI analysis, but current approaches face a dual bottleneck of data- and training-efficiency. Atlas-based methods aggregate voxel signals into fixed regions of interest, reducing data dimensionality but discarding fine-grained spatial details, and requiring extremely large cohorts to train effectively as general-purpose foundation models. Atlas-free methods, on the other hand, operate directly on voxel-level information - preserving spatial fidelity but are prohibitively memory- and compute-intensive, making large-scale pre-training infeasible. We introduce SLIM-Brain (Sample-efficient, Low-memory fMRI Foundation Model for Human Brain), a new atlas-free foundation model that simultaneously improves both data- and training-efficiency. SLIM-Brain adopts a two-stage adaptive design: (i) a lightweight temporal extractor captures global context across full sequences and ranks data windows by saliency, and (ii) a 4D hierarchical encoder (Hiera-JEPA) learns fine-grained voxel-level representations only from the top-$k$ selected windows, while deleting about 70% masked patches. Extensive experiments across seven public benchmarks show that SLIM-Brain establishes new state-of-the-art performance on diverse tasks, while requiring only 4 thousand pre-training sessions and approximately 30% of GPU memory comparing to traditional voxel-level methods.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
+      "abstract": "Transparent objects remain notoriously hard for perception systems: refraction, reflection and transmission break the assumptions behind stereo, ToF and purely discriminative monocular depth, causing holes and temporally unstable estimates. Our key observation is that modern video diffusion models already synthesize convincing transparent phenomena, suggesting they have internalized the optical rules. We build TransPhy3D, a synthetic video corpus of transparent/reflective scenes: 11k sequences rendered with Blender/Cycles. Scenes are assembled from a curated bank of category-rich static assets and shape-rich procedural assets paired with glass/plastic/metal materials. We render RGB + depth + normals with physically based ray tracing and OptiX denoising. Starting from a large video diffusion model, we learn a video-to-video translator for depth (and normals) via lightweight LoRA adapters. During training we concatenate RGB and (noisy) depth latents in the DiT backbone and co-train on TransPhy3D and existing frame-wise synthetic datasets, yielding temporally consistent predictions for arbitrary-length input videos. The resulting model, DKT, achieves zero-shot SOTA on real and synthetic video benchmarks involving transparency: ClearPose, DREDS (CatKnown/CatNovel), and TransPhy3D-Test. It improves accuracy and temporal consistency over strong image/video baselines, and a normal variant sets the best video normal estimation results on ClearPose. A compact 1.3B version runs at ~0.17 s/frame. Integrated into a grasping stack, DKT's depth boosts success rates across translucent, reflective and diffuse surfaces, outperforming prior estimators. Together, these results support a broader claim: \"Diffusion knows transparency.\" Generative video priors can be repurposed, efficiently and label-free, into robust, temporally coherent perception for challenging real-world manipulation.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
       "categories": [
-        "cs.CV",
-        "q-bio.NC"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.21881v1",
-        "pdf": "https://arxiv.org/pdf/2512.21881v1"
+        "paper": "http://arxiv.org/abs/2512.23705v1",
+        "pdf": "https://arxiv.org/pdf/2512.23705v1"
       },
-      "arxiv_id": "2512.21881v1",
-      "comment": "The code will be released after review",
+      "arxiv_id": "2512.23705v1",
+      "comment": "Project Page: https://daniellli.github.io/projects/DKT/; Code: https://github.com/Daniellli/DKT; Dataset: https://huggingface.co/datasets/Daniellesry/TransPhy3D",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Transparent objects remain notoriously hard for perception systems: refraction, reflection and transmission break the assumptions behind stereo, ToF and purely discriminative monocular depth, causing holes and temporally unstable estimates. Our key observation is that modern video diffusion models already synthesize convincing transparent phenomena, suggesting they have internalized the optical ru...",
+        "key_contributions": [
+          "Transparent objects remain notoriously hard for perception systems: refraction, reflection and transmission break the assumptions behind stereo, ToF and purely discriminative monocular depth, causing holes and temporally unstable estimates.",
+          "Our key observation is that modern video diffusion models already synthesize convincing transparent phenomena, suggesting they have internalized the optical rules.",
+          "We build TransPhy3D, a synthetic video corpus of transparent/reflective scenes: 11k sequences rendered with Blender/Cycles."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.23646v1",
+      "title": "OmniAgent: Audio-Guided Active Perception Agent for Omnimodal Audio-Video Understanding",
+      "authors": [
+        "Keda Tao",
+        "Wenjie Du",
+        "Bohan Yu",
+        "Weiqiang Wang",
+        "Jian Liu",
+        "Huan Wang"
+      ],
+      "abstract": "Omnimodal large language models have made significant strides in unifying audio and visual modalities; however, they often lack the fine-grained cross-modal understanding and have difficulty with multimodal alignment. To address these limitations, we introduce OmniAgent, a fully audio-guided active perception agent that dynamically orchestrates specialized tools to achieve more fine-grained audio-visual reasoning. Unlike previous works that rely on rigid, static workflows and dense frame-captioning, this paper demonstrates a paradigm shift from passive response generation to active multimodal inquiry. OmniAgent employs dynamic planning to autonomously orchestrate tool invocation on demand, strategically concentrating perceptual attention on task-relevant cues. Central to our approach is a novel coarse-to-fine audio-guided perception paradigm, which leverages audio cues to localize temporal events and guide subsequent reasoning. Extensive empirical evaluations on three audio-video understanding benchmarks demonstrate that OmniAgent achieves state-of-the-art performance, surpassing leading open-source and proprietary models by substantial margins of 10% - 20% accuracy.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.23646v1",
+        "pdf": "https://arxiv.org/pdf/2512.23646v1"
+      },
+      "arxiv_id": "2512.23646v1",
+      "comment": "Website:https://kd-tao.github.io/OmniAgent/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.1499999999999995,
@@ -125,40 +201,203 @@
         }
       },
       "ai_summaries": {
-        "short": "Foundation models are emerging as a powerful paradigm for fMRI analysis, but current approaches face a dual bottleneck of data- and training-efficiency. Atlas-based methods aggregate voxel signals into fixed regions of interest, reducing data dimensionality but discarding fine-grained spatial details, and requiring extremely large cohorts to train effectively as general-purpose foundation models. ...",
+        "short": "Omnimodal large language models have made significant strides in unifying audio and visual modalities; however, they often lack the fine-grained cross-modal understanding and have difficulty with multimodal alignment. To address these limitations, we introduce OmniAgent, a fully audio-guided active perception agent that dynamically orchestrates specialized tools to achieve more fine-grained audio-...",
         "key_contributions": [
-          "Foundation models are emerging as a powerful paradigm for fMRI analysis, but current approaches face a dual bottleneck of data- and training-efficiency.",
-          "Atlas-based methods aggregate voxel signals into fixed regions of interest, reducing data dimensionality but discarding fine-grained spatial details, and requiring extremely large cohorts to train effectively as general-purpose foundation models.",
-          "Atlas-free methods, on the other hand, operate directly on voxel-level information - preserving spatial fidelity but are prohibitively memory- and compute-intensive, making large-scale pre-training infeasible."
+          "Omnimodal large language models have made significant strides in unifying audio and visual modalities; however, they often lack the fine-grained cross-modal understanding and have difficulty with multimodal alignment.",
+          "To address these limitations, we introduce OmniAgent, a fully audio-guided active perception agent that dynamically orchestrates specialized tools to achieve more fine-grained audio-visual reasoning.",
+          "Unlike previous works that rely on rigid, static workflows and dense frame-captioning, this paper demonstrates a paradigm shift from passive response generation to active multimodal inquiry."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.22118v1",
-      "title": "ProEdit: Inversion-based Editing From Prompts Done Right",
+      "id": "2512.23464v1",
+      "title": "HY-Motion 1.0: Scaling Flow Matching Models for Text-To-Motion Generation",
       "authors": [
-        "Zhi Ouyang",
-        "Dian Zheng",
-        "Xiao-Ming Wu",
-        "Jian-Jian Jiang",
-        "Kun-Yu Lin",
-        "Jingke Meng",
-        "Wei-Shi Zheng"
+        "Yuxin Wen",
+        "Qing Shuai",
+        "Di Kang",
+        "Jing Li",
+        "Cheng Wen",
+        "Yue Qian",
+        "Ningxin Jiao",
+        "Changhai Chen",
+        "Weijie Chen",
+        "Yiran Wang",
+        "Jinkun Guo",
+        "Dongyue An",
+        "Han Liu",
+        "Yanyu Tong",
+        "Chao Zhang",
+        "Qing Guo",
+        "Juan Chen",
+        "Qiao Zhang",
+        "Youyi Zhang",
+        "Zihao Yao",
+        "Cheng Zhang",
+        "Hong Duan",
+        "Xiaoping Wu",
+        "Qi Chen",
+        "Fei Cheng",
+        "Liang Dong",
+        "Peng He",
+        "Hao Zhang",
+        "Jiaxin Lin",
+        "Chao Zhang",
+        "Zhongyi Fan",
+        "Yifan Li",
+        "Zhichao Hu",
+        "Yuhong Liu",
+        "Linus",
+        "Jie Jiang",
+        "Xiaolong Li",
+        "Linchao Bao"
       ],
-      "abstract": "Inversion-based visual editing provides an effective and training-free way to edit an image or a video based on user instructions. Existing methods typically inject source image information during the sampling process to maintain editing consistency. However, this sampling strategy overly relies on source information, which negatively affects the edits in the target image (e.g., failing to change the subject's atributes like pose, number, or color as instructed). In this work, we propose ProEdit to address this issue both in the attention and the latent aspects. In the attention aspect, we introduce KV-mix, which mixes KV features of the source and the target in the edited region, mitigating the influence of the source image on the editing region while maintaining background consistency. In the latent aspect, we propose Latents-Shift, which perturbs the edited region of the source latent, eliminating the influence of the inverted latent on the sampling. Extensive experiments on several image and video editing benchmarks demonstrate that our method achieves SOTA performance. In addition, our design is plug-and-play, which can be seamlessly integrated into existing inversion and editing methods, such as RF-Solver, FireFlow and UniEdit.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
+      "abstract": "We present HY-Motion 1.0, a series of state-of-the-art, large-scale, motion generation models capable of generating 3D human motions from textual descriptions. HY-Motion 1.0 represents the first successful attempt to scale up Diffusion Transformer (DiT)-based flow matching models to the billion-parameter scale within the motion generation domain, delivering instruction-following capabilities that significantly outperform current open-source benchmarks. Uniquely, we introduce a comprehensive, full-stage training paradigm -- including large-scale pretraining on over 3,000 hours of motion data, high-quality fine-tuning on 400 hours of curated data, and reinforcement learning from both human feedback and reward models -- to ensure precise alignment with the text instruction and high motion quality. This framework is supported by our meticulous data processing pipeline, which performs rigorous motion cleaning and captioning. Consequently, our model achieves the most extensive coverage, spanning over 200 motion categories across 6 major classes. We release HY-Motion 1.0 to the open-source community to foster future research and accelerate the transition of 3D human motion generation models towards commercial maturity.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.23464v1",
+        "pdf": "https://arxiv.org/pdf/2512.23464v1"
+      },
+      "arxiv_id": "2512.23464v1",
+      "comment": "Github: see https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We present HY-Motion 1.0, a series of state-of-the-art, large-scale, motion generation models capable of generating 3D human motions from textual descriptions. HY-Motion 1.0 represents the first successful attempt to scale up Diffusion Transformer (DiT)-based flow matching models to the billion-parameter scale within the motion generation domain, delivering instruction-following capabilities that ...",
+        "key_contributions": [
+          "We present HY-Motion 1.",
+          "0, a series of state-of-the-art, large-scale, motion generation models capable of generating 3D human motions from textual descriptions.",
+          "HY-Motion 1."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.23413v1",
+      "title": "Bridging Cognitive Gap: Hierarchical Description Learning for Artistic Image Aesthetics Assessment",
+      "authors": [
+        "Henglin Liu",
+        "Nisha Huang",
+        "Chang Liu",
+        "Jiangpeng Yan",
+        "Huijuan Huang",
+        "Jixuan Ying",
+        "Tong-Yee Lee",
+        "Pengfei Wan",
+        "Xiangyang Ji"
+      ],
+      "abstract": "The aesthetic quality assessment task is crucial for developing a human-aligned quantitative evaluation system for AIGC. However, its inherently complex nature, spanning visual perception, cognition, and emotion, poses fundamental challenges. Although aesthetic descriptions offer a viable representation of this complexity, two critical challenges persist: (1) data scarcity and imbalance: existing dataset overly focuses on visual perception and neglects deeper dimensions due to the expensive manual annotation; and (2) model fragmentation: current visual networks isolate aesthetic attributes with multi-branch encoder, while multimodal methods represented by contrastive learning struggle to effectively process long-form textual descriptions. To resolve challenge (1), we first present the Refined Aesthetic Description (RAD) dataset, a large-scale (70k), multi-dimensional structured dataset, generated via an iterative pipeline without heavy annotation costs and easy to scale. To address challenge (2), we propose ArtQuant, an aesthetics assessment framework for artistic images which not only couples isolated aesthetic dimensions through joint description generation, but also better models long-text semantics with the help of LLM decoders. Besides, theoretical analysis confirms this symbiosis: RAD's semantic adequacy (data) and generation paradigm (model) collectively minimize prediction entropy, providing mathematical grounding for the framework. Our approach achieves state-of-the-art performance on several datasets while requiring only 33% of conventional training epochs, narrowing the cognitive gap between artistic images and aesthetic judgment. We will release both code and dataset to support future research.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.22118v1",
-        "pdf": "https://arxiv.org/pdf/2512.22118v1"
+        "paper": "http://arxiv.org/abs/2512.23413v1",
+        "pdf": "https://arxiv.org/pdf/2512.23413v1"
       },
-      "arxiv_id": "2512.22118v1",
-      "comment": "Equal contributions from first two authors. Project page: https://isee-laboratory.github.io/ProEdit/ Code: https://github.com/iSEE-Laboratory/ProEdit",
+      "arxiv_id": "2512.23413v1",
+      "comment": "AAAI2026,Project Page:https://github.com/Henglin-Liu/ArtQuant",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The aesthetic quality assessment task is crucial for developing a human-aligned quantitative evaluation system for AIGC. However, its inherently complex nature, spanning visual perception, cognition, and emotion, poses fundamental challenges. Although aesthetic descriptions offer a viable representation of this complexity, two critical challenges persist: (1) data scarcity and imbalance: existing ...",
+        "key_contributions": [
+          "The aesthetic quality assessment task is crucial for developing a human-aligned quantitative evaluation system for AIGC.",
+          "However, its inherently complex nature, spanning visual perception, cognition, and emotion, poses fundamental challenges.",
+          "Although aesthetic descriptions offer a viable representation of this complexity, two critical challenges persist: (1) data scarcity and imbalance: existing dataset overly focuses on visual perception and neglects deeper dimensions due to the expensive manual annotation; and (2) model fragmentation: current visual networks isolate aesthetic attributes with multi-branch encoder, while multimodal methods represented by contrastive learning struggle to effectively process long-form textual descriptions."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.23709v1",
+      "title": "Stream-DiffVSR: Low-Latency Streamable Video Super-Resolution via Auto-Regressive Diffusion",
+      "authors": [
+        "Hau-Shiang Shiu",
+        "Chin-Yang Lin",
+        "Zhixiang Wang",
+        "Chi-Wei Hsiao",
+        "Po-Fan Yu",
+        "Yu-Chih Chen",
+        "Yu-Lun Liu"
+      ],
+      "abstract": "Diffusion-based video super-resolution (VSR) methods achieve strong perceptual quality but remain impractical for latency-sensitive settings due to reliance on future frames and expensive multi-step denoising. We propose Stream-DiffVSR, a causally conditioned diffusion framework for efficient online VSR. Operating strictly on past frames, it combines a four-step distilled denoiser for fast inference, an Auto-regressive Temporal Guidance (ARTG) module that injects motion-aligned cues during latent denoising, and a lightweight temporal-aware decoder with a Temporal Processor Module (TPM) that enhances detail and temporal coherence. Stream-DiffVSR processes 720p frames in 0.328 seconds on an RTX4090 GPU and significantly outperforms prior diffusion-based methods. Compared with the online SOTA TMP, it boosts perceptual quality (LPIPS +0.095) while reducing latency by over 130x. Stream-DiffVSR achieves the lowest latency reported for diffusion-based VSR, reducing initial delay from over 4600 seconds to 0.328 seconds, thereby making it the first diffusion VSR method suitable for low-latency online deployment. Project page: https://jamichss.github.io/stream-diffvsr-project-page/",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.23709v1",
+        "pdf": "https://arxiv.org/pdf/2512.23709v1"
+      },
+      "arxiv_id": "2512.23709v1",
+      "comment": "Project page: https://jamichss.github.io/stream-diffvsr-project-page/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -189,309 +428,42 @@
         }
       },
       "ai_summaries": {
-        "short": "Inversion-based visual editing provides an effective and training-free way to edit an image or a video based on user instructions. Existing methods typically inject source image information during the sampling process to maintain editing consistency. However, this sampling strategy overly relies on source information, which negatively affects the edits in the target image (e.g., failing to change ...",
+        "short": "Diffusion-based video super-resolution (VSR) methods achieve strong perceptual quality but remain impractical for latency-sensitive settings due to reliance on future frames and expensive multi-step denoising. We propose Stream-DiffVSR, a causally conditioned diffusion framework for efficient online VSR. Operating strictly on past frames, it combines a four-step distilled denoiser for fast inferen...",
         "key_contributions": [
-          "Inversion-based visual editing provides an effective and training-free way to edit an image or a video based on user instructions.",
-          "Existing methods typically inject source image information during the sampling process to maintain editing consistency.",
-          "However, this sampling strategy overly relies on source information, which negatively affects the edits in the target image (e."
+          "Diffusion-based video super-resolution (VSR) methods achieve strong perceptual quality but remain impractical for latency-sensitive settings due to reliance on future frames and expensive multi-step denoising.",
+          "We propose Stream-DiffVSR, a causally conditioned diffusion framework for efficient online VSR.",
+          "Operating strictly on past frames, it combines a four-step distilled denoiser for fast inference, an Auto-regressive Temporal Guidance (ARTG) module that injects motion-aligned cues during latent denoising, and a lightweight temporal-aware decoder with a Temporal Processor Module (TPM) that enhances detail and temporal coherence."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2512.22102v1",
-      "title": "Explainable Multimodal Regression via Information Decomposition",
+      "id": "2512.23427v1",
+      "title": "Towards Integrating Uncertainty for Domain-Agnostic Segmentation",
       "authors": [
-        "Zhaozhao Ma",
-        "Shujian Yu"
+        "Jesse Brouwers",
+        "Xiaoyan Xing",
+        "Alexander Timans"
       ],
-      "abstract": "Multimodal regression aims to predict a continuous target from heterogeneous input sources and typically relies on fusion strategies such as early or late fusion. However, existing methods lack principled tools to disentangle and quantify the individual contributions of each modality and their interactions, limiting the interpretability of multimodal fusion. We propose a novel multimodal regression framework grounded in Partial Information Decomposition (PID), which decomposes modality-specific representations into unique, redundant, and synergistic components. The basic PID framework is inherently underdetermined. To resolve this, we introduce inductive bias by enforcing Gaussianity in the joint distribution of latent representations and the transformed response variable (after inverse normal transformation), thereby enabling analytical computation of the PID terms. Additionally, we derive a closed-form conditional independence regularizer to promote the isolation of unique information within each modality. Experiments on six real-world datasets, including a case study on large-scale brain age prediction from multimodal neuroimaging data, demonstrate that our framework outperforms state-of-the-art methods in both predictive accuracy and interpretability, while also enabling informed modality selection for efficient inference. Implementation is available at https://github.com/zhaozhaoma/PIDReg.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.22102v1",
-        "pdf": "https://arxiv.org/pdf/2512.22102v1"
-      },
-      "arxiv_id": "2512.22102v1",
-      "comment": "Project Page: https://github.com/zhaozhaoma/PIDReg",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9499999999999997,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Multimodal regression aims to predict a continuous target from heterogeneous input sources and typically relies on fusion strategies such as early or late fusion. However, existing methods lack principled tools to disentangle and quantify the individual contributions of each modality and their interactions, limiting the interpretability of multimodal fusion. We propose a novel multimodal regressio...",
-        "key_contributions": [
-          "Multimodal regression aims to predict a continuous target from heterogeneous input sources and typically relies on fusion strategies such as early or late fusion.",
-          "However, existing methods lack principled tools to disentangle and quantify the individual contributions of each modality and their interactions, limiting the interpretability of multimodal fusion.",
-          "We propose a novel multimodal regression framework grounded in Partial Information Decomposition (PID), which decomposes modality-specific representations into unique, redundant, and synergistic components."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.22065v1",
-      "title": "StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars",
-      "authors": [
-        "Zhiyao Sun",
-        "Ziqiao Peng",
-        "Yifeng Ma",
-        "Yi Chen",
-        "Zhengguang Zhou",
-        "Zixiang Zhou",
-        "Guozhen Zhang",
-        "Youliang Zhang",
-        "Yuan Zhou",
-        "Qinglin Lu",
-        "Yong-Jin Liu"
-      ],
-      "abstract": "Real-time, streaming interactive avatars represent a critical yet challenging goal in digital human research. Although diffusion-based human avatar generation methods achieve remarkable success, their non-causal architecture and high computational costs make them unsuitable for streaming. Moreover, existing interactive approaches are typically limited to head-and-shoulder region, limiting their ability to produce gestures and body motions. To address these challenges, we propose a two-stage autoregressive adaptation and acceleration framework that applies autoregressive distillation and adversarial refinement to adapt a high-fidelity human video diffusion model for real-time, interactive streaming. To ensure long-term stability and consistency, we introduce three key components: a Reference Sink, a Reference-Anchored Positional Re-encoding (RAPR) strategy, and a Consistency-Aware Discriminator. Building on this framework, we develop a one-shot, interactive, human avatar model capable of generating both natural talking and listening behaviors with coherent gestures. Extensive experiments demonstrate that our method achieves state-of-the-art performance, surpassing existing approaches in generation quality, real-time efficiency, and interaction naturalness. Project page: https://streamavatar.github.io .",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
+      "abstract": "Foundation models for segmentation such as the Segment Anything Model (SAM) family exhibit strong zero-shot performance, but remain vulnerable in shifted or limited-knowledge domains. This work investigates whether uncertainty quantification can mitigate such challenges and enhance model generalisability in a domain-agnostic manner. To this end, we (1) curate UncertSAM, a benchmark comprising eight datasets designed to stress-test SAM under challenging segmentation conditions including shadows, transparency, and camouflage; (2) evaluate a suite of lightweight, post-hoc uncertainty estimation methods; and (3) assess a preliminary uncertainty-guided prediction refinement step. Among evaluated approaches, a last-layer Laplace approximation yields uncertainty estimates that correlate well with segmentation errors, indicating a meaningful signal. While refinement benefits are preliminary, our findings underscore the potential of incorporating uncertainty into segmentation models to support robust, domain-agnostic performance. Our benchmark and code are made publicly available.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.HC"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.22065v1",
-        "pdf": "https://arxiv.org/pdf/2512.22065v1"
-      },
-      "arxiv_id": "2512.22065v1",
-      "comment": "Project page: https://streamavatar.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Real-time, streaming interactive avatars represent a critical yet challenging goal in digital human research. Although diffusion-based human avatar generation methods achieve remarkable success, their non-causal architecture and high computational costs make them unsuitable for streaming. Moreover, existing interactive approaches are typically limited to head-and-shoulder region, limiting their ab...",
-        "key_contributions": [
-          "Real-time, streaming interactive avatars represent a critical yet challenging goal in digital human research.",
-          "Although diffusion-based human avatar generation methods achieve remarkable success, their non-causal architecture and high computational costs make them unsuitable for streaming.",
-          "Moreover, existing interactive approaches are typically limited to head-and-shoulder region, limiting their ability to produce gestures and body motions."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.22007v1",
-      "title": "DuaDeep-SeqAffinity: Dual-Stream Deep Learning Framework for Sequence-Only Antigen-Antibody Affinity Prediction",
-      "authors": [
-        "Aicha Boutorh",
-        "Soumia Bouyahiaoui",
-        "Sara Belhadj",
-        "Nour El Yakine Guendouz",
-        "Manel Kara Laouar"
-      ],
-      "abstract": "Predicting the binding affinity between antigens and antibodies is fundamental to drug discovery and vaccine development. Traditional computational approaches often rely on experimentally determined 3D structures, which are scarce and computationally expensive to obtain. This paper introduces DuaDeep-SeqAffinity, a novel sequence-only deep learning framework that predicts affinity scores solely from their amino acid sequences using a dual-stream hybrid architecture. Our approach leverages pre-trained ESM-2 protein language model embeddings, combining 1D Convolutional Neural Networks (CNNs) for local motif detection with Transformer encoders for global contextual representation. A subsequent fusion module integrates these multi-faceted features, which are then passed to a fully connected network for final score regression. Experimental results demonstrate that DuaDeep-SeqAffinity significantly outperforms individual architectural components and existing state-of-the-art (SOTA) methods. DuaDeep achieved a superior Pearson correlation of 0.688, an R^2 of 0.460, and a Root Mean Square Error (RMSE) of 0.737, surpassing single-branch variants ESM-CNN and ESM-Transformer. Notably, the model achieved an Area Under the Curve (AUC) of 0.890, outperforming sequence-only benchmarks and even surpassing structure-sequence hybrid models. These findings prove that high-fidelity sequence embeddings can capture essential binding patterns typically reserved for structural modeling. By eliminating the reliance on 3D structures, DuaDeep-SeqAffinity provides a highly scalable and efficient solution for high-throughput screening of vast sequence libraries, significantly accelerating the therapeutic discovery pipeline.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
-      "categories": [
         "cs.LG"
       ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.22007v1",
-        "pdf": "https://arxiv.org/pdf/2512.22007v1"
-      },
-      "arxiv_id": "2512.22007v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.769491525423729,
-      "score_breakdown": {
-        "total_score": 3.77,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Predicting the binding affinity between antigens and antibodies is fundamental to drug discovery and vaccine development. Traditional computational approaches often rely on experimentally determined 3D structures, which are scarce and computationally expensive to obtain. This paper introduces DuaDeep-SeqAffinity, a novel sequence-only deep learning framework that predicts affinity scores solely fr...",
-        "key_contributions": [
-          "Predicting the binding affinity between antigens and antibodies is fundamental to drug discovery and vaccine development.",
-          "Traditional computational approaches often rely on experimentally determined 3D structures, which are scarce and computationally expensive to obtain.",
-          "This paper introduces DuaDeep-SeqAffinity, a novel sequence-only deep learning framework that predicts affinity scores solely from their amino acid sequences using a dual-stream hybrid architecture."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.21871v1",
-      "title": "Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?",
-      "authors": [
-        "Naen Xu",
-        "Jinghuai Zhang",
-        "Changjiang Li",
-        "Hengyu An",
-        "Chunyi Zhou",
-        "Jun Wang",
-        "Boyu Xu",
-        "Yuyuan Li",
-        "Tianyu Du",
-        "Shouling Ji"
-      ],
-      "abstract": "Large vision-language models (LVLMs) have achieved remarkable advancements in multimodal reasoning tasks. However, their widespread accessibility raises critical concerns about potential copyright infringement. Will LVLMs accurately recognize and comply with copyright regulations when encountering copyrighted content (i.e., user input, retrieved documents) in the context? Failure to comply with copyright regulations may lead to serious legal and ethical consequences, particularly when LVLMs generate responses based on copyrighted materials (e.g., retrieved book experts, news reports). In this paper, we present a comprehensive evaluation of various LVLMs, examining how they handle copyrighted content -- such as book excerpts, news articles, music lyrics, and code documentation when they are presented as visual inputs. To systematically measure copyright compliance, we introduce a large-scale benchmark dataset comprising 50,000 multimodal query-content pairs designed to evaluate how effectively LVLMs handle queries that could lead to copyright infringement. Given that real-world copyrighted content may or may not include a copyright notice, the dataset includes query-content pairs in two distinct scenarios: with and without a copyright notice. For the former, we extensively cover four types of copyright notices to account for different cases. Our evaluation reveals that even state-of-the-art closed-source LVLMs exhibit significant deficiencies in recognizing and respecting the copyrighted content, even when presented with the copyright notice. To solve this limitation, we introduce a novel tool-augmented defense framework for copyright compliance, which reduces infringement risks in all scenarios. Our findings underscore the importance of developing copyright-aware LVLMs to ensure the responsible and lawful use of copyrighted content.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.CR",
-        "cs.CY"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.21871v1",
-        "pdf": "https://arxiv.org/pdf/2512.21871v1"
-      },
-      "arxiv_id": "2512.21871v1",
-      "comment": "AAAI 2026 (Oral)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.6999999999999997,
-      "score_breakdown": {
-        "total_score": 3.7,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Large vision-language models (LVLMs) have achieved remarkable advancements in multimodal reasoning tasks. However, their widespread accessibility raises critical concerns about potential copyright infringement. Will LVLMs accurately recognize and comply with copyright regulations when encountering copyrighted content (i.e., user input, retrieved documents) in the context? Failure to comply with co...",
-        "key_contributions": [
-          "Large vision-language models (LVLMs) have achieved remarkable advancements in multimodal reasoning tasks.",
-          "However, their widespread accessibility raises critical concerns about potential copyright infringement.",
-          "Will LVLMs accurately recognize and comply with copyright regulations when encountering copyrighted content (i."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.21778v1",
-      "title": "Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models",
-      "authors": [
-        "Nimrod Berman",
-        "Adam Botach",
-        "Emanuel Ben-Baruch",
-        "Shunit Haviv Hakimi",
-        "Asaf Gendler",
-        "Ilan Naiman",
-        "Erez Yosef",
-        "Igor Kviatkovsky"
-      ],
-      "abstract": "Segmenting long-form videos into semantically coherent scenes is a fundamental task in large-scale video understanding. Existing encoder-based methods are limited by visual-centric biases, classify each shot in isolation without leveraging sequential dependencies, and lack both narrative understanding and explainability. In this paper, we present Scene-VLM, the first fine-tuned vision-language model (VLM) framework for video scene segmentation. Scene-VLM jointly processes visual and textual cues including frames, transcriptions, and optional metadata to enable multimodal reasoning across consecutive shots. The model generates predictions sequentially with causal dependencies among shots and introduces a context-focus window mechanism to ensure sufficient temporal context for each shot-level decision. In addition, we propose a scheme to extract confidence scores from the token-level logits of the VLM, enabling controllable precision-recall trade-offs that were previously limited to encoder-based methods. Furthermore, we demonstrate that our model can be aligned to generate coherent natural-language rationales for its boundary decisions through minimal targeted supervision. Our approach achieves state-of-the-art performance on standard scene segmentation benchmarks. On MovieNet, for example, Scene-VLM yields significant improvements of +6 AP and +13.7 F1 over the previous leading method.",
-      "published": "2025-12-25",
-      "updated": "2025-12-25",
-      "categories": [
-        "cs.CV"
-      ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.21778v1",
-        "pdf": "https://arxiv.org/pdf/2512.21778v1"
+        "paper": "http://arxiv.org/abs/2512.23427v1",
+        "pdf": "https://arxiv.org/pdf/2512.23427v1"
       },
-      "arxiv_id": "2512.21778v1",
-      "comment": "",
+      "arxiv_id": "2512.23427v1",
+      "comment": "Public code at https://github.com/JesseBrouw/UncertSAM | published at the 2nd Workshop on Frontiers in Probabilistic Inference (NeurIPS 2025) | 12 pages, 8 figures (incl. Appendix)",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.653389830508474,
+      "has_code": true,
+      "relevance_score": 3.9533898305084745,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 3.95,
         "field_match": {
           "score": 0.51,
           "matches": [
@@ -505,12 +477,200 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Foundation models for segmentation such as the Segment Anything Model (SAM) family exhibit strong zero-shot performance, but remain vulnerable in shifted or limited-knowledge domains. This work investigates whether uncertainty quantification can mitigate such challenges and enhance model generalisability in a domain-agnostic manner. To this end, we (1) curate UncertSAM, a benchmark comprising eigh...",
+        "key_contributions": [
+          "Foundation models for segmentation such as the Segment Anything Model (SAM) family exhibit strong zero-shot performance, but remain vulnerable in shifted or limited-knowledge domains.",
+          "This work investigates whether uncertainty quantification can mitigate such challenges and enhance model generalisability in a domain-agnostic manner.",
+          "To this end, we (1) curate UncertSAM, a benchmark comprising eight datasets designed to stress-test SAM under challenging segmentation conditions including shadows, transparency, and camouflage; (2) evaluate a suite of lightweight, post-hoc uncertainty estimation methods; and (3) assess a preliminary uncertainty-guided prediction refinement step."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.23592v1",
+      "title": "Same or Not? Enhancing Visual Perception in Vision-Language Models",
+      "authors": [
+        "Damiano Marsili",
+        "Aditya Mehta",
+        "Ryan Y. Lin",
+        "Georgia Gkioxari"
+      ],
+      "abstract": "Vision-language models (VLMs) excel at broad visual understanding but remain coarse-grained, exhibit visual biases, and miss subtle visual details. Existing training corpora reinforce this limitation by emphasizing general recognition (\"Is it a cat or a dog?\") over fine-grained perception. To address this, we introduce a new training corpus and task designed to enhance the perceptual abilities of VLMs. TWIN is a large-scale dataset of 561,000 image-pair queries that task models to determine whether two visually similar images depict the same object, encouraging attention to nuanced visual cues. The dataset spans a diverse range of everyday objects across contexts, viewpoints, and appearances. Fine-tuning VLMs on TWIN yields notable gains in fine-grained recognition, even on unseen domains such as art, animals, plants, and landmarks. To quantify these gains, we introduce FGVQA, a benchmark suite of 12,000 queries that repurposes fine-grained recognition and retrieval datasets from multiple domains. While existing VLMs struggle on FGVQA, when fine-tuned on TWIN they improve by up to 19.3%, without compromising performance on general VQA benchmarks. Finally, our TWIN dataset scales favorably with object annotations, and our analysis shows that scale is key to performance. We envision TWIN as a drop-in addition to open-source VLM training corpora, advancing perceptual precision of future models. Project webpage: https://glab-caltech.github.io/twin/",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.23592v1",
+        "pdf": "https://arxiv.org/pdf/2512.23592v1"
+      },
+      "arxiv_id": "2512.23592v1",
+      "comment": "Project webpage: https://glab-caltech.github.io/twin/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Vision-language models (VLMs) excel at broad visual understanding but remain coarse-grained, exhibit visual biases, and miss subtle visual details. Existing training corpora reinforce this limitation by emphasizing general recognition (\"Is it a cat or a dog?\") over fine-grained perception. To address this, we introduce a new training corpus and task designed to enhance the perceptual abilities of ...",
+        "key_contributions": [
+          "Vision-language models (VLMs) excel at broad visual understanding but remain coarse-grained, exhibit visual biases, and miss subtle visual details.",
+          "Existing training corpora reinforce this limitation by emphasizing general recognition (\"Is it a cat or a dog?\") over fine-grained perception.",
+          "To address this, we introduce a new training corpus and task designed to enhance the perceptual abilities of VLMs."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.23519v1",
+      "title": "IdentityStory: Taming Your Identity-Preserving Generator for Human-Centric Story Generation",
+      "authors": [
+        "Donghao Zhou",
+        "Jingyu Lin",
+        "Guibao Shen",
+        "Quande Liu",
+        "Jialin Gao",
+        "Lihao Liu",
+        "Lan Du",
+        "Cunjian Chen",
+        "Chi-Wing Fu",
+        "Xiaowei Hu",
+        "Pheng-Ann Heng"
+      ],
+      "abstract": "Recent visual generative models enable story generation with consistent characters from text, but human-centric story generation faces additional challenges, such as maintaining detailed and diverse human face consistency and coordinating multiple characters across different images. This paper presents IdentityStory, a framework for human-centric story generation that ensures consistent character identity across multiple sequential images. By taming identity-preserving generators, the framework features two key components: Iterative Identity Discovery, which extracts cohesive character identities, and Re-denoising Identity Injection, which re-denoises images to inject identities while preserving desired context. Experiments on the ConsiStory-Human benchmark demonstrate that IdentityStory outperforms existing methods, particularly in face consistency, and supports multi-character combinations. The framework also shows strong potential for applications such as infinite-length story generation and dynamic character composition.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.23519v1",
+        "pdf": "https://arxiv.org/pdf/2512.23519v1"
+      },
+      "arxiv_id": "2512.23519v1",
+      "comment": "Accepted by AAAI2026 (Project page: https://correr-zhou.github.io/IdentityStory)",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent visual generative models enable story generation with consistent characters from text, but human-centric story generation faces additional challenges, such as maintaining detailed and diverse human face consistency and coordinating multiple characters across different images. This paper presents IdentityStory, a framework for human-centric story generation that ensures consistent character ...",
+        "key_contributions": [
+          "Recent visual generative models enable story generation with consistent characters from text, but human-centric story generation faces additional challenges, such as maintaining detailed and diverse human face consistency and coordinating multiple characters across different images.",
+          "This paper presents IdentityStory, a framework for human-centric story generation that ensures consistent character identity across multiple sequential images.",
+          "By taming identity-preserving generators, the framework features two key components: Iterative Identity Discovery, which extracts cohesive character identities, and Re-denoising Identity Injection, which re-denoises images to inject identities while preserving desired context."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2512.23410v1",
+      "title": "Directly Constructing Low-Dimensional Solution Subspaces in Deep Neural Networks",
+      "authors": [
+        "Yusuf Kalyoncuoglu"
+      ],
+      "abstract": "While it is well-established that the weight matrices and feature manifolds of deep neural networks exhibit a low Intrinsic Dimension (ID), current state-of-the-art models still rely on massive high-dimensional widths. This redundancy is not required for representation, but is strictly necessary to solve the non-convex optimization search problem-finding a global minimum, which remains intractable for compact networks. In this work, we propose a constructive approach to bypass this optimization bottleneck. By decoupling the solution geometry from the ambient search space, we empirically demonstrate across ResNet-50, ViT, and BERT that the classification head can be compressed by even huge factors of 16 with negligible performance degradation. This motivates Subspace-Native Distillation as a novel paradigm: by defining the target directly in this constructed subspace, we provide a stable geometric coordinate system for student models, potentially allowing them to circumvent the high-dimensional search problem entirely and realize the vision of Train Big, Deploy Small.",
+      "published": "2025-12-29",
+      "updated": "2025-12-29",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.23410v1",
+        "pdf": "https://arxiv.org/pdf/2512.23410v1"
+      },
+      "arxiv_id": "2512.23410v1",
+      "comment": "Code available at https://github.com/yuskal/Directly-Constructing-Low-Dimensional-Solution-Subspaces-in-Deep-Neural-Networks",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -519,144 +679,11 @@
         }
       },
       "ai_summaries": {
-        "short": "Segmenting long-form videos into semantically coherent scenes is a fundamental task in large-scale video understanding. Existing encoder-based methods are limited by visual-centric biases, classify each shot in isolation without leveraging sequential dependencies, and lack both narrative understanding and explainability. In this paper, we present Scene-VLM, the first fine-tuned vision-language mod...",
+        "short": "While it is well-established that the weight matrices and feature manifolds of deep neural networks exhibit a low Intrinsic Dimension (ID), current state-of-the-art models still rely on massive high-dimensional widths. This redundancy is not required for representation, but is strictly necessary to solve the non-convex optimization search problem-finding a global minimum, which remains intractable...",
         "key_contributions": [
-          "Segmenting long-form videos into semantically coherent scenes is a fundamental task in large-scale video understanding.",
-          "Existing encoder-based methods are limited by visual-centric biases, classify each shot in isolation without leveraging sequential dependencies, and lack both narrative understanding and explainability.",
-          "In this paper, we present Scene-VLM, the first fine-tuned vision-language model (VLM) framework for video scene segmentation."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.22047v1",
-      "title": "MAI-UI Technical Report: Real-World Centric Foundation GUI Agents",
-      "authors": [
-        "Hanzhang Zhou",
-        "Xu Zhang",
-        "Panrong Tong",
-        "Jianan Zhang",
-        "Liangyu Chen",
-        "Quyu Kong",
-        "Chenglin Cai",
-        "Chen Liu",
-        "Yue Wang",
-        "Jingren Zhou",
-        "Steven Hoi"
-      ],
-      "abstract": "The development of GUI agents could revolutionize the next generation of human-computer interaction. Motivated by this vision, we present MAI-UI, a family of foundation GUI agents spanning the full spectrum of sizes, including 2B, 8B, 32B, and 235B-A22B variants. We identify four key challenges to realistic deployment: the lack of native agent-user interaction, the limits of UI-only operation, the absence of a practical deployment architecture, and brittleness in dynamic environments. MAI-UI addresses these issues with a unified methodology: a self-evolving data pipeline that expands the navigation data to include user interaction and MCP tool calls, a native device-cloud collaboration system routes execution by task state, and an online RL framework with advanced optimizations to scale parallel environments and context length. MAI-UI establishes new state-of-the-art across GUI grounding and mobile navigation. On grounding benchmarks, it reaches 73.5% on ScreenSpot-Pro, 91.3% on MMBench GUI L2, 70.9% on OSWorld-G, and 49.2% on UI-Vision, surpassing Gemini-3-Pro and Seed1.8 on ScreenSpot-Pro. On mobile GUI navigation, it sets a new SOTA of 76.7% on AndroidWorld, surpassing UI-Tars-2, Gemini-2.5-Pro and Seed1.8. On MobileWorld, MAI-UI obtains 41.7% success rate, significantly outperforming end-to-end GUI models and competitive with Gemini-3-Pro based agentic frameworks. Our online RL experiments show significant gains from scaling parallel environments from 32 to 512 (+5.2 points) and increasing environment step budget from 15 to 50 (+4.3 points). Finally, the native device-cloud collaboration system improves on-device performance by 33%, reduces cloud model calls by over 40%, and preserves user privacy.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.22047v1",
-        "pdf": "https://arxiv.org/pdf/2512.22047v1"
-      },
-      "arxiv_id": "2512.22047v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.65,
-      "score_breakdown": {
-        "total_score": 3.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The development of GUI agents could revolutionize the next generation of human-computer interaction. Motivated by this vision, we present MAI-UI, a family of foundation GUI agents spanning the full spectrum of sizes, including 2B, 8B, 32B, and 235B-A22B variants. We identify four key challenges to realistic deployment: the lack of native agent-user interaction, the limits of UI-only operation, the...",
-        "key_contributions": [
-          "The development of GUI agents could revolutionize the next generation of human-computer interaction.",
-          "Motivated by this vision, we present MAI-UI, a family of foundation GUI agents spanning the full spectrum of sizes, including 2B, 8B, 32B, and 235B-A22B variants.",
-          "We identify four key challenges to realistic deployment: the lack of native agent-user interaction, the limits of UI-only operation, the absence of a practical deployment architecture, and brittleness in dynamic environments."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2512.21924v1",
-      "title": "Unsupervised Anomaly Detection in Brain MRI via Disentangled Anatomy Learning",
-      "authors": [
-        "Tao Yang",
-        "Xiuying Wang",
-        "Hao Liu",
-        "Guanzhong Gong",
-        "Lian-Ming Wu",
-        "Yu-Ping Wang",
-        "Lisheng Wang"
-      ],
-      "abstract": "Detection of various lesions in brain MRI is clinically critical, but challenging due to the diversity of lesions and variability in imaging conditions. Current unsupervised learning methods detect anomalies mainly through reconstructing abnormal images into pseudo-healthy images (PHIs) by normal samples learning and then analyzing differences between images. However, these unsupervised models face two significant limitations: restricted generalizability to multi-modality and multi-center MRIs due to their reliance on the specific imaging information in normal training data, and constrained performance due to abnormal residuals propagated from input images to reconstructed PHIs. To address these limitations, two novel modules are proposed, forming a new PHI reconstruction framework. Firstly, the disentangled representation module is proposed to improve generalizability by decoupling brain MRI into imaging information and essential imaging-invariant anatomical images, ensuring that the reconstruction focuses on the anatomy. Specifically, brain anatomical priors and a differentiable one-hot encoding operator are introduced to constrain the disentanglement results and enhance the disentanglement stability. Secondly, the edge-to-image restoration module is designed to reconstruct high-quality PHIs by restoring the anatomical representation from the high-frequency edge information of anatomical images, and then recoupling the disentangled imaging information. This module not only suppresses abnormal residuals in PHI by reducing abnormal pixels input through edge-only input, but also effectively reconstructs normal regions using the preserved structural details in the edges. Evaluated on nine public datasets (4,443 patients' MRIs from multiple centers), our method outperforms 17 SOTA methods, achieving absolute improvements of +18.32% in AP and +13.64% in DSC.",
-      "published": "2025-12-26",
-      "updated": "2025-12-26",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.21924v1",
-        "pdf": "https://arxiv.org/pdf/2512.21924v1"
-      },
-      "arxiv_id": "2512.21924v1",
-      "comment": "Accepted by Medical Image Analysis (2025)",
-      "journal_ref": "Medical Image Analysis (2025)",
-      "has_code": false,
-      "relevance_score": 3.65,
-      "score_breakdown": {
-        "total_score": 3.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Detection of various lesions in brain MRI is clinically critical, but challenging due to the diversity of lesions and variability in imaging conditions. Current unsupervised learning methods detect anomalies mainly through reconstructing abnormal images into pseudo-healthy images (PHIs) by normal samples learning and then analyzing differences between images. However, these unsupervised models fac...",
-        "key_contributions": [
-          "Detection of various lesions in brain MRI is clinically critical, but challenging due to the diversity of lesions and variability in imaging conditions.",
-          "Current unsupervised learning methods detect anomalies mainly through reconstructing abnormal images into pseudo-healthy images (PHIs) by normal samples learning and then analyzing differences between images.",
-          "However, these unsupervised models face two significant limitations: restricted generalizability to multi-modality and multi-center MRIs due to their reliance on the specific imaging information in normal training data, and constrained performance due to abnormal residuals propagated from input images to reconstructed PHIs."
+          "While it is well-established that the weight matrices and feature manifolds of deep neural networks exhibit a low Intrinsic Dimension (ID), current state-of-the-art models still rely on massive high-dimensional widths.",
+          "This redundancy is not required for representation, but is strictly necessary to solve the non-convex optimization search problem-finding a global minimum, which remains intractable for compact networks.",
+          "In this work, we propose a constructive approach to bypass this optimization bottleneck."
         ],
         "provider": "gemini"
       }

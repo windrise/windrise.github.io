@@ -3,46 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2512.23441v1",
-      "title": "Stochastic Siamese MAE Pretraining for Longitudinal Medical Images",
+      "id": "2512.24763v1",
+      "title": "UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning",
       "authors": [
-        "Taha Emre",
-        "Arunava Chakravarty",
-        "Thomas Pinetz",
-        "Dmitrii Lachinov",
-        "Martin J. Menten",
-        "Hendrik Scholl",
-        "Sobha Sivaprasad",
-        "Daniel Rueckert",
-        "Andrew Lotery",
-        "Stefan Sacu",
-        "Ursula Schmidt-Erfurth",
-        "Hrvoje Bogunović"
+        "Ankit Dhiman",
+        "Srinath R",
+        "Jaswanth Reddy",
+        "Lokesh R Boregowda",
+        "Venkatesh Babu Radhakrishnan"
       ],
-      "abstract": "Temporally aware image representations are crucial for capturing disease progression in 3D volumes of longitudinal medical datasets. However, recent state-of-the-art self-supervised learning approaches like Masked Autoencoding (MAE), despite their strong representation learning capabilities, lack temporal awareness. In this paper, we propose STAMP (Stochastic Temporal Autoencoder with Masked Pretraining), a Siamese MAE framework that encodes temporal information through a stochastic process by conditioning on the time difference between the 2 input volumes. Unlike deterministic Siamese approaches, which compare scans from different time points but fail to account for the inherent uncertainty in disease evolution, STAMP learns temporal dynamics stochastically by reframing the MAE reconstruction loss as a conditional variational inference objective. We evaluated STAMP on two OCT and one MRI datasets with multiple visits per patient. STAMP pretrained ViT models outperformed both existing temporal MAE methods and foundation models on different late stage Age-Related Macular Degeneration and Alzheimer's Disease progression prediction which require models to learn the underlying non-deterministic temporal dynamics of the diseases.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
+      "abstract": "3D Gaussian Splatting (3DGS) and Neural Radiance Fields (NeRF) have advanced novel-view synthesis. Recent methods extend multi-view 2D segmentation to 3D, enabling instance/semantic segmentation for better scene understanding. A key challenge is the inconsistency of 2D instance labels across views, leading to poor 3D predictions. Existing methods use a two-stage approach in which some rely on contrastive learning with hyperparameter-sensitive clustering, while others preprocess labels for consistency. We propose a unified framework that merges these steps, reducing training time and improving performance by introducing a learnable feature embedding for segmentation in Gaussian primitives. This embedding is then efficiently decoded into instance labels through a novel \"Embedding-to-Label\" process, effectively integrating the optimization. While this unified framework offers substantial benefits, we observed artifacts at the object boundaries. To address the object boundary issues, we propose hard-mining samples along these boundaries. However, directly applying hard mining to the feature embeddings proved unstable. Therefore, we apply a linear layer to the rasterized feature embeddings before calculating the triplet loss, which stabilizes training and significantly improves performance. Our method outperforms baselines qualitatively and quantitatively on the ScanNet, Replica3D, and Messy-Rooms datasets.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
       "categories": [
-        "cs.LG",
         "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.23441v1",
-        "pdf": "https://arxiv.org/pdf/2512.23441v1"
+        "paper": "http://arxiv.org/abs/2512.24763v1",
+        "pdf": "https://arxiv.org/pdf/2512.24763v1"
       },
-      "arxiv_id": "2512.23441v1",
-      "comment": "Under review. Code is available in https://github.com/EmreTaha/STAMP",
+      "arxiv_id": "2512.24763v1",
+      "comment": "Accepted to AAAI 2026. Project Page: https://unic-lift.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.426271186440678,
+      "relevance_score": 5.20593220338983,
       "score_breakdown": {
-        "total_score": 4.43,
+        "total_score": 5.21,
         "field_match": {
-          "score": 1.44,
+          "score": 3.39,
           "matches": [
-            "medical image",
-            "self-supervised"
+            "3d gaussian",
+            "gaussian splatting",
+            "neural radiance",
+            "nerf",
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -67,55 +62,46 @@
       }
     },
     {
-      "id": "2512.23705v1",
-      "title": "Diffusion Knows Transparency: Repurposing Video Diffusion for Transparent Object Depth and Normal Estimation",
+      "id": "2512.25034v1",
+      "title": "Generative Classifiers Avoid Shortcut Solutions",
       "authors": [
-        "Shaocong Xu",
-        "Songlin Wei",
-        "Qizhe Wei",
-        "Zheng Geng",
-        "Hong Li",
-        "Licheng Shen",
-        "Qianpu Sun",
-        "Shu Han",
-        "Bin Ma",
-        "Bohan Li",
-        "Chongjie Ye",
-        "Yuhang Zheng",
-        "Nan Wang",
-        "Saining Zhang",
-        "Hao Zhao"
+        "Alexander C. Li",
+        "Ananya Kumar",
+        "Deepak Pathak"
       ],
-      "abstract": "Transparent objects remain notoriously hard for perception systems: refraction, reflection and transmission break the assumptions behind stereo, ToF and purely discriminative monocular depth, causing holes and temporally unstable estimates. Our key observation is that modern video diffusion models already synthesize convincing transparent phenomena, suggesting they have internalized the optical rules. We build TransPhy3D, a synthetic video corpus of transparent/reflective scenes: 11k sequences rendered with Blender/Cycles. Scenes are assembled from a curated bank of category-rich static assets and shape-rich procedural assets paired with glass/plastic/metal materials. We render RGB + depth + normals with physically based ray tracing and OptiX denoising. Starting from a large video diffusion model, we learn a video-to-video translator for depth (and normals) via lightweight LoRA adapters. During training we concatenate RGB and (noisy) depth latents in the DiT backbone and co-train on TransPhy3D and existing frame-wise synthetic datasets, yielding temporally consistent predictions for arbitrary-length input videos. The resulting model, DKT, achieves zero-shot SOTA on real and synthetic video benchmarks involving transparency: ClearPose, DREDS (CatKnown/CatNovel), and TransPhy3D-Test. It improves accuracy and temporal consistency over strong image/video baselines, and a normal variant sets the best video normal estimation results on ClearPose. A compact 1.3B version runs at ~0.17 s/frame. Integrated into a grasping stack, DKT's depth boosts success rates across translucent, reflective and diffuse surfaces, outperforming prior estimators. Together, these results support a broader claim: \"Diffusion knows transparency.\" Generative video priors can be repurposed, efficiently and label-free, into robust, temporally coherent perception for challenging real-world manipulation.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
+      "abstract": "Discriminative approaches to classification often learn shortcuts that hold in-distribution but fail even under minor distribution shift. This failure mode stems from an overreliance on features that are spuriously correlated with the label. We show that generative classifiers, which use class-conditional generative models, can avoid this issue by modeling all features, both core and spurious, instead of mainly spurious ones. These generative classifiers are simple to train, avoiding the need for specialized augmentations, strong regularization, extra hyperparameters, or knowledge of the specific spurious correlations to avoid. We find that diffusion-based and autoregressive generative classifiers achieve state-of-the-art performance on five standard image and text distribution shift benchmarks and reduce the impact of spurious correlations in realistic applications, such as medical or satellite datasets. Finally, we carefully analyze a Gaussian toy setting to understand the inductive biases of generative classifiers, as well as the data properties that determine when generative classifiers outperform discriminative ones.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.AI",
+        "cs.CV",
+        "cs.NE"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.23705v1",
-        "pdf": "https://arxiv.org/pdf/2512.23705v1"
+        "paper": "http://arxiv.org/abs/2512.25034v1",
+        "pdf": "https://arxiv.org/pdf/2512.25034v1"
       },
-      "arxiv_id": "2512.23705v1",
-      "comment": "Project Page: https://daniellli.github.io/projects/DKT/; Code: https://github.com/Daniellli/DKT; Dataset: https://huggingface.co/datasets/Daniellesry/TransPhy3D",
+      "arxiv_id": "2512.25034v1",
+      "comment": "ICLR 2025. Code: https://github.com/alexlioralexli/generative-classifiers",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.25,
+      "relevance_score": 5.2,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 5.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -130,290 +116,94 @@
       }
     },
     {
-      "id": "2512.23646v1",
-      "title": "OmniAgent: Audio-Guided Active Perception Agent for Omnimodal Audio-Video Understanding",
+      "id": "2512.24971v1",
+      "title": "Evaluating the Impact of Compression Techniques on the Robustness of CNNs under Natural Corruptions",
       "authors": [
-        "Keda Tao",
-        "Wenjie Du",
-        "Bohan Yu",
-        "Weiqiang Wang",
-        "Jian Liu",
-        "Huan Wang"
+        "Itallo Patrick Castro Alves Da Silva",
+        "Emanuel Adler Medeiros Pereira",
+        "Erick de Andrade Barboza",
+        "Baldoino Fonseca dos Santos Neto",
+        "Marcio de Medeiros Ribeiro"
       ],
-      "abstract": "Omnimodal large language models have made significant strides in unifying audio and visual modalities; however, they often lack the fine-grained cross-modal understanding and have difficulty with multimodal alignment. To address these limitations, we introduce OmniAgent, a fully audio-guided active perception agent that dynamically orchestrates specialized tools to achieve more fine-grained audio-visual reasoning. Unlike previous works that rely on rigid, static workflows and dense frame-captioning, this paper demonstrates a paradigm shift from passive response generation to active multimodal inquiry. OmniAgent employs dynamic planning to autonomously orchestrate tool invocation on demand, strategically concentrating perceptual attention on task-relevant cues. Central to our approach is a novel coarse-to-fine audio-guided perception paradigm, which leverages audio cues to localize temporal events and guide subsequent reasoning. Extensive empirical evaluations on three audio-video understanding benchmarks demonstrate that OmniAgent achieves state-of-the-art performance, surpassing leading open-source and proprietary models by substantial margins of 10% - 20% accuracy.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.23646v1",
-        "pdf": "https://arxiv.org/pdf/2512.23646v1"
-      },
-      "arxiv_id": "2512.23646v1",
-      "comment": "Website:https://kd-tao.github.io/OmniAgent/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1499999999999995,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.23464v1",
-      "title": "HY-Motion 1.0: Scaling Flow Matching Models for Text-To-Motion Generation",
-      "authors": [
-        "Yuxin Wen",
-        "Qing Shuai",
-        "Di Kang",
-        "Jing Li",
-        "Cheng Wen",
-        "Yue Qian",
-        "Ningxin Jiao",
-        "Changhai Chen",
-        "Weijie Chen",
-        "Yiran Wang",
-        "Jinkun Guo",
-        "Dongyue An",
-        "Han Liu",
-        "Yanyu Tong",
-        "Chao Zhang",
-        "Qing Guo",
-        "Juan Chen",
-        "Qiao Zhang",
-        "Youyi Zhang",
-        "Zihao Yao",
-        "Cheng Zhang",
-        "Hong Duan",
-        "Xiaoping Wu",
-        "Qi Chen",
-        "Fei Cheng",
-        "Liang Dong",
-        "Peng He",
-        "Hao Zhang",
-        "Jiaxin Lin",
-        "Chao Zhang",
-        "Zhongyi Fan",
-        "Yifan Li",
-        "Zhichao Hu",
-        "Yuhong Liu",
-        "Linus",
-        "Jie Jiang",
-        "Xiaolong Li",
-        "Linchao Bao"
-      ],
-      "abstract": "We present HY-Motion 1.0, a series of state-of-the-art, large-scale, motion generation models capable of generating 3D human motions from textual descriptions. HY-Motion 1.0 represents the first successful attempt to scale up Diffusion Transformer (DiT)-based flow matching models to the billion-parameter scale within the motion generation domain, delivering instruction-following capabilities that significantly outperform current open-source benchmarks. Uniquely, we introduce a comprehensive, full-stage training paradigm -- including large-scale pretraining on over 3,000 hours of motion data, high-quality fine-tuning on 400 hours of curated data, and reinforcement learning from both human feedback and reward models -- to ensure precise alignment with the text instruction and high motion quality. This framework is supported by our meticulous data processing pipeline, which performs rigorous motion cleaning and captioning. Consequently, our model achieves the most extensive coverage, spanning over 200 motion categories across 6 major classes. We release HY-Motion 1.0 to the open-source community to foster future research and accelerate the transition of 3D human motion generation models towards commercial maturity.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
+      "abstract": "Compressed deep learning models are crucial for deploying computer vision systems on resource-constrained devices. However, model compression may affect robustness, especially under natural corruption. Therefore, it is important to consider robustness evaluation while validating computer vision systems. This paper presents a comprehensive evaluation of compression techniques - quantization, pruning, and weight clustering applied individually and in combination to convolutional neural networks (ResNet-50, VGG-19, and MobileNetV2). Using the CIFAR-10-C and CIFAR 100-C datasets, we analyze the trade-offs between robustness, accuracy, and compression ratio. Our results show that certain compression strategies not only preserve but can also improve robustness, particularly on networks with more complex architectures. Utilizing multiobjective assessment, we determine the best configurations, showing that customized technique combinations produce beneficial multi-objective results. This study provides insights into selecting compression methods for robust and efficient deployment of models in corrupted real-world environments.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.GR"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.23464v1",
-        "pdf": "https://arxiv.org/pdf/2512.23464v1"
+        "paper": "http://arxiv.org/abs/2512.24971v1",
+        "pdf": "https://arxiv.org/pdf/2512.24971v1"
       },
-      "arxiv_id": "2512.23464v1",
-      "comment": "Github: see https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
+      "arxiv_id": "2512.24971v1",
+      "comment": "Accepted for publication at the 2025 International Conference on Machine Learning and Applications (ICMLA). IEEE Catalog Number: CFP25592-ART",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1499999999999995,
+      "has_code": false,
+      "relevance_score": 4.838983050847458,
       "score_breakdown": {
-        "total_score": 4.15,
+        "total_score": 4.84,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.85,
+          "matches": [
+            "deep learning",
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.23413v1",
-      "title": "Bridging Cognitive Gap: Hierarchical Description Learning for Artistic Image Aesthetics Assessment",
+      "id": "2512.25073v1",
+      "title": "GaMO: Geometry-aware Multi-view Diffusion Outpainting for Sparse-View 3D Reconstruction",
       "authors": [
-        "Henglin Liu",
-        "Nisha Huang",
-        "Chang Liu",
-        "Jiangpeng Yan",
-        "Huijuan Huang",
-        "Jixuan Ying",
-        "Tong-Yee Lee",
-        "Pengfei Wan",
-        "Xiangyang Ji"
-      ],
-      "abstract": "The aesthetic quality assessment task is crucial for developing a human-aligned quantitative evaluation system for AIGC. However, its inherently complex nature, spanning visual perception, cognition, and emotion, poses fundamental challenges. Although aesthetic descriptions offer a viable representation of this complexity, two critical challenges persist: (1) data scarcity and imbalance: existing dataset overly focuses on visual perception and neglects deeper dimensions due to the expensive manual annotation; and (2) model fragmentation: current visual networks isolate aesthetic attributes with multi-branch encoder, while multimodal methods represented by contrastive learning struggle to effectively process long-form textual descriptions. To resolve challenge (1), we first present the Refined Aesthetic Description (RAD) dataset, a large-scale (70k), multi-dimensional structured dataset, generated via an iterative pipeline without heavy annotation costs and easy to scale. To address challenge (2), we propose ArtQuant, an aesthetics assessment framework for artistic images which not only couples isolated aesthetic dimensions through joint description generation, but also better models long-text semantics with the help of LLM decoders. Besides, theoretical analysis confirms this symbiosis: RAD's semantic adequacy (data) and generation paradigm (model) collectively minimize prediction entropy, providing mathematical grounding for the framework. Our approach achieves state-of-the-art performance on several datasets while requiring only 33% of conventional training epochs, narrowing the cognitive gap between artistic images and aesthetic judgment. We will release both code and dataset to support future research.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.23413v1",
-        "pdf": "https://arxiv.org/pdf/2512.23413v1"
-      },
-      "arxiv_id": "2512.23413v1",
-      "comment": "AAAI2026,Project Page:https://github.com/Henglin-Liu/ArtQuant",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1499999999999995,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.23709v1",
-      "title": "Stream-DiffVSR: Low-Latency Streamable Video Super-Resolution via Auto-Regressive Diffusion",
-      "authors": [
-        "Hau-Shiang Shiu",
+        "Yi-Chuan Huang",
+        "Hao-Jen Chien",
         "Chin-Yang Lin",
-        "Zhixiang Wang",
-        "Chi-Wei Hsiao",
-        "Po-Fan Yu",
-        "Yu-Chih Chen",
+        "Ying-Huan Chen",
         "Yu-Lun Liu"
       ],
-      "abstract": "Diffusion-based video super-resolution (VSR) methods achieve strong perceptual quality but remain impractical for latency-sensitive settings due to reliance on future frames and expensive multi-step denoising. We propose Stream-DiffVSR, a causally conditioned diffusion framework for efficient online VSR. Operating strictly on past frames, it combines a four-step distilled denoiser for fast inference, an Auto-regressive Temporal Guidance (ARTG) module that injects motion-aligned cues during latent denoising, and a lightweight temporal-aware decoder with a Temporal Processor Module (TPM) that enhances detail and temporal coherence. Stream-DiffVSR processes 720p frames in 0.328 seconds on an RTX4090 GPU and significantly outperforms prior diffusion-based methods. Compared with the online SOTA TMP, it boosts perceptual quality (LPIPS +0.095) while reducing latency by over 130x. Stream-DiffVSR achieves the lowest latency reported for diffusion-based VSR, reducing initial delay from over 4600 seconds to 0.328 seconds, thereby making it the first diffusion VSR method suitable for low-latency online deployment. Project page: https://jamichss.github.io/stream-diffvsr-project-page/",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
+      "abstract": "Recent advances in 3D reconstruction have achieved remarkable progress in high-quality scene capture from dense multi-view imagery, yet struggle when input views are limited. Various approaches, including regularization techniques, semantic priors, and geometric constraints, have been implemented to address this challenge. Latest diffusion-based methods have demonstrated substantial improvements by generating novel views from new camera poses to augment training data, surpassing earlier regularization and prior-based techniques. Despite this progress, we identify three critical limitations in these state-of-the-art approaches: inadequate coverage beyond known view peripheries, geometric inconsistencies across generated views, and computationally expensive pipelines. We introduce GaMO (Geometry-aware Multi-view Outpainter), a framework that reformulates sparse-view reconstruction through multi-view outpainting. Instead of generating new viewpoints, GaMO expands the field of view from existing camera poses, which inherently preserves geometric consistency while providing broader scene coverage. Our approach employs multi-view conditioning and geometry-aware denoising strategies in a zero-shot manner without training. Extensive experiments on Replica and ScanNet++ demonstrate state-of-the-art reconstruction quality across 3, 6, and 9 input views, outperforming prior methods in PSNR and LPIPS, while achieving a $25\\times$ speedup over SOTA diffusion-based methods with processing time under 10 minutes. Project page: https://yichuanh.github.io/GaMO/",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.23709v1",
-        "pdf": "https://arxiv.org/pdf/2512.23709v1"
+        "paper": "http://arxiv.org/abs/2512.25073v1",
+        "pdf": "https://arxiv.org/pdf/2512.25073v1"
       },
-      "arxiv_id": "2512.23709v1",
-      "comment": "Project page: https://jamichss.github.io/stream-diffvsr-project-page/",
+      "arxiv_id": "2512.25073v1",
+      "comment": "Project page: https://yichuanh.github.io/GaMO/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.487288135593221,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.49,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.23427v1",
-      "title": "Towards Integrating Uncertainty for Domain-Agnostic Segmentation",
-      "authors": [
-        "Jesse Brouwers",
-        "Xiaoyan Xing",
-        "Alexander Timans"
-      ],
-      "abstract": "Foundation models for segmentation such as the Segment Anything Model (SAM) family exhibit strong zero-shot performance, but remain vulnerable in shifted or limited-knowledge domains. This work investigates whether uncertainty quantification can mitigate such challenges and enhance model generalisability in a domain-agnostic manner. To this end, we (1) curate UncertSAM, a benchmark comprising eight datasets designed to stress-test SAM under challenging segmentation conditions including shadows, transparency, and camouflage; (2) evaluate a suite of lightweight, post-hoc uncertainty estimation methods; and (3) assess a preliminary uncertainty-guided prediction refinement step. Among evaluated approaches, a last-layer Laplace approximation yields uncertainty estimates that correlate well with segmentation errors, indicating a meaningful signal. While refinement benefits are preliminary, our findings underscore the potential of incorporating uncertainty into segmentation models to support robust, domain-agnostic performance. Our benchmark and code are made publicly available.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.23427v1",
-        "pdf": "https://arxiv.org/pdf/2512.23427v1"
-      },
-      "arxiv_id": "2512.23427v1",
-      "comment": "Public code at https://github.com/JesseBrouw/UncertSAM | published at the 2nd Workshop on Frontiers in Probabilistic Inference (NeurIPS 2025) | 12 pages, 8 figures (incl. Appendix)",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9533898305084745,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.51,
+          "score": 0.59,
           "matches": [
-            "segmentation"
+            "3d reconstruction"
           ],
           "weight": 0.4
         },
@@ -423,7 +213,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -432,38 +222,44 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.23592v1",
-      "title": "Same or Not? Enhancing Visual Perception in Vision-Language Models",
+      "id": "2512.25066v1",
+      "title": "From Inpainting to Editing: A Self-Bootstrapping Framework for Context-Rich Visual Dubbing",
       "authors": [
-        "Damiano Marsili",
-        "Aditya Mehta",
-        "Ryan Y. Lin",
-        "Georgia Gkioxari"
+        "Xu He",
+        "Haoxian Zhang",
+        "Hejia Chen",
+        "Changyuan Zheng",
+        "Liyang Chen",
+        "Songlin Tang",
+        "Jiehui Huang",
+        "Xiaoqiang Liu",
+        "Pengfei Wan",
+        "Zhiyong Wu"
       ],
-      "abstract": "Vision-language models (VLMs) excel at broad visual understanding but remain coarse-grained, exhibit visual biases, and miss subtle visual details. Existing training corpora reinforce this limitation by emphasizing general recognition (\"Is it a cat or a dog?\") over fine-grained perception. To address this, we introduce a new training corpus and task designed to enhance the perceptual abilities of VLMs. TWIN is a large-scale dataset of 561,000 image-pair queries that task models to determine whether two visually similar images depict the same object, encouraging attention to nuanced visual cues. The dataset spans a diverse range of everyday objects across contexts, viewpoints, and appearances. Fine-tuning VLMs on TWIN yields notable gains in fine-grained recognition, even on unseen domains such as art, animals, plants, and landmarks. To quantify these gains, we introduce FGVQA, a benchmark suite of 12,000 queries that repurposes fine-grained recognition and retrieval datasets from multiple domains. While existing VLMs struggle on FGVQA, when fine-tuned on TWIN they improve by up to 19.3%, without compromising performance on general VQA benchmarks. Finally, our TWIN dataset scales favorably with object annotations, and our analysis shows that scale is key to performance. We envision TWIN as a drop-in addition to open-source VLM training corpora, advancing perceptual precision of future models. Project webpage: https://glab-caltech.github.io/twin/",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
+      "abstract": "Audio-driven visual dubbing aims to synchronize a video's lip movements with new speech, but is fundamentally challenged by the lack of ideal training data: paired videos where only a subject's lip movements differ while all other visual conditions are identical. Existing methods circumvent this with a mask-based inpainting paradigm, where an incomplete visual conditioning forces models to simultaneously hallucinate missing content and sync lips, leading to visual artifacts, identity drift, and poor synchronization. In this work, we propose a novel self-bootstrapping framework that reframes visual dubbing from an ill-posed inpainting task into a well-conditioned video-to-video editing problem. Our approach employs a Diffusion Transformer, first as a data generator, to synthesize ideal training data: a lip-altered companion video for each real sample, forming visually aligned video pairs. A DiT-based audio-driven editor is then trained on these pairs end-to-end, leveraging the complete and aligned input video frames to focus solely on precise, audio-driven lip modifications. This complete, frame-aligned input conditioning forms a rich visual context for the editor, providing it with complete identity cues, scene interactions, and continuous spatiotemporal dynamics. Leveraging this rich context fundamentally enables our method to achieve highly accurate lip sync, faithful identity preservation, and exceptional robustness against challenging in-the-wild scenarios. We further introduce a timestep-adaptive multi-phase learning strategy as a necessary component to disentangle conflicting editing objectives across diffusion timesteps, thereby facilitating stable training and yielding enhanced lip synchronization and visual fidelity. Additionally, we propose ContextDubBench, a comprehensive benchmark dataset for robust evaluation in diverse and challenging practical application scenarios.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.23592v1",
-        "pdf": "https://arxiv.org/pdf/2512.23592v1"
+        "paper": "http://arxiv.org/abs/2512.25066v1",
+        "pdf": "https://arxiv.org/pdf/2512.25066v1"
       },
-      "arxiv_id": "2512.23592v1",
-      "comment": "Project webpage: https://glab-caltech.github.io/twin/",
+      "arxiv_id": "2512.25066v1",
+      "comment": "Project Page https://hjrphoebus.github.io/X-Dub",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9,
+      "relevance_score": 4.45,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -475,7 +271,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -484,48 +280,52 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2512.23519v1",
-      "title": "IdentityStory: Taming Your Identity-Preserving Generator for Human-Centric Story Generation",
+      "id": "2512.24742v1",
+      "title": "Splatwizard: A Benchmark Toolkit for 3D Gaussian Splatting Compression",
       "authors": [
-        "Donghao Zhou",
-        "Jingyu Lin",
-        "Guibao Shen",
-        "Quande Liu",
-        "Jialin Gao",
-        "Lihao Liu",
-        "Lan Du",
-        "Cunjian Chen",
-        "Chi-Wing Fu",
-        "Xiaowei Hu",
-        "Pheng-Ann Heng"
+        "Xiang Liu",
+        "Yimin Zhou",
+        "Jinxiang Wang",
+        "Yujun Huang",
+        "Shuzhao Xie",
+        "Shiyu Qin",
+        "Mingyao Hong",
+        "Jiawei Li",
+        "Yaowei Wang",
+        "Zhi Wang",
+        "Shu-Tao Xia",
+        "Bin Chen"
       ],
-      "abstract": "Recent visual generative models enable story generation with consistent characters from text, but human-centric story generation faces additional challenges, such as maintaining detailed and diverse human face consistency and coordinating multiple characters across different images. This paper presents IdentityStory, a framework for human-centric story generation that ensures consistent character identity across multiple sequential images. By taming identity-preserving generators, the framework features two key components: Iterative Identity Discovery, which extracts cohesive character identities, and Re-denoising Identity Injection, which re-denoises images to inject identities while preserving desired context. Experiments on the ConsiStory-Human benchmark demonstrate that IdentityStory outperforms existing methods, particularly in face consistency, and supports multi-character combinations. The framework also shows strong potential for applications such as infinite-length story generation and dynamic character composition.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
+      "abstract": "The recent advent of 3D Gaussian Splatting (3DGS) has marked a significant breakthrough in real-time novel view synthesis. However, the rapid proliferation of 3DGS-based algorithms has created a pressing need for standardized and comprehensive evaluation tools, especially for compression task. Existing benchmarks often lack the specific metrics necessary to holistically assess the unique characteristics of different methods, such as rendering speed, rate distortion trade-offs memory efficiency, and geometric accuracy. To address this gap, we introduce Splatwizard, a unified benchmark toolkit designed specifically for benchmarking 3DGS compression models. Splatwizard provides an easy-to-use framework to implement new 3DGS compression model and utilize state-of-the-art techniques proposed by previous work. Besides, an integrated pipeline that automates the calculation of key performance indicators, including image-based quality metrics, chamfer distance of reconstruct mesh, rendering frame rates, and computational resource consumption is included in the framework as well. Code is available at https://github.com/splatwizard/splatwizard",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2512.23519v1",
-        "pdf": "https://arxiv.org/pdf/2512.23519v1"
+        "paper": "http://arxiv.org/abs/2512.24742v1",
+        "pdf": "https://arxiv.org/pdf/2512.24742v1"
       },
-      "arxiv_id": "2512.23519v1",
-      "comment": "Accepted by AAAI2026 (Project page: https://correr-zhou.github.io/IdentityStory)",
+      "arxiv_id": "2512.24742v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
+      "has_code": false,
+      "relevance_score": 4.277966101694915,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 4.28,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -534,66 +334,235 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2512.23410v1",
-      "title": "Directly Constructing Low-Dimensional Solution Subspaces in Deep Neural Networks",
-      "authors": [
-        "Yusuf Kalyoncuoglu"
-      ],
-      "abstract": "While it is well-established that the weight matrices and feature manifolds of deep neural networks exhibit a low Intrinsic Dimension (ID), current state-of-the-art models still rely on massive high-dimensional widths. This redundancy is not required for representation, but is strictly necessary to solve the non-convex optimization search problem-finding a global minimum, which remains intractable for compact networks. In this work, we propose a constructive approach to bypass this optimization bottleneck. By decoupling the solution geometry from the ambient search space, we empirically demonstrate across ResNet-50, ViT, and BERT that the classification head can be compressed by even huge factors of 16 with negligible performance degradation. This motivates Subspace-Native Distillation as a novel paradigm: by defining the target directly in this constructed subspace, we provide a stable geometric coordinate system for student models, potentially allowing them to circumvent the high-dimensional search problem entirely and realize the vision of Train Big, Deploy Small.",
-      "published": "2025-12-29",
-      "updated": "2025-12-29",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2512.23410v1",
-        "pdf": "https://arxiv.org/pdf/2512.23410v1"
-      },
-      "arxiv_id": "2512.23410v1",
-      "comment": "Code available at https://github.com/yuskal/Directly-Constructing-Low-Dimensional-Solution-Subspaces-in-Deep-Neural-Networks",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
           "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.24794v1",
+      "title": "Nonlinear Noise2Noise for Efficient Monte Carlo Denoiser Training",
+      "authors": [
+        "Andrew Tinits",
+        "Stephen Mann"
+      ],
+      "abstract": "The Noise2Noise method allows for training machine learning-based denoisers with pairs of input and target images where both the input and target can be noisy. This removes the need for training with clean target images, which can be difficult to obtain. However, Noise2Noise training has a major limitation: nonlinear functions applied to the noisy targets will skew the results. This bias occurs because the nonlinearity makes the expected value of the noisy targets different from the clean target image. Since nonlinear functions are common in image processing, avoiding them limits the types of preprocessing that can be performed on the noisy targets. Our main insight is that certain nonlinear functions can be applied to the noisy targets without adding significant bias to the results. We develop a theoretical framework for analyzing the effects of these nonlinearities, and describe a class of nonlinear functions with minimal bias.\n  We demonstrate our method on the denoising of high dynamic range (HDR) images produced by Monte Carlo rendering. Noise2Noise training can have trouble with HDR images, where the training process is overwhelmed by outliers and performs poorly. We consider a commonly used method of addressing these training issues: applying a nonlinear tone mapping function to the model output and target images to reduce their dynamic range. This method was previously thought to be incompatible with Noise2Noise training because of the nonlinearities involved. We show that certain combinations of loss functions and tone mapping functions can reduce the effect of outliers while introducing minimal bias. We apply our method to an existing machine learning-based Monte Carlo denoiser, where the original implementation was trained with high-sample count reference images. Our results approach those of the original implementation, but are produced using only noisy training data.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.24794v1",
+        "pdf": "https://arxiv.org/pdf/2512.24794v1"
+      },
+      "arxiv_id": "2512.24794v1",
+      "comment": "15 pages, 7 figures, 2 tables",
+      "journal_ref": "SIGGRAPH Asia 2025 Conference Papers, Article 49, 1-11",
+      "has_code": false,
+      "relevance_score": 4.1,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.25075v1",
+      "title": "SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time",
+      "authors": [
+        "Zhening Huang",
+        "Hyeonho Jeong",
+        "Xuelin Chen",
+        "Yulia Gryaditskaya",
+        "Tuanfeng Y. Wang",
+        "Joan Lasenby",
+        "Chun-Hao Huang"
+      ],
+      "abstract": "We present SpaceTimePilot, a video diffusion model that disentangles space and time for controllable generative rendering. Given a monocular video, SpaceTimePilot can independently alter the camera viewpoint and the motion sequence within the generative process, re-rendering the scene for continuous and arbitrary exploration across space and time. To achieve this, we introduce an effective animation time-embedding mechanism in the diffusion process, allowing explicit control of the output video's motion sequence with respect to that of the source video. As no datasets provide paired videos of the same dynamic scene with continuous temporal variations, we propose a simple yet effective temporal-warping training scheme that repurposes existing multi-view datasets to mimic temporal differences. This strategy effectively supervises the model to learn temporal control and achieve robust space-time disentanglement. To further enhance the precision of dual control, we introduce two additional components: an improved camera-conditioning mechanism that allows altering the camera from the first frame, and CamxTime, the first synthetic space-and-time full-coverage rendering dataset that provides fully free space-time video trajectories within a scene. Joint training on the temporal-warping scheme and the CamxTime dataset yields more precise temporal control. We evaluate SpaceTimePilot on both real-world and synthetic data, demonstrating clear space-time disentanglement and strong results compared to prior work. Project page: https://zheninghuang.github.io/Space-Time-Pilot/ Code: https://github.com/ZheningHuang/spacetimepilot",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.25075v1",
+        "pdf": "https://arxiv.org/pdf/2512.25075v1"
+      },
+      "arxiv_id": "2512.25075v1",
+      "comment": "Project page: https://zheninghuang.github.io/Space-Time-Pilot/ Code: https://github.com/ZheningHuang/spacetimepilot",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.25071v1",
+      "title": "Edit3r: Instant 3D Scene Editing from Sparse Unposed Images",
+      "authors": [
+        "Jiageng Liu",
+        "Weijie Lyu",
+        "Xueting Li",
+        "Yejie Guo",
+        "Ming-Hsuan Yang"
+      ],
+      "abstract": "We present Edit3r, a feed-forward framework that reconstructs and edits 3D scenes in a single pass from unposed, view-inconsistent, instruction-edited images. Unlike prior methods requiring per-scene optimization, Edit3r directly predicts instruction-aligned 3D edits, enabling fast and photorealistic rendering without optimization or pose estimation. A key challenge in training such a model lies in the absence of multi-view consistent edited images for supervision. We address this with (i) a SAM2-based recoloring strategy that generates reliable, cross-view-consistent supervision, and (ii) an asymmetric input strategy that pairs a recolored reference view with raw auxiliary views, encouraging the network to fuse and align disparate observations. At inference, our model effectively handles images edited by 2D methods such as InstructPix2Pix, despite not being exposed to such edits during training. For large-scale quantitative evaluation, we introduce DL3DV-Edit-Bench, a benchmark built on the DL3DV test split, featuring 20 diverse scenes, 4 edit types and 100 edits in total. Comprehensive quantitative and qualitative results show that Edit3r achieves superior semantic alignment and enhanced 3D consistency compared to recent baselines, while operating at significantly higher inference speed, making it promising for real-time 3D editing applications.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.25071v1",
+        "pdf": "https://arxiv.org/pdf/2512.25071v1"
+      },
+      "arxiv_id": "2512.25071v1",
+      "comment": "Project page: https://edit3r.github.io/edit3r/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2512.24986v1",
+      "title": "PhysTalk: Language-driven Real-time Physics in 3D Gaussian Scenes",
+      "authors": [
+        "Luca Collorone",
+        "Mert Kiray",
+        "Indro Spinelli",
+        "Fabio Galasso",
+        "Benjamin Busam"
+      ],
+      "abstract": "Realistic visual simulations are omnipresent, yet their creation requires computing time, rendering, and expert animation knowledge. Open-vocabulary visual effects generation from text inputs emerges as a promising solution that can unlock immense creative potential. However, current pipelines lack both physical realism and effective language interfaces, requiring slow offline optimization. In contrast, PhysTalk takes a 3D Gaussian Splatting (3DGS) scene as input and translates arbitrary user prompts into real time, physics based, interactive 4D animations. A large language model (LLM) generates executable code that directly modifies 3DGS parameters through lightweight proxies and particle dynamics. Notably, PhysTalk is the first framework to couple 3DGS directly with a physics simulator without relying on time consuming mesh extraction. While remaining open vocabulary, this design enables interactive 3D Gaussian animation via collision aware, physics based manipulation of arbitrary, multi material objects. Finally, PhysTalk is train-free and computationally lightweight: this makes 4D animation broadly accessible and shifts these workflows from a \"render and wait\" paradigm toward an interactive dialogue with a modern, physics-informed pipeline.",
+      "published": "2025-12-31",
+      "updated": "2025-12-31",
+      "categories": [
+        "cs.GR",
+        "cs.CV"
+      ],
+      "primary_category": "cs.GR",
+      "links": {
+        "paper": "http://arxiv.org/abs/2512.24986v1",
+        "pdf": "https://arxiv.org/pdf/2512.24986v1"
+      },
+      "arxiv_id": "2512.24986v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.777966101694915,
+      "score_breakdown": {
+        "total_score": 3.78,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
           "weight": 0.1
         }
       }

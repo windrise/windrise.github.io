@@ -3,43 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2601.02339v1",
-      "title": "Joint Semantic and Rendering Enhancements in 3D Gaussian Modeling with Anisotropic Local Encoding",
+      "id": "2601.03213v1",
+      "title": "Critic-Guided Reinforcement Unlearning in Text-to-Image Diffusion",
       "authors": [
-        "Jingming He",
-        "Chongyi Li",
-        "Shiqi Wang",
-        "Sam Kwong"
+        "Mykola Vysotskyi",
+        "Zahar Kohut",
+        "Mariia Shpir",
+        "Taras Rumezhak",
+        "Volodymyr Karpiv"
       ],
-      "abstract": "Recent works propose extending 3DGS with semantic feature vectors for simultaneous semantic segmentation and image rendering. However, these methods often treat the semantic and rendering branches separately, relying solely on 2D supervision while ignoring the 3D Gaussian geometry. Moreover, current adaptive strategies adapt the Gaussian set depending solely on rendering gradients, which can be insufficient in subtle or textureless regions. In this work, we propose a joint enhancement framework for 3D semantic Gaussian modeling that synergizes both semantic and rendering branches. Firstly, unlike conventional point cloud shape encoding, we introduce an anisotropic 3D Gaussian Chebyshev descriptor using the Laplace-Beltrami operator to capture fine-grained 3D shape details, thereby distinguishing objects with similar appearances and reducing reliance on potentially noisy 2D guidance. In addition, without relying solely on rendering gradient, we adaptively adjust Gaussian allocation and spherical harmonics with local semantic and shape signals, enhancing rendering efficiency through selective resource allocation. Finally, we employ a cross-scene knowledge transfer module to continuously update learned shape patterns, enabling faster convergence and robust representations without relearning shape information from scratch for each new scene. Experiments on multiple datasets demonstrate improvements in segmentation accuracy and rendering quality while maintaining high rendering frame rates.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "Machine unlearning in text-to-image diffusion models aims to remove targeted concepts while preserving overall utility. Prior diffusion unlearning methods typically rely on supervised weight edits or global penalties; reinforcement-learning (RL) approaches, while flexible, often optimize sparse end-of-trajectory rewards, yielding high-variance updates and weak credit assignment. We present a general RL framework for diffusion unlearning that treats denoising as a sequential decision process and introduces a timestep-aware critic with noisy-step rewards. Concretely, we train a CLIP-based reward predictor on noisy latents and use its per-step signal to compute advantage estimates for policy-gradient updates of the reverse diffusion kernel. Our algorithm is simple to implement, supports off-policy reuse, and plugs into standard text-to-image backbones. Across multiple concepts, the method achieves better or comparable forgetting to strong baselines while maintaining image quality and benign prompt fidelity; ablations show that (i) per-step critics and (ii) noisy-conditioned rewards are key to stability and effectiveness. We release code and evaluation scripts to facilitate reproducibility and future research on RL-based diffusion unlearning.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
-        "cs.CV"
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02339v1",
-        "pdf": "https://arxiv.org/pdf/2601.02339v1"
+        "paper": "http://arxiv.org/abs/2601.03213v1",
+        "pdf": "https://arxiv.org/pdf/2601.03213v1"
       },
-      "arxiv_id": "2601.02339v1",
-      "comment": "Accepted by ICCV 2025",
+      "arxiv_id": "2601.03213v1",
+      "comment": "Preprint. Under review at ICLR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.942372881355932,
+      "relevance_score": 4.35,
       "score_breakdown": {
-        "total_score": 4.94,
+        "total_score": 4.35,
         "field_match": {
-          "score": 1.36,
-          "matches": [
-            "3d gaussian",
-            "segmentation"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICCV",
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -52,109 +50,45 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent works propose extending 3DGS with semantic feature vectors for simultaneous semantic segmentation and image rendering. However, these methods often treat the semantic and rendering branches separately, relying solely on 2D supervision while ignoring the 3D Gaussian geometry. Moreover, current adaptive strategies adapt the Gaussian set depending solely on rendering gradients, which can be in...",
-        "key_contributions": [
-          "Recent works propose extending 3DGS with semantic feature vectors for simultaneous semantic segmentation and image rendering.",
-          "However, these methods often treat the semantic and rendering branches separately, relying solely on 2D supervision while ignoring the 3D Gaussian geometry.",
-          "Moreover, current adaptive strategies adapt the Gaussian set depending solely on rendering gradients, which can be insufficient in subtle or textureless regions."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.02072v1",
-      "title": "SketchRodGS: Sketch-based Extraction of Slender Geometries for Animating Gaussian Splatting Scenes",
-      "authors": [
-        "Haato Watanabe",
-        "Nobuyuki Umetani"
-      ],
-      "abstract": "Physics simulation of slender elastic objects often requires discretization as a polyline. However, constructing a polyline from Gaussian splatting is challenging as Gaussian splatting lacks connectivity information and the configuration of Gaussian primitives contains much noise. This paper presents a method to extract a polyline representation of the slender part of the objects in a Gaussian splatting scene from the user's sketching input. Our method robustly constructs a polyline mesh that represents the slender parts using the screen-space shortest path analysis that can be efficiently solved using dynamic programming. We demonstrate the effectiveness of our approach in several in-the-wild examples.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
-      "categories": [
-        "cs.GR",
-        "cs.CV"
-      ],
-      "primary_category": "cs.GR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.02072v1",
-        "pdf": "https://arxiv.org/pdf/2601.02072v1"
-      },
-      "arxiv_id": "2601.02072v1",
-      "comment": "Presented at SIGGRAPH Asia 2025 (Technical Communications). Best Technical Communications Award",
-      "journal_ref": "Proceedings of the SIGGRAPH Asia 2025 Technical Communications, Article No. 29, pp. 1 - 4",
-      "has_code": false,
-      "relevance_score": 4.388983050847457,
-      "score_breakdown": {
-        "total_score": 4.39,
-        "field_match": {
-          "score": 0.85,
-          "matches": [
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "SIGGRAPH",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Physics simulation of slender elastic objects often requires discretization as a polyline. However, constructing a polyline from Gaussian splatting is challenging as Gaussian splatting lacks connectivity information and the configuration of Gaussian primitives contains much noise. This paper presents a method to extract a polyline representation of the slender part of the objects in a Gaussian spl...",
+        "short": "Machine unlearning in text-to-image diffusion models aims to remove targeted concepts while preserving overall utility. Prior diffusion unlearning methods typically rely on supervised weight edits or global penalties; reinforcement-learning (RL) approaches, while flexible, often optimize sparse end-of-trajectory rewards, yielding high-variance updates and weak credit assignment. We present a gener...",
         "key_contributions": [
-          "Physics simulation of slender elastic objects often requires discretization as a polyline.",
-          "However, constructing a polyline from Gaussian splatting is challenging as Gaussian splatting lacks connectivity information and the configuration of Gaussian primitives contains much noise.",
-          "This paper presents a method to extract a polyline representation of the slender part of the objects in a Gaussian splatting scene from the user's sketching input."
+          "Machine unlearning in text-to-image diffusion models aims to remove targeted concepts while preserving overall utility.",
+          "Prior diffusion unlearning methods typically rely on supervised weight edits or global penalties; reinforcement-learning (RL) approaches, while flexible, often optimize sparse end-of-trajectory rewards, yielding high-variance updates and weak credit assignment.",
+          "We present a general RL framework for diffusion unlearning that treats denoising as a sequential decision process and introduces a timestep-aware critic with noisy-step rewards."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02267v1",
-      "title": "DiffProxy: Multi-View Human Mesh Recovery via Diffusion-Generated Dense Proxies",
+      "id": "2601.03144v1",
+      "title": "Self-Verification is All You Need To Pass The Japanese Bar Examination",
       "authors": [
-        "Renke Wang",
-        "Zhenyu Zhang",
-        "Ying Tai",
-        "Jian Yang"
+        "Andrew Shin"
       ],
-      "abstract": "Human mesh recovery from multi-view images faces a fundamental challenge: real-world datasets contain imperfect ground-truth annotations that bias the models' training, while synthetic data with precise supervision suffers from domain gap. In this paper, we propose DiffProxy, a novel framework that generates multi-view consistent human proxies for mesh recovery. Central to DiffProxy is leveraging the diffusion-based generative priors to bridge the synthetic training and real-world generalization. Its key innovations include: (1) a multi-conditional mechanism for generating multi-view consistent, pixel-aligned human proxies; (2) a hand refinement module that incorporates flexible visual prompts to enhance local details; and (3) an uncertainty-aware test-time scaling method that increases robustness to challenging cases during optimization. These designs ensure that the mesh recovery process effectively benefits from the precise synthetic ground truth and generative advantages of the diffusion-based pipeline. Trained entirely on synthetic data, DiffProxy achieves state-of-the-art performance across five real-world benchmarks, demonstrating strong zero-shot generalization particularly on challenging scenarios with occlusions and partial views. Project page: https://wrk226.github.io/DiffProxy.html",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "Despite rapid advances in large language models (LLMs), achieving reliable performance on highly professional and structured examinations remains a significant challenge. The Japanese bar examination is a particularly demanding benchmark, requiring not only advanced legal reasoning but also strict adherence to complex answer formats that involve joint evaluation of multiple propositions. While recent studies have reported improvements by decomposing such questions into simpler true--false judgments, these approaches have not been systematically evaluated under the original exam format and scoring scheme, leaving open the question of whether they truly capture exam-level competence. In this paper, we present a self-verification model trained on a newly constructed dataset that faithfully replicates the authentic format and evaluation scale of the exam. Our model is able to exceed the official passing score when evaluated on the actual exam scale, marking the first demonstration, to our knowledge, of an LLM passing the Japanese bar examination without altering its original question structure or scoring rules. We further conduct extensive comparisons with alternative strategies, including multi-agent inference and decomposition-based supervision, and find that these methods fail to achieve comparable performance. Our results highlight the importance of format-faithful supervision and consistency verification, and suggest that carefully designed single-model approaches can outperform more complex systems in high-stakes professional reasoning tasks. Our dataset and codes are publicly available.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
-        "cs.CV"
+        "cs.CL",
+        "cs.AI"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.CL",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02267v1",
-        "pdf": "https://arxiv.org/pdf/2601.02267v1"
+        "paper": "http://arxiv.org/abs/2601.03144v1",
+        "pdf": "https://arxiv.org/pdf/2601.03144v1"
       },
-      "arxiv_id": "2601.02267v1",
-      "comment": "Page: https://wrk226.github.io/DiffProxy.html, Code: https://github.com/wrk226/DiffProxy",
+      "arxiv_id": "2601.03144v1",
+      "comment": "https://github.com/shinandrew/self_verification",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1000000000000005,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 4.1,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -175,56 +109,53 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Human mesh recovery from multi-view images faces a fundamental challenge: real-world datasets contain imperfect ground-truth annotations that bias the models' training, while synthetic data with precise supervision suffers from domain gap. In this paper, we propose DiffProxy, a novel framework that generates multi-view consistent human proxies for mesh recovery. Central to DiffProxy is leveraging ...",
+        "short": "Despite rapid advances in large language models (LLMs), achieving reliable performance on highly professional and structured examinations remains a significant challenge. The Japanese bar examination is a particularly demanding benchmark, requiring not only advanced legal reasoning but also strict adherence to complex answer formats that involve joint evaluation of multiple propositions. While rec...",
         "key_contributions": [
-          "Human mesh recovery from multi-view images faces a fundamental challenge: real-world datasets contain imperfect ground-truth annotations that bias the models' training, while synthetic data with precise supervision suffers from domain gap.",
-          "In this paper, we propose DiffProxy, a novel framework that generates multi-view consistent human proxies for mesh recovery.",
-          "Central to DiffProxy is leveraging the diffusion-based generative priors to bridge the synthetic training and real-world generalization."
+          "Despite rapid advances in large language models (LLMs), achieving reliable performance on highly professional and structured examinations remains a significant challenge.",
+          "The Japanese bar examination is a particularly demanding benchmark, requiring not only advanced legal reasoning but also strict adherence to complex answer formats that involve joint evaluation of multiple propositions.",
+          "While recent studies have reported improvements by decomposing such questions into simpler true--false judgments, these approaches have not been systematically evaluated under the original exam format and scoring scheme, leaving open the question of whether they truly capture exam-level competence."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02139v1",
-      "title": "Beyond Segmentation: An Oil Spill Change Detection Framework Using Synthetic SAR Imagery",
+      "id": "2601.03256v1",
+      "title": "Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training",
       "authors": [
-        "Chenyang Lai",
-        "Shuaiyu Chen",
-        "Tianjin Huang",
-        "Siyang Song",
-        "Guangliang Cheng",
-        "Chunbo Luo",
-        "Zeyu Fu"
+        "Hexiao Lu",
+        "Xiaokun Sun",
+        "Zeyu Cai",
+        "Hao Guo",
+        "Ying Tai",
+        "Jian Yang",
+        "Zhenyu Zhang"
       ],
-      "abstract": "Marine oil spills are urgent environmental hazards that demand rapid and reliable detection to minimise ecological and economic damage. While Synthetic Aperture Radar (SAR) imagery has become a key tool for large-scale oil spill monitoring, most existing detection methods rely on deep learning-based segmentation applied to single SAR images. These static approaches struggle to distinguish true oil spills from visually similar oceanic features (e.g., biogenic slicks or low-wind zones), leading to high false positive rates and limited generalizability, especially under data-scarce conditions. To overcome these limitations, we introduce Oil Spill Change Detection (OSCD), a new bi-temporal task that focuses on identifying changes between pre- and post-spill SAR images. As real co-registered pre-spill imagery is not always available, we propose the Temporal-Aware Hybrid Inpainting (TAHI) framework, which generates synthetic pre-spill images from post-spill SAR data. TAHI integrates two key components: High-Fidelity Hybrid Inpainting for oil-free reconstruction, and Temporal Realism Enhancement for radiometric and sea-state consistency. Using TAHI, we construct the first OSCD dataset and benchmark several state-of-the-art change detection models. Results show that OSCD significantly reduces false positives and improves detection accuracy compared to conventional segmentation, demonstrating the value of temporally-aware methods for reliable, scalable oil spill monitoring in real-world scenarios.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "We present Muses, the first training-free method for fantastic 3D creature generation in a feed-forward paradigm. Previous methods, which rely on part-aware optimization, manual assembly, or 2D image generation, often produce unrealistic or incoherent 3D assets due to the challenges of intricate part-level manipulation and limited out-of-domain generation. In contrast, Muses leverages the 3D skeleton, a fundamental representation of biological forms, to explicitly and rationally compose diverse elements. This skeletal foundation formalizes 3D content creation as a structure-aware pipeline of design, composition, and generation. Muses begins by constructing a creatively composed 3D skeleton with coherent layout and scale through graph-constrained reasoning. This skeleton then guides a voxel-based assembly process within a structured latent space, integrating regions from different objects. Finally, image-guided appearance modeling under skeletal conditions is applied to generate a style-consistent and harmonious texture for the assembled shape. Extensive experiments establish Muses' state-of-the-art performance in terms of visual fidelity and alignment with textual descriptions, and potential on flexible 3D object editing. Project page: https://luhexiao.github.io/Muses.github.io/.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02139v1",
-        "pdf": "https://arxiv.org/pdf/2601.02139v1"
+        "paper": "http://arxiv.org/abs/2601.03256v1",
+        "pdf": "https://arxiv.org/pdf/2601.03256v1"
       },
-      "arxiv_id": "2601.02139v1",
-      "comment": "",
+      "arxiv_id": "2601.03256v1",
+      "comment": "Project page: https://luhexiao.github.io/Muses.github.io/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.0728813559322035,
+      "has_code": true,
+      "relevance_score": 3.95,
       "score_breakdown": {
-        "total_score": 4.07,
+        "total_score": 3.95,
         "field_match": {
-          "score": 0.93,
-          "matches": [
-            "segmentation",
-            "deep learning"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -233,125 +164,56 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
           "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Marine oil spills are urgent environmental hazards that demand rapid and reliable detection to minimise ecological and economic damage. While Synthetic Aperture Radar (SAR) imagery has become a key tool for large-scale oil spill monitoring, most existing detection methods rely on deep learning-based segmentation applied to single SAR images. These static approaches struggle to distinguish true oil...",
-        "key_contributions": [
-          "Marine oil spills are urgent environmental hazards that demand rapid and reliable detection to minimise ecological and economic damage.",
-          "While Synthetic Aperture Radar (SAR) imagery has become a key tool for large-scale oil spill monitoring, most existing detection methods rely on deep learning-based segmentation applied to single SAR images.",
-          "These static approaches struggle to distinguish true oil spills from visually similar oceanic features (e."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.02102v1",
-      "title": "360-GeoGS: Geometrically Consistent Feed-Forward 3D Gaussian Splatting Reconstruction for 360 Images",
-      "authors": [
-        "Jiaqi Yao",
-        "Zhongmiao Yan",
-        "Jingyi Xu",
-        "Songpengcheng Xia",
-        "Yan Xiang",
-        "Ling Pei"
-      ],
-      "abstract": "3D scene reconstruction is fundamental for spatial intelligence applications such as AR, robotics, and digital twins. Traditional multi-view stereo struggles with sparse viewpoints or low-texture regions, while neural rendering approaches, though capable of producing high-quality results, require per-scene optimization and lack real-time efficiency. Explicit 3D Gaussian Splatting (3DGS) enables efficient rendering, but most feed-forward variants focus on visual quality rather than geometric consistency, limiting accurate surface reconstruction and overall reliability in spatial perception tasks. This paper presents a novel feed-forward 3DGS framework for 360 images, capable of generating geometrically consistent Gaussian primitives while maintaining high rendering quality. A Depth-Normal geometric regularization is introduced to couple rendered depth gradients with normal information, supervising Gaussian rotation, scale, and position to improve point cloud and surface accuracy. Experimental results show that the proposed method maintains high rendering quality while significantly improving geometric consistency, providing an effective solution for 3D reconstruction in spatial perception tasks.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.02102v1",
-        "pdf": "https://arxiv.org/pdf/2601.02102v1"
-      },
-      "arxiv_id": "2601.02102v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.065254237288135,
-      "score_breakdown": {
-        "total_score": 4.07,
-        "field_match": {
-          "score": 2.29,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
           "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "3D scene reconstruction is fundamental for spatial intelligence applications such as AR, robotics, and digital twins. Traditional multi-view stereo struggles with sparse viewpoints or low-texture regions, while neural rendering approaches, though capable of producing high-quality results, require per-scene optimization and lack real-time efficiency. Explicit 3D Gaussian Splatting (3DGS) enables ef...",
+        "short": "We present Muses, the first training-free method for fantastic 3D creature generation in a feed-forward paradigm. Previous methods, which rely on part-aware optimization, manual assembly, or 2D image generation, often produce unrealistic or incoherent 3D assets due to the challenges of intricate part-level manipulation and limited out-of-domain generation. In contrast, Muses leverages the 3D skele...",
         "key_contributions": [
-          "3D scene reconstruction is fundamental for spatial intelligence applications such as AR, robotics, and digital twins.",
-          "Traditional multi-view stereo struggles with sparse viewpoints or low-texture regions, while neural rendering approaches, though capable of producing high-quality results, require per-scene optimization and lack real-time efficiency.",
-          "Explicit 3D Gaussian Splatting (3DGS) enables efficient rendering, but most feed-forward variants focus on visual quality rather than geometric consistency, limiting accurate surface reconstruction and overall reliability in spatial perception tasks."
+          "We present Muses, the first training-free method for fantastic 3D creature generation in a feed-forward paradigm.",
+          "Previous methods, which rely on part-aware optimization, manual assembly, or 2D image generation, often produce unrealistic or incoherent 3D assets due to the challenges of intricate part-level manipulation and limited out-of-domain generation.",
+          "In contrast, Muses leverages the 3D skeleton, a fundamental representation of biological forms, to explicitly and rationally compose diverse elements."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02098v1",
-      "title": "InpaintHuman: Reconstructing Occluded Humans with Multi-Scale UV Mapping and Identity-Preserving Diffusion Inpainting",
+      "id": "2601.03024v1",
+      "title": "SA-ResGS: Self-Augmented Residual 3D Gaussian Splatting for Next Best View Selection",
       "authors": [
-        "Jinlong Fan",
-        "Shanshan Zhao",
-        "Liang Zheng",
-        "Jing Zhang",
-        "Yuxiang Yang",
-        "Mingming Gong"
+        "Kim Jun-Seong",
+        "Tae-Hyun Oh",
+        "Eduardo Pérez-Pellitero",
+        "Youngkyoon Jang"
       ],
-      "abstract": "Reconstructing complete and animatable 3D human avatars from monocular videos remains challenging, particularly under severe occlusions. While 3D Gaussian Splatting has enabled photorealistic human rendering, existing methods struggle with incomplete observations, often producing corrupted geometry and temporal inconsistencies. We present InpaintHuman, a novel method for generating high-fidelity, complete, and animatable avatars from occluded monocular videos. Our approach introduces two key innovations: (i) a multi-scale UV-parameterized representation with hierarchical coarse-to-fine feature interpolation, enabling robust reconstruction of occluded regions while preserving geometric details; and (ii) an identity-preserving diffusion inpainting module that integrates textual inversion with semantic-conditioned guidance for subject-specific, temporally coherent completion. Unlike SDS-based methods, our approach employs direct pixel-level supervision to ensure identity fidelity. Experiments on synthetic benchmarks (PeopleSnapshot, ZJU-MoCap) and real-world scenarios (OcMotion) demonstrate competitive performance with consistent improvements in reconstruction quality across diverse poses and viewpoints.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "We propose Self-Augmented Residual 3D Gaussian Splatting (SA-ResGS), a novel framework to stabilize uncertainty quantification and enhancing uncertainty-aware supervision in next-best-view (NBV) selection for active scene reconstruction. SA-ResGS improves both the reliability of uncertainty estimates and their effectiveness for supervision by generating Self-Augmented point clouds (SA-Points) via triangulation between a training view and a rasterized extrapolated view, enabling efficient scene coverage estimation. While improving scene coverage through physically guided view selection, SA-ResGS also addresses the challenge of under-supervised Gaussians, exacerbated by sparse and wide-baseline views, by introducing the first residual learning strategy tailored for 3D Gaussian Splatting. This targeted supervision enhances gradient flow in high-uncertainty Gaussians by combining uncertainty-driven filtering with dropout- and hard-negative-mining-inspired sampling. Our contributions are threefold: (1) a physically grounded view selection strategy that promotes efficient and uniform scene coverage; (2) an uncertainty-aware residual supervision scheme that amplifies learning signals for weakly contributing Gaussians, improving training stability and uncertainty estimation across scenes with diverse camera distributions; (3) an implicit unbiasing of uncertainty quantification as a consequence of constrained view selection and residual supervision, which together mitigate conflicting effects of wide-baseline exploration and sparse-view ambiguity in NBV planning. Experiments on active view selection demonstrate that SA-ResGS outperforms state-of-the-art baselines in both reconstruction quality and view selection robustness.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02098v1",
-        "pdf": "https://arxiv.org/pdf/2601.02098v1"
+        "paper": "http://arxiv.org/abs/2601.03024v1",
+        "pdf": "https://arxiv.org/pdf/2601.03024v1"
       },
-      "arxiv_id": "2601.02098v1",
+      "arxiv_id": "2601.03024v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.027966101694915,
+      "relevance_score": 3.9279661016949152,
       "score_breakdown": {
-        "total_score": 4.03,
+        "total_score": 3.93,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -375,51 +237,114 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reconstructing complete and animatable 3D human avatars from monocular videos remains challenging, particularly under severe occlusions. While 3D Gaussian Splatting has enabled photorealistic human rendering, existing methods struggle with incomplete observations, often producing corrupted geometry and temporal inconsistencies. We present InpaintHuman, a novel method for generating high-fidelity, ...",
+        "short": "We propose Self-Augmented Residual 3D Gaussian Splatting (SA-ResGS), a novel framework to stabilize uncertainty quantification and enhancing uncertainty-aware supervision in next-best-view (NBV) selection for active scene reconstruction. SA-ResGS improves both the reliability of uncertainty estimates and their effectiveness for supervision by generating Self-Augmented point clouds (SA-Points) via ...",
         "key_contributions": [
-          "Reconstructing complete and animatable 3D human avatars from monocular videos remains challenging, particularly under severe occlusions.",
-          "While 3D Gaussian Splatting has enabled photorealistic human rendering, existing methods struggle with incomplete observations, often producing corrupted geometry and temporal inconsistencies.",
-          "We present InpaintHuman, a novel method for generating high-fidelity, complete, and animatable avatars from occluded monocular videos."
+          "We propose Self-Augmented Residual 3D Gaussian Splatting (SA-ResGS), a novel framework to stabilize uncertainty quantification and enhancing uncertainty-aware supervision in next-best-view (NBV) selection for active scene reconstruction.",
+          "SA-ResGS improves both the reliability of uncertainty estimates and their effectiveness for supervision by generating Self-Augmented point clouds (SA-Points) via triangulation between a training view and a rasterized extrapolated view, enabling efficient scene coverage estimation.",
+          "While improving scene coverage through physically guided view selection, SA-ResGS also addresses the challenge of under-supervised Gaussians, exacerbated by sparse and wide-baseline views, by introducing the first residual learning strategy tailored for 3D Gaussian Splatting."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02359v1",
-      "title": "ExposeAnyone: Personalized Audio-to-Expression Diffusion Models Are Robust Zero-Shot Face Forgery Detectors",
+      "id": "2601.02918v1",
+      "title": "Zoom-IQA: Image Quality Assessment with Reliable Region-Aware Reasoning",
       "authors": [
-        "Kaede Shiohara",
-        "Toshihiko Yamasaki",
-        "Vladislav Golyanik"
+        "Guoqiang Liang",
+        "Jianyi Wang",
+        "Zhonghua Wu",
+        "Shangchen Zhou"
       ],
-      "abstract": "Detecting unknown deepfake manipulations remains one of the most challenging problems in face forgery detection. Current state-of-the-art approaches fail to generalize to unseen manipulations, as they primarily rely on supervised training with existing deepfakes or pseudo-fakes, which leads to overfitting to specific forgery patterns. In contrast, self-supervised methods offer greater potential for generalization, but existing work struggles to learn discriminative representations only from self-supervision. In this paper, we propose ExposeAnyone, a fully self-supervised approach based on a diffusion model that generates expression sequences from audio. The key idea is, once the model is personalized to specific subjects using reference sets, it can compute the identity distances between suspected videos and personalized subjects via diffusion reconstruction errors, enabling person-of-interest face forgery detection. Extensive experiments demonstrate that 1) our method outperforms the previous state-of-the-art method by 4.22 percentage points in the average AUC on DF-TIMIT, DFDCP, KoDF, and IDForge datasets, 2) our model is also capable of detecting Sora2-generated videos, where the previous approaches perform poorly, and 3) our method is highly robust to corruptions such as blur and compression, highlighting the applicability in real-world face forgery detection.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "Image Quality Assessment (IQA) is a long-standing problem in computer vision. Previous methods typically focus on predicting numerical scores without explanation or provide low-level descriptions lacking precise scores. Recent reasoning-based vision language models (VLMs) have shown strong potential for IQA, enabling joint generation of quality descriptions and scores. However, we notice that existing VLM-based IQA methods tend to exhibit unreliable reasoning due to their limited capability of integrating visual and textual cues. In this work, we introduce Zoom-IQA, a VLM-based IQA model to explicitly emulate key cognitive behaviors: uncertainty awareness, region reasoning, and iterative refinement. Specifically, we present a two-stage training pipeline: 1) supervised fine-tuning (SFT) on our Grounded-Rationale-IQA (GR-IQA) dataset to teach the model to ground its assessments in key regions; and 2) reinforcement learning (RL) for dynamic policy exploration, primarily stabilized by our KL-Coverage regularizer to prevent reasoning and scoring diversity collapse, and supported by a Progressive Re-sampling Strategy to mitigate annotation bias. Extensive experiments show that Zoom-IQA achieves improved robustness, explainability, and generalization. The application to downstream tasks, such as image restoration, further demonstrates the effectiveness of Zoom-IQA.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02359v1",
-        "pdf": "https://arxiv.org/pdf/2601.02359v1"
+        "paper": "http://arxiv.org/abs/2601.02918v1",
+        "pdf": "https://arxiv.org/pdf/2601.02918v1"
       },
-      "arxiv_id": "2601.02359v1",
-      "comment": "17 pages, 8 figures, 11 tables; project page: https://mapooon.github.io/ExposeAnyonePage/",
+      "arxiv_id": "2601.02918v1",
+      "comment": "Project Page: https://ethanliang99.github.io/ZOOMIQA-Projectpage",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.021186440677965,
+      "relevance_score": 3.769491525423729,
       "score_breakdown": {
-        "total_score": 4.02,
+        "total_score": 3.77,
         "field_match": {
-          "score": 0.68,
+          "score": 0.42,
           "matches": [
-            "self-supervised"
+            "computer vision"
           ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Image Quality Assessment (IQA) is a long-standing problem in computer vision. Previous methods typically focus on predicting numerical scores without explanation or provide low-level descriptions lacking precise scores. Recent reasoning-based vision language models (VLMs) have shown strong potential for IQA, enabling joint generation of quality descriptions and scores. However, we notice that exis...",
+        "key_contributions": [
+          "Image Quality Assessment (IQA) is a long-standing problem in computer vision.",
+          "Previous methods typically focus on predicting numerical scores without explanation or provide low-level descriptions lacking precise scores.",
+          "Recent reasoning-based vision language models (VLMs) have shown strong potential for IQA, enabling joint generation of quality descriptions and scores."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.02994v1",
+      "title": "Learning to Act Robustly with View-Invariant Latent Actions",
+      "authors": [
+        "Youngjoon Jeong",
+        "Junha Chun",
+        "Taesup Kim"
+      ],
+      "abstract": "Vision-based robotic policies often struggle with even minor viewpoint changes, underscoring the need for view-invariant visual representations. This challenge becomes more pronounced in real-world settings, where viewpoint variability is unavoidable and can significantly disrupt policy performance. Existing methods typically learn invariance from multi-view observations at the scene level, but such approaches rely on visual appearance and fail to incorporate the physical dynamics essential for robust generalization. We propose View-Invariant Latent Action (VILA), which models a latent action capturing transition patterns across trajectories to learn view-invariant representations grounded in physical dynamics. VILA aligns these latent actions across viewpoints using an action-guided objective based on ground-truth action sequences. Experiments in both simulation and the real world show that VILA-based policies generalize effectively to unseen viewpoints and transfer well to new tasks, establishing VILA as a strong pretraining framework that improves robustness and downstream learning performance.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.02994v1",
+        "pdf": "https://arxiv.org/pdf/2601.02994v1"
+      },
+      "arxiv_id": "2601.02994v1",
+      "comment": "Website: https://joon-stack.github.io/VILA/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.7,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -437,52 +362,57 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Detecting unknown deepfake manipulations remains one of the most challenging problems in face forgery detection. Current state-of-the-art approaches fail to generalize to unseen manipulations, as they primarily rely on supervised training with existing deepfakes or pseudo-fakes, which leads to overfitting to specific forgery patterns. In contrast, self-supervised methods offer greater potential fo...",
+        "short": "Vision-based robotic policies often struggle with even minor viewpoint changes, underscoring the need for view-invariant visual representations. This challenge becomes more pronounced in real-world settings, where viewpoint variability is unavoidable and can significantly disrupt policy performance. Existing methods typically learn invariance from multi-view observations at the scene level, but su...",
         "key_contributions": [
-          "Detecting unknown deepfake manipulations remains one of the most challenging problems in face forgery detection.",
-          "Current state-of-the-art approaches fail to generalize to unseen manipulations, as they primarily rely on supervised training with existing deepfakes or pseudo-fakes, which leads to overfitting to specific forgery patterns.",
-          "In contrast, self-supervised methods offer greater potential for generalization, but existing work struggles to learn discriminative representations only from self-supervision."
+          "Vision-based robotic policies often struggle with even minor viewpoint changes, underscoring the need for view-invariant visual representations.",
+          "This challenge becomes more pronounced in real-world settings, where viewpoint variability is unavoidable and can significantly disrupt policy performance.",
+          "Existing methods typically learn invariance from multi-view observations at the scene level, but such approaches rely on visual appearance and fail to incorporate the physical dynamics essential for robust generalization."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02203v1",
-      "title": "Parameter-Efficient Domain Adaption for CSI Crowd-Counting via Self-Supervised Learning with Adapter Modules",
+      "id": "2601.03054v1",
+      "title": "IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation",
       "authors": [
-        "Oliver Custance",
-        "Saad Khan",
-        "Simon Parkinson",
-        "Quan Z. Sheng"
+        "Yankai Jiang",
+        "Qiaoru Li",
+        "Binlu Xu",
+        "Haoran Sun",
+        "Chao Ding",
+        "Junting Dong",
+        "Yuxiang Cai",
+        "Xuhong Zhang",
+        "Jianwei Yin"
       ],
-      "abstract": "Device-free crowd-counting using WiFi Channel State Information (CSI) is a key enabling technology for a new generation of privacy-preserving Internet of Things (IoT) applications. However, practical deployment is severely hampered by the domain shift problem, where models trained in one environment fail to generalise to another. To overcome this, we propose a novel two-stage framework centred on a CSI-ResNet-A architecture. This model is pre-trained via self-supervised contrastive learning to learn domain-invariant representations and leverages lightweight Adapter modules for highly efficient fine-tuning. The resulting event sequence is then processed by a stateful counting machine to produce a final, stable occupancy estimate. We validate our framework extensively. On our WiFlow dataset, our unsupervised approach excels in a 10-shot learning scenario, achieving a final Mean Absolute Error (MAE) of just 0.44--a task where supervised baselines fail. To formally quantify robustness, we introduce the Generalisation Index (GI), on which our model scores near-perfectly, confirming its ability to generalise. Furthermore, our framework sets a new state-of-the-art public WiAR benchmark with 98.8\\% accuracy. Our ablation studies reveal the core strength of our design: adapter-based fine-tuning achieves performance within 1\\% of a full fine-tune (98.84\\% vs. 99.67\\%) while training 97.2\\% fewer parameters. Our work provides a practical and scalable solution for developing robust sensing systems ready for real-world IoT deployments.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "Recent research on medical MLLMs has gradually shifted its focus from image-level understanding to fine-grained, pixel-level comprehension. Although segmentation serves as the foundation for pixel-level understanding, existing approaches face two major challenges. First, they introduce implicit segmentation tokens and require simultaneous fine-tuning of both the MLLM and external pixel decoders, which increases the risk of catastrophic forgetting and limits generalization to out-of-domain scenarios. Second, most methods rely on single-pass reasoning and lack the capability to iteratively refine segmentation results, leading to suboptimal performance. To overcome these limitations, we propose a novel agentic MLLM, named IBISAgent, that reformulates segmentation as a vision-centric, multi-step decision-making process. IBISAgent enables MLLMs to generate interleaved reasoning and text-based click actions, invoke segmentation tools, and produce high-quality masks without architectural modifications. By iteratively performing multi-step visual reasoning on masked image features, IBISAgent naturally supports mask refinement and promotes the development of pixel-level visual reasoning capabilities. We further design a two-stage training framework consisting of cold-start supervised fine-tuning and agentic reinforcement learning with tailored, fine-grained rewards, enhancing the model's robustness in complex medical referring and reasoning segmentation tasks. Extensive experiments demonstrate that IBISAgent consistently outperforms both closed-source and open-source SOTA methods. All datasets, code, and trained models will be released publicly.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
         "cs.CV",
-        "cs.CR"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02203v1",
-        "pdf": "https://arxiv.org/pdf/2601.02203v1"
+        "paper": "http://arxiv.org/abs/2601.03054v1",
+        "pdf": "https://arxiv.org/pdf/2601.03054v1"
       },
-      "arxiv_id": "2601.02203v1",
+      "arxiv_id": "2601.03054v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.9211864406779657,
+      "relevance_score": 3.653389830508474,
       "score_breakdown": {
-        "total_score": 3.92,
+        "total_score": 3.65,
         "field_match": {
-          "score": 0.68,
+          "score": 0.51,
           "matches": [
-            "self-supervised"
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -501,66 +431,63 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Device-free crowd-counting using WiFi Channel State Information (CSI) is a key enabling technology for a new generation of privacy-preserving Internet of Things (IoT) applications. However, practical deployment is severely hampered by the domain shift problem, where models trained in one environment fail to generalise to another. To overcome this, we propose a novel two-stage framework centred on ...",
+        "short": "Recent research on medical MLLMs has gradually shifted its focus from image-level understanding to fine-grained, pixel-level comprehension. Although segmentation serves as the foundation for pixel-level understanding, existing approaches face two major challenges. First, they introduce implicit segmentation tokens and require simultaneous fine-tuning of both the MLLM and external pixel decoders, w...",
         "key_contributions": [
-          "Device-free crowd-counting using WiFi Channel State Information (CSI) is a key enabling technology for a new generation of privacy-preserving Internet of Things (IoT) applications.",
-          "However, practical deployment is severely hampered by the domain shift problem, where models trained in one environment fail to generalise to another.",
-          "To overcome this, we propose a novel two-stage framework centred on a CSI-ResNet-A architecture."
+          "Recent research on medical MLLMs has gradually shifted its focus from image-level understanding to fine-grained, pixel-level comprehension.",
+          "Although segmentation serves as the foundation for pixel-level understanding, existing approaches face two major challenges.",
+          "First, they introduce implicit segmentation tokens and require simultaneous fine-tuning of both the MLLM and external pixel decoders, which increases the risk of catastrophic forgetting and limits generalization to out-of-domain scenarios."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02358v1",
-      "title": "VINO: A Unified Visual Generator with Interleaved OmniModal Context",
+      "id": "2601.03090v1",
+      "title": "LesionTABE: Equitable AI for Skin Lesion Detection",
       "authors": [
-        "Junyi Chen",
-        "Tong He",
-        "Zhoujie Fu",
-        "Pengfei Wan",
-        "Kun Gai",
-        "Weicai Ye"
+        "Rocio Mexia Diaz",
+        "Yasmin Greenway",
+        "Petru Manescu"
       ],
-      "abstract": "We present VINO, a unified visual generator that performs image and video generation and editing within a single framework. Instead of relying on task-specific models or independent modules for each modality, VINO uses a shared diffusion backbone that conditions on text, images and videos, enabling a broad range of visual creation and editing tasks under one model. Specifically, VINO couples a vision-language model (VLM) with a Multimodal Diffusion Transformer (MMDiT), where multimodal inputs are encoded as interleaved conditioning tokens, and then used to guide the diffusion process. This design supports multi-reference grounding, long-form instruction following, and coherent identity preservation across static and dynamic content, while avoiding modality-specific architectural components. To train such a unified system, we introduce a multi-stage training pipeline that progressively expands a video generation base model into a unified, multi-task generator capable of both image and video input and output. Across diverse generation and editing benchmarks, VINO demonstrates strong visual quality, faithful instruction following, improved reference and attribute preservation, and more controllable multi-identity edits. Our results highlight a practical path toward scalable unified visual generation, and the promise of interleaved, in-context computation as a foundation for general-purpose visual creation.",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "Bias remains a major barrier to the clinical adoption of AI in dermatology, as diagnostic models underperform on darker skin tones. We present LesionTABE, a fairness-centric framework that couples adversarial debiasing with dermatology-specific foundation model embeddings. Evaluated across multiple datasets covering both malignant and inflammatory conditions, LesionTABE achieves over a 25\\% improvement in fairness metrics compared to a ResNet-152 baseline, outperforming existing debiasing methods while simultaneously enhancing overall diagnostic accuracy. These results highlight the potential of foundation model debiasing as a step towards equitable clinical AI adoption.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02358v1",
-        "pdf": "https://arxiv.org/pdf/2601.02358v1"
+        "paper": "http://arxiv.org/abs/2601.03090v1",
+        "pdf": "https://arxiv.org/pdf/2601.03090v1"
       },
-      "arxiv_id": "2601.02358v1",
-      "comment": "Project page: https://sotamak1r.github.io/VINO-web/",
+      "arxiv_id": "2601.03090v1",
+      "comment": "Submitted to IEEE ISBI 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
+      "has_code": false,
+      "relevance_score": 3.65,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 3.65,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 8,
+          "venue": "ISBI",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -569,47 +496,114 @@
         }
       },
       "ai_summaries": {
-        "short": "We present VINO, a unified visual generator that performs image and video generation and editing within a single framework. Instead of relying on task-specific models or independent modules for each modality, VINO uses a shared diffusion backbone that conditions on text, images and videos, enabling a broad range of visual creation and editing tasks under one model. Specifically, VINO couples a vis...",
+        "short": "Bias remains a major barrier to the clinical adoption of AI in dermatology, as diagnostic models underperform on darker skin tones. We present LesionTABE, a fairness-centric framework that couples adversarial debiasing with dermatology-specific foundation model embeddings. Evaluated across multiple datasets covering both malignant and inflammatory conditions, LesionTABE achieves over a 25\\% improv...",
         "key_contributions": [
-          "We present VINO, a unified visual generator that performs image and video generation and editing within a single framework.",
-          "Instead of relying on task-specific models or independent modules for each modality, VINO uses a shared diffusion backbone that conditions on text, images and videos, enabling a broad range of visual creation and editing tasks under one model.",
-          "Specifically, VINO couples a vision-language model (VLM) with a Multimodal Diffusion Transformer (MMDiT), where multimodal inputs are encoded as interleaved conditioning tokens, and then used to guide the diffusion process."
+          "Bias remains a major barrier to the clinical adoption of AI in dermatology, as diagnostic models underperform on darker skin tones.",
+          "We present LesionTABE, a fairness-centric framework that couples adversarial debiasing with dermatology-specific foundation model embeddings.",
+          "Evaluated across multiple datasets covering both malignant and inflammatory conditions, LesionTABE achieves over a 25\\% improvement in fairness metrics compared to a ResNet-152 baseline, outperforming existing debiasing methods while simultaneously enhancing overall diagnostic accuracy."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.02309v1",
-      "title": "360DVO: Deep Visual Odometry for Monocular 360-Degree Camera",
+      "id": "2601.03163v1",
+      "title": "LSP-DETR: Efficient and Scalable Nuclei Segmentation in Whole Slide Images",
       "authors": [
-        "Xiaopeng Guo",
-        "Yinzhe Xu",
-        "Huajian Huang",
-        "Sai-Kit Yeung"
+        "Matěj Pekár",
+        "Vít Musil",
+        "Rudolf Nenutil",
+        "Petr Holub",
+        "Tomáš Brázdil"
       ],
-      "abstract": "Monocular omnidirectional visual odometry (OVO) systems leverage 360-degree cameras to overcome field-of-view limitations of perspective VO systems. However, existing methods, reliant on handcrafted features or photometric objectives, often lack robustness in challenging scenarios, such as aggressive motion and varying illumination. To address this, we present 360DVO, the first deep learning-based OVO framework. Our approach introduces a distortion-aware spherical feature extractor (DAS-Feat) that adaptively learns distortion-resistant features from 360-degree images. These sparse feature patches are then used to establish constraints for effective pose estimation within a novel omnidirectional differentiable bundle adjustment (ODBA) module. To facilitate evaluation in realistic settings, we also contribute a new real-world OVO benchmark. Extensive experiments on this benchmark and public synthetic datasets (TartanAir V2 and 360VO) demonstrate that 360DVO surpasses state-of-the-art baselines (including 360VO and OpenVSLAM), improving robustness by 50% and accuracy by 37.5%. Homepage: https://chris1004336379.github.io/360DVO-homepage",
-      "published": "2026-01-05",
-      "updated": "2026-01-05",
+      "abstract": "Precise and scalable instance segmentation of cell nuclei is essential for computational pathology, yet gigapixel Whole-Slide Images pose major computational challenges. Existing approaches rely on patch-based processing and costly post-processing for instance separation, sacrificing context and efficiency. We introduce LSP-DETR (Local Star Polygon DEtection TRansformer), a fully end-to-end framework that uses a lightweight transformer with linear complexity to process substantially larger images without additional computational cost. Nuclei are represented as star-convex polygons, and a novel radial distance loss function allows the segmentation of overlapping nuclei to emerge naturally, without requiring explicit overlap annotations or handcrafted post-processing. Evaluations on PanNuke and MoNuSeg show strong generalization across tissues and state-of-the-art efficiency, with LSP-DETR being over five times faster than the next-fastest leading method. Code and models are available at https://github.com/RationAI/lsp-detr.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02309v1",
-        "pdf": "https://arxiv.org/pdf/2601.02309v1"
+        "paper": "http://arxiv.org/abs/2601.03163v1",
+        "pdf": "https://arxiv.org/pdf/2601.03163v1"
       },
-      "arxiv_id": "2601.02309v1",
-      "comment": "12 pages. Received by RA-L",
+      "arxiv_id": "2601.03163v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.869491525423729,
+      "relevance_score": 3.6033898305084744,
       "score_breakdown": {
-        "total_score": 3.87,
+        "total_score": 3.6,
         "field_match": {
-          "score": 0.42,
+          "score": 0.51,
           "matches": [
-            "deep learning"
+            "segmentation"
           ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Precise and scalable instance segmentation of cell nuclei is essential for computational pathology, yet gigapixel Whole-Slide Images pose major computational challenges. Existing approaches rely on patch-based processing and costly post-processing for instance separation, sacrificing context and efficiency. We introduce LSP-DETR (Local Star Polygon DEtection TRansformer), a fully end-to-end framew...",
+        "key_contributions": [
+          "Precise and scalable instance segmentation of cell nuclei is essential for computational pathology, yet gigapixel Whole-Slide Images pose major computational challenges.",
+          "Existing approaches rely on patch-based processing and costly post-processing for instance separation, sacrificing context and efficiency.",
+          "We introduce LSP-DETR (Local Star Polygon DEtection TRansformer), a fully end-to-end framework that uses a lightweight transformer with linear complexity to process substantially larger images without additional computational cost."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.03181v1",
+      "title": "Multi-Modal Data-Enhanced Foundation Models for Prediction and Control in Wireless Networks: A Survey",
+      "authors": [
+        "Han Zhang",
+        "Mohammad Farzanullah",
+        "Mohammad Ghassemi",
+        "Akram Bin Sediq",
+        "Ali Afana",
+        "Melike Erol-Kantarci"
+      ],
+      "abstract": "Foundation models (FMs) are recognized as a transformative breakthrough that has started to reshape the future of artificial intelligence (AI) across both academia and industry. The integration of FMs into wireless networks is expected to enable the development of general-purpose AI agents capable of handling diverse network management requests and highly complex wireless-related tasks involving multi-modal data. Inspired by these ideas, this work discusses the utilization of FMs, especially multi-modal FMs in wireless networks. We focus on two important types of tasks in wireless network management: prediction tasks and control tasks. In particular, we first discuss FMs-enabled multi-modal contextual information understanding in wireless networks. Then, we explain how FMs can be applied to prediction and control tasks, respectively. Following this, we introduce the development of wireless-specific FMs from two perspectives: available datasets for development and the methodologies used. Finally, we conclude with a discussion of the challenges and future directions for FM-enhanced wireless networks.",
+      "published": "2026-01-06",
+      "updated": "2026-01-06",
+      "categories": [
+        "cs.NI",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "primary_category": "cs.NI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.03181v1",
+        "pdf": "https://arxiv.org/pdf/2601.03181v1"
+      },
+      "arxiv_id": "2601.03181v1",
+      "comment": "5 figures, 7 tables, IEEE COMST",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.5999999999999996,
+      "score_breakdown": {
+        "total_score": 3.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -627,16 +621,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Monocular omnidirectional visual odometry (OVO) systems leverage 360-degree cameras to overcome field-of-view limitations of perspective VO systems. However, existing methods, reliant on handcrafted features or photometric objectives, often lack robustness in challenging scenarios, such as aggressive motion and varying illumination. To address this, we present 360DVO, the first deep learning-based...",
+        "short": "Foundation models (FMs) are recognized as a transformative breakthrough that has started to reshape the future of artificial intelligence (AI) across both academia and industry. The integration of FMs into wireless networks is expected to enable the development of general-purpose AI agents capable of handling diverse network management requests and highly complex wireless-related tasks involving m...",
         "key_contributions": [
-          "Monocular omnidirectional visual odometry (OVO) systems leverage 360-degree cameras to overcome field-of-view limitations of perspective VO systems.",
-          "However, existing methods, reliant on handcrafted features or photometric objectives, often lack robustness in challenging scenarios, such as aggressive motion and varying illumination.",
-          "To address this, we present 360DVO, the first deep learning-based OVO framework."
+          "Foundation models (FMs) are recognized as a transformative breakthrough that has started to reshape the future of artificial intelligence (AI) across both academia and industry.",
+          "The integration of FMs into wireless networks is expected to enable the development of general-purpose AI agents capable of handling diverse network management requests and highly complex wireless-related tasks involving multi-modal data.",
+          "Inspired by these ideas, this work discusses the utilization of FMs, especially multi-modal FMs in wireless networks."
         ],
         "provider": "gemini"
       }

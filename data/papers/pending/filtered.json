@@ -3,45 +3,49 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2601.03213v1",
-      "title": "Critic-Guided Reinforcement Unlearning in Text-to-Image Diffusion",
+      "id": "2601.03875v1",
+      "title": "Staged Voxel-Level Deep Reinforcement Learning for 3D Medical Image Segmentation with Noisy Annotations",
       "authors": [
-        "Mykola Vysotskyi",
-        "Zahar Kohut",
-        "Mariia Shpir",
-        "Taras Rumezhak",
-        "Volodymyr Karpiv"
+        "Yuyang Fu",
+        "Xiuzhen Guo",
+        "Ji Shi"
       ],
-      "abstract": "Machine unlearning in text-to-image diffusion models aims to remove targeted concepts while preserving overall utility. Prior diffusion unlearning methods typically rely on supervised weight edits or global penalties; reinforcement-learning (RL) approaches, while flexible, often optimize sparse end-of-trajectory rewards, yielding high-variance updates and weak credit assignment. We present a general RL framework for diffusion unlearning that treats denoising as a sequential decision process and introduces a timestep-aware critic with noisy-step rewards. Concretely, we train a CLIP-based reward predictor on noisy latents and use its per-step signal to compute advantage estimates for policy-gradient updates of the reverse diffusion kernel. Our algorithm is simple to implement, supports off-policy reuse, and plugs into standard text-to-image backbones. Across multiple concepts, the method achieves better or comparable forgetting to strong baselines while maintaining image quality and benign prompt fidelity; ablations show that (i) per-step critics and (ii) noisy-conditioned rewards are key to stability and effectiveness. We release code and evaluation scripts to facilitate reproducibility and future research on RL-based diffusion unlearning.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Deep learning has achieved significant advancements in medical image segmentation. Currently, obtaining accurate segmentation outcomes is critically reliant on large-scale datasets with high-quality annotations. However, noisy annotations are frequently encountered owing to the complex morphological structures of organs in medical images and variations among different annotators, which can substantially limit the efficacy of segmentation models. Motivated by the fact that medical imaging annotator can correct labeling errors during segmentation based on prior knowledge, we propose an end-to-end Staged Voxel-Level Deep Reinforcement Learning (SVL-DRL) framework for robust medical image segmentation under noisy annotations. This framework employs a dynamic iterative update strategy to automatically mitigate the impact of erroneous labels without requiring manual intervention. The key advancements of SVL-DRL over existing works include: i) formulating noisy annotations as a voxel-dependent problem and addressing it through a novel staged reinforcement learning framework which guarantees robust model convergence; ii) incorporating a voxel-level asynchronous advantage actor-critic (vA3C) module that conceptualizes each voxel as an autonomous agent, which allows each agent to dynamically refine its own state representation during training, thereby directly mitigating the influence of erroneous labels; iii) designing a novel action space for the agents, along with a composite reward function that strategically combines the Dice value and a spatial continuity metric to significantly boost segmentation accuracy while maintain semantic integrity. Experiments on three public medical image datasets demonstrates State-of-The-Art (SoTA) performance under various experimental settings, with an average improvement of over 3\\% in both Dice and IoU scores.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.LG"
+        "eess.IV",
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "eess.IV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.03213v1",
-        "pdf": "https://arxiv.org/pdf/2601.03213v1"
+        "paper": "http://arxiv.org/abs/2601.03875v1",
+        "pdf": "https://arxiv.org/pdf/2601.03875v1"
       },
-      "arxiv_id": "2601.03213v1",
-      "comment": "Preprint. Under review at ICLR 2026",
+      "arxiv_id": "2601.03875v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.283050847457627,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.28,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.46,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "segmentation",
+            "deep learning"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -50,36 +54,39 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.03144v1",
-      "title": "Self-Verification is All You Need To Pass The Japanese Bar Examination",
+      "id": "2601.04185v1",
+      "title": "ImLoc: Revisiting Visual Localization with Image-based Representation",
       "authors": [
-        "Andrew Shin"
+        "Xudong Jiang",
+        "Fangjinhua Wang",
+        "Silvano Galliani",
+        "Christoph Vogel",
+        "Marc Pollefeys"
       ],
-      "abstract": "Despite rapid advances in large language models (LLMs), achieving reliable performance on highly professional and structured examinations remains a significant challenge. The Japanese bar examination is a particularly demanding benchmark, requiring not only advanced legal reasoning but also strict adherence to complex answer formats that involve joint evaluation of multiple propositions. While recent studies have reported improvements by decomposing such questions into simpler true--false judgments, these approaches have not been systematically evaluated under the original exam format and scoring scheme, leaving open the question of whether they truly capture exam-level competence. In this paper, we present a self-verification model trained on a newly constructed dataset that faithfully replicates the authentic format and evaluation scale of the exam. Our model is able to exceed the official passing score when evaluated on the actual exam scale, marking the first demonstration, to our knowledge, of an LLM passing the Japanese bar examination without altering its original question structure or scoring rules. We further conduct extensive comparisons with alternative strategies, including multi-agent inference and decomposition-based supervision, and find that these methods fail to achieve comparable performance. Our results highlight the importance of format-faithful supervision and consistency verification, and suggest that carefully designed single-model approaches can outperform more complex systems in high-stakes professional reasoning tasks. Our dataset and codes are publicly available.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Existing visual localization methods are typically either 2D image-based, which are easy to build and maintain but limited in effective geometric reasoning, or 3D structure-based, which achieve high accuracy but require a centralized reconstruction and are difficult to update. In this work, we revisit visual localization with a 2D image-based representation and propose to augment each image with estimated depth maps to capture the geometric structure. Supported by the effective use of dense matchers, this representation is not only easy to build and maintain, but achieves highest accuracy in challenging conditions. With compact compression and a GPU-accelerated LO-RANSAC implementation, the whole pipeline is efficient in both storage and computation and allows for a flexible trade-off between accuracy and highest memory efficiency. Our method achieves a new state-of-the-art accuracy on various standard benchmarks and outperforms existing memory-efficient methods at comparable map sizes. Code will be available at https://github.com/cvg/Hierarchical-Localization.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.CL",
-        "cs.AI"
+        "cs.CV"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.03144v1",
-        "pdf": "https://arxiv.org/pdf/2601.03144v1"
+        "paper": "http://arxiv.org/abs/2601.04185v1",
+        "pdf": "https://arxiv.org/pdf/2601.04185v1"
       },
-      "arxiv_id": "2601.03144v1",
-      "comment": "https://github.com/shinandrew/self_verification",
+      "arxiv_id": "2601.04185v1",
+      "comment": "Code will be available at https://github.com/cvg/Hierarchical-Localization",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.050000000000001,
+      "relevance_score": 4.199999999999999,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -91,7 +98,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -106,38 +113,38 @@
       }
     },
     {
-      "id": "2601.03256v1",
-      "title": "Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training",
+      "id": "2601.03892v1",
+      "title": "Lightweight and perceptually-guided voice conversion for electro-laryngeal speech",
       "authors": [
-        "Hexiao Lu",
-        "Xiaokun Sun",
-        "Zeyu Cai",
-        "Hao Guo",
-        "Ying Tai",
-        "Jian Yang",
-        "Zhenyu Zhang"
+        "Benedikt Mayrhofer",
+        "Franz Pernkopf",
+        "Philipp Aichinger",
+        "Martin Hagmüller"
       ],
-      "abstract": "We present Muses, the first training-free method for fantastic 3D creature generation in a feed-forward paradigm. Previous methods, which rely on part-aware optimization, manual assembly, or 2D image generation, often produce unrealistic or incoherent 3D assets due to the challenges of intricate part-level manipulation and limited out-of-domain generation. In contrast, Muses leverages the 3D skeleton, a fundamental representation of biological forms, to explicitly and rationally compose diverse elements. This skeletal foundation formalizes 3D content creation as a structure-aware pipeline of design, composition, and generation. Muses begins by constructing a creatively composed 3D skeleton with coherent layout and scale through graph-constrained reasoning. This skeleton then guides a voxel-based assembly process within a structured latent space, integrating regions from different objects. Finally, image-guided appearance modeling under skeletal conditions is applied to generate a style-consistent and harmonious texture for the assembled shape. Extensive experiments establish Muses' state-of-the-art performance in terms of visual fidelity and alignment with textual descriptions, and potential on flexible 3D object editing. Project page: https://luhexiao.github.io/Muses.github.io/.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Electro-laryngeal (EL) speech is characterized by constant pitch, limited prosody, and mechanical noise, reducing naturalness and intelligibility. We propose a lightweight adaptation of the state-of-the-art StreamVC framework to this setting by removing pitch and energy modules and combining self-supervised pretraining with supervised fine-tuning on parallel EL and healthy (HE) speech data, guided by perceptual and intelligibility losses. Objective and subjective evaluations across different loss configurations confirm their influence: the best model variant, based on WavLM features and human-feedback predictions (+WavLM+HF), drastically reduces character error rate (CER) of EL inputs, raises naturalness mean opinion score (nMOS) from 1.1 to 3.3, and consistently narrows the gap to HE ground-truth speech in all evaluated metrics. These findings demonstrate the feasibility of adapting lightweight voice conversion architectures to EL voice rehabilitation while also identifying prosody generation and intelligibility improvements as the main remaining bottlenecks.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.CV"
+        "cs.SD",
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.SD",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.03256v1",
-        "pdf": "https://arxiv.org/pdf/2601.03256v1"
+        "paper": "http://arxiv.org/abs/2601.03892v1",
+        "pdf": "https://arxiv.org/pdf/2601.03892v1"
       },
-      "arxiv_id": "2601.03256v1",
-      "comment": "Project page: https://luhexiao.github.io/Muses.github.io/",
+      "arxiv_id": "2601.03892v1",
+      "comment": "5 pages, 5 figures. Audio samples available at https://spsc-tugraz.github.io/lw-elvc-icassp26/ Preprint submitted to ICASSP",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.95,
+      "relevance_score": 4.071186440677966,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.07,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -146,7 +153,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -161,32 +168,35 @@
       }
     },
     {
-      "id": "2601.03024v1",
-      "title": "SA-ResGS: Self-Augmented Residual 3D Gaussian Splatting for Next Best View Selection",
+      "id": "2601.03824v1",
+      "title": "IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting",
       "authors": [
-        "Kim Jun-Seong",
-        "Tae-Hyun Oh",
-        "Eduardo Pérez-Pellitero",
-        "Youngkyoon Jang"
+        "Wei Long",
+        "Haifeng Wu",
+        "Shiyin Jiang",
+        "Jinhua Zhang",
+        "Xinchun Ji",
+        "Shuhang Gu"
       ],
-      "abstract": "We propose Self-Augmented Residual 3D Gaussian Splatting (SA-ResGS), a novel framework to stabilize uncertainty quantification and enhancing uncertainty-aware supervision in next-best-view (NBV) selection for active scene reconstruction. SA-ResGS improves both the reliability of uncertainty estimates and their effectiveness for supervision by generating Self-Augmented point clouds (SA-Points) via triangulation between a training view and a rasterized extrapolated view, enabling efficient scene coverage estimation. While improving scene coverage through physically guided view selection, SA-ResGS also addresses the challenge of under-supervised Gaussians, exacerbated by sparse and wide-baseline views, by introducing the first residual learning strategy tailored for 3D Gaussian Splatting. This targeted supervision enhances gradient flow in high-uncertainty Gaussians by combining uncertainty-driven filtering with dropout- and hard-negative-mining-inspired sampling. Our contributions are threefold: (1) a physically grounded view selection strategy that promotes efficient and uniform scene coverage; (2) an uncertainty-aware residual supervision scheme that amplifies learning signals for weakly contributing Gaussians, improving training stability and uncertainty estimation across scenes with diverse camera distributions; (3) an implicit unbiasing of uncertainty quantification as a consequence of constrained view selection and residual supervision, which together mitigate conflicting effects of wide-baseline exploration and sparse-view ambiguity in NBV planning. Experiments on active view selection demonstrate that SA-ResGS outperforms state-of-the-art baselines in both reconstruction quality and view selection robustness.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Generalizable 3D Gaussian Splatting aims to directly predict Gaussian parameters using a feed-forward network for scene reconstruction. Among these parameters, Gaussian means are particularly difficult to predict, so depth is usually estimated first and then unprojected to obtain the Gaussian sphere centers. Existing methods typically rely solely on a single warp to estimate depth probability, which hinders their ability to fully leverage cross-view geometric cues, resulting in unstable and coarse depth maps. To address this limitation, we propose IDESplat, which iteratively applies warp operations to boost depth probability estimation for accurate Gaussian mean prediction. First, to eliminate the inherent instability of a single warp, we introduce a Depth Probability Boosting Unit (DPBU) that integrates epipolar attention maps produced by cascading warp operations in a multiplicative manner. Next, we construct an iterative depth estimation process by stacking multiple DPBUs, progressively identifying potential depth candidates with high likelihood. As IDESplat iteratively boosts depth probability estimates and updates the depth candidates, the depth map is gradually refined, resulting in accurate Gaussian means. We conduct experiments on RealEstate10K, ACID, and DL3DV. IDESplat achieves outstanding reconstruction quality and state-of-the-art performance with real-time efficiency. On RE10K, it outperforms DepthSplat by 0.33 dB in PSNR, using only 10.7% of the parameters and 70% of the memory. Additionally, our IDESplat improves PSNR by 2.95 dB over DepthSplat on the DTU dataset in cross-dataset experiments, demonstrating its strong generalization ability.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.03024v1",
-        "pdf": "https://arxiv.org/pdf/2601.03024v1"
+        "paper": "http://arxiv.org/abs/2601.03824v1",
+        "pdf": "https://arxiv.org/pdf/2601.03824v1"
       },
-      "arxiv_id": "2601.03024v1",
+      "arxiv_id": "2601.03824v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.9279661016949152,
+      "relevance_score": 3.977966101694915,
       "score_breakdown": {
-        "total_score": 3.93,
+        "total_score": 3.98,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -210,42 +220,49 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.02918v1",
-      "title": "Zoom-IQA: Image Quality Assessment with Reliable Region-Aware Reasoning",
+      "id": "2601.03811v1",
+      "title": "EvalBlocks: A Modular Pipeline for Rapidly Evaluating Foundation Models in Medical Imaging",
       "authors": [
-        "Guoqiang Liang",
-        "Jianyi Wang",
-        "Zhonghua Wu",
-        "Shangchen Zhou"
+        "Jan Tagscherer",
+        "Sarah de Boer",
+        "Lena Philipp",
+        "Fennie van der Graaf",
+        "Dré Peeters",
+        "Joeran Bosma",
+        "Lars Leijten",
+        "Bogdan Obreja",
+        "Ewoud Smit",
+        "Alessa Hering"
       ],
-      "abstract": "Image Quality Assessment (IQA) is a long-standing problem in computer vision. Previous methods typically focus on predicting numerical scores without explanation or provide low-level descriptions lacking precise scores. Recent reasoning-based vision language models (VLMs) have shown strong potential for IQA, enabling joint generation of quality descriptions and scores. However, we notice that existing VLM-based IQA methods tend to exhibit unreliable reasoning due to their limited capability of integrating visual and textual cues. In this work, we introduce Zoom-IQA, a VLM-based IQA model to explicitly emulate key cognitive behaviors: uncertainty awareness, region reasoning, and iterative refinement. Specifically, we present a two-stage training pipeline: 1) supervised fine-tuning (SFT) on our Grounded-Rationale-IQA (GR-IQA) dataset to teach the model to ground its assessments in key regions; and 2) reinforcement learning (RL) for dynamic policy exploration, primarily stabilized by our KL-Coverage regularizer to prevent reasoning and scoring diversity collapse, and supported by a Progressive Re-sampling Strategy to mitigate annotation bias. Extensive experiments show that Zoom-IQA achieves improved robustness, explainability, and generalization. The application to downstream tasks, such as image restoration, further demonstrates the effectiveness of Zoom-IQA.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Developing foundation models in medical imaging requires continuous monitoring of downstream performance. Researchers are burdened with tracking numerous experiments, design choices, and their effects on performance, often relying on ad-hoc, manual workflows that are inherently slow and error-prone. We introduce EvalBlocks, a modular, plug-and-play framework for efficient evaluation of foundation models during development. Built on Snakemake, EvalBlocks supports seamless integration of new datasets, foundation models, aggregation methods, and evaluation strategies. All experiments and results are tracked centrally and are reproducible with a single command, while efficient caching and parallel execution enable scalable use on shared compute infrastructure. Demonstrated on five state-of-the-art foundation models and three medical imaging classification tasks, EvalBlocks streamlines model evaluation, enabling researchers to iterate faster and focus on model innovation rather than evaluation logistics. The framework is released as open source software at https://github.com/DIAGNijmegen/eval-blocks.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02918v1",
-        "pdf": "https://arxiv.org/pdf/2601.02918v1"
+        "paper": "http://arxiv.org/abs/2601.03811v1",
+        "pdf": "https://arxiv.org/pdf/2601.03811v1"
       },
-      "arxiv_id": "2601.02918v1",
-      "comment": "Project Page: https://ethanliang99.github.io/ZOOMIQA-Projectpage",
+      "arxiv_id": "2601.03811v1",
+      "comment": "Accepted at BVM 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.769491525423729,
+      "has_code": false,
+      "relevance_score": 3.8050847457627115,
       "score_breakdown": {
-        "total_score": 3.77,
+        "total_score": 3.81,
         "field_match": {
-          "score": 0.42,
+          "score": 0.76,
           "matches": [
-            "computer vision"
+            "medical imaging"
           ],
           "weight": 0.4
         },
@@ -255,12 +272,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -270,33 +287,86 @@
       }
     },
     {
-      "id": "2601.02994v1",
-      "title": "Learning to Act Robustly with View-Invariant Latent Actions",
+      "id": "2601.04090v1",
+      "title": "Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction",
       "authors": [
-        "Youngjoon Jeong",
-        "Junha Chun",
-        "Taesup Kim"
+        "Jiaxin Huang",
+        "Yuanbo Yang",
+        "Bangbang Yang",
+        "Lin Ma",
+        "Yuewen Ma",
+        "Yiyi Liao"
       ],
-      "abstract": "Vision-based robotic policies often struggle with even minor viewpoint changes, underscoring the need for view-invariant visual representations. This challenge becomes more pronounced in real-world settings, where viewpoint variability is unavoidable and can significantly disrupt policy performance. Existing methods typically learn invariance from multi-view observations at the scene level, but such approaches rely on visual appearance and fail to incorporate the physical dynamics essential for robust generalization. We propose View-Invariant Latent Action (VILA), which models a latent action capturing transition patterns across trajectories to learn view-invariant representations grounded in physical dynamics. VILA aligns these latent actions across viewpoints using an action-guided objective based on ground-truth action sequences. Experiments in both simulation and the real world show that VILA-based policies generalize effectively to unseen viewpoints and transfer well to new tasks, establishing VILA as a strong pretraining framework that improves robustness and downstream learning performance.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "We present Gen3R, a method that bridges the strong priors of foundational reconstruction models and video diffusion models for scene-level 3D generation. We repurpose the VGGT reconstruction model to produce geometric latents by training an adapter on its tokens, which are regularized to align with the appearance latents of pre-trained video diffusion models. By jointly generating these disentangled yet aligned latents, Gen3R produces both RGB videos and corresponding 3D geometry, including camera poses, depth maps, and global point clouds. Experiments demonstrate that our approach achieves state-of-the-art results in single- and multi-image conditioned 3D scene generation. Additionally, our method can enhance the robustness of reconstruction by leveraging generative priors, demonstrating the mutual benefit of tightly coupling reconstruction and generative models.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.02994v1",
-        "pdf": "https://arxiv.org/pdf/2601.02994v1"
+        "paper": "http://arxiv.org/abs/2601.04090v1",
+        "pdf": "https://arxiv.org/pdf/2601.04090v1"
       },
-      "arxiv_id": "2601.02994v1",
-      "comment": "Website: https://joon-stack.github.io/VILA/",
+      "arxiv_id": "2601.04090v1",
+      "comment": "Project page: https://xdimlab.github.io/Gen3R/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.7,
+      "relevance_score": 3.8,
       "score_breakdown": {
-        "total_score": 3.7,
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.03805v1",
+      "title": "Detecting Semantic Backdoors in a Mystery Shopping Scenario",
+      "authors": [
+        "Arpad Berta",
+        "Gabor Danner",
+        "Istvan Hegedus",
+        "Mark Jelasity"
+      ],
+      "abstract": "Detecting semantic backdoors in classification models--where some classes can be activated by certain natural, but out-of-distribution inputs--is an important problem that has received relatively little attention. Semantic backdoors are significantly harder to detect than backdoors that are based on trigger patterns due to the lack of such clearly identifiable patterns. We tackle this problem under the assumption that the clean training dataset and the training recipe of the model are both known. These assumptions are motivated by a consumer protection scenario, in which the responsible authority performs mystery shopping to test a machine learning service provider. In this scenario, the authority uses the provider's resources and tools to train a model on a given dataset and tests whether the provider included a backdoor. In our proposed approach, the authority creates a reference model pool by training a small number of clean and poisoned models using trusted infrastructure, and calibrates a model distance threshold to identify clean models. We propose and experimentally analyze a number of approaches to compute model distances and we also test a scenario where the provider performs an adaptive attack to avoid detection. The most reliable method is based on requesting adversarial training from the provider. The model distance is best measured using a set of input samples generated by inverting the models in such a way as to maximize the distance from clean samples. With these settings, our method can often completely separate clean and poisoned models, and it proves to be superior to state-of-the-art backdoor detectors as well.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.03805v1",
+        "pdf": "https://arxiv.org/pdf/2601.03805v1"
+      },
+      "arxiv_id": "2601.03805v1",
+      "comment": "Source code available at https://github.com/szegedai/SemanticBackdoorDetection",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.75,
+      "score_breakdown": {
+        "total_score": 3.75,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -317,48 +387,94 @@
           "weight": 0.1
         },
         "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.04176v1",
+      "title": "Robust Physics Discovery from Highly Corrupted Data: A PINN Framework Applied to the Nonlinear Schrödinger Equation",
+      "authors": [
+        "Pietro de Oliveira Esteves"
+      ],
+      "abstract": "We demonstrate a deep learning framework capable of recovering physical parameters from the Nonlinear Schrodinger Equation (NLSE) under severe noise conditions. By integrating Physics-Informed Neural Networks (PINNs) with automatic differentiation, we achieve reconstruction of the nonlinear coefficient beta with less than 0.2 percent relative error using only 500 sparse, randomly sampled data points corrupted by 20 percent additive Gaussian noise, a regime where traditional finite difference methods typically fail due to noise amplification in numerical derivatives. We validate the method's generalization capabilities across different physical regimes (beta between 0.5 and 2.0) and varying data availability (between 100 and 1000 training points), demonstrating consistent sub-1 percent accuracy. Statistical analysis over multiple independent runs confirms robustness (standard deviation less than 0.15 percent for beta equals 1.0). The complete pipeline executes in approximately 80 minutes on modest cloud GPU resources (NVIDIA Tesla T4), making the approach accessible for widespread adoption. Our results indicate that physics-based regularization acts as an effective filter against high measurement uncertainty, positioning PINNs as a viable alternative to traditional optimization methods for inverse problems in spatiotemporal dynamics where experimental data is scarce and noisy. All code is made publicly available to facilitate reproducibility.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
+      "categories": [
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.04176v1",
+        "pdf": "https://arxiv.org/pdf/2601.04176v1"
+      },
+      "arxiv_id": "2601.04176v1",
+      "comment": "9 pages, 4 figures, 2 tables. Code available at https://github.com/p-esteves/pinn-nlse-2026",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.719491525423729,
+      "score_breakdown": {
+        "total_score": 3.72,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.03054v1",
-      "title": "IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation",
+      "id": "2601.04127v1",
+      "title": "Pixel-Wise Multimodal Contrastive Learning for Remote Sensing Images",
       "authors": [
-        "Yankai Jiang",
-        "Qiaoru Li",
-        "Binlu Xu",
-        "Haoran Sun",
-        "Chao Ding",
-        "Junting Dong",
-        "Yuxiang Cai",
-        "Xuhong Zhang",
-        "Jianwei Yin"
+        "Leandro Stival",
+        "Ricardo da Silva Torres",
+        "Helio Pedrini"
       ],
-      "abstract": "Recent research on medical MLLMs has gradually shifted its focus from image-level understanding to fine-grained, pixel-level comprehension. Although segmentation serves as the foundation for pixel-level understanding, existing approaches face two major challenges. First, they introduce implicit segmentation tokens and require simultaneous fine-tuning of both the MLLM and external pixel decoders, which increases the risk of catastrophic forgetting and limits generalization to out-of-domain scenarios. Second, most methods rely on single-pass reasoning and lack the capability to iteratively refine segmentation results, leading to suboptimal performance. To overcome these limitations, we propose a novel agentic MLLM, named IBISAgent, that reformulates segmentation as a vision-centric, multi-step decision-making process. IBISAgent enables MLLMs to generate interleaved reasoning and text-based click actions, invoke segmentation tools, and produce high-quality masks without architectural modifications. By iteratively performing multi-step visual reasoning on masked image features, IBISAgent naturally supports mask refinement and promotes the development of pixel-level visual reasoning capabilities. We further design a two-stage training framework consisting of cold-start supervised fine-tuning and agentic reinforcement learning with tailored, fine-grained rewards, enhancing the model's robustness in complex medical referring and reasoning segmentation tasks. Extensive experiments demonstrate that IBISAgent consistently outperforms both closed-source and open-source SOTA methods. All datasets, code, and trained models will be released publicly.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Satellites continuously generate massive volumes of data, particularly for Earth observation, including satellite image time series (SITS). However, most deep learning models are designed to process either entire images or complete time series sequences to extract meaningful features for downstream tasks. In this study, we propose a novel multimodal approach that leverages pixel-wise two-dimensional (2D) representations to encode visual property variations from SITS more effectively. Specifically, we generate recurrence plots from pixel-based vegetation index time series (NDVI, EVI, and SAVI) as an alternative to using raw pixel values, creating more informative representations. Additionally, we introduce PIxel-wise Multimodal Contrastive (PIMC), a new multimodal self-supervision approach that produces effective encoders based on two-dimensional pixel time series representations and remote sensing imagery (RSI). To validate our approach, we assess its performance on three downstream tasks: pixel-level forecasting and classification using the PASTIS dataset, and land cover classification on the EuroSAT dataset. Moreover, we compare our results to state-of-the-art (SOTA) methods on all downstream tasks. Our experimental results show that the use of 2D representations significantly enhances feature extraction from SITS, while contrastive learning improves the quality of representations for both pixel time series and RSI. These findings suggest that our multimodal method outperforms existing models in various Earth observation tasks, establishing it as a robust self-supervision framework for processing both SITS and RSI. Code avaliable on",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
         "cs.CV",
         "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.03054v1",
-        "pdf": "https://arxiv.org/pdf/2601.03054v1"
+        "paper": "http://arxiv.org/abs/2601.04127v1",
+        "pdf": "https://arxiv.org/pdf/2601.04127v1"
       },
-      "arxiv_id": "2601.03054v1",
-      "comment": "",
+      "arxiv_id": "2601.04127v1",
+      "comment": "21 pages, 9 Figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.653389830508474,
+      "relevance_score": 3.6194915254237285,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 3.62,
         "field_match": {
-          "score": 0.51,
+          "score": 0.42,
           "matches": [
-            "segmentation"
+            "deep learning"
           ],
           "weight": 0.4
         },
@@ -383,39 +499,38 @@
       }
     },
     {
-      "id": "2601.03090v1",
-      "title": "LesionTABE: Equitable AI for Skin Lesion Detection",
+      "id": "2601.03801v1",
+      "title": "Physically Consistent Machine Learning for Melting Temperature Prediction of Refractory High-Entropy Alloys",
       "authors": [
-        "Rocio Mexia Diaz",
-        "Yasmin Greenway",
-        "Petru Manescu"
+        "Mohd Hasnain"
       ],
-      "abstract": "Bias remains a major barrier to the clinical adoption of AI in dermatology, as diagnostic models underperform on darker skin tones. We present LesionTABE, a fairness-centric framework that couples adversarial debiasing with dermatology-specific foundation model embeddings. Evaluated across multiple datasets covering both malignant and inflammatory conditions, LesionTABE achieves over a 25\\% improvement in fairness metrics compared to a ResNet-152 baseline, outperforming existing debiasing methods while simultaneously enhancing overall diagnostic accuracy. These results highlight the potential of foundation model debiasing as a step towards equitable clinical AI adoption.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
+      "abstract": "Predicting the melting temperature (Tm) of multi-component and high-entropy alloys (HEAs) is critical for high-temperature applications but computationally expensive using traditional CALPHAD or DFT methods. In this work, we develop a gradient-boosted decision tree (XGBoost) model to predict Tm for complex alloys based on elemental properties. To ensure physical consistency, we address the issue of data leakage by excluding temperature-dependent thermodynamic descriptors (such as Gibbs free energy of mixing) and instead rely on physically motivated elemental features. The optimized model achieves a coefficient of determination (R2) of 0.948 and a Mean Squared Error (MSE) of 9928 which is about 5% relative error for HEAs on a validation set of approximately 1300 compositions. Crucially, we validate the model using the Valence Electron Concentration (VEC) rule. Without explicit constraints during training, the model successfully captures the known stability transition between BCC and FCC phases at a VEC of approximately 6.87. These results demonstrate that data-driven models, when properly feature-engineered, can capture fundamental metallurgical principles for rapid alloy screening.",
+      "published": "2026-01-07",
+      "updated": "2026-01-07",
       "categories": [
-        "cs.CV"
+        "cond-mat.mtrl-sci",
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cond-mat.mtrl-sci",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.03090v1",
-        "pdf": "https://arxiv.org/pdf/2601.03090v1"
+        "paper": "http://arxiv.org/abs/2601.03801v1",
+        "pdf": "https://arxiv.org/pdf/2601.03801v1"
       },
-      "arxiv_id": "2601.03090v1",
-      "comment": "Submitted to IEEE ISBI 2026",
+      "arxiv_id": "2601.03801v1",
+      "comment": "6 Pages, 3 figures, code available at Github",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.65,
+      "has_code": true,
+      "relevance_score": 3.6,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 3.6,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 8,
-          "venue": "ISBI",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -423,124 +538,12 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
           "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.03163v1",
-      "title": "LSP-DETR: Efficient and Scalable Nuclei Segmentation in Whole Slide Images",
-      "authors": [
-        "Matěj Pekár",
-        "Vít Musil",
-        "Rudolf Nenutil",
-        "Petr Holub",
-        "Tomáš Brázdil"
-      ],
-      "abstract": "Precise and scalable instance segmentation of cell nuclei is essential for computational pathology, yet gigapixel Whole-Slide Images pose major computational challenges. Existing approaches rely on patch-based processing and costly post-processing for instance separation, sacrificing context and efficiency. We introduce LSP-DETR (Local Star Polygon DEtection TRansformer), a fully end-to-end framework that uses a lightweight transformer with linear complexity to process substantially larger images without additional computational cost. Nuclei are represented as star-convex polygons, and a novel radial distance loss function allows the segmentation of overlapping nuclei to emerge naturally, without requiring explicit overlap annotations or handcrafted post-processing. Evaluations on PanNuke and MoNuSeg show strong generalization across tissues and state-of-the-art efficiency, with LSP-DETR being over five times faster than the next-fastest leading method. Code and models are available at https://github.com/RationAI/lsp-detr.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.03163v1",
-        "pdf": "https://arxiv.org/pdf/2601.03163v1"
-      },
-      "arxiv_id": "2601.03163v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.6033898305084744,
-      "score_breakdown": {
-        "total_score": 3.6,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.03181v1",
-      "title": "Multi-Modal Data-Enhanced Foundation Models for Prediction and Control in Wireless Networks: A Survey",
-      "authors": [
-        "Han Zhang",
-        "Mohammad Farzanullah",
-        "Mohammad Ghassemi",
-        "Akram Bin Sediq",
-        "Ali Afana",
-        "Melike Erol-Kantarci"
-      ],
-      "abstract": "Foundation models (FMs) are recognized as a transformative breakthrough that has started to reshape the future of artificial intelligence (AI) across both academia and industry. The integration of FMs into wireless networks is expected to enable the development of general-purpose AI agents capable of handling diverse network management requests and highly complex wireless-related tasks involving multi-modal data. Inspired by these ideas, this work discusses the utilization of FMs, especially multi-modal FMs in wireless networks. We focus on two important types of tasks in wireless network management: prediction tasks and control tasks. In particular, we first discuss FMs-enabled multi-modal contextual information understanding in wireless networks. Then, we explain how FMs can be applied to prediction and control tasks, respectively. Following this, we introduce the development of wireless-specific FMs from two perspectives: available datasets for development and the methodologies used. Finally, we conclude with a discussion of the challenges and future directions for FM-enhanced wireless networks.",
-      "published": "2026-01-06",
-      "updated": "2026-01-06",
-      "categories": [
-        "cs.NI",
-        "cs.AI",
-        "cs.CL",
-        "cs.CV"
-      ],
-      "primary_category": "cs.NI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.03181v1",
-        "pdf": "https://arxiv.org/pdf/2601.03181v1"
-      },
-      "arxiv_id": "2601.03181v1",
-      "comment": "5 figures, 7 tables, IEEE COMST",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.5999999999999996,
-      "score_breakdown": {
-        "total_score": 3.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
           "weight": 0.1
         }
       }

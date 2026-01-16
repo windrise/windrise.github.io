@@ -3,305 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2601.08665v1",
-      "title": "VLingNav: Embodied Navigation with Adaptive Reasoning and Visual-Assisted Linguistic Memory",
+      "id": "2601.09708v1",
+      "title": "Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning",
       "authors": [
-        "Shaoan Wang",
-        "Yuanfei Luo",
-        "Xingyu Chen",
-        "Aocheng Luo",
-        "Dongyue Li",
-        "Chang Liu",
-        "Sheng Chen",
-        "Yangang Zhang",
-        "Junzhi Yu"
+        "Chi-Pin Huang",
+        "Yunze Man",
+        "Zhiding Yu",
+        "Min-Hung Chen",
+        "Jan Kautz",
+        "Yu-Chiang Frank Wang",
+        "Fu-En Yang"
       ],
-      "abstract": "VLA models have shown promising potential in embodied navigation by unifying perception and planning while inheriting the strong generalization abilities of large VLMs. However, most existing VLA models rely on reactive mappings directly from observations to actions, lacking the explicit reasoning capabilities and persistent memory required for complex, long-horizon navigation tasks. To address these challenges, we propose VLingNav, a VLA model for embodied navigation grounded in linguistic-driven cognition. First, inspired by the dual-process theory of human cognition, we introduce an adaptive chain-of-thought mechanism, which dynamically triggers explicit reasoning only when necessary, enabling the agent to fluidly switch between fast, intuitive execution and slow, deliberate planning. Second, to handle long-horizon spatial dependencies, we develop a visual-assisted linguistic memory module that constructs a persistent, cross-modal semantic memory, enabling the agent to recall past observations to prevent repetitive exploration and infer movement trends for dynamic environments. For the training recipe, we construct Nav-AdaCoT-2.9M, the largest embodied navigation dataset with reasoning annotations to date, enriched with adaptive CoT annotations that induce a reasoning paradigm capable of adjusting both when to think and what to think about. Moreover, we incorporate an online expert-guided reinforcement learning stage, enabling the model to surpass pure imitation learning and to acquire more robust, self-explored navigation behaviors. Extensive experiments demonstrate that VLingNav achieves state-of-the-art performance across a wide range of embodied navigation benchmarks. Notably, VLingNav transfers to real-world robotic platforms in a zero-shot manner, executing various navigation tasks and demonstrating strong cross-domain and cross-task generalization.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.08665v1",
-        "pdf": "https://arxiv.org/pdf/2601.08665v1"
-      },
-      "arxiv_id": "2601.08665v1",
-      "comment": "Project page: https://wsakobe.github.io/VLingNav-web/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "VLA models have shown promising potential in embodied navigation by unifying perception and planning while inheriting the strong generalization abilities of large VLMs. However, most existing VLA models rely on reactive mappings directly from observations to actions, lacking the explicit reasoning capabilities and persistent memory required for complex, long-horizon navigation tasks. To address th...",
-        "key_contributions": [
-          "VLA models have shown promising potential in embodied navigation by unifying perception and planning while inheriting the strong generalization abilities of large VLMs.",
-          "However, most existing VLA models rely on reactive mappings directly from observations to actions, lacking the explicit reasoning capabilities and persistent memory required for complex, long-horizon navigation tasks.",
-          "To address these challenges, we propose VLingNav, a VLA model for embodied navigation grounded in linguistic-driven cognition."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.08811v1",
-      "title": "Reasoning Matters for 3D Visual Grounding",
-      "authors": [
-        "Hsiang-Wei Huang",
-        "Kuang-Ming Chen",
-        "Wenhao Chai",
-        "Cheng-Yen Yang",
-        "Jen-Hao Cheng",
-        "Jenq-Neng Hwang"
-      ],
-      "abstract": "The recent development of Large Language Models (LLMs) with strong reasoning ability has driven research in various domains such as mathematics, coding, and scientific discovery. Meanwhile, 3D visual grounding, as a fundamental task in 3D understanding, still remains challenging due to the limited reasoning ability of recent 3D visual grounding models. Most of the current methods incorporate a text encoder and visual feature encoder to generate cross-modal fuse features and predict the referring object. These models often require supervised training on extensive 3D annotation data. On the other hand, recent research also focus on scaling synthetic data to train stronger 3D visual grounding LLM, however, the performance gain remains limited and non-proportional to the data collection cost. In this work, we propose a 3D visual grounding data pipeline, which is capable of automatically synthesizing 3D visual grounding data along with corresponding reasoning process. Additionally, we leverage the generated data for LLM fine-tuning and introduce Reason3DVG-8B, a strong 3D visual grounding LLM that outperforms previous LLM-based method 3D-GRAND using only 1.6% of their training data, demonstrating the effectiveness of our data and the importance of reasoning in 3D visual grounding.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
+      "abstract": "Vision-Language-Action (VLA) tasks require reasoning over complex visual scenes and executing adaptive actions in dynamic environments. While recent studies on reasoning VLAs show that explicit chain-of-thought (CoT) can improve generalization, they suffer from high inference latency due to lengthy reasoning traces. We propose Fast-ThinkAct, an efficient reasoning framework that achieves compact yet performant planning through verbalizable latent reasoning. Fast-ThinkAct learns to reason efficiently with latent CoTs by distilling from a teacher, driven by a preference-guided objective to align manipulation trajectories that transfers both linguistic and visual planning capabilities for embodied control. This enables reasoning-enhanced policy learning that effectively connects compact reasoning to action execution. Extensive experiments across diverse embodied manipulation and reasoning benchmarks demonstrate that Fast-ThinkAct achieves strong performance with up to 89.3\\% reduced inference latency over state-of-the-art reasoning VLAs, while maintaining effective long-horizon planning, few-shot adaptation, and failure recovery.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.08811v1",
-        "pdf": "https://arxiv.org/pdf/2601.08811v1"
+        "paper": "http://arxiv.org/abs/2601.09708v1",
+        "pdf": "https://arxiv.org/pdf/2601.09708v1"
       },
-      "arxiv_id": "2601.08811v1",
-      "comment": "2025 CVPR Workshop on 3D-LLM/VLA: Bridging Language, Vision and Action in 3D Environments",
+      "arxiv_id": "2601.09708v1",
+      "comment": "Project page: https://jasper0314-huang.github.io/fast-thinkact/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.2,
+      "has_code": true,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The recent development of Large Language Models (LLMs) with strong reasoning ability has driven research in various domains such as mathematics, coding, and scientific discovery. Meanwhile, 3D visual grounding, as a fundamental task in 3D understanding, still remains challenging due to the limited reasoning ability of recent 3D visual grounding models. Most of the current methods incorporate a tex...",
-        "key_contributions": [
-          "The recent development of Large Language Models (LLMs) with strong reasoning ability has driven research in various domains such as mathematics, coding, and scientific discovery.",
-          "Meanwhile, 3D visual grounding, as a fundamental task in 3D understanding, still remains challenging due to the limited reasoning ability of recent 3D visual grounding models.",
-          "Most of the current methods incorporate a text encoder and visual feature encoder to generate cross-modal fuse features and predict the referring object."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.08797v1",
-      "title": "DentalX: Context-Aware Dental Disease Detection with Radiographs",
-      "authors": [
-        "Zhi Qin Tan",
-        "Xiatian Zhu",
-        "Owen Addison",
-        "Yunpeng Li"
-      ],
-      "abstract": "Diagnosing dental diseases from radiographs is time-consuming and challenging due to the subtle nature of diagnostic evidence. Existing methods, which rely on object detection models designed for natural images with more distinct target patterns, struggle to detect dental diseases that present with far less visual support. To address this challenge, we propose {\\bf DentalX}, a novel context-aware dental disease detection approach that leverages oral structure information to mitigate the visual ambiguity inherent in radiographs. Specifically, we introduce a structural context extraction module that learns an auxiliary task: semantic segmentation of dental anatomy. The module extracts meaningful structural context and integrates it into the primary disease detection task to enhance the detection of subtle dental diseases. Extensive experiments on a dedicated benchmark demonstrate that DentalX significantly outperforms prior methods in both tasks. This mutual benefit arises naturally during model optimization, as the correlation between the two tasks is effectively captured. Our code is available at https://github.com/zhiqin1998/DentYOLOX.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.08797v1",
-        "pdf": "https://arxiv.org/pdf/2601.08797v1"
-      },
-      "arxiv_id": "2601.08797v1",
-      "comment": "Accepted at ISBI 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.103389830508474,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 8,
-          "venue": "ISBI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Diagnosing dental diseases from radiographs is time-consuming and challenging due to the subtle nature of diagnostic evidence. Existing methods, which rely on object detection models designed for natural images with more distinct target patterns, struggle to detect dental diseases that present with far less visual support. To address this challenge, we propose {\\bf DentalX}, a novel context-aware ...",
-        "key_contributions": [
-          "Diagnosing dental diseases from radiographs is time-consuming and challenging due to the subtle nature of diagnostic evidence.",
-          "Existing methods, which rely on object detection models designed for natural images with more distinct target patterns, struggle to detect dental diseases that present with far less visual support.",
-          "To address this challenge, we propose {\\bf DentalX}, a novel context-aware dental disease detection approach that leverages oral structure information to mitigate the visual ambiguity inherent in radiographs."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.08831v1",
-      "title": "3AM: Segment Anything with Geometric Consistency in Videos",
-      "authors": [
-        "Yang-Che Sun",
-        "Cheng Sun",
-        "Chin-Yang Lin",
-        "Fu-En Yang",
-        "Min-Hung Chen",
-        "Yen-Yu Lin",
-        "Yu-Lun Liu"
-      ],
-      "abstract": "Video object segmentation methods like SAM2 achieve strong performance through memory-based architectures but struggle under large viewpoint changes due to reliance on appearance features. Traditional 3D instance segmentation methods address viewpoint consistency but require camera poses, depth maps, and expensive preprocessing. We introduce 3AM, a training-time enhancement that integrates 3D-aware features from MUSt3R into SAM2. Our lightweight Feature Merger fuses multi-level MUSt3R features that encode implicit geometric correspondence. Combined with SAM2's appearance features, the model achieves geometry-consistent recognition grounded in both spatial position and visual similarity. We propose a field-of-view aware sampling strategy ensuring frames observe spatially consistent object regions for reliable 3D correspondence learning. Critically, our method requires only RGB input at inference, with no camera poses or preprocessing. On challenging datasets with wide-baseline motion (ScanNet++, Replica), 3AM substantially outperforms SAM2 and extensions, achieving 90.6% IoU and 71.7% Positive IoU on ScanNet++'s Selected Subset, improving over state-of-the-art VOS methods by +15.9 and +30.4 points. Project page: https://jayisaking.github.io/3AM-Page/",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.08831v1",
-        "pdf": "https://arxiv.org/pdf/2601.08831v1"
-      },
-      "arxiv_id": "2601.08831v1",
-      "comment": "Project page: https://jayisaking.github.io/3AM-Page/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.053389830508475,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Video object segmentation methods like SAM2 achieve strong performance through memory-based architectures but struggle under large viewpoint changes due to reliance on appearance features. Traditional 3D instance segmentation methods address viewpoint consistency but require camera poses, depth maps, and expensive preprocessing. We introduce 3AM, a training-time enhancement that integrates 3D-awar...",
-        "key_contributions": [
-          "Video object segmentation methods like SAM2 achieve strong performance through memory-based architectures but struggle under large viewpoint changes due to reliance on appearance features.",
-          "Traditional 3D instance segmentation methods address viewpoint consistency but require camera poses, depth maps, and expensive preprocessing.",
-          "We introduce 3AM, a training-time enhancement that integrates 3D-aware features from MUSt3R into SAM2."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.08758v1",
-      "title": "M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding",
-      "authors": [
-        "Juntao Jiang",
-        "Jiangning Zhang",
-        "Yali Bi",
-        "Jinsheng Bai",
-        "Weixuan Liu",
-        "Weiwei Jin",
-        "Zhucun Xue",
-        "Yong Liu",
-        "Xiaobin Hu",
-        "Shuicheng Yan"
-      ],
-      "abstract": "Chain-of-Thought (CoT) reasoning has proven effective in enhancing large language models by encouraging step-by-step intermediate reasoning, and recent advances have extended this paradigm to Multimodal Large Language Models (MLLMs). In the medical domain, where diagnostic decisions depend on nuanced visual cues and sequential reasoning, CoT aligns naturally with clinical thinking processes. However, Current benchmarks for medical image understanding generally focus on the final answer while ignoring the reasoning path. An opaque process lacks reliable bases for judgment, making it difficult to assist doctors in diagnosis. To address this gap, we introduce a new M3CoTBench benchmark specifically designed to evaluate the correctness, efficiency, impact, and consistency of CoT reasoning in medical image understanding. M3CoTBench features 1) a diverse, multi-level difficulty dataset covering 24 examination types, 2) 13 varying-difficulty tasks, 3) a suite of CoT-specific evaluation metrics (correctness, efficiency, impact, and consistency) tailored to clinical reasoning, and 4) a performance analysis of multiple MLLMs. M3CoTBench systematically evaluates CoT reasoning across diverse medical imaging tasks, revealing current limitations of MLLMs in generating reliable and clinically interpretable reasoning, and aims to foster the development of transparent, trustworthy, and diagnostically accurate AI systems for healthcare. Project page at https://juntaojianggavin.github.io/projects/M3CoTBench/.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
-      "categories": [
-        "eess.IV",
-        "cs.CV"
-      ],
-      "primary_category": "eess.IV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.08758v1",
-        "pdf": "https://arxiv.org/pdf/2601.08758v1"
-      },
-      "arxiv_id": "2601.08758v1",
-      "comment": "40 pages, 8 pages",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.010169491525424,
-      "score_breakdown": {
-        "total_score": 4.01,
-        "field_match": {
-          "score": 1.53,
-          "matches": [
-            "medical image",
-            "medical imaging"
-          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -314,103 +50,42 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Chain-of-Thought (CoT) reasoning has proven effective in enhancing large language models by encouraging step-by-step intermediate reasoning, and recent advances have extended this paradigm to Multimodal Large Language Models (MLLMs). In the medical domain, where diagnostic decisions depend on nuanced visual cues and sequential reasoning, CoT aligns naturally with clinical thinking processes. Howev...",
-        "key_contributions": [
-          "Chain-of-Thought (CoT) reasoning has proven effective in enhancing large language models by encouraging step-by-step intermediate reasoning, and recent advances have extended this paradigm to Multimodal Large Language Models (MLLMs).",
-          "In the medical domain, where diagnostic decisions depend on nuanced visual cues and sequential reasoning, CoT aligns naturally with clinical thinking processes.",
-          "However, Current benchmarks for medical image understanding generally focus on the final answer while ignoring the reasoning path."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2601.08701v1",
-      "title": "Automated Lesion Segmentation of Stroke MRI Using nnU-Net: A Comprehensive External Validation Across Acute and Chronic Lesions",
-      "authors": [
-        "Tammar Truzman",
-        "Matthew A. Lambon Ralph",
-        "Ajay D. Halai"
-      ],
-      "abstract": "Accurate and generalisable segmentation of stroke lesions from magnetic resonance imaging (MRI) is essential for advancing clinical research, prognostic modelling, and personalised interventions. Although deep learning has improved automated lesion delineation, many existing models are optimised for narrow imaging contexts and generalise poorly to independent datasets, modalities, and stroke stages. Here, we systematically evaluated stroke lesion segmentation using the nnU-Net framework across multiple heterogeneous, publicly available MRI datasets spanning acute and chronic stroke. Models were trained and tested on diffusion-weighted imaging (DWI), fluid-attenuated inversion recovery (FLAIR), and T1-weighted MRI, and evaluated on independent datasets. Across stroke stages, models showed robust generalisation, with segmentation accuracy approaching reported inter-rater reliability. Performance varied with imaging modality and training data characteristics. In acute stroke, DWI-trained models consistently outperformed FLAIR-based models, with only modest gains from multimodal combinations. In chronic stroke, increasing training set size improved performance, with diminishing returns beyond several hundred cases. Lesion volume was a key determinant of accuracy: smaller lesions were harder to segment, and models trained on restricted volume ranges generalised poorly. MRI image quality further constrained generalisability: models trained on lower-quality scans transferred poorly, whereas those trained on higher-quality data generalised well to noisier images. Discrepancies between predictions and reference masks were often attributable to limitations in manual annotations. Together, these findings show that automated lesion segmentation can approach human-level performance while identifying key factors governing generalisability and informing the development of lesion segmentation tools.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
-      "categories": [
-        "q-bio.QM",
-        "cs.CV"
-      ],
-      "primary_category": "q-bio.QM",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.08701v1",
-        "pdf": "https://arxiv.org/pdf/2601.08701v1"
-      },
-      "arxiv_id": "2601.08701v1",
-      "comment": "32 pages, 7 figures. Submitted to Brain. Code and trained models available",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9728813559322034,
-      "score_breakdown": {
-        "total_score": 3.97,
-        "field_match": {
-          "score": 0.93,
-          "matches": [
-            "segmentation",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
           "score": 10.0,
           "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Accurate and generalisable segmentation of stroke lesions from magnetic resonance imaging (MRI) is essential for advancing clinical research, prognostic modelling, and personalised interventions. Although deep learning has improved automated lesion delineation, many existing models are optimised for narrow imaging contexts and generalise poorly to independent datasets, modalities, and stroke stage...",
+        "short": "Vision-Language-Action (VLA) tasks require reasoning over complex visual scenes and executing adaptive actions in dynamic environments. While recent studies on reasoning VLAs show that explicit chain-of-thought (CoT) can improve generalization, they suffer from high inference latency due to lengthy reasoning traces. We propose Fast-ThinkAct, an efficient reasoning framework that achieves compact y...",
         "key_contributions": [
-          "Accurate and generalisable segmentation of stroke lesions from magnetic resonance imaging (MRI) is essential for advancing clinical research, prognostic modelling, and personalised interventions.",
-          "Although deep learning has improved automated lesion delineation, many existing models are optimised for narrow imaging contexts and generalise poorly to independent datasets, modalities, and stroke stages.",
-          "Here, we systematically evaluated stroke lesion segmentation using the nnU-Net framework across multiple heterogeneous, publicly available MRI datasets spanning acute and chronic stroke."
+          "Vision-Language-Action (VLA) tasks require reasoning over complex visual scenes and executing adaptive actions in dynamic environments.",
+          "While recent studies on reasoning VLAs show that explicit chain-of-thought (CoT) can improve generalization, they suffer from high inference latency due to lengthy reasoning traces.",
+          "We propose Fast-ThinkAct, an efficient reasoning framework that achieves compact yet performant planning through verbalizable latent reasoning."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.08808v1",
-      "title": "Multiplex Thinking: Reasoning via Token-wise Branch-and-Merge",
+      "id": "2601.09692v1",
+      "title": "Routing with Generated Data: Annotation-Free LLM Skill Estimation and Expert Selection",
       "authors": [
-        "Yao Tang",
-        "Li Dong",
-        "Yaru Hao",
-        "Qingxiu Dong",
-        "Furu Wei",
-        "Jiatao Gu"
+        "Tianyi Niu",
+        "Justin Chih-Yao Chen",
+        "Genta Indra Winata",
+        "Shi-Xiong Zhang",
+        "Supriyo Chakraborty",
+        "Sambit Sahu",
+        "Yue Zhang",
+        "Elias Stengel-Eskin",
+        "Mohit Bansal"
       ],
-      "abstract": "Large language models often solve complex reasoning tasks more effectively with Chain-of-Thought (CoT), but at the cost of long, low-bandwidth token sequences. Humans, by contrast, often reason softly by maintaining a distribution over plausible next steps. Motivated by this, we propose Multiplex Thinking, a stochastic soft reasoning mechanism that, at each thinking step, samples K candidate tokens and aggregates their embeddings into a single continuous multiplex token. This preserves the vocabulary embedding prior and the sampling dynamics of standard discrete generation, while inducing a tractable probability distribution over multiplex rollouts. Consequently, multiplex trajectories can be directly optimized with on-policy reinforcement learning (RL). Importantly, Multiplex Thinking is self-adaptive: when the model is confident, the multiplex token is nearly discrete and behaves like standard CoT; when it is uncertain, it compactly represents multiple plausible next steps without increasing sequence length. Across challenging math reasoning benchmarks, Multiplex Thinking consistently outperforms strong discrete CoT and RL baselines from Pass@1 through Pass@1024, while producing shorter sequences. The code and checkpoints are available at https://github.com/GMLR-Penn/Multiplex-Thinking.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
+      "abstract": "Large Language Model (LLM) routers dynamically select optimal models for given inputs. Existing approaches typically assume access to ground-truth labeled data, which is often unavailable in practice, especially when user request distributions are heterogeneous and unknown. We introduce Routing with Generated Data (RGD), a challenging setting in which routers are trained exclusively on generated queries and answers produced from high-level task descriptions by generator LLMs. We evaluate query-answer routers (using both queries and labels) and query-only routers across four diverse benchmarks and 12 models, finding that query-answer routers degrade faster than query-only routers as generator quality decreases. Our analysis reveals two crucial characteristics of effective generators: they must accurately respond to their own questions, and their questions must produce sufficient performance differentiation among the model pool. We then show how filtering for these characteristics can improve the quality of generated data. We further propose CASCAL, a novel query-only router that estimates model correctness through consensus voting and identifies model-specific skill niches via hierarchical clustering. CASCAL is substantially more robust to generator quality, outperforming the best query-answer router by 4.6% absolute accuracy when trained on weak generator data.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
       "categories": [
         "cs.CL",
         "cs.AI",
@@ -418,16 +93,77 @@
       ],
       "primary_category": "cs.CL",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.08808v1",
-        "pdf": "https://arxiv.org/pdf/2601.08808v1"
+        "paper": "http://arxiv.org/abs/2601.09692v1",
+        "pdf": "https://arxiv.org/pdf/2601.09692v1"
       },
-      "arxiv_id": "2601.08808v1",
-      "comment": "21 pages. Code available at https://github.com/GMLR-Penn/Multiplex-Thinking",
+      "arxiv_id": "2601.09692v1",
+      "comment": "Code: https://github.com/tianyiniu/RoutingGenData",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Large Language Model (LLM) routers dynamically select optimal models for given inputs. Existing approaches typically assume access to ground-truth labeled data, which is often unavailable in practice, especially when user request distributions are heterogeneous and unknown. We introduce Routing with Generated Data (RGD), a challenging setting in which routers are trained exclusively on generated q...",
+        "key_contributions": [
+          "Large Language Model (LLM) routers dynamically select optimal models for given inputs.",
+          "Existing approaches typically assume access to ground-truth labeled data, which is often unavailable in practice, especially when user request distributions are heterogeneous and unknown.",
+          "We introduce Routing with Generated Data (RGD), a challenging setting in which routers are trained exclusively on generated queries and answers produced from high-level task descriptions by generator LLMs."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.09512v1",
+      "title": "CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion",
+      "authors": [
+        "Ralf Römer",
+        "Yi Zhang",
+        "Angela P. Schoellig"
+      ],
+      "abstract": "To teach robots complex manipulation tasks, it is now a common practice to fine-tune a pre-trained vision-language-action model (VLA) on task-specific data. However, since this recipe updates existing representations, it is unsuitable for long-term operation in the real world, where robots must continually adapt to new tasks and environments while retaining the knowledge they have already acquired. Existing continual learning methods for robotics commonly require storing previous data (exemplars), struggle with long task sequences, or rely on task identifiers for deployment. To address these limitations, we propose CLARE, a general, parameter-efficient framework for exemplar-free continual learning with VLAs. CLARE introduces lightweight modular adapters into selected feedforward layers and autonomously expands the model only where necessary when learning a new task, guided by layer-wise feature similarity. During deployment, an autoencoder-based routing mechanism dynamically activates the most relevant adapters without requiring task labels. Through extensive experiments on the LIBERO benchmark, we show that CLARE achieves high performance on new tasks without catastrophic forgetting of earlier tasks, significantly outperforming even exemplar-based methods. Code and data are available at https://tum-lsy.github.io/clare.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.09512v1",
+        "pdf": "https://arxiv.org/pdf/2601.09512v1"
+      },
+      "arxiv_id": "2601.09512v1",
+      "comment": "Project page: https://tum-lsy.github.io/clare. 9 pages, 5 figures",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -448,54 +184,54 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Large language models often solve complex reasoning tasks more effectively with Chain-of-Thought (CoT), but at the cost of long, low-bandwidth token sequences. Humans, by contrast, often reason softly by maintaining a distribution over plausible next steps. Motivated by this, we propose Multiplex Thinking, a stochastic soft reasoning mechanism that, at each thinking step, samples K candidate token...",
+        "short": "To teach robots complex manipulation tasks, it is now a common practice to fine-tune a pre-trained vision-language-action model (VLA) on task-specific data. However, since this recipe updates existing representations, it is unsuitable for long-term operation in the real world, where robots must continually adapt to new tasks and environments while retaining the knowledge they have already acquired...",
         "key_contributions": [
-          "Large language models often solve complex reasoning tasks more effectively with Chain-of-Thought (CoT), but at the cost of long, low-bandwidth token sequences.",
-          "Humans, by contrast, often reason softly by maintaining a distribution over plausible next steps.",
-          "Motivated by this, we propose Multiplex Thinking, a stochastic soft reasoning mechanism that, at each thinking step, samples K candidate tokens and aggregates their embeddings into a single continuous multiplex token."
+          "To teach robots complex manipulation tasks, it is now a common practice to fine-tune a pre-trained vision-language-action model (VLA) on task-specific data.",
+          "However, since this recipe updates existing representations, it is unsuitable for long-term operation in the real world, where robots must continually adapt to new tasks and environments while retaining the knowledge they have already acquired.",
+          "Existing continual learning methods for robotics commonly require storing previous data (exemplars), struggle with long task sequences, or rely on task identifiers for deployment."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.08732v1",
-      "title": "ISLA: A U-Net for MRI-based acute ischemic stroke lesion segmentation with deep supervision, attention, domain adaptation, and ensemble learning",
+      "id": "2601.09416v1",
+      "title": "Radiomics-Integrated Deep Learning with Hierarchical Loss for Osteosarcoma Histology Classification",
       "authors": [
-        "Vincent Roca",
-        "Martin Bretzner",
-        "Hilde Henon",
-        "Laurent Puy",
-        "Grégory Kuchcinski",
-        "Renaud Lopes"
+        "Yaxi Chen",
+        "Zi Ye",
+        "Shaheer U. Saeed",
+        "Oliver Yu",
+        "Simin Ni",
+        "Jie Huang",
+        "Yipeng Hu"
       ],
-      "abstract": "Accurate delineation of acute ischemic stroke lesions in MRI is a key component of stroke diagnosis and management. In recent years, deep learning models have been successfully applied to the automatic segmentation of such lesions. While most proposed architectures are based on the U-Net framework, they primarily differ in their choice of loss functions and in the use of deep supervision, residual connections, and attention mechanisms. Moreover, many implementations are not publicly available, and the optimal configuration for acute ischemic stroke (AIS) lesion segmentation remains unclear. In this work, we introduce ISLA (Ischemic Stroke Lesion Analyzer), a new deep learning model for AIS lesion segmentation from diffusion MRI, trained on three multicenter databases totaling more than 1500 AIS participants. Through systematic optimization of the loss function, convolutional architecture, deep supervision, and attention mechanisms, we developed a robust segmentation framework. We further investigated unsupervised domain adaptation to improve generalization to an external clinical dataset. ISLA outperformed two state-of-the-art approaches for AIS lesion segmentation on an external test set. Codes and trained models will be made publicly available to facilitate reuse and reproducibility.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
+      "abstract": "Osteosarcoma (OS) is an aggressive primary bone malignancy. Accurate histopathological assessment of viable versus non-viable tumor regions after neoadjuvant chemotherapy is critical for prognosis and treatment planning, yet manual evaluation remains labor-intensive, subjective, and prone to inter-observer variability. Recent advances in digital pathology have enabled automated necrosis quantification. Evaluating on test data, independently sampled on patient-level, revealed that the deep learning model performance dropped significantly from the tile-level generalization ability reported in previous studies. First, this work proposes the use of radiomic features as additional input in model training. We show that, despite that they are derived from the images, such a multimodal input effectively improved the classification performance, in addition to its added benefits in interpretability. Second, this work proposes to optimize two binary classification tasks with hierarchical classes (i.e. tumor-vs-non-tumor and viable-vs-non-viable), as opposed to the alternative ``flat'' three-class classification task (i.e. non-tumor, non-viable tumor, viable tumor), thereby enabling a hierarchical loss. We show that such a hierarchical loss, with trainable weightings between the two tasks, the per-class performance can be improved significantly. Using the TCIA OS Tumor Assessment dataset, we experimentally demonstrate the benefits from each of the proposed new approaches and their combination, setting a what we consider new state-of-the-art performance on this open dataset for this application. Code and trained models: https://github.com/YaxiiC/RadiomicsOS.git.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
       "categories": [
         "cs.CV",
         "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.08732v1",
-        "pdf": "https://arxiv.org/pdf/2601.08732v1"
+        "paper": "http://arxiv.org/abs/2601.09416v1",
+        "pdf": "https://arxiv.org/pdf/2601.09416v1"
       },
-      "arxiv_id": "2601.08732v1",
+      "arxiv_id": "2601.09416v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.772881355932203,
+      "relevance_score": 3.819491525423729,
       "score_breakdown": {
-        "total_score": 3.77,
+        "total_score": 3.82,
         "field_match": {
-          "score": 0.93,
+          "score": 0.42,
           "matches": [
-            "segmentation",
             "deep learning"
           ],
           "weight": 0.4
@@ -506,7 +242,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -515,48 +251,167 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Accurate delineation of acute ischemic stroke lesions in MRI is a key component of stroke diagnosis and management. In recent years, deep learning models have been successfully applied to the automatic segmentation of such lesions. While most proposed architectures are based on the U-Net framework, they primarily differ in their choice of loss functions and in the use of deep supervision, residual...",
+        "short": "Osteosarcoma (OS) is an aggressive primary bone malignancy. Accurate histopathological assessment of viable versus non-viable tumor regions after neoadjuvant chemotherapy is critical for prognosis and treatment planning, yet manual evaluation remains labor-intensive, subjective, and prone to inter-observer variability. Recent advances in digital pathology have enabled automated necrosis quantifica...",
         "key_contributions": [
-          "Accurate delineation of acute ischemic stroke lesions in MRI is a key component of stroke diagnosis and management.",
-          "In recent years, deep learning models have been successfully applied to the automatic segmentation of such lesions.",
-          "While most proposed architectures are based on the U-Net framework, they primarily differ in their choice of loss functions and in the use of deep supervision, residual connections, and attention mechanisms."
+          "Osteosarcoma (OS) is an aggressive primary bone malignancy.",
+          "Accurate histopathological assessment of viable versus non-viable tumor regions after neoadjuvant chemotherapy is critical for prognosis and treatment planning, yet manual evaluation remains labor-intensive, subjective, and prone to inter-observer variability.",
+          "Recent advances in digital pathology have enabled automated necrosis quantification."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.08623v1",
-      "title": "SafeRedir: Prompt Embedding Redirection for Robust Unlearning in Image Generation Models",
+      "id": "2601.09699v1",
+      "title": "SAM3-DMS: Decoupled Memory Selection for Multi-target Video Segmentation of SAM3",
       "authors": [
-        "Renyang Liu",
-        "Kangjie Chen",
-        "Han Qiu",
-        "Jie Zhang",
-        "Kwok-Yan Lam",
-        "Tianwei Zhang",
-        "See-Kiong Ng"
+        "Ruiqi Shen",
+        "Chang Liu",
+        "Henghui Ding"
       ],
-      "abstract": "Image generation models (IGMs), while capable of producing impressive and creative content, often memorize a wide range of undesirable concepts from their training data, leading to the reproduction of unsafe content such as NSFW imagery and copyrighted artistic styles. Such behaviors pose persistent safety and compliance risks in real-world deployments and cannot be reliably mitigated by post-hoc filtering, owing to the limited robustness of such mechanisms and a lack of fine-grained semantic control. Recent unlearning methods seek to erase harmful concepts at the model level, which exhibit the limitations of requiring costly retraining, degrading the quality of benign generations, or failing to withstand prompt paraphrasing and adversarial attacks. To address these challenges, we introduce SafeRedir, a lightweight inference-time framework for robust unlearning via prompt embedding redirection. Without modifying the underlying IGMs, SafeRedir adaptively routes unsafe prompts toward safe semantic regions through token-level interventions in the embedding space. The framework comprises two core components: a latent-aware multi-modal safety classifier for identifying unsafe generation trajectories, and a token-level delta generator for precise semantic redirection, equipped with auxiliary predictors for token masking and adaptive scaling to localize and regulate the intervention. Empirical results across multiple representative unlearning tasks demonstrate that SafeRedir achieves effective unlearning capability, high semantic and perceptual preservation, robust image quality, and enhanced resistance to adversarial attacks. Furthermore, SafeRedir generalizes effectively across a variety of diffusion backbones and existing unlearned models, validating its plug-and-play compatibility and broad applicability. Code and data are available at https://github.com/ryliu68/SafeRedir.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
+      "abstract": "Segment Anything 3 (SAM3) has established a powerful foundation that robustly detects, segments, and tracks specified targets in videos. However, in its original implementation, its group-level collective memory selection is suboptimal for complex multi-object scenarios, as it employs a synchronized decision across all concurrent targets conditioned on their average performance, often overlooking individual reliability. To this end, we propose SAM3-DMS, a training-free decoupled strategy that utilizes fine-grained memory selection on individual objects. Experiments demonstrate that our approach achieves robust identity preservation and tracking stability. Notably, our advantage becomes more pronounced with increased target density, establishing a solid foundation for simultaneous multi-target video segmentation in the wild.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CR",
-        "cs.LG"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.08623v1",
-        "pdf": "https://arxiv.org/pdf/2601.08623v1"
+        "paper": "http://arxiv.org/abs/2601.09699v1",
+        "pdf": "https://arxiv.org/pdf/2601.09699v1"
       },
-      "arxiv_id": "2601.08623v1",
-      "comment": "Code at https://github.com/ryliu68/SafeRedir",
+      "arxiv_id": "2601.09699v1",
+      "comment": "Code: https://github.com/FudanCVL/SAM3-DMS",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.7533898305084747,
+      "score_breakdown": {
+        "total_score": 3.75,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Segment Anything 3 (SAM3) has established a powerful foundation that robustly detects, segments, and tracks specified targets in videos. However, in its original implementation, its group-level collective memory selection is suboptimal for complex multi-object scenarios, as it employs a synchronized decision across all concurrent targets conditioned on their average performance, often overlooking ...",
+        "key_contributions": [
+          "Segment Anything 3 (SAM3) has established a powerful foundation that robustly detects, segments, and tracks specified targets in videos.",
+          "However, in its original implementation, its group-level collective memory selection is suboptimal for complex multi-object scenarios, as it employs a synchronized decision across all concurrent targets conditioned on their average performance, often overlooking individual reliability.",
+          "To this end, we propose SAM3-DMS, a training-free decoupled strategy that utilizes fine-grained memory selection on individual objects."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.09575v1",
+      "title": "OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding",
+      "authors": [
+        "Sheng-Yu Huang",
+        "Jaesung Choe",
+        "Yu-Chiang Frank Wang",
+        "Cheng Sun"
+      ],
+      "abstract": "We propose OpenVoxel, a training-free algorithm for grouping and captioning sparse voxels for the open-vocabulary 3D scene understanding tasks. Given the sparse voxel rasterization (SVR) model obtained from multi-view images of a 3D scene, our OpenVoxel is able to produce meaningful groups that describe different objects in the scene. Also, by leveraging powerful Vision Language Models (VLMs) and Multi-modal Large Language Models (MLLMs), our OpenVoxel successfully build an informative scene map by captioning each group, enabling further 3D scene understanding tasks such as open-vocabulary segmentation (OVS) or referring expression segmentation (RES). Unlike previous methods, our method is training-free and does not introduce embeddings from a CLIP/BERT text encoder. Instead, we directly proceed with text-to-text search using MLLMs. Through extensive experiments, our method demonstrates superior performance compared to recent studies, particularly in complex referring expression segmentation (RES) tasks. The code will be open.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.09575v1",
+        "pdf": "https://arxiv.org/pdf/2601.09575v1"
+      },
+      "arxiv_id": "2601.09575v1",
+      "comment": "project page: https://peterjohnsonhuang.github.io/openvoxel-pages/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.7033898305084745,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We propose OpenVoxel, a training-free algorithm for grouping and captioning sparse voxels for the open-vocabulary 3D scene understanding tasks. Given the sparse voxel rasterization (SVR) model obtained from multi-view images of a 3D scene, our OpenVoxel is able to produce meaningful groups that describe different objects in the scene. Also, by leveraging powerful Vision Language Models (VLMs) and ...",
+        "key_contributions": [
+          "We propose OpenVoxel, a training-free algorithm for grouping and captioning sparse voxels for the open-vocabulary 3D scene understanding tasks.",
+          "Given the sparse voxel rasterization (SVR) model obtained from multi-view images of a 3D scene, our OpenVoxel is able to produce meaningful groups that describe different objects in the scene.",
+          "Also, by leveraging powerful Vision Language Models (VLMs) and Multi-modal Large Language Models (MLLMs), our OpenVoxel successfully build an informative scene map by captioning each group, enabling further 3D scene understanding tasks such as open-vocabulary segmentation (OVS) or referring expression segmentation (RES)."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.09527v1",
+      "title": "Private LLM Inference on Consumer Blackwell GPUs: A Practical Guide for Cost-Effective Local Deployment in SMEs",
+      "authors": [
+        "Jonathan Knoop",
+        "Hendrik Holtmann"
+      ],
+      "abstract": "SMEs increasingly seek alternatives to cloud LLM APIs, which raise data privacy concerns. Dedicated cloud GPU instances offer improved privacy but with limited guarantees and ongoing costs, while professional on-premise hardware (A100, H100) remains prohibitively expensive. We present a systematic evaluation of NVIDIA's Blackwell consumer GPUs (RTX 5060 Ti, 5070 Ti, 5090) for production LLM inference, benchmarking four open-weight models (Qwen3-8B, Gemma3-12B, Gemma3-27B, GPT-OSS-20B) across 79 configurations spanning quantization formats (BF16, W4A16, NVFP4, MXFP4), context lengths (8k-64k), and three workloads: RAG, multi-LoRA agentic serving, and high-concurrency APIs. The RTX 5090 delivers 3.5-4.6x higher throughput than the 5060 Ti with 21x lower latency for RAG, but budget GPUs achieve the highest throughput-per-dollar for API workloads with sub-second latency. NVFP4 quantization provides 1.6x throughput over BF16 with 41% energy reduction and only 2-4% quality loss. Self-hosted inference costs $0.001-0.04 per million tokens (electricity only), which is 40-200x cheaper than budget-tier cloud APIs, with hardware breaking even in under four months at moderate volume (30M tokens/day). Our results show that consumer GPUs can reliably replace cloud inference for most SME workloads, except latency-critical long-context RAG, where high-end GPUs remain essential. We provide deployment guidance and release all benchmark data for reproducible SME-scale deployments.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PF"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.09527v1",
+        "pdf": "https://arxiv.org/pdf/2601.09527v1"
+      },
+      "arxiv_id": "2601.09527v1",
+      "comment": "15 pages, 18 tables, 7 figures. Includes link to GitHub repository and Docker image for reproducibility",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.7,
@@ -587,42 +442,106 @@
         }
       },
       "ai_summaries": {
-        "short": "Image generation models (IGMs), while capable of producing impressive and creative content, often memorize a wide range of undesirable concepts from their training data, leading to the reproduction of unsafe content such as NSFW imagery and copyrighted artistic styles. Such behaviors pose persistent safety and compliance risks in real-world deployments and cannot be reliably mitigated by post-hoc ...",
+        "short": "SMEs increasingly seek alternatives to cloud LLM APIs, which raise data privacy concerns. Dedicated cloud GPU instances offer improved privacy but with limited guarantees and ongoing costs, while professional on-premise hardware (A100, H100) remains prohibitively expensive. We present a systematic evaluation of NVIDIA's Blackwell consumer GPUs (RTX 5060 Ti, 5070 Ti, 5090) for production LLM infere...",
         "key_contributions": [
-          "Image generation models (IGMs), while capable of producing impressive and creative content, often memorize a wide range of undesirable concepts from their training data, leading to the reproduction of unsafe content such as NSFW imagery and copyrighted artistic styles.",
-          "Such behaviors pose persistent safety and compliance risks in real-world deployments and cannot be reliably mitigated by post-hoc filtering, owing to the limited robustness of such mechanisms and a lack of fine-grained semantic control.",
-          "Recent unlearning methods seek to erase harmful concepts at the model level, which exhibit the limitations of requiring costly retraining, degrading the quality of benign generations, or failing to withstand prompt paraphrasing and adversarial attacks."
+          "SMEs increasingly seek alternatives to cloud LLM APIs, which raise data privacy concerns.",
+          "Dedicated cloud GPU instances offer improved privacy but with limited guarantees and ongoing costs, while professional on-premise hardware (A100, H100) remains prohibitively expensive.",
+          "We present a systematic evaluation of NVIDIA's Blackwell consumer GPUs (RTX 5060 Ti, 5070 Ti, 5090) for production LLM inference, benchmarking four open-weight models (Qwen3-8B, Gemma3-12B, Gemma3-27B, GPT-OSS-20B) across 79 configurations spanning quantization formats (BF16, W4A16, NVFP4, MXFP4), context lengths (8k-64k), and three workloads: RAG, multi-LoRA agentic serving, and high-concurrency APIs."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2601.08545v1",
-      "title": "Learner-Tailored Program Repair: A Solution Generator with Iterative Edit-Driven Retrieval Enhancement",
+      "id": "2601.09635v1",
+      "title": "LLM for Large-Scale Optimization Model Auto-Formulation: A Lightweight Few-Shot Learning Approach",
       "authors": [
-        "Zhenlong Dai",
-        "Zhuoluo Zhao",
-        "Hengning Wang",
-        "Xiu Tang",
-        "Sai Wu",
-        "Chang Yao",
-        "Zhipeng Gao",
-        "Jingyuan Chen"
+        "Kuo Liang",
+        "Yuhang Lu",
+        "Jianming Mao",
+        "Shuyi Sun",
+        "Chunwei Yang",
+        "Congcong Zeng",
+        "Xiao Jin",
+        "Hanzhang Qin",
+        "Ruihao Zhu",
+        "Chung-Piaw Teo"
       ],
-      "abstract": "With the development of large language models (LLMs) in the field of programming, intelligent programming coaching systems have gained widespread attention. However, most research focuses on repairing the buggy code of programming learners without providing the underlying causes of the bugs. To address this gap, we introduce a novel task, namely \\textbf{LPR} (\\textbf{L}earner-Tailored \\textbf{P}rogram \\textbf{R}epair). We then propose a novel and effective framework, \\textbf{\\textsc{\\MethodName{}}} (\\textbf{L}earner-Tailored \\textbf{S}olution \\textbf{G}enerator), to enhance program repair while offering the bug descriptions for the buggy code. In the first stage, we utilize a repair solution retrieval framework to construct a solution retrieval database and then employ an edit-driven code retrieval approach to retrieve valuable solutions, guiding LLMs in identifying and fixing the bugs in buggy code. In the second stage, we propose a solution-guided program repair method, which fixes the code and provides explanations under the guidance of retrieval solutions. Moreover, we propose an Iterative Retrieval Enhancement method that utilizes evaluation results of the generated code to iteratively optimize the retrieval direction and explore more suitable repair strategies, improving performance in practical programming coaching scenarios. The experimental results show that our approach outperforms a set of baselines by a large margin, validating the effectiveness of our framework for the newly proposed LPR task.",
-      "published": "2026-01-13",
-      "updated": "2026-01-13",
+      "abstract": "Large-scale optimization is a key backbone of modern business decision-making. However, building these models is often labor-intensive and time-consuming. We address this by proposing LEAN-LLM-OPT, a LightwEight AgeNtic workflow construction framework for LLM-assisted large-scale OPTimization auto-formulation. LEAN-LLM-OPT takes as input a problem description together with associated datasets and orchestrates a team of LLM agents to produce an optimization formulation. Specifically, upon receiving a query, two upstream LLM agents dynamically construct a workflow that specifies, step-by-step, how optimization models for similar problems can be formulated. A downstream LLM agent then follows this workflow to generate the final output. Leveraging LLMs' text-processing capabilities and common modeling practices, the workflow decomposes the modeling task into a sequence of structured sub-tasks and offloads mechanical data-handling operations to auxiliary tools. This design alleviates the downstream agent's burden related to planning and data handling, allowing it to focus on the most challenging components that cannot be readily standardized. Extensive simulations show that LEAN-LLM-OPT, instantiated with GPT-4.1 and the open source gpt-oss-20B, achieves strong performance on large-scale optimization modeling tasks and is competitive with state-of-the-art approaches. In addition, in a Singapore Airlines choice-based revenue management use case, LEAN-LLM-OPT demonstrates practical value by achieving leading performance across a range of scenarios. Along the way, we introduce Large-Scale-OR and Air-NRM, the first comprehensive benchmarks for large-scale optimization auto-formulation. The code and data of this work is available at https://github.com/CoraLiang01/lean-llm-opt.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
       "categories": [
         "cs.AI",
-        "cs.CL",
-        "cs.SE"
+        "cs.LG"
       ],
       "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.08545v1",
-        "pdf": "https://arxiv.org/pdf/2601.08545v1"
+        "paper": "http://arxiv.org/abs/2601.09635v1",
+        "pdf": "https://arxiv.org/pdf/2601.09635v1"
       },
-      "arxiv_id": "2601.08545v1",
+      "arxiv_id": "2601.09635v1",
+      "comment": "Updated version of https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5329027",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.5999999999999996,
+      "score_breakdown": {
+        "total_score": 3.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Large-scale optimization is a key backbone of modern business decision-making. However, building these models is often labor-intensive and time-consuming. We address this by proposing LEAN-LLM-OPT, a LightwEight AgeNtic workflow construction framework for LLM-assisted large-scale OPTimization auto-formulation. LEAN-LLM-OPT takes as input a problem description together with associated datasets and ...",
+        "key_contributions": [
+          "Large-scale optimization is a key backbone of modern business decision-making.",
+          "However, building these models is often labor-intensive and time-consuming.",
+          "We address this by proposing LEAN-LLM-OPT, a LightwEight AgeNtic workflow construction framework for LLM-assisted large-scale OPTimization auto-formulation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.09606v1",
+      "title": "GRCF: Two-Stage Groupwise Ranking and Calibration Framework for Multimodal Sentiment Analysis",
+      "authors": [
+        "Manning Gao",
+        "Leheng Zhang",
+        "Shiqin Han",
+        "Haifeng Hu",
+        "Yuncheng Jiang",
+        "Sijie Mai"
+      ],
+      "abstract": "Most Multimodal Sentiment Analysis research has focused on point-wise regression. While straightforward, this approach is sensitive to label noise and neglects whether one sample is more positive than another, resulting in unstable predictions and poor correlation alignment. Pairwise ordinal learning frameworks emerged to address this gap, capturing relative order by learning from comparisons. Yet, they introduce two new trade-offs: First, they assign uniform importance to all comparisons, failing to adaptively focus on hard-to-rank samples. Second, they employ static ranking margins, which fail to reflect the varying semantic distances between sentiment groups. To address this, we propose a Two-Stage Group-wise Ranking and Calibration Framework (GRCF) that adapts the philosophy of Group Relative Policy Optimization (GRPO). Our framework resolves these trade-offs by simultaneously preserving relative ordinal structure, ensuring absolute score calibration, and adaptively focusing on difficult samples. Specifically, Stage 1 introduces a GRPO-inspired Advantage-Weighted Dynamic Margin Ranking Loss to build a fine-grained ordinal structure. Stage 2 then employs an MAE-driven objective to align prediction magnitudes. To validate its generalizability, we extend GRCF to classification tasks, including multimodal humor detection and sarcasm detection. GRCF achieves state-of-the-art performance on core regression benchmarks, while also showing strong generalizability in classification tasks.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.09606v1",
+        "pdf": "https://arxiv.org/pdf/2601.09606v1"
+      },
+      "arxiv_id": "2601.09606v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
@@ -654,11 +573,76 @@
         }
       },
       "ai_summaries": {
-        "short": "With the development of large language models (LLMs) in the field of programming, intelligent programming coaching systems have gained widespread attention. However, most research focuses on repairing the buggy code of programming learners without providing the underlying causes of the bugs. To address this gap, we introduce a novel task, namely \\textbf{LPR} (\\textbf{L}earner-Tailored \\textbf{P}ro...",
+        "short": "Most Multimodal Sentiment Analysis research has focused on point-wise regression. While straightforward, this approach is sensitive to label noise and neglects whether one sample is more positive than another, resulting in unstable predictions and poor correlation alignment. Pairwise ordinal learning frameworks emerged to address this gap, capturing relative order by learning from comparisons. Yet...",
         "key_contributions": [
-          "With the development of large language models (LLMs) in the field of programming, intelligent programming coaching systems have gained widespread attention.",
-          "However, most research focuses on repairing the buggy code of programming learners without providing the underlying causes of the bugs.",
-          "To address this gap, we introduce a novel task, namely \\textbf{LPR} (\\textbf{L}earner-Tailored \\textbf{P}rogram \\textbf{R}epair)."
+          "Most Multimodal Sentiment Analysis research has focused on point-wise regression.",
+          "While straightforward, this approach is sensitive to label noise and neglects whether one sample is more positive than another, resulting in unstable predictions and poor correlation alignment.",
+          "Pairwise ordinal learning frameworks emerged to address this gap, capturing relative order by learning from comparisons."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2601.09603v1",
+      "title": "Linear Complexity Self-Supervised Learning for Music Understanding with Random Quantizer",
+      "authors": [
+        "Petros Vavaroutsos",
+        "Theodoros Palamas",
+        "Pantelis Vikatos"
+      ],
+      "abstract": "In recent years, foundation models have become very popular due to their exceptional performance, mainly in natural language (NLP) tasks where they were first introduced. These models usually consist of hundreds of millions, or even billions, of parameters, making them resource-intensive during training and in production systems, leading to increased costs. This paper focuses on the reduction of a foundation's model size when applied to music information retrieval (MIR) tasks. Our research combines the Branchformer architecture with SummaryMixing, which were first applied in speech recognition, along with a random quantization process. To facilitate reproducibility, we conduct pre-training on publicly available datasets, complemented by a proprietary dataset comparable in scale to other private datasets reported in the literature. We ensure robust evaluation by using a framework consisting of a variety of downstream MIR tasks. Our results show that our architecture achieves competitive performance when compared with other state-of-the-art models that use multi-head self-attention, while reducing the model size from 8.5% up to 12.3%.",
+      "published": "2026-01-14",
+      "updated": "2026-01-14",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.SD",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.09603v1",
+        "pdf": "https://arxiv.org/pdf/2601.09603v1"
+      },
+      "arxiv_id": "2601.09603v1",
+      "comment": "accepted by ACM/SIGAPP Symposium on Applied Computing (SAC 2026)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.571186440677966,
+      "score_breakdown": {
+        "total_score": 3.57,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "In recent years, foundation models have become very popular due to their exceptional performance, mainly in natural language (NLP) tasks where they were first introduced. These models usually consist of hundreds of millions, or even billions, of parameters, making them resource-intensive during training and in production systems, leading to increased costs. This paper focuses on the reduction of a...",
+        "key_contributions": [
+          "In recent years, foundation models have become very popular due to their exceptional performance, mainly in natural language (NLP) tasks where they were first introduced.",
+          "These models usually consist of hundreds of millions, or even billions, of parameters, making them resource-intensive during training and in production systems, leading to increased costs.",
+          "This paper focuses on the reduction of a foundation's model size when applied to music information retrieval (MIR) tasks."
         ],
         "provider": "gemini"
       }

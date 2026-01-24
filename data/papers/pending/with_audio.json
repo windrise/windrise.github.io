@@ -3,36 +3,374 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2601.15283v1",
-      "title": "LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes",
+      "id": "2601.16060v1",
+      "title": "ProGiDiff: Prompt-Guided Diffusion-Based Medical Image Segmentation",
       "authors": [
-        "Ruofan Liang",
-        "Norman Müller",
-        "Ethan Weber",
-        "Duncan Zauss",
-        "Nandita Vijaykumar",
-        "Peter Kontschieder",
-        "Christian Richardt"
+        "Yuan Lin",
+        "Murong Xu",
+        "Marc Hölle",
+        "Chinmay Prabhakar",
+        "Andreas Maier",
+        "Vasileios Belagiannis",
+        "Bjoern Menze",
+        "Suprosanna Shit"
       ],
-      "abstract": "We present a novel approach for interactive light editing in indoor scenes from a single multi-view scene capture. Our method leverages a generative image-based light decomposition model that factorizes complex indoor scene illumination into its constituent light sources. This factorization enables independent manipulation of individual light sources, specifically allowing control over their state (on/off), chromaticity, and intensity. We further introduce multi-view lighting harmonization to ensure consistent propagation of the lighting decomposition across all scene views. This is integrated into a relightable 3D Gaussian splatting representation, providing real-time interactive control over the individual light sources. Our results demonstrate highly photorealistic lighting decomposition and relighting outcomes across diverse indoor scenes. We evaluate our method on both synthetic and real-world datasets and provide a quantitative and qualitative comparison to state-of-the-art techniques. For video results and interactive demos, see https://luxremix.github.io.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
+      "abstract": "Widely adopted medical image segmentation methods, although efficient, are primarily deterministic and remain poorly amenable to natural language prompts. Thus, they lack the capability to estimate multiple proposals, human interaction, and cross-modality adaptation. Recently, text-to-image diffusion models have shown potential to bridge the gap. However, training them from scratch requires a large dataset-a limitation for medical image segmentation. Furthermore, they are often limited to binary segmentation and cannot be conditioned on a natural language prompt. To this end, we propose a novel framework called ProGiDiff that leverages existing image generation models for medical image segmentation purposes. Specifically, we propose a ControlNet-style conditioning mechanism with a custom encoder, suitable for image conditioning, to steer a pre-trained diffusion model to output segmentation masks. It naturally extends to a multi-class setting simply by prompting the target organ. Our experiment on organ segmentation from CT images demonstrates strong performance compared to previous methods and could greatly benefit from an expert-in-the-loop setting to leverage multiple proposals. Importantly, we demonstrate that the learned conditioning mechanism can be easily transferred through low-rank, few-shot adaptation to segment MR images.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
       "categories": [
-        "cs.CV",
-        "cs.GR"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15283v1",
-        "pdf": "https://arxiv.org/pdf/2601.15283v1"
+        "paper": "http://arxiv.org/abs/2601.16060v1",
+        "pdf": "https://arxiv.org/pdf/2601.16060v1"
       },
-      "arxiv_id": "2601.15283v1",
-      "comment": "Project page: https://luxremix.github.io",
+      "arxiv_id": "2601.16060v1",
+      "comment": "5 pages, 4 figures. It has been accepted by IEEE ISBI",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.408474576271186,
+      "score_breakdown": {
+        "total_score": 4.41,
+        "field_match": {
+          "score": 1.27,
+          "matches": [
+            "medical image",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Widely adopted medical image segmentation methods, although efficient, are primarily deterministic and remain poorly amenable to natural language prompts. Thus, they lack the capability to estimate multiple proposals, human interaction, and cross-modality adaptation. Recently, text-to-image diffusion models have shown potential to bridge the gap. However, training them from scratch requires a larg...",
+        "key_contributions": [
+          "Widely adopted medical image segmentation methods, although efficient, are primarily deterministic and remain poorly amenable to natural language prompts.",
+          "Thus, they lack the capability to estimate multiple proposals, human interaction, and cross-modality adaptation.",
+          "Recently, text-to-image diffusion models have shown potential to bridge the gap."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2601.16060v1.mp3"
+      }
+    },
+    {
+      "id": "2601.15930v1",
+      "title": "MMGRid: Navigating Temporal-aware and Cross-domain Generative Recommendation via Model Merging",
+      "authors": [
+        "Tianjun Wei",
+        "Enneng Yang",
+        "Yingpeng Du",
+        "Huizhong Guo",
+        "Jie Zhang",
+        "Zhu Sun"
+      ],
+      "abstract": "Model merging (MM) offers an efficient mechanism for integrating multiple specialized models without access to original training data or costly retraining. While MM has demonstrated success in domains like computer vision, its role in recommender systems (RSs) remains largely unexplored. Recently, Generative Recommendation (GR) has emerged as a new paradigm in RSs, characterized by rapidly growing model scales and substantial computational costs, making MM particularly appealing for cost-sensitive deployment scenarios. In this work, we present the first systematic study of MM in GR through a contextual lens. We focus on a fundamental yet underexplored challenge in real-world: how to merge generative recommenders specialized to different real-world contexts, arising from temporal evolving user behaviors and heterogeneous application domains. To this end, we propose a unified framework MMGRid, a structured contextual grid of GR checkpoints that organizes models trained under diverse contexts induced by temporal evolution and domain diversity. All checkpoints are derived from a shared base LLM but fine-tuned on context-specific data, forming a realistic and controlled model space for systematically analyzing MM across GR paradigms and merging algorithms. Our investigation reveals several key insights. First, training GR models from LLMs can introduce parameter conflicts during merging due to token distribution shifts and objective disparities; such conflicts can be alleviated by disentangling task-aware and context-specific parameter changes via base model replacement. Second, incremental training across contexts induces recency bias, which can be effectively balanced through weighted contextual merging. Notably, we observe that optimal merging weights correlate with context-dependent interaction characteristics, offering practical guidance for weight selection in real-world deployments.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "primary_category": "cs.IR",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.15930v1",
+        "pdf": "https://arxiv.org/pdf/2601.15930v1"
+      },
+      "arxiv_id": "2601.15930v1",
+      "comment": "https://github.com/Joinn99/MMGRid",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.727966101694916,
+      "relevance_score": 4.269491525423729,
       "score_breakdown": {
-        "total_score": 4.73,
+        "total_score": 4.27,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Model merging (MM) offers an efficient mechanism for integrating multiple specialized models without access to original training data or costly retraining. While MM has demonstrated success in domains like computer vision, its role in recommender systems (RSs) remains largely unexplored. Recently, Generative Recommendation (GR) has emerged as a new paradigm in RSs, characterized by rapidly growing...",
+        "key_contributions": [
+          "Model merging (MM) offers an efficient mechanism for integrating multiple specialized models without access to original training data or costly retraining.",
+          "While MM has demonstrated success in domains like computer vision, its role in recommender systems (RSs) remains largely unexplored.",
+          "Recently, Generative Recommendation (GR) has emerged as a new paradigm in RSs, characterized by rapidly growing model scales and substantial computational costs, making MM particularly appealing for cost-sensitive deployment scenarios."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2601.15930v1.mp3"
+      }
+    },
+    {
+      "id": "2601.16192v1",
+      "title": "360Anything: Geometry-Free Lifting of Images and Videos to 360°",
+      "authors": [
+        "Ziyi Wu",
+        "Daniel Watson",
+        "Andrea Tagliasacchi",
+        "David J. Fleet",
+        "Marcus A. Brubaker",
+        "Saurabh Saxena"
+      ],
+      "abstract": "Lifting perspective images and videos to 360° panoramas enables immersive 3D world generation. Existing approaches often rely on explicit geometric alignment between the perspective and the equirectangular projection (ERP) space. Yet, this requires known camera metadata, obscuring the application to in-the-wild data where such calibration is typically absent or noisy. We propose 360Anything, a geometry-free framework built upon pre-trained diffusion transformers. By treating the perspective input and the panorama target simply as token sequences, 360Anything learns the perspective-to-equirectangular mapping in a purely data-driven way, eliminating the need for camera information. Our approach achieves state-of-the-art performance on both image and video perspective-to-360° generation, outperforming prior works that use ground-truth camera information. We also trace the root cause of the seam artifacts at ERP boundaries to zero-padding in the VAE encoder, and introduce Circular Latent Encoding to facilitate seamless generation. Finally, we show competitive results in zero-shot camera FoV and orientation estimation benchmarks, demonstrating 360Anything's deep geometric understanding and broader utility in computer vision tasks. Additional results are available at https://360anything.github.io/.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.16192v1",
+        "pdf": "https://arxiv.org/pdf/2601.16192v1"
+      },
+      "arxiv_id": "2601.16192v1",
+      "comment": "Project page: https://360anything.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.219491525423729,
+      "score_breakdown": {
+        "total_score": 4.22,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Lifting perspective images and videos to 360° panoramas enables immersive 3D world generation. Existing approaches often rely on explicit geometric alignment between the perspective and the equirectangular projection (ERP) space. Yet, this requires known camera metadata, obscuring the application to in-the-wild data where such calibration is typically absent or noisy. We propose 360Anything, a geo...",
+        "key_contributions": [
+          "Lifting perspective images and videos to 360° panoramas enables immersive 3D world generation.",
+          "Existing approaches often rely on explicit geometric alignment between the perspective and the equirectangular projection (ERP) space.",
+          "Yet, this requires known camera metadata, obscuring the application to in-the-wild data where such calibration is typically absent or noisy."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2601.16192v1.mp3"
+      }
+    },
+    {
+      "id": "2601.15951v1",
+      "title": "EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis",
+      "authors": [
+        "Sheng Miao",
+        "Sijin Li",
+        "Pan Wang",
+        "Dongfeng Bai",
+        "Bingbing Liu",
+        "Yue Wang",
+        "Andreas Geiger",
+        "Yiyi Liao"
+      ],
+      "abstract": "Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality. While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization. Conversely, emerging feed-forward methods frequently adopt per-pixel Gaussian representations, which lead to 3D inconsistencies when aggregating multi-view predictions in complex, dynamic environments. We propose EvolSplat4D, a feed-forward framework that moves beyond existing per-pixel paradigms by unifying volume-based and pixel-based Gaussian prediction across three specialized branches. For close-range static regions, we predict consistent geometry of 3D Gaussians over multiple frames directly from a 3D feature volume, complemented by a semantically-enhanced image-based rendering module for predicting their appearance. For dynamic actors, we utilize object-centric canonical spaces and a motion-adjusted rendering module to aggregate temporal features, ensuring stable 4D reconstruction despite noisy motion priors. Far-Field scenery is handled by an efficient per-pixel Gaussian branch to ensure full-scene coverage. Experimental results on the KITTI-360, KITTI, Waymo, and PandaSet datasets show that EvolSplat4D reconstructs both static and dynamic environments with superior accuracy and consistency, outperforming both per-scene optimization and state-of-the-art feed-forward baselines.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.15951v1",
+        "pdf": "https://arxiv.org/pdf/2601.15951v1"
+      },
+      "arxiv_id": "2601.15951v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.215254237288136,
+      "score_breakdown": {
+        "total_score": 4.22,
+        "field_match": {
+          "score": 2.29,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "neural radiance"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality. While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization. Conversely, emerging feed-forward methods freq...",
+        "key_contributions": [
+          "Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality.",
+          "While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization.",
+          "Conversely, emerging feed-forward methods frequently adopt per-pixel Gaussian representations, which lead to 3D inconsistencies when aggregating multi-view predictions in complex, dynamic environments."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2601.15951v1.mp3"
+      }
+    },
+    {
+      "id": "2601.16208v1",
+      "title": "Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders",
+      "authors": [
+        "Shengbang Tong",
+        "Boyang Zheng",
+        "Ziteng Wang",
+        "Bingda Tang",
+        "Nanye Ma",
+        "Ellis Brown",
+        "Jihan Yang",
+        "Rob Fergus",
+        "Yann LeCun",
+        "Saining Xie"
+      ],
+      "abstract": "Representation Autoencoders (RAEs) have shown distinct advantages in diffusion modeling on ImageNet by training in high-dimensional semantic latent spaces. In this work, we investigate whether this framework can scale to large-scale, freeform text-to-image (T2I) generation. We first scale RAE decoders on the frozen representation encoder (SigLIP-2) beyond ImageNet by training on web, synthetic, and text-rendering data, finding that while scale improves general fidelity, targeted data composition is essential for specific domains like text. We then rigorously stress-test the RAE design choices originally proposed for ImageNet. Our analysis reveals that scaling simplifies the framework: while dimension-dependent noise scheduling remains critical, architectural complexities such as wide diffusion heads and noise-augmented decoding offer negligible benefits at scale Building on this simplified framework, we conduct a controlled comparison of RAE against the state-of-the-art FLUX VAE across diffusion transformer scales from 0.5B to 9.8B parameters. RAEs consistently outperform VAEs during pretraining across all model scales. Further, during finetuning on high-quality datasets, VAE-based models catastrophically overfit after 64 epochs, while RAE models remain stable through 256 epochs and achieve consistently better performance. Across all experiments, RAE-based diffusion models demonstrate faster convergence and better generation quality, establishing RAEs as a simpler and stronger foundation than VAEs for large-scale T2I generation. Additionally, because both visual understanding and generation can operate in a shared representation space, the multimodal model can directly reason over generated latents, opening new possibilities for unified models.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.16208v1",
+        "pdf": "https://arxiv.org/pdf/2601.16208v1"
+      },
+      "arxiv_id": "2601.16208v1",
+      "comment": "website: https://rae-dit.github.io/scale-rae/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Representation Autoencoders (RAEs) have shown distinct advantages in diffusion modeling on ImageNet by training in high-dimensional semantic latent spaces. In this work, we investigate whether this framework can scale to large-scale, freeform text-to-image (T2I) generation. We first scale RAE decoders on the frozen representation encoder (SigLIP-2) beyond ImageNet by training on web, synthetic, an...",
+        "key_contributions": [
+          "Representation Autoencoders (RAEs) have shown distinct advantages in diffusion modeling on ImageNet by training in high-dimensional semantic latent spaces.",
+          "In this work, we investigate whether this framework can scale to large-scale, freeform text-to-image (T2I) generation.",
+          "We first scale RAE decoders on the frozen representation encoder (SigLIP-2) beyond ImageNet by training on web, synthetic, and text-rendering data, finding that while scale improves general fidelity, targeted data composition is essential for specific domains like text."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2601.16208v1.mp3"
+      }
+    },
+    {
+      "id": "2601.15897v1",
+      "title": "ThermoSplat: Cross-Modal 3D Gaussian Splatting with Feature Modulation and Geometry Decoupling",
+      "authors": [
+        "Zhaoqi Su",
+        "Shihai Chen",
+        "Xinyan Lin",
+        "Liqin Huang",
+        "Zhipeng Su",
+        "Xiaoqiang Lu"
+      ],
+      "abstract": "Multi-modal scene reconstruction integrating RGB and thermal infrared data is essential for robust environmental perception across diverse lighting and weather conditions. However, extending 3D Gaussian Splatting (3DGS) to multi-spectral scenarios remains challenging. Current approaches often struggle to fully leverage the complementary information of multi-modal data, typically relying on mechanisms that either tend to neglect cross-modal correlations or leverage shared representations that fail to adaptively handle the complex structural correlations and physical discrepancies between spectrums. To address these limitations, we propose ThermoSplat, a novel framework that enables deep spectral-aware reconstruction through active feature modulation and adaptive geometry decoupling. First, we introduce a Cross-Modal FiLM Modulation mechanism that dynamically conditions shared latent features on thermal structural priors, effectively guiding visible texture synthesis with reliable cross-modal geometric cues. Second, to accommodate modality-specific geometric inconsistencies, we propose a Modality-Adaptive Geometric Decoupling scheme that learns independent opacity offsets and executes an independent rasterization pass for the thermal branch. Additionally, a hybrid rendering pipeline is employed to integrate explicit Spherical Harmonics with implicit neural decoding, ensuring both semantic consistency and high-frequency detail preservation. Extensive experiments on the RGBT-Scenes dataset demonstrate that ThermoSplat achieves state-of-the-art rendering quality across both visible and thermal spectrums.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.15897v1",
+        "pdf": "https://arxiv.org/pdf/2601.15897v1"
+      },
+      "arxiv_id": "2601.15897v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.1279661016949145,
+      "score_breakdown": {
+        "total_score": 4.13,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -47,59 +385,63 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We present a novel approach for interactive light editing in indoor scenes from a single multi-view scene capture. Our method leverages a generative image-based light decomposition model that factorizes complex indoor scene illumination into its constituent light sources. This factorization enables independent manipulation of individual light sources, specifically allowing control over their state...",
+        "short": "Multi-modal scene reconstruction integrating RGB and thermal infrared data is essential for robust environmental perception across diverse lighting and weather conditions. However, extending 3D Gaussian Splatting (3DGS) to multi-spectral scenarios remains challenging. Current approaches often struggle to fully leverage the complementary information of multi-modal data, typically relying on mechani...",
         "key_contributions": [
-          "We present a novel approach for interactive light editing in indoor scenes from a single multi-view scene capture.",
-          "Our method leverages a generative image-based light decomposition model that factorizes complex indoor scene illumination into its constituent light sources.",
-          "This factorization enables independent manipulation of individual light sources, specifically allowing control over their state (on/off), chromaticity, and intensity."
+          "Multi-modal scene reconstruction integrating RGB and thermal infrared data is essential for robust environmental perception across diverse lighting and weather conditions.",
+          "However, extending 3D Gaussian Splatting (3DGS) to multi-spectral scenarios remains challenging.",
+          "Current approaches often struggle to fully leverage the complementary information of multi-modal data, typically relying on mechanisms that either tend to neglect cross-modal correlations or leverage shared representations that fail to adaptively handle the complex structural correlations and physical discrepancies between spectrums."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2601.15283v1.mp3"
+        "audio_url": "/audio/2601.15897v1.mp3"
       }
     },
     {
-      "id": "2601.15200v1",
-      "title": "BBoxMaskPose v2: Expanding Mutual Conditioning to 3D",
+      "id": "2601.16079v1",
+      "title": "Masked Modeling for Human Motion Recovery Under Occlusions",
       "authors": [
-        "Miroslav Purkrabek",
-        "Constantin Kolomiiets",
-        "Jiri Matas"
+        "Zhiyin Qian",
+        "Siwei Zhang",
+        "Bharat Lal Bhatnagar",
+        "Federica Bogo",
+        "Siyu Tang"
       ],
-      "abstract": "Most 2D human pose estimation benchmarks are nearly saturated, with the exception of crowded scenes. We introduce PMPose, a top-down 2D pose estimator that incorporates the probabilistic formulation and the mask-conditioning. PMPose improves crowded pose estimation without sacrificing performance on standard scenes. Building on this, we present BBoxMaskPose v2 (BMPv2) integrating PMPose and an enhanced SAM-based mask refinement module. BMPv2 surpasses state-of-the-art by 1.5 average precision (AP) points on COCO and 6 AP points on OCHuman, becoming the first method to exceed 50 AP on OCHuman. We demonstrate that BMP's 2D prompting of 3D model improves 3D pose estimation in crowded scenes and that advances in 2D pose quality directly benefit 3D estimation. Results on the new OCHuman-Pose dataset show that multi-person performance is more affected by pose prediction accuracy than by detection. The code, models, and data are available on https://MiraPurkrabek.github.io/BBox-Mask-Pose/.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
+      "abstract": "Human motion reconstruction from monocular videos is a fundamental challenge in computer vision, with broad applications in AR/VR, robotics, and digital content creation, but remains challenging under frequent occlusions in real-world settings.Existing regression-based methods are efficient but fragile to missing observations, while optimization- and diffusion-based approaches improve robustness at the cost of slow inference speed and heavy preprocessing steps. To address these limitations, we leverage recent advances in generative masked modeling and present MoRo: Masked Modeling for human motion Recovery under Occlusions. MoRo is an occlusion-robust, end-to-end generative framework that formulates motion reconstruction as a video-conditioned task, and efficiently recover human motion in a consistent global coordinate system from RGB videos. By masked modeling, MoRo naturally handles occlusions while enabling efficient, end-to-end inference. To overcome the scarcity of paired video-motion data, we design a cross-modality learning scheme that learns multi-modal priors from a set of heterogeneous datasets: (i) a trajectory-aware motion prior trained on MoCap datasets, (ii) an image-conditioned pose prior trained on image-pose datasets, capturing diverse per-frame poses, and (iii) a video-conditioned masked transformer that fuses motion and pose priors, finetuned on video-motion datasets to integrate visual cues with motion dynamics for robust inference. Extensive experiments on EgoBody and RICH demonstrate that MoRo substantially outperforms state-of-the-art methods in accuracy and motion realism under occlusions, while performing on-par in non-occluded scenarios. MoRo achieves real-time inference at 70 FPS on a single H200 GPU.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15200v1",
-        "pdf": "https://arxiv.org/pdf/2601.15200v1"
+        "paper": "http://arxiv.org/abs/2601.16079v1",
+        "pdf": "https://arxiv.org/pdf/2601.16079v1"
       },
-      "arxiv_id": "2601.15200v1",
-      "comment": "GitHub repository: https://github.com/MiraPurkrabek/BBoxMaskPose/",
+      "arxiv_id": "2601.16079v1",
+      "comment": "Project page: https://mikeqzy.github.io/MoRo",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.199999999999999,
+      "relevance_score": 4.119491525423729,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.12,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -108,76 +450,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Most 2D human pose estimation benchmarks are nearly saturated, with the exception of crowded scenes. We introduce PMPose, a top-down 2D pose estimator that incorporates the probabilistic formulation and the mask-conditioning. PMPose improves crowded pose estimation without sacrificing performance on standard scenes. Building on this, we present BBoxMaskPose v2 (BMPv2) integrating PMPose and an enh...",
-        "key_contributions": [
-          "Most 2D human pose estimation benchmarks are nearly saturated, with the exception of crowded scenes.",
-          "We introduce PMPose, a top-down 2D pose estimator that incorporates the probabilistic formulation and the mask-conditioning.",
-          "PMPose improves crowded pose estimation without sacrificing performance on standard scenes."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2601.15200v1.mp3"
-      }
-    },
-    {
-      "id": "2601.15282v1",
-      "title": "Rethinking Video Generation Model for the Embodied World",
-      "authors": [
-        "Yufan Deng",
-        "Zilin Pan",
-        "Hongyu Zhang",
-        "Xiaojie Li",
-        "Ruoqing Hu",
-        "Yufei Ding",
-        "Yiming Zou",
-        "Yan Zeng",
-        "Daquan Zhou"
-      ],
-      "abstract": "Video generation models have significantly advanced embodied intelligence, unlocking new possibilities for generating diverse robot data that capture perception, reasoning, and action in the physical world. However, synthesizing high-quality videos that accurately reflect real-world robotic interactions remains challenging, and the lack of a standardized benchmark limits fair comparisons and progress. To address this gap, we introduce a comprehensive robotics benchmark, RBench, designed to evaluate robot-oriented video generation across five task domains and four distinct embodiments. It assesses both task-level correctness and visual fidelity through reproducible sub-metrics, including structural consistency, physical plausibility, and action completeness. Evaluation of 25 representative models highlights significant deficiencies in generating physically realistic robot behaviors. Furthermore, the benchmark achieves a Spearman correlation coefficient of 0.96 with human evaluations, validating its effectiveness. While RBench provides the necessary lens to identify these deficiencies, achieving physical realism requires moving beyond evaluation to address the critical shortage of high-quality training data. Driven by these insights, we introduce a refined four-stage data pipeline, resulting in RoVid-X, the largest open-source robotic dataset for video generation with 4 million annotated video clips, covering thousands of tasks and enriched with comprehensive physical property annotations. Collectively, this synergistic ecosystem of evaluation and data establishes a robust foundation for rigorous assessment and scalable training of video models, accelerating the evolution of embodied AI toward general intelligence.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15282v1",
-        "pdf": "https://arxiv.org/pdf/2601.15282v1"
-      },
-      "arxiv_id": "2601.15282v1",
-      "comment": "Github: https://github.com/DAGroup-PKU/ReVidgen/ Project website: https://dagroup-pku.github.io/ReVidgen.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1000000000000005,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -191,65 +464,65 @@
         }
       },
       "ai_summaries": {
-        "short": "Video generation models have significantly advanced embodied intelligence, unlocking new possibilities for generating diverse robot data that capture perception, reasoning, and action in the physical world. However, synthesizing high-quality videos that accurately reflect real-world robotic interactions remains challenging, and the lack of a standardized benchmark limits fair comparisons and progr...",
+        "short": "Human motion reconstruction from monocular videos is a fundamental challenge in computer vision, with broad applications in AR/VR, robotics, and digital content creation, but remains challenging under frequent occlusions in real-world settings.Existing regression-based methods are efficient but fragile to missing observations, while optimization- and diffusion-based approaches improve robustness a...",
         "key_contributions": [
-          "Video generation models have significantly advanced embodied intelligence, unlocking new possibilities for generating diverse robot data that capture perception, reasoning, and action in the physical world.",
-          "However, synthesizing high-quality videos that accurately reflect real-world robotic interactions remains challenging, and the lack of a standardized benchmark limits fair comparisons and progress.",
-          "To address this gap, we introduce a comprehensive robotics benchmark, RBench, designed to evaluate robot-oriented video generation across five task domains and four distinct embodiments."
+          "Human motion reconstruction from monocular videos is a fundamental challenge in computer vision, with broad applications in AR/VR, robotics, and digital content creation, but remains challenging under frequent occlusions in real-world settings.",
+          "Existing regression-based methods are efficient but fragile to missing observations, while optimization- and diffusion-based approaches improve robustness at the cost of slow inference speed and heavy preprocessing steps.",
+          "To address these limitations, we leverage recent advances in generative masked modeling and present MoRo: Masked Modeling for human motion Recovery under Occlusions."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2601.15282v1.mp3"
+        "audio_url": "/audio/2601.16079v1.mp3"
       }
     },
     {
-      "id": "2601.15123v1",
-      "title": "BREPS: Bounding-Box Robustness Evaluation of Promptable Segmentation",
+      "id": "2601.15888v1",
+      "title": "Understanding the Transfer Limits of Vision Foundation Models",
       "authors": [
-        "Andrey Moskalenko",
-        "Danil Kuznetsov",
-        "Irina Dudko",
-        "Anastasiia Iasakova",
-        "Nikita Boldyrev",
-        "Denis Shepelev",
-        "Andrei Spiridonov",
-        "Andrey Kuznetsov",
-        "Vlad Shakhuro"
+        "Shiqi Huang",
+        "Yipei Wang",
+        "Natasha Thorley",
+        "Alexander Ng",
+        "Shaheer Saeed",
+        "Mark Emberton",
+        "Shonit Punwani",
+        "Veeru Kasivisvanathan",
+        "Dean Barratt",
+        "Daniel Alexander",
+        "Yipeng Hu"
       ],
-      "abstract": "Promptable segmentation models such as SAM have established a powerful paradigm, enabling strong generalization to unseen objects and domains with minimal user input, including points, bounding boxes, and text prompts. Among these, bounding boxes stand out as particularly effective, often outperforming points while significantly reducing annotation costs. However, current training and evaluation protocols typically rely on synthetic prompts generated through simple heuristics, offering limited insight into real-world robustness. In this paper, we investigate the robustness of promptable segmentation models to natural variations in bounding box prompts. First, we conduct a controlled user study and collect thousands of real bounding box annotations. Our analysis reveals substantial variability in segmentation quality across users for the same model and instance, indicating that SAM-like models are highly sensitive to natural prompt noise. Then, since exhaustive testing of all possible user inputs is computationally prohibitive, we reformulate robustness evaluation as a white-box optimization problem over the bounding box prompt space. We introduce BREPS, a method for generating adversarial bounding boxes that minimize or maximize segmentation error while adhering to naturalness constraints. Finally, we benchmark state-of-the-art models across 10 datasets, spanning everyday scenes to medical imaging. Code - https://github.com/emb-ai/BREPS.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
+      "abstract": "Foundation models leverage large-scale pretraining to capture extensive knowledge, demonstrating generalization in a wide range of language tasks. By comparison, vision foundation models (VFMs) often exhibit uneven improvements across downstream tasks, despite substantial computational investment. We postulate that this limitation arises from a mismatch between pretraining objectives and the demands of downstream vision-and-imaging tasks. Pretraining strategies like masked image reconstruction or contrastive learning shape representations for tasks such as recovery of generic visual patterns or global semantic structures, which may not align with the task-specific requirements of downstream applications including segmentation, classification, or image synthesis. To investigate this in a concrete real-world clinical area, we assess two VFMs, a reconstruction-focused MAE-based model (ProFound) and a contrastive-learning-based model (ProViCNet), on five prostate multiparametric MR imaging tasks, examining how such task alignment influences transfer performance, i.e., from pretraining to fine-tuning. Our findings indicate that better alignment between pretraining and downstream tasks, measured by simple divergence metrics such as maximum-mean-discrepancy (MMD) between the same features before and after fine-tuning, correlates with greater performance improvements and faster convergence, emphasizing the importance of designing and analyzing pretraining objectives with downstream applicability in mind.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.HC"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15123v1",
-        "pdf": "https://arxiv.org/pdf/2601.15123v1"
+        "paper": "http://arxiv.org/abs/2601.15888v1",
+        "pdf": "https://arxiv.org/pdf/2601.15888v1"
       },
-      "arxiv_id": "2601.15123v1",
-      "comment": "Accepted by AAAI2026",
+      "arxiv_id": "2601.15888v1",
+      "comment": "accepted in ISBI 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.058474576271187,
+      "relevance_score": 4.053389830508475,
       "score_breakdown": {
-        "total_score": 4.06,
+        "total_score": 4.05,
         "field_match": {
-          "score": 1.27,
+          "score": 0.51,
           "matches": [
-            "medical imaging",
             "segmentation"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 8,
+          "venue": "ISBI",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -263,315 +536,114 @@
         }
       },
       "ai_summaries": {
-        "short": "Promptable segmentation models such as SAM have established a powerful paradigm, enabling strong generalization to unseen objects and domains with minimal user input, including points, bounding boxes, and text prompts. Among these, bounding boxes stand out as particularly effective, often outperforming points while significantly reducing annotation costs. However, current training and evaluation p...",
+        "short": "Foundation models leverage large-scale pretraining to capture extensive knowledge, demonstrating generalization in a wide range of language tasks. By comparison, vision foundation models (VFMs) often exhibit uneven improvements across downstream tasks, despite substantial computational investment. We postulate that this limitation arises from a mismatch between pretraining objectives and the deman...",
         "key_contributions": [
-          "Promptable segmentation models such as SAM have established a powerful paradigm, enabling strong generalization to unseen objects and domains with minimal user input, including points, bounding boxes, and text prompts.",
-          "Among these, bounding boxes stand out as particularly effective, often outperforming points while significantly reducing annotation costs.",
-          "However, current training and evaluation protocols typically rely on synthetic prompts generated through simple heuristics, offering limited insight into real-world robustness."
+          "Foundation models leverage large-scale pretraining to capture extensive knowledge, demonstrating generalization in a wide range of language tasks.",
+          "By comparison, vision foundation models (VFMs) often exhibit uneven improvements across downstream tasks, despite substantial computational investment.",
+          "We postulate that this limitation arises from a mismatch between pretraining objectives and the demands of downstream vision-and-imaging tasks."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2601.15123v1.mp3"
+        "audio_url": "/audio/2601.15888v1.mp3"
       }
     },
     {
-      "id": "2601.15260v1",
-      "title": "DrivIng: A Large-Scale Multimodal Driving Dataset with Full Digital Twin Integration",
+      "id": "2601.16147v1",
+      "title": "Beat-ssl: Capturing Local ECG Morphology through Heartbeat-level Contrastive Learning with Soft Targets",
       "authors": [
-        "Dominik Rößle",
-        "Xujun Xie",
-        "Adithya Mohan",
-        "Venkatesh Thirugnana Sambandham",
-        "Daniel Cremers",
-        "Torsten Schön"
+        "Muhammad Ilham Rizqyawan",
+        "Peter Macfarlane",
+        "Stathis Hadjidemetriou",
+        "Fani Deligianni"
       ],
-      "abstract": "Perception is a cornerstone of autonomous driving, enabling vehicles to understand their surroundings and make safe, reliable decisions. Developing robust perception algorithms requires large-scale, high-quality datasets that cover diverse driving conditions and support thorough evaluation. Existing datasets often lack a high-fidelity digital twin, limiting systematic testing, edge-case simulation, sensor modification, and sim-to-real evaluations. To address this gap, we present DrivIng, a large-scale multimodal dataset with a complete geo-referenced digital twin of a ~18 km route spanning urban, suburban, and highway segments. Our dataset provides continuous recordings from six RGB cameras, one LiDAR, and high-precision ADMA-based localization, captured across day, dusk, and night. All sequences are annotated at 10 Hz with 3D bounding boxes and track IDs across 12 classes, yielding ~1.2 million annotated instances. Alongside the benefits of a digital twin, DrivIng enables a 1-to-1 transfer of real traffic into simulation, preserving agent interactions while enabling realistic and flexible scenario testing. To support reproducible research and robust validation, we benchmark DrivIng with state-of-the-art perception models and publicly release the dataset, digital twin, HD map, and codebase.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15260v1",
-        "pdf": "https://arxiv.org/pdf/2601.15260v1"
-      },
-      "arxiv_id": "2601.15260v1",
-      "comment": "Accepted to the IEEE Intelligent Vehicles Symposium 2026. For code and dataset, see https://github.com/cvims/DrivIng",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Perception is a cornerstone of autonomous driving, enabling vehicles to understand their surroundings and make safe, reliable decisions. Developing robust perception algorithms requires large-scale, high-quality datasets that cover diverse driving conditions and support thorough evaluation. Existing datasets often lack a high-fidelity digital twin, limiting systematic testing, edge-case simulation...",
-        "key_contributions": [
-          "Perception is a cornerstone of autonomous driving, enabling vehicles to understand their surroundings and make safe, reliable decisions.",
-          "Developing robust perception algorithms requires large-scale, high-quality datasets that cover diverse driving conditions and support thorough evaluation.",
-          "Existing datasets often lack a high-fidelity digital twin, limiting systematic testing, edge-case simulation, sensor modification, and sim-to-real evaluations."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2601.15260v1.mp3"
-      }
-    },
-    {
-      "id": "2601.15119v1",
-      "title": "Vision Models for Medical Imaging: A Hybrid Approach for PCOS Detection from Ultrasound Scans",
-      "authors": [
-        "Md Mahmudul Hoque",
-        "Md Mehedi Hassain",
-        "Muntakimur Rahaman",
-        "Md. Towhidul Islam",
-        "Shaista Rani",
-        "Md Sharif Mollah"
-      ],
-      "abstract": "Polycystic Ovary Syndrome (PCOS) is the most familiar endocrine illness in women of reproductive age. Many Bangladeshi women suffer from PCOS disease in their older age. The aim of our research is to identify effective vision-based medical image analysis techniques and evaluate hybrid models for the accurate detection of PCOS. We introduced two novel hybrid models combining convolutional and transformer-based approaches. The training and testing data were organized into two categories: \"infected\" (PCOS-positive) and \"noninfected\" (healthy ovaries). In the initial stage, our first hybrid model, 'DenConST' (integrating DenseNet121, Swin Transformer, and ConvNeXt), achieved 85.69% accuracy. The final optimized model, 'DenConREST' (incorporating Swin Transformer, ConvNeXt, DenseNet121, ResNet18, and EfficientNetV2), demonstrated superior performance with 98.23% accuracy. Among all evaluated models, DenConREST showed the best performance. This research highlights an efficient solution for PCOS detection from ultrasound images, significantly improving diagnostic accuracy while reducing detection errors.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
-      "categories": [
-        "eess.IV",
-        "cs.CV"
-      ],
-      "primary_category": "eess.IV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15119v1",
-        "pdf": "https://arxiv.org/pdf/2601.15119v1"
-      },
-      "arxiv_id": "2601.15119v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.029661016949152,
-      "score_breakdown": {
-        "total_score": 4.03,
-        "field_match": {
-          "score": 1.95,
-          "matches": [
-            "medical image",
-            "medical imaging",
-            "image analysis"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Polycystic Ovary Syndrome (PCOS) is the most familiar endocrine illness in women of reproductive age. Many Bangladeshi women suffer from PCOS disease in their older age. The aim of our research is to identify effective vision-based medical image analysis techniques and evaluate hybrid models for the accurate detection of PCOS. We introduced two novel hybrid models combining convolutional and trans...",
-        "key_contributions": [
-          "Polycystic Ovary Syndrome (PCOS) is the most familiar endocrine illness in women of reproductive age.",
-          "Many Bangladeshi women suffer from PCOS disease in their older age.",
-          "The aim of our research is to identify effective vision-based medical image analysis techniques and evaluate hybrid models for the accurate detection of PCOS."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2601.15119v1.mp3"
-      }
-    },
-    {
-      "id": "2601.15015v1",
-      "title": "Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control",
-      "authors": [
-        "Jannis Becktepe",
-        "Aleksandra Franz",
-        "Nils Thuerey",
-        "Sebastian Peitz"
-      ],
-      "abstract": "Reinforcement learning (RL) has shown promising results in active flow control (AFC), yet progress in the field remains difficult to assess as existing studies rely on heterogeneous observation and actuation schemes, numerical setups, and evaluation protocols. Current AFC benchmarks attempt to address these issues but heavily rely on external computational fluid dynamics (CFD) solvers, are not fully differentiable, and provide limited 3D and multi-agent support. To overcome these limitations, we introduce FluidGym, the first standalone, fully differentiable benchmark suite for RL in AFC. Built entirely in PyTorch on top of the GPU-accelerated PICT solver, FluidGym runs in a single Python stack, requires no external CFD software, and provides standardized evaluation protocols. We present baseline results with PPO and SAC and release all environments, datasets, and trained models as public resources. FluidGym enables systematic comparison of control methods, establishes a scalable foundation for future research in learning-based flow control, and is available at https://github.com/safe-autonomous-systems/fluidgym.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
+      "abstract": "Obtaining labelled ECG data for developing supervised models is challenging. Contrastive learning (CL) has emerged as a promising pretraining approach that enables effective transfer learning with limited labelled data. However, existing CL frameworks either focus solely on global context or fail to exploit ECG-specific characteristics. Furthermore, these methods rely on hard contrastive targets, which may not adequately capture the continuous nature of feature similarity in ECG signals. In this paper, we propose Beat-SSL, a contrastive learning framework that performs dual-context learning through both rhythm-level and heartbeat-level contrasting with soft targets. We evaluated our pretrained model on two downstream tasks: 1) multilabel classification for global rhythm assessment, and 2) ECG segmentation to assess its capacity to learn representations across both contexts. We conducted an ablation study and compared the best configuration with three other methods, including one ECG foundation model. Despite the foundation model's broader pretraining, Beat-SSL reached 93% of its performance in multilabel classification task and surpassed all other methods in the segmentation task by 4%.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
       "categories": [
         "cs.LG"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15015v1",
-        "pdf": "https://arxiv.org/pdf/2601.15015v1"
+        "paper": "http://arxiv.org/abs/2601.16147v1",
+        "pdf": "https://arxiv.org/pdf/2601.16147v1"
       },
-      "arxiv_id": "2601.15015v1",
-      "comment": "Code available at https://github.com/safe-autonomous-systems/fluidgym",
+      "arxiv_id": "2601.16147v1",
+      "comment": "Accepted at ISBI 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9499999999999997,
+      "has_code": false,
+      "relevance_score": 4.024576271186441,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.02,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.19,
+          "matches": [
+            "heart",
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 8,
+          "venue": "ISBI",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reinforcement learning (RL) has shown promising results in active flow control (AFC), yet progress in the field remains difficult to assess as existing studies rely on heterogeneous observation and actuation schemes, numerical setups, and evaluation protocols. Current AFC benchmarks attempt to address these issues but heavily rely on external computational fluid dynamics (CFD) solvers, are not ful...",
+        "short": "Obtaining labelled ECG data for developing supervised models is challenging. Contrastive learning (CL) has emerged as a promising pretraining approach that enables effective transfer learning with limited labelled data. However, existing CL frameworks either focus solely on global context or fail to exploit ECG-specific characteristics. Furthermore, these methods rely on hard contrastive targets, ...",
         "key_contributions": [
-          "Reinforcement learning (RL) has shown promising results in active flow control (AFC), yet progress in the field remains difficult to assess as existing studies rely on heterogeneous observation and actuation schemes, numerical setups, and evaluation protocols.",
-          "Current AFC benchmarks attempt to address these issues but heavily rely on external computational fluid dynamics (CFD) solvers, are not fully differentiable, and provide limited 3D and multi-agent support.",
-          "To overcome these limitations, we introduce FluidGym, the first standalone, fully differentiable benchmark suite for RL in AFC."
+          "Obtaining labelled ECG data for developing supervised models is challenging.",
+          "Contrastive learning (CL) has emerged as a promising pretraining approach that enables effective transfer learning with limited labelled data.",
+          "However, existing CL frameworks either focus solely on global context or fail to exploit ECG-specific characteristics."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2601.15015v1.mp3"
+        "audio_url": "/audio/2601.16147v1.mp3"
       }
     },
     {
-      "id": "2601.15224v1",
-      "title": "PROGRESSLM: Towards Progress Reasoning in Vision-Language Models",
+      "id": "2601.15884v1",
+      "title": "PMPBench: A Paired Multi-Modal Pan-Cancer Benchmark for Medical Image Synthesis",
       "authors": [
-        "Jianshu Zhang",
-        "Chengxuan Qian",
-        "Haosen Sun",
-        "Haoran Lu",
-        "Dingcheng Wang",
-        "Letian Xue",
-        "Han Liu"
+        "Yifan Chen",
+        "Fei Yin",
+        "Hao Chen",
+        "Jia Wu",
+        "Chao Li"
       ],
-      "abstract": "Estimating task progress requires reasoning over long-horizon dynamics rather than recognizing static visual content. While modern Vision-Language Models (VLMs) excel at describing what is visible, it remains unclear whether they can infer how far a task has progressed from partial observations. To this end, we introduce Progress-Bench, a benchmark for systematically evaluating progress reasoning in VLMs. Beyond benchmarking, we further explore a human-inspired two-stage progress reasoning paradigm through both training-free prompting and training-based approach based on curated dataset ProgressLM-45K. Experiments on 14 VLMs show that most models are not yet ready for task progress estimation, exhibiting sensitivity to demonstration modality and viewpoint changes, as well as poor handling of unanswerable cases. While training-free prompting that enforces structured progress reasoning yields limited and model-dependent gains, the training-based ProgressLM-3B achieves consistent improvements even at a small model scale, despite being trained on a task set fully disjoint from the evaluation tasks. Further analyses reveal characteristic error patterns and clarify when and why progress reasoning succeeds or fails.",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
-      "categories": [
-        "cs.CV",
-        "cs.CL"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15224v1",
-        "pdf": "https://arxiv.org/pdf/2601.15224v1"
-      },
-      "arxiv_id": "2601.15224v1",
-      "comment": "Website: https://progresslm.github.io/ProgressLM/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Estimating task progress requires reasoning over long-horizon dynamics rather than recognizing static visual content. While modern Vision-Language Models (VLMs) excel at describing what is visible, it remains unclear whether they can infer how far a task has progressed from partial observations. To this end, we introduce Progress-Bench, a benchmark for systematically evaluating progress reasoning ...",
-        "key_contributions": [
-          "Estimating task progress requires reasoning over long-horizon dynamics rather than recognizing static visual content.",
-          "While modern Vision-Language Models (VLMs) excel at describing what is visible, it remains unclear whether they can infer how far a task has progressed from partial observations.",
-          "To this end, we introduce Progress-Bench, a benchmark for systematically evaluating progress reasoning in VLMs."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2601.15224v1.mp3"
-      }
-    },
-    {
-      "id": "2601.15098v1",
-      "title": "Three-dimensional visualization of X-ray micro-CT with large-scale datasets: Efficiency and accuracy for real-time interaction",
-      "authors": [
-        "Yipeng Yin",
-        "Rao Yao",
-        "Qingying Li",
-        "Dazhong Wang",
-        "Hong Zhou",
-        "Zhijun Fang",
-        "Jianing Chen",
-        "Longjie Qian",
-        "Mingyue Wu"
-      ],
-      "abstract": "As Micro-CT technology continues to refine its characterization of material microstructures, industrial CT ultra-precision inspection is generating increasingly large datasets, necessitating solutions to the trade-off between accuracy and efficiency in the 3D characterization of defects during ultra-precise detection. This article provides a unique perspective on recent advances in accurate and efficient 3D visualization using Micro-CT, tracing its evolution from medical imaging to industrial non-destructive testing (NDT). Among the numerous CT reconstruction and volume rendering methods, this article selectively reviews and analyzes approaches that balance accuracy and efficiency, offering a comprehensive analysis to help researchers quickly grasp highly efficient and accurate 3D reconstruction methods for microscopic features. By comparing the principles of computed tomography with advancements in microstructural technology, this article examines the evolution of CT reconstruction algorithms from analytical methods to deep learning techniques, as well as improvements in volume rendering algorithms, acceleration, and data reduction. Additionally, it explores advanced lighting models for high-accuracy, photorealistic, and efficient volume rendering. Furthermore, this article envisions potential directions in CT reconstruction and volume rendering. It aims to guide future research in quickly selecting efficient and precise methods and developing new ideas and approaches for real-time online monitoring of internal material defects through virtual-physical interaction, for applying digital twin model to structural health monitoring (SHM).",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
+      "abstract": "Contrast medium plays a pivotal role in radiological imaging, as it amplifies lesion conspicuity and improves detection for the diagnosis of tumor-related diseases. However, depending on the patient's health condition or the medical resources available, the use of contrast medium is not always feasible. Recent work has explored AI-based image translation to synthesize contrast-enhanced images directly from non-contrast scans, aims to reduce side effects and streamlines clinical workflows. Progress in this direction has been constrained by data limitations: (1) existing public datasets focus almost exclusively on brain-related paired MR modalities; (2) other collections include partially paired data but suffer from missing modalities/timestamps and imperfect spatial alignment; (3) explicit labeling of CT vs. CTC or DCE phases is often absent; (4) substantial resources remain private. To bridge this gap, we introduce the first public, fully paired, pan-cancer medical imaging dataset spanning 11 human organs. The MR data include complete dynamic contrast-enhanced (DCE) sequences covering all three phases (DCE1-DCE3), while the CT data provide paired non-contrast and contrast-enhanced acquisitions (CTC). The dataset is curated for anatomical correspondence, enabling rigorous evaluation of 1-to-1, N-to-1, and N-to-N translation settings (e.g., predicting DCE phases from non-contrast inputs). Built upon this resource, we establish a comprehensive benchmark. We report results from representative baselines of contemporary image-to-image translation. We release the dataset and benchmark to catalyze research on safe, effective contrast synthesis, with direct relevance to multi-organ oncology imaging workflows. Our code and dataset are publicly available at https://github.com/YifanChen02/PMPBench.",
+      "published": "2026-01-22",
+      "updated": "2026-01-22",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15098v1",
-        "pdf": "https://arxiv.org/pdf/2601.15098v1"
+        "paper": "http://arxiv.org/abs/2601.15884v1",
+        "pdf": "https://arxiv.org/pdf/2601.15884v1"
       },
-      "arxiv_id": "2601.15098v1",
-      "comment": "Page1-37",
+      "arxiv_id": "2601.15884v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.8618644067796604,
+      "relevance_score": 4.010169491525424,
       "score_breakdown": {
-        "total_score": 3.86,
+        "total_score": 4.01,
         "field_match": {
-          "score": 1.78,
+          "score": 1.53,
           "matches": [
-            "medical imaging",
-            "3d reconstruction",
-            "deep learning"
+            "medical image",
+            "medical imaging"
           ],
           "weight": 0.4
         },
@@ -581,7 +653,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -590,88 +662,19 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "As Micro-CT technology continues to refine its characterization of material microstructures, industrial CT ultra-precision inspection is generating increasingly large datasets, necessitating solutions to the trade-off between accuracy and efficiency in the 3D characterization of defects during ultra-precise detection. This article provides a unique perspective on recent advances in accurate and ef...",
+        "short": "Contrast medium plays a pivotal role in radiological imaging, as it amplifies lesion conspicuity and improves detection for the diagnosis of tumor-related diseases. However, depending on the patient's health condition or the medical resources available, the use of contrast medium is not always feasible. Recent work has explored AI-based image translation to synthesize contrast-enhanced images dire...",
         "key_contributions": [
-          "As Micro-CT technology continues to refine its characterization of material microstructures, industrial CT ultra-precision inspection is generating increasingly large datasets, necessitating solutions to the trade-off between accuracy and efficiency in the 3D characterization of defects during ultra-precise detection.",
-          "This article provides a unique perspective on recent advances in accurate and efficient 3D visualization using Micro-CT, tracing its evolution from medical imaging to industrial non-destructive testing (NDT).",
-          "Among the numerous CT reconstruction and volume rendering methods, this article selectively reviews and analyzes approaches that balance accuracy and efficiency, offering a comprehensive analysis to help researchers quickly grasp highly efficient and accurate 3D reconstruction methods for microscopic features."
+          "Contrast medium plays a pivotal role in radiological imaging, as it amplifies lesion conspicuity and improves detection for the diagnosis of tumor-related diseases.",
+          "However, depending on the patient's health condition or the medical resources available, the use of contrast medium is not always feasible.",
+          "Recent work has explored AI-based image translation to synthesize contrast-enhanced images directly from non-contrast scans, aims to reduce side effects and streamlines clinical workflows."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2601.15098v1.mp3"
-      }
-    },
-    {
-      "id": "2601.15286v1",
-      "title": "Iterative Refinement Improves Compositional Image Generation",
-      "authors": [
-        "Shantanu Jaiswal",
-        "Mihir Prabhudesai",
-        "Nikash Bhardwaj",
-        "Zheyang Qin",
-        "Amir Zadeh",
-        "Chuan Li",
-        "Katerina Fragkiadaki",
-        "Deepak Pathak"
-      ],
-      "abstract": "Text-to-image (T2I) models have achieved remarkable progress, yet they continue to struggle with complex prompts that require simultaneously handling multiple objects, relations, and attributes. Existing inference-time strategies, such as parallel sampling with verifiers or simply increasing denoising steps, can improve prompt alignment but remain inadequate for richly compositional settings where many constraints must be satisfied. Inspired by the success of chain-of-thought reasoning in large language models, we propose an iterative test-time strategy in which a T2I model progressively refines its generations across multiple steps, guided by feedback from a vision-language model as the critic in the loop. Our approach is simple, requires no external tools or priors, and can be flexibly applied to a wide range of image generators and vision-language models. Empirically, we demonstrate consistent gains on image generation across benchmarks: a 16.9% improvement in all-correct rate on ConceptMix (k=7), a 13.8% improvement on T2I-CompBench (3D-Spatial category) and a 12.5% improvement on Visual Jenga scene decomposition compared to compute-matched parallel sampling. Beyond quantitative gains, iterative refinement produces more faithful generations by decomposing complex prompts into sequential corrections, with human evaluators preferring our method 58.7% of the time over 41.3% for the parallel baseline. Together, these findings highlight iterative self-correction as a broadly applicable principle for compositional image generation. Results and visualizations are available at https://iterative-img-gen.github.io/",
-      "published": "2026-01-21",
-      "updated": "2026-01-21",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15286v1",
-        "pdf": "https://arxiv.org/pdf/2601.15286v1"
-      },
-      "arxiv_id": "2601.15286v1",
-      "comment": "Project webpage: https://iterative-img-gen.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Text-to-image (T2I) models have achieved remarkable progress, yet they continue to struggle with complex prompts that require simultaneously handling multiple objects, relations, and attributes. Existing inference-time strategies, such as parallel sampling with verifiers or simply increasing denoising steps, can improve prompt alignment but remain inadequate for richly compositional settings where...",
-        "key_contributions": [
-          "Text-to-image (T2I) models have achieved remarkable progress, yet they continue to struggle with complex prompts that require simultaneously handling multiple objects, relations, and attributes.",
-          "Existing inference-time strategies, such as parallel sampling with verifiers or simply increasing denoising steps, can improve prompt alignment but remain inadequate for richly compositional settings where many constraints must be satisfied.",
-          "Inspired by the success of chain-of-thought reasoning in large language models, we propose an iterative test-time strategy in which a T2I model progressively refines its generations across multiple steps, guided by feedback from a vision-language model as the critic in the loop."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2601.15286v1.mp3"
+        "audio_url": "/audio/2601.15884v1.mp3"
       }
     }
   ]

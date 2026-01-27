@@ -3,47 +3,46 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2601.16060v1",
-      "title": "ProGiDiff: Prompt-Guided Diffusion-Based Medical Image Segmentation",
+      "id": "2601.16672v1",
+      "title": "ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction",
       "authors": [
-        "Yuan Lin",
-        "Murong Xu",
-        "Marc Hölle",
-        "Chinmay Prabhakar",
-        "Andreas Maier",
-        "Vasileios Belagiannis",
-        "Bjoern Menze",
-        "Suprosanna Shit"
+        "Ming Li",
+        "Hui Shan",
+        "Kai Zheng",
+        "Chentao Shen",
+        "Siyu Liu",
+        "Yanwei Fu",
+        "Zhen Chen",
+        "Xiangru Huang"
       ],
-      "abstract": "Widely adopted medical image segmentation methods, although efficient, are primarily deterministic and remain poorly amenable to natural language prompts. Thus, they lack the capability to estimate multiple proposals, human interaction, and cross-modality adaptation. Recently, text-to-image diffusion models have shown potential to bridge the gap. However, training them from scratch requires a large dataset-a limitation for medical image segmentation. Furthermore, they are often limited to binary segmentation and cannot be conditioned on a natural language prompt. To this end, we propose a novel framework called ProGiDiff that leverages existing image generation models for medical image segmentation purposes. Specifically, we propose a ControlNet-style conditioning mechanism with a custom encoder, suitable for image conditioning, to steer a pre-trained diffusion model to output segmentation masks. It naturally extends to a multi-class setting simply by prompting the target organ. Our experiment on organ segmentation from CT images demonstrates strong performance compared to previous methods and could greatly benefit from an expert-in-the-loop setting to leverage multiple proposals. Importantly, we demonstrate that the learned conditioning mechanism can be easily transferred through low-rank, few-shot adaptation to segment MR images.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
+      "abstract": "High-quality 3D garment reconstruction plays a crucial role in mitigating the sim-to-real gap in applications such as digital avatars, virtual try-on and robotic manipulation. However, existing garment reconstruction methods typically rely on unstructured representations, such as 3D Gaussian Splats, struggling to provide accurate reconstructions of garment topology and sewing structures. As a result, the reconstructed outputs are often unsuitable for high-fidelity physical simulation. We propose ReWeaver, a novel framework for topology-accurate 3D garment and sewing pattern reconstruction from sparse multi-view RGB images. Given as few as four input views, ReWeaver predicts seams and panels as well as their connectivities in both the 2D UV space and the 3D space. The predicted seams and panels align precisely with the multi-view images, yielding structured 2D--3D garment representations suitable for 3D perception, high-fidelity physical simulation, and robotic manipulation. To enable effective training, we construct a large-scale dataset GCD-TS, comprising multi-view RGB images, 3D garment geometries, textured human body meshes and annotated sewing patterns. The dataset contains over 100,000 synthetic samples covering a wide range of complex geometries and topologies. Extensive experiments show that ReWeaver consistently outperforms existing methods in terms of topology accuracy, geometry alignment and seam-panel consistency.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.16060v1",
-        "pdf": "https://arxiv.org/pdf/2601.16060v1"
+        "paper": "http://arxiv.org/abs/2601.16672v1",
+        "pdf": "https://arxiv.org/pdf/2601.16672v1"
       },
-      "arxiv_id": "2601.16060v1",
-      "comment": "5 pages, 4 figures. It has been accepted by IEEE ISBI",
+      "arxiv_id": "2601.16672v1",
+      "comment": "15 pages, 8 figures, Submitted to CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.408474576271186,
+      "relevance_score": 4.788983050847458,
       "score_breakdown": {
-        "total_score": 4.41,
+        "total_score": 4.79,
         "field_match": {
-          "score": 1.27,
+          "score": 0.85,
           "matches": [
-            "medical image",
-            "segmentation"
+            "3d gaussian"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 8,
-          "venue": "ISBI",
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -56,116 +55,59 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.15930v1",
-      "title": "MMGRid: Navigating Temporal-aware and Cross-domain Generative Recommendation via Model Merging",
+      "id": "2601.16788v1",
+      "title": "REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion",
       "authors": [
-        "Tianjun Wei",
-        "Enneng Yang",
-        "Yingpeng Du",
-        "Huizhong Guo",
-        "Jie Zhang",
-        "Zhu Sun"
+        "Xuewei Li",
+        "Xinghan Bao",
+        "Zhimin Chen",
+        "Xi Li"
       ],
-      "abstract": "Model merging (MM) offers an efficient mechanism for integrating multiple specialized models without access to original training data or costly retraining. While MM has demonstrated success in domains like computer vision, its role in recommender systems (RSs) remains largely unexplored. Recently, Generative Recommendation (GR) has emerged as a new paradigm in RSs, characterized by rapidly growing model scales and substantial computational costs, making MM particularly appealing for cost-sensitive deployment scenarios. In this work, we present the first systematic study of MM in GR through a contextual lens. We focus on a fundamental yet underexplored challenge in real-world: how to merge generative recommenders specialized to different real-world contexts, arising from temporal evolving user behaviors and heterogeneous application domains. To this end, we propose a unified framework MMGRid, a structured contextual grid of GR checkpoints that organizes models trained under diverse contexts induced by temporal evolution and domain diversity. All checkpoints are derived from a shared base LLM but fine-tuned on context-specific data, forming a realistic and controlled model space for systematically analyzing MM across GR paradigms and merging algorithms. Our investigation reveals several key insights. First, training GR models from LLMs can introduce parameter conflicts during merging due to token distribution shifts and objective disparities; such conflicts can be alleviated by disentangling task-aware and context-specific parameter changes via base model replacement. Second, incremental training across contexts induces recency bias, which can be effectively balanced through weighted contextual merging. Notably, we observe that optimal merging weights correlate with context-dependent interaction characteristics, offering practical guidance for weight selection in real-world deployments.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
+      "abstract": "As an important and challenging problem in computer vision, Panoramic Semantic Segmentation (PASS) aims to give complete scene perception based on an ultra-wide angle of view. Most PASS methods often focus on spherical geometry with RGB input or using the depth information in original or HHA format, which does not make full use of panoramic image geometry. To address these shortcomings, we propose REL-SF4PASS with our REL depth representation based on cylindrical coordinate and Spherical-dynamic Multi-Modal Fusion SMMF. REL is made up of Rectified Depth, Elevation-Gained Vertical Inclination Angle, and Lateral Orientation Angle, which fully represents 3D space in cylindrical coordinate style and the surface normal direction. SMMF aims to ensure the diversity of fusion for different panoramic image regions and reduce the breakage of cylinder side surface expansion in ERP projection, which uses different fusion strategies to match the different regions in panoramic images. Experimental results show that REL-SF4PASS considerably improves performance and robustness on popular benchmark, Stanford2D3D Panoramic datasets. It gains 2.35% average mIoU improvement on all 3 folds and reduces the performance variance by approximately 70% when facing 3D disturbance.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
       "categories": [
-        "cs.IR",
+        "cs.CV",
         "cs.AI"
-      ],
-      "primary_category": "cs.IR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15930v1",
-        "pdf": "https://arxiv.org/pdf/2601.15930v1"
-      },
-      "arxiv_id": "2601.15930v1",
-      "comment": "https://github.com/Joinn99/MMGRid",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.269491525423729,
-      "score_breakdown": {
-        "total_score": 4.27,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.16192v1",
-      "title": "360Anything: Geometry-Free Lifting of Images and Videos to 360°",
-      "authors": [
-        "Ziyi Wu",
-        "Daniel Watson",
-        "Andrea Tagliasacchi",
-        "David J. Fleet",
-        "Marcus A. Brubaker",
-        "Saurabh Saxena"
-      ],
-      "abstract": "Lifting perspective images and videos to 360° panoramas enables immersive 3D world generation. Existing approaches often rely on explicit geometric alignment between the perspective and the equirectangular projection (ERP) space. Yet, this requires known camera metadata, obscuring the application to in-the-wild data where such calibration is typically absent or noisy. We propose 360Anything, a geometry-free framework built upon pre-trained diffusion transformers. By treating the perspective input and the panorama target simply as token sequences, 360Anything learns the perspective-to-equirectangular mapping in a purely data-driven way, eliminating the need for camera information. Our approach achieves state-of-the-art performance on both image and video perspective-to-360° generation, outperforming prior works that use ground-truth camera information. We also trace the root cause of the seam artifacts at ERP boundaries to zero-padding in the VAE encoder, and introduce Circular Latent Encoding to facilitate seamless generation. Finally, we show competitive results in zero-shot camera FoV and orientation estimation benchmarks, demonstrating 360Anything's deep geometric understanding and broader utility in computer vision tasks. Additional results are available at https://360anything.github.io/.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
-      "categories": [
-        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.16192v1",
-        "pdf": "https://arxiv.org/pdf/2601.16192v1"
+        "paper": "http://arxiv.org/abs/2601.16788v1",
+        "pdf": "https://arxiv.org/pdf/2601.16788v1"
       },
-      "arxiv_id": "2601.16192v1",
-      "comment": "Project page: https://360anything.github.io/",
+      "arxiv_id": "2601.16788v1",
+      "comment": "submitted to CVPR 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.219491525423729,
+      "has_code": false,
+      "relevance_score": 4.672881355932203,
       "score_breakdown": {
-        "total_score": 4.22,
+        "total_score": 4.67,
         "field_match": {
-          "score": 0.42,
+          "score": 0.93,
           "matches": [
+            "segmentation",
             "computer vision"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -175,98 +117,40 @@
       }
     },
     {
-      "id": "2601.15951v1",
-      "title": "EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis",
+      "id": "2601.16982v1",
+      "title": "AnyView: Synthesizing Any Novel View in Dynamic Scenes",
       "authors": [
-        "Sheng Miao",
-        "Sijin Li",
-        "Pan Wang",
-        "Dongfeng Bai",
-        "Bingbing Liu",
-        "Yue Wang",
-        "Andreas Geiger",
-        "Yiyi Liao"
+        "Basile Van Hoorick",
+        "Dian Chen",
+        "Shun Iwase",
+        "Pavel Tokmakov",
+        "Muhammad Zubair Irshad",
+        "Igor Vasiljevic",
+        "Swati Gupta",
+        "Fangzhou Cheng",
+        "Sergey Zakharov",
+        "Vitor Campagnolo Guizilini"
       ],
-      "abstract": "Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality. While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization. Conversely, emerging feed-forward methods frequently adopt per-pixel Gaussian representations, which lead to 3D inconsistencies when aggregating multi-view predictions in complex, dynamic environments. We propose EvolSplat4D, a feed-forward framework that moves beyond existing per-pixel paradigms by unifying volume-based and pixel-based Gaussian prediction across three specialized branches. For close-range static regions, we predict consistent geometry of 3D Gaussians over multiple frames directly from a 3D feature volume, complemented by a semantically-enhanced image-based rendering module for predicting their appearance. For dynamic actors, we utilize object-centric canonical spaces and a motion-adjusted rendering module to aggregate temporal features, ensuring stable 4D reconstruction despite noisy motion priors. Far-Field scenery is handled by an efficient per-pixel Gaussian branch to ensure full-scene coverage. Experimental results on the KITTI-360, KITTI, Waymo, and PandaSet datasets show that EvolSplat4D reconstructs both static and dynamic environments with superior accuracy and consistency, outperforming both per-scene optimization and state-of-the-art feed-forward baselines.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
+      "abstract": "Modern generative video models excel at producing convincing, high-quality outputs, but struggle to maintain multi-view and spatiotemporal consistency in highly dynamic real-world environments. In this work, we introduce \\textbf{AnyView}, a diffusion-based video generation framework for \\emph{dynamic view synthesis} with minimal inductive biases or geometric assumptions. We leverage multiple data sources with various levels of supervision, including monocular (2D), multi-view static (3D) and multi-view dynamic (4D) datasets, to train a generalist spatiotemporal implicit representation capable of producing zero-shot novel videos from arbitrary camera locations and trajectories. We evaluate AnyView on standard benchmarks, showing competitive results with the current state of the art, and propose \\textbf{AnyViewBench}, a challenging new benchmark tailored towards \\emph{extreme} dynamic view synthesis in diverse real-world scenarios. In this more dramatic setting, we find that most baselines drastically degrade in performance, as they require significant overlap between viewpoints, while AnyView maintains the ability to produce realistic, plausible, and spatiotemporally consistent videos when prompted from \\emph{any} viewpoint. Results, data, code, and models can be viewed at: https://tri-ml.github.io/AnyView/",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15951v1",
-        "pdf": "https://arxiv.org/pdf/2601.15951v1"
+        "paper": "http://arxiv.org/abs/2601.16982v1",
+        "pdf": "https://arxiv.org/pdf/2601.16982v1"
       },
-      "arxiv_id": "2601.15951v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.215254237288136,
-      "score_breakdown": {
-        "total_score": 4.22,
-        "field_match": {
-          "score": 2.29,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "neural radiance"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.16208v1",
-      "title": "Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders",
-      "authors": [
-        "Shengbang Tong",
-        "Boyang Zheng",
-        "Ziteng Wang",
-        "Bingda Tang",
-        "Nanye Ma",
-        "Ellis Brown",
-        "Jihan Yang",
-        "Rob Fergus",
-        "Yann LeCun",
-        "Saining Xie"
-      ],
-      "abstract": "Representation Autoencoders (RAEs) have shown distinct advantages in diffusion modeling on ImageNet by training in high-dimensional semantic latent spaces. In this work, we investigate whether this framework can scale to large-scale, freeform text-to-image (T2I) generation. We first scale RAE decoders on the frozen representation encoder (SigLIP-2) beyond ImageNet by training on web, synthetic, and text-rendering data, finding that while scale improves general fidelity, targeted data composition is essential for specific domains like text. We then rigorously stress-test the RAE design choices originally proposed for ImageNet. Our analysis reveals that scaling simplifies the framework: while dimension-dependent noise scheduling remains critical, architectural complexities such as wide diffusion heads and noise-augmented decoding offer negligible benefits at scale Building on this simplified framework, we conduct a controlled comparison of RAE against the state-of-the-art FLUX VAE across diffusion transformer scales from 0.5B to 9.8B parameters. RAEs consistently outperform VAEs during pretraining across all model scales. Further, during finetuning on high-quality datasets, VAE-based models catastrophically overfit after 64 epochs, while RAE models remain stable through 256 epochs and achieve consistently better performance. Across all experiments, RAE-based diffusion models demonstrate faster convergence and better generation quality, establishing RAEs as a simpler and stronger foundation than VAEs for large-scale T2I generation. Additionally, because both visual understanding and generation can operate in a shared representation space, the multimodal model can directly reason over generated latents, opening new possibilities for unified models.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.16208v1",
-        "pdf": "https://arxiv.org/pdf/2601.16208v1"
-      },
-      "arxiv_id": "2601.16208v1",
-      "comment": "website: https://rae-dit.github.io/scale-rae/",
+      "arxiv_id": "2601.16982v1",
+      "comment": "Project webpage: https://tri-ml.github.io/AnyView/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1499999999999995,
+      "relevance_score": 4.25,
       "score_breakdown": {
-        "total_score": 4.15,
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -287,45 +171,159 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.15897v1",
-      "title": "ThermoSplat: Cross-Modal 3D Gaussian Splatting with Feature Modulation and Geometry Decoupling",
+      "id": "2601.16967v1",
+      "title": "Empowering Medical Equipment Sustainability in Low-Resource Settings: An AI-Powered Diagnostic and Support Platform for Biomedical Technicians",
       "authors": [
-        "Zhaoqi Su",
-        "Shihai Chen",
-        "Xinyan Lin",
-        "Liqin Huang",
-        "Zhipeng Su",
-        "Xiaoqiang Lu"
+        "Bernes Lorier Atabonfack",
+        "Ahmed Tahiru Issah",
+        "Mohammed Hardi Abdul Baaki",
+        "Clemence Ingabire",
+        "Tolulope Olusuyi",
+        "Maruf Adewole",
+        "Udunna C. Anazodo",
+        "Timothy X Brown"
       ],
-      "abstract": "Multi-modal scene reconstruction integrating RGB and thermal infrared data is essential for robust environmental perception across diverse lighting and weather conditions. However, extending 3D Gaussian Splatting (3DGS) to multi-spectral scenarios remains challenging. Current approaches often struggle to fully leverage the complementary information of multi-modal data, typically relying on mechanisms that either tend to neglect cross-modal correlations or leverage shared representations that fail to adaptively handle the complex structural correlations and physical discrepancies between spectrums. To address these limitations, we propose ThermoSplat, a novel framework that enables deep spectral-aware reconstruction through active feature modulation and adaptive geometry decoupling. First, we introduce a Cross-Modal FiLM Modulation mechanism that dynamically conditions shared latent features on thermal structural priors, effectively guiding visible texture synthesis with reliable cross-modal geometric cues. Second, to accommodate modality-specific geometric inconsistencies, we propose a Modality-Adaptive Geometric Decoupling scheme that learns independent opacity offsets and executes an independent rasterization pass for the thermal branch. Additionally, a hybrid rendering pipeline is employed to integrate explicit Spherical Harmonics with implicit neural decoding, ensuring both semantic consistency and high-frequency detail preservation. Extensive experiments on the RGBT-Scenes dataset demonstrate that ThermoSplat achieves state-of-the-art rendering quality across both visible and thermal spectrums.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
+      "abstract": "In low- and middle-income countries (LMICs), a significant proportion of medical diagnostic equipment remains underutilized or non-functional due to a lack of timely maintenance, limited access to technical expertise, and minimal support from manufacturers, particularly for devices acquired through third-party vendors or donations. This challenge contributes to increased equipment downtime, delayed diagnoses, and compromised patient care. This research explores the development and validation of an AI-powered support platform designed to assist biomedical technicians in diagnosing and repairing medical devices in real-time. The system integrates a large language model (LLM) with a user-friendly web interface, enabling imaging technologists/radiographers and biomedical technicians to input error codes or device symptoms and receive accurate, step-by-step troubleshooting guidance. The platform also includes a global peer-to-peer discussion forum to support knowledge exchange and provide additional context for rare or undocumented issues. A proof of concept was developed using the Philips HDI 5000 ultrasound machine, achieving 100% precision in error code interpretation and 80% accuracy in suggesting corrective actions. This study demonstrates the feasibility and potential of AI-driven systems to support medical device maintenance, with the aim of reducing equipment downtime to improve healthcare delivery in resource-constrained environments.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.16967v1",
+        "pdf": "https://arxiv.org/pdf/2601.16967v1"
+      },
+      "arxiv_id": "2601.16967v1",
+      "comment": "Accepted at the MIRASOL Workshop at MICCAI 2025. To appear in Lecture Notes in Computer Science (LNCS)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.16981v1",
+      "title": "SyncLight: Controllable and Consistent Multi-View Relighting",
+      "authors": [
+        "David Serrano-Lozano",
+        "Anand Bhattad",
+        "Luis Herranz",
+        "Jean-François Lalonde",
+        "Javier Vazquez-Corral"
+      ],
+      "abstract": "We present SyncLight, the first method to enable consistent, parametric relighting across multiple uncalibrated views of a static scene. While single-view relighting has advanced significantly, existing generative approaches struggle to maintain the rigorous lighting consistency essential for multi-camera broadcasts, stereoscopic cinema, and virtual production. SyncLight addresses this by enabling precise control over light intensity and color across a multi-view capture of a scene, conditioned on a single reference edit. Our method leverages a multi-view diffusion transformer trained using a latent bridge matching formulation, achieving high-fidelity relighting of the entire image set in a single inference step. To facilitate training, we introduce a large-scale hybrid dataset comprising diverse synthetic environments -- curated from existing sources and newly designed scenes -- alongside high-fidelity, real-world multi-view captures under calibrated illumination. Surprisingly, though trained only on image pairs, SyncLight generalizes zero-shot to an arbitrary number of viewpoints, effectively propagating lighting changes across all views, without requiring camera pose information. SyncLight enables practical relighting workflows for multi-view capture systems.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.16981v1",
+        "pdf": "https://arxiv.org/pdf/2601.16981v1"
+      },
+      "arxiv_id": "2601.16981v1",
+      "comment": "Project page: http://sync-light.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1000000000000005,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.16954v1",
+      "title": "Domain-invariant Mixed-domain Semi-supervised Medical Image Segmentation with Clustered Maximum Mean Discrepancy Alignment",
+      "authors": [
+        "Ba-Thinh Lam",
+        "Thanh-Huy Nguyen",
+        "Hoang-Thien Nguyen",
+        "Quang-Khai Bui-Tran",
+        "Nguyen Lan Vi Vu",
+        "Phat K. Huynh",
+        "Ulas Bagci",
+        "Min Xu"
+      ],
+      "abstract": "Deep learning has shown remarkable progress in medical image semantic segmentation, yet its success heavily depends on large-scale expert annotations and consistent data distributions. In practice, annotations are scarce, and images are collected from multiple scanners or centers, leading to mixed-domain settings with unknown domain labels and severe domain gaps. Existing semi-supervised or domain adaptation approaches typically assume either a single domain shift or access to explicit domain indices, which rarely hold in real-world deployment. In this paper, we propose a domain-invariant mixed-domain semi-supervised segmentation framework that jointly enhances data diversity and mitigates domain bias. A Copy-Paste Mechanism (CPM) augments the training set by transferring informative regions across domains, while a Cluster Maximum Mean Discrepancy (CMMD) block clusters unlabeled features and aligns them with labeled anchors via an MMD objective, encouraging domain-invariant representations. Integrated within a teacher-student framework, our method achieves robust and precise segmentation even with very few labeled examples and multiple unknown domain discrepancies. Experiments on Fundus and M&Ms benchmarks demonstrate that our approach consistently surpasses semi-supervised and domain adaptation methods, establishing a potential solution for mixed-domain semi-supervised medical image segmentation.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15897v1",
-        "pdf": "https://arxiv.org/pdf/2601.15897v1"
+        "paper": "http://arxiv.org/abs/2601.16954v1",
+        "pdf": "https://arxiv.org/pdf/2601.16954v1"
       },
-      "arxiv_id": "2601.15897v1",
-      "comment": "",
+      "arxiv_id": "2601.16954v1",
+      "comment": "accepted in ICASSP 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.1279661016949145,
+      "relevance_score": 3.877966101694915,
       "score_breakdown": {
-        "total_score": 4.13,
+        "total_score": 3.88,
         "field_match": {
           "score": 1.69,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "medical image",
+            "segmentation",
+            "deep learning"
           ],
           "weight": 0.4
         },
@@ -335,7 +333,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -344,44 +342,107 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.16079v1",
-      "title": "Masked Modeling for Human Motion Recovery Under Occlusions",
+      "id": "2601.16631v1",
+      "title": "PanopMamba: Vision State Space Modeling for Nuclei Panoptic Segmentation",
       "authors": [
-        "Zhiyin Qian",
-        "Siwei Zhang",
-        "Bharat Lal Bhatnagar",
-        "Federica Bogo",
-        "Siyu Tang"
+        "Ming Kang",
+        "Fung Fung Ting",
+        "Raphaël C. -W. Phan",
+        "Zongyuan Ge",
+        "Chee-Ming Ting"
       ],
-      "abstract": "Human motion reconstruction from monocular videos is a fundamental challenge in computer vision, with broad applications in AR/VR, robotics, and digital content creation, but remains challenging under frequent occlusions in real-world settings.Existing regression-based methods are efficient but fragile to missing observations, while optimization- and diffusion-based approaches improve robustness at the cost of slow inference speed and heavy preprocessing steps. To address these limitations, we leverage recent advances in generative masked modeling and present MoRo: Masked Modeling for human motion Recovery under Occlusions. MoRo is an occlusion-robust, end-to-end generative framework that formulates motion reconstruction as a video-conditioned task, and efficiently recover human motion in a consistent global coordinate system from RGB videos. By masked modeling, MoRo naturally handles occlusions while enabling efficient, end-to-end inference. To overcome the scarcity of paired video-motion data, we design a cross-modality learning scheme that learns multi-modal priors from a set of heterogeneous datasets: (i) a trajectory-aware motion prior trained on MoCap datasets, (ii) an image-conditioned pose prior trained on image-pose datasets, capturing diverse per-frame poses, and (iii) a video-conditioned masked transformer that fuses motion and pose priors, finetuned on video-motion datasets to integrate visual cues with motion dynamics for robust inference. Extensive experiments on EgoBody and RICH demonstrate that MoRo substantially outperforms state-of-the-art methods in accuracy and motion realism under occlusions, while performing on-par in non-occluded scenarios. MoRo achieves real-time inference at 70 FPS on a single H200 GPU.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
+      "abstract": "Nuclei panoptic segmentation supports cancer diagnostics by integrating both semantic and instance segmentation of different cell types to analyze overall tissue structure and individual nuclei in histopathology images. Major challenges include detecting small objects, handling ambiguous boundaries, and addressing class imbalance. To address these issues, we propose PanopMamba, a novel hybrid encoder-decoder architecture that integrates Mamba and Transformer with additional feature-enhanced fusion via state space modeling. We design a multiscale Mamba backbone and a State Space Model (SSM)-based fusion network to enable efficient long-range perception in pyramid features, thereby extending the pure encoder-decoder framework while facilitating information sharing across multiscale features of nuclei. The proposed SSM-based feature-enhanced fusion integrates pyramid feature networks and dynamic feature enhancement across different spatial scales, enhancing the feature representation of densely overlapping nuclei in both semantic and spatial dimensions. To the best of our knowledge, this is the first Mamba-based approach for panoptic segmentation. Additionally, we introduce alternative evaluation metrics, including image-level Panoptic Quality ($i$PQ), boundary-weighted PQ ($w$PQ), and frequency-weighted PQ ($fw$PQ), which are specifically designed to address the unique challenges of nuclei segmentation and thereby mitigate the potential bias inherent in vanilla PQ. Experimental evaluations on two multiclass nuclei segmentation benchmark datasets, MoNuSAC2020 and NuInsSeg, demonstrate the superiority of PanopMamba for nuclei panoptic segmentation over state-of-the-art methods. Consequently, the robustness of PanopMamba is validated across various metrics, while the distinctiveness of PQ variants is also demonstrated. Code is available at https://github.com/mkang315/PanopMamba.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "eess.SP",
+        "stat.AP"
+      ],
+      "primary_category": "eess.IV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.16631v1",
+        "pdf": "https://arxiv.org/pdf/2601.16631v1"
+      },
+      "arxiv_id": "2601.16631v1",
+      "comment": "10 pages, 3 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.853389830508475,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.16973v1",
+      "title": "VisGym: Diverse, Customizable, Scalable Environments for Multimodal Agents",
+      "authors": [
+        "Zirui Wang",
+        "Junyi Zhang",
+        "Jiaxin Ge",
+        "Long Lian",
+        "Letian Fu",
+        "Lisa Dunlap",
+        "Ken Goldberg",
+        "XuDong Wang",
+        "Ion Stoica",
+        "David M. Chan",
+        "Sewon Min",
+        "Joseph E. Gonzalez"
+      ],
+      "abstract": "Modern Vision-Language Models (VLMs) remain poorly characterized in multi-step visual interactions, particularly in how they integrate perception, memory, and action over long horizons. We introduce VisGym, a gymnasium of 17 environments for evaluating and training VLMs. The suite spans symbolic puzzles, real-image understanding, navigation, and manipulation, and provides flexible controls over difficulty, input representation, planning horizon, and feedback. We also provide multi-step solvers that generate structured demonstrations, enabling supervised finetuning. Our evaluations show that all frontier models struggle in interactive settings, achieving low success rates in both the easy (46.6%) and hard (26.0%) configurations. Our experiments reveal notable limitations: models struggle to effectively leverage long context, performing worse with an unbounded history than with truncated windows. Furthermore, we find that several text-based symbolic tasks become substantially harder once rendered visually. However, explicit goal observations, textual feedback, and exploratory demonstrations in partially observable or unknown-dynamics settings for supervised finetuning yield consistent gains, highlighting concrete failure modes and pathways for improving multi-step visual decision-making. Code, data, and models can be found at: https://visgym.github.io/.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.16079v1",
-        "pdf": "https://arxiv.org/pdf/2601.16079v1"
+        "paper": "http://arxiv.org/abs/2601.16973v1",
+        "pdf": "https://arxiv.org/pdf/2601.16973v1"
       },
-      "arxiv_id": "2601.16079v1",
-      "comment": "Project page: https://mikeqzy.github.io/MoRo",
+      "arxiv_id": "2601.16973v1",
+      "comment": "Project page: https://visgym.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.119491525423729,
+      "relevance_score": 3.8,
       "score_breakdown": {
-        "total_score": 4.12,
+        "total_score": 3.8,
         "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -399,46 +460,98 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2601.15888v1",
-      "title": "Understanding the Transfer Limits of Vision Foundation Models",
+      "id": "2601.16736v1",
+      "title": "A Step to Decouple Optimization in 3DGS",
       "authors": [
-        "Shiqi Huang",
-        "Yipei Wang",
-        "Natasha Thorley",
-        "Alexander Ng",
-        "Shaheer Saeed",
-        "Mark Emberton",
-        "Shonit Punwani",
-        "Veeru Kasivisvanathan",
-        "Dean Barratt",
-        "Daniel Alexander",
-        "Yipeng Hu"
+        "Renjie Ding",
+        "Yaonan Wang",
+        "Min Liu",
+        "Jialin Zhu",
+        "Jiazheng Wang",
+        "Jiahao Zhao",
+        "Wenting Shen",
+        "Feixiang He",
+        "Xiang Che"
       ],
-      "abstract": "Foundation models leverage large-scale pretraining to capture extensive knowledge, demonstrating generalization in a wide range of language tasks. By comparison, vision foundation models (VFMs) often exhibit uneven improvements across downstream tasks, despite substantial computational investment. We postulate that this limitation arises from a mismatch between pretraining objectives and the demands of downstream vision-and-imaging tasks. Pretraining strategies like masked image reconstruction or contrastive learning shape representations for tasks such as recovery of generic visual patterns or global semantic structures, which may not align with the task-specific requirements of downstream applications including segmentation, classification, or image synthesis. To investigate this in a concrete real-world clinical area, we assess two VFMs, a reconstruction-focused MAE-based model (ProFound) and a contrastive-learning-based model (ProViCNet), on five prostate multiparametric MR imaging tasks, examining how such task alignment influences transfer performance, i.e., from pretraining to fine-tuning. Our findings indicate that better alignment between pretraining and downstream tasks, measured by simple divergence metrics such as maximum-mean-discrepancy (MMD) between the same features before and after fine-tuning, correlates with greater performance improvements and faster convergence, emphasizing the importance of designing and analyzing pretraining objectives with downstream applicability in mind.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
+      "abstract": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for real-time novel view synthesis. As an explicit representation optimized through gradient propagation among primitives, optimization widely accepted in deep neural networks (DNNs) is actually adopted in 3DGS, such as synchronous weight updating and Adam with the adaptive gradient. However, considering the physical significance and specific design in 3DGS, there are two overlooked details in the optimization of 3DGS: (i) update step coupling, which induces optimizer state rescaling and costly attribute updates outside the viewpoints, and (ii) gradient coupling in the moment, which may lead to under- or over-effective regularization. Nevertheless, such a complex coupling is under-explored. After revisiting the optimization of 3DGS, we take a step to decouple it and recompose the process into: Sparse Adam, Re-State Regularization and Decoupled Attribute Regularization. Taking a large number of experiments under the 3DGS and 3DGS-MCMC frameworks, our work provides a deeper understanding of these components. Finally, based on the empirical analysis, we re-design the optimization and propose AdamW-GS by re-coupling the beneficial components, under which better optimization efficiency and representation effectiveness are achieved simultaneously.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.15888v1",
-        "pdf": "https://arxiv.org/pdf/2601.15888v1"
+        "paper": "http://arxiv.org/abs/2601.16736v1",
+        "pdf": "https://arxiv.org/pdf/2601.16736v1"
       },
-      "arxiv_id": "2601.15888v1",
-      "comment": "accepted in ISBI 2026",
+      "arxiv_id": "2601.16736v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.053389830508475,
+      "relevance_score": 3.777966101694915,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 3.78,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.16652v1",
+      "title": "Reliable Brain Tumor Segmentation Based on Spiking Neural Networks with Efficient Training",
+      "authors": [
+        "Aurora Pia Ghiardelli",
+        "Guangzhi Tang",
+        "Tao Sun"
+      ],
+      "abstract": "We propose a reliable and energy-efficient framework for 3D brain tumor segmentation using spiking neural networks (SNNs). A multi-view ensemble of sagittal, coronal, and axial SNN models provides voxel-wise uncertainty estimation and enhances segmentation robustness. To address the high computational cost in training SNN models for semantic image segmentation, we employ Forward Propagation Through Time (FPTT), which maintains temporal learning efficiency with significantly reduced computational cost. Experiments on the Multimodal Brain Tumor Segmentation Challenges (BraTS 2017 and BraTS 2023) demonstrate competitive accuracy, well-calibrated uncertainty, and an 87% reduction in FLOPs, underscoring the potential of SNNs for reliable, low-power medical IoT and Point-of-Care systems.",
+      "published": "2026-01-23",
+      "updated": "2026-01-23",
+      "categories": [
+        "cs.CV",
+        "cs.NE"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.16652v1",
+        "pdf": "https://arxiv.org/pdf/2601.16652v1"
+      },
+      "arxiv_id": "2601.16652v1",
+      "comment": "Accepted at ISBI 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.7533898305084747,
+      "score_breakdown": {
+        "total_score": 3.75,
         "field_match": {
           "score": 0.51,
           "matches": [
@@ -452,61 +565,6 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.16147v1",
-      "title": "Beat-ssl: Capturing Local ECG Morphology through Heartbeat-level Contrastive Learning with Soft Targets",
-      "authors": [
-        "Muhammad Ilham Rizqyawan",
-        "Peter Macfarlane",
-        "Stathis Hadjidemetriou",
-        "Fani Deligianni"
-      ],
-      "abstract": "Obtaining labelled ECG data for developing supervised models is challenging. Contrastive learning (CL) has emerged as a promising pretraining approach that enables effective transfer learning with limited labelled data. However, existing CL frameworks either focus solely on global context or fail to exploit ECG-specific characteristics. Furthermore, these methods rely on hard contrastive targets, which may not adequately capture the continuous nature of feature similarity in ECG signals. In this paper, we propose Beat-SSL, a contrastive learning framework that performs dual-context learning through both rhythm-level and heartbeat-level contrasting with soft targets. We evaluated our pretrained model on two downstream tasks: 1) multilabel classification for global rhythm assessment, and 2) ECG segmentation to assess its capacity to learn representations across both contexts. We conducted an ablation study and compared the best configuration with three other methods, including one ECG foundation model. Despite the foundation model's broader pretraining, Beat-SSL reached 93% of its performance in multilabel classification task and surpassed all other methods in the segmentation task by 4%.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.16147v1",
-        "pdf": "https://arxiv.org/pdf/2601.16147v1"
-      },
-      "arxiv_id": "2601.16147v1",
-      "comment": "Accepted at ISBI 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.024576271186441,
-      "score_breakdown": {
-        "total_score": 4.02,
-        "field_match": {
-          "score": 1.19,
-          "matches": [
-            "heart",
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 8,
-          "venue": "ISBI",
-          "weight": 0.25
-        },
-        "citation_potential": {
           "score": 5.0,
           "weight": 0.15
         },
@@ -517,62 +575,6 @@
         },
         "practicality": {
           "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.15884v1",
-      "title": "PMPBench: A Paired Multi-Modal Pan-Cancer Benchmark for Medical Image Synthesis",
-      "authors": [
-        "Yifan Chen",
-        "Fei Yin",
-        "Hao Chen",
-        "Jia Wu",
-        "Chao Li"
-      ],
-      "abstract": "Contrast medium plays a pivotal role in radiological imaging, as it amplifies lesion conspicuity and improves detection for the diagnosis of tumor-related diseases. However, depending on the patient's health condition or the medical resources available, the use of contrast medium is not always feasible. Recent work has explored AI-based image translation to synthesize contrast-enhanced images directly from non-contrast scans, aims to reduce side effects and streamlines clinical workflows. Progress in this direction has been constrained by data limitations: (1) existing public datasets focus almost exclusively on brain-related paired MR modalities; (2) other collections include partially paired data but suffer from missing modalities/timestamps and imperfect spatial alignment; (3) explicit labeling of CT vs. CTC or DCE phases is often absent; (4) substantial resources remain private. To bridge this gap, we introduce the first public, fully paired, pan-cancer medical imaging dataset spanning 11 human organs. The MR data include complete dynamic contrast-enhanced (DCE) sequences covering all three phases (DCE1-DCE3), while the CT data provide paired non-contrast and contrast-enhanced acquisitions (CTC). The dataset is curated for anatomical correspondence, enabling rigorous evaluation of 1-to-1, N-to-1, and N-to-N translation settings (e.g., predicting DCE phases from non-contrast inputs). Built upon this resource, we establish a comprehensive benchmark. We report results from representative baselines of contemporary image-to-image translation. We release the dataset and benchmark to catalyze research on safe, effective contrast synthesis, with direct relevance to multi-organ oncology imaging workflows. Our code and dataset are publicly available at https://github.com/YifanChen02/PMPBench.",
-      "published": "2026-01-22",
-      "updated": "2026-01-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.15884v1",
-        "pdf": "https://arxiv.org/pdf/2601.15884v1"
-      },
-      "arxiv_id": "2601.15884v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.010169491525424,
-      "score_breakdown": {
-        "total_score": 4.01,
-        "field_match": {
-          "score": 1.53,
-          "matches": [
-            "medical image",
-            "medical imaging"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
           "weight": 0.1
         }
       }

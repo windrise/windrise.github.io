@@ -1,4 +1,6 @@
-<!-- Paper Notes Modal (Phase 1: LocalStorage) -->
+<!-- Paper Notes Modal (Phase 2: Markdown + autosave, LocalStorage) -->
+<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+
 <div id="paper-notes-modal" class="paper-notes-modal" style="display:none;" aria-hidden="true">
   <div class="paper-notes-modal__backdrop" data-notes-close></div>
   <div class="paper-notes-modal__panel" role="dialog" aria-modal="true" aria-labelledby="paper-notes-title">
@@ -7,7 +9,11 @@
         <div id="paper-notes-title" class="paper-notes-modal__title">📝 Notes</div>
         <div id="paper-notes-subtitle" class="paper-notes-modal__subtitle"></div>
       </div>
-      <button class="paper-notes-modal__close" type="button" data-notes-close aria-label="Close">&times;</button>
+      <div class="paper-notes-modal__header-actions">
+        <span id="paper-notes-autosave" class="paper-notes-autosave">Autosave: —</span>
+        <button id="paper-notes-export" class="paper-notes-btn" type="button" title="Download notes as Markdown">⬇︎ Export</button>
+        <button class="paper-notes-modal__close" type="button" data-notes-close aria-label="Close">&times;</button>
+      </div>
     </div>
 
     <div class="paper-notes-modal__body">
@@ -20,7 +26,28 @@
             <option value="to-read">To read</option>
             <option value="reading">Reading</option>
             <option value="completed">Completed</option>
+            <option value="skipped">Skipped</option>
           </select>
+        </label>
+
+        <label class="paper-notes-field">
+          <span class="paper-notes-label">Priority</span>
+          <select id="paper-notes-priority" class="paper-notes-select">
+            <option value="">—</option>
+            <option value="1">1 (low)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (high)</option>
+          </select>
+        </label>
+
+        <label class="paper-notes-field">
+          <span class="paper-notes-label">Progress</span>
+          <div class="paper-notes-progress">
+            <input id="paper-notes-progress" type="range" min="0" max="100" step="5" value="0" />
+            <span id="paper-notes-progress-label" class="paper-notes-progress-label">0%</span>
+          </div>
         </label>
 
         <label class="paper-notes-field">
@@ -34,12 +61,39 @@
             <option value="5">5</option>
           </select>
         </label>
+
+        <label class="paper-notes-field" style="grid-column: 1 / -1;">
+          <span class="paper-notes-label">Tags (comma separated)</span>
+          <input id="paper-notes-tags" class="paper-notes-input" type="text" placeholder="e.g. 3dgs, cardiac, self-supervised" />
+        </label>
       </div>
 
-      <label class="paper-notes-field" style="margin-top: 12px;">
-        <span class="paper-notes-label">Notes</span>
-        <textarea id="paper-notes-text" class="paper-notes-textarea" rows="10" placeholder="What did you learn? Key ideas, pros/cons, TODOs, links..."></textarea>
-      </label>
+      <div class="paper-notes-tabs" role="tablist" aria-label="Notes tabs">
+        <button class="paper-notes-tab is-active" type="button" data-notes-tab="notes">Notes</button>
+        <button class="paper-notes-tab" type="button" data-notes-tab="summary">My Summary</button>
+        <button class="paper-notes-tab" type="button" data-notes-tab="todos">To-do</button>
+        <button class="paper-notes-tab" type="button" data-notes-tab="highlights">Highlights</button>
+      </div>
+
+      <div class="paper-notes-tabpanes">
+        <div class="paper-notes-pane" data-notes-pane="notes">
+          <textarea id="paper-notes-text" class="paper-notes-textarea" rows="10" placeholder="# My Reading Notes\n\n## Key insights\n- ...\n\n## Questions\n- ..."></textarea>
+        </div>
+
+        <div class="paper-notes-pane" data-notes-pane="summary" style="display:none;">
+          <textarea id="paper-notes-my-summary" class="paper-notes-textarea" rows="6" placeholder="Brief personal summary..."></textarea>
+        </div>
+
+        <div class="paper-notes-pane" data-notes-pane="todos" style="display:none;">
+          <textarea id="paper-notes-todos" class="paper-notes-textarea" rows="6" placeholder="- [ ] Implement baseline\n- [ ] Compare with XYZ\n- [ ] Write a short report"></textarea>
+          <div class="paper-notes-hint">Tip: use Markdown task list syntax (- [ ] / - [x]).</div>
+        </div>
+
+        <div class="paper-notes-pane" data-notes-pane="highlights" style="display:none;">
+          <textarea id="paper-notes-highlights" class="paper-notes-textarea" rows="6" placeholder="- p3 (yellow): \"important equation\" — need to cite\n- p5 (green): \"architecture detail\" — try implementation"></textarea>
+          <div class="paper-notes-hint">Phase 3 will turn this into structured highlights.</div>
+        </div>
+      </div>
 
       <div class="paper-notes-actions">
         <button id="paper-notes-delete" class="paper-notes-btn paper-notes-btn--danger" type="button">Delete</button>
@@ -47,19 +101,21 @@
         <button id="paper-notes-save" class="paper-notes-btn paper-notes-btn--primary" type="button">Save</button>
       </div>
 
-      <div class="paper-notes-hint">Saved locally in your browser (LocalStorage). No sync yet.</div>
+      <div class="paper-notes-hint">Stored locally in your browser (LocalStorage). Autosaves every 5s when open.</div>
     </div>
   </div>
 </div>
+
+<script src="https://unpkg.com/easymde/dist/easymde.min.js" defer></script>
 
 <style>
 .paper-notes-modal { position: fixed; inset: 0; z-index: 10000; }
 .paper-notes-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
 .paper-notes-modal__panel {
   position: relative;
-  max-width: 900px;
+  max-width: 980px;
   width: calc(100% - 28px);
-  margin: 70px auto;
+  margin: 60px auto;
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 25px 80px rgba(0,0,0,.35);
@@ -69,15 +125,20 @@
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 16px;
   border-bottom: 1px solid rgba(0,0,0,.08);
+  gap: 10px;
 }
-.paper-notes-modal__title { font-weight: 800; font-size: 16px; }
+.paper-notes-modal__titles { min-width: 0; }
+.paper-notes-modal__title { font-weight: 800; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 620px; }
 .paper-notes-modal__subtitle { font-size: 12px; opacity: .75; margin-top: 2px; }
+.paper-notes-modal__header-actions { display: flex; align-items: center; gap: 10px; }
+.paper-notes-autosave { font-size: 12px; opacity: .75; }
 .paper-notes-modal__close { background: transparent; border: none; font-size: 26px; line-height: 1; cursor: pointer; opacity: .7; }
 .paper-notes-modal__body { padding: 14px 16px 16px; }
+
 .paper-notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .paper-notes-field { display: block; }
 .paper-notes-label { display: block; font-size: 12px; font-weight: 700; opacity: .8; margin-bottom: 6px; }
-.paper-notes-select, .paper-notes-textarea {
+.paper-notes-select, .paper-notes-textarea, .paper-notes-input {
   width: 100%;
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 10px;
@@ -85,21 +146,50 @@
   font-size: 14px;
   outline: none;
 }
-.paper-notes-textarea { resize: vertical; min-height: 180px; }
+.paper-notes-input { height: 42px; }
+.paper-notes-textarea { resize: vertical; min-height: 160px; }
+
+.paper-notes-progress { display: flex; gap: 10px; align-items: center; }
+.paper-notes-progress input[type="range"] { width: 100%; }
+.paper-notes-progress-label { font-size: 12px; font-weight: 800; opacity: .75; min-width: 42px; text-align: right; }
+
+.paper-notes-tabs { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.paper-notes-tab {
+  border: 1px solid rgba(0,0,0,.14);
+  background: rgba(102,126,234,.06);
+  color: rgba(0,0,0,.78);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+}
+.paper-notes-tab.is-active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; border-color: transparent; }
+
 .paper-notes-actions { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
-.paper-notes-btn { border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; font-weight: 700; }
+.paper-notes-btn { border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; font-weight: 800; }
 .paper-notes-btn--primary { background: #667eea; color: #fff; }
 .paper-notes-btn--danger { background: rgba(220,38,38,.12); color: #b91c1c; }
 .paper-notes-hint { margin-top: 10px; font-size: 12px; opacity: .7; }
 
+/* EasyMDE overrides */
+.editor-toolbar, .CodeMirror { border-radius: 10px; }
+.editor-toolbar { border-color: rgba(0,0,0,.15); }
+.CodeMirror { border: 1px solid rgba(0,0,0,.15); }
+
 @media (prefers-color-scheme: dark) {
   .paper-notes-modal__panel { background: #0b1220; color: rgba(255,255,255,.92); }
   .paper-notes-modal__header { border-bottom: 1px solid rgba(255,255,255,.10); }
-  .paper-notes-select, .paper-notes-textarea {
+  .paper-notes-select, .paper-notes-textarea, .paper-notes-input {
     background: rgba(255,255,255,.06);
     border: 1px solid rgba(255,255,255,.14);
     color: rgba(255,255,255,.92);
   }
+  .paper-notes-tab { border-color: rgba(255,255,255,.14); background: rgba(129,140,248,.10); color: rgba(255,255,255,.82); }
   .paper-notes-btn--primary { background: #818cf8; }
+
+  .editor-toolbar { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.14); }
+  .editor-toolbar a { color: rgba(255,255,255,.82) !important; }
+  .CodeMirror { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.92); }
 }
 </style>

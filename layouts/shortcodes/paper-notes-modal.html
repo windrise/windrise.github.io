@@ -1,0 +1,105 @@
+<!-- Paper Notes Modal (Phase 1: LocalStorage) -->
+<div id="paper-notes-modal" class="paper-notes-modal" style="display:none;" aria-hidden="true">
+  <div class="paper-notes-modal__backdrop" data-notes-close></div>
+  <div class="paper-notes-modal__panel" role="dialog" aria-modal="true" aria-labelledby="paper-notes-title">
+    <div class="paper-notes-modal__header">
+      <div class="paper-notes-modal__titles">
+        <div id="paper-notes-title" class="paper-notes-modal__title">📝 Notes</div>
+        <div id="paper-notes-subtitle" class="paper-notes-modal__subtitle"></div>
+      </div>
+      <button class="paper-notes-modal__close" type="button" data-notes-close aria-label="Close">&times;</button>
+    </div>
+
+    <div class="paper-notes-modal__body">
+      <input type="hidden" id="paper-notes-paper-id" value="" />
+
+      <div class="paper-notes-grid">
+        <label class="paper-notes-field">
+          <span class="paper-notes-label">Status</span>
+          <select id="paper-notes-status" class="paper-notes-select">
+            <option value="to-read">To read</option>
+            <option value="reading">Reading</option>
+            <option value="completed">Completed</option>
+          </select>
+        </label>
+
+        <label class="paper-notes-field">
+          <span class="paper-notes-label">Rating</span>
+          <select id="paper-notes-rating" class="paper-notes-select">
+            <option value="">—</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="paper-notes-field" style="margin-top: 12px;">
+        <span class="paper-notes-label">Notes</span>
+        <textarea id="paper-notes-text" class="paper-notes-textarea" rows="10" placeholder="What did you learn? Key ideas, pros/cons, TODOs, links..."></textarea>
+      </label>
+
+      <div class="paper-notes-actions">
+        <button id="paper-notes-delete" class="paper-notes-btn paper-notes-btn--danger" type="button">Delete</button>
+        <div style="flex: 1"></div>
+        <button id="paper-notes-save" class="paper-notes-btn paper-notes-btn--primary" type="button">Save</button>
+      </div>
+
+      <div class="paper-notes-hint">Saved locally in your browser (LocalStorage). No sync yet.</div>
+    </div>
+  </div>
+</div>
+
+<style>
+.paper-notes-modal { position: fixed; inset: 0; z-index: 10000; }
+.paper-notes-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+.paper-notes-modal__panel {
+  position: relative;
+  max-width: 900px;
+  width: calc(100% - 28px);
+  margin: 70px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.35);
+  overflow: hidden;
+}
+.paper-notes-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.paper-notes-modal__title { font-weight: 800; font-size: 16px; }
+.paper-notes-modal__subtitle { font-size: 12px; opacity: .75; margin-top: 2px; }
+.paper-notes-modal__close { background: transparent; border: none; font-size: 26px; line-height: 1; cursor: pointer; opacity: .7; }
+.paper-notes-modal__body { padding: 14px 16px 16px; }
+.paper-notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.paper-notes-field { display: block; }
+.paper-notes-label { display: block; font-size: 12px; font-weight: 700; opacity: .8; margin-bottom: 6px; }
+.paper-notes-select, .paper-notes-textarea {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+.paper-notes-textarea { resize: vertical; min-height: 180px; }
+.paper-notes-actions { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
+.paper-notes-btn { border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; font-weight: 700; }
+.paper-notes-btn--primary { background: #667eea; color: #fff; }
+.paper-notes-btn--danger { background: rgba(220,38,38,.12); color: #b91c1c; }
+.paper-notes-hint { margin-top: 10px; font-size: 12px; opacity: .7; }
+
+@media (prefers-color-scheme: dark) {
+  .paper-notes-modal__panel { background: #0b1220; color: rgba(255,255,255,.92); }
+  .paper-notes-modal__header { border-bottom: 1px solid rgba(255,255,255,.10); }
+  .paper-notes-select, .paper-notes-textarea {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.14);
+    color: rgba(255,255,255,.92);
+  }
+  .paper-notes-btn--primary { background: #818cf8; }
+}
+</style>

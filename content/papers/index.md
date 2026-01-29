@@ -28,6 +28,8 @@ A curated collection of papers in my research areas: Medical Imaging, 3D Reconst
 
 {{< all-papers-enhanced >}}
 
+{{< paper-notes-modal >}}
+
 ---
 
 ## 🔄 Automated Paper Collection System

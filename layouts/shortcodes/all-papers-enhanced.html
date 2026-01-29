@@ -167,6 +167,10 @@
                 {{- if $paper.relevance_score -}}
                   <span class="badge relevance-badge">{{ printf "%.1f" $paper.relevance_score }}/10</span>
                 {{- end -}}
+
+                <!-- Notes badges (LocalStorage) -->
+                <span class="badge" data-notes-badge="{{ $paper.id }}" style="display:none;"></span>
+                <span class="badge" data-notes-rating="{{ $paper.id }}" style="display:none;"></span>
               </div>
             </div>
           </div>
@@ -238,7 +242,8 @@
               {{- end -}}
             </div>
             <div class="paper-date">
-              Added {{ dateFormat "Jan 2, 2006" $paper.date_added }}
+              <button class="paper-link paper-notes-btn" type="button" data-paper-id="{{ $paper.id }}" title="Open notes">📝 Notes</button>
+              <span style="opacity:.7; margin-left: 10px;">Added {{ dateFormat "Jan 2, 2006" $paper.date_added }}</span>
             </div>
           </div>
         </div>
@@ -1097,6 +1102,8 @@
 }
 </style>
 
+<script src="/js/notes-manager.js" defer></script>
+
 <script>
 (function() {
   'use strict';
@@ -1122,6 +1129,11 @@
       this.bindEvents();
       this.loadSelectionFromURL();
       this.updateResults();
+
+      // Notes system (Phase 1: LocalStorage)
+      if (window.PaperNotes && typeof window.PaperNotes.init === 'function') {
+        window.PaperNotes.init();
+      }
     },
 
     collectPapersData() {

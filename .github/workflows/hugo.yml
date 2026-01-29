@@ -44,7 +44,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: |
+          # Some devDependencies (e.g., Playwright) may try to download large browser binaries on install.
+          # Skip those downloads during the Hugo build/deploy job.
+          export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
       - name: Initialize Hugo Modules
         run: |
           hugo mod get

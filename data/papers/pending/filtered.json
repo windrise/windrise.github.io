@@ -3,43 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2601.19753v1",
-      "title": "WaterClear-GS: Optical-Aware Gaussian Splatting for Underwater Reconstruction and Restoration",
+      "id": "2601.20857v1",
+      "title": "FreeFix: Boosting 3D Gaussian Splatting via Fine-Tuning-Free Diffusion Models",
       "authors": [
-        "Xinrui Zhang",
-        "Yufeng Wang",
-        "Shuangkang Fang",
-        "Zesheng Wang",
-        "Dacheng Qi",
-        "Wenrui Ding"
+        "Hongyu Zhou",
+        "Zisen Shao",
+        "Sheng Miao",
+        "Pan Wang",
+        "Dongfeng Bai",
+        "Bingbing Liu",
+        "Yiyi Liao"
       ],
-      "abstract": "Underwater 3D reconstruction and appearance restoration are hindered by the complex optical properties of water, such as wavelength-dependent attenuation and scattering. Existing Neural Radiance Fields (NeRF)-based methods struggle with slow rendering speeds and suboptimal color restoration, while 3D Gaussian Splatting (3DGS) inherently lacks the capability to model complex volumetric scattering effects. To address these issues, we introduce WaterClear-GS, the first pure 3DGS-based framework that explicitly integrates underwater optical properties of local attenuation and scattering into Gaussian primitives, eliminating the need for an auxiliary medium network. Our method employs a dual-branch optimization strategy to ensure underwater photometric consistency while naturally recovering water-free appearances. This strategy is enhanced by depth-guided geometry regularization and perception-driven image loss, together with exposure constraints, spatially-adaptive regularization, and physically guided spectral regularization, which collectively enforce local 3D coherence and maintain natural visual perception. Experiments on standard benchmarks and our newly collected dataset demonstrate that WaterClear-GS achieves outstanding performance on both novel view synthesis (NVS) and underwater image restoration (UIR) tasks, while maintaining real-time rendering. The code will be available at https://buaaxrzhang.github.io/WaterClear-GS/.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
+      "abstract": "Neural Radiance Fields and 3D Gaussian Splatting have advanced novel view synthesis, yet still rely on dense inputs and often degrade at extrapolated views. Recent approaches leverage generative models, such as diffusion models, to provide additional supervision, but face a trade-off between generalization and fidelity: fine-tuning diffusion models for artifact removal improves fidelity but risks overfitting, while fine-tuning-free methods preserve generalization but often yield lower fidelity. We introduce FreeFix, a fine-tuning-free approach that pushes the boundary of this trade-off by enhancing extrapolated rendering with pretrained image diffusion models. We present an interleaved 2D-3D refinement strategy, showing that image diffusion models can be leveraged for consistent refinement without relying on costly video diffusion models. Furthermore, we take a closer look at the guidance signal for 2D refinement and propose a per-pixel confidence mask to identify uncertain regions for targeted improvement. Experiments across multiple datasets show that FreeFix improves multi-frame consistency and achieves performance comparable to or surpassing fine-tuning-based methods, while retaining strong generalization ability.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.19753v1",
-        "pdf": "https://arxiv.org/pdf/2601.19753v1"
+        "paper": "http://arxiv.org/abs/2601.20857v1",
+        "pdf": "https://arxiv.org/pdf/2601.20857v1"
       },
-      "arxiv_id": "2601.19753v1",
-      "comment": "",
+      "arxiv_id": "2601.20857v1",
+      "comment": "Our project page is at https://xdimlab.github.io/freefix",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.277118644067796,
+      "has_code": true,
+      "relevance_score": 4.7652542372881355,
       "score_breakdown": {
-        "total_score": 5.28,
+        "total_score": 4.77,
         "field_match": {
-          "score": 4.07,
+          "score": 2.29,
           "matches": [
             "3d gaussian",
             "gaussian splatting",
-            "3d reconstruction",
-            "volumetric",
-            "neural radiance",
-            "nerf"
+            "neural radiance"
           ],
           "weight": 0.4
         },
@@ -49,63 +47,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19850v1",
-      "title": "EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning",
-      "authors": [
-        "Binzhu Xie",
-        "Shi Qiu",
-        "Sicheng Zhang",
-        "Yinqiao Wang",
-        "Hao Xu",
-        "Muzammal Naseer",
-        "Chi-Wing Fu",
-        "Pheng-Ann Heng"
-      ],
-      "abstract": "Robust 3D hand reconstruction in egocentric vision is challenging due to depth ambiguity, self-occlusion, and complex hand-object interactions. Prior methods mitigate these issues by scaling training data or adding auxiliary cues, but they often struggle in unseen contexts. We present EgoHandICL, the first in-context learning (ICL) framework for 3D hand reconstruction that improves semantic alignment, visual consistency, and robustness under challenging egocentric conditions. EgoHandICL introduces complementary exemplar retrieval guided by vision-language models (VLMs), an ICL-tailored tokenizer for multimodal context, and a masked autoencoder (MAE)-based architecture trained with hand-guided geometric and perceptual objectives. Experiments on ARCTIC and EgoExo4D show consistent gains over state-of-the-art methods. We also demonstrate real-world generalization and improve EgoVLM hand-object interaction reasoning by using reconstructed hands as visual prompts. Code and data: https://github.com/Nicous20/EgoHandICL",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19850v1",
-        "pdf": "https://arxiv.org/pdf/2601.19850v1"
-      },
-      "arxiv_id": "2601.19850v1",
-      "comment": "Accepted in ICLR 2026, Codebase: https://github.com/Nicous20/EgoHandICL",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.25,
-      "score_breakdown": {
-        "total_score": 5.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -120,370 +62,30 @@
       }
     },
     {
-      "id": "2601.19580v1",
-      "title": "QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture",
+      "id": "2601.20775v1",
+      "title": "Active Learning for Decision Trees with Provable Guarantees",
       "authors": [
-        "Cuong Le",
-        "Pavlo Melnyk",
-        "Urs Waldmann",
-        "Mårten Wadenbäck",
-        "Bastian Wandt"
+        "Arshia Soltani Moakhar",
+        "Tanapoom Laoaron",
+        "Faraz Ghahremani",
+        "Kiarash Banihashem",
+        "MohammadTaghi Hajiaghayi"
       ],
-      "abstract": "Vision-based 3D human motion capture from videos remains a challenge in computer vision. Traditional 3D pose estimation approaches often ignore the temporal consistency between frames, causing implausible and jittery motion. The emerging field of kinematics-based 3D motion capture addresses these issues by estimating the temporal transitioning between poses instead. A major drawback in current kinematics approaches is their reliance on Euler angles. Despite their simplicity, Euler angles suffer from discontinuity that leads to unstable motion reconstructions, especially in online settings where trajectory refinement is unavailable. Contrarily, quaternions have no discontinuity and can produce continuous transitions between poses. In this paper, we propose QuaMo, a novel Quaternion Motions method using quaternion differential equations (QDE) for human kinematics capture. We utilize the state-space model, an effective system for describing real-time kinematics estimations, with quaternion state and the QDE describing quaternion velocity. The corresponding angular acceleration is computed from a meta-PD controller with a novel acceleration enhancement that adaptively regulates the control signals as the human quickly changes to a new pose. Unlike previous work, our QDE is solved under the quaternion unit-sphere constraint that results in more accurate estimations. Experimental results show that our novel formulation of the QDE with acceleration enhancement accurately estimates 3D human kinematics with no discontinuity and minimal implausibilities. QuaMo outperforms comparable state-of-the-art methods on multiple datasets, namely Human3.6M, Fit3D, SportsPose and AIST. The code is available at https://github.com/cuongle1206/QuaMo",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19580v1",
-        "pdf": "https://arxiv.org/pdf/2601.19580v1"
-      },
-      "arxiv_id": "2601.19580v1",
-      "comment": "10 pages, 4 figures, accepted to ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.8694915254237285,
-      "score_breakdown": {
-        "total_score": 4.87,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19659v1",
-      "title": "KeepLoRA: Continual Learning with Residual Gradient Adaptation",
-      "authors": [
-        "Mao-Lin Luo",
-        "Zi-Hao Zhou",
-        "Yi-Lin Zhang",
-        "Yuanyu Wan",
-        "Tong Wei",
-        "Min-Ling Zhang"
-      ],
-      "abstract": "Continual learning for pre-trained vision-language models requires balancing three competing objectives: retaining pre-trained knowledge, preserving knowledge from a sequence of learned tasks, and maintaining the plasticity to acquire new knowledge. This paper presents a simple but effective approach called KeepLoRA to effectively balance these objectives. We first analyze the knowledge retention mechanism within the model parameter space and find that general knowledge is mainly encoded in the principal subspace, while task-specific knowledge is encoded in the residual subspace. Motivated by this finding, KeepLoRA learns new tasks by restricting LoRA parameter updates in the residual subspace to prevent interfering with previously learned capabilities. Specifically, we infuse knowledge for a new task by projecting its gradient onto a subspace orthogonal to both the principal subspace of pre-trained model and the dominant directions of previous task features. Our theoretical and empirical analyses confirm that KeepLoRA balances the three objectives and achieves state-of-the-art performance. The implementation code is available at https://github.com/MaolinLuo/KeepLoRA.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19659v1",
-        "pdf": "https://arxiv.org/pdf/2601.19659v1"
-      },
-      "arxiv_id": "2601.19659v1",
-      "comment": "Accepted at ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.699999999999999,
-      "score_breakdown": {
-        "total_score": 4.7,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19686v1",
-      "title": "Video-KTR: Reinforcing Video Reasoning via Key Token Attribution",
-      "authors": [
-        "Ziyue Wang",
-        "Sheng Jin",
-        "Zhongrong Zuo",
-        "Jiawei Wu",
-        "Han Qiu",
-        "Qi She",
-        "Hao Zhang",
-        "Xudong Jiang"
-      ],
-      "abstract": "Reinforcement learning (RL) has shown strong potential for enhancing reasoning in multimodal large language models, yet existing video reasoning methods often rely on coarse sequence-level rewards or single-factor token selection, neglecting fine-grained links among visual inputs, temporal dynamics, and linguistic outputs, limiting both accuracy and interpretability. We propose Video-KTR, a modality-aware policy shaping framework that performs selective, token-level RL by combining three attribution signals: (1) visual-aware tokens identified via counterfactual masking to reveal perceptual dependence; (2) temporal-aware tokens detected through frame shuffling to expose temporal sensitivity; and (3) high-entropy tokens signaling predictive uncertainty. By reinforcing only these key tokens, Video-KTR focuses learning on semantically informative, modality-sensitive content while filtering out low-value tokens. Across five challenging benchmarks, Video-KTR achieves state-of-the-art or highly competitive results, achieving 42.7\\% on Video-Holmes (surpassing GPT-4o) with consistent gains on both reasoning and general video understanding tasks. Ablation studies verify the complementary roles of the attribution signals and the robustness of targeted token-level updates. Overall, Video-KTR improves accuracy and interpretability, offering a simple, drop-in extension to RL for complex video reasoning. Our code and models are available at https://github.com/zywang0104/Video-KTR.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19686v1",
-        "pdf": "https://arxiv.org/pdf/2601.19686v1"
-      },
-      "arxiv_id": "2601.19686v1",
-      "comment": "Accepted to ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19768v1",
-      "title": "GAVEL: Towards rule-based safety through activation monitoring",
-      "authors": [
-        "Shir Rozenfeld",
-        "Rahul Pankajakshan",
-        "Itay Zloczower",
-        "Eyal Lenga",
-        "Gilad Gressel",
-        "Yisroel Mirsky"
-      ],
-      "abstract": "Large language models (LLMs) are increasingly paired with activation-based monitoring to detect and prevent harmful behaviors that may not be apparent at the surface-text level. However, existing activation safety approaches, trained on broad misuse datasets, struggle with poor precision, limited flexibility, and lack of interpretability. This paper introduces a new paradigm: rule-based activation safety, inspired by rule-sharing practices in cybersecurity. We propose modeling activations as cognitive elements (CEs), fine-grained, interpretable factors such as ''making a threat'' and ''payment processing'', that can be composed to capture nuanced, domain-specific behaviors with higher precision. Building on this representation, we present a practical framework that defines predicate rules over CEs and detects violations in real time. This enables practitioners to configure and update safeguards without retraining models or detectors, while supporting transparency and auditability. Our results show that compositional rule-based activation safety improves precision, supports domain customization, and lays the groundwork for scalable, interpretable, and auditable AI governance. We will release GAVEL as an open-source framework and provide an accompanying automated rule creation tool.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.AI",
-        "cs.CR",
-        "cs.LG"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19768v1",
-        "pdf": "https://arxiv.org/pdf/2601.19768v1"
-      },
-      "arxiv_id": "2601.19768v1",
-      "comment": "Accepted to ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.449999999999999,
-      "score_breakdown": {
-        "total_score": 4.45,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19541v1",
-      "title": "GenCP: Towards Generative Modeling Paradigm of Coupled Physics",
-      "authors": [
-        "Tianrun Gao",
-        "Haoren Zheng",
-        "Wenhao Deng",
-        "Haodong Feng",
-        "Tao Zhang",
-        "Ruiqi Feng",
-        "Qianyi Chen",
-        "Tailin Wu"
-      ],
-      "abstract": "Real-world physical systems are inherently complex, often involving the coupling of multiple physics, making their simulation both highly valuable and challenging. Many mainstream approaches face challenges when dealing with decoupled data. Besides, they also suffer from low efficiency and fidelity in strongly coupled spatio-temporal physical systems. Here we propose GenCP, a novel and elegant generative paradigm for coupled multiphysics simulation. By formulating coupled-physics modeling as a probability modeling problem, our key innovation is to integrate probability density evolution in generative modeling with iterative multiphysics coupling, thereby enabling training on data from decoupled simulation and inferring coupled physics during sampling. We also utilize operator-splitting theory in the space of probability evolution to establish error controllability guarantees for this \"conditional-to-joint\" sampling scheme. We evaluate our paradigm on a synthetic setting and three challenging multi-physics scenarios to demonstrate both principled insight and superior application performance of GenCP. Code is available at this repo: github.com/AI4Science-WestlakeU/GenCP.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
+      "abstract": "This paper advances the theoretical understanding of active learning label complexity for decision trees as binary classifiers. We make two main contributions. First, we provide the first analysis of the disagreement coefficient for decision trees-a key parameter governing active learning label complexity. Our analysis holds under two natural assumptions required for achieving polylogarithmic label complexity, (i) each root-to-leaf path queries distinct feature dimensions, and (ii) the input data has a regular, grid-like structure. We show these assumptions are essential, as relaxing them leads to polynomial label complexity. Second, we present the first general active learning algorithm for binary classification that achieves a multiplicative error guarantee, producing a $(1+ε)$-approximate classifier. By combining these results, we design an active learning algorithm for decision trees that uses only a polylogarithmic number of label queries in the dataset size, under the stated assumptions. Finally, we establish a label complexity lower bound, showing our algorithm's dependence on the error tolerance $ε$ is close to optimal.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
       "categories": [
         "cs.LG",
-        "cs.CE"
+        "cs.CC",
+        "cs.DS"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.19541v1",
-        "pdf": "https://arxiv.org/pdf/2601.19541v1"
+        "paper": "http://arxiv.org/abs/2601.20775v1",
+        "pdf": "https://arxiv.org/pdf/2601.20775v1"
       },
-      "arxiv_id": "2601.19541v1",
-      "comment": "ICLR 2026 Accpeted",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.449999999999999,
-      "score_breakdown": {
-        "total_score": 4.45,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19618v1",
-      "title": "The role of self-supervised pretraining in differentially private medical image analysis",
-      "authors": [
-        "Soroosh Tayebi Arasteh",
-        "Mina Farajiamiri",
-        "Mahshad Lotfinia",
-        "Behrus Hinrichs-Puladi",
-        "Jonas Bienzeisler",
-        "Mohamed Alhaskir",
-        "Mirabela Rusu",
-        "Christiane Kuhl",
-        "Sven Nebelung",
-        "Daniel Truhn"
-      ],
-      "abstract": "Differential privacy (DP) provides formal protection for sensitive data but typically incurs substantial losses in diagnostic performance. Model initialization has emerged as a critical factor in mitigating this degradation, yet the role of modern self-supervised learning under full-model DP remains poorly understood. Here, we present a large-scale evaluation of initialization strategies for differentially private medical image analysis, using chest radiograph classification as a representative benchmark with more than 800,000 images. Using state-of-the-art ConvNeXt models trained with DP-SGD across realistic privacy regimes, we compare non-domain-specific supervised ImageNet initialization, non-domain-specific self-supervised DINOv3 initialization, and domain-specific supervised pretraining on MIMIC-CXR, the largest publicly available chest radiograph dataset. Evaluations are conducted across five external datasets spanning diverse institutions and acquisition settings. We show that DINOv3 initialization consistently improves diagnostic utility relative to ImageNet initialization under DP, but remains inferior to domain-specific supervised pretraining, which achieves performance closest to non-private baselines. We further demonstrate that initialization choice strongly influences demographic fairness, cross-dataset generalization, and robustness to data scale and model capacity under privacy constraints. The results establish initialization strategy as a central determinant of utility, fairness, and generalization in differentially private medical imaging.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19618v1",
-        "pdf": "https://arxiv.org/pdf/2601.19618v1"
-      },
-      "arxiv_id": "2601.19618v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.400847457627119,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 2.63,
-          "matches": [
-            "medical image",
-            "medical imaging",
-            "self-supervised",
-            "image analysis"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2601.19810v1",
-      "title": "Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals",
-      "authors": [
-        "Octavio Pappalardo"
-      ],
-      "abstract": "Unsupervised pre-training can equip reinforcement learning agents with prior knowledge and accelerate learning in downstream tasks. A promising direction, grounded in human development, investigates agents that learn by setting and pursuing their own goals. The core challenge lies in how to effectively generate, select, and learn from such goals. Our focus is on broad distributions of downstream tasks where solving every task zero-shot is infeasible. Such settings naturally arise when the target tasks lie outside of the pre-training distribution or when their identities are unknown to the agent. In this work, we (i) optimize for efficient multi-episode exploration and adaptation within a meta-learning framework, and (ii) guide the training curriculum with evolving estimates of the agent's post-adaptation performance. We present ULEE, an unsupervised meta-learning method that combines an in-context learner with an adversarial goal-generation strategy that maintains training at the frontier of the agent's capabilities. On XLand-MiniGrid benchmarks, ULEE pre-training yields improved exploration and adaptation abilities that generalize to novel objectives, environment dynamics, and map structures. The resulting policy attains improved zero-shot and few-shot performance, and provides a strong initialization for longer fine-tuning processes. It outperforms learning from scratch, DIAYN pre-training, and alternative curricula.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.RO"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2601.19810v1",
-        "pdf": "https://arxiv.org/pdf/2601.19810v1"
-      },
-      "arxiv_id": "2601.19810v1",
-      "comment": "To appear at ICLR 2026",
+      "arxiv_id": "2601.20775v1",
+      "comment": "10 pages, 43 pages with appendix, ICLR 2026, Conference URL: https://openreview.net/forum?id=NOkjJPJIit",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.3999999999999995,
@@ -515,32 +117,145 @@
       }
     },
     {
-      "id": "2601.19707v1",
-      "title": "Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow",
+      "id": "2601.20694v1",
+      "title": "Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?",
       "authors": [
-        "Yunyue Wei",
-        "Chenhui Zuo",
-        "Yanan Sui"
+        "Hao Liang",
+        "Jiayu Cheng",
+        "Sean R. Sinclair",
+        "Yali Du"
       ],
-      "abstract": "Controlling high-dimensional systems in biological and robotic applications is challenging due to expansive state-action spaces, where effective exploration is critical. Commonly used exploration strategies in reinforcement learning are largely undirected with sharp degradation as action dimensionality grows. Many existing methods resort to dimensionality reduction, which constrains policy expressiveness and forfeits system flexibility. We introduce Q-guided Flow Exploration (Qflex), a scalable reinforcement learning method that conducts exploration directly in the native high-dimensional action space. During training, Qflex traverses actions from a learnable source distribution along a probability flow induced by the learned value function, aligning exploration with task-relevant gradients rather than isotropic noise. Our proposed method substantially outperforms representative online reinforcement learning baselines across diverse high-dimensional continuous-control benchmarks. Qflex also successfully controls a full-body human musculoskeletal model to perform agile, complex movements, demonstrating superior scalability and sample efficiency in very high-dimensional settings. Our results indicate that value-guided flows offer a principled and practical route to exploration at scale.",
-      "published": "2026-01-27",
-      "updated": "2026-01-27",
+      "abstract": "Exogenous MDPs (Exo-MDPs) capture sequential decision-making where uncertainty comes solely from exogenous inputs that evolve independently of the learner's actions. This structure is especially common in operations research applications such as inventory control, energy storage, and resource allocation, where exogenous randomness (e.g., demand, arrivals, or prices) drives system behavior. Despite decades of empirical evidence that greedy, exploitation-only methods work remarkably well in these settings, theory has lagged behind: all existing regret guarantees for Exo-MDPs rely on explicit exploration or tabular assumptions. We show that exploration is unnecessary. We propose Pure Exploitation Learning (PEL) and prove the first general finite-sample regret bounds for exploitation-only algorithms in Exo-MDPs. In the tabular case, PEL achieves $\\widetilde{O}(H^2|Ξ|\\sqrt{K})$. For large, continuous endogenous state spaces, we introduce LSVI-PE, a simple linear-approximation method whose regret is polynomial in the feature dimension, exogenous state space, and horizon, independent of the endogenous state and action spaces. Our analysis introduces two new tools: counterfactual trajectories and Bellman-closed feature transport, which together allow greedy policies to have accurate value estimates without optimism. Experiments on synthetic and resource-management tasks show that PEL consistently outperforming baselines. Overall, our results overturn the conventional wisdom that exploration is required, demonstrating that in Exo-MDPs, pure exploitation is enough.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
       "categories": [
-        "cs.LG",
-        "cs.RO"
+        "cs.LG"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2601.19707v1",
-        "pdf": "https://arxiv.org/pdf/2601.19707v1"
+        "paper": "http://arxiv.org/abs/2601.20694v1",
+        "pdf": "https://arxiv.org/pdf/2601.20694v1"
       },
-      "arxiv_id": "2601.19707v1",
-      "comment": "Accepted by ICLR 2026",
+      "arxiv_id": "2601.20694v1",
+      "comment": "Accepted to ICLR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.3500000000000005,
+      "relevance_score": 4.3999999999999995,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20614v1",
+      "title": "Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation",
+      "authors": [
+        "Yanqi Dai",
+        "Yuxiang Ji",
+        "Xiao Zhang",
+        "Yong Wang",
+        "Xiangxiang Chu",
+        "Zhiwu Lu"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) offers a robust mechanism for enhancing mathematical reasoning in large models. However, we identify a systematic lack of emphasis on more challenging questions in existing methods from both algorithmic and data perspectives, despite their importance for refining underdeveloped capabilities. Algorithmically, widely used Group Relative Policy Optimization (GRPO) suffers from an implicit imbalance where the magnitude of policy updates is lower for harder questions. Data-wise, augmentation approaches primarily rephrase questions to enhance diversity without systematically increasing intrinsic difficulty. To address these issues, we propose a two-dual MathForge framework to improve mathematical reasoning by targeting harder questions from both perspectives, which comprises a Difficulty-Aware Group Policy Optimization (DGPO) algorithm and a Multi-Aspect Question Reformulation (MQR) strategy. Specifically, DGPO first rectifies the implicit imbalance in GRPO via difficulty-balanced group advantage estimation, and further prioritizes harder questions by difficulty-aware question-level weighting. Meanwhile, MQR reformulates questions across multiple aspects to increase difficulty while maintaining the original gold answer. Overall, MathForge forms a synergistic loop: MQR expands the data frontier, and DGPO effectively learns from the augmented data. Extensive experiments show that MathForge significantly outperforms existing methods on various mathematical reasoning tasks. The code and augmented data are all available at https://github.com/AMAP-ML/MathForge.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20614v1",
+        "pdf": "https://arxiv.org/pdf/2601.20614v1"
+      },
+      "arxiv_id": "2601.20614v1",
+      "comment": "Accepted for ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
       "score_breakdown": {
         "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20520v1",
+      "title": "Context Tokens are Anchors: Understanding the Repetition Curse in dMLLMs from an Information Flow Perspective",
+      "authors": [
+        "Qiyan Zhao",
+        "Xiaofeng Zhang",
+        "Shuochen Chang",
+        "Qianyu Chen",
+        "Xiaosong Yuan",
+        "Xuhang Chen",
+        "Luoqi Liu",
+        "Jiajun Zhang",
+        "Xu-Yao Zhang",
+        "Da-Han Wang"
+      ],
+      "abstract": "Recent diffusion-based Multimodal Large Language Models (dMLLMs) suffer from high inference latency and therefore rely on caching techniques to accelerate decoding. However, the application of cache mechanisms often introduces undesirable repetitive text generation, a phenomenon we term the \\textbf{Repeat Curse}. To better investigate underlying mechanism behind this issue, we analyze repetition generation through the lens of information flow. Our work reveals three key findings: (1) context tokens aggregate semantic information as anchors and guide the final predictions; (2) as information propagates across layers, the entropy of context tokens converges in deeper layers, reflecting the model's growing prediction certainty; (3) Repetition is typically linked to disruptions in the information flow of context tokens and to the inability of their entropy to converge in deeper layers. Based on these insights, we present \\textbf{CoTA}, a plug-and-play method for mitigating repetition. CoTA enhances the attention of context tokens to preserve intrinsic information flow patterns, while introducing a penalty term to the confidence score during decoding to avoid outputs driven by uncertain context tokens. With extensive experiments, CoTA demonstrates significant effectiveness in alleviating repetition and achieves consistent performance improvements on general tasks. Code is available at https://github.com/ErikZ719/CoTA",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20520v1",
+        "pdf": "https://arxiv.org/pdf/2601.20520v1"
+      },
+      "arxiv_id": "2601.20520v1",
+      "comment": "Accepted in ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -561,7 +276,267 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20704v1",
+      "title": "Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs",
+      "authors": [
+        "Melika Mobini",
+        "Vincent Holst",
+        "Floriano Tori",
+        "Andres Algaba",
+        "Vincent Ginis"
+      ],
+      "abstract": "Large language models are increasingly used to curate bibliographies, raising the question: are their reference lists distinguishable from human ones? We build paired citation graphs, ground truth and GPT-4o-generated (from parametric knowledge), for 10,000 focal papers ($\\approx$ 275k references) from SciSciNet, and added a field-matched random baseline that preserves out-degree and field distributions while breaking latent structure. We compare (i) structure-only node features (degree/closeness/eigenvector centrality, clustering, edge count) with (ii) 3072-D title/abstract embeddings, using an RF on graph-level aggregates and Graph Neural Networks with node features. Structure alone barely separates GPT from ground truth (RF accuracy $\\approx$ 0.60) despite cleanly rejecting the random baseline ($\\approx$ 0.89--0.92). By contrast, embeddings sharply increase separability: RF on aggregated embeddings reaches $\\approx$ 0.83, and GNNs with embedding node features achieve 93\\% test accuracy on GPT vs.\\ ground truth. We show the robustness of our findings by replicating the pipeline with Claude Sonnet 4.5 and with multiple embedding models (OpenAI and SPECTER), with RF separability for ground truth vs.\\ Claude $\\approx 0.77$ and clean rejection of the random baseline. Thus, LLM bibliographies, generated purely from parametric knowledge, closely mimic human citation topology, but leave detectable semantic fingerprints; detection and debiasing should target content signals rather than global graph structure.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20704v1",
+        "pdf": "https://arxiv.org/pdf/2601.20704v1"
+      },
+      "arxiv_id": "2601.20704v1",
+      "comment": "34 pages, 20 figures. Accepted at ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20650v1",
+      "title": "OS-Marathon: Benchmarking Computer-Use Agents on Long-Horizon Repetitive Tasks",
+      "authors": [
+        "Jing Wu",
+        "Daphne Barretto",
+        "Yiye Chen",
+        "Nicholas Gydé",
+        "Yanan Jian",
+        "Yuhang He",
+        "Vibhav Vineet"
+      ],
+      "abstract": "Long-horizon, repetitive workflows are common in professional settings, such as processing expense reports from receipts and entering student grades from exam papers. These tasks are often tedious for humans since they can extend to extreme lengths proportional to the size of the data to process. However, they are ideal for Computer-Use Agents (CUAs) due to their structured, recurring sub-workflows with logic that can be systematically learned. Identifying the absence of an evaluation benchmark as a primary bottleneck, we establish OS-Marathon, comprising 242 long-horizon, repetitive tasks across 2 domains to evaluate state-of-the-art (SOTA) agents. We then introduce a cost-effective method to construct a condensed demonstration using only few-shot examples to teach agents the underlying workflow logic, enabling them to execute similar workflows effectively on larger, unseen data collections. Extensive experiments demonstrate both the inherent challenges of these tasks and the effectiveness of our proposed method. Project website: https://os-marathon.github.io/.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20650v1",
+        "pdf": "https://arxiv.org/pdf/2601.20650v1"
+      },
+      "arxiv_id": "2601.20650v1",
+      "comment": "22 Pages, Project Page: \\url{https://os-marathon.github.io/}",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20852v1",
+      "title": "C3Box: A CLIP-based Class-Incremental Learning Toolbox",
+      "authors": [
+        "Hao Sun",
+        "Da-Wei Zhou"
+      ],
+      "abstract": "Traditional machine learning systems are typically designed for static data distributions, which suffer from catastrophic forgetting when learning from evolving data streams. Class-Incremental Learning (CIL) addresses this challenge by enabling learning systems to continuously learn new classes while preserving prior knowledge. With the rise of pre-trained models (PTMs) such as CLIP, leveraging their strong generalization and semantic alignment capabilities has become a promising direction in CIL. However, existing CLIP-based CIL methods are often scattered across disparate codebases, rely on inconsistent configurations, hindering fair comparisons, reproducibility, and practical adoption. Therefore, we propose C3Box (CLIP-based Class-inCremental learning toolBOX), a modular and comprehensive Python toolbox. C3Box integrates representative traditional CIL methods, ViT-based CIL methods, and state-of-the-art CLIP-based CIL methods into a unified CLIP-based framework. By inheriting the streamlined design of PyCIL, C3Box provides a JSON-based configuration and standardized execution pipeline. This design enables reproducible experimentation with low engineering overhead and makes C3Box a reliable benchmark platform for continual learning research. Designed to be user-friendly, C3Box relies only on widely used open-source libraries and supports major operating systems. The code is available at https://github.com/LAMDA-CL/C3Box.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20852v1",
+        "pdf": "https://arxiv.org/pdf/2601.20852v1"
+      },
+      "arxiv_id": "2601.20852v1",
+      "comment": "The code is available at https://github.com/LAMDA-CL/C3Box",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.050000000000001,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20642v1",
+      "title": "Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability",
+      "authors": [
+        "Rohan Asthana",
+        "Vasileios Belagiannis"
+      ],
+      "abstract": "Diffusion-based image generative models produce high-fidelity images through iterative denoising but remain vulnerable to memorization, where they unintentionally reproduce exact copies or parts of training images. Recent memorization detection methods are primarily based on the norm of score difference as indicators of memorization. We prove that such norm-based metrics are mainly effective under the assumption of isotropic log-probability distributions, which generally holds at high or medium noise levels. In contrast, analyzing the anisotropic regime reveals that memorized samples exhibit strong angular alignment between the guidance vector and unconditional scores in the low-noise setting. Through these insights, we develop a memorization detection metric by integrating isotropic norm and anisotropic alignment. Our detection metric can be computed directly on pure noise inputs via two conditional and unconditional forward passes, eliminating the need for costly denoising steps. Detection experiments on Stable Diffusion v1.4 and v2 show that our metric outperforms existing denoising-free detection methods while being at least approximately 5x faster than the previous best approach. Finally, we demonstrate the effectiveness of our approach by utilizing a mitigation strategy that adapts memorized prompts based on our developed metric.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20642v1",
+        "pdf": "https://arxiv.org/pdf/2601.20642v1"
+      },
+      "arxiv_id": "2601.20642v1",
+      "comment": "Accepted at ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.05,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2601.20843v1",
+      "title": "Deep Researcher with Sequential Plan Reflection and Candidates Crossover (Deep Researcher Reflect Evolve)",
+      "authors": [
+        "Saurav Prateek"
+      ],
+      "abstract": "This paper introduces a novel Deep Researcher architecture designed to generate detailed research reports on complex PhD level topics by addressing the inherent limitations of the Parallel Scaling paradigm. Our system utilizes two key innovations: Sequential Research Plan Refinement via Reflection and a Candidates Crossover algorithm. The sequential refinement process is demonstrated as an efficient method that allows the agent to maintain a centralized Global Research Context, enabling it to look back at current progress, reason about the research plan, and intelligently make changes at runtime. This dynamic adaptation contrasts with parallel approaches, which often suffer from siloed knowledge. The Candidates Crossover algorithm further enhances search efficiency by deploying multiple LLM candidates with varied parameters to explore a larger search space, with their findings synthesized to curate a comprehensive final research response. The process concludes with One Shot Report Generation, ensuring the final document is informed by a unified narrative and high fact density. Powered by the Gemini 2.5 Pro model, our Deep Researcher was evaluated on the DeepResearch Bench, a globally recognized benchmark of 100 doctoral level research tasks. Our architecture achieved an overall score of 46.21, demonstrating superior performance by surpassing leading deep research agents such as Claude Researcher, Nvidia AIQ Research Assistant, Perplexity Research, Kimi Researcher and Grok Deeper Search present on the DeepResearch Bench actively running leaderboard. This performance marginally exceeds our previous work, Static DRA, and reinforces the finding that sequential scaling consistently outperforms the parallel self consistency paradigm.",
+      "published": "2026-01-28",
+      "updated": "2026-01-28",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2601.20843v1",
+        "pdf": "https://arxiv.org/pdf/2601.20843v1"
+      },
+      "arxiv_id": "2601.20843v1",
+      "comment": "11 pages, 6 figures, 2 tables, source code: https://github.com/SauravP97/deep-researcher-reflect-evolve/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
           "weight": 0.1
         }
       }

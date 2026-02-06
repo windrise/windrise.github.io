@@ -3,43 +3,106 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.03733v1",
-      "title": "RegionReasoner: Region-Grounded Multi-Round Visual Reasoning",
+      "id": "2602.04755v1",
+      "title": "When Silence Is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?",
       "authors": [
-        "Wenfang Sun",
-        "Hao Chen",
-        "Yingjun Du",
-        "Yefeng Zheng",
-        "Cees G. M. Snoek"
+        "Xinyu Zhou",
+        "Chang Jin",
+        "Carsten Eickhoff",
+        "Zhijiang Guo",
+        "Seyed Ali Bahrainian"
       ],
-      "abstract": "Large vision-language models have achieved remarkable progress in visual reasoning, yet most existing systems rely on single-step or text-only reasoning, limiting their ability to iteratively refine understanding across multiple visual contexts. To address this limitation, we introduce a new multi-round visual reasoning benchmark with training and test sets spanning both detection and segmentation tasks, enabling systematic evaluation under iterative reasoning scenarios. We further propose RegionReasoner, a reinforcement learning framework that enforces grounded reasoning by requiring each reasoning trace to explicitly cite the corresponding reference bounding boxes, while maintaining semantic coherence via a global-local consistency reward. This reward extracts key objects and nouns from both global scene captions and region-level captions, aligning them with the reasoning trace to ensure consistency across reasoning steps. RegionReasoner is optimized with structured rewards combining grounding fidelity and global-local semantic alignment. Experiments on detection and segmentation tasks show that RegionReasoner-7B, together with our newly introduced benchmark RegionDial-Bench, considerably improves multi-round reasoning accuracy, spatial grounding precision, and global-local consistency, establishing a strong baseline for this emerging research direction.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
+      "abstract": "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.e., refusing to answer). This weakness is even evident in temporal question answering, where models frequently ignore time-sensitive evidence and conflate facts across different time-periods. In this paper, we present the first empirical study of training LLMs with an abstention ability while reasoning about temporal QA. Existing approaches such as calibration might be unreliable in capturing uncertainty in complex reasoning. We instead frame abstention as a teachable skill and introduce a pipeline that couples Chain-of-Thought (CoT) supervision with Reinforcement Learning (RL) guided by abstention-aware rewards. Our goal is to systematically analyze how different information types and training techniques affect temporal reasoning with abstention behavior in LLMs. Through extensive experiments studying various methods, we find that RL yields strong empirical gains on reasoning: a model initialized by Qwen2.5-1.5B-Instruct surpasses GPT-4o by $3.46\\%$ and $5.80\\%$ in Exact Match on TimeQA-Easy and Hard, respectively. Moreover, it improves the True Positive rate on unanswerable questions by $20\\%$ over a pure supervised fine-tuned (SFT) variant. Beyond performance, our analysis shows that SFT induces overconfidence and harms reliability, while RL improves prediction accuracy but exhibits similar risks. Finally, by comparing implicit reasoning cues (e.g., original context, temporal sub-context, knowledge graphs) with explicit CoT supervision, we find that implicit information provides limited benefit for reasoning with abstention. Our study provides new insights into how abstention and reasoning can be jointly optimized, providing a foundation for building more reliable LLMs.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.04755v1",
+        "pdf": "https://arxiv.org/pdf/2602.04755v1"
+      },
+      "arxiv_id": "2602.04755v1",
+      "comment": "Accepted to ICLR2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.5,
+      "score_breakdown": {
+        "total_score": 4.5,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.e., refusing to answer). This weakness is even evident in temporal question answering, where models frequently ignore time-sensitive evidence and conflate facts across different time-periods. In this paper, we present the first empirical study of training LLMs with an abs...",
+        "key_contributions": [
+          "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.",
+          "e.",
+          ", refusing to answer)."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.04755v1.mp3"
+      }
+    },
+    {
+      "id": "2602.04877v1",
+      "title": "CoWTracker: Tracking by Warping instead of Correlation",
+      "authors": [
+        "Zihang Lai",
+        "Eldar Insafutdinov",
+        "Edgar Sucar",
+        "Andrea Vedaldi"
+      ],
+      "abstract": "Dense point tracking is a fundamental problem in computer vision, with applications ranging from video analysis to robotic manipulation. State-of-the-art trackers typically rely on cost volumes to match features across frames, but this approach incurs quadratic complexity in spatial resolution, limiting scalability and efficiency. In this paper, we propose \\method, a novel dense point tracker that eschews cost volumes in favor of warping. Inspired by recent advances in optical flow, our approach iteratively refines track estimates by warping features from the target frame to the query frame based on the current estimate. Combined with a transformer architecture that performs joint spatiotemporal reasoning across all tracks, our design establishes long-range correspondences without computing feature correlations. Our model is simple and achieves state-of-the-art performance on standard dense point tracking benchmarks, including TAP-Vid-DAVIS, TAP-Vid-Kinetics, and Robo-TAP. Remarkably, the model also excels at optical flow, sometimes outperforming specialized methods on the Sintel, KITTI, and Spring benchmarks. These results suggest that warping-based architectures can unify dense point tracking and optical flow estimation.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.03733v1",
-        "pdf": "https://arxiv.org/pdf/2602.03733v1"
+        "paper": "http://arxiv.org/abs/2602.04877v1",
+        "pdf": "https://arxiv.org/pdf/2602.04877v1"
       },
-      "arxiv_id": "2602.03733v1",
-      "comment": "Accepted by ICLR 2026",
+      "arxiv_id": "2602.04877v1",
+      "comment": "Project website: cowtracker.github.io",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.753389830508474,
+      "has_code": true,
+      "relevance_score": 4.219491525423729,
       "score_breakdown": {
-        "total_score": 4.75,
+        "total_score": 4.22,
         "field_match": {
-          "score": 0.51,
+          "score": 0.42,
           "matches": [
-            "segmentation"
+            "computer vision"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -47,144 +110,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Large vision-language models have achieved remarkable progress in visual reasoning, yet most existing systems rely on single-step or text-only reasoning, limiting their ability to iteratively refine understanding across multiple visual contexts. To address this limitation, we introduce a new multi-round visual reasoning benchmark with training and test sets spanning both detection and segmentation...",
-        "key_contributions": [
-          "Large vision-language models have achieved remarkable progress in visual reasoning, yet most existing systems rely on single-step or text-only reasoning, limiting their ability to iteratively refine understanding across multiple visual contexts.",
-          "To address this limitation, we introduce a new multi-round visual reasoning benchmark with training and test sets spanning both detection and segmentation tasks, enabling systematic evaluation under iterative reasoning scenarios.",
-          "We further propose RegionReasoner, a reinforcement learning framework that enforces grounded reasoning by requiring each reasoning trace to explicitly cite the corresponding reference bounding boxes, while maintaining semantic coherence via a global-local consistency reward."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.03733v1.mp3"
-      }
-    },
-    {
-      "id": "2602.03782v1",
-      "title": "QVLA: Not All Channels Are Equal in Vision-Language-Action Model's Quantization",
-      "authors": [
-        "Yuhao Xu",
-        "Yantai Yang",
-        "Zhenyang Fan",
-        "Yufan Liu",
-        "Yuming Li",
-        "Bing Li",
-        "Zhipeng Zhang"
-      ],
-      "abstract": "The advent of Vision-Language-Action (VLA) models represents a significant leap for embodied intelligence, yet their immense computational demands critically hinder deployment on resource-constrained robotic platforms. Intuitively, low-bit quantization is a prevalent and preferred technique for large-scale model compression. However, we find that a systematic analysis of VLA model's quantization is fundamentally lacking. We argue that naively applying uniform-bit quantization from Large Language Models (LLMs) to robotics is flawed, as these methods prioritize passive data fidelity while ignoring how minor action deviations compound into catastrophic task failures. To bridge this gap, we introduce QVLA, the first action-centric quantization framework specifically designed for embodied control. In a sharp departure from the rigid, uniform-bit quantization of LLM-based methods, QVLA introduces a highly granular, channel-wise bit allocation strategy. Its core mechanism is to directly measure the final action-space sensitivity when quantizing each individual channel to various bit-widths. This process yields a precise, per-channel importance metric that guides a global optimization, which elegantly unifies quantization and pruning (0-bit) into a single, cohesive framework. Extensive evaluations on different baselines demonstrate the superiority of our approach. In the LIBERO, the quantization version of OpenVLA-OFT with our method requires only 29.2% of the original model's VRAM while maintaining 98.9% of its original performance and achieving a 1.49x speedup. This translates to a 22.6% performance improvement over the LLM-derived method SmoothQuant. Our work establishes a new, principled foundation for compressing VLA models in robotics, paving the way for deploying powerful, large-scale models on real-world hardware. Code will be released.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.03782v1",
-        "pdf": "https://arxiv.org/pdf/2602.03782v1"
-      },
-      "arxiv_id": "2602.03782v1",
-      "comment": "ICLR2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.699999999999999,
-      "score_breakdown": {
-        "total_score": 4.7,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The advent of Vision-Language-Action (VLA) models represents a significant leap for embodied intelligence, yet their immense computational demands critically hinder deployment on resource-constrained robotic platforms. Intuitively, low-bit quantization is a prevalent and preferred technique for large-scale model compression. However, we find that a systematic analysis of VLA model's quantization i...",
-        "key_contributions": [
-          "The advent of Vision-Language-Action (VLA) models represents a significant leap for embodied intelligence, yet their immense computational demands critically hinder deployment on resource-constrained robotic platforms.",
-          "Intuitively, low-bit quantization is a prevalent and preferred technique for large-scale model compression.",
-          "However, we find that a systematic analysis of VLA model's quantization is fundamentally lacking."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.03782v1.mp3"
-      }
-    },
-    {
-      "id": "2602.03828v1",
-      "title": "AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations",
-      "authors": [
-        "Minjun Zhu",
-        "Zhen Lin",
-        "Yixuan Weng",
-        "Panzhong Lu",
-        "Qiujie Xie",
-        "Yifan Wei",
-        "Sifan Liu",
-        "Qiyao Sun",
-        "Yue Zhang"
-      ],
-      "abstract": "High-quality scientific illustrations are crucial for effectively communicating complex scientific and technical concepts, yet their manual creation remains a well-recognized bottleneck in both academia and industry. We present FigureBench, the first large-scale benchmark for generating scientific illustrations from long-form scientific texts. It contains 3,300 high-quality scientific text-figure pairs, covering diverse text-to-illustration tasks from scientific papers, surveys, blogs, and textbooks. Moreover, we propose AutoFigure, the first agentic framework that automatically generates high-quality scientific illustrations based on long-form scientific text. Specifically, before rendering the final result, AutoFigure engages in extensive thinking, recombination, and validation to produce a layout that is both structurally sound and aesthetically refined, outputting a scientific illustration that achieves both structural completeness and aesthetic appeal. Leveraging the high-quality data from FigureBench, we conduct extensive experiments to test the performance of AutoFigure against various baseline methods. The results demonstrate that AutoFigure consistently surpasses all baseline methods, producing publication-ready scientific illustrations. The code, dataset and huggingface space are released in https://github.com/ResearAI/AutoFigure.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.CV",
-        "cs.DL"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.03828v1",
-        "pdf": "https://arxiv.org/pdf/2602.03828v1"
-      },
-      "arxiv_id": "2602.03828v1",
-      "comment": "Accepted at the ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -193,231 +120,103 @@
         }
       },
       "ai_summaries": {
-        "short": "High-quality scientific illustrations are crucial for effectively communicating complex scientific and technical concepts, yet their manual creation remains a well-recognized bottleneck in both academia and industry. We present FigureBench, the first large-scale benchmark for generating scientific illustrations from long-form scientific texts. It contains 3,300 high-quality scientific text-figure ...",
+        "short": "Dense point tracking is a fundamental problem in computer vision, with applications ranging from video analysis to robotic manipulation. State-of-the-art trackers typically rely on cost volumes to match features across frames, but this approach incurs quadratic complexity in spatial resolution, limiting scalability and efficiency. In this paper, we propose \\method, a novel dense point tracker that...",
         "key_contributions": [
-          "High-quality scientific illustrations are crucial for effectively communicating complex scientific and technical concepts, yet their manual creation remains a well-recognized bottleneck in both academia and industry.",
-          "We present FigureBench, the first large-scale benchmark for generating scientific illustrations from long-form scientific texts.",
-          "It contains 3,300 high-quality scientific text-figure pairs, covering diverse text-to-illustration tasks from scientific papers, surveys, blogs, and textbooks."
+          "Dense point tracking is a fundamental problem in computer vision, with applications ranging from video analysis to robotic manipulation.",
+          "State-of-the-art trackers typically rely on cost volumes to match features across frames, but this approach incurs quadratic complexity in spatial resolution, limiting scalability and efficiency.",
+          "In this paper, we propose \\method, a novel dense point tracker that eschews cost volumes in favor of warping."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.03828v1.mp3"
+        "audio_url": "/audio/2602.04877v1.mp3"
       }
     },
     {
-      "id": "2602.03783v1",
-      "title": "Efficient Estimation of Kernel Surrogate Models for Task Attribution",
+      "id": "2602.04605v1",
+      "title": "RexBERT: Context Specialized Bidirectional Encoders for E-commerce",
       "authors": [
-        "Zhenshuo Zhang",
-        "Minxuan Duan",
-        "Hongyang R. Zhang"
+        "Rahul Bajaj",
+        "Anuj Garg"
       ],
-      "abstract": "Modern AI agents such as large language models are trained on diverse tasks -- translation, code generation, mathematical reasoning, and text prediction -- simultaneously. A key question is to quantify how each individual training task influences performance on a target task, a problem we refer to as task attribution. The direct approach, leave-one-out retraining, measures the effect of removing each task, but is computationally infeasible at scale. An alternative approach that builds surrogate models to predict a target task's performance for any subset of training tasks has emerged in recent literature. Prior work focuses on linear surrogate models, which capture first-order relationships, but miss nonlinear interactions such as synergy, antagonism, or XOR-type effects. In this paper, we first consider a unified task weighting framework for analyzing task attribution methods, and show a new connection between linear surrogate models and influence functions through a second-order analysis. Then, we introduce kernel surrogate models, which more effectively represent second-order task interactions. To efficiently learn the kernel surrogate, we develop a gradient-based estimation procedure that leverages a first-order approximation of pretrained models; empirically, this yields accurate estimates with less than $2\\%$ relative error without repeated retraining. Experiments across multiple domains -- including math reasoning in transformers, in-context learning, and multi-objective reinforcement learning -- demonstrate the effectiveness of kernel surrogate models. They achieve a $25\\%$ higher correlation with the leave-one-out ground truth than linear surrogates and influence-function baselines. When used for downstream task selection, kernel surrogate models yield a $40\\%$ improvement in demonstration selection for in-context learning and multi-objective reinforcement learning benchmarks.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
+      "abstract": "Encoder-only transformers remain indispensable in retrieval, classification, and ranking systems where latency, stability, and cost are paramount. Most general purpose encoders, however, are trained on generic corpora with limited coverage of specialized domains. We introduce RexBERT, a family of BERT-style encoders designed specifically for e-commerce semantics. We make three contributions. First, we release Ecom-niverse, a 350 billion token corpus curated from diverse retail and shopping sources. We describe a modular pipeline that isolates and extracts e-commerce content from FineFineWeb and other open web resources, and characterize the resulting domain distribution. Second, we present a reproducible pretraining recipe building on ModernBERT's architectural advances. The recipe consists of three phases: general pre-training, context extension, and annealed domain specialization. Third, we train RexBERT models ranging from 17M to 400M parameters and evaluate them on token classification, semantic similarity, and general natural language understanding tasks using e-commerce datasets. Despite having 2-3x fewer parameters, RexBERT outperforms larger general-purpose encoders and matches or surpasses modern long-context models on domain-specific benchmarks. Our results demonstrate that high quality in-domain data combined with a principled training approach provides a stronger foundation for e-commerce applications than indiscriminate scaling alone.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.04605v1",
+        "pdf": "https://arxiv.org/pdf/2602.04605v1"
+      },
+      "arxiv_id": "2602.04605v1",
+      "comment": "Blog: https://huggingface.co/blog/thebajajra/rexbert-encoders Models: https://huggingface.co/collections/thebajajra/rexbert Ecom-niverse Dataset: https://huggingface.co/datasets/thebajajra/Ecom-niverse",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1000000000000005,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Encoder-only transformers remain indispensable in retrieval, classification, and ranking systems where latency, stability, and cost are paramount. Most general purpose encoders, however, are trained on generic corpora with limited coverage of specialized domains. We introduce RexBERT, a family of BERT-style encoders designed specifically for e-commerce semantics. We make three contributions. First...",
+        "key_contributions": [
+          "Encoder-only transformers remain indispensable in retrieval, classification, and ranking systems where latency, stability, and cost are paramount.",
+          "Most general purpose encoders, however, are trained on generic corpora with limited coverage of specialized domains.",
+          "We introduce RexBERT, a family of BERT-style encoders designed specifically for e-commerce semantics."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.04605v1.mp3"
+      }
+    },
+    {
+      "id": "2602.04883v1",
+      "title": "Protein Autoregressive Modeling via Multiscale Structure Generation",
+      "authors": [
+        "Yanru Qu",
+        "Cheng-Yen Hsieh",
+        "Zaixiang Zheng",
+        "Ge Liu",
+        "Quanquan Gu"
+      ],
+      "abstract": "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction. Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales. To achieve this, PAR consists of three key components: (i) multi-scale downsampling operations that represent protein structures across multiple scales during training; (ii) an autoregressive transformer that encodes multi-scale information and produces conditional embeddings to guide structure generation; (iii) a flow-based backbone decoder that generates backbone atoms conditioned on these embeddings. Moreover, autoregressive models suffer from exposure bias, caused by the training and the generation procedure mismatch, and substantially degrades structure generation quality. We effectively alleviate this issue by adopting noisy context learning and scheduled sampling, enabling robust backbone generation. Notably, PAR exhibits strong zero-shot generalization, supporting flexible human-prompted conditional generation and motif scaffolding without requiring fine-tuning. On the unconditional generation benchmark, PAR effectively learns protein distributions and produces backbones of high design quality, and exhibits favorable scaling behavior. Together, these properties establish PAR as a promising framework for protein structure generation.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
       "categories": [
         "cs.LG",
         "cs.AI",
-        "cs.CL"
+        "q-bio.BM",
+        "q-bio.QM"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.03783v1",
-        "pdf": "https://arxiv.org/pdf/2602.03783v1"
+        "paper": "http://arxiv.org/abs/2602.04883v1",
+        "pdf": "https://arxiv.org/pdf/2602.04883v1"
       },
-      "arxiv_id": "2602.03783v1",
-      "comment": "27 pages. To appear in ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Modern AI agents such as large language models are trained on diverse tasks -- translation, code generation, mathematical reasoning, and text prediction -- simultaneously. A key question is to quantify how each individual training task influences performance on a target task, a problem we refer to as task attribution. The direct approach, leave-one-out retraining, measures the effect of removing e...",
-        "key_contributions": [
-          "Modern AI agents such as large language models are trained on diverse tasks -- translation, code generation, mathematical reasoning, and text prediction -- simultaneously.",
-          "A key question is to quantify how each individual training task influences performance on a target task, a problem we refer to as task attribution.",
-          "The direct approach, leave-one-out retraining, measures the effect of removing each task, but is computationally infeasible at scale."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.03783v1.mp3"
-      }
-    },
-    {
-      "id": "2602.03634v1",
-      "title": "SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection",
-      "authors": [
-        "Wei Zhang",
-        "Xiang Liu",
-        "Ningjing Liu",
-        "Mingxin Liu",
-        "Wei Liao",
-        "Chunyan Xu",
-        "Xue Yang"
-      ],
-      "abstract": "A consistent trend throughout the research of oriented object detection has been the pursuit of maintaining comparable performance with fewer and weaker annotations. This is particularly crucial in the remote sensing domain, where the dense object distribution and a wide variety of categories contribute to prohibitively high costs. Based on the supervision level, existing oriented object detection algorithms can be broadly grouped into fully supervised, semi-supervised, and weakly supervised methods. Within the scope of this work, we further categorize them to include sparsely supervised and partially weakly-supervised methods. To address the challenges of large-scale labeling, we introduce the first Sparse Partial Weakly-Supervised Oriented Object Detection framework, designed to efficiently leverage only a few sparse weakly-labeled data and plenty of unlabeled data. Our framework incorporates three key innovations: (1) We design a Sparse-annotation-Orientation-and-Scale-aware Student (SOS-Student) model to separate unlabeled objects from the background in a sparsely-labeled setting, and learn orientation and scale information from orientation-agnostic or scale-agnostic weak annotations. (2) We construct a novel Multi-level Pseudo-label Filtering strategy that leverages the distribution of model predictions, which is informed by the model's multi-layer predictions. (3) We propose a unique sparse partitioning approach, ensuring equal treatment for each category. Extensive experiments on the DOTA and DIOR datasets show that our framework achieves a significant performance gain over traditional oriented object detection methods mentioned above, offering a highly cost-effective solution. Our code is publicly available at https://github.com/VisionXLab/SPWOOD.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.03634v1",
-        "pdf": "https://arxiv.org/pdf/2602.03634v1"
-      },
-      "arxiv_id": "2602.03634v1",
-      "comment": "The Fourteenth International Conference on Learning Representations (ICLR 2026)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "A consistent trend throughout the research of oriented object detection has been the pursuit of maintaining comparable performance with fewer and weaker annotations. This is particularly crucial in the remote sensing domain, where the dense object distribution and a wide variety of categories contribute to prohibitively high costs. Based on the supervision level, existing oriented object detection...",
-        "key_contributions": [
-          "A consistent trend throughout the research of oriented object detection has been the pursuit of maintaining comparable performance with fewer and weaker annotations.",
-          "This is particularly crucial in the remote sensing domain, where the dense object distribution and a wide variety of categories contribute to prohibitively high costs.",
-          "Based on the supervision level, existing oriented object detection algorithms can be broadly grouped into fully supervised, semi-supervised, and weakly supervised methods."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.03634v1.mp3"
-      }
-    },
-    {
-      "id": "2602.03612v1",
-      "title": "Generator-based Graph Generation via Heat Diffusion",
-      "authors": [
-        "Anthony Stephenson",
-        "Ian Gallagher",
-        "Christopher Nemeth"
-      ],
-      "abstract": "Graph generative modelling has become an essential task due to the wide range of applications in chemistry, biology, social networks, and knowledge representation. In this work, we propose a novel framework for generating graphs by adapting the Generator Matching (arXiv:2410.20587) paradigm to graph-structured data. We leverage the graph Laplacian and its associated heat kernel to define a continous-time diffusion on each graph. The Laplacian serves as the infinitesimal generator of this diffusion, and its heat kernel provides a family of conditional perturbations of the initial graph. A neural network is trained to match this generator by minimising a Bregman divergence between the true generator and a learnable surrogate. Once trained, the surrogate generator is used to simulate a time-reversed diffusion process to sample new graph structures. Our framework unifies and generalises existing diffusion-based graph generative models, injecting domain-specific inductive bias via the Laplacian, while retaining the flexibility of neural approximators. Experimental studies demonstrate that our approach captures structural properties of real and synthetic graphs effectively.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "stat.ML",
-        "cs.LG"
-      ],
-      "primary_category": "stat.ML",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.03612v1",
-        "pdf": "https://arxiv.org/pdf/2602.03612v1"
-      },
-      "arxiv_id": "2602.03612v1",
-      "comment": "Submitted to ICML; 8+15 pages; 20 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Graph generative modelling has become an essential task due to the wide range of applications in chemistry, biology, social networks, and knowledge representation. In this work, we propose a novel framework for generating graphs by adapting the Generator Matching (arXiv:2410.20587) paradigm to graph-structured data. We leverage the graph Laplacian and its associated heat kernel to define a contino...",
-        "key_contributions": [
-          "Graph generative modelling has become an essential task due to the wide range of applications in chemistry, biology, social networks, and knowledge representation.",
-          "In this work, we propose a novel framework for generating graphs by adapting the Generator Matching (arXiv:2410.",
-          "20587) paradigm to graph-structured data."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.03612v1.mp3"
-      }
-    },
-    {
-      "id": "2602.03696v1",
-      "title": "Conflict-Resolving and Sharpness-Aware Minimization for Generalized Knowledge Editing with Multiple Updates",
-      "authors": [
-        "Duy Nguyen",
-        "Hanqi Xiao",
-        "Archiki Prasad",
-        "Elias Stengel-Eskin",
-        "Hyunji Lee",
-        "Mohit Bansal"
-      ],
-      "abstract": "Large language models (LLMs) rely on internal knowledge to solve many downstream tasks, making it crucial to keep them up to date. Since full retraining is expensive, prior work has explored efficient alternatives such as model editing and parameter-efficient fine-tuning. However, these approaches often break down in practice due to poor generalization across inputs, limited stability, and knowledge conflict. To address these limitations, we propose the CoRSA (Conflict-Resolving and Sharpness-Aware Minimization) training framework, a parameter-efficient, holistic approach for knowledge editing with multiple updates. CoRSA tackles multiple challenges simultaneously: it improves generalization to different input forms and enhances stability across multiple updates by minimizing loss curvature, and resolves conflicts by maximizing the margin between new and prior knowledge. Across three widely used fact editing benchmarks, CoRSA achieves significant gains in generalization, outperforming baselines with average absolute improvements of 12.42% over LoRA and 10% over model editing methods. With multiple updates, it maintains high update efficacy while reducing catastrophic forgetting by 27.82% compared to LoRA. CoRSA also generalizes to the code domain, outperforming the strongest baseline by 5.48% Pass@5 in update efficacy.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.03696v1",
-        "pdf": "https://arxiv.org/pdf/2602.03696v1"
-      },
-      "arxiv_id": "2602.03696v1",
-      "comment": "22 pages, 8 figures. Code link: https://github.com/duykhuongnguyen/CoRSA",
+      "arxiv_id": "2602.04883v1",
+      "comment": "ByteDance Seed Tech Report; Page: https://par-protein.github.io/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -448,42 +247,102 @@
         }
       },
       "ai_summaries": {
-        "short": "Large language models (LLMs) rely on internal knowledge to solve many downstream tasks, making it crucial to keep them up to date. Since full retraining is expensive, prior work has explored efficient alternatives such as model editing and parameter-efficient fine-tuning. However, these approaches often break down in practice due to poor generalization across inputs, limited stability, and knowled...",
+        "short": "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction. Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales. To achieve this, PAR consists of three key components: (i) ...",
         "key_contributions": [
-          "Large language models (LLMs) rely on internal knowledge to solve many downstream tasks, making it crucial to keep them up to date.",
-          "Since full retraining is expensive, prior work has explored efficient alternatives such as model editing and parameter-efficient fine-tuning.",
-          "However, these approaches often break down in practice due to poor generalization across inputs, limited stability, and knowledge conflict."
+          "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction.",
+          "Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales.",
+          "To achieve this, PAR consists of three key components: (i) multi-scale downsampling operations that represent protein structures across multiple scales during training; (ii) an autoregressive transformer that encodes multi-scale information and produces conditional embeddings to guide structure generation; (iii) a flow-based backbone decoder that generates backbone atoms conditioned on these embeddings."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.03696v1.mp3"
+        "audio_url": "/audio/2602.04883v1.mp3"
       }
     },
     {
-      "id": "2602.03796v1",
-      "title": "3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation",
+      "id": "2602.04770v1",
+      "title": "Generative Modeling via Drifting",
       "authors": [
-        "Zhixue Fang",
-        "Xu He",
-        "Songlin Tang",
-        "Haoxian Zhang",
-        "Qingfeng Li",
-        "Xiaoqiang Liu",
-        "Pengfei Wan",
-        "Kun Gai"
+        "Mingyang Deng",
+        "He Li",
+        "Tianhong Li",
+        "Yilun Du",
+        "Kaiming He"
       ],
-      "abstract": "Existing methods for human motion control in video generation typically rely on either 2D poses or explicit 3D parametric models (e.g., SMPL) as control signals. However, 2D poses rigidly bind motion to the driving viewpoint, precluding novel-view synthesis. Explicit 3D models, though structurally informative, suffer from inherent inaccuracies (e.g., depth ambiguity and inaccurate dynamics) which, when used as a strong constraint, override the powerful intrinsic 3D awareness of large-scale video generators. In this work, we revisit motion control from a 3D-aware perspective, advocating for an implicit, view-agnostic motion representation that naturally aligns with the generator's spatial priors rather than depending on externally reconstructed constraints. We introduce 3DiMo, which jointly trains a motion encoder with a pretrained video generator to distill driving frames into compact, view-agnostic motion tokens, injected semantically via cross-attention. To foster 3D awareness, we train with view-rich supervision (i.e., single-view, multi-view, and moving-camera videos), forcing motion consistency across diverse viewpoints. Additionally, we use auxiliary geometric supervision that leverages SMPL only for early initialization and is annealed to zero, enabling the model to transition from external 3D guidance to learning genuine 3D spatial motion understanding from the data and the generator's priors. Experiments confirm that 3DiMo faithfully reproduces driving motions with flexible, text-driven camera control, significantly surpassing existing methods in both motion fidelity and visual quality.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
+      "abstract": "Generative modeling can be formulated as learning a mapping f such that its pushforward distribution matches the data distribution. The pushforward behavior can be carried out iteratively at inference time, for example in diffusion and flow-based models. In this paper, we propose a new paradigm called Drifting Models, which evolve the pushforward distribution during training and naturally admit one-step inference. We introduce a drifting field that governs the sample movement and achieves equilibrium when the distributions match. This leads to a training objective that allows the neural network optimizer to evolve the distribution. In experiments, our one-step generator achieves state-of-the-art results on ImageNet at 256 x 256 resolution, with an FID of 1.54 in latent space and 1.61 in pixel space. We hope that our work opens up new opportunities for high-quality one-step generation.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.04770v1",
+        "pdf": "https://arxiv.org/pdf/2602.04770v1"
+      },
+      "arxiv_id": "2602.04770v1",
+      "comment": "Project page: https://lambertae.github.io/projects/drifting/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Generative modeling can be formulated as learning a mapping f such that its pushforward distribution matches the data distribution. The pushforward behavior can be carried out iteratively at inference time, for example in diffusion and flow-based models. In this paper, we propose a new paradigm called Drifting Models, which evolve the pushforward distribution during training and naturally admit on...",
+        "key_contributions": [
+          "Generative modeling can be formulated as learning a mapping f such that its pushforward distribution matches the data distribution.",
+          "The pushforward behavior can be carried out iteratively at inference time, for example in diffusion and flow-based models.",
+          "In this paper, we propose a new paradigm called Drifting Models, which evolve the pushforward distribution during training and naturally admit one-step inference."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.04770v1.mp3"
+      }
+    },
+    {
+      "id": "2602.04876v1",
+      "title": "PerpetualWonder: Long-Horizon Action-Conditioned 4D Scene Generation",
+      "authors": [
+        "Jiahao Zhan",
+        "Zizhang Li",
+        "Hong-Xing Yu",
+        "Jiajun Wu"
+      ],
+      "abstract": "We introduce PerpetualWonder, a hybrid generative simulator that enables long-horizon, action-conditioned 4D scene generation from a single image. Current works fail at this task because their physical state is decoupled from their visual representation, which prevents generative refinements to update the underlying physics for subsequent interactions. PerpetualWonder solves this by introducing the first true closed-loop system. It features a novel unified representation that creates a bidirectional link between the physical state and visual primitives, allowing generative refinements to correct both the dynamics and appearance. It also introduces a robust update mechanism that gathers supervision from multiple viewpoints to resolve optimization ambiguity. Experiments demonstrate that from a single image, PerpetualWonder can successfully simulate complex, multi-step interactions from long-horizon actions, maintaining physical plausibility and visual consistency.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.03796v1",
-        "pdf": "https://arxiv.org/pdf/2602.03796v1"
+        "paper": "http://arxiv.org/abs/2602.04876v1",
+        "pdf": "https://arxiv.org/pdf/2602.04876v1"
       },
-      "arxiv_id": "2602.03796v1",
-      "comment": "Project Page: https://hjrphoebus.github.io/3DiMo/",
+      "arxiv_id": "2602.04876v1",
+      "comment": "Project website: https://johnzhan2023.github.io/PerpetualWonder/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8,
@@ -514,110 +373,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Existing methods for human motion control in video generation typically rely on either 2D poses or explicit 3D parametric models (e.g., SMPL) as control signals. However, 2D poses rigidly bind motion to the driving viewpoint, precluding novel-view synthesis. Explicit 3D models, though structurally informative, suffer from inherent inaccuracies (e.g., depth ambiguity and inaccurate dynamics) which,...",
+        "short": "We introduce PerpetualWonder, a hybrid generative simulator that enables long-horizon, action-conditioned 4D scene generation from a single image. Current works fail at this task because their physical state is decoupled from their visual representation, which prevents generative refinements to update the underlying physics for subsequent interactions. PerpetualWonder solves this by introducing th...",
         "key_contributions": [
-          "Existing methods for human motion control in video generation typically rely on either 2D poses or explicit 3D parametric models (e.",
-          "g.",
-          ", SMPL) as control signals."
+          "We introduce PerpetualWonder, a hybrid generative simulator that enables long-horizon, action-conditioned 4D scene generation from a single image.",
+          "Current works fail at this task because their physical state is decoupled from their visual representation, which prevents generative refinements to update the underlying physics for subsequent interactions.",
+          "PerpetualWonder solves this by introducing the first true closed-loop system."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.03796v1.mp3"
+        "audio_url": "/audio/2602.04876v1.mp3"
       }
     },
     {
-      "id": "2602.03847v1",
-      "title": "EventNeuS: 3D Mesh Reconstruction from a Single Event Camera",
+      "id": "2602.04863v1",
+      "title": "Subliminal Effects in Your Data: A General Mechanism via Log-Linearity",
       "authors": [
-        "Shreyas Sachan",
-        "Viktor Rudnev",
-        "Mohamed Elgharib",
-        "Christian Theobalt",
-        "Vladislav Golyanik"
+        "Ishaq Aden-Ali",
+        "Noah Golowich",
+        "Allen Liu",
+        "Abhishek Shetty",
+        "Ankur Moitra",
+        "Nika Haghtalab"
       ],
-      "abstract": "Event cameras offer a considerable alternative to RGB cameras in many scenarios. While there are recent works on event-based novel-view synthesis, dense 3D mesh reconstruction remains scarcely explored and existing event-based techniques are severely limited in their 3D reconstruction accuracy. To address this limitation, we present EventNeuS, a self-supervised neural model for learning 3D representations from monocular colour event streams. Our approach, for the first time, combines 3D signed distance function and density field learning with event-based supervision. Furthermore, we introduce spherical harmonics encodings into our model for enhanced handling of view-dependent effects. EventNeuS outperforms existing approaches by a significant margin, achieving 34% lower Chamfer distance and 31% lower mean absolute error on average compared to the best previous method.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
+      "abstract": "Training modern large language models (LLMs) has become a veritable smorgasbord of algorithms and datasets designed to elicit particular behaviors, making it critical to develop techniques to understand the effects of datasets on the model's properties. This is exacerbated by recent experiments that show datasets can transmit signals that are not directly observable from individual datapoints, posing a conceptual challenge for dataset-centric understandings of LLM training and suggesting a missing fundamental account of such phenomena. Towards understanding such effects, inspired by recent work on the linear structure of LLMs, we uncover a general mechanism through which hidden subtexts can arise in generic datasets.\n  We introduce Logit-Linear-Selection (LLS), a method that prescribes how to select subsets of a generic preference dataset to elicit a wide range of hidden effects. We apply LLS to discover subsets of real-world datasets so that models trained on them exhibit behaviors ranging from having specific preferences, to responding to prompts in a different language not present in the dataset, to taking on a different persona. Crucially, the effect persists for the selected subset, across models with varying architectures, supporting its generality and universality.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
       "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.03847v1",
-        "pdf": "https://arxiv.org/pdf/2602.03847v1"
-      },
-      "arxiv_id": "2602.03847v1",
-      "comment": "13 pages, 10 figures, 3 tables; project page: https://4dqv.mpi-inf.mpg.de/EventNeuS/",
-      "journal_ref": "International Conference on 3D Vision (3DV) 2026",
-      "has_code": false,
-      "relevance_score": 3.758474576271186,
-      "score_breakdown": {
-        "total_score": 3.76,
-        "field_match": {
-          "score": 1.27,
-          "matches": [
-            "self-supervised",
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Event cameras offer a considerable alternative to RGB cameras in many scenarios. While there are recent works on event-based novel-view synthesis, dense 3D mesh reconstruction remains scarcely explored and existing event-based techniques are severely limited in their 3D reconstruction accuracy. To address this limitation, we present EventNeuS, a self-supervised neural model for learning 3D represe...",
-        "key_contributions": [
-          "Event cameras offer a considerable alternative to RGB cameras in many scenarios.",
-          "While there are recent works on event-based novel-view synthesis, dense 3D mesh reconstruction remains scarcely explored and existing event-based techniques are severely limited in their 3D reconstruction accuracy.",
-          "To address this limitation, we present EventNeuS, a self-supervised neural model for learning 3D representations from monocular colour event streams."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.03847v1.mp3"
-      }
-    },
-    {
-      "id": "2602.03645v1",
-      "title": "Reinforcement Fine-Tuning for History-Aware Dense Retriever in RAG",
-      "authors": [
-        "Yicheng Zhang",
-        "Zhen Qin",
-        "Zhaomin Wu",
-        "Wenqi Zhang",
-        "Shuiguang Deng"
-      ],
-      "abstract": "Retrieval-augmented generation (RAG) enables large language models (LLMs) to produce evidence-based responses, and its performance hinges on the matching between the retriever and LLMs. Retriever optimization has emerged as an efficient alternative to fine-tuning LLMs. However, existing solutions suffer from objective mismatch between retriever optimization and the goal of RAG pipeline. Reinforcement learning (RL) provides a promising solution to address this limitation, yet applying RL to retriever optimization introduces two fundamental challenges: 1) the deterministic retrieval is incompatible with RL formulations, and 2) state aliasing arises from query-only retrieval in multi-hop reasoning. To address these challenges, we replace deterministic retrieval with stochastic sampling and formulate RAG as a Markov decision process, making retriever optimizable by RL. Further, we incorporate retrieval history into the state at each retrieval step to mitigate state aliasing. Extensive experiments across diverse RAG pipelines, datasets, and retriever scales demonstrate consistent improvements of our approach in RAG performance.",
-      "published": "2026-02-03",
-      "updated": "2026-02-03",
-      "categories": [
-        "cs.LG"
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "stat.ML"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.03645v1",
-        "pdf": "https://arxiv.org/pdf/2602.03645v1"
+        "paper": "http://arxiv.org/abs/2602.04863v1",
+        "pdf": "https://arxiv.org/pdf/2602.04863v1"
       },
-      "arxiv_id": "2602.03645v1",
-      "comment": "On going work. Codes are released at https://github.com/zyc140345/HARR",
+      "arxiv_id": "2602.04863v1",
+      "comment": "Code available at https://github.com/ishaqadenali/logit-linear-selection",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.7,
+      "relevance_score": 3.8,
       "score_breakdown": {
-        "total_score": 3.7,
+        "total_score": 3.8,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -638,19 +435,211 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Retrieval-augmented generation (RAG) enables large language models (LLMs) to produce evidence-based responses, and its performance hinges on the matching between the retriever and LLMs. Retriever optimization has emerged as an efficient alternative to fine-tuning LLMs. However, existing solutions suffer from objective mismatch between retriever optimization and the goal of RAG pipeline. Reinforcem...",
+        "short": "Training modern large language models (LLMs) has become a veritable smorgasbord of algorithms and datasets designed to elicit particular behaviors, making it critical to develop techniques to understand the effects of datasets on the model's properties. This is exacerbated by recent experiments that show datasets can transmit signals that are not directly observable from individual datapoints, pos...",
         "key_contributions": [
-          "Retrieval-augmented generation (RAG) enables large language models (LLMs) to produce evidence-based responses, and its performance hinges on the matching between the retriever and LLMs.",
-          "Retriever optimization has emerged as an efficient alternative to fine-tuning LLMs.",
-          "However, existing solutions suffer from objective mismatch between retriever optimization and the goal of RAG pipeline."
+          "Training modern large language models (LLMs) has become a veritable smorgasbord of algorithms and datasets designed to elicit particular behaviors, making it critical to develop techniques to understand the effects of datasets on the model's properties.",
+          "This is exacerbated by recent experiments that show datasets can transmit signals that are not directly observable from individual datapoints, posing a conceptual challenge for dataset-centric understandings of LLM training and suggesting a missing fundamental account of such phenomena.",
+          "Towards understanding such effects, inspired by recent work on the linear structure of LLMs, we uncover a general mechanism through which hidden subtexts can arise in generic datasets."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.03645v1.mp3"
+        "audio_url": "/audio/2602.04863v1.mp3"
+      }
+    },
+    {
+      "id": "2602.04814v1",
+      "title": "X2HDR: HDR Image Generation in a Perceptually Uniform Space",
+      "authors": [
+        "Ronghuan Wu",
+        "Wanchao Su",
+        "Kede Ma",
+        "Jing Liao",
+        "Rafał K. Mantiuk"
+      ],
+      "abstract": "High-dynamic-range (HDR) formats and displays are becoming increasingly prevalent, yet state-of-the-art image generators (e.g., Stable Diffusion and FLUX) typically remain limited to low-dynamic-range (LDR) output due to the lack of large-scale HDR training data. In this work, we show that existing pretrained diffusion models can be easily adapted to HDR generation without retraining from scratch. A key challenge is that HDR images are natively represented in linear RGB, whose intensity and color statistics differ substantially from those of sRGB-encoded LDR images. This gap, however, can be effectively bridged by converting HDR inputs into perceptually uniform encodings (e.g., using PU21 or PQ). Empirically, we find that LDR-pretrained variational autoencoders (VAEs) reconstruct PU21-encoded HDR inputs with fidelity comparable to LDR data, whereas linear RGB inputs cause severe degradations. Motivated by this finding, we describe an efficient adaptation strategy that freezes the VAE and finetunes only the denoiser via low-rank adaptation in a perceptually uniform space. This results in a unified computational method that supports both text-to-HDR synthesis and single-image RAW-to-HDR reconstruction. Experiments demonstrate that our perceptually encoded adaptation consistently improves perceptual fidelity, text-image alignment, and effective dynamic range, relative to previous techniques.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.04814v1",
+        "pdf": "https://arxiv.org/pdf/2602.04814v1"
+      },
+      "arxiv_id": "2602.04814v1",
+      "comment": "Project page: https://x2hdr.github.io/, Code: https://github.com/X2HDR/X2HDR",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "High-dynamic-range (HDR) formats and displays are becoming increasingly prevalent, yet state-of-the-art image generators (e.g., Stable Diffusion and FLUX) typically remain limited to low-dynamic-range (LDR) output due to the lack of large-scale HDR training data. In this work, we show that existing pretrained diffusion models can be easily adapted to HDR generation without retraining from scratch....",
+        "key_contributions": [
+          "High-dynamic-range (HDR) formats and displays are becoming increasingly prevalent, yet state-of-the-art image generators (e.",
+          "g.",
+          ", Stable Diffusion and FLUX) typically remain limited to low-dynamic-range (LDR) output due to the lack of large-scale HDR training data."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.04814v1.mp3"
+      }
+    },
+    {
+      "id": "2602.04851v1",
+      "title": "PDF-HR: Pose Distance Fields for Humanoid Robots",
+      "authors": [
+        "Yi Gu",
+        "Yukang Gao",
+        "Yangchen Zhou",
+        "Xingyu Chen",
+        "Yixiao Feng",
+        "Mingle Zhao",
+        "Yunyang Mo",
+        "Zhaorui Wang",
+        "Lixin Xu",
+        "Renjing Xu"
+      ],
+      "abstract": "Pose and motion priors play a crucial role in humanoid robotics. Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data. In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that represents the robot pose distribution as a continuous and differentiable manifold. Given an arbitrary pose, PDF-HR predicts its distance to a large corpus of retargeted robot poses, yielding a smooth measure of pose plausibility that is well suited for optimization and control. PDF-HR can be integrated as a reward shaping term, a regularizer, or a standalone plausibility scorer across diverse pipelines. We evaluate PDF-HR on various humanoid tasks, including single-trajectory motion tracking, general motion tracking, style-based motion mimicry, and general motion retargeting. Experiments show that this plug-and-play prior consistently and substantially strengthens strong baselines. Code and models will be released.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.04851v1",
+        "pdf": "https://arxiv.org/pdf/2602.04851v1"
+      },
+      "arxiv_id": "2602.04851v1",
+      "comment": "\\href{https://gaoyukang33.github.io/PDF-HR/}{Project page}",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.65,
+      "score_breakdown": {
+        "total_score": 3.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Pose and motion priors play a crucial role in humanoid robotics. Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data. In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that repres...",
+        "key_contributions": [
+          "Pose and motion priors play a crucial role in humanoid robotics.",
+          "Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data.",
+          "In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that represents the robot pose distribution as a continuous and differentiable manifold."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.04851v1.mp3"
+      }
+    },
+    {
+      "id": "2602.04784v1",
+      "title": "From independent patches to coordinated attention: Controlling information flow in vision transformers",
+      "authors": [
+        "Kieran A. Murphy"
+      ],
+      "abstract": "We make the information transmitted by attention an explicit, measurable quantity in vision transformers. By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global attention. On ImageNet-100, we characterize how classification behavior and information routing evolve across this spectrum, and provide initial insights into how global visual representations emerge from local patch processing by analyzing the first attention heads that transmit information. By biasing learning toward solutions with constrained internal communication, our approach yields models that are more tractable for mechanistic analysis and more amenable to control.",
+      "published": "2026-02-04",
+      "updated": "2026-02-04",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.04784v1",
+        "pdf": "https://arxiv.org/pdf/2602.04784v1"
+      },
+      "arxiv_id": "2602.04784v1",
+      "comment": "Code at https://github.com/murphyka/vit_ib",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.65,
+      "score_breakdown": {
+        "total_score": 3.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We make the information transmitted by attention an explicit, measurable quantity in vision transformers. By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global a...",
+        "key_contributions": [
+          "We make the information transmitted by attention an explicit, measurable quantity in vision transformers.",
+          "By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global attention.",
+          "On ImageNet-100, we characterize how classification behavior and information routing evolve across this spectrum, and provide initial insights into how global visual representations emerge from local patch processing by analyzing the first attention heads that transmit information."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.04784v1.mp3"
       }
     }
   ]

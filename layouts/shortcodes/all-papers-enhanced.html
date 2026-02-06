@@ -5,7 +5,7 @@
 {{- /* Collect all unique years */ -}}
 {{- $years := slice -}}
 {{- range $papers -}}
-  {{- $years = $years | append .year -}}
+{{- $years = $years | append .year -}}
 {{- end -}}
 {{- $years = $years | uniq | sort -}}
 {{- $years = sort $years "value" "desc" -}}
@@ -26,6 +26,9 @@
         <span id="selection-count">0 papers selected</span>
       </div>
       <div class="selection-actions">
+        <button id="select-all-btn-bar" class="action-btn" title="Select All Visible">
+          <span class="btn-icon">☑️</span> All
+        </button>
         <button id="share-btn" class="action-btn" title="Share Selection">
           <span class="btn-icon">🔗</span> Share
         </button>
@@ -48,13 +51,8 @@
   <!-- Search and Filter Bar -->
   <div class="filter-bar">
     <div class="search-container">
-      <input
-        type="text"
-        id="search-input"
-        class="search-input"
-        placeholder="🔍 Search papers by title, author, or abstract..."
-        autocomplete="off"
-      />
+      <input type="text" id="search-input" class="search-input"
+        placeholder="🔍 Search papers by title, author, or abstract..." autocomplete="off" />
       <button id="clear-search" class="clear-btn" style="display: none;">&times;</button>
     </div>
 
@@ -65,7 +63,7 @@
         <div class="filter-tags" id="year-filters">
           <button class="filter-tag" data-filter="all-years" data-state="active">All</button>
           {{- range $years -}}
-            <button class="filter-tag" data-filter="year-{{ . }}" data-year="{{ . }}">{{ . }}</button>
+          <button class="filter-tag" data-filter="year-{{ . }}" data-year="{{ . }}">{{ . }}</button>
           {{- end -}}
         </div>
       </div>
@@ -76,9 +74,10 @@
         <div class="filter-tags" id="category-filters">
           <button class="filter-tag" data-filter="all-categories" data-state="active">All</button>
           {{- range $categories -}}
-            <button class="filter-tag" data-filter="cat-{{ .id }}" data-category="{{ .id }}" style="--tag-color: {{ .color }}">
-              {{ .icon }} {{ .name }}
-            </button>
+          <button class="filter-tag" data-filter="cat-{{ .id }}" data-category="{{ .id }}"
+            style="--tag-color: {{ .color }}">
+            {{ .icon }} {{ .name }}
+          </button>
           {{- end -}}
         </div>
       </div>
@@ -105,7 +104,8 @@
         </select>
       </div>
 
-      <button id="papers-theme-toggle" class="reset-btn" type="button" title="Toggle theme (auto / light / dark)">🌓 Auto</button>
+      <button id="papers-theme-toggle" class="reset-btn" type="button" title="Toggle theme (auto / light / dark)">🌓
+        Auto</button>
       <button id="reset-filters" class="reset-btn">🔄 Reset All</button>
     </div>
   </div>
@@ -121,134 +121,129 @@
   <!-- Papers Container -->
   <div id="papers-container" class="papers-container">
     {{- range $index, $paper := $papers -}}
-      {{- $primaryCategory := index $paper.categories 0 -}}
-      {{- $categoryData := index (where $categories "id" $primaryCategory) 0 -}}
+    {{- $primaryCategory := index $paper.categories 0 -}}
+    {{- $categoryData := index (where $categories "id" $primaryCategory) 0 -}}
 
-      <article
-        class="paper-card"
-        data-paper-id="{{ $paper.id }}"
-        data-paper-index="{{ $index }}"
-        data-year="{{ $paper.year }}"
-        data-categories="{{ delimit $paper.categories "," }}"
-        data-starred="{{ $paper.starred }}"
-        data-has-code="{{ if $paper.links.code }}true{{ else }}false{{ end }}"
-        data-type="{{ $paper.type }}"
-        data-relevance="{{ $paper.relevance_score | default 0 }}"
-        data-citation="{{ $paper.citation_count | default 0 }}"
-        data-search-text="{{ lower (printf "%s %s %s" $paper.title (delimit $paper.authors " ") ($paper.abstract | default "")) }}"
-        data-paper-data='{{ dict "title" $paper.title "authors" $paper.authors "venue" ($paper.venue | default "") "year" $paper.year "arxiv_id" ($paper.arxiv_id | default "") "links" $paper.links | jsonify }}'
-      >
-        <!-- Selection Checkbox -->
-        <div class="paper-checkbox" style="display: none;">
-          <input type="checkbox" class="paper-select-cb" id="cb-{{ $paper.id }}">
-          <label for="cb-{{ $paper.id }}"></label>
+    <article class="paper-card" data-paper-id="{{ $paper.id }}" data-paper-index="{{ $index }}"
+      data-year="{{ $paper.year }}" data-categories="{{ delimit $paper.categories " ," }}"
+      data-starred="{{ $paper.starred }}" data-has-code="{{ if $paper.links.code }}true{{ else }}false{{ end }}"
+      data-type="{{ $paper.type }}" data-relevance="{{ $paper.relevance_score | default 0 }}"
+      data-citation="{{ $paper.citation_count | default 0 }}" data-search-text="{{ lower (printf " %s %s %s"
+      $paper.title (delimit $paper.authors " " ) ($paper.abstract | default "" )) }}"
+      data-paper-data='{{ dict "title" $paper.title "authors" $paper.authors "venue" ($paper.venue | default "") "year" $paper.year "arxiv_id" ($paper.arxiv_id | default "") "links" $paper.links | jsonify }}'>
+      <!-- Selection Checkbox -->
+      <div class="paper-checkbox" style="display: none;">
+        <input type="checkbox" class="paper-select-cb" id="cb-{{ $paper.id }}">
+        <label for="cb-{{ $paper.id }}"></label>
+      </div>
+
+      <div class="paper-card-inner">
+        <!-- Paper Header -->
+        <div class="paper-header">
+          <h3 class="paper-title">
+            <a href="{{ $paper.links.paper }}" target="_blank" rel="noopener">{{ $paper.title }}</a>
+            {{- if $paper.starred -}}<span class="star-badge">⭐</span>{{- end -}}
+          </h3>
+
+          <div class="paper-meta-row">
+            <div class="paper-badges">
+              {{- if $categoryData -}}
+              <span class="badge category-badge" style="background-color: {{ $categoryData.color }};">
+                {{ $categoryData.icon }} {{ $categoryData.name }}
+              </span>
+              {{- end -}}
+              {{- if $paper.venue -}}
+              <span class="badge venue-badge">{{ $paper.venue }} {{ $paper.year }}</span>
+              {{- end -}}
+              {{- if $paper.type -}}
+              <span class="badge type-badge">{{ $paper.type }}</span>
+              {{- end -}}
+              {{- if $paper.relevance_score -}}
+              <span class="badge relevance-badge">{{ printf "%.1f" $paper.relevance_score }}/10</span>
+              {{- end -}}
+
+              <!-- Notes badges (LocalStorage) -->
+              <span class="badge" data-notes-badge="{{ $paper.id }}" style="display:none;"></span>
+              <span class="badge" data-notes-rating="{{ $paper.id }}" style="display:none;"></span>
+            </div>
+          </div>
         </div>
 
-        <div class="paper-card-inner">
-          <!-- Paper Header -->
-          <div class="paper-header">
-            <h3 class="paper-title">
-              <a href="{{ $paper.links.paper }}" target="_blank" rel="noopener">{{ $paper.title }}</a>
-              {{- if $paper.starred -}}<span class="star-badge">⭐</span>{{- end -}}
-            </h3>
+        <!-- Authors -->
+        <div class="paper-authors">
+          {{- $authors := first 5 $paper.authors -}}
+          {{- delimit $authors ", " -}}
+          {{- if gt (len $paper.authors) 5 -}}, et al.{{- end -}}
+        </div>
 
-            <div class="paper-meta-row">
-              <div class="paper-badges">
-                {{- if $categoryData -}}
-                  <span class="badge category-badge" style="background-color: {{ $categoryData.color }};">
-                    {{ $categoryData.icon }} {{ $categoryData.name }}
-                  </span>
-                {{- end -}}
-                {{- if $paper.venue -}}
-                  <span class="badge venue-badge">{{ $paper.venue }} {{ $paper.year }}</span>
-                {{- end -}}
-                {{- if $paper.type -}}
-                  <span class="badge type-badge">{{ $paper.type }}</span>
-                {{- end -}}
-                {{- if $paper.relevance_score -}}
-                  <span class="badge relevance-badge">{{ printf "%.1f" $paper.relevance_score }}/10</span>
-                {{- end -}}
-
-                <!-- Notes badges (LocalStorage) -->
-                <span class="badge" data-notes-badge="{{ $paper.id }}" style="display:none;"></span>
-                <span class="badge" data-notes-rating="{{ $paper.id }}" style="display:none;"></span>
-              </div>
-            </div>
+        <!-- Abstract (collapsible) -->
+        <div class="paper-abstract-container">
+          {{- if $paper.ai_summary -}}
+          <p class="paper-abstract">{{ $paper.ai_summary | truncate 200 }}</p>
+          <button class="toggle-abstract-btn" data-expanded="false">
+            <span class="show-text">Show Full Summary</span>
+            <span class="hide-text" style="display: none;">Hide Summary</span>
+          </button>
+          <div class="paper-abstract-full" style="display: none;">
+            <p>{{ $paper.ai_summary }}</p>
           </div>
-
-          <!-- Authors -->
-          <div class="paper-authors">
-            {{- $authors := first 5 $paper.authors -}}
-            {{- delimit $authors ", " -}}
-            {{- if gt (len $paper.authors) 5 -}}, et al.{{- end -}}
+          {{- else if $paper.abstract -}}
+          <p class="paper-abstract">{{ $paper.abstract | truncate 200 }}</p>
+          <button class="toggle-abstract-btn" data-expanded="false">
+            <span class="show-text">Show Full Abstract</span>
+            <span class="hide-text" style="display: none;">Hide Abstract</span>
+          </button>
+          <div class="paper-abstract-full" style="display: none;">
+            <p>{{ $paper.abstract }}</p>
           </div>
-
-          <!-- Abstract (collapsible) -->
-          <div class="paper-abstract-container">
-            {{- if $paper.ai_summary -}}
-              <p class="paper-abstract">{{ $paper.ai_summary | truncate 200 }}</p>
-              <button class="toggle-abstract-btn" data-expanded="false">
-                <span class="show-text">Show Full Summary</span>
-                <span class="hide-text" style="display: none;">Hide Summary</span>
-              </button>
-              <div class="paper-abstract-full" style="display: none;">
-                <p>{{ $paper.ai_summary }}</p>
-              </div>
-            {{- else if $paper.abstract -}}
-              <p class="paper-abstract">{{ $paper.abstract | truncate 200 }}</p>
-              <button class="toggle-abstract-btn" data-expanded="false">
-                <span class="show-text">Show Full Abstract</span>
-                <span class="hide-text" style="display: none;">Hide Abstract</span>
-              </button>
-              <div class="paper-abstract-full" style="display: none;">
-                <p>{{ $paper.abstract }}</p>
-              </div>
-            {{- end -}}
-          </div>
-
-          <!-- Key Contributions -->
-          {{- if $paper.key_contributions -}}
-            <div class="paper-contributions">
-              <strong>Key Contributions:</strong>
-              <ul>
-                {{- range first 3 $paper.key_contributions -}}
-                  <li>{{ . | truncate 120 }}</li>
-                {{- end -}}
-              </ul>
-            </div>
           {{- end -}}
+        </div>
 
-          <!-- Links Footer -->
-          <div class="paper-footer">
-            <div class="paper-links">
-              {{- if $paper.links.paper -}}
-                <a href="{{ $paper.links.paper }}" class="paper-link" target="_blank" rel="noopener" title="View Paper">
-                  📄 Paper
-                </a>
-              {{- end -}}
-              {{- if $paper.links.code -}}
-                <a href="{{ $paper.links.code }}" class="paper-link" target="_blank" rel="noopener" title="View Code">
-                  💻 Code
-                </a>
-              {{- end -}}
-              {{- if $paper.links.project -}}
-                <a href="{{ $paper.links.project }}" class="paper-link" target="_blank" rel="noopener" title="Project Page">
-                  🌐 Project
-                </a>
-              {{- end -}}
-              {{- if $paper.links.video -}}
-                <a href="{{ $paper.links.video }}" class="paper-link" target="_blank" rel="noopener" title="Watch Video">
-                  🎥 Video
-                </a>
-              {{- end -}}
-            </div>
-            <div class="paper-date">
-              <button class="paper-link paper-notes-btn" type="button" data-paper-id="{{ $paper.id }}" title="Open notes">📝 Notes</button>
-              <span style="opacity:.7; margin-left: 10px;">Added {{ dateFormat "Jan 2, 2006" $paper.date_added }}</span>
-            </div>
+        <!-- Key Contributions -->
+        {{- if $paper.key_contributions -}}
+        <div class="paper-contributions">
+          <strong>Key Contributions:</strong>
+          <ul>
+            {{- range first 3 $paper.key_contributions -}}
+            <li>{{ . | truncate 120 }}</li>
+            {{- end -}}
+          </ul>
+        </div>
+        {{- end -}}
+
+        <!-- Links Footer -->
+        <div class="paper-footer">
+          <div class="paper-links">
+            {{- if $paper.links.paper -}}
+            <a href="{{ $paper.links.paper }}" class="paper-link" target="_blank" rel="noopener" title="View Paper">
+              📄 Paper
+            </a>
+            {{- end -}}
+            {{- if $paper.links.code -}}
+            <a href="{{ $paper.links.code }}" class="paper-link" target="_blank" rel="noopener" title="View Code">
+              💻 Code
+            </a>
+            {{- end -}}
+            {{- if $paper.links.project -}}
+            <a href="{{ $paper.links.project }}" class="paper-link" target="_blank" rel="noopener" title="Project Page">
+              🌐 Project
+            </a>
+            {{- end -}}
+            {{- if $paper.links.video -}}
+            <a href="{{ $paper.links.video }}" class="paper-link" target="_blank" rel="noopener" title="Watch Video">
+              🎥 Video
+            </a>
+            {{- end -}}
+            <button class="paper-link paper-notes-btn" type="button" data-paper-id="{{ $paper.id }}" title="Open notes">
+              📝 Notes
+            </button>
+          </div>
+          <div class="paper-date">
+            <span style="opacity:.7;">Added {{ dateFormat "Jan 2, 2006" $paper.date_added }}</span>
           </div>
         </div>
-      </article>
+      </div>
+    </article>
     {{- end -}}
   </div>
 
@@ -289,1454 +284,1469 @@
 </div>
 
 <style>
-/* Container */
-.papers-enhanced-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-}
+  /* Container */
+  .papers-enhanced-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+  }
 
-/* Scroll Progress Bar */
-.scroll-progress-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 6px;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.05);
-  z-index: 9999;
-  transition: width 0.2s;
-}
-
-.scroll-progress-container:hover {
-  width: 50px;
-}
-
-.scroll-progress-bar {
-  width: 100%;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-  transition: height 0.1s ease-out;
-  height: 0%;
-  position: relative;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-}
-
-.scroll-progress-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #667eea;
-  font-weight: 700;
-  font-size: 11px;
-  opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.scroll-progress-container:hover .scroll-progress-text {
-  opacity: 1;
-}
-
-@media (prefers-color-scheme: dark) {
+  /* Scroll Progress Bar */
   .scroll-progress-container {
-    background: rgba(255, 255, 255, 0.05);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 9999;
+    transition: width 0.2s;
+  }
+
+  .scroll-progress-container:hover {
+    width: 50px;
   }
 
   .scroll-progress-bar {
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+    width: 100%;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    transition: height 0.1s ease-out;
+    height: 0%;
+    position: relative;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
   }
 
   .scroll-progress-text {
-    color: #818cf8;
-  }
-}
-
-/* Selection Bar */
-.selection-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 15px 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #667eea;
+    font-weight: 700;
+    font-size: 11px;
     opacity: 0;
-    transform: translateY(-20px);
+    transition: opacity 0.2s;
+    pointer-events: none;
+    white-space: nowrap;
   }
-  to {
+
+  .scroll-progress-container:hover .scroll-progress-text {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.selection-bar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.selection-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 1.1em;
-}
-
-.selection-icon {
-  font-size: 1.3em;
-  background: rgba(255,255,255,0.2);
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.selection-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.action-btn, .action-btn-danger {
-  padding: 8px 16px;
-  border: 2px solid white;
-  background: rgba(255,255,255,0.1);
-  color: white;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9em;
-}
-
-.action-btn:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
-}
-
-.action-btn-danger {
-  border-color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.2);
-}
-
-.action-btn-danger:hover {
-  background: #ff6b6b;
-  transform: translateY(-2px);
-}
-
-.btn-icon {
-  font-size: 1.1em;
-}
-
-/* Filter Bar */
-.filter-bar {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  border: 1px solid #e0e0e0;
-}
-
-.search-container {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 14px 45px 14px 20px;
-  font-size: 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  transition: all 0.3s;
-  font-family: inherit;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.clear-btn {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #ddd;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-  color: #666;
-  transition: all 0.2s;
-}
-
-.clear-btn:hover {
-  background: #ccc;
-  color: #333;
-}
-
-.filter-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.filter-group {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.filter-label {
-  font-weight: 600;
-  color: #555;
-  min-width: 120px;
-  font-size: 14px;
-}
-
-.filter-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-.filter-tag {
-  padding: 8px 16px;
-  border: 2px solid #e0e0e0;
-  background: white;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: #555;
-}
-
-.filter-tag:hover {
-  border-color: #667eea;
-  background: #f5f7ff;
-}
-
-.filter-tag[data-state="active"] {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: #667eea;
-  color: white;
-}
-
-.sort-select {
-  padding: 8px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  background: white;
-  color: #555;
-  transition: all 0.2s;
-}
-
-.sort-select:focus {
-  outline: none;
-  border-color: #667eea;
-}
-
-.reset-btn {
-  padding: 10px 20px;
-  background: #f5f5f5;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: #666;
-  margin-left: auto;
-}
-
-.reset-btn:hover {
-  background: #e0e0e0;
-  border-color: #ccc;
-}
-
-/* Results Stats & Selection Toggle */
-.results-stats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  margin-bottom: 20px;
-  font-size: 15px;
-  color: #666;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.results-stats strong {
-  color: #667eea;
-  font-size: 18px;
-}
-
-.selection-mode-toggle {
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.95em;
-}
-
-.selection-mode-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.selection-mode-toggle.active {
-  background: #ff6b6b;
-}
-
-.toggle-icon {
-  font-size: 1.2em;
-}
-
-/* Papers Container */
-.papers-container {
-  display: grid;
-  gap: 16px;
-  margin-bottom: 40px;
-  max-width: 100%;
-}
-
-.paper-card {
-  background: white;
-  border-radius: 8px;
-  padding: 16px 28px;
-  border: 1px solid #e0e0e0;
-  transition: all 0.3s ease;
-  opacity: 1;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-}
-
-.paper-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-  border-color: #667eea;
-}
-
-.paper-card.hidden {
-  display: none;
-}
-
-.paper-card.selected {
-  border-color: #667eea;
-  border-width: 2px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-}
-
-/* Paper Checkbox */
-.paper-checkbox {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 10;
-}
-
-.paper-select-cb {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  accent-color: #667eea;
-}
-
-.paper-card-inner {
-  margin-left: 0;
-  transition: margin-left 0.3s;
-}
-
-.selection-mode .paper-card-inner {
-  margin-left: 35px;
-}
-
-.paper-title {
-  font-size: 1.2em;
-  margin: 0 0 8px 0;
-  line-height: 1.3;
-}
-
-.paper-title a {
-  color: #2d3748;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.paper-title a:hover {
-  color: #667eea;
-}
-
-.star-badge {
-  margin-left: 6px;
-  font-size: 0.75em;
-}
-
-.paper-meta-row {
-  margin-bottom: 8px;
-}
-
-.paper-badges {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.75em;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.category-badge {
-  color: white;
-}
-
-.venue-badge {
-  background: #e3f2fd;
-  color: #1976d2;
-}
-
-.type-badge {
-  background: #f3e5f5;
-  color: #7b1fa2;
-}
-
-.relevance-badge {
-  background: #e8f5e9;
-  color: #2e7d32;
-}
-
-.paper-authors {
-  color: #666;
-  font-size: 0.9em;
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.paper-abstract-container {
-  margin: 10px 0;
-}
-
-.paper-abstract {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 6px;
-  font-size: 0.95em;
-}
-
-.toggle-abstract-btn {
-  background: none;
-  border: none;
-  color: #667eea;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0;
-  font-size: 0.9em;
-  transition: color 0.2s;
-}
-
-.toggle-abstract-btn:hover {
-  color: #764ba2;
-  text-decoration: underline;
-}
-
-.paper-abstract-full {
-  margin-top: 10px;
-  padding: 15px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 3px solid #667eea;
-}
-
-.paper-abstract-full p {
-  color: #555;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.paper-contributions {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 15px 0;
-}
-
-.paper-contributions strong {
-  color: #667eea;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.paper-contributions ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.paper-contributions li {
-  margin: 6px 0;
-  color: #555;
-  line-height: 1.5;
-}
-
-.paper-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.paper-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.paper-link {
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.85em;
-  font-weight: 600;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.paper-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.paper-date {
-  font-size: 0.85em;
-  color: #999;
-}
-
-/* No Results */
-.no-results {
-  text-align: center;
-  padding: 80px 20px;
-  background: #fafafa;
-  border-radius: 12px;
-}
-
-.no-results-content h3 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.no-results-content p {
-  color: #999;
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-.clear-all-btn {
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 1em;
-  transition: all 0.3s;
-}
-
-.clear-all-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-}
-
-/* Floating Action Buttons */
-.floating-actions {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1000;
-}
-
-.fab {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.fab.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.fab:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-.fab.secondary {
-  background: #4ecdc4;
-  font-size: 20px;
-}
-
-/* Share Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 2000;
-  display: none; /* Hidden by default */
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.2s;
-}
-
-.modal.show {
-  display: flex; /* Show when .show class is added */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.modal-content {
-  background: white;
-  border-radius: 16px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 90vh;
-  overflow: auto;
-  box-shadow: 0 12px 48px rgba(0,0,0,0.3);
-  animation: slideUp 0.3s;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.modal-header h3 {
-  margin: 0;
-  color: #2d3748;
-  font-size: 1.5em;
-}
-
-.modal-close {
-  background: none;
-  border: none;
-  font-size: 32px;
-  cursor: pointer;
-  color: #999;
-  transition: color 0.2s;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  line-height: 1;
-}
-
-.modal-close:hover {
-  color: #333;
-}
-
-.modal-body {
-  padding: 24px;
-}
-
-.share-link-container {
-  display: flex;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.share-link-input {
-  flex: 1;
-  padding: 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-family: monospace;
-  font-size: 0.9em;
-  background: #f8f9fa;
-}
-
-.copy-btn {
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.copy-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
-
-.copy-btn.copied {
-  background: #4ecdc4;
-}
-
-.share-hint {
-  color: #999;
-  font-size: 0.9em;
-  margin-top: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .filter-group {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
-  .filter-label {
-    min-width: auto;
+  @media (prefers-color-scheme: dark) {
+    .scroll-progress-container {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .scroll-progress-bar {
+      box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+    }
+
+    .scroll-progress-text {
+      color: #818cf8;
+    }
   }
 
-  .filter-tags {
-    width: 100%;
+  /* Selection Bar */
+  .selection-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    animation: slideDown 0.3s ease;
   }
 
-  .paper-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
 
-  .floating-actions {
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .fab {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .selection-bar-content {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
-  .results-stats {
-    flex-direction: column;
-    align-items: flex-start;
+  .selection-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.1em;
   }
-}
+
+  .selection-icon {
+    font-size: 1.3em;
+    background: rgba(255, 255, 255, 0.2);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .selection-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .action-btn,
+  .action-btn-danger {
+    padding: 8px 16px;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9em;
+  }
+
+  .action-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .action-btn-danger {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.2);
+  }
+
+  .action-btn-danger:hover {
+    background: #ff6b6b;
+    transform: translateY(-2px);
+  }
+
+  .btn-icon {
+    font-size: 1.1em;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+  }
+
+  .search-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 14px 45px 14px 20px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+
+  .clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ddd;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    color: #666;
+    transition: all 0.2s;
+  }
+
+  .clear-btn:hover {
+    background: #ccc;
+    color: #333;
+  }
+
+  .filter-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-weight: 600;
+    color: #555;
+    min-width: 120px;
+    font-size: 14px;
+  }
+
+  .filter-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .filter-tag {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #555;
+  }
+
+  .filter-tag:hover {
+    border-color: #667eea;
+    background: #f5f7ff;
+  }
+
+  .filter-tag[data-state="active"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #667eea;
+    color: white;
+  }
+
+  .sort-select {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background: white;
+    color: #555;
+    transition: all 0.2s;
+  }
+
+  .sort-select:focus {
+    outline: none;
+    border-color: #667eea;
+  }
+
+  .reset-btn {
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #666;
+    margin-left: auto;
+  }
+
+  .reset-btn:hover {
+    background: #e0e0e0;
+    border-color: #ccc;
+  }
+
+  /* Results Stats & Selection Toggle */
+  .results-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #666;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .results-stats strong {
+    color: #667eea;
+    font-size: 18px;
+  }
+
+  .selection-mode-toggle {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
+  }
+
+  .selection-mode-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  .selection-mode-toggle.active {
+    background: #ff6b6b;
+  }
+
+  .toggle-icon {
+    font-size: 1.2em;
+  }
+
+  /* Papers Container */
+  .papers-container {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+
+  .paper-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px 28px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    opacity: 1;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .paper-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: #667eea;
+  }
+
+  .paper-card.hidden {
+    display: none;
+  }
+
+  .paper-card.selected {
+    border-color: #667eea;
+    border-width: 2px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  }
+
+  /* Paper Checkbox */
+  .paper-checkbox {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+  }
+
+  .paper-select-cb {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: #667eea;
+  }
+
+  .paper-card-inner {
+    margin-left: 0;
+    transition: margin-left 0.3s;
+  }
+
+  .selection-mode .paper-card-inner {
+    margin-left: 35px;
+  }
+
+  .paper-title {
+    font-size: 1.2em;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .paper-title a {
+    color: #2d3748;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .paper-title a:hover {
+    color: #667eea;
+  }
+
+  .star-badge {
+    margin-left: 6px;
+    font-size: 0.75em;
+  }
+
+  .paper-meta-row {
+    margin-bottom: 8px;
+  }
+
+  .paper-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .category-badge {
+    color: white;
+  }
+
+  .venue-badge {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+
+  .type-badge {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+
+  .relevance-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .paper-authors {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .paper-abstract-container {
+    margin: 10px 0;
+  }
+
+  .paper-abstract {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    font-size: 0.95em;
+  }
+
+  .toggle-abstract-btn {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9em;
+    transition: color 0.2s;
+  }
+
+  .toggle-abstract-btn:hover {
+    color: #764ba2;
+    text-decoration: underline;
+  }
+
+  .paper-abstract-full {
+    margin-top: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+  }
+
+  .paper-abstract-full p {
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .paper-contributions {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+  }
+
+  .paper-contributions strong {
+    color: #667eea;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .paper-contributions ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .paper-contributions li {
+    margin: 6px 0;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .paper-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .paper-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .paper-link {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .paper-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  .paper-date {
+    font-size: 0.85em;
+    color: #999;
+  }
+
+  /* No Results */
+  .no-results {
+    text-align: center;
+    padding: 80px 20px;
+    background: #fafafa;
+    border-radius: 12px;
+  }
+
+  .no-results-content h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #666;
+  }
+
+  .no-results-content p {
+    color: #999;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .clear-all-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+  }
+
+  .clear-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  }
+
+  /* Floating Action Buttons */
+  .floating-actions {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+  }
+
+  .fab {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .fab.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .fab:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .fab.secondary {
+    background: #4ecdc4;
+    font-size: 20px;
+  }
+
+  /* Share Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: none;
+    /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s;
+  }
+
+  .modal.show {
+    display: flex;
+    /* Show when .show class is added */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .modal-header h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 1.5em;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+  }
+
+  .modal-close:hover {
+    color: #333;
+  }
+
+  .modal-body {
+    padding: 24px;
+  }
+
+  .share-link-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .share-link-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.9em;
+    background: #f8f9fa;
+  }
+
+  .copy-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  .copy-btn.copied {
+    background: #4ecdc4;
+  }
+
+  .share-hint {
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .filter-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .filter-label {
+      min-width: auto;
+    }
+
+    .filter-tags {
+      width: 100%;
+    }
+
+    .paper-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .floating-actions {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .fab {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+
+    .selection-bar-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .results-stats {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 </style>
 
 <script src="/js/notes-manager.js" defer></script>
 <script src="/js/theme-toggle.js" defer></script>
 
 <script>
-(function() {
-  'use strict';
+  (function () {
+    'use strict';
 
-  const app = {
-    papers: null,
-    allPapersData: [],
-    selectedPapers: new Set(),
-    selectionMode: false,
-    filters: {
-      search: '',
-      years: new Set(),
-      categories: new Set(),
-      quick: new Set(),
-      allYears: true,
-      allCategories: true
-    },
-    sortBy: 'date-desc',
+    const app = {
+      papers: null,
+      allPapersData: [],
+      selectedPapers: new Set(),
+      selectionMode: false,
+      filters: {
+        search: '',
+        years: new Set(),
+        categories: new Set(),
+        quick: new Set(),
+        allYears: true,
+        allCategories: true
+      },
+      sortBy: 'date-desc',
 
-    init() {
-      this.papers = document.querySelectorAll('.paper-card');
-      this.collectPapersData();
-      this.bindEvents();
-      this.loadSelectionFromURL();
-      this.updateResults();
-
-      // Notes system (Phase 1: LocalStorage)
-      if (window.PaperNotes && typeof window.PaperNotes.init === 'function') {
-        window.PaperNotes.init();
-      }
-    },
-
-    collectPapersData() {
-      this.papers.forEach(paper => {
-        try {
-          const dataStr = paper.dataset.paperData;
-          if (dataStr) {
-            const data = JSON.parse(dataStr);
-            data.id = paper.dataset.paperId;
-            this.allPapersData.push(data);
-          }
-        } catch (e) {
-          console.error('Failed to parse paper data:', e);
-        }
-      });
-    },
-
-    bindEvents() {
-      // Helper function to safely add event listener
-      const safeAddListener = (id, event, handler) => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.addEventListener(event, handler);
-        }
-      };
-
-      // Search
-      const searchInput = document.getElementById('search-input');
-      const clearSearch = document.getElementById('clear-search');
-
-      if (searchInput && clearSearch) {
-        searchInput.addEventListener('input', (e) => {
-          this.filters.search = e.target.value.toLowerCase();
-          clearSearch.style.display = e.target.value ? 'block' : 'none';
-          this.updateResults();
-        });
-
-        clearSearch.addEventListener('click', () => {
-          searchInput.value = '';
-          this.filters.search = '';
-          clearSearch.style.display = 'none';
-          this.updateResults();
-        });
-      }
-
-      // Year filters
-      safeAddListener('year-filters', 'click', (e) => {
-        if (e.target.classList.contains('filter-tag')) {
-          this.handleYearFilter(e.target);
-        }
-      });
-
-      // Category filters
-      safeAddListener('category-filters', 'click', (e) => {
-        if (e.target.classList.contains('filter-tag')) {
-          this.handleCategoryFilter(e.target);
-        }
-      });
-
-      // Quick filters
-      safeAddListener('quick-filters', 'click', (e) => {
-        if (e.target.classList.contains('filter-tag')) {
-          this.handleQuickFilter(e.target);
-        }
-      });
-
-      // Sort
-      safeAddListener('sort-select', 'change', (e) => {
-        this.sortBy = e.target.value;
+      init() {
+        this.papers = document.querySelectorAll('.paper-card');
+        this.collectPapersData();
+        this.bindEvents();
+        this.loadSelectionFromURL();
         this.updateResults();
-      });
 
-      // Reset
-      safeAddListener('reset-filters', 'click', () => {
-        this.resetFilters();
-      });
+        // Notes system (Phase 1: LocalStorage)
+        if (window.PaperNotes && typeof window.PaperNotes.init === 'function') {
+          window.PaperNotes.init();
+        }
+      },
 
-      safeAddListener('clear-all-btn', 'click', () => {
-        this.resetFilters();
-      });
-
-      // Abstract toggle
-      document.querySelectorAll('.toggle-abstract-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const expanded = btn.dataset.expanded === 'true';
-          const fullAbstract = btn.nextElementSibling;
-          const showText = btn.querySelector('.show-text');
-          const hideText = btn.querySelector('.hide-text');
-
-          if (fullAbstract && showText && hideText) {
-            if (expanded) {
-              fullAbstract.style.display = 'none';
-              showText.style.display = 'inline';
-              hideText.style.display = 'none';
-              btn.dataset.expanded = 'false';
-            } else {
-              fullAbstract.style.display = 'block';
-              showText.style.display = 'none';
-              hideText.style.display = 'inline';
-              btn.dataset.expanded = 'true';
+      collectPapersData() {
+        this.papers.forEach(paper => {
+          try {
+            const dataStr = paper.dataset.paperData;
+            if (dataStr) {
+              const data = JSON.parse(dataStr);
+              data.id = paper.dataset.paperId;
+              this.allPapersData.push(data);
             }
+          } catch (e) {
+            console.error('Failed to parse paper data:', e);
           }
         });
-      });
+      },
 
-      // Selection mode toggle
-      safeAddListener('toggle-selection-mode', 'click', () => {
-        this.toggleSelectionMode();
-      });
-
-      // Paper selection
-      document.querySelectorAll('.paper-select-cb').forEach(cb => {
-        cb.addEventListener('change', (e) => {
-          const card = e.target.closest('.paper-card');
-          if (card) {
-            const paperId = card.dataset.paperId;
-            if (e.target.checked) {
-              this.selectedPapers.add(paperId);
-            } else {
-              this.selectedPapers.delete(paperId);
-            }
-            this.updateSelectionUI();
+      bindEvents() {
+        // Helper function to safely add event listener
+        const safeAddListener = (id, event, handler) => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.addEventListener(event, handler);
           }
-        });
-      });
-
-      // Selection actions
-      safeAddListener('share-btn', 'click', () => this.shareSelection());
-      safeAddListener('export-bibtex-btn', 'click', () => this.exportBibTeX());
-      safeAddListener('export-json-btn', 'click', () => this.exportJSON());
-      safeAddListener('export-markdown-btn', 'click', () => this.exportMarkdown());
-      safeAddListener('clear-selection-btn', 'click', () => this.clearSelection());
-
-      // Select all visible
-      safeAddListener('select-all-visible', 'click', () => {
-        this.selectAllVisible();
-      });
-
-      // Share modal
-      safeAddListener('close-share-modal', 'click', () => {
-        const modal = document.getElementById('share-modal');
-        if (modal) modal.classList.remove('show');
-      });
-
-      safeAddListener('copy-share-link', 'click', () => {
-        this.copyShareLink();
-      });
-
-      // Close modal on outside click
-      const shareModal = document.getElementById('share-modal');
-      if (shareModal) {
-        shareModal.addEventListener('click', (e) => {
-          if (e.target.id === 'share-modal') {
-            shareModal.classList.remove('show');
-          }
-        });
-      }
-
-      // Back to top
-      const backToTop = document.getElementById('back-to-top');
-      if (backToTop) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-          } else {
-            backToTop.classList.remove('show');
-          }
-        });
-
-        backToTop.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      // Scroll progress bar
-      const progressBar = document.getElementById('scroll-progress-bar');
-      const progressText = document.getElementById('scroll-progress-text');
-
-      if (progressBar && progressText) {
-        const updateScrollProgress = () => {
-          const windowHeight = window.innerHeight;
-          const documentHeight = document.documentElement.scrollHeight;
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-          const percentage = Math.min(100, Math.max(0, scrollPercentage));
-
-          progressBar.style.height = percentage + '%';
-          progressText.textContent = Math.round(percentage) + '%';
         };
 
-        window.addEventListener('scroll', updateScrollProgress);
-        window.addEventListener('resize', updateScrollProgress);
-        updateScrollProgress(); // Initial call
-      }
-    },
+        // Search
+        const searchInput = document.getElementById('search-input');
+        const clearSearch = document.getElementById('clear-search');
 
-    toggleSelectionMode() {
-      this.selectionMode = !this.selectionMode;
-      const btn = document.getElementById('toggle-selection-mode');
-      const container = document.getElementById('papers-app');
-      const selectAllBtn = document.getElementById('select-all-visible');
+        if (searchInput && clearSearch) {
+          searchInput.addEventListener('input', (e) => {
+            this.filters.search = e.target.value.toLowerCase();
+            clearSearch.style.display = e.target.value ? 'block' : 'none';
+            this.updateResults();
+          });
 
-      if (!btn || !container) return;
+          clearSearch.addEventListener('click', () => {
+            searchInput.value = '';
+            this.filters.search = '';
+            clearSearch.style.display = 'none';
+            this.updateResults();
+          });
+        }
 
-      if (this.selectionMode) {
-        btn.classList.add('active');
-        btn.innerHTML = '<span class="toggle-icon">✕</span> Exit Selection';
-        container.classList.add('selection-mode');
-        if (selectAllBtn) selectAllBtn.style.display = 'flex';
-
-        // Show checkboxes
-        document.querySelectorAll('.paper-checkbox').forEach(cb => {
-          cb.style.display = 'block';
-        });
-      } else {
-        btn.classList.remove('active');
-        btn.innerHTML = '<span class="toggle-icon">☑️</span> Selection Mode';
-        container.classList.remove('selection-mode');
-        if (selectAllBtn) selectAllBtn.style.display = 'none';
-
-        // Hide checkboxes
-        document.querySelectorAll('.paper-checkbox').forEach(cb => {
-          cb.style.display = 'none';
-        });
-
-        this.clearSelection();
-      }
-    },
-
-    selectAllVisible() {
-      const visiblePapers = Array.from(this.papers).filter(p => !p.classList.contains('hidden'));
-      visiblePapers.forEach(paper => {
-        const paperId = paper.dataset.paperId;
-        this.selectedPapers.add(paperId);
-        const cb = paper.querySelector('.paper-select-cb');
-        if (cb) cb.checked = true;
-      });
-      this.updateSelectionUI();
-    },
-
-    clearSelection() {
-      this.selectedPapers.clear();
-      document.querySelectorAll('.paper-select-cb').forEach(cb => {
-        cb.checked = false;
-      });
-      document.querySelectorAll('.paper-card').forEach(card => {
-        card.classList.remove('selected');
-      });
-      this.updateSelectionUI();
-    },
-
-    updateSelectionUI() {
-      const count = this.selectedPapers.size;
-      const selectionBar = document.getElementById('selection-bar');
-      const countSpan = document.getElementById('selection-count');
-
-      if (selectionBar) {
-        if (count > 0) {
-          selectionBar.style.display = 'block';
-          if (countSpan) {
-            countSpan.textContent = `${count} paper${count !== 1 ? 's' : ''} selected`;
+        // Year filters
+        safeAddListener('year-filters', 'click', (e) => {
+          if (e.target.classList.contains('filter-tag')) {
+            this.handleYearFilter(e.target);
           }
-        } else {
-          selectionBar.style.display = 'none';
-        }
-      }
+        });
 
-      // Update card styling
-      this.papers.forEach(paper => {
-        const paperId = paper.dataset.paperId;
-        if (this.selectedPapers.has(paperId)) {
-          paper.classList.add('selected');
-        } else {
-          paper.classList.remove('selected');
-        }
-      });
-    },
+        // Category filters
+        safeAddListener('category-filters', 'click', (e) => {
+          if (e.target.classList.contains('filter-tag')) {
+            this.handleCategoryFilter(e.target);
+          }
+        });
 
-    shareSelection() {
-      if (this.selectedPapers.size === 0) {
-        alert('Please select at least one paper');
-        return;
-      }
+        // Quick filters
+        safeAddListener('quick-filters', 'click', (e) => {
+          if (e.target.classList.contains('filter-tag')) {
+            this.handleQuickFilter(e.target);
+          }
+        });
 
-      const ids = Array.from(this.selectedPapers).join(',');
-      const baseUrl = window.location.href.split('#')[0].split('?')[0];
-      const shareUrl = `${baseUrl}#selected=${ids}`;
+        // Sort
+        safeAddListener('sort-select', 'change', (e) => {
+          this.sortBy = e.target.value;
+          this.updateResults();
+        });
 
-      const shareLinkInput = document.getElementById('share-link-input');
-      const shareModal = document.getElementById('share-modal');
+        // Reset
+        safeAddListener('reset-filters', 'click', () => {
+          this.resetFilters();
+        });
 
-      if (shareLinkInput) shareLinkInput.value = shareUrl;
-      if (shareModal) shareModal.classList.add('show');
-    },
+        safeAddListener('clear-all-btn', 'click', () => {
+          this.resetFilters();
+        });
 
-    copyShareLink() {
-      const input = document.getElementById('share-link-input');
-      if (!input) return;
+        // Abstract toggle
+        document.querySelectorAll('.toggle-abstract-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const expanded = btn.dataset.expanded === 'true';
+            const fullAbstract = btn.nextElementSibling;
+            const showText = btn.querySelector('.show-text');
+            const hideText = btn.querySelector('.hide-text');
 
-      input.select();
-      document.execCommand('copy');
+            if (fullAbstract && showText && hideText) {
+              if (expanded) {
+                fullAbstract.style.display = 'none';
+                showText.style.display = 'inline';
+                hideText.style.display = 'none';
+                btn.dataset.expanded = 'false';
+              } else {
+                fullAbstract.style.display = 'block';
+                showText.style.display = 'none';
+                hideText.style.display = 'inline';
+                btn.dataset.expanded = 'true';
+              }
+            }
+          });
+        });
 
-      const btn = document.getElementById('copy-share-link');
-      if (btn) {
-        btn.classList.add('copied');
-        btn.textContent = '✓ Copied!';
-
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.innerHTML = '📋 Copy';
-        }, 2000);
-      }
-    },
-
-    loadSelectionFromURL() {
-      const hash = window.location.hash;
-      if (hash.startsWith('#selected=')) {
-        const ids = hash.substring(10).split(',');
-        ids.forEach(id => this.selectedPapers.add(id));
-
-        if (this.selectedPapers.size > 0 && !this.selectionMode) {
+        // Selection mode toggle
+        safeAddListener('toggle-selection-mode', 'click', () => {
           this.toggleSelectionMode();
+        });
+
+        // Paper selection
+        document.querySelectorAll('.paper-select-cb').forEach(cb => {
+          cb.addEventListener('change', (e) => {
+            const card = e.target.closest('.paper-card');
+            if (card) {
+              const paperId = card.dataset.paperId;
+              if (e.target.checked) {
+                this.selectedPapers.add(paperId);
+              } else {
+                this.selectedPapers.delete(paperId);
+              }
+              this.updateSelectionUI();
+            }
+          });
+        });
+
+        // Selection actions
+        safeAddListener('share-btn', 'click', () => this.shareSelection());
+        safeAddListener('export-bibtex-btn', 'click', () => this.exportBibTeX());
+        safeAddListener('export-json-btn', 'click', () => this.exportJSON());
+        safeAddListener('export-markdown-btn', 'click', () => this.exportMarkdown());
+        safeAddListener('clear-selection-btn', 'click', () => this.clearSelection());
+
+        // Select all visible (Bar button)
+        safeAddListener('select-all-btn-bar', 'click', () => {
+          this.selectAllVisible();
+        });
+
+        // Select all visible
+        safeAddListener('select-all-visible', 'click', () => {
+          this.selectAllVisible();
+        });
+
+        // Share modal
+        safeAddListener('close-share-modal', 'click', () => {
+          const modal = document.getElementById('share-modal');
+          if (modal) modal.classList.remove('show');
+        });
+
+        safeAddListener('copy-share-link', 'click', () => {
+          this.copyShareLink();
+        });
+
+        // Close modal on outside click
+        const shareModal = document.getElementById('share-modal');
+        if (shareModal) {
+          shareModal.addEventListener('click', (e) => {
+            if (e.target.id === 'share-modal') {
+              shareModal.classList.remove('show');
+            }
+          });
         }
 
+        // Back to top
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+              backToTop.classList.add('show');
+            } else {
+              backToTop.classList.remove('show');
+            }
+          });
+
+          backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+
+        // Scroll progress bar
+        const progressBar = document.getElementById('scroll-progress-bar');
+        const progressText = document.getElementById('scroll-progress-text');
+
+        if (progressBar && progressText) {
+          const updateScrollProgress = () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            const percentage = Math.min(100, Math.max(0, scrollPercentage));
+
+            progressBar.style.height = percentage + '%';
+            progressText.textContent = Math.round(percentage) + '%';
+          };
+
+          window.addEventListener('scroll', updateScrollProgress);
+          window.addEventListener('resize', updateScrollProgress);
+          updateScrollProgress(); // Initial call
+        }
+      },
+
+      toggleSelectionMode() {
+        this.selectionMode = !this.selectionMode;
+        const btn = document.getElementById('toggle-selection-mode');
+        const container = document.getElementById('papers-app');
+        const selectAllBtn = document.getElementById('select-all-visible');
+
+        if (!btn || !container) return;
+
+        if (this.selectionMode) {
+          btn.classList.add('active');
+          btn.innerHTML = '<span class="toggle-icon">✕</span> Exit Selection';
+          container.classList.add('selection-mode');
+          if (selectAllBtn) selectAllBtn.style.display = 'flex';
+
+          // Show checkboxes
+          document.querySelectorAll('.paper-checkbox').forEach(cb => {
+            cb.style.display = 'block';
+          });
+        } else {
+          btn.classList.remove('active');
+          btn.innerHTML = '<span class="toggle-icon">☑️</span> Selection Mode';
+          container.classList.remove('selection-mode');
+          if (selectAllBtn) selectAllBtn.style.display = 'none';
+
+          // Hide checkboxes
+          document.querySelectorAll('.paper-checkbox').forEach(cb => {
+            cb.style.display = 'none';
+          });
+
+          this.clearSelection();
+        }
+      },
+
+      selectAllVisible() {
+        const visiblePapers = Array.from(this.papers).filter(p => !p.classList.contains('hidden'));
+        visiblePapers.forEach(paper => {
+          const paperId = paper.dataset.paperId;
+          this.selectedPapers.add(paperId);
+          const cb = paper.querySelector('.paper-select-cb');
+          if (cb) cb.checked = true;
+        });
         this.updateSelectionUI();
-      }
-    },
+      },
 
-    exportBibTeX() {
-      if (this.selectedPapers.size === 0) {
-        alert('Please select at least one paper');
-        return;
-      }
-
-      let bibtex = '';
-      this.selectedPapers.forEach(paperId => {
-        const paperData = this.allPapersData.find(p => p.id === paperId);
-        if (paperData) {
-          const key = `${paperData.authors[0]?.split(' ').pop() || 'Unknown'}${paperData.year}`;
-          bibtex += `@article{${key},\n`;
-          bibtex += `  title={${paperData.title}},\n`;
-          bibtex += `  author={${paperData.authors.join(' and ')}},\n`;
-          bibtex += `  year={${paperData.year}},\n`;
-          if (paperData.venue) bibtex += `  journal={${paperData.venue}},\n`;
-          if (paperData.arxiv_id) bibtex += `  eprint={${paperData.arxiv_id}},\n`;
-          if (paperData.links?.paper) bibtex += `  url={${paperData.links.paper}},\n`;
-          bibtex += `}\n\n`;
-        }
-      });
-
-      this.downloadFile(bibtex, 'papers.bib', 'text/plain');
-    },
-
-    exportJSON() {
-      if (this.selectedPapers.size === 0) {
-        alert('Please select at least one paper');
-        return;
-      }
-
-      const selectedData = this.allPapersData.filter(p => this.selectedPapers.has(p.id));
-      const json = JSON.stringify(selectedData, null, 2);
-      this.downloadFile(json, 'papers.json', 'application/json');
-    },
-
-    exportMarkdown() {
-      if (this.selectedPapers.size === 0) {
-        alert('Please select at least one paper');
-        return;
-      }
-
-      let markdown = '# Selected Papers\n\n';
-      this.selectedPapers.forEach(paperId => {
-        const paperData = this.allPapersData.find(p => p.id === paperId);
-        if (paperData) {
-          markdown += `## ${paperData.title}\n\n`;
-          markdown += `**Authors:** ${paperData.authors.join(', ')}\n\n`;
-          markdown += `**Year:** ${paperData.year}\n\n`;
-          if (paperData.venue) markdown += `**Venue:** ${paperData.venue}\n\n`;
-          if (paperData.abstract) markdown += `**Abstract:** ${paperData.abstract}\n\n`;
-          if (paperData.links?.paper) markdown += `**Paper:** [${paperData.links.paper}](${paperData.links.paper})\n\n`;
-          if (paperData.links?.code) markdown += `**Code:** [${paperData.links.code}](${paperData.links.code})\n\n`;
-          markdown += '---\n\n';
-        }
-      });
-
-      this.downloadFile(markdown, 'papers.md', 'text/markdown');
-    },
-
-    downloadFile(content, filename, mimeType) {
-      const blob = new Blob([content], { type: mimeType });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    },
-
-    handleYearFilter(btn) {
-      if (btn.dataset.filter === 'all-years') {
-        this.filters.years.clear();
-        this.filters.allYears = true;
-        document.querySelectorAll('#year-filters .filter-tag').forEach(b => {
-          b.dataset.state = b === btn ? 'active' : '';
+      clearSelection() {
+        this.selectedPapers.clear();
+        document.querySelectorAll('.paper-select-cb').forEach(cb => {
+          cb.checked = false;
         });
-      } else {
-        this.filters.allYears = false;
-        const year = btn.dataset.year;
-        const state = btn.dataset.state || '';
+        document.querySelectorAll('.paper-card').forEach(card => {
+          card.classList.remove('selected');
+        });
+        this.updateSelectionUI();
+      },
 
-        if (state === 'active') {
-          btn.dataset.state = '';
-          this.filters.years.delete(year);
-        } else {
-          btn.dataset.state = 'active';
-          this.filters.years.add(year);
+      updateSelectionUI() {
+        const count = this.selectedPapers.size;
+        const selectionBar = document.getElementById('selection-bar');
+        const countSpan = document.getElementById('selection-count');
+
+        if (selectionBar) {
+          if (count > 0) {
+            selectionBar.style.display = 'block';
+            if (countSpan) {
+              countSpan.textContent = `${count} paper${count !== 1 ? 's' : ''} selected`;
+            }
+          } else {
+            selectionBar.style.display = 'none';
+          }
         }
 
-        const allYearsBtn = document.querySelector('[data-filter="all-years"]');
-        if (allYearsBtn) allYearsBtn.dataset.state = '';
+        // Update card styling
+        this.papers.forEach(paper => {
+          const paperId = paper.dataset.paperId;
+          if (this.selectedPapers.has(paperId)) {
+            paper.classList.add('selected');
+          } else {
+            paper.classList.remove('selected');
+          }
+        });
+      },
 
-        if (this.filters.years.size === 0) {
+      shareSelection() {
+        if (this.selectedPapers.size === 0) {
+          alert('Please select at least one paper');
+          return;
+        }
+
+        const ids = Array.from(this.selectedPapers).join(',');
+        const baseUrl = window.location.href.split('#')[0].split('?')[0];
+        const shareUrl = `${baseUrl}#selected=${ids}`;
+
+        const shareLinkInput = document.getElementById('share-link-input');
+        const shareModal = document.getElementById('share-modal');
+
+        if (shareLinkInput) shareLinkInput.value = shareUrl;
+        if (shareModal) shareModal.classList.add('show');
+      },
+
+      copyShareLink() {
+        const input = document.getElementById('share-link-input');
+        if (!input) return;
+
+        input.select();
+        document.execCommand('copy');
+
+        const btn = document.getElementById('copy-share-link');
+        if (btn) {
+          btn.classList.add('copied');
+          btn.textContent = '✓ Copied!';
+
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = '📋 Copy';
+          }, 2000);
+        }
+      },
+
+      loadSelectionFromURL() {
+        const hash = window.location.hash;
+        if (hash.startsWith('#selected=')) {
+          const ids = hash.substring(10).split(',');
+          ids.forEach(id => this.selectedPapers.add(id));
+
+          if (this.selectedPapers.size > 0 && !this.selectionMode) {
+            this.toggleSelectionMode();
+          }
+
+          this.updateSelectionUI();
+        }
+      },
+
+      exportBibTeX() {
+        if (this.selectedPapers.size === 0) {
+          alert('Please select at least one paper');
+          return;
+        }
+
+        let bibtex = '';
+        this.selectedPapers.forEach(paperId => {
+          const paperData = this.allPapersData.find(p => p.id === paperId);
+          if (paperData) {
+            const key = `${paperData.authors[0]?.split(' ').pop() || 'Unknown'}${paperData.year}`;
+            bibtex += `@article{${key},\n`;
+            bibtex += `  title={${paperData.title}},\n`;
+            bibtex += `  author={${paperData.authors.join(' and ')}},\n`;
+            bibtex += `  year={${paperData.year}},\n`;
+            if (paperData.venue) bibtex += `  journal={${paperData.venue}},\n`;
+            if (paperData.arxiv_id) bibtex += `  eprint={${paperData.arxiv_id}},\n`;
+            if (paperData.links?.paper) bibtex += `  url={${paperData.links.paper}},\n`;
+            bibtex += `}\n\n`;
+          }
+        });
+
+        this.downloadFile(bibtex, 'papers.bib', 'text/plain');
+      },
+
+      exportJSON() {
+        if (this.selectedPapers.size === 0) {
+          alert('Please select at least one paper');
+          return;
+        }
+
+        const selectedData = this.allPapersData.filter(p => this.selectedPapers.has(p.id));
+        const json = JSON.stringify(selectedData, null, 2);
+        this.downloadFile(json, 'papers.json', 'application/json');
+      },
+
+      exportMarkdown() {
+        if (this.selectedPapers.size === 0) {
+          alert('Please select at least one paper');
+          return;
+        }
+
+        let markdown = '# Selected Papers\n\n';
+        this.selectedPapers.forEach(paperId => {
+          const paperData = this.allPapersData.find(p => p.id === paperId);
+          if (paperData) {
+            markdown += `## ${paperData.title}\n\n`;
+            markdown += `**Authors:** ${paperData.authors.join(', ')}\n\n`;
+            markdown += `**Year:** ${paperData.year}\n\n`;
+            if (paperData.venue) markdown += `**Venue:** ${paperData.venue}\n\n`;
+            if (paperData.abstract) markdown += `**Abstract:** ${paperData.abstract}\n\n`;
+            if (paperData.links?.paper) markdown += `**Paper:** [${paperData.links.paper}](${paperData.links.paper})\n\n`;
+            if (paperData.links?.code) markdown += `**Code:** [${paperData.links.code}](${paperData.links.code})\n\n`;
+            markdown += '---\n\n';
+          }
+        });
+
+        this.downloadFile(markdown, 'papers.md', 'text/markdown');
+      },
+
+      downloadFile(content, filename, mimeType) {
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      },
+
+      handleYearFilter(btn) {
+        if (btn.dataset.filter === 'all-years') {
+          this.filters.years.clear();
           this.filters.allYears = true;
-          if (allYearsBtn) allYearsBtn.dataset.state = 'active';
+          document.querySelectorAll('#year-filters .filter-tag').forEach(b => {
+            b.dataset.state = b === btn ? 'active' : '';
+          });
+        } else {
+          this.filters.allYears = false;
+          const year = btn.dataset.year;
+          const state = btn.dataset.state || '';
+
+          if (state === 'active') {
+            btn.dataset.state = '';
+            this.filters.years.delete(year);
+          } else {
+            btn.dataset.state = 'active';
+            this.filters.years.add(year);
+          }
+
+          const allYearsBtn = document.querySelector('[data-filter="all-years"]');
+          if (allYearsBtn) allYearsBtn.dataset.state = '';
+
+          if (this.filters.years.size === 0) {
+            this.filters.allYears = true;
+            if (allYearsBtn) allYearsBtn.dataset.state = 'active';
+          }
         }
-      }
 
-      this.updateResults();
-    },
+        this.updateResults();
+      },
 
-    handleCategoryFilter(btn) {
-      if (btn.dataset.filter === 'all-categories') {
-        this.filters.categories.clear();
-        this.filters.allCategories = true;
-        document.querySelectorAll('#category-filters .filter-tag').forEach(b => {
-          b.dataset.state = b === btn ? 'active' : '';
-        });
-      } else {
-        this.filters.allCategories = false;
-        const category = btn.dataset.category;
+      handleCategoryFilter(btn) {
+        if (btn.dataset.filter === 'all-categories') {
+          this.filters.categories.clear();
+          this.filters.allCategories = true;
+          document.querySelectorAll('#category-filters .filter-tag').forEach(b => {
+            b.dataset.state = b === btn ? 'active' : '';
+          });
+        } else {
+          this.filters.allCategories = false;
+          const category = btn.dataset.category;
+          const state = btn.dataset.state || '';
+
+          if (state === 'active') {
+            btn.dataset.state = '';
+            this.filters.categories.delete(category);
+          } else {
+            btn.dataset.state = 'active';
+            this.filters.categories.add(category);
+          }
+
+          const allCategoriesBtn = document.querySelector('[data-filter="all-categories"]');
+          if (allCategoriesBtn) allCategoriesBtn.dataset.state = '';
+
+          if (this.filters.categories.size === 0) {
+            this.filters.allCategories = true;
+            if (allCategoriesBtn) allCategoriesBtn.dataset.state = 'active';
+          }
+        }
+
+        this.updateResults();
+      },
+
+      handleQuickFilter(btn) {
+        const filter = btn.dataset.filter;
         const state = btn.dataset.state || '';
 
         if (state === 'active') {
           btn.dataset.state = '';
-          this.filters.categories.delete(category);
+          this.filters.quick.delete(filter);
         } else {
           btn.dataset.state = 'active';
-          this.filters.categories.add(category);
+          this.filters.quick.add(filter);
         }
 
-        const allCategoriesBtn = document.querySelector('[data-filter="all-categories"]');
-        if (allCategoriesBtn) allCategoriesBtn.dataset.state = '';
+        this.updateResults();
+      },
 
-        if (this.filters.categories.size === 0) {
-          this.filters.allCategories = true;
-          if (allCategoriesBtn) allCategoriesBtn.dataset.state = 'active';
+      resetFilters() {
+        const searchInput = document.getElementById('search-input');
+        const clearSearch = document.getElementById('clear-search');
+        const sortSelect = document.getElementById('sort-select');
+
+        if (searchInput) searchInput.value = '';
+        if (clearSearch) clearSearch.style.display = 'none';
+        this.filters.search = '';
+
+        this.filters.years.clear();
+        this.filters.categories.clear();
+        this.filters.quick.clear();
+        this.filters.allYears = true;
+        this.filters.allCategories = true;
+
+        document.querySelectorAll('.filter-tag').forEach(btn => {
+          if (btn.dataset.filter === 'all-years' || btn.dataset.filter === 'all-categories') {
+            btn.dataset.state = 'active';
+          } else {
+            btn.dataset.state = '';
+          }
+        });
+
+        this.sortBy = 'date-desc';
+        if (sortSelect) sortSelect.value = 'date-desc';
+
+        this.updateResults();
+      },
+
+      matchesFilters(paper) {
+        if (this.filters.search) {
+          const searchText = paper.dataset.searchText;
+          if (!searchText.includes(this.filters.search)) {
+            return false;
+          }
         }
-      }
 
-      this.updateResults();
-    },
-
-    handleQuickFilter(btn) {
-      const filter = btn.dataset.filter;
-      const state = btn.dataset.state || '';
-
-      if (state === 'active') {
-        btn.dataset.state = '';
-        this.filters.quick.delete(filter);
-      } else {
-        btn.dataset.state = 'active';
-        this.filters.quick.add(filter);
-      }
-
-      this.updateResults();
-    },
-
-    resetFilters() {
-      const searchInput = document.getElementById('search-input');
-      const clearSearch = document.getElementById('clear-search');
-      const sortSelect = document.getElementById('sort-select');
-
-      if (searchInput) searchInput.value = '';
-      if (clearSearch) clearSearch.style.display = 'none';
-      this.filters.search = '';
-
-      this.filters.years.clear();
-      this.filters.categories.clear();
-      this.filters.quick.clear();
-      this.filters.allYears = true;
-      this.filters.allCategories = true;
-
-      document.querySelectorAll('.filter-tag').forEach(btn => {
-        if (btn.dataset.filter === 'all-years' || btn.dataset.filter === 'all-categories') {
-          btn.dataset.state = 'active';
-        } else {
-          btn.dataset.state = '';
+        if (!this.filters.allYears && this.filters.years.size > 0) {
+          if (!this.filters.years.has(paper.dataset.year)) {
+            return false;
+          }
         }
-      });
 
-      this.sortBy = 'date-desc';
-      if (sortSelect) sortSelect.value = 'date-desc';
+        if (!this.filters.allCategories && this.filters.categories.size > 0) {
+          const paperCategories = paper.dataset.categories.split(',');
+          const hasMatch = paperCategories.some(cat => this.filters.categories.has(cat));
+          if (!hasMatch) {
+            return false;
+          }
+        }
 
-      this.updateResults();
-    },
-
-    matchesFilters(paper) {
-      if (this.filters.search) {
-        const searchText = paper.dataset.searchText;
-        if (!searchText.includes(this.filters.search)) {
+        if (this.filters.quick.has('starred') && paper.dataset.starred !== 'true') {
           return false;
         }
-      }
 
-      if (!this.filters.allYears && this.filters.years.size > 0) {
-        if (!this.filters.years.has(paper.dataset.year)) {
+        if (this.filters.quick.has('has-code') && paper.dataset.hasCode !== 'true') {
           return false;
         }
-      }
 
-      if (!this.filters.allCategories && this.filters.categories.size > 0) {
-        const paperCategories = paper.dataset.categories.split(',');
-        const hasMatch = paperCategories.some(cat => this.filters.categories.has(cat));
-        if (!hasMatch) {
+        if (this.filters.quick.has('foundation') && paper.dataset.type !== 'Foundation') {
           return false;
         }
-      }
 
-      if (this.filters.quick.has('starred') && paper.dataset.starred !== 'true') {
-        return false;
-      }
+        return true;
+      },
 
-      if (this.filters.quick.has('has-code') && paper.dataset.hasCode !== 'true') {
-        return false;
-      }
+      updateResults() {
+        let visiblePapers = Array.from(this.papers).filter(paper => {
+          const matches = this.matchesFilters(paper);
+          paper.classList.toggle('hidden', !matches);
+          return matches;
+        });
 
-      if (this.filters.quick.has('foundation') && paper.dataset.type !== 'Foundation') {
-        return false;
-      }
+        visiblePapers = this.sortPapers(visiblePapers);
 
-      return true;
-    },
+        const container = document.getElementById('papers-container');
+        const resultsCount = document.getElementById('results-count');
+        const noResults = document.getElementById('no-results');
 
-    updateResults() {
-      let visiblePapers = Array.from(this.papers).filter(paper => {
-        const matches = this.matchesFilters(paper);
-        paper.classList.toggle('hidden', !matches);
-        return matches;
-      });
-
-      visiblePapers = this.sortPapers(visiblePapers);
-
-      const container = document.getElementById('papers-container');
-      const resultsCount = document.getElementById('results-count');
-      const noResults = document.getElementById('no-results');
-
-      if (container) {
-        visiblePapers.forEach(paper => container.appendChild(paper));
-      }
-
-      const count = visiblePapers.length;
-      if (resultsCount) {
-        resultsCount.innerHTML = `Showing <strong>${count}</strong> paper${count !== 1 ? 's' : ''}`;
-      }
-
-      if (noResults) {
-        noResults.style.display = count === 0 ? 'block' : 'none';
-      }
-      if (container) {
-        container.style.display = count === 0 ? 'none' : 'grid';
-      }
-    },
-
-    sortPapers(papers) {
-      return papers.sort((a, b) => {
-        switch(this.sortBy) {
-          case 'date-desc':
-            return b.dataset.year - a.dataset.year;
-          case 'date-asc':
-            return a.dataset.year - b.dataset.year;
-          case 'relevance-desc':
-            return parseFloat(b.dataset.relevance) - parseFloat(a.dataset.relevance);
-          case 'title-asc':
-            return a.querySelector('.paper-title').textContent.localeCompare(
-              b.querySelector('.paper-title').textContent
-            );
-          case 'citation-desc':
-            return parseInt(b.dataset.citation) - parseInt(a.dataset.citation);
-          default:
-            return 0;
+        if (container) {
+          visiblePapers.forEach(paper => container.appendChild(paper));
         }
-      });
+
+        const count = visiblePapers.length;
+        if (resultsCount) {
+          resultsCount.innerHTML = `Showing <strong>${count}</strong> paper${count !== 1 ? 's' : ''}`;
+        }
+
+        if (noResults) {
+          noResults.style.display = count === 0 ? 'block' : 'none';
+        }
+        if (container) {
+          container.style.display = count === 0 ? 'none' : 'grid';
+        }
+      },
+
+      sortPapers(papers) {
+        return papers.sort((a, b) => {
+          switch (this.sortBy) {
+            case 'date-desc':
+              return b.dataset.year - a.dataset.year;
+            case 'date-asc':
+              return a.dataset.year - b.dataset.year;
+            case 'relevance-desc':
+              return parseFloat(b.dataset.relevance) - parseFloat(a.dataset.relevance);
+            case 'title-asc':
+              return a.querySelector('.paper-title').textContent.localeCompare(
+                b.querySelector('.paper-title').textContent
+              );
+            case 'citation-desc':
+              return parseInt(b.dataset.citation) - parseInt(a.dataset.citation);
+            default:
+              return 0;
+          }
+        });
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => app.init());
+    } else {
+      app.init();
     }
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => app.init());
-  } else {
-    app.init();
-  }
-})();
+  })();
 </script>

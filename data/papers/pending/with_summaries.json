@@ -3,29 +3,152 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.04755v1",
-      "title": "When Silence Is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?",
+      "id": "2602.06032v1",
+      "title": "Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction For 3D-Aware Distillation",
       "authors": [
-        "Xinyu Zhou",
-        "Chang Jin",
-        "Carsten Eickhoff",
-        "Zhijiang Guo",
-        "Seyed Ali Bahrainian"
+        "David Shavin",
+        "Sagie Benaim"
       ],
-      "abstract": "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.e., refusing to answer). This weakness is even evident in temporal question answering, where models frequently ignore time-sensitive evidence and conflate facts across different time-periods. In this paper, we present the first empirical study of training LLMs with an abstention ability while reasoning about temporal QA. Existing approaches such as calibration might be unreliable in capturing uncertainty in complex reasoning. We instead frame abstention as a teachable skill and introduce a pipeline that couples Chain-of-Thought (CoT) supervision with Reinforcement Learning (RL) guided by abstention-aware rewards. Our goal is to systematically analyze how different information types and training techniques affect temporal reasoning with abstention behavior in LLMs. Through extensive experiments studying various methods, we find that RL yields strong empirical gains on reasoning: a model initialized by Qwen2.5-1.5B-Instruct surpasses GPT-4o by $3.46\\%$ and $5.80\\%$ in Exact Match on TimeQA-Easy and Hard, respectively. Moreover, it improves the True Positive rate on unanswerable questions by $20\\%$ over a pure supervised fine-tuned (SFT) variant. Beyond performance, our analysis shows that SFT induces overconfidence and harms reliability, while RL improves prediction accuracy but exhibits similar risks. Finally, by comparing implicit reasoning cues (e.g., original context, temporal sub-context, knowledge graphs) with explicit CoT supervision, we find that implicit information provides limited benefit for reasoning with abstention. Our study provides new insights into how abstention and reasoning can be jointly optimized, providing a foundation for building more reliable LLMs.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
+      "abstract": "Vision Foundation Models (VFMs) have achieved remarkable success when applied to various downstream 2D tasks. Despite their effectiveness, they often exhibit a critical lack of 3D awareness. To this end, we introduce Splat and Distill, a framework that instills robust 3D awareness into 2D VFMs by augmenting the teacher model with a fast, feed-forward 3D reconstruction pipeline. Given 2D features produced by a teacher model, our method first lifts these features into an explicit 3D Gaussian representation, in a feedforward manner. These 3D features are then ``splatted\" onto novel viewpoints, producing a set of novel 2D feature maps used to supervise the student model, ``distilling\" geometrically grounded knowledge. By replacing slow per-scene optimization of prior work with our feed-forward lifting approach, our framework avoids feature-averaging artifacts, creating a dynamic learning process where the teacher's consistency improves alongside that of the student. We conduct a comprehensive evaluation on a suite of downstream tasks, including monocular depth estimation, surface normal estimation, multi-view correspondence, and semantic segmentation. Our method significantly outperforms prior works, not only achieving substantial gains in 3D awareness but also enhancing the underlying semantic richness of 2D features. Project page is available at https://davidshavin4.github.io/Splat-and-Distill/",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
       "categories": [
-        "cs.CL",
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.06032v1",
+        "pdf": "https://arxiv.org/pdf/2602.06032v1"
+      },
+      "arxiv_id": "2602.06032v1",
+      "comment": "Accepted to ICLR 2026",
+      "journal_ref": "ICLR 2026",
+      "has_code": false,
+      "relevance_score": 5.279661016949152,
+      "score_breakdown": {
+        "total_score": 5.28,
+        "field_match": {
+          "score": 1.95,
+          "matches": [
+            "3d gaussian",
+            "3d reconstruction",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Vision Foundation Models (VFMs) have achieved remarkable success when applied to various downstream 2D tasks. Despite their effectiveness, they often exhibit a critical lack of 3D awareness. To this end, we introduce Splat and Distill, a framework that instills robust 3D awareness into 2D VFMs by augmenting the teacher model with a fast, feed-forward 3D reconstruction pipeline. Given 2D features p...",
+        "key_contributions": [
+          "Vision Foundation Models (VFMs) have achieved remarkable success when applied to various downstream 2D tasks.",
+          "Despite their effectiveness, they often exhibit a critical lack of 3D awareness.",
+          "To this end, we introduce Splat and Distill, a framework that instills robust 3D awareness into 2D VFMs by augmenting the teacher model with a fast, feed-forward 3D reconstruction pipeline."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.05903v1",
+      "title": "Verification of the Implicit World Model in a Generative Model via Adversarial Sequences",
+      "authors": [
+        "András Balogh",
+        "Márk Jelasity"
+      ],
+      "abstract": "Generative sequence models are typically trained on sample sequences from natural or formal languages. It is a crucial question whether -- or to what extent -- sample-based training is able to capture the true structure of these languages, often referred to as the ``world model''. Theoretical results indicate that we can hope for soundness at best, that is, generating valid sequences, but not necessarily all of them. However, it is still important to have practical tools that are able to verify whether a given sequence model is sound. In this study, we focus on chess, as it is a domain that provides enough complexity while having a simple rule-based world model. We propose adversarial sequence generation for verifying the soundness of the sequence model. Our adversaries generate valid sequences so as to force the sequence model to generate an invalid next move prediction. Apart from the falsification of soundness, this method is also suitable for a more fine-grained analysis of the failure modes and the effects of different choices during training. To demonstrate this, we propose a number of methods for adversarial sequence generation and evaluate the approach on a large set of chess models. We train models on random as well as high-quality chess games, using several training recipes. We find that none of the models are sound, but some training techniques and dataset choices are able to improve soundness remarkably. We also investigate the potential application of board state probes in both our training and attack methods. Our findings indicate that the extracted board states have no causal role in next token prediction in most of the models.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
+      "categories": [
+        "cs.LG",
         "cs.AI"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.04755v1",
-        "pdf": "https://arxiv.org/pdf/2602.04755v1"
+        "paper": "http://arxiv.org/abs/2602.05903v1",
+        "pdf": "https://arxiv.org/pdf/2602.05903v1"
       },
-      "arxiv_id": "2602.04755v1",
-      "comment": "Accepted to ICLR2026",
+      "arxiv_id": "2602.05903v1",
+      "comment": "Accepted at ICLR 2026. Code, datasets, and models are available at https://github.com/szegedai/world-model-verification",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.9,
+      "score_breakdown": {
+        "total_score": 4.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Generative sequence models are typically trained on sample sequences from natural or formal languages. It is a crucial question whether -- or to what extent -- sample-based training is able to capture the true structure of these languages, often referred to as the ``world model''. Theoretical results indicate that we can hope for soundness at best, that is, generating valid sequences, but not nece...",
+        "key_contributions": [
+          "Generative sequence models are typically trained on sample sequences from natural or formal languages.",
+          "It is a crucial question whether -- or to what extent -- sample-based training is able to capture the true structure of these languages, often referred to as the ``world model''.",
+          "Theoretical results indicate that we can hope for soundness at best, that is, generating valid sequences, but not necessarily all of them."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.06031v1",
+      "title": "AP-OOD: Attention Pooling for Out-of-Distribution Detection",
+      "authors": [
+        "Claus Hofmann",
+        "Christian Huber",
+        "Bernhard Lehner",
+        "Daniel Klotz",
+        "Sepp Hochreiter",
+        "Werner Zellinger"
+      ],
+      "abstract": "Out-of-distribution (OOD) detection, which maps high-dimensional data into a scalar OOD score, is critical for the reliable deployment of machine learning models. A key challenge in recent research is how to effectively leverage and aggregate token embeddings from language models to obtain the OOD score. In this work, we propose AP-OOD, a novel OOD detection method for natural language that goes beyond simple average-based aggregation by exploiting token-level information. AP-OOD is a semi-supervised approach that flexibly interpolates between unsupervised and supervised settings, enabling the use of limited auxiliary outlier data. Empirically, AP-OOD sets a new state of the art in OOD detection for text: in the unsupervised setting, it reduces the FPR95 (false positive rate at 95% true positives) from 27.84% to 4.67% on XSUM summarization, and from 77.08% to 70.37% on WMT15 En-Fr translation.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.06031v1",
+        "pdf": "https://arxiv.org/pdf/2602.06031v1"
+      },
+      "arxiv_id": "2602.06031v1",
+      "comment": "Accepted at ICLR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.5,
@@ -56,46 +179,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.e., refusing to answer). This weakness is even evident in temporal question answering, where models frequently ignore time-sensitive evidence and conflate facts across different time-periods. In this paper, we present the first empirical study of training LLMs with an abs...",
+        "short": "Out-of-distribution (OOD) detection, which maps high-dimensional data into a scalar OOD score, is critical for the reliable deployment of machine learning models. A key challenge in recent research is how to effectively leverage and aggregate token embeddings from language models to obtain the OOD score. In this work, we propose AP-OOD, a novel OOD detection method for natural language that goes b...",
         "key_contributions": [
-          "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.",
-          "e.",
-          ", refusing to answer)."
+          "Out-of-distribution (OOD) detection, which maps high-dimensional data into a scalar OOD score, is critical for the reliable deployment of machine learning models.",
+          "A key challenge in recent research is how to effectively leverage and aggregate token embeddings from language models to obtain the OOD score.",
+          "In this work, we propose AP-OOD, a novel OOD detection method for natural language that goes beyond simple average-based aggregation by exploiting token-level information."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.04877v1",
-      "title": "CoWTracker: Tracking by Warping instead of Correlation",
+      "id": "2602.05822v1",
+      "title": "NVS-HO: A Benchmark for Novel View Synthesis of Handheld Objects",
       "authors": [
-        "Zihang Lai",
-        "Eldar Insafutdinov",
-        "Edgar Sucar",
-        "Andrea Vedaldi"
+        "Musawar Ali",
+        "Manuel Carranza-García",
+        "Nicola Fioraio",
+        "Samuele Salti",
+        "Luigi Di Stefano"
       ],
-      "abstract": "Dense point tracking is a fundamental problem in computer vision, with applications ranging from video analysis to robotic manipulation. State-of-the-art trackers typically rely on cost volumes to match features across frames, but this approach incurs quadratic complexity in spatial resolution, limiting scalability and efficiency. In this paper, we propose \\method, a novel dense point tracker that eschews cost volumes in favor of warping. Inspired by recent advances in optical flow, our approach iteratively refines track estimates by warping features from the target frame to the query frame based on the current estimate. Combined with a transformer architecture that performs joint spatiotemporal reasoning across all tracks, our design establishes long-range correspondences without computing feature correlations. Our model is simple and achieves state-of-the-art performance on standard dense point tracking benchmarks, including TAP-Vid-DAVIS, TAP-Vid-Kinetics, and Robo-TAP. Remarkably, the model also excels at optical flow, sometimes outperforming specialized methods on the Sintel, KITTI, and Spring benchmarks. These results suggest that warping-based architectures can unify dense point tracking and optical flow estimation.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
+      "abstract": "We propose NVS-HO, the first benchmark designed for novel view synthesis of handheld objects in real-world environments using only RGB inputs. Each object is recorded in two complementary RGB sequences: (1) a handheld sequence, where the object is manipulated in front of a static camera, and (2) a board sequence, where the object is fixed on a ChArUco board to provide accurate camera poses via marker detection. The goal of NVS-HO is to learn a NVS model that captures the full appearance of an object from (1), whereas (2) provides the ground-truth images used for evaluation. To establish baselines, we consider both a classical SfM pipeline and a state-of-the-art pre-trained feed-forward neural network (VGGT) as pose estimators, and train NVS models based on NeRF and Gaussian Splatting. Our experiments reveal significant performance gaps in current methods under unconstrained handheld conditions, highlighting the need for more robust approaches. NVS-HO thus offers a challenging real-world benchmark to drive progress in RGB-based novel view synthesis of handheld objects.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.04877v1",
-        "pdf": "https://arxiv.org/pdf/2602.04877v1"
+        "paper": "http://arxiv.org/abs/2602.05822v1",
+        "pdf": "https://arxiv.org/pdf/2602.05822v1"
       },
-      "arxiv_id": "2602.04877v1",
-      "comment": "Project website: cowtracker.github.io",
+      "arxiv_id": "2602.05822v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.219491525423729,
+      "has_code": false,
+      "relevance_score": 4.226271186440679,
       "score_breakdown": {
-        "total_score": 4.22,
+        "total_score": 4.23,
         "field_match": {
-          "score": 0.42,
+          "score": 1.44,
           "matches": [
-            "computer vision"
+            "gaussian splatting",
+            "nerf"
           ],
           "weight": 0.4
         },
@@ -105,7 +230,132 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We propose NVS-HO, the first benchmark designed for novel view synthesis of handheld objects in real-world environments using only RGB inputs. Each object is recorded in two complementary RGB sequences: (1) a handheld sequence, where the object is manipulated in front of a static camera, and (2) a board sequence, where the object is fixed on a ChArUco board to provide accurate camera poses via mar...",
+        "key_contributions": [
+          "We propose NVS-HO, the first benchmark designed for novel view synthesis of handheld objects in real-world environments using only RGB inputs.",
+          "Each object is recorded in two complementary RGB sequences: (1) a handheld sequence, where the object is manipulated in front of a static camera, and (2) a board sequence, where the object is fixed on a ChArUco board to provide accurate camera poses via marker detection.",
+          "The goal of NVS-HO is to learn a NVS model that captures the full appearance of an object from (1), whereas (2) provides the ground-truth images used for evaluation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.05971v1",
+      "title": "Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space",
+      "authors": [
+        "Felipe D. Toro-Hernández",
+        "Jesuino Vieira Filho",
+        "Rodrigo M. Cabral-Carvalho"
+      ],
+      "abstract": "Semantic representations can be framed as a structured, dynamic knowledge space through which humans navigate to retrieve and manipulate meaning. To investigate how humans traverse this geometry, we introduce a framework that represents concept production as navigation through embedding space. Using different transformer text embedding models, we construct participant-specific semantic trajectories based on cumulative embeddings and extract geometric and dynamical metrics, including distance to next, distance to centroid, entropy, velocity, and acceleration. These measures capture both scalar and directional aspects of semantic navigation, providing a computationally grounded view of semantic representation search as movement in a geometric space. We evaluate the framework on four datasets across different languages, spanning different property generation tasks: Neurodegenerative, Swear verbal fluency, Property listing task in Italian, and in German. Across these contexts, our approach distinguishes between clinical groups and concept types, offering a mathematical framework that requires minimal human intervention compared to typical labor-intensive linguistic pre-processing methods. Comparison with a non-cumulative approach reveals that cumulative embeddings work best for longer trajectories, whereas shorter ones may provide too little context, favoring the non-cumulative alternative. Critically, different embedding models yielded similar results, highlighting similarities between different learned representations despite different training pipelines. By framing semantic navigation as a structured trajectory through embedding space, bridging cognitive modeling with learned representation, thereby establishing a pipeline for quantifying semantic representation dynamics with applications in clinical research, cross-linguistic analysis, and the assessment of artificial cognition.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "q-bio.NC"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.05971v1",
+        "pdf": "https://arxiv.org/pdf/2602.05971v1"
+      },
+      "arxiv_id": "2602.05971v1",
+      "comment": "10 pages, 6 figures (excluding refs/appendix). Accepted to ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Semantic representations can be framed as a structured, dynamic knowledge space through which humans navigate to retrieve and manipulate meaning. To investigate how humans traverse this geometry, we introduce a framework that represents concept production as navigation through embedding space. Using different transformer text embedding models, we construct participant-specific semantic trajectorie...",
+        "key_contributions": [
+          "Semantic representations can be framed as a structured, dynamic knowledge space through which humans navigate to retrieve and manipulate meaning.",
+          "To investigate how humans traverse this geometry, we introduce a framework that represents concept production as navigation through embedding space.",
+          "Using different transformer text embedding models, we construct participant-specific semantic trajectories based on cumulative embeddings and extract geometric and dynamical metrics, including distance to next, distance to centroid, entropy, velocity, and acceleration."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.05961v1",
+      "title": "Discrete diffusion samplers and bridges: Off-policy algorithms and applications in latent spaces",
+      "authors": [
+        "Arran Carter",
+        "Sanghyeok Choi",
+        "Kirill Tamogashev",
+        "Víctor Elvira",
+        "Nikolay Malkin"
+      ],
+      "abstract": "Sampling from a distribution $p(x) \\propto e^{-\\mathcal{E}(x)}$ known up to a normalising constant is an important and challenging problem in statistics. Recent years have seen the rise of a new family of amortised sampling algorithms, commonly referred to as diffusion samplers, that enable fast and efficient sampling from an unnormalised density. Such algorithms have been widely studied for continuous-space sampling tasks; however, their application to problems in discrete space remains largely unexplored. Although some progress has been made in this area, discrete diffusion samplers do not take full advantage of ideas commonly used for continuous-space sampling. In this paper, we propose to bridge this gap by introducing off-policy training techniques for discrete diffusion samplers. We show that these techniques improve the performance of discrete samplers on both established and new synthetic benchmarks. Next, we generalise discrete diffusion samplers to the task of bridging between two arbitrary distributions, introducing data-to-energy Schrödinger bridge training for the discrete domain for the first time. Lastly, we showcase the application of the proposed diffusion samplers to data-free posterior sampling in the discrete latent spaces of image generative models.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.05961v1",
+        "pdf": "https://arxiv.org/pdf/2602.05961v1"
+      },
+      "arxiv_id": "2602.05961v1",
+      "comment": "Code: https://github.com/mmacosha/offpolicy-discrete-diffusion-samplers-and-bridges",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.199999999999999,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -119,36 +369,42 @@
         }
       },
       "ai_summaries": {
-        "short": "Dense point tracking is a fundamental problem in computer vision, with applications ranging from video analysis to robotic manipulation. State-of-the-art trackers typically rely on cost volumes to match features across frames, but this approach incurs quadratic complexity in spatial resolution, limiting scalability and efficiency. In this paper, we propose \\method, a novel dense point tracker that...",
+        "short": "Sampling from a distribution $p(x) \\propto e^{-\\mathcal{E}(x)}$ known up to a normalising constant is an important and challenging problem in statistics. Recent years have seen the rise of a new family of amortised sampling algorithms, commonly referred to as diffusion samplers, that enable fast and efficient sampling from an unnormalised density. Such algorithms have been widely studied for conti...",
         "key_contributions": [
-          "Dense point tracking is a fundamental problem in computer vision, with applications ranging from video analysis to robotic manipulation.",
-          "State-of-the-art trackers typically rely on cost volumes to match features across frames, but this approach incurs quadratic complexity in spatial resolution, limiting scalability and efficiency.",
-          "In this paper, we propose \\method, a novel dense point tracker that eschews cost volumes in favor of warping."
+          "Sampling from a distribution $p(x) \\propto e^{-\\mathcal{E}(x)}$ known up to a normalising constant is an important and challenging problem in statistics.",
+          "Recent years have seen the rise of a new family of amortised sampling algorithms, commonly referred to as diffusion samplers, that enable fast and efficient sampling from an unnormalised density.",
+          "Such algorithms have been widely studied for continuous-space sampling tasks; however, their application to problems in discrete space remains largely unexplored."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.04605v1",
-      "title": "RexBERT: Context Specialized Bidirectional Encoders for E-commerce",
+      "id": "2602.06038v1",
+      "title": "CommCP: Efficient Multi-Agent Coordination via LLM-Based Communication with Conformal Prediction",
       "authors": [
-        "Rahul Bajaj",
-        "Anuj Garg"
+        "Xiaopan Zhang",
+        "Zejin Wang",
+        "Zhixu Li",
+        "Jianpeng Yao",
+        "Jiachen Li"
       ],
-      "abstract": "Encoder-only transformers remain indispensable in retrieval, classification, and ranking systems where latency, stability, and cost are paramount. Most general purpose encoders, however, are trained on generic corpora with limited coverage of specialized domains. We introduce RexBERT, a family of BERT-style encoders designed specifically for e-commerce semantics. We make three contributions. First, we release Ecom-niverse, a 350 billion token corpus curated from diverse retail and shopping sources. We describe a modular pipeline that isolates and extracts e-commerce content from FineFineWeb and other open web resources, and characterize the resulting domain distribution. Second, we present a reproducible pretraining recipe building on ModernBERT's architectural advances. The recipe consists of three phases: general pre-training, context extension, and annealed domain specialization. Third, we train RexBERT models ranging from 17M to 400M parameters and evaluate them on token classification, semantic similarity, and general natural language understanding tasks using e-commerce datasets. Despite having 2-3x fewer parameters, RexBERT outperforms larger general-purpose encoders and matches or surpasses modern long-context models on domain-specific benchmarks. Our results demonstrate that high quality in-domain data combined with a principled training approach provides a stronger foundation for e-commerce applications than indiscriminate scaling alone.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
+      "abstract": "To complete assignments provided by humans in natural language, robots must interpret commands, generate and answer relevant questions for scene understanding, and manipulate target objects. Real-world deployments often require multiple heterogeneous robots with different manipulation capabilities to handle different assignments cooperatively. Beyond the need for specialized manipulation skills, effective information gathering is important in completing these assignments. To address this component of the problem, we formalize the information-gathering process in a fully cooperative setting as an underexplored multi-agent multi-task Embodied Question Answering (MM-EQA) problem, which is a novel extension of canonical Embodied Question Answering (EQA), where effective communication is crucial for coordinating efforts without redundancy. To address this problem, we propose CommCP, a novel LLM-based decentralized communication framework designed for MM-EQA. Our framework employs conformal prediction to calibrate the generated messages, thereby minimizing receiver distractions and enhancing communication reliability. To evaluate our framework, we introduce an MM-EQA benchmark featuring diverse, photo-realistic household scenarios with embodied questions. Experimental results demonstrate that CommCP significantly enhances the task success rate and exploration efficiency over baselines. The experiment videos, code, and dataset are available on our project website: https://comm-cp.github.io.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
       "categories": [
-        "cs.CL",
-        "cs.AI"
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.MA"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.04605v1",
-        "pdf": "https://arxiv.org/pdf/2602.04605v1"
+        "paper": "http://arxiv.org/abs/2602.06038v1",
+        "pdf": "https://arxiv.org/pdf/2602.06038v1"
       },
-      "arxiv_id": "2602.04605v1",
-      "comment": "Blog: https://huggingface.co/blog/thebajajra/rexbert-encoders Models: https://huggingface.co/collections/thebajajra/rexbert Ecom-niverse Dataset: https://huggingface.co/datasets/thebajajra/Ecom-niverse",
+      "arxiv_id": "2602.06038v1",
+      "comment": "IEEE International Conference on Robotics and Automation (ICRA 2026); Project Website: https://comm-cp.github.io/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.1000000000000005,
@@ -179,302 +435,54 @@
         }
       },
       "ai_summaries": {
-        "short": "Encoder-only transformers remain indispensable in retrieval, classification, and ranking systems where latency, stability, and cost are paramount. Most general purpose encoders, however, are trained on generic corpora with limited coverage of specialized domains. We introduce RexBERT, a family of BERT-style encoders designed specifically for e-commerce semantics. We make three contributions. First...",
+        "short": "To complete assignments provided by humans in natural language, robots must interpret commands, generate and answer relevant questions for scene understanding, and manipulate target objects. Real-world deployments often require multiple heterogeneous robots with different manipulation capabilities to handle different assignments cooperatively. Beyond the need for specialized manipulation skills, e...",
         "key_contributions": [
-          "Encoder-only transformers remain indispensable in retrieval, classification, and ranking systems where latency, stability, and cost are paramount.",
-          "Most general purpose encoders, however, are trained on generic corpora with limited coverage of specialized domains.",
-          "We introduce RexBERT, a family of BERT-style encoders designed specifically for e-commerce semantics."
+          "To complete assignments provided by humans in natural language, robots must interpret commands, generate and answer relevant questions for scene understanding, and manipulate target objects.",
+          "Real-world deployments often require multiple heterogeneous robots with different manipulation capabilities to handle different assignments cooperatively.",
+          "Beyond the need for specialized manipulation skills, effective information gathering is important in completing these assignments."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.04883v1",
-      "title": "Protein Autoregressive Modeling via Multiscale Structure Generation",
+      "id": "2602.05884v1",
+      "title": "Neural Implicit 3D Cardiac Shape Reconstruction from Sparse CT Angiography Slices Mimicking 2D Transthoracic Echocardiography Views",
       "authors": [
-        "Yanru Qu",
-        "Cheng-Yen Hsieh",
-        "Zaixiang Zheng",
-        "Ge Liu",
-        "Quanquan Gu"
+        "Gino E. Jansen",
+        "Carolina Brás",
+        "R. Nils Planken",
+        "Mark J. Schuuring",
+        "Berto J. Bouma",
+        "Ivana Išgum"
       ],
-      "abstract": "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction. Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales. To achieve this, PAR consists of three key components: (i) multi-scale downsampling operations that represent protein structures across multiple scales during training; (ii) an autoregressive transformer that encodes multi-scale information and produces conditional embeddings to guide structure generation; (iii) a flow-based backbone decoder that generates backbone atoms conditioned on these embeddings. Moreover, autoregressive models suffer from exposure bias, caused by the training and the generation procedure mismatch, and substantially degrades structure generation quality. We effectively alleviate this issue by adopting noisy context learning and scheduled sampling, enabling robust backbone generation. Notably, PAR exhibits strong zero-shot generalization, supporting flexible human-prompted conditional generation and motif scaffolding without requiring fine-tuning. On the unconditional generation benchmark, PAR effectively learns protein distributions and produces backbones of high design quality, and exhibits favorable scaling behavior. Together, these properties establish PAR as a promising framework for protein structure generation.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "q-bio.BM",
-        "q-bio.QM"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.04883v1",
-        "pdf": "https://arxiv.org/pdf/2602.04883v1"
-      },
-      "arxiv_id": "2602.04883v1",
-      "comment": "ByteDance Seed Tech Report; Page: https://par-protein.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction. Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales. To achieve this, PAR consists of three key components: (i) ...",
-        "key_contributions": [
-          "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction.",
-          "Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales.",
-          "To achieve this, PAR consists of three key components: (i) multi-scale downsampling operations that represent protein structures across multiple scales during training; (ii) an autoregressive transformer that encodes multi-scale information and produces conditional embeddings to guide structure generation; (iii) a flow-based backbone decoder that generates backbone atoms conditioned on these embeddings."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.04770v1",
-      "title": "Generative Modeling via Drifting",
-      "authors": [
-        "Mingyang Deng",
-        "He Li",
-        "Tianhong Li",
-        "Yilun Du",
-        "Kaiming He"
-      ],
-      "abstract": "Generative modeling can be formulated as learning a mapping f such that its pushforward distribution matches the data distribution. The pushforward behavior can be carried out iteratively at inference time, for example in diffusion and flow-based models. In this paper, we propose a new paradigm called Drifting Models, which evolve the pushforward distribution during training and naturally admit one-step inference. We introduce a drifting field that governs the sample movement and achieves equilibrium when the distributions match. This leads to a training objective that allows the neural network optimizer to evolve the distribution. In experiments, our one-step generator achieves state-of-the-art results on ImageNet at 256 x 256 resolution, with an FID of 1.54 in latent space and 1.61 in pixel space. We hope that our work opens up new opportunities for high-quality one-step generation.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
-      "categories": [
-        "cs.LG",
-        "cs.CV"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.04770v1",
-        "pdf": "https://arxiv.org/pdf/2602.04770v1"
-      },
-      "arxiv_id": "2602.04770v1",
-      "comment": "Project page: https://lambertae.github.io/projects/drifting/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Generative modeling can be formulated as learning a mapping f such that its pushforward distribution matches the data distribution. The pushforward behavior can be carried out iteratively at inference time, for example in diffusion and flow-based models. In this paper, we propose a new paradigm called Drifting Models, which evolve the pushforward distribution during training and naturally admit on...",
-        "key_contributions": [
-          "Generative modeling can be formulated as learning a mapping f such that its pushforward distribution matches the data distribution.",
-          "The pushforward behavior can be carried out iteratively at inference time, for example in diffusion and flow-based models.",
-          "In this paper, we propose a new paradigm called Drifting Models, which evolve the pushforward distribution during training and naturally admit one-step inference."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.04876v1",
-      "title": "PerpetualWonder: Long-Horizon Action-Conditioned 4D Scene Generation",
-      "authors": [
-        "Jiahao Zhan",
-        "Zizhang Li",
-        "Hong-Xing Yu",
-        "Jiajun Wu"
-      ],
-      "abstract": "We introduce PerpetualWonder, a hybrid generative simulator that enables long-horizon, action-conditioned 4D scene generation from a single image. Current works fail at this task because their physical state is decoupled from their visual representation, which prevents generative refinements to update the underlying physics for subsequent interactions. PerpetualWonder solves this by introducing the first true closed-loop system. It features a novel unified representation that creates a bidirectional link between the physical state and visual primitives, allowing generative refinements to correct both the dynamics and appearance. It also introduces a robust update mechanism that gathers supervision from multiple viewpoints to resolve optimization ambiguity. Experiments demonstrate that from a single image, PerpetualWonder can successfully simulate complex, multi-step interactions from long-horizon actions, maintaining physical plausibility and visual consistency.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.04876v1",
-        "pdf": "https://arxiv.org/pdf/2602.04876v1"
-      },
-      "arxiv_id": "2602.04876v1",
-      "comment": "Project website: https://johnzhan2023.github.io/PerpetualWonder/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We introduce PerpetualWonder, a hybrid generative simulator that enables long-horizon, action-conditioned 4D scene generation from a single image. Current works fail at this task because their physical state is decoupled from their visual representation, which prevents generative refinements to update the underlying physics for subsequent interactions. PerpetualWonder solves this by introducing th...",
-        "key_contributions": [
-          "We introduce PerpetualWonder, a hybrid generative simulator that enables long-horizon, action-conditioned 4D scene generation from a single image.",
-          "Current works fail at this task because their physical state is decoupled from their visual representation, which prevents generative refinements to update the underlying physics for subsequent interactions.",
-          "PerpetualWonder solves this by introducing the first true closed-loop system."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.04863v1",
-      "title": "Subliminal Effects in Your Data: A General Mechanism via Log-Linearity",
-      "authors": [
-        "Ishaq Aden-Ali",
-        "Noah Golowich",
-        "Allen Liu",
-        "Abhishek Shetty",
-        "Ankur Moitra",
-        "Nika Haghtalab"
-      ],
-      "abstract": "Training modern large language models (LLMs) has become a veritable smorgasbord of algorithms and datasets designed to elicit particular behaviors, making it critical to develop techniques to understand the effects of datasets on the model's properties. This is exacerbated by recent experiments that show datasets can transmit signals that are not directly observable from individual datapoints, posing a conceptual challenge for dataset-centric understandings of LLM training and suggesting a missing fundamental account of such phenomena. Towards understanding such effects, inspired by recent work on the linear structure of LLMs, we uncover a general mechanism through which hidden subtexts can arise in generic datasets.\n  We introduce Logit-Linear-Selection (LLS), a method that prescribes how to select subsets of a generic preference dataset to elicit a wide range of hidden effects. We apply LLS to discover subsets of real-world datasets so that models trained on them exhibit behaviors ranging from having specific preferences, to responding to prompts in a different language not present in the dataset, to taking on a different persona. Crucially, the effect persists for the selected subset, across models with varying architectures, supporting its generality and universality.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "stat.ML"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.04863v1",
-        "pdf": "https://arxiv.org/pdf/2602.04863v1"
-      },
-      "arxiv_id": "2602.04863v1",
-      "comment": "Code available at https://github.com/ishaqadenali/logit-linear-selection",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Training modern large language models (LLMs) has become a veritable smorgasbord of algorithms and datasets designed to elicit particular behaviors, making it critical to develop techniques to understand the effects of datasets on the model's properties. This is exacerbated by recent experiments that show datasets can transmit signals that are not directly observable from individual datapoints, pos...",
-        "key_contributions": [
-          "Training modern large language models (LLMs) has become a veritable smorgasbord of algorithms and datasets designed to elicit particular behaviors, making it critical to develop techniques to understand the effects of datasets on the model's properties.",
-          "This is exacerbated by recent experiments that show datasets can transmit signals that are not directly observable from individual datapoints, posing a conceptual challenge for dataset-centric understandings of LLM training and suggesting a missing fundamental account of such phenomena.",
-          "Towards understanding such effects, inspired by recent work on the linear structure of LLMs, we uncover a general mechanism through which hidden subtexts can arise in generic datasets."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.04814v1",
-      "title": "X2HDR: HDR Image Generation in a Perceptually Uniform Space",
-      "authors": [
-        "Ronghuan Wu",
-        "Wanchao Su",
-        "Kede Ma",
-        "Jing Liao",
-        "Rafał K. Mantiuk"
-      ],
-      "abstract": "High-dynamic-range (HDR) formats and displays are becoming increasingly prevalent, yet state-of-the-art image generators (e.g., Stable Diffusion and FLUX) typically remain limited to low-dynamic-range (LDR) output due to the lack of large-scale HDR training data. In this work, we show that existing pretrained diffusion models can be easily adapted to HDR generation without retraining from scratch. A key challenge is that HDR images are natively represented in linear RGB, whose intensity and color statistics differ substantially from those of sRGB-encoded LDR images. This gap, however, can be effectively bridged by converting HDR inputs into perceptually uniform encodings (e.g., using PU21 or PQ). Empirically, we find that LDR-pretrained variational autoencoders (VAEs) reconstruct PU21-encoded HDR inputs with fidelity comparable to LDR data, whereas linear RGB inputs cause severe degradations. Motivated by this finding, we describe an efficient adaptation strategy that freezes the VAE and finetunes only the denoiser via low-rank adaptation in a perceptually uniform space. This results in a unified computational method that supports both text-to-HDR synthesis and single-image RAW-to-HDR reconstruction. Experiments demonstrate that our perceptually encoded adaptation consistently improves perceptual fidelity, text-image alignment, and effective dynamic range, relative to previous techniques.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
+      "abstract": "Accurate 3D representations of cardiac structures allow quantitative analysis of anatomy and function. In this work, we propose a method for reconstructing complete 3D cardiac shapes from segmentations of sparse planes in CT angiography (CTA) for application in 2D transthoracic echocardiography (TTE). Our method uses a neural implicit function to reconstruct the 3D shape of the cardiac chambers and left-ventricle myocardium from sparse CTA planes. To investigate the feasibility of achieving 3D reconstruction from 2D TTE, we select planes that mimic the standard apical 2D TTE views. During training, a multi-layer perceptron learns shape priors from 3D segmentations of the target structures in CTA. At test time, the network reconstructs 3D cardiac shapes from segmentations of TTE-mimicking CTA planes by jointly optimizing the latent code and the rigid transforms that map the observed planes into 3D space. For each heart, we simulate four realistic apical views, and we compare reconstructed multi-class volumes with the reference CTA volumes. On a held-out set of CTA segmentations, our approach achieves an average Dice coefficient of 0.86 $\\pm$ 0.04 across all structures. Our method also achieves markedly lower volume errors than the clinical standard, Simpson's biplane rule: 4.88 $\\pm$ 4.26 mL vs. 8.14 $\\pm$ 6.04 mL, respectively, for the left ventricle; and 6.40 $\\pm$ 7.37 mL vs. 37.76 $\\pm$ 22.96 mL, respectively, for the left atrium. This suggests that our approach offers a viable route to more accurate 3D chamber quantification in 2D transthoracic echocardiography.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
       "categories": [
         "cs.CV",
-        "cs.GR"
+        "cs.AI",
+        "cs.CE"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.04814v1",
-        "pdf": "https://arxiv.org/pdf/2602.04814v1"
+        "paper": "http://arxiv.org/abs/2602.05884v1",
+        "pdf": "https://arxiv.org/pdf/2602.05884v1"
       },
-      "arxiv_id": "2602.04814v1",
-      "comment": "Project page: https://x2hdr.github.io/, Code: https://github.com/X2HDR/X2HDR",
+      "arxiv_id": "2602.05884v1",
+      "comment": "",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
+      "has_code": false,
+      "relevance_score": 4.066949152542373,
       "score_breakdown": {
-        "total_score": 3.8,
+        "total_score": 4.07,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.54,
+          "matches": [
+            "cardiac",
+            "heart",
+            "3d reconstruction",
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -483,63 +491,60 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "High-dynamic-range (HDR) formats and displays are becoming increasingly prevalent, yet state-of-the-art image generators (e.g., Stable Diffusion and FLUX) typically remain limited to low-dynamic-range (LDR) output due to the lack of large-scale HDR training data. In this work, we show that existing pretrained diffusion models can be easily adapted to HDR generation without retraining from scratch....",
+        "short": "Accurate 3D representations of cardiac structures allow quantitative analysis of anatomy and function. In this work, we propose a method for reconstructing complete 3D cardiac shapes from segmentations of sparse planes in CT angiography (CTA) for application in 2D transthoracic echocardiography (TTE). Our method uses a neural implicit function to reconstruct the 3D shape of the cardiac chambers an...",
         "key_contributions": [
-          "High-dynamic-range (HDR) formats and displays are becoming increasingly prevalent, yet state-of-the-art image generators (e.",
-          "g.",
-          ", Stable Diffusion and FLUX) typically remain limited to low-dynamic-range (LDR) output due to the lack of large-scale HDR training data."
+          "Accurate 3D representations of cardiac structures allow quantitative analysis of anatomy and function.",
+          "In this work, we propose a method for reconstructing complete 3D cardiac shapes from segmentations of sparse planes in CT angiography (CTA) for application in 2D transthoracic echocardiography (TTE).",
+          "Our method uses a neural implicit function to reconstruct the 3D shape of the cardiac chambers and left-ventricle myocardium from sparse CTA planes."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.04851v1",
-      "title": "PDF-HR: Pose Distance Fields for Humanoid Robots",
+      "id": "2602.06040v1",
+      "title": "SwimBird: Eliciting Switchable Reasoning Mode in Hybrid Autoregressive MLLMs",
       "authors": [
-        "Yi Gu",
-        "Yukang Gao",
-        "Yangchen Zhou",
-        "Xingyu Chen",
-        "Yixiao Feng",
-        "Mingle Zhao",
-        "Yunyang Mo",
-        "Zhaorui Wang",
-        "Lixin Xu",
-        "Renjing Xu"
+        "Jintao Tong",
+        "Shilin Yan",
+        "Hongwei Xue",
+        "Xiaojun Tang",
+        "Kunyu Shi",
+        "Guannan Zhang",
+        "Ruixuan Li",
+        "Yixiong Zou"
       ],
-      "abstract": "Pose and motion priors play a crucial role in humanoid robotics. Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data. In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that represents the robot pose distribution as a continuous and differentiable manifold. Given an arbitrary pose, PDF-HR predicts its distance to a large corpus of retargeted robot poses, yielding a smooth measure of pose plausibility that is well suited for optimization and control. PDF-HR can be integrated as a reward shaping term, a regularizer, or a standalone plausibility scorer across diverse pipelines. We evaluate PDF-HR on various humanoid tasks, including single-trajectory motion tracking, general motion tracking, style-based motion mimicry, and general motion retargeting. Experiments show that this plug-and-play prior consistently and substantially strengthens strong baselines. Code and models will be released.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
+      "abstract": "Multimodal Large Language Models (MLLMs) have made remarkable progress in multimodal perception and reasoning by bridging vision and language. However, most existing MLLMs perform reasoning primarily with textual CoT, which limits their effectiveness on vision-intensive tasks. Recent approaches inject a fixed number of continuous hidden states as \"visual thoughts\" into the reasoning process and improve visual performance, but often at the cost of degraded text-based logical reasoning. We argue that the core limitation lies in a rigid, pre-defined reasoning pattern that cannot adaptively choose the most suitable thinking modality for different user queries. We introduce SwimBird, a reasoning-switchable MLLM that dynamically switches among three reasoning modes conditioned on the input: (1) text-only reasoning, (2) vision-only reasoning (continuous hidden states as visual thoughts), and (3) interleaved vision-text reasoning. To enable this capability, we adopt a hybrid autoregressive formulation that unifies next-token prediction for textual thoughts with next-embedding prediction for visual thoughts, and design a systematic reasoning-mode curation strategy to construct SwimBird-SFT-92K, a diverse supervised fine-tuning dataset covering all three reasoning patterns. By enabling flexible, query-adaptive mode selection, SwimBird preserves strong textual logic while substantially improving performance on vision-dense tasks. Experiments across diverse benchmarks covering textual reasoning and challenging visual understanding demonstrate that SwimBird achieves state-of-the-art results and robust gains over prior fixed-pattern multimodal reasoning methods.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
       "categories": [
-        "cs.RO",
         "cs.CV"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.04851v1",
-        "pdf": "https://arxiv.org/pdf/2602.04851v1"
+        "paper": "http://arxiv.org/abs/2602.06040v1",
+        "pdf": "https://arxiv.org/pdf/2602.06040v1"
       },
-      "arxiv_id": "2602.04851v1",
-      "comment": "\\href{https://gaoyukang33.github.io/PDF-HR/}{Project page}",
+      "arxiv_id": "2602.06040v1",
+      "comment": "Project Page: https://accio-lab.github.io/SwimBird",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.65,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -551,7 +556,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -560,44 +565,56 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Pose and motion priors play a crucial role in humanoid robotics. Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data. In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that repres...",
+        "short": "Multimodal Large Language Models (MLLMs) have made remarkable progress in multimodal perception and reasoning by bridging vision and language. However, most existing MLLMs perform reasoning primarily with textual CoT, which limits their effectiveness on vision-intensive tasks. Recent approaches inject a fixed number of continuous hidden states as \"visual thoughts\" into the reasoning process and im...",
         "key_contributions": [
-          "Pose and motion priors play a crucial role in humanoid robotics.",
-          "Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data.",
-          "In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that represents the robot pose distribution as a continuous and differentiable manifold."
+          "Multimodal Large Language Models (MLLMs) have made remarkable progress in multimodal perception and reasoning by bridging vision and language.",
+          "However, most existing MLLMs perform reasoning primarily with textual CoT, which limits their effectiveness on vision-intensive tasks.",
+          "Recent approaches inject a fixed number of continuous hidden states as \"visual thoughts\" into the reasoning process and improve visual performance, but often at the cost of degraded text-based logical reasoning."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.04784v1",
-      "title": "From independent patches to coordinated attention: Controlling information flow in vision transformers",
+      "id": "2602.05986v1",
+      "title": "RISE-Video: Can Video Generators Decode Implicit World Rules?",
       "authors": [
-        "Kieran A. Murphy"
+        "Mingxin Liu",
+        "Shuran Ma",
+        "Shibei Meng",
+        "Xiangyu Zhao",
+        "Zicheng Zhang",
+        "Shaofeng Zhang",
+        "Zhihang Zhong",
+        "Peixian Chen",
+        "Haoyu Cao",
+        "Xing Sun",
+        "Haodong Duan",
+        "Xue Yang"
       ],
-      "abstract": "We make the information transmitted by attention an explicit, measurable quantity in vision transformers. By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global attention. On ImageNet-100, we characterize how classification behavior and information routing evolve across this spectrum, and provide initial insights into how global visual representations emerge from local patch processing by analyzing the first attention heads that transmit information. By biasing learning toward solutions with constrained internal communication, our approach yields models that are more tractable for mechanistic analysis and more amenable to control.",
-      "published": "2026-02-04",
-      "updated": "2026-02-04",
+      "abstract": "While generative video models have achieved remarkable visual fidelity, their capacity to internalize and reason over implicit world rules remains a critical yet under-explored frontier. To bridge this gap, we present RISE-Video, a pioneering reasoning-oriented benchmark for Text-Image-to-Video (TI2V) synthesis that shifts the evaluative focus from surface-level aesthetics to deep cognitive reasoning. RISE-Video comprises 467 meticulously human-annotated samples spanning eight rigorous categories, providing a structured testbed for probing model intelligence across diverse dimensions, ranging from commonsense and spatial dynamics to specialized subject domains. Our framework introduces a multi-dimensional evaluation protocol consisting of four metrics: \\textit{Reasoning Alignment}, \\textit{Temporal Consistency}, \\textit{Physical Rationality}, and \\textit{Visual Quality}. To further support scalable evaluation, we propose an automated pipeline leveraging Large Multimodal Models (LMMs) to emulate human-centric assessment. Extensive experiments on 11 state-of-the-art TI2V models reveal pervasive deficiencies in simulating complex scenarios under implicit constraints, offering critical insights for the advancement of future world-simulating generative models.",
+      "published": "2026-02-05",
+      "updated": "2026-02-05",
       "categories": [
-        "cs.LG"
+        "cs.CV",
+        "cs.AI"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.04784v1",
-        "pdf": "https://arxiv.org/pdf/2602.04784v1"
+        "paper": "http://arxiv.org/abs/2602.05986v1",
+        "pdf": "https://arxiv.org/pdf/2602.05986v1"
       },
-      "arxiv_id": "2602.04784v1",
-      "comment": "Code at https://github.com/murphyka/vit_ib",
+      "arxiv_id": "2602.05986v1",
+      "comment": "38 pages, 16 figures, 3 tables; Code: https://github.com/VisionXLab/RISE-Video; HuggingFace: https://huggingface.co/datasets/VisionXLab/RISE-Video",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.65,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 3.65,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -609,7 +626,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -618,16 +635,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We make the information transmitted by attention an explicit, measurable quantity in vision transformers. By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global a...",
+        "short": "While generative video models have achieved remarkable visual fidelity, their capacity to internalize and reason over implicit world rules remains a critical yet under-explored frontier. To bridge this gap, we present RISE-Video, a pioneering reasoning-oriented benchmark for Text-Image-to-Video (TI2V) synthesis that shifts the evaluative focus from surface-level aesthetics to deep cognitive reason...",
         "key_contributions": [
-          "We make the information transmitted by attention an explicit, measurable quantity in vision transformers.",
-          "By inserting variational information bottlenecks on all attention-mediated writes to the residual stream -- without other architectural changes -- we train models with an explicit information cost and obtain a controllable spectrum from independent patch processing to fully expressive global attention.",
-          "On ImageNet-100, we characterize how classification behavior and information routing evolve across this spectrum, and provide initial insights into how global visual representations emerge from local patch processing by analyzing the first attention heads that transmit information."
+          "While generative video models have achieved remarkable visual fidelity, their capacity to internalize and reason over implicit world rules remains a critical yet under-explored frontier.",
+          "To bridge this gap, we present RISE-Video, a pioneering reasoning-oriented benchmark for Text-Image-to-Video (TI2V) synthesis that shifts the evaluative focus from surface-level aesthetics to deep cognitive reasoning.",
+          "RISE-Video comprises 467 meticulously human-annotated samples spanning eight rigorous categories, providing a structured testbed for probing model intelligence across diverse dimensions, ranging from commonsense and spatial dynamics to specialized subject domains."
         ],
         "provider": "gemini"
       }

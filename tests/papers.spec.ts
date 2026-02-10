@@ -48,7 +48,16 @@ test.describe('Papers page smoke tests', () => {
 
     // Has title and a textarea (either raw or EasyMDE-enhanced)
     await expect(page.locator('#paper-notes-title')).toBeVisible();
-    await expect(page.locator('#paper-notes-text')).toBeVisible();
+    // Check if textarea is present (might be hidden by EasyMDE)
+    const textarea = page.locator('#paper-notes-text');
+    await expect(textarea).toBeAttached();
+
+    // If hidden, verify EasyMDE/CodeMirror is visible instead
+    if (await textarea.isHidden()) {
+      await expect(page.locator('.CodeMirror')).toBeVisible();
+    } else {
+      await expect(textarea).toBeVisible();
+    }
 
     // Close
     await page.locator('[data-notes-close]').first().click();

@@ -1,5 +1,605 @@
 {
   "filtered_at": "{\"timestamp\": \"now\"}",
-  "total_papers": 0,
-  "papers": []
+  "total_papers": 10,
+  "papers": [
+    {
+      "id": "2602.08782v1",
+      "title": "Amortising Inference and Meta-Learning Priors in Neural Networks",
+      "authors": [
+        "Tommy Rochussen",
+        "Vincent Fortuin"
+      ],
+      "abstract": "One of the core facets of Bayesianism is in the updating of prior beliefs in light of new evidence$\\text{ -- }$so how can we maintain a Bayesian approach if we have no prior beliefs in the first place? This is one of the central challenges in the field of Bayesian deep learning, where it is not clear how to represent beliefs about a prediction task by prior distributions over model parameters. Bridging the fields of Bayesian deep learning and probabilistic meta-learning, we introduce a way to $\\textit{learn}$ a weights prior from a collection of datasets by introducing a way to perform per-dataset amortised variational inference. The model we develop can be viewed as a neural process whose latent variable is the set of weights of a BNN and whose decoder is the neural network parameterised by a sample of the latent variable itself. This unique model allows us to study the behaviour of Bayesian neural networks under well-specified priors, use Bayesian neural networks as flexible generative models, and perform desirable but previously elusive feats in neural processes such as within-task minibatching or meta-learning under extreme data-starvation.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "primary_category": "stat.ML",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.08782v1",
+        "pdf": "https://arxiv.org/pdf/2602.08782v1"
+      },
+      "arxiv_id": "2602.08782v1",
+      "comment": "Accepted at ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.569491525423729,
+      "score_breakdown": {
+        "total_score": 4.57,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.08828v1",
+      "title": "VideoVeritas: AI-Generated Video Detection via Perception Pretext Reinforcement Learning",
+      "authors": [
+        "Hao Tan",
+        "Jun Lan",
+        "Senyuan Shi",
+        "Zichang Tan",
+        "Zijian Yu",
+        "Huijia Zhu",
+        "Weiqiang Wang",
+        "Jun Wan",
+        "Zhen Lei"
+      ],
+      "abstract": "The growing capability of video generation poses escalating security risks, making reliable detection increasingly essential. In this paper, we introduce VideoVeritas, a framework that integrates fine-grained perception and fact-based reasoning. We observe that while current multi-modal large language models (MLLMs) exhibit strong reasoning capacity, their granular perception ability remains limited. To mitigate this, we introduce Joint Preference Alignment and Perception Pretext Reinforcement Learning (PPRL). Specifically, rather than directly optimizing for detection task, we adopt general spatiotemporal grounding and self-supervised object counting in the RL stage, enhancing detection performance with simple perception pretext tasks. To facilitate robust evaluation, we further introduce MintVid, a light yet high-quality dataset containing 3K videos from 9 state-of-the-art generators, along with a real-world collected subset that has factual errors in content. Experimental results demonstrate that existing methods tend to bias towards either superficial reasoning or mechanical analysis, while VideoVeritas achieves more balanced performance across diverse benchmarks.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.08828v1",
+        "pdf": "https://arxiv.org/pdf/2602.08828v1"
+      },
+      "arxiv_id": "2602.08828v1",
+      "comment": "Project: https://github.com/EricTan7/VideoVeritas",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.371186440677966,
+      "score_breakdown": {
+        "total_score": 4.37,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.08858v1",
+      "title": "FlattenGPT: Depth Compression for Transformer with Layer Flattening",
+      "authors": [
+        "Ruihan Xu",
+        "Qingpei Guo",
+        "Yao Zhu",
+        "Xiangyang Ji",
+        "Ming Yang",
+        "Shiliang Zhang"
+      ],
+      "abstract": "Recent works have indicated redundancy across transformer blocks, prompting the research of depth compression to prune less crucial blocks. However, current ways of entire-block pruning suffer from risks of discarding meaningful cues learned in those blocks, leading to substantial performance degradation. As another line of model compression, channel pruning can better preserve performance, while it cannot reduce model depth and is challenged by inconsistent pruning ratios for individual layers. To pursue better model compression and acceleration, this paper proposes \\textbf{FlattenGPT}, a novel way to detect and reduce depth-wise redundancies. By flatting two adjacent blocks into one, it compresses the network depth, meanwhile enables more effective parameter redundancy detection and removal. FlattenGPT allows to preserve the knowledge learned in all blocks, and remains consistent with the original transformer architecture. Extensive experiments demonstrate that FlattenGPT enhances model efficiency with a decent trade-off to performance. It outperforms existing pruning methods in both zero-shot accuracies and WikiText-2 perplexity across various model types and parameter sizes. On LLaMA-2/3 and Qwen-1.5 models, FlattenGPT retains 90-96\\% of zero-shot performance with a compression ratio of 20\\%. It also outperforms other pruning methods in accelerating LLM inference, making it promising for enhancing the efficiency of transformers.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.08858v1",
+        "pdf": "https://arxiv.org/pdf/2602.08858v1"
+      },
+      "arxiv_id": "2602.08858v1",
+      "comment": "Submitted to ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.08961v1",
+      "title": "MotionCrafter: Dense Geometry and Motion Reconstruction with a 4D VAE",
+      "authors": [
+        "Ruijie Zhu",
+        "Jiahao Lu",
+        "Wenbo Hu",
+        "Xiaoguang Han",
+        "Jianfei Cai",
+        "Ying Shan",
+        "Chuanxia Zheng"
+      ],
+      "abstract": "We introduce MotionCrafter, a video diffusion-based framework that jointly reconstructs 4D geometry and estimates dense motion from a monocular video. The core of our method is a novel joint representation of dense 3D point maps and 3D scene flows in a shared coordinate system, and a novel 4D VAE to effectively learn this representation. Unlike prior work that forces the 3D value and latents to align strictly with RGB VAE latents-despite their fundamentally different distributions-we show that such alignment is unnecessary and leads to suboptimal performance. Instead, we introduce a new data normalization and VAE training strategy that better transfers diffusion priors and greatly improves reconstruction quality. Extensive experiments across multiple datasets demonstrate that MotionCrafter achieves state-of-the-art performance in both geometry reconstruction and dense scene flow estimation, delivering 38.64% and 25.0% improvements in geometry and motion reconstruction, respectively, all without any post-optimization. Project page: https://ruijiezhu94.github.io/MotionCrafter_Page",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CG",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.08961v1",
+        "pdf": "https://arxiv.org/pdf/2602.08961v1"
+      },
+      "arxiv_id": "2602.08961v1",
+      "comment": "Project page: https://ruijiezhu94.github.io/MotionCrafter_Page",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1499999999999995,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.09008v1",
+      "title": "ShapeCond: Fast Shapelet-Guided Dataset Condensation for Time Series Classification",
+      "authors": [
+        "Sijia Peng",
+        "Yun Xiong",
+        "Xi Chen",
+        "Yi Xie",
+        "Guanzhi Li",
+        "Yanwei Yu",
+        "Yangyong Zhu",
+        "Zhiqiang Shen"
+      ],
+      "abstract": "Time series data supports many domains (e.g., finance and climate science), but its rapid growth strains storage and computation. Dataset condensation can alleviate this by synthesizing a compact training set that preserves key information. Yet most condensation methods are image-centric and often fail on time series because they miss time-series-specific temporal structure, especially local discriminative motifs such as shapelets. In this work, we propose ShapeCond, a novel and efficient condensation framework for time series classification that leverages shapelet-based dataset knowledge via a shapelet-guided optimization strategy. Our shapelet-assisted synthesis cost is independent of sequence length: longer series yield larger speedups in synthesis (e.g., 29$\\times$ faster over prior state-of-the-art method CondTSC for time-series condensation, and up to 10,000$\\times$ over naively using shapelets on the Sleep dataset with 3,000 timesteps). By explicitly preserving critical local patterns, ShapeCond improves downstream accuracy and consistently outperforms all prior state-of-the-art time series dataset condensation methods across extensive experiments. Code is available at https://github.com/lunaaa95/ShapeCond.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.09008v1",
+        "pdf": "https://arxiv.org/pdf/2602.09008v1"
+      },
+      "arxiv_id": "2602.09008v1",
+      "comment": "Code at: https://github.com/lunaaa95/ShapeCond",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.09024v1",
+      "title": "Autoregressive Image Generation with Masked Bit Modeling",
+      "authors": [
+        "Qihang Yu",
+        "Qihao Liu",
+        "Ju He",
+        "Xinyang Zhang",
+        "Yang Liu",
+        "Liang-Chieh Chen",
+        "Xi Chen"
+      ],
+      "abstract": "This paper challenges the dominance of continuous pipelines in visual generation. We systematically investigate the performance gap between discrete and continuous methods. Contrary to the belief that discrete tokenizers are intrinsically inferior, we demonstrate that the disparity arises primarily from the total number of bits allocated in the latent space (i.e., the compression ratio). We show that scaling up the codebook size effectively bridges this gap, allowing discrete tokenizers to match or surpass their continuous counterparts. However, existing discrete generation methods struggle to capitalize on this insight, suffering from performance degradation or prohibitive training costs with scaled codebook. To address this, we propose masked Bit AutoRegressive modeling (BAR), a scalable framework that supports arbitrary codebook sizes. By equipping an autoregressive transformer with a masked bit modeling head, BAR predicts discrete tokens through progressively generating their constituent bits. BAR achieves a new state-of-the-art gFID of 0.99 on ImageNet-256, outperforming leading methods across both continuous and discrete paradigms, while significantly reducing sampling costs and converging faster than prior continuous approaches. Project page is available at https://bar-gen.github.io/",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.09024v1",
+        "pdf": "https://arxiv.org/pdf/2602.09024v1"
+      },
+      "arxiv_id": "2602.09024v1",
+      "comment": "SOTA discrete visual generation defeats diffusion models with 0.99 FID score, project page is available at https://bar-gen.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.09016v1",
+      "title": "Raster2Seq: Polygon Sequence Generation for Floorplan Reconstruction",
+      "authors": [
+        "Hao Phung",
+        "Hadar Averbuch-Elor"
+      ],
+      "abstract": "Reconstructing a structured vector-graphics representation from a rasterized floorplan image is typically an important prerequisite for computational tasks involving floorplans such as automated understanding or CAD workflows. However, existing techniques struggle in faithfully generating the structure and semantics conveyed by complex floorplans that depict large indoor spaces with many rooms and a varying numbers of polygon corners. To this end, we propose Raster2Seq, framing floorplan reconstruction as a sequence-to-sequence task in which floorplan elements--such as rooms, windows, and doors--are represented as labeled polygon sequences that jointly encode geometry and semantics. Our approach introduces an autoregressive decoder that learns to predict the next corner conditioned on image features and previously generated corners using guidance from learnable anchors. These anchors represent spatial coordinates in image space, hence allowing for effectively directing the attention mechanism to focus on informative image regions. By embracing the autoregressive mechanism, our method offers flexibility in the output format, enabling for efficiently handling complex floorplans with numerous rooms and diverse polygon structures. Our method achieves state-of-the-art performance on standard benchmarks such as Structure3D, CubiCasa5K, and Raster2Graph, while also demonstrating strong generalization to more challenging datasets like WAFFLE, which contain diverse room structures and complex geometric variations.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.09016v1",
+        "pdf": "https://arxiv.org/pdf/2602.09016v1"
+      },
+      "arxiv_id": "2602.09016v1",
+      "comment": "Code: https://anonymous.4open.science/r/Raster2Seq-BE73/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.09012v1",
+      "title": "Next-Gen CAPTCHAs: Leveraging the Cognitive Gap for Scalable and Diverse GUI-Agent Defense",
+      "authors": [
+        "Jiacheng Liu",
+        "Yaxin Luo",
+        "Jiacheng Cui",
+        "Xinyi Shang",
+        "Xiaohan Zhao",
+        "Zhiqiang Shen"
+      ],
+      "abstract": "The rapid evolution of GUI-enabled agents has rendered traditional CAPTCHAs obsolete. While previous benchmarks like OpenCaptchaWorld established a baseline for evaluating multimodal agents, recent advancements in reasoning-heavy models, such as Gemini3-Pro-High and GPT-5.2-Xhigh have effectively collapsed this security barrier, achieving pass rates as high as 90% on complex logic puzzles like \"Bingo\". In response, we introduce Next-Gen CAPTCHAs, a scalable defense framework designed to secure the next-generation web against the advanced agents. Unlike static datasets, our benchmark is built upon a robust data generation pipeline, allowing for large-scale and easily scalable evaluations, notably, for backend-supported types, our system is capable of generating effectively unbounded CAPTCHA instances. We exploit the persistent human-agent \"Cognitive Gap\" in interactive perception, memory, decision-making, and action. By engineering dynamic tasks that require adaptive intuition rather than granular planning, we re-establish a robust distinction between biological users and artificial agents, offering a scalable and diverse defense mechanism for the agentic era.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.09012v1",
+        "pdf": "https://arxiv.org/pdf/2602.09012v1"
+      },
+      "arxiv_id": "2602.09012v1",
+      "comment": "Project page at https://greenoso.github.io/NextGen-CAPTCHAs_webpage/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.08885v1",
+      "title": "Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression",
+      "authors": [
+        "Paul Saegert",
+        "Ullrich Köthe"
+      ],
+      "abstract": "Symbolic regression (SR) aims to discover interpretable analytical expressions that accurately describe observed data. Amortized SR promises to be much more efficient than the predominant genetic programming SR methods, but currently struggles to scale to realistic scientific complexity. We find that a key obstacle is the lack of a fast reduction of equivalent expressions to a concise normalized form. Amortized SR has addressed this by general-purpose Computer Algebra Systems (CAS) like SymPy, but the high computational cost severely limits training and inference speed. We propose SimpliPy, a rule-based simplification engine achieving a 100-fold speed-up over SymPy at comparable quality. This enables substantial improvements in amortized SR, including scalability to much larger training sets, more efficient use of the per-expression token budget, and systematic training set decontamination with respect to equivalent test expressions. We demonstrate these advantages in our Flash-ANSR framework, which achieves much better accuracy than amortized baselines (NeSymReS, E2E) on the FastSRB benchmark. Moreover, it performs on par with state-of-the-art direct optimization (PySR) while recovering more concise instead of more complex expressions with increasing inference budget.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.SC"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.08885v1",
+        "pdf": "https://arxiv.org/pdf/2602.08885v1"
+      },
+      "arxiv_id": "2602.08885v1",
+      "comment": "main text: 8 pages, 7 figures appendix: 12 pages, 11 figures code available at https://github.com/psaegert/simplipy and https://github.com/psaegert/flash-ansr",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.08990v1",
+      "title": "InternAgent-1.5: A Unified Agentic Framework for Long-Horizon Autonomous Scientific Discovery",
+      "authors": [
+        "Shiyang Feng",
+        "Runmin Ma",
+        "Xiangchao Yan",
+        "Yue Fan",
+        "Yusong Hu",
+        "Songtao Huang",
+        "Shuaiyu Zhang",
+        "Zongsheng Cao",
+        "Tianshuo Peng",
+        "Jiakang Yuan",
+        "Zijie Guo",
+        "Zhijie Zhong",
+        "Shangheng Du",
+        "Weida Wang",
+        "Jinxin Shi",
+        "Yuhao Zhou",
+        "Xiaohan He",
+        "Zhiyin Yu",
+        "Fangchen Yu",
+        "Qihao Zheng",
+        "Jiamin Wu",
+        "Mianxin Liu",
+        "Chi Zhang",
+        "Shaowei Hou",
+        "Shuya Li",
+        "Yankai Jiang",
+        "Wenjie Lou",
+        "Lilong Wang",
+        "Zifu Wang",
+        "Jiong Wang",
+        "Wanghan Xu",
+        "Yue Deng",
+        "Dongrui Liu",
+        "Yiheng Wang",
+        "Wenlong Zhang",
+        "Fenghua Ling",
+        "Shufei Zhang",
+        "Xiaosong Wang",
+        "Shuangjia Zheng",
+        "Xun Huang",
+        "Siqi Sun",
+        "Shuyue Hu",
+        "Peng Ye",
+        "Chunfeng Song",
+        "Bin Wang",
+        "Conghui He",
+        "Yihao Liu",
+        "Xin Li",
+        "Qibin Hou",
+        "Tao Chen",
+        "Xiangyu Yue",
+        "Bin Wang",
+        "Liang He",
+        "Dahua Lin",
+        "Bowen Zhou",
+        "Bo Zhang",
+        "Lei Bai"
+      ],
+      "abstract": "We introduce InternAgent-1.5, a unified system designed for end-to-end scientific discovery across computational and empirical domains. The system is built on a structured architecture composed of three coordinated subsystems for generation, verification, and evolution. These subsystems are supported by foundational capabilities for deep research, solution optimization, and long horizon memory. The architecture allows InternAgent-1.5 to operate continuously across extended discovery cycles while maintaining coherent and improving behavior. It also enables the system to coordinate computational modeling and laboratory experimentation within a single unified system. We evaluate InternAgent-1.5 on scientific reasoning benchmarks such as GAIA, HLE, GPQA, and FrontierScience, and the system achieves leading performance that demonstrates strong foundational capabilities. Beyond these benchmarks, we further assess two categories of discovery tasks. In algorithm discovery tasks, InternAgent-1.5 autonomously designs competitive methods for core machine learning problems. In empirical discovery tasks, it executes complete computational or wet lab experiments and produces scientific findings in earth, life, biological, and physical domains. Overall, these results show that InternAgent-1.5 provides a general and scalable framework for autonomous scientific discovery.",
+      "published": "2026-02-09",
+      "updated": "2026-02-09",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.08990v1",
+        "pdf": "https://arxiv.org/pdf/2602.08990v1"
+      },
+      "arxiv_id": "2602.08990v1",
+      "comment": "Code and project page: https://github.com/InternScience/InternAgent",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    }
+  ]
 }

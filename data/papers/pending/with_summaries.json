@@ -3,106 +3,36 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.11145v1",
-      "title": "SCRAPL: Scattering Transform with Random Paths for Machine Learning",
+      "id": "2602.12172v1",
+      "title": "Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation",
       "authors": [
-        "Christopher Mitcheltree",
-        "Vincent Lostanlen",
-        "Emmanouil Benetos",
-        "Mathieu Lagrange"
+        "Bowei He",
+        "Yankai Chen",
+        "Xiaokun Zhang",
+        "Linghe Kong",
+        "Philip S. Yu",
+        "Xue Liu",
+        "Chen Ma"
       ],
-      "abstract": "The Euclidean distance between wavelet scattering transform coefficients (known as paths) provides informative gradients for perceptual quality assessment of deep inverse problems in computer vision, speech, and audio processing. However, these transforms are computationally expensive when employed as differentiable loss functions for stochastic gradient descent due to their numerous paths, which significantly limits their use in neural network training. Against this problem, we propose \"Scattering transform with Random Paths for machine Learning\" (SCRAPL): a stochastic optimization scheme for efficient evaluation of multivariable scattering transforms. We implement SCRAPL for the joint time-frequency scattering transform (JTFS) which demodulates spectrotemporal patterns at multiple scales and rates, allowing a fine characterization of intermittent auditory textures. We apply SCRAPL to differentiable digital signal processing (DDSP), specifically, unsupervised sound matching of a granular synthesizer and the Roland TR-808 drum machine. We also propose an initialization heuristic based on importance sampling, which adapts SCRAPL to the perceptual content of the dataset, improving neural network convergence and evaluation performance. We make our code and audio samples available and provide SCRAPL as a Python package.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
+      "abstract": "Knowledge distillation from Large Language Models (LLMs) to smaller models has emerged as a critical technique for deploying efficient AI systems. However, current methods for distillation via synthetic data lack pedagogical awareness, treating knowledge transfer as a one-off data synthesis and training task rather than a systematic learning process. In this paper, we propose a novel pedagogically-inspired framework for LLM knowledge distillation that draws from fundamental educational principles. Our approach introduces a three-stage pipeline -- Knowledge Identifier, Organizer, and Adapter (IOA) -- that systematically identifies knowledge deficiencies in student models, organizes knowledge delivery through progressive curricula, and adapts representations to match the cognitive capacity of student models. We integrate Bloom's Mastery Learning Principles and Vygotsky's Zone of Proximal Development to create a dynamic distillation process where student models approach teacher model's performance on prerequisite knowledge before advancing, and new knowledge is introduced with controlled, gradual difficulty increments. Extensive experiments using LLaMA-3.1/3.2 and Qwen2.5 as student models demonstrate that IOA achieves significant improvements over baseline distillation methods, with student models retaining 94.7% of teacher performance on DollyEval while using less than 1/10th of the parameters. Our framework particularly excels in complex reasoning tasks, showing 19.2% improvement on MATH and 22.3% on HumanEval compared with state-of-the-art baselines.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
       "categories": [
-        "cs.SD",
-        "cs.LG",
-        "eess.AS"
+        "cs.AI",
+        "cs.CL"
       ],
-      "primary_category": "cs.SD",
+      "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.11145v1",
-        "pdf": "https://arxiv.org/pdf/2602.11145v1"
+        "paper": "http://arxiv.org/abs/2602.12172v1",
+        "pdf": "https://arxiv.org/pdf/2602.12172v1"
       },
-      "arxiv_id": "2602.11145v1",
-      "comment": "Accepted to ICLR 2026. Code, audio samples, and Python package provided at https://christhetree.github.io/scrapl/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.1194915254237285,
-      "score_breakdown": {
-        "total_score": 5.12,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The Euclidean distance between wavelet scattering transform coefficients (known as paths) provides informative gradients for perceptual quality assessment of deep inverse problems in computer vision, speech, and audio processing. However, these transforms are computationally expensive when employed as differentiable loss functions for stochastic gradient descent due to their numerous paths, which ...",
-        "key_contributions": [
-          "The Euclidean distance between wavelet scattering transform coefficients (known as paths) provides informative gradients for perceptual quality assessment of deep inverse problems in computer vision, speech, and audio processing.",
-          "However, these transforms are computationally expensive when employed as differentiable loss functions for stochastic gradient descent due to their numerous paths, which significantly limits their use in neural network training.",
-          "Against this problem, we propose \"Scattering transform with Random Paths for machine Learning\" (SCRAPL): a stochastic optimization scheme for efficient evaluation of multivariable scattering transforms."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.10975v1",
-      "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
-      "authors": [
-        "Qixing Zhou",
-        "Jiacheng Zhang",
-        "Haiyang Wang",
-        "Rui Hao",
-        "Jiahe Wang",
-        "Minghao Han",
-        "Yuxue Yang",
-        "Shuzhe Wu",
-        "Feiyang Pan",
-        "Lue Fan",
-        "Dandan Tu",
-        "Zhaoxiang Zhang"
-      ],
-      "abstract": "Agents powered by large language models (LLMs) are increasingly adopted in the software industry, contributing code as collaborators or even autonomous developers. As their presence grows, it becomes important to assess the current boundaries of their coding abilities. Existing agentic coding benchmarks, however, cover a limited task scope, e.g., bug fixing within a single pull request (PR), and often rely on non-executable evaluations or lack an automated approach for continually updating the evaluation coverage. To address such issues, we propose FeatureBench, a benchmark designed to evaluate agentic coding performance in end-to-end, feature-oriented software development. FeatureBench incorporates an execution-based evaluation protocol and a scalable test-driven method that automatically derives tasks from code repositories with minimal human effort. By tracing from unit tests along a dependency graph, our approach can identify feature-level coding tasks spanning multiple commits and PRs scattered across the development timeline, while ensuring the proper functioning of other features after the separation. Using this framework, we curated 200 challenging evaluation tasks and 3825 executable environments from 24 open-source repositories in the first version of our benchmark. Empirical evaluation reveals that the state-of-the-art agentic model, such as Claude 4.5 Opus, which achieves a 74.4% resolved rate on SWE-bench, succeeds on only 11.0% of tasks, opening new opportunities for advancing agentic coding. Moreover, benefiting from our automated task collection toolkit, FeatureBench can be easily scaled and updated over time to mitigate data leakage. The inherent verifiability of constructed environments also makes our method potentially valuable for agent training.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
-      "categories": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "primary_category": "cs.SE",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.10975v1",
-        "pdf": "https://arxiv.org/pdf/2602.10975v1"
-      },
-      "arxiv_id": "2602.10975v1",
+      "arxiv_id": "2602.12172v1",
       "comment": "Accepted by ICLR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.85,
+      "relevance_score": 4.6499999999999995,
       "score_breakdown": {
-        "total_score": 4.85,
+        "total_score": 4.65,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -114,258 +44,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Agents powered by large language models (LLMs) are increasingly adopted in the software industry, contributing code as collaborators or even autonomous developers. As their presence grows, it becomes important to assess the current boundaries of their coding abilities. Existing agentic coding benchmarks, however, cover a limited task scope, e.g., bug fixing within a single pull request (PR), and o...",
-        "key_contributions": [
-          "Agents powered by large language models (LLMs) are increasingly adopted in the software industry, contributing code as collaborators or even autonomous developers.",
-          "As their presence grows, it becomes important to assess the current boundaries of their coding abilities.",
-          "Existing agentic coding benchmarks, however, cover a limited task scope, e."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.11005v1",
-      "title": "Interpretable Vision Transformers in Monocular Depth Estimation via SVDA",
-      "authors": [
-        "Vasileios Arampatzakis",
-        "George Pavlidis",
-        "Nikolaos Mitianoudis",
-        "Nikos Papamarkos"
-      ],
-      "abstract": "Monocular depth estimation is a central problem in computer vision with applications in robotics, AR, and autonomous driving, yet the self-attention mechanisms that drive modern Transformer architectures remain opaque. We introduce SVD-Inspired Attention (SVDA) into the Dense Prediction Transformer (DPT), providing the first spectrally structured formulation of attention for dense prediction tasks. SVDA decouples directional alignment from spectral modulation by embedding a learnable diagonal matrix into normalized query-key interactions, enabling attention maps that are intrinsically interpretable rather than post-hoc approximations. Experiments on KITTI and NYU-v2 show that SVDA preserves or slightly improves predictive accuracy while adding only minor computational overhead. More importantly, SVDA unlocks six spectral indicators that quantify entropy, rank, sparsity, alignment, selectivity, and robustness. These reveal consistent cross-dataset and depth-wise patterns in how attention organizes during training, insights that remain inaccessible in standard Transformers. By shifting the role of attention from opaque mechanism to quantifiable descriptor, SVDA redefines interpretability in monocular depth estimation and opens a principled avenue toward transparent dense prediction models.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.11005v1",
-        "pdf": "https://arxiv.org/pdf/2602.11005v1"
-      },
-      "arxiv_id": "2602.11005v1",
-      "comment": "8 pages, 2 figures, submitted to CVPR Conference 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.469491525423729,
-      "score_breakdown": {
-        "total_score": 4.47,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Monocular depth estimation is a central problem in computer vision with applications in robotics, AR, and autonomous driving, yet the self-attention mechanisms that drive modern Transformer architectures remain opaque. We introduce SVD-Inspired Attention (SVDA) into the Dense Prediction Transformer (DPT), providing the first spectrally structured formulation of attention for dense prediction tasks...",
-        "key_contributions": [
-          "Monocular depth estimation is a central problem in computer vision with applications in robotics, AR, and autonomous driving, yet the self-attention mechanisms that drive modern Transformer architectures remain opaque.",
-          "We introduce SVD-Inspired Attention (SVDA) into the Dense Prediction Transformer (DPT), providing the first spectrally structured formulation of attention for dense prediction tasks.",
-          "SVDA decouples directional alignment from spectral modulation by embedding a learnable diagonal matrix into normalized query-key interactions, enabling attention maps that are intrinsically interpretable rather than post-hoc approximations."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.11057v1",
-      "title": "Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models",
-      "authors": [
-        "Xinyu Yuan",
-        "Yan Qiao",
-        "Zonghui Wang",
-        "Wenzhi Chen"
-      ],
-      "abstract": "The multi-commodity flow (MCF) problem is a fundamental topic in network flow and combinatorial optimization, with broad applications in transportation, communication, and logistics, etc. Nowadays, the rapid expansion of allocation systems has posed challenges for existing optimization engines in balancing optimality and tractability. In this paper, we present Pram, the first ML-based method that leverages the reasoning power of multimodal language models (MLMs) for addressing the trade-off dilemma -- a great need of service providers. As part of our proposal, Pram (i) quickly computes high-quality allocations by dividing the original problem into local subproblems, which are then resolved by an MLM-powered \"agent\", and (ii) ensures global consistency by harmonizing these subproblems via a multi-agent reinforcement learning algorithm. Theoretically, we show that Pram, which learns to perform gradient descent in context, provably converges to the optimum within the family of MCF problems. Empirically, on real-world datasets and public topologies, Pram achieves performance comparable to, and in some cases even surpassing, linear programming solvers (very close to the optimal solution), and substantially lower runtimes (1 to 2 orders of magnitude faster). Moreover, Pram exhibits strong robustness (<10\\% performance degradation under link failures or flow bursts), demonstrating MLM's generalization ability to unforeseen events. Pram is objective-agnostic and seamlessly integrates with mainstream allocation systems, providing a practical and scalable solution for future networks.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.11057v1",
-        "pdf": "https://arxiv.org/pdf/2602.11057v1"
-      },
-      "arxiv_id": "2602.11057v1",
-      "comment": "Published as a conference paper at ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.4,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The multi-commodity flow (MCF) problem is a fundamental topic in network flow and combinatorial optimization, with broad applications in transportation, communication, and logistics, etc. Nowadays, the rapid expansion of allocation systems has posed challenges for existing optimization engines in balancing optimality and tractability. In this paper, we present Pram, the first ML-based method that ...",
-        "key_contributions": [
-          "The multi-commodity flow (MCF) problem is a fundamental topic in network flow and combinatorial optimization, with broad applications in transportation, communication, and logistics, etc.",
-          "Nowadays, the rapid expansion of allocation systems has posed challenges for existing optimization engines in balancing optimality and tractability.",
-          "In this paper, we present Pram, the first ML-based method that leverages the reasoning power of multimodal language models (MLMs) for addressing the trade-off dilemma -- a great need of service providers."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.10884v1",
-      "title": "ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving",
-      "authors": [
-        "Jinqing Zhang",
-        "Zehua Fu",
-        "Zelin Xu",
-        "Wenying Dai",
-        "Qingjie Liu",
-        "Yunhong Wang"
-      ],
-      "abstract": "The comprehensive understanding capabilities of world models for driving scenarios have significantly improved the planning accuracy of end-to-end autonomous driving frameworks. However, the redundant modeling of static regions and the lack of deep interaction with trajectories hinder world models from exerting their full effectiveness. In this paper, we propose Temporal Residual World Model (TR-World), which focuses on dynamic object modeling. By calculating the temporal residuals of scene representations, the information of dynamic objects can be extracted without relying on detection and tracking. TR-World takes only temporal residuals as input, thus predicting the future spatial distribution of dynamic objects more precisely. By combining the prediction with the static object information contained in the current BEV features, accurate future BEV features can be obtained. Furthermore, we propose Future-Guided Trajectory Refinement (FGTR) module, which conducts interaction between prior trajectories (predicted from the current scene representation) and the future BEV features. This module can not only utilize future road conditions to refine trajectories, but also provides sparse spatial-temporal supervision on future BEV features to prevent world model collapse. Comprehensive experiments conducted on the nuScenes and NAVSIM datasets demonstrate that our method, namely ResWorld, achieves state-of-the-art planning performance. The code is available at https://github.com/mengtan00/ResWorld.git.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.10884v1",
-        "pdf": "https://arxiv.org/pdf/2602.10884v1"
-      },
-      "arxiv_id": "2602.10884v1",
-      "comment": "ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The comprehensive understanding capabilities of world models for driving scenarios have significantly improved the planning accuracy of end-to-end autonomous driving frameworks. However, the redundant modeling of static regions and the lack of deep interaction with trajectories hinder world models from exerting their full effectiveness. In this paper, we propose Temporal Residual World Model (TR-W...",
-        "key_contributions": [
-          "The comprehensive understanding capabilities of world models for driving scenarios have significantly improved the planning accuracy of end-to-end autonomous driving frameworks.",
-          "However, the redundant modeling of static regions and the lack of deep interaction with trajectories hinder world models from exerting their full effectiveness.",
-          "In this paper, we propose Temporal Residual World Model (TR-World), which focuses on dynamic object modeling."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.11105v1",
-      "title": "FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference",
-      "authors": [
-        "Divya Jyoti Bajpai",
-        "Dhruv Bhardwaj",
-        "Soumya Roy",
-        "Tejas Duseja",
-        "Harsh Agarwal",
-        "Aashay Sandansing",
-        "Manjesh Kumar Hanawal"
-      ],
-      "abstract": "Flow-matching models deliver state-of-the-art fidelity in image and video generation, but the inherent sequential denoising process renders them slower. Existing acceleration methods like distillation, trajectory truncation, and consistency approaches are static, require retraining, and often fail to generalize across tasks. We propose FastFlow, a plug-and-play adaptive inference framework that accelerates generation in flow matching models. FastFlow identifies denoising steps that produce only minor adjustments to the denoising path and approximates them without using the full neural network models used for velocity predictions. The approximation utilizes finite-difference velocity estimates from prior predictions to efficiently extrapolate future states, enabling faster advancements along the denoising path at zero compute cost. This enables skipping computation at intermediary steps. We model the decision of how many steps to safely skip before requiring a full model computation as a multi-armed bandit problem. The bandit learns the optimal skips to balance speed with performance. FastFlow integrates seamlessly with existing pipelines and generalizes across image generation, video generation, and editing tasks. Experiments demonstrate a speedup of over 2.6x while maintaining high-quality outputs. The source code for this work can be found at https://github.com/Div290/FastFlow.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.11105v1",
-        "pdf": "https://arxiv.org/pdf/2602.11105v1"
-      },
-      "arxiv_id": "2602.11105v1",
-      "comment": "Accepted at International Conference on Learning Representations (ICLR) 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.35,
-      "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -379,39 +58,173 @@
         }
       },
       "ai_summaries": {
-        "short": "Flow-matching models deliver state-of-the-art fidelity in image and video generation, but the inherent sequential denoising process renders them slower. Existing acceleration methods like distillation, trajectory truncation, and consistency approaches are static, require retraining, and often fail to generalize across tasks. We propose FastFlow, a plug-and-play adaptive inference framework that ac...",
+        "short": "Knowledge distillation from Large Language Models (LLMs) to smaller models has emerged as a critical technique for deploying efficient AI systems. However, current methods for distillation via synthetic data lack pedagogical awareness, treating knowledge transfer as a one-off data synthesis and training task rather than a systematic learning process. In this paper, we propose a novel pedagogically...",
         "key_contributions": [
-          "Flow-matching models deliver state-of-the-art fidelity in image and video generation, but the inherent sequential denoising process renders them slower.",
-          "Existing acceleration methods like distillation, trajectory truncation, and consistency approaches are static, require retraining, and often fail to generalize across tasks.",
-          "We propose FastFlow, a plug-and-play adaptive inference framework that accelerates generation in flow matching models."
+          "Knowledge distillation from Large Language Models (LLMs) to smaller models has emerged as a critical technique for deploying efficient AI systems.",
+          "However, current methods for distillation via synthetic data lack pedagogical awareness, treating knowledge transfer as a one-off data synthesis and training task rather than a systematic learning process.",
+          "In this paper, we propose a novel pedagogically-inspired framework for LLM knowledge distillation that draws from fundamental educational principles."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.10911v1",
-      "title": "Tuning the burn-in phase in training recurrent neural networks improves their performance",
+      "id": "2602.12113v1",
+      "title": "Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty",
       "authors": [
-        "Julian D. Schiller",
-        "Malte Heinrich",
-        "Victor G. Lopez",
-        "Matthias A. Müller"
+        "Zewei Yu",
+        "Lirong Gao",
+        "Yuke Zhu",
+        "Bo Zheng",
+        "Sheng Guo",
+        "Haobo Wang",
+        "Junbo Zhao"
       ],
-      "abstract": "Training recurrent neural networks (RNNs) with standard backpropagation through time (BPTT) can be challenging, especially in the presence of long input sequences. A practical alternative to reduce computational and memory overhead is to perform BPTT repeatedly over shorter segments of the training data set, corresponding to truncated BPTT. In this paper, we examine the training of RNNs when using such a truncated learning approach for time series tasks. Specifically, we establish theoretical bounds on the accuracy and performance loss when optimizing over subsequences instead of the full data sequence. This reveals that the burn-in phase of the RNN is an important tuning knob in its training, with significant impact on the performance guarantees. We validate our theoretical results through experiments on standard benchmarks from the fields of system identification and time series forecasting. In all experiments, we observe a strong influence of the burn-in phase on the training process, and proper tuning can lead to a reduction of the prediction error on the training and test data of more than 60% in some cases.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
+      "abstract": "Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling. However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reasoning, lead to high token consumption, substantial computational overhead, and increased latency without improving accuracy, particularly in smaller models. Our observation reveals that increasing problem complexity induces more excessive and unnecessary reflection, which in turn reduces accuracy and increases token overhead. To address this challenge, we propose Adaptive Reflection and Length Coordinated Penalty (ARLCP), a novel reinforcement learning framework designed to dynamically balance reasoning efficiency and solution accuracy. ARLCP introduces two key innovations: (1) a reflection penalty that adaptively curtails unnecessary reflective steps while preserving essential reasoning, and (2) a length penalty calibrated to the estimated complexity of the problem. By coordinating these penalties, ARLCP encourages the model to generate more concise and effective reasoning paths. We evaluate our method on five mathematical reasoning benchmarks using DeepSeek-R1-Distill-Qwen-1.5B and DeepSeek-R1-Distill-Qwen-7B models. Experimental results show that ARLCP achieves a superior efficiency-accuracy trade-off compared to existing approaches. For the 1.5B model, it reduces the average response length by 53.1% while simultaneously improving accuracy by 5.8%. For the 7B model, it achieves a 35.0% reduction in length with a 2.7% accuracy gain. The code is released at https://github.com/ZeweiYu1/ARLCP .",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
       "categories": [
-        "cs.LG",
-        "eess.SY",
-        "math.OC"
+        "cs.AI",
+        "cs.CL"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.10911v1",
-        "pdf": "https://arxiv.org/pdf/2602.10911v1"
+        "paper": "http://arxiv.org/abs/2602.12113v1",
+        "pdf": "https://arxiv.org/pdf/2602.12113v1"
       },
-      "arxiv_id": "2602.10911v1",
-      "comment": "Published as a conference paper at ICLR 2026, https://openreview.net/forum?id=jwkdKpioHJ",
+      "arxiv_id": "2602.12113v1",
+      "comment": "Accepted to ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling. However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reasoning, lead to high token consumption, substantial computational overhead, and increased latency without improving accur...",
+        "key_contributions": [
+          "Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling.",
+          "However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reasoning, lead to high token consumption, substantial computational overhead, and increased latency without improving accuracy, particularly in smaller models.",
+          "Our observation reveals that increasing problem complexity induces more excessive and unnecessary reflection, which in turn reduces accuracy and increases token overhead."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.12159v1",
+      "title": "3DGSNav: Enhancing Vision-Language Model Reasoning for Object Navigation via Active 3D Gaussian Splatting",
+      "authors": [
+        "Wancai Zheng",
+        "Hao Chen",
+        "Xianlong Lu",
+        "Linlin Ou",
+        "Xinyi Yu"
+      ],
+      "abstract": "Object navigation is a core capability of embodied intelligence, enabling an agent to locate target objects in unknown environments. Recent advances in vision-language models (VLMs) have facilitated zero-shot object navigation (ZSON). However, existing methods often rely on scene abstractions that convert environments into semantic maps or textual representations, causing high-level decision making to be constrained by the accuracy of low-level perception. In this work, we present 3DGSNav, a novel ZSON framework that embeds 3D Gaussian Splatting (3DGS) as persistent memory for VLMs to enhance spatial reasoning. Through active perception, 3DGSNav incrementally constructs a 3DGS representation of the environment, enabling trajectory-guided free-viewpoint rendering of frontier-aware first-person views. Moreover, we design structured visual prompts and integrate them with Chain-of-Thought (CoT) prompting to further improve VLM reasoning. During navigation, a real-time object detector filters potential targets, while VLM-driven active viewpoint switching performs target re-verification, ensuring efficient and reliable recognition. Extensive evaluations across multiple benchmarks and real-world experiments on a quadruped robot demonstrate that our method achieves robust and competitive performance against state-of-the-art approaches.The Project Page:https://aczheng-cai.github.io/3dgsnav.github.io/",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.12159v1",
+        "pdf": "https://arxiv.org/pdf/2602.12159v1"
+      },
+      "arxiv_id": "2602.12159v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.327966101694916,
+      "score_breakdown": {
+        "total_score": 4.33,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Object navigation is a core capability of embodied intelligence, enabling an agent to locate target objects in unknown environments. Recent advances in vision-language models (VLMs) have facilitated zero-shot object navigation (ZSON). However, existing methods often rely on scene abstractions that convert environments into semantic maps or textual representations, causing high-level decision makin...",
+        "key_contributions": [
+          "Object navigation is a core capability of embodied intelligence, enabling an agent to locate target objects in unknown environments.",
+          "Recent advances in vision-language models (VLMs) have facilitated zero-shot object navigation (ZSON).",
+          "However, existing methods often rely on scene abstractions that convert environments into semantic maps or textual representations, causing high-level decision making to be constrained by the accuracy of low-level perception."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.12100v1",
+      "title": "AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer",
+      "authors": [
+        "Lingting Zhu",
+        "Shengju Qian",
+        "Haidi Fan",
+        "Jiayu Dong",
+        "Zhenchao Jin",
+        "Siwei Zhou",
+        "Gen Dong",
+        "Xin Wang",
+        "Lequan Yu"
+      ],
+      "abstract": "The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC). In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions. Our pilot study leverages real-world modular assets collected from online platforms. AssetFormer tackles the challenge of creating assets composed of primitives that adhere to constrained design parameters for various applications. By innovatively adapting module sequencing and decoding techniques inspired by language models, our approach enhances asset generation quality through autoregressive modeling. Initial results indicate the effectiveness of AssetFormer in streamlining asset creation for professional development and UGC scenarios. This work presents a flexible framework extendable to various types of modular 3D assets, contributing to the broader field of 3D content generation. The code is available at https://github.com/Advocate99/AssetFormer.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.12100v1",
+        "pdf": "https://arxiv.org/pdf/2602.12100v1"
+      },
+      "arxiv_id": "2602.12100v1",
+      "comment": "Accepted by ICLR 2026. 23 pages, 14 figures",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.300000000000001,
@@ -442,42 +255,43 @@
         }
       },
       "ai_summaries": {
-        "short": "Training recurrent neural networks (RNNs) with standard backpropagation through time (BPTT) can be challenging, especially in the presence of long input sequences. A practical alternative to reduce computational and memory overhead is to perform BPTT repeatedly over shorter segments of the training data set, corresponding to truncated BPTT. In this paper, we examine the training of RNNs when using...",
+        "short": "The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC). In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions. Our pilot study leverages real-world modular assets collected from online platforms. AssetFormer tackles the challenge of creating assets...",
         "key_contributions": [
-          "Training recurrent neural networks (RNNs) with standard backpropagation through time (BPTT) can be challenging, especially in the presence of long input sequences.",
-          "A practical alternative to reduce computational and memory overhead is to perform BPTT repeatedly over shorter segments of the training data set, corresponding to truncated BPTT.",
-          "In this paper, we examine the training of RNNs when using such a truncated learning approach for time series tasks."
+          "The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC).",
+          "In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions.",
+          "Our pilot study leverages real-world modular assets collected from online platforms."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.10908v1",
-      "title": "SoftMatcha 2: A Fast and Soft Pattern Matcher for Trillion-Scale Corpora",
+      "id": "2602.12147v1",
+      "title": "It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks",
       "authors": [
-        "Masataka Yoneda",
-        "Yusuke Matsushita",
-        "Go Kamoda",
-        "Kohei Suenaga",
-        "Takuya Akiba",
-        "Masaki Waga",
-        "Sho Yokoi"
+        "Zhongzheng Qiao",
+        "Sheng Pan",
+        "Anni Wang",
+        "Viktoriya Zhukova",
+        "Yong Liu",
+        "Xudong Jiang",
+        "Qingsong Wen",
+        "Mingsheng Long",
+        "Ming Jin",
+        "Chenghao Liu"
       ],
-      "abstract": "We present an ultra-fast and flexible search algorithm that enables search over trillion-scale natural language corpora in under 0.3 seconds while handling semantic variations (substitution, insertion, and deletion). Our approach employs string matching based on suffix arrays that scales well with corpus size. To mitigate the combinatorial explosion induced by the semantic relaxation of queries, our method is built on two key algorithmic ideas: fast exact lookup enabled by a disk-aware design, and dynamic corpus-aware pruning. We theoretically show that the proposed method suppresses exponential growth in the search space with respect to query length by leveraging statistical properties of natural language. In experiments on FineWeb-Edu (Lozhkov et al., 2024) (1.4T tokens), we show that our method achieves significantly lower search latency than existing methods: infini-gram (Liu et al., 2024), infini-gram mini (Xu et al., 2025), and SoftMatcha (Deguchi et al., 2025). As a practical application, we demonstrate that our method identifies benchmark contamination in training corpora, unidentified by existing approaches. We also provide an online demo of fast, soft search across corpora in seven languages.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
+      "abstract": "Time series foundation models (TSFMs) are revolutionizing the forecasting landscape from specific dataset modeling to generalizable task evaluation. However, we contend that existing benchmarks exhibit common limitations in four dimensions: constrained data composition dominated by reused legacy sources, compromised data integrity lacking rigorous quality assurance, misaligned task formulations detached from real-world contexts, and rigid analysis perspectives that obscure generalizable insights. To bridge these gaps, we introduce TIME, a next-generation task-centric benchmark comprising 50 fresh datasets and 98 forecasting tasks, tailored for strict zero-shot TSFM evaluation free from data leakage. Integrating large language models and human expertise, we establish a rigorous human-in-the-loop benchmark construction pipeline to ensure high data integrity and redefine task formulation by aligning forecasting configurations with real-world operational requirements and variate predictability. Furthermore, we propose a novel pattern-level evaluation perspective that moves beyond traditional dataset-level evaluations based on static meta labels. By leveraging structural time series features to characterize intrinsic temporal properties, this approach offers generalizable insights into model capabilities across diverse patterns. We evaluate 12 representative TSFMs and establish a multi-granular leaderboard to facilitate in-depth analysis and visualized inspection. The leaderboard is available at https://huggingface.co/spaces/Real-TSF/TIME-leaderboard.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
       "categories": [
-        "cs.CL",
-        "cs.LG",
-        "stat.ML"
+        "cs.LG"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.10908v1",
-        "pdf": "https://arxiv.org/pdf/2602.10908v1"
+        "paper": "http://arxiv.org/abs/2602.12147v1",
+        "pdf": "https://arxiv.org/pdf/2602.12147v1"
       },
-      "arxiv_id": "2602.10908v1",
-      "comment": "Project Page & Web Interface: https://softmatcha.github.io/v2/, Source Code: https://github.com/softmatcha/softmatcha2",
+      "arxiv_id": "2602.12147v1",
+      "comment": "The source code will be released on GitHub shortly",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.1000000000000005,
@@ -508,50 +322,46 @@
         }
       },
       "ai_summaries": {
-        "short": "We present an ultra-fast and flexible search algorithm that enables search over trillion-scale natural language corpora in under 0.3 seconds while handling semantic variations (substitution, insertion, and deletion). Our approach employs string matching based on suffix arrays that scales well with corpus size. To mitigate the combinatorial explosion induced by the semantic relaxation of queries, o...",
+        "short": "Time series foundation models (TSFMs) are revolutionizing the forecasting landscape from specific dataset modeling to generalizable task evaluation. However, we contend that existing benchmarks exhibit common limitations in four dimensions: constrained data composition dominated by reused legacy sources, compromised data integrity lacking rigorous quality assurance, misaligned task formulations de...",
         "key_contributions": [
-          "We present an ultra-fast and flexible search algorithm that enables search over trillion-scale natural language corpora in under 0.",
-          "3 seconds while handling semantic variations (substitution, insertion, and deletion).",
-          "Our approach employs string matching based on suffix arrays that scales well with corpus size."
+          "Time series foundation models (TSFMs) are revolutionizing the forecasting landscape from specific dataset modeling to generalizable task evaluation.",
+          "However, we contend that existing benchmarks exhibit common limitations in four dimensions: constrained data composition dominated by reused legacy sources, compromised data integrity lacking rigorous quality assurance, misaligned task formulations detached from real-world contexts, and rigid analysis perspectives that obscure generalizable insights.",
+          "To bridge these gaps, we introduce TIME, a next-generation task-centric benchmark comprising 50 fresh datasets and 98 forecasting tasks, tailored for strict zero-shot TSFM evaluation free from data leakage."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.11146v1",
-      "title": "Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling",
+      "id": "2602.12125v1",
+      "title": "Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation",
       "authors": [
-        "Gongye Liu",
-        "Bo Yang",
-        "Yida Zhi",
-        "Zhizhou Zhong",
-        "Lei Ke",
-        "Didan Deng",
-        "Han Gao",
-        "Yongxiang Huang",
-        "Kaihao Zhang",
-        "Hongbo Fu",
-        "Wenhan Luo"
+        "Wenkai Yang",
+        "Weijie Liu",
+        "Ruobing Xie",
+        "Kai Yang",
+        "Saiyong Yang",
+        "Yankai Lin"
       ],
-      "abstract": "Preference optimization for diffusion and flow-matching models relies on reward functions that are both discriminatively robust and computationally efficient. Vision-Language Models (VLMs) have emerged as the primary reward provider, leveraging their rich multimodal priors to guide alignment. However, their computation and memory cost can be substantial, and optimizing a latent diffusion generator through a pixel-space reward introduces a domain mismatch that complicates alignment. In this paper, we propose DiNa-LRM, a diffusion-native latent reward model that formulates preference learning directly on noisy diffusion states. Our method introduces a noise-calibrated Thurstone likelihood with diffusion-noise-dependent uncertainty. DiNa-LRM leverages a pretrained latent diffusion backbone with a timestep-conditioned reward head, and supports inference-time noise ensembling, providing a diffusion-native mechanism for test-time scaling and robust rewarding. Across image alignment benchmarks, DiNa-LRM substantially outperforms existing diffusion-based reward baselines and achieves performance competitive with state-of-the-art VLMs at a fraction of the computational cost. In preference optimization, we demonstrate that DiNa-LRM improves preference optimization dynamics, enabling faster and more resource-efficient model alignment.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
+      "abstract": "On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) paradigms. In this work, we first theoretically show that OPD is a special case of dense KL-constrained RL where the reward function and the KL regularization are always weighted equally and the reference model can by any model. Then, we propose the Generalized On-Policy Distillation (G-OPD) framework, which extends the standard OPD objective by introducing a flexible reference model and a reward scaling factor that controls the relative weight of the reward term against the KL regularization. Through comprehensive experiments on math reasoning and code generation tasks, we derive two novel insights: (1) Setting the reward scaling factor to be greater than 1 (i.e., reward extrapolation), which we term ExOPD, consistently improves over standard OPD across a range of teacher-student size pairings. In particular, in the setting where we merge the knowledge from different domain experts, obtained by applying domain-specific RL to the same student model, back into the original student, ExOPD enables the student to even surpass the teacher's performance boundary and outperform the domain teachers. (2) Building on ExOPD, we further find that in the strong-to-weak distillation setting (i.e., distilling a smaller student from a larger teacher), performing reward correction by choosing the reference model as the teacher's base model before RL yields a more accurate reward signal and further improves distillation performance. However, this choice assumes access to the teacher's pre-RL variant and incurs more computational overhead. We hope our work offers new insights for future research on OPD.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.11146v1",
-        "pdf": "https://arxiv.org/pdf/2602.11146v1"
+        "paper": "http://arxiv.org/abs/2602.12125v1",
+        "pdf": "https://arxiv.org/pdf/2602.12125v1"
       },
-      "arxiv_id": "2602.11146v1",
-      "comment": "Code: https://github.com/HKUST-C4G/diffusion-rm",
+      "arxiv_id": "2602.12125v1",
+      "comment": "Work in progress. Github repo: https://github.com/RUCBM/G-OPD",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.1,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -563,7 +373,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -572,54 +382,68 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Preference optimization for diffusion and flow-matching models relies on reward functions that are both discriminatively robust and computationally efficient. Vision-Language Models (VLMs) have emerged as the primary reward provider, leveraging their rich multimodal priors to guide alignment. However, their computation and memory cost can be substantial, and optimizing a latent diffusion generator...",
+        "short": "On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) paradigms. In this work, we first theoretically show that OPD is a special case of dense KL-constrained RL where the rewa...",
         "key_contributions": [
-          "Preference optimization for diffusion and flow-matching models relies on reward functions that are both discriminatively robust and computationally efficient.",
-          "Vision-Language Models (VLMs) have emerged as the primary reward provider, leveraging their rich multimodal priors to guide alignment.",
-          "However, their computation and memory cost can be substantial, and optimizing a latent diffusion generator through a pixel-space reward introduces a domain mismatch that complicates alignment."
+          "On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) paradigms.",
+          "In this work, we first theoretically show that OPD is a special case of dense KL-constrained RL where the reward function and the KL regularization are always weighted equally and the reference model can by any model.",
+          "Then, we propose the Generalized On-Policy Distillation (G-OPD) framework, which extends the standard OPD objective by introducing a flexible reference model and a reward scaling factor that controls the relative weight of the reward term against the KL regularization."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.11117v1",
-      "title": "HairWeaver: Few-Shot Photorealistic Hair Motion Synthesis with Sim-to-Real Guided Video Diffusion",
+      "id": "2602.12099v1",
+      "title": "GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning",
       "authors": [
-        "Di Chang",
-        "Ji Hou",
-        "Aljaz Bozic",
-        "Assaf Neuberger",
-        "Felix Juefei-Xu",
-        "Olivier Maury",
-        "Gene Wei-Chin Lin",
-        "Tuur Stuyck",
-        "Doug Roble",
-        "Mohammad Soleymani",
-        "Stephane Grabli"
+        "GigaBrain Team",
+        "Boyuan Wang",
+        "Chaojun Ni",
+        "Guan Huang",
+        "Guosheng Zhao",
+        "Hao Li",
+        "Jie Li",
+        "Jindi Lv",
+        "Jingyu Liu",
+        "Lv Feng",
+        "Mingming Yu",
+        "Peng Li",
+        "Qiuping Deng",
+        "Tianze Liu",
+        "Xinyu Zhou",
+        "Xinze Chen",
+        "Xiaofeng Wang",
+        "Yang Wang",
+        "Yifan Li",
+        "Yifei Nie",
+        "Yilong Li",
+        "Yukun Zhou",
+        "Yun Ye",
+        "Zhichao Liu",
+        "Zheng Zhu"
       ],
-      "abstract": "We present HairWeaver, a diffusion-based pipeline that animates a single human image with realistic and expressive hair dynamics. While existing methods successfully control body pose, they lack specific control over hair, and as a result, fail to capture the intricate hair motions, resulting in stiff and unrealistic animations. HairWeaver overcomes this limitation using two specialized modules: a Motion-Context-LoRA to integrate motion conditions and a Sim2Real-Domain-LoRA to preserve the subject's photoreal appearance across different data domains. These lightweight components are designed to guide a video diffusion backbone while maintaining its core generative capabilities. By training on a specialized dataset of dynamic human motion generated from a CG simulator, HairWeaver affords fine control over hair motion and ultimately learns to produce highly realistic hair that responds naturally to movement. Comprehensive evaluations demonstrate that our approach sets a new state of the art, producing lifelike human hair animations with dynamic details.",
-      "published": "2026-02-11",
-      "updated": "2026-02-11",
+      "abstract": "Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities. In contrast, video world models pre-trained on web-scale video corpora exhibit robust spatiotemporal reasoning and accurate future prediction, making them a natural foundation for enhancing VLA learning. Therefore, we propose \\textit{GigaBrain-0.5M*}, a VLA model trained via world model-based reinforcement learning. Built upon \\textit{GigaBrain-0.5}, which is pre-trained on over 10,000 hours of robotic manipulation data, whose intermediate version currently ranks first on the international RoboChallenge benchmark. \\textit{GigaBrain-0.5M*} further integrates world model-based reinforcement learning via \\textit{RAMP} (Reinforcement leArning via world Model-conditioned Policy) to enable robust cross-task adaptation. Empirical results demonstrate that \\textit{RAMP} achieves substantial performance gains over the RECAP baseline, yielding improvements of approximately 30\\% on challenging tasks including \\texttt{Laundry Folding}, \\texttt{Box Packing}, and \\texttt{Espresso Preparation}. Critically, \\textit{GigaBrain-0.5M$^*$} exhibits reliable long-horizon execution, consistently accomplishing complex manipulation tasks without failure as validated by real-world deployment videos on our \\href{https://gigabrain05m.github.io}{project page}.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.11117v1",
-        "pdf": "https://arxiv.org/pdf/2602.11117v1"
+        "paper": "http://arxiv.org/abs/2602.12099v1",
+        "pdf": "https://arxiv.org/pdf/2602.12099v1"
       },
-      "arxiv_id": "2602.11117v1",
-      "comment": "Website: https://boese0601.github.io/hairweaver/",
+      "arxiv_id": "2602.12099v1",
+      "comment": "https://gigabrain05m.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.0,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -640,16 +464,210 @@
           "weight": 0.1
         },
         "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities. In contrast, video world models pre-trained on web-scale video corpora exhibit robust spatiotemporal reasoning and accurate future prediction, making them a natural foundation for enh...",
+        "key_contributions": [
+          "Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities.",
+          "In contrast, video world models pre-trained on web-scale video corpora exhibit robust spatiotemporal reasoning and accurate future prediction, making them a natural foundation for enhancing VLA learning.",
+          "Therefore, we propose \\textit{GigaBrain-0."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.12160v1",
+      "title": "DreamID-Omni: Unified Framework for Controllable Human-Centric Audio-Video Generation",
+      "authors": [
+        "Xu Guo",
+        "Fulong Ye",
+        "Qichao Sun",
+        "Liyang Chen",
+        "Bingchuan Li",
+        "Pengze Zhang",
+        "Jiawei Liu",
+        "Songtao Zhao",
+        "Qian He",
+        "Xiangwang Hou"
+      ],
+      "abstract": "Recent advancements in foundation models have revolutionized joint audio-video generation. However, existing approaches typically treat human-centric tasks including reference-based audio-video generation (R2AV), video editing (RV2AV) and audio-driven video animation (RA2V) as isolated objectives. Furthermore, achieving precise, disentangled control over multiple character identities and voice timbres within a single framework remains an open challenge. In this paper, we propose DreamID-Omni, a unified framework for controllable human-centric audio-video generation. Specifically, we design a Symmetric Conditional Diffusion Transformer that integrates heterogeneous conditioning signals via a symmetric conditional injection scheme. To resolve the pervasive identity-timbre binding failures and speaker confusion in multi-person scenarios, we introduce a Dual-Level Disentanglement strategy: Synchronized RoPE at the signal level to ensure rigid attention-space binding, and Structured Captions at the semantic level to establish explicit attribute-subject mappings. Furthermore, we devise a Multi-Task Progressive Training scheme that leverages weakly-constrained generative priors to regularize strongly-constrained tasks, preventing overfitting and harmonizing disparate objectives. Extensive experiments demonstrate that DreamID-Omni achieves comprehensive state-of-the-art performance across video, audio, and audio-visual consistency, even outperforming leading proprietary commercial models. We will release our code to bridge the gap between academic research and commercial-grade applications.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.12160v1",
+        "pdf": "https://arxiv.org/pdf/2602.12160v1"
+      },
+      "arxiv_id": "2602.12160v1",
+      "comment": "Project: https://guoxu1233.github.io/DreamID-Omni/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We present HairWeaver, a diffusion-based pipeline that animates a single human image with realistic and expressive hair dynamics. While existing methods successfully control body pose, they lack specific control over hair, and as a result, fail to capture the intricate hair motions, resulting in stiff and unrealistic animations. HairWeaver overcomes this limitation using two specialized modules: a...",
+        "short": "Recent advancements in foundation models have revolutionized joint audio-video generation. However, existing approaches typically treat human-centric tasks including reference-based audio-video generation (R2AV), video editing (RV2AV) and audio-driven video animation (RA2V) as isolated objectives. Furthermore, achieving precise, disentangled control over multiple character identities and voice tim...",
         "key_contributions": [
-          "We present HairWeaver, a diffusion-based pipeline that animates a single human image with realistic and expressive hair dynamics.",
-          "While existing methods successfully control body pose, they lack specific control over hair, and as a result, fail to capture the intricate hair motions, resulting in stiff and unrealistic animations.",
-          "HairWeaver overcomes this limitation using two specialized modules: a Motion-Context-LoRA to integrate motion conditions and a Sim2Real-Domain-LoRA to preserve the subject's photoreal appearance across different data domains."
+          "Recent advancements in foundation models have revolutionized joint audio-video generation.",
+          "However, existing approaches typically treat human-centric tasks including reference-based audio-video generation (R2AV), video editing (RV2AV) and audio-driven video animation (RA2V) as isolated objectives.",
+          "Furthermore, achieving precise, disentangled control over multiple character identities and voice timbres within a single framework remains an open challenge."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.12143v1",
+      "title": "STAR : Bridging Statistical and Agentic Reasoning for Large Model Performance Prediction",
+      "authors": [
+        "Xiaoxiao Wang",
+        "Chunxiao Li",
+        "Junying Wang",
+        "Yijin Guo",
+        "Zijian Chen",
+        "Chunyi Li",
+        "Xiaohong Liu",
+        "Zicheng Zhang",
+        "Guangtao Zhai"
+      ],
+      "abstract": "As comprehensive large model evaluation becomes prohibitively expensive, predicting model performance from limited observations has become essential. However, existing statistical methods struggle with pattern shifts, data sparsity, and lack of explanation, while pure LLM methods remain unreliable. We propose STAR, a framework that bridges data-driven STatistical expectations with knowledge-driven Agentic Reasoning. STAR leverages specialized retrievers to gather external knowledge and embeds semantic features into Constrained Probabilistic Matrix Factorization (CPMF) to generate statistical expectations with uncertainty. A reasoning module guided by Expectation Violation Theory (EVT) then refines predictions through intra-family analysis, cross-model comparison, and credibility-aware aggregation, producing adjustments with traceable explanations. Extensive experiments show that STAR consistently outperforms all baselines on both score-based and rank-based metrics, delivering a 14.46% gain in total score over the strongest statistical method under extreme sparsity, with only 1--2 observed scores per test model.",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.12143v1",
+        "pdf": "https://arxiv.org/pdf/2602.12143v1"
+      },
+      "arxiv_id": "2602.12143v1",
+      "comment": "10 pages, 8 figures, 17 tables. Code available at https://github.com/xiaoxiaostudy/star",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "As comprehensive large model evaluation becomes prohibitively expensive, predicting model performance from limited observations has become essential. However, existing statistical methods struggle with pattern shifts, data sparsity, and lack of explanation, while pure LLM methods remain unreliable. We propose STAR, a framework that bridges data-driven STatistical expectations with knowledge-driven...",
+        "key_contributions": [
+          "As comprehensive large model evaluation becomes prohibitively expensive, predicting model performance from limited observations has become essential.",
+          "However, existing statistical methods struggle with pattern shifts, data sparsity, and lack of explanation, while pure LLM methods remain unreliable.",
+          "We propose STAR, a framework that bridges data-driven STatistical expectations with knowledge-driven Agentic Reasoning."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.12280v1",
+      "title": "Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching",
+      "authors": [
+        "Huai-Hsun Cheng",
+        "Siang-Ling Zhang",
+        "Yu-Lun Liu"
+      ],
+      "abstract": "Visual illusions traditionally rely on spatial manipulations such as multi-view consistency. In this work, we introduce Progressive Semantic Illusions, a novel vector sketching task where a single sketch undergoes a dramatic semantic transformation through the sequential addition of strokes. We present Stroke of Surprise, a generative framework that optimizes vector strokes to satisfy distinct semantic interpretations at different drawing stages. The core challenge lies in the \"dual-constraint\": initial prefix strokes must form a coherent object (e.g., a duck) while simultaneously serving as the structural foundation for a second concept (e.g., a sheep) upon adding delta strokes. To address this, we propose a sequence-aware joint optimization framework driven by a dual-branch Score Distillation Sampling (SDS) mechanism. Unlike sequential approaches that freeze the initial state, our method dynamically adjusts prefix strokes to discover a \"common structural subspace\" valid for both targets. Furthermore, we introduce a novel Overlay Loss that enforces spatial complementarity, ensuring structural integration rather than occlusion. Extensive experiments demonstrate that our method significantly outperforms state-of-the-art baselines in recognizability and illusion strength, successfully expanding visual anagrams from the spatial to the temporal dimension. Project page: https://stroke-of-surprise.github.io/",
+      "published": "2026-02-12",
+      "updated": "2026-02-12",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.12280v1",
+        "pdf": "https://arxiv.org/pdf/2602.12280v1"
+      },
+      "arxiv_id": "2602.12280v1",
+      "comment": "Project page: https://stroke-of-surprise.github.io/ Code: https://github.com/stroke-of-surprise/Stroke-Of-Surprise",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Visual illusions traditionally rely on spatial manipulations such as multi-view consistency. In this work, we introduce Progressive Semantic Illusions, a novel vector sketching task where a single sketch undergoes a dramatic semantic transformation through the sequential addition of strokes. We present Stroke of Surprise, a generative framework that optimizes vector strokes to satisfy distinct sem...",
+        "key_contributions": [
+          "Visual illusions traditionally rely on spatial manipulations such as multi-view consistency.",
+          "In this work, we introduce Progressive Semantic Illusions, a novel vector sketching task where a single sketch undergoes a dramatic semantic transformation through the sequential addition of strokes.",
+          "We present Stroke of Surprise, a generative framework that optimizes vector strokes to satisfy distinct semantic interpretations at different drawing stages."
         ],
         "provider": "gemini"
       }

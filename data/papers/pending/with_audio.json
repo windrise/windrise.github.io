@@ -3,114 +3,50 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.12172v1",
-      "title": "Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation",
+      "id": "2602.13066v1",
+      "title": "A Calibrated Memorization Index (MI) for Detecting Training Data Leakage in Generative MRI Models",
       "authors": [
-        "Bowei He",
-        "Yankai Chen",
-        "Xiaokun Zhang",
-        "Linghe Kong",
-        "Philip S. Yu",
-        "Xue Liu",
-        "Chen Ma"
+        "Yash Deo",
+        "Yan Jia",
+        "Toni Lassila",
+        "Victoria J Hodge",
+        "Alejandro F Frang",
+        "Chenghao Qian",
+        "Siyuan Kang",
+        "Ibrahim Habli"
       ],
-      "abstract": "Knowledge distillation from Large Language Models (LLMs) to smaller models has emerged as a critical technique for deploying efficient AI systems. However, current methods for distillation via synthetic data lack pedagogical awareness, treating knowledge transfer as a one-off data synthesis and training task rather than a systematic learning process. In this paper, we propose a novel pedagogically-inspired framework for LLM knowledge distillation that draws from fundamental educational principles. Our approach introduces a three-stage pipeline -- Knowledge Identifier, Organizer, and Adapter (IOA) -- that systematically identifies knowledge deficiencies in student models, organizes knowledge delivery through progressive curricula, and adapts representations to match the cognitive capacity of student models. We integrate Bloom's Mastery Learning Principles and Vygotsky's Zone of Proximal Development to create a dynamic distillation process where student models approach teacher model's performance on prerequisite knowledge before advancing, and new knowledge is introduced with controlled, gradual difficulty increments. Extensive experiments using LLaMA-3.1/3.2 and Qwen2.5 as student models demonstrate that IOA achieves significant improvements over baseline distillation methods, with student models retaining 94.7% of teacher performance on DollyEval while using less than 1/10th of the parameters. Our framework particularly excels in complex reasoning tasks, showing 19.2% improvement on MATH and 22.3% on HumanEval compared with state-of-the-art baselines.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
+      "abstract": "Image generative models are known to duplicate images from the training data as part of their outputs, which can lead to privacy concerns when used for medical image generation. We propose a calibrated per-sample metric for detecting memorization and duplication of training data. Our metric uses image features extracted using an MRI foundation model, aggregates multi-layer whitened nearest-neighbor similarities, and maps them to a bounded \\emph{Overfit/Novelty Index} (ONI) and \\emph{Memorization Index} (MI) scores. Across three MRI datasets with controlled duplication percentages and typical image augmentations, our metric robustly detects duplication and provides more consistent metric values across datasets. At the sample level, our metric achieves near-perfect detection of duplicates.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
       "categories": [
-        "cs.AI",
-        "cs.CL"
+        "cs.CV"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.12172v1",
-        "pdf": "https://arxiv.org/pdf/2602.12172v1"
+        "paper": "http://arxiv.org/abs/2602.13066v1",
+        "pdf": "https://arxiv.org/pdf/2602.13066v1"
       },
-      "arxiv_id": "2602.12172v1",
-      "comment": "Accepted by ICLR 2026",
+      "arxiv_id": "2602.13066v1",
+      "comment": "Accepted in ISBI 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.6499999999999995,
+      "relevance_score": 4.205084745762711,
       "score_breakdown": {
-        "total_score": 4.65,
+        "total_score": 4.21,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.76,
+          "matches": [
+            "medical image"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
+          "score": 8,
+          "venue": "ISBI",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Knowledge distillation from Large Language Models (LLMs) to smaller models has emerged as a critical technique for deploying efficient AI systems. However, current methods for distillation via synthetic data lack pedagogical awareness, treating knowledge transfer as a one-off data synthesis and training task rather than a systematic learning process. In this paper, we propose a novel pedagogically...",
-        "key_contributions": [
-          "Knowledge distillation from Large Language Models (LLMs) to smaller models has emerged as a critical technique for deploying efficient AI systems.",
-          "However, current methods for distillation via synthetic data lack pedagogical awareness, treating knowledge transfer as a one-off data synthesis and training task rather than a systematic learning process.",
-          "In this paper, we propose a novel pedagogically-inspired framework for LLM knowledge distillation that draws from fundamental educational principles."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.12172v1.mp3"
-      }
-    },
-    {
-      "id": "2602.12113v1",
-      "title": "Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty",
-      "authors": [
-        "Zewei Yu",
-        "Lirong Gao",
-        "Yuke Zhu",
-        "Bo Zheng",
-        "Sheng Guo",
-        "Haobo Wang",
-        "Junbo Zhao"
-      ],
-      "abstract": "Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling. However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reasoning, lead to high token consumption, substantial computational overhead, and increased latency without improving accuracy, particularly in smaller models. Our observation reveals that increasing problem complexity induces more excessive and unnecessary reflection, which in turn reduces accuracy and increases token overhead. To address this challenge, we propose Adaptive Reflection and Length Coordinated Penalty (ARLCP), a novel reinforcement learning framework designed to dynamically balance reasoning efficiency and solution accuracy. ARLCP introduces two key innovations: (1) a reflection penalty that adaptively curtails unnecessary reflective steps while preserving essential reasoning, and (2) a length penalty calibrated to the estimated complexity of the problem. By coordinating these penalties, ARLCP encourages the model to generate more concise and effective reasoning paths. We evaluate our method on five mathematical reasoning benchmarks using DeepSeek-R1-Distill-Qwen-1.5B and DeepSeek-R1-Distill-Qwen-7B models. Experimental results show that ARLCP achieves a superior efficiency-accuracy trade-off compared to existing approaches. For the 1.5B model, it reduces the average response length by 53.1% while simultaneously improving accuracy by 5.8%. For the 7B model, it achieves a 35.0% reduction in length with a 2.7% accuracy gain. The code is released at https://github.com/ZeweiYu1/ARLCP .",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.12113v1",
-        "pdf": "https://arxiv.org/pdf/2602.12113v1"
-      },
-      "arxiv_id": "2602.12113v1",
-      "comment": "Accepted to ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -124,115 +60,43 @@
         }
       },
       "ai_summaries": {
-        "short": "Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling. However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reasoning, lead to high token consumption, substantial computational overhead, and increased latency without improving accur...",
+        "short": "Image generative models are known to duplicate images from the training data as part of their outputs, which can lead to privacy concerns when used for medical image generation. We propose a calibrated per-sample metric for detecting memorization and duplication of training data. Our metric uses image features extracted using an MRI foundation model, aggregates multi-layer whitened nearest-neighbo...",
         "key_contributions": [
-          "Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling.",
-          "However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reasoning, lead to high token consumption, substantial computational overhead, and increased latency without improving accuracy, particularly in smaller models.",
-          "Our observation reveals that increasing problem complexity induces more excessive and unnecessary reflection, which in turn reduces accuracy and increases token overhead."
+          "Image generative models are known to duplicate images from the training data as part of their outputs, which can lead to privacy concerns when used for medical image generation.",
+          "We propose a calibrated per-sample metric for detecting memorization and duplication of training data.",
+          "Our metric uses image features extracted using an MRI foundation model, aggregates multi-layer whitened nearest-neighbor similarities, and maps them to a bounded \\emph{Overfit/Novelty Index} (ONI) and \\emph{Memorization Index} (MI) scores."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.12113v1.mp3"
+        "audio_url": "/audio/2602.13066v1.mp3"
       }
     },
     {
-      "id": "2602.12159v1",
-      "title": "3DGSNav: Enhancing Vision-Language Model Reasoning for Object Navigation via Active 3D Gaussian Splatting",
+      "id": "2602.13015v1",
+      "title": "Multimodal Classification via Total Correlation Maximization",
       "authors": [
-        "Wancai Zheng",
-        "Hao Chen",
-        "Xianlong Lu",
-        "Linlin Ou",
-        "Xinyi Yu"
+        "Feng Yu",
+        "Xiangyu Wu",
+        "Yang Yang",
+        "Jianfeng Lu"
       ],
-      "abstract": "Object navigation is a core capability of embodied intelligence, enabling an agent to locate target objects in unknown environments. Recent advances in vision-language models (VLMs) have facilitated zero-shot object navigation (ZSON). However, existing methods often rely on scene abstractions that convert environments into semantic maps or textual representations, causing high-level decision making to be constrained by the accuracy of low-level perception. In this work, we present 3DGSNav, a novel ZSON framework that embeds 3D Gaussian Splatting (3DGS) as persistent memory for VLMs to enhance spatial reasoning. Through active perception, 3DGSNav incrementally constructs a 3DGS representation of the environment, enabling trajectory-guided free-viewpoint rendering of frontier-aware first-person views. Moreover, we design structured visual prompts and integrate them with Chain-of-Thought (CoT) prompting to further improve VLM reasoning. During navigation, a real-time object detector filters potential targets, while VLM-driven active viewpoint switching performs target re-verification, ensuring efficient and reliable recognition. Extensive evaluations across multiple benchmarks and real-world experiments on a quadruped robot demonstrate that our method achieves robust and competitive performance against state-of-the-art approaches.The Project Page:https://aczheng-cai.github.io/3dgsnav.github.io/",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.12159v1",
-        "pdf": "https://arxiv.org/pdf/2602.12159v1"
-      },
-      "arxiv_id": "2602.12159v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.327966101694916,
-      "score_breakdown": {
-        "total_score": 4.33,
-        "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Object navigation is a core capability of embodied intelligence, enabling an agent to locate target objects in unknown environments. Recent advances in vision-language models (VLMs) have facilitated zero-shot object navigation (ZSON). However, existing methods often rely on scene abstractions that convert environments into semantic maps or textual representations, causing high-level decision makin...",
-        "key_contributions": [
-          "Object navigation is a core capability of embodied intelligence, enabling an agent to locate target objects in unknown environments.",
-          "Recent advances in vision-language models (VLMs) have facilitated zero-shot object navigation (ZSON).",
-          "However, existing methods often rely on scene abstractions that convert environments into semantic maps or textual representations, causing high-level decision making to be constrained by the accuracy of low-level perception."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.12159v1.mp3"
-      }
-    },
-    {
-      "id": "2602.12100v1",
-      "title": "AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer",
-      "authors": [
-        "Lingting Zhu",
-        "Shengju Qian",
-        "Haidi Fan",
-        "Jiayu Dong",
-        "Zhenchao Jin",
-        "Siwei Zhou",
-        "Gen Dong",
-        "Xin Wang",
-        "Lequan Yu"
-      ],
-      "abstract": "The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC). In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions. Our pilot study leverages real-world modular assets collected from online platforms. AssetFormer tackles the challenge of creating assets composed of primitives that adhere to constrained design parameters for various applications. By innovatively adapting module sequencing and decoding techniques inspired by language models, our approach enhances asset generation quality through autoregressive modeling. Initial results indicate the effectiveness of AssetFormer in streamlining asset creation for professional development and UGC scenarios. This work presents a flexible framework extendable to various types of modular 3D assets, contributing to the broader field of 3D content generation. The code is available at https://github.com/Advocate99/AssetFormer.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
+      "abstract": "Multimodal learning integrates data from diverse sensors to effectively harness information from different modalities. However, recent studies reveal that joint learning often overfits certain modalities while neglecting others, leading to performance inferior to that of unimodal learning. Although previous efforts have sought to balance modal contributions or combine joint and unimodal learning, thereby mitigating the degradation of weaker modalities with promising outcomes, few have examined the relationship between joint and unimodal learning from an information-theoretic perspective. In this paper, we theoretically analyze modality competition and propose a method for multimodal classification by maximizing the total correlation between multimodal features and labels. By maximizing this objective, our approach alleviates modality competition while capturing inter-modal interactions via feature alignment. Building on Mutual Information Neural Estimation (MINE), we introduce Total Correlation Neural Estimation (TCNE) to derive a lower bound for total correlation. Subsequently, we present TCMax, a hyperparameter-free loss function that maximizes total correlation through variational bound optimization. Extensive experiments demonstrate that TCMax outperforms state-of-the-art joint and unimodal learning approaches. Our code is available at https://github.com/hubaak/TCMax.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.12100v1",
-        "pdf": "https://arxiv.org/pdf/2602.12100v1"
+        "paper": "http://arxiv.org/abs/2602.13015v1",
+        "pdf": "https://arxiv.org/pdf/2602.13015v1"
       },
-      "arxiv_id": "2602.12100v1",
-      "comment": "Accepted by ICLR 2026. 23 pages, 14 figures",
+      "arxiv_id": "2602.13015v1",
+      "comment": "Accepted for publication at ICLR 2026; 19 pages; 2 figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.300000000000001,
+      "relevance_score": 4.2,
       "score_breakdown": {
-        "total_score": 4.3,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -253,198 +117,47 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC). In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions. Our pilot study leverages real-world modular assets collected from online platforms. AssetFormer tackles the challenge of creating assets...",
-        "key_contributions": [
-          "The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC).",
-          "In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions.",
-          "Our pilot study leverages real-world modular assets collected from online platforms."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.12100v1.mp3"
-      }
-    },
-    {
-      "id": "2602.12147v1",
-      "title": "It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks",
-      "authors": [
-        "Zhongzheng Qiao",
-        "Sheng Pan",
-        "Anni Wang",
-        "Viktoriya Zhukova",
-        "Yong Liu",
-        "Xudong Jiang",
-        "Qingsong Wen",
-        "Mingsheng Long",
-        "Ming Jin",
-        "Chenghao Liu"
-      ],
-      "abstract": "Time series foundation models (TSFMs) are revolutionizing the forecasting landscape from specific dataset modeling to generalizable task evaluation. However, we contend that existing benchmarks exhibit common limitations in four dimensions: constrained data composition dominated by reused legacy sources, compromised data integrity lacking rigorous quality assurance, misaligned task formulations detached from real-world contexts, and rigid analysis perspectives that obscure generalizable insights. To bridge these gaps, we introduce TIME, a next-generation task-centric benchmark comprising 50 fresh datasets and 98 forecasting tasks, tailored for strict zero-shot TSFM evaluation free from data leakage. Integrating large language models and human expertise, we establish a rigorous human-in-the-loop benchmark construction pipeline to ensure high data integrity and redefine task formulation by aligning forecasting configurations with real-world operational requirements and variate predictability. Furthermore, we propose a novel pattern-level evaluation perspective that moves beyond traditional dataset-level evaluations based on static meta labels. By leveraging structural time series features to characterize intrinsic temporal properties, this approach offers generalizable insights into model capabilities across diverse patterns. We evaluate 12 representative TSFMs and establish a multi-granular leaderboard to facilitate in-depth analysis and visualized inspection. The leaderboard is available at https://huggingface.co/spaces/Real-TSF/TIME-leaderboard.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.12147v1",
-        "pdf": "https://arxiv.org/pdf/2602.12147v1"
-      },
-      "arxiv_id": "2602.12147v1",
-      "comment": "The source code will be released on GitHub shortly",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1000000000000005,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Time series foundation models (TSFMs) are revolutionizing the forecasting landscape from specific dataset modeling to generalizable task evaluation. However, we contend that existing benchmarks exhibit common limitations in four dimensions: constrained data composition dominated by reused legacy sources, compromised data integrity lacking rigorous quality assurance, misaligned task formulations de...",
-        "key_contributions": [
-          "Time series foundation models (TSFMs) are revolutionizing the forecasting landscape from specific dataset modeling to generalizable task evaluation.",
-          "However, we contend that existing benchmarks exhibit common limitations in four dimensions: constrained data composition dominated by reused legacy sources, compromised data integrity lacking rigorous quality assurance, misaligned task formulations detached from real-world contexts, and rigid analysis perspectives that obscure generalizable insights.",
-          "To bridge these gaps, we introduce TIME, a next-generation task-centric benchmark comprising 50 fresh datasets and 98 forecasting tasks, tailored for strict zero-shot TSFM evaluation free from data leakage."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.12147v1.mp3"
-      }
-    },
-    {
-      "id": "2602.12125v1",
-      "title": "Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation",
-      "authors": [
-        "Wenkai Yang",
-        "Weijie Liu",
-        "Ruobing Xie",
-        "Kai Yang",
-        "Saiyong Yang",
-        "Yankai Lin"
-      ],
-      "abstract": "On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) paradigms. In this work, we first theoretically show that OPD is a special case of dense KL-constrained RL where the reward function and the KL regularization are always weighted equally and the reference model can by any model. Then, we propose the Generalized On-Policy Distillation (G-OPD) framework, which extends the standard OPD objective by introducing a flexible reference model and a reward scaling factor that controls the relative weight of the reward term against the KL regularization. Through comprehensive experiments on math reasoning and code generation tasks, we derive two novel insights: (1) Setting the reward scaling factor to be greater than 1 (i.e., reward extrapolation), which we term ExOPD, consistently improves over standard OPD across a range of teacher-student size pairings. In particular, in the setting where we merge the knowledge from different domain experts, obtained by applying domain-specific RL to the same student model, back into the original student, ExOPD enables the student to even surpass the teacher's performance boundary and outperform the domain teachers. (2) Building on ExOPD, we further find that in the strong-to-weak distillation setting (i.e., distilling a smaller student from a larger teacher), performing reward correction by choosing the reference model as the teacher's base model before RL yields a more accurate reward signal and further improves distillation performance. However, this choice assumes access to the teacher's pre-RL variant and incurs more computational overhead. We hope our work offers new insights for future research on OPD.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.12125v1",
-        "pdf": "https://arxiv.org/pdf/2602.12125v1"
-      },
-      "arxiv_id": "2602.12125v1",
-      "comment": "Work in progress. Github repo: https://github.com/RUCBM/G-OPD",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.1,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) paradigms. In this work, we first theoretically show that OPD is a special case of dense KL-constrained RL where the rewa...",
+        "short": "Multimodal learning integrates data from diverse sensors to effectively harness information from different modalities. However, recent studies reveal that joint learning often overfits certain modalities while neglecting others, leading to performance inferior to that of unimodal learning. Although previous efforts have sought to balance modal contributions or combine joint and unimodal learning, ...",
         "key_contributions": [
-          "On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) paradigms.",
-          "In this work, we first theoretically show that OPD is a special case of dense KL-constrained RL where the reward function and the KL regularization are always weighted equally and the reference model can by any model.",
-          "Then, we propose the Generalized On-Policy Distillation (G-OPD) framework, which extends the standard OPD objective by introducing a flexible reference model and a reward scaling factor that controls the relative weight of the reward term against the KL regularization."
+          "Multimodal learning integrates data from diverse sensors to effectively harness information from different modalities.",
+          "However, recent studies reveal that joint learning often overfits certain modalities while neglecting others, leading to performance inferior to that of unimodal learning.",
+          "Although previous efforts have sought to balance modal contributions or combine joint and unimodal learning, thereby mitigating the degradation of weaker modalities with promising outcomes, few have examined the relationship between joint and unimodal learning from an information-theoretic perspective."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.12125v1.mp3"
+        "audio_url": "/audio/2602.13015v1.mp3"
       }
     },
     {
-      "id": "2602.12099v1",
-      "title": "GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning",
+      "id": "2602.13013v1",
+      "title": "Towards Universal Video MLLMs with Attribute-Structured and Quality-Verified Instructions",
       "authors": [
-        "GigaBrain Team",
-        "Boyuan Wang",
-        "Chaojun Ni",
-        "Guan Huang",
-        "Guosheng Zhao",
-        "Hao Li",
-        "Jie Li",
-        "Jindi Lv",
-        "Jingyu Liu",
-        "Lv Feng",
-        "Mingming Yu",
-        "Peng Li",
-        "Qiuping Deng",
-        "Tianze Liu",
-        "Xinyu Zhou",
-        "Xinze Chen",
-        "Xiaofeng Wang",
-        "Yang Wang",
-        "Yifan Li",
-        "Yifei Nie",
-        "Yilong Li",
-        "Yukun Zhou",
-        "Yun Ye",
-        "Zhichao Liu",
-        "Zheng Zhu"
+        "Yunheng Li",
+        "Hengrui Zhang",
+        "Meng-Hao Guo",
+        "Wenzhao Gao",
+        "Shaoyong Jia",
+        "Shaohui Jiao",
+        "Qibin Hou",
+        "Ming-Ming Cheng"
       ],
-      "abstract": "Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities. In contrast, video world models pre-trained on web-scale video corpora exhibit robust spatiotemporal reasoning and accurate future prediction, making them a natural foundation for enhancing VLA learning. Therefore, we propose \\textit{GigaBrain-0.5M*}, a VLA model trained via world model-based reinforcement learning. Built upon \\textit{GigaBrain-0.5}, which is pre-trained on over 10,000 hours of robotic manipulation data, whose intermediate version currently ranks first on the international RoboChallenge benchmark. \\textit{GigaBrain-0.5M*} further integrates world model-based reinforcement learning via \\textit{RAMP} (Reinforcement leArning via world Model-conditioned Policy) to enable robust cross-task adaptation. Empirical results demonstrate that \\textit{RAMP} achieves substantial performance gains over the RECAP baseline, yielding improvements of approximately 30\\% on challenging tasks including \\texttt{Laundry Folding}, \\texttt{Box Packing}, and \\texttt{Espresso Preparation}. Critically, \\textit{GigaBrain-0.5M$^*$} exhibits reliable long-horizon execution, consistently accomplishing complex manipulation tasks without failure as validated by real-world deployment videos on our \\href{https://gigabrain05m.github.io}{project page}.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
+      "abstract": "Universal video understanding requires modeling fine-grained visual and audio information over time in diverse real-world scenarios. However, the performance of existing models is primarily constrained by video-instruction data that represents complex audiovisual content as single, incomplete descriptions, lacking fine-grained organization and reliable annotation. To address this, we introduce: (i) ASID-1M, an open-source collection of one million structured, fine-grained audiovisual instruction annotations with single- and multi-attribute supervision; (ii) ASID-Verify, a scalable data curation pipeline for annotation, with automatic verification and refinement that enforces semantic and temporal consistency between descriptions and the corresponding audiovisual content; and (iii) ASID-Captioner, a video understanding model trained via Supervised Fine-Tuning (SFT) on the ASID-1M. Experiments across seven benchmarks covering audiovisual captioning, attribute-wise captioning, caption-based QA, and caption-based temporal grounding show that ASID-Captioner improves fine-grained caption quality while reducing hallucinations and improving instruction following. It achieves state-of-the-art performance among open-source models and is competitive with Gemini-3-Pro.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.12099v1",
-        "pdf": "https://arxiv.org/pdf/2602.12099v1"
+        "paper": "http://arxiv.org/abs/2602.13013v1",
+        "pdf": "https://arxiv.org/pdf/2602.13013v1"
       },
-      "arxiv_id": "2602.12099v1",
-      "comment": "https://gigabrain05m.github.io/",
+      "arxiv_id": "2602.13013v1",
+      "comment": "Project page: https://asid-caption.github.io/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.050000000000001,
@@ -475,117 +188,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities. In contrast, video world models pre-trained on web-scale video corpora exhibit robust spatiotemporal reasoning and accurate future prediction, making them a natural foundation for enh...",
+        "short": "Universal video understanding requires modeling fine-grained visual and audio information over time in diverse real-world scenarios. However, the performance of existing models is primarily constrained by video-instruction data that represents complex audiovisual content as single, incomplete descriptions, lacking fine-grained organization and reliable annotation. To address this, we introduce: (i...",
         "key_contributions": [
-          "Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities.",
-          "In contrast, video world models pre-trained on web-scale video corpora exhibit robust spatiotemporal reasoning and accurate future prediction, making them a natural foundation for enhancing VLA learning.",
-          "Therefore, we propose \\textit{GigaBrain-0."
+          "Universal video understanding requires modeling fine-grained visual and audio information over time in diverse real-world scenarios.",
+          "However, the performance of existing models is primarily constrained by video-instruction data that represents complex audiovisual content as single, incomplete descriptions, lacking fine-grained organization and reliable annotation.",
+          "To address this, we introduce: (i) ASID-1M, an open-source collection of one million structured, fine-grained audiovisual instruction annotations with single- and multi-attribute supervision; (ii) ASID-Verify, a scalable data curation pipeline for annotation, with automatic verification and refinement that enforces semantic and temporal consistency between descriptions and the corresponding audiovisual content; and (iii) ASID-Captioner, a video understanding model trained via Supervised Fine-Tuning (SFT) on the ASID-1M."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.12099v1.mp3"
+        "audio_url": "/audio/2602.13013v1.mp3"
       }
     },
     {
-      "id": "2602.12160v1",
-      "title": "DreamID-Omni: Unified Framework for Controllable Human-Centric Audio-Video Generation",
+      "id": "2602.13191v1",
+      "title": "CoPE-VideoLM: Codec Primitives For Efficient Video Language Models",
       "authors": [
-        "Xu Guo",
-        "Fulong Ye",
-        "Qichao Sun",
-        "Liyang Chen",
-        "Bingchuan Li",
-        "Pengze Zhang",
-        "Jiawei Liu",
-        "Songtao Zhao",
-        "Qian He",
-        "Xiangwang Hou"
+        "Sayan Deb Sarkar",
+        "Rémi Pautrat",
+        "Ondrej Miksik",
+        "Marc Pollefeys",
+        "Iro Armeni",
+        "Mahdi Rad",
+        "Mihai Dusmanu"
       ],
-      "abstract": "Recent advancements in foundation models have revolutionized joint audio-video generation. However, existing approaches typically treat human-centric tasks including reference-based audio-video generation (R2AV), video editing (RV2AV) and audio-driven video animation (RA2V) as isolated objectives. Furthermore, achieving precise, disentangled control over multiple character identities and voice timbres within a single framework remains an open challenge. In this paper, we propose DreamID-Omni, a unified framework for controllable human-centric audio-video generation. Specifically, we design a Symmetric Conditional Diffusion Transformer that integrates heterogeneous conditioning signals via a symmetric conditional injection scheme. To resolve the pervasive identity-timbre binding failures and speaker confusion in multi-person scenarios, we introduce a Dual-Level Disentanglement strategy: Synchronized RoPE at the signal level to ensure rigid attention-space binding, and Structured Captions at the semantic level to establish explicit attribute-subject mappings. Furthermore, we devise a Multi-Task Progressive Training scheme that leverages weakly-constrained generative priors to regularize strongly-constrained tasks, preventing overfitting and harmonizing disparate objectives. Extensive experiments demonstrate that DreamID-Omni achieves comprehensive state-of-the-art performance across video, audio, and audio-visual consistency, even outperforming leading proprietary commercial models. We will release our code to bridge the gap between academic research and commercial-grade applications.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
+      "abstract": "Video Language Models (VideoLMs) empower AI systems to understand temporal dynamics in videos. To fit to the maximum context window constraint, current methods use keyframe sampling which can miss both macro-level events and micro-level details due to the sparse temporal coverage. Furthermore, processing full images and their tokens for each frame incurs substantial computational overhead. To address these limitations, we propose to leverage video codec primitives (specifically motion vectors and residuals) which natively encode video redundancy and sparsity without requiring expensive full-image encoding for most frames. To this end, we introduce lightweight transformer-based encoders that aggregate codec primitives and align their representations with image encoder embeddings through a pre-training strategy that accelerates convergence during end-to-end fine-tuning. Our approach reduces the time-to-first-token by up to $86\\%$ and token usage by up to $93\\%$ compared to standard VideoLMs. Moreover, by varying the keyframe and codec primitive densities we are able to maintain or exceed performance on $14$ diverse video understanding benchmarks spanning general question answering, temporal reasoning, long-form understanding, and spatial scene understanding.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
       "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.12160v1",
-        "pdf": "https://arxiv.org/pdf/2602.12160v1"
-      },
-      "arxiv_id": "2602.12160v1",
-      "comment": "Project: https://guoxu1233.github.io/DreamID-Omni/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advancements in foundation models have revolutionized joint audio-video generation. However, existing approaches typically treat human-centric tasks including reference-based audio-video generation (R2AV), video editing (RV2AV) and audio-driven video animation (RA2V) as isolated objectives. Furthermore, achieving precise, disentangled control over multiple character identities and voice tim...",
-        "key_contributions": [
-          "Recent advancements in foundation models have revolutionized joint audio-video generation.",
-          "However, existing approaches typically treat human-centric tasks including reference-based audio-video generation (R2AV), video editing (RV2AV) and audio-driven video animation (RA2V) as isolated objectives.",
-          "Furthermore, achieving precise, disentangled control over multiple character identities and voice timbres within a single framework remains an open challenge."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.12160v1.mp3"
-      }
-    },
-    {
-      "id": "2602.12143v1",
-      "title": "STAR : Bridging Statistical and Agentic Reasoning for Large Model Performance Prediction",
-      "authors": [
-        "Xiaoxiao Wang",
-        "Chunxiao Li",
-        "Junying Wang",
-        "Yijin Guo",
-        "Zijian Chen",
-        "Chunyi Li",
-        "Xiaohong Liu",
-        "Zicheng Zhang",
-        "Guangtao Zhai"
-      ],
-      "abstract": "As comprehensive large model evaluation becomes prohibitively expensive, predicting model performance from limited observations has become essential. However, existing statistical methods struggle with pattern shifts, data sparsity, and lack of explanation, while pure LLM methods remain unreliable. We propose STAR, a framework that bridges data-driven STatistical expectations with knowledge-driven Agentic Reasoning. STAR leverages specialized retrievers to gather external knowledge and embeds semantic features into Constrained Probabilistic Matrix Factorization (CPMF) to generate statistical expectations with uncertainty. A reasoning module guided by Expectation Violation Theory (EVT) then refines predictions through intra-family analysis, cross-model comparison, and credibility-aware aggregation, producing adjustments with traceable explanations. Extensive experiments show that STAR consistently outperforms all baselines on both score-based and rank-based metrics, delivering a 14.46% gain in total score over the strongest statistical method under extreme sparsity, with only 1--2 observed scores per test model.",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
-      "categories": [
+        "cs.CV",
         "cs.AI",
-        "cs.LG"
+        "cs.CL"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.12143v1",
-        "pdf": "https://arxiv.org/pdf/2602.12143v1"
+        "paper": "http://arxiv.org/abs/2602.13191v1",
+        "pdf": "https://arxiv.org/pdf/2602.13191v1"
       },
-      "arxiv_id": "2602.12143v1",
-      "comment": "10 pages, 8 figures, 17 tables. Code available at https://github.com/xiaoxiaostudy/star",
+      "arxiv_id": "2602.13191v1",
+      "comment": "Project Page: https://sayands.github.io/cope/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8499999999999996,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 3.85,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -597,7 +241,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -611,37 +255,169 @@
         }
       },
       "ai_summaries": {
-        "short": "As comprehensive large model evaluation becomes prohibitively expensive, predicting model performance from limited observations has become essential. However, existing statistical methods struggle with pattern shifts, data sparsity, and lack of explanation, while pure LLM methods remain unreliable. We propose STAR, a framework that bridges data-driven STatistical expectations with knowledge-driven...",
+        "short": "Video Language Models (VideoLMs) empower AI systems to understand temporal dynamics in videos. To fit to the maximum context window constraint, current methods use keyframe sampling which can miss both macro-level events and micro-level details due to the sparse temporal coverage. Furthermore, processing full images and their tokens for each frame incurs substantial computational overhead. To addr...",
         "key_contributions": [
-          "As comprehensive large model evaluation becomes prohibitively expensive, predicting model performance from limited observations has become essential.",
-          "However, existing statistical methods struggle with pattern shifts, data sparsity, and lack of explanation, while pure LLM methods remain unreliable.",
-          "We propose STAR, a framework that bridges data-driven STatistical expectations with knowledge-driven Agentic Reasoning."
+          "Video Language Models (VideoLMs) empower AI systems to understand temporal dynamics in videos.",
+          "To fit to the maximum context window constraint, current methods use keyframe sampling which can miss both macro-level events and micro-level details due to the sparse temporal coverage.",
+          "Furthermore, processing full images and their tokens for each frame incurs substantial computational overhead."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.12143v1.mp3"
+        "audio_url": "/audio/2602.13191v1.mp3"
       }
     },
     {
-      "id": "2602.12280v1",
-      "title": "Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching",
+      "id": "2602.13195v1",
+      "title": "Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision",
       "authors": [
-        "Huai-Hsun Cheng",
-        "Siang-Ling Zhang",
-        "Yu-Lun Liu"
+        "Aadarsh Sahoo",
+        "Georgia Gkioxari"
       ],
-      "abstract": "Visual illusions traditionally rely on spatial manipulations such as multi-view consistency. In this work, we introduce Progressive Semantic Illusions, a novel vector sketching task where a single sketch undergoes a dramatic semantic transformation through the sequential addition of strokes. We present Stroke of Surprise, a generative framework that optimizes vector strokes to satisfy distinct semantic interpretations at different drawing stages. The core challenge lies in the \"dual-constraint\": initial prefix strokes must form a coherent object (e.g., a duck) while simultaneously serving as the structural foundation for a second concept (e.g., a sheep) upon adding delta strokes. To address this, we propose a sequence-aware joint optimization framework driven by a dual-branch Score Distillation Sampling (SDS) mechanism. Unlike sequential approaches that freeze the initial state, our method dynamically adjusts prefix strokes to discover a \"common structural subspace\" valid for both targets. Furthermore, we introduce a novel Overlay Loss that enforces spatial complementarity, ensuring structural integration rather than occlusion. Extensive experiments demonstrate that our method significantly outperforms state-of-the-art baselines in recognizability and illusion strength, successfully expanding visual anagrams from the spatial to the temporal dimension. Project page: https://stroke-of-surprise.github.io/",
-      "published": "2026-02-12",
-      "updated": "2026-02-12",
+      "abstract": "Conversational image segmentation grounds abstract, intent-driven concepts into pixel-accurate masks. Prior work on referring image grounding focuses on categorical and spatial queries (e.g., \"left-most apple\") and overlooks functional and physical reasoning (e.g., \"where can I safely store the knife?\"). We address this gap and introduce Conversational Image Segmentation (CIS) and ConverSeg, a benchmark spanning entities, spatial relations, intent, affordances, functions, safety, and physical reasoning. We also present ConverSeg-Net, which fuses strong segmentation priors with language understanding, and an AI-powered data engine that generates prompt-mask pairs without human supervision. We show that current language-guided segmentation models are inadequate for CIS, while ConverSeg-Net trained on our data engine achieves significant gains on ConverSeg and maintains strong performance on existing language-guided segmentation benchmarks. Project webpage: https://glab-caltech.github.io/converseg/",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.12280v1",
-        "pdf": "https://arxiv.org/pdf/2602.12280v1"
+        "paper": "http://arxiv.org/abs/2602.13195v1",
+        "pdf": "https://arxiv.org/pdf/2602.13195v1"
       },
-      "arxiv_id": "2602.12280v1",
-      "comment": "Project page: https://stroke-of-surprise.github.io/ Code: https://github.com/stroke-of-surprise/Stroke-Of-Surprise",
+      "arxiv_id": "2602.13195v1",
+      "comment": "Project webpage: https://glab-caltech.github.io/converseg/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.903389830508474,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Conversational image segmentation grounds abstract, intent-driven concepts into pixel-accurate masks. Prior work on referring image grounding focuses on categorical and spatial queries (e.g., \"left-most apple\") and overlooks functional and physical reasoning (e.g., \"where can I safely store the knife?\"). We address this gap and introduce Conversational Image Segmentation (CIS) and ConverSeg, a ben...",
+        "key_contributions": [
+          "Conversational image segmentation grounds abstract, intent-driven concepts into pixel-accurate masks.",
+          "Prior work on referring image grounding focuses on categorical and spatial queries (e.",
+          "g."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.13195v1.mp3"
+      }
+    },
+    {
+      "id": "2602.13020v1",
+      "title": "DynaGuide: A Generalizable Dynamic Guidance Framework for Unsupervised Semantic Segmentation",
+      "authors": [
+        "Boujemaa Guermazi",
+        "Riadh Ksantini",
+        "Naimul Khan"
+      ],
+      "abstract": "Unsupervised image segmentation is a critical task in computer vision. It enables dense scene understanding without human annotations, which is especially valuable in domains where labelled data is scarce. However, existing methods often struggle to reconcile global semantic structure with fine-grained boundary accuracy. This paper introduces DynaGuide, an adaptive segmentation framework that addresses these challenges through a novel dual-guidance strategy and dynamic loss optimization. Building on our previous work, DynaSeg, DynaGuide combines global pseudo-labels from zero-shot models such as DiffSeg or SegFormer with local boundary refinement using a lightweight CNN trained from scratch. This synergy allows the model to correct coarse or noisy global predictions and produce high-precision segmentations. At the heart of DynaGuide is a multi-component loss that dynamically balances feature similarity, Huber-smoothed spatial continuity, including diagonal relationships, and semantic alignment with the global pseudo-labels. Unlike prior approaches, DynaGuide trains entirely without ground-truth labels in the target domain and supports plug-and-play integration of diverse guidance sources. Extensive experiments on BSD500, PASCAL VOC2012, and COCO demonstrate that DynaGuide achieves state-of-the-art performance, improving mIoU by 17.5% on BSD500, 3.1% on PASCAL VOC2012, and 11.66% on COCO. With its modular design, strong generalization, and minimal computational footprint, DynaGuide offers a scalable and practical solution for unsupervised segmentation in real-world settings. Code available at: https://github.com/RyersonMultimediaLab/DynaGuide",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.13020v1",
+        "pdf": "https://arxiv.org/pdf/2602.13020v1"
+      },
+      "arxiv_id": "2602.13020v1",
+      "comment": "Accepted at Image and Vision Computing",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.894067796610169,
+      "score_breakdown": {
+        "total_score": 3.89,
+        "field_match": {
+          "score": 1.61,
+          "matches": [
+            "heart",
+            "segmentation",
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Unsupervised image segmentation is a critical task in computer vision. It enables dense scene understanding without human annotations, which is especially valuable in domains where labelled data is scarce. However, existing methods often struggle to reconcile global semantic structure with fine-grained boundary accuracy. This paper introduces DynaGuide, an adaptive segmentation framework that addr...",
+        "key_contributions": [
+          "Unsupervised image segmentation is a critical task in computer vision.",
+          "It enables dense scene understanding without human annotations, which is especially valuable in domains where labelled data is scarce.",
+          "However, existing methods often struggle to reconcile global semantic structure with fine-grained boundary accuracy."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.13020v1.mp3"
+      }
+    },
+    {
+      "id": "2602.13185v1",
+      "title": "FlexAM: Flexible Appearance-Motion Decomposition for Versatile Video Generation Control",
+      "authors": [
+        "Mingzhi Sheng",
+        "Zekai Gu",
+        "Peng Li",
+        "Cheng Lin",
+        "Hao-Xiang Guo",
+        "Ying-Cong Chen",
+        "Yuan Liu"
+      ],
+      "abstract": "Effective and generalizable control in video generation remains a significant challenge. While many methods rely on ambiguous or task-specific signals, we argue that a fundamental disentanglement of \"appearance\" and \"motion\" provides a more robust and scalable pathway. We propose FlexAM, a unified framework built upon a novel 3D control signal. This signal represents video dynamics as a point cloud, introducing three key enhancements: multi-frequency positional encoding to distinguish fine-grained motion, depth-aware positional encoding, and a flexible control signal for balancing precision and generative quality. This representation allows FlexAM to effectively disentangle appearance and motion, enabling a wide range of tasks including I2V/V2V editing, camera control, and spatial object editing. Extensive experiments demonstrate that FlexAM achieves superior performance across all evaluated tasks.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.13185v1",
+        "pdf": "https://arxiv.org/pdf/2602.13185v1"
+      },
+      "arxiv_id": "2602.13185v1",
+      "comment": "Codes: https://github.com/IGL-HKUST/FlexAM",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8,
@@ -672,14 +448,218 @@
         }
       },
       "ai_summaries": {
-        "short": "Visual illusions traditionally rely on spatial manipulations such as multi-view consistency. In this work, we introduce Progressive Semantic Illusions, a novel vector sketching task where a single sketch undergoes a dramatic semantic transformation through the sequential addition of strokes. We present Stroke of Surprise, a generative framework that optimizes vector strokes to satisfy distinct sem...",
+        "short": "Effective and generalizable control in video generation remains a significant challenge. While many methods rely on ambiguous or task-specific signals, we argue that a fundamental disentanglement of \"appearance\" and \"motion\" provides a more robust and scalable pathway. We propose FlexAM, a unified framework built upon a novel 3D control signal. This signal represents video dynamics as a point clou...",
         "key_contributions": [
-          "Visual illusions traditionally rely on spatial manipulations such as multi-view consistency.",
-          "In this work, we introduce Progressive Semantic Illusions, a novel vector sketching task where a single sketch undergoes a dramatic semantic transformation through the sequential addition of strokes.",
-          "We present Stroke of Surprise, a generative framework that optimizes vector strokes to satisfy distinct semantic interpretations at different drawing stages."
+          "Effective and generalizable control in video generation remains a significant challenge.",
+          "While many methods rely on ambiguous or task-specific signals, we argue that a fundamental disentanglement of \"appearance\" and \"motion\" provides a more robust and scalable pathway.",
+          "We propose FlexAM, a unified framework built upon a novel 3D control signal."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.12280v1.mp3"
+        "audio_url": "/audio/2602.13185v1.mp3"
+      }
+    },
+    {
+      "id": "2602.12978v1",
+      "title": "Learning Native Continuation for Action Chunking Flow Policies",
+      "authors": [
+        "Yufeng Liu",
+        "Hang Yu",
+        "Juntu Zhao",
+        "Bocheng Li",
+        "Di Zhang",
+        "Mingzhu Li",
+        "Wenxuan Wu",
+        "Yingdong Hu",
+        "Junyuan Xie",
+        "Junliang Guo",
+        "Dequan Wang",
+        "Yang Gao"
+      ],
+      "abstract": "Action chunking enables Vision Language Action (VLA) models to run in real time, but naive chunked execution often exhibits discontinuities at chunk boundaries. Real-Time Chunking (RTC) alleviates this issue but is external to the policy, leading to spurious multimodal switching and trajectories that are not intrinsically smooth. We propose Legato, a training-time continuation method for action-chunked flow-based VLA policies. Specifically, Legato initializes denoising from a schedule-shaped mixture of known actions and noise, exposing the model to partial action information. Moreover, Legato reshapes the learned flow dynamics to ensure that the denoising process remains consistent between training and inference under per-step guidance. Legato further uses randomized schedule condition during training to support varying inference delays and achieve controllable smoothness. Empirically, Legato produces smoother trajectories and reduces spurious multimodal switching during execution, leading to less hesitation and shorter task completion time. Extensive real-world experiments show that Legato consistently outperforms RTC across five manipulation tasks, achieving approximately 10% improvements in both trajectory smoothness and task completion time.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.12978v1",
+        "pdf": "https://arxiv.org/pdf/2602.12978v1"
+      },
+      "arxiv_id": "2602.12978v1",
+      "comment": "Project page: https://lyfeng001.github.io/Legato/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.7,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Action chunking enables Vision Language Action (VLA) models to run in real time, but naive chunked execution often exhibits discontinuities at chunk boundaries. Real-Time Chunking (RTC) alleviates this issue but is external to the policy, leading to spurious multimodal switching and trajectories that are not intrinsically smooth. We propose Legato, a training-time continuation method for action-ch...",
+        "key_contributions": [
+          "Action chunking enables Vision Language Action (VLA) models to run in real time, but naive chunked execution often exhibits discontinuities at chunk boundaries.",
+          "Real-Time Chunking (RTC) alleviates this issue but is external to the policy, leading to spurious multimodal switching and trajectories that are not intrinsically smooth.",
+          "We propose Legato, a training-time continuation method for action-chunked flow-based VLA policies."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.12978v1.mp3"
+      }
+    },
+    {
+      "id": "2602.13041v1",
+      "title": "Implicit-Scale 3D Reconstruction for Multi-Food Volume Estimation from Monocular Images",
+      "authors": [
+        "Yuhao Chen",
+        "Gautham Vinod",
+        "Siddeshwar Raghavan",
+        "Talha Ibn Mahmud",
+        "Bruce Coburn",
+        "Jinge Ma",
+        "Fengqing Zhu",
+        "Jiangpeng He"
+      ],
+      "abstract": "We present Implicit-Scale 3D Reconstruction from Monocular Multi-Food Images, a benchmark dataset designed to advance geometry-based food portion estimation in realistic dining scenarios. Existing dietary assessment methods largely rely on single-image analysis or appearance-based inference, including recent vision-language models, which lack explicit geometric reasoning and are sensitive to scale ambiguity. This benchmark reframes food portion estimation as an implicit-scale 3D reconstruction problem under monocular observations. To reflect real-world conditions, explicit physical references and metric annotations are removed; instead, contextual objects such as plates and utensils are provided, requiring algorithms to infer scale from implicit cues and prior knowledge. The dataset emphasizes multi-food scenes with diverse object geometries, frequent occlusions, and complex spatial arrangements. The benchmark was adopted as a challenge at the MetaFood 2025 Workshop, where multiple teams proposed reconstruction-based solutions. Experimental results show that while strong vision--language baselines achieve competitive performance, geometry-based reconstruction methods provide both improved accuracy and greater robustness, with the top-performing approach achieving 0.21 MAPE in volume estimation and 5.7 L1 Chamfer Distance in geometric accuracy.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.13041v1",
+        "pdf": "https://arxiv.org/pdf/2602.13041v1"
+      },
+      "arxiv_id": "2602.13041v1",
+      "comment": "Paper accepted to 2026 IEEE Southwest Symposium on Image Analysis and Interpretation. The dataset can be downloaded at: https://www.kaggle.com/competitions/3d-reconstruction-from-monocular-multi-food-images/data",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.6567796610169494,
+      "score_breakdown": {
+        "total_score": 3.66,
+        "field_match": {
+          "score": 1.02,
+          "matches": [
+            "3d reconstruction",
+            "image analysis"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We present Implicit-Scale 3D Reconstruction from Monocular Multi-Food Images, a benchmark dataset designed to advance geometry-based food portion estimation in realistic dining scenarios. Existing dietary assessment methods largely rely on single-image analysis or appearance-based inference, including recent vision-language models, which lack explicit geometric reasoning and are sensitive to scale...",
+        "key_contributions": [
+          "We present Implicit-Scale 3D Reconstruction from Monocular Multi-Food Images, a benchmark dataset designed to advance geometry-based food portion estimation in realistic dining scenarios.",
+          "Existing dietary assessment methods largely rely on single-image analysis or appearance-based inference, including recent vision-language models, which lack explicit geometric reasoning and are sensitive to scale ambiguity.",
+          "This benchmark reframes food portion estimation as an implicit-scale 3D reconstruction problem under monocular observations."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.13041v1.mp3"
+      }
+    },
+    {
+      "id": "2602.13140v1",
+      "title": "FlashSchNet: Fast and Accurate Coarse-Grained Neural Network Molecular Dynamics",
+      "authors": [
+        "Pingzhi Li",
+        "Hongxuan Li",
+        "Zirui Liu",
+        "Xingcheng Lin",
+        "Tianlong Chen"
+      ],
+      "abstract": "Graph neural network (GNN) potentials such as SchNet improve the accuracy and transferability of molecular dynamics (MD) simulation by learning many-body interactions, but remain slower than classical force fields due to fragmented kernels and memory-bound pipelines that underutilize GPUs. We show that a missing principle is making GNN-MD IO-aware, carefully accounting for reads and writes between GPU high-bandwidth memory (HBM) and on-chip SRAM. We present FlashSchNet, an efficient and accurate IO-aware SchNet-style GNN-MD framework built on four techniques: (1) flash radial basis, which fuses pairwise distance computation, Gaussian basis expansion, and cosine envelope into a single tiled pass, computing each distance once and reusing it across all basis functions; (2) flash message passing, which fuses cutoff, neighbor gather, filter multiplication, and reduction to avoid materializing edge tensors in HBM; (3) flash aggregation, which reformulates scatter-add via CSR segment reduce, reducing atomic writes by a factor of feature dimension and enabling contention-free accumulation in both forward and backward passes; (4) channel-wise 16-bit quantization that exploits the low per-channel dynamic range in SchNet MLP weights to further improve throughput with negligible accuracy loss. On a single NVIDIA RTX PRO 6000, FlashSchNet achieves 1000 ns/day aggregate simulation throughput over 64 parallel replicas on coarse-grained (CG) protein containing 269 beads (6.5x faster than CGSchNet baseline with 80% reduction of peak memory), surpassing classical force fields (e.g. MARTINI) while retaining SchNet-level accuracy and transferability.",
+      "published": "2026-02-13",
+      "updated": "2026-02-13",
+      "categories": [
+        "cs.LG",
+        "cs.CE"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.13140v1",
+        "pdf": "https://arxiv.org/pdf/2602.13140v1"
+      },
+      "arxiv_id": "2602.13140v1",
+      "comment": "Code is at https://github.com/UNITES-Lab/flash-molecular-dynamics",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.65,
+      "score_breakdown": {
+        "total_score": 3.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Graph neural network (GNN) potentials such as SchNet improve the accuracy and transferability of molecular dynamics (MD) simulation by learning many-body interactions, but remain slower than classical force fields due to fragmented kernels and memory-bound pipelines that underutilize GPUs. We show that a missing principle is making GNN-MD IO-aware, carefully accounting for reads and writes between...",
+        "key_contributions": [
+          "Graph neural network (GNN) potentials such as SchNet improve the accuracy and transferability of molecular dynamics (MD) simulation by learning many-body interactions, but remain slower than classical force fields due to fragmented kernels and memory-bound pipelines that underutilize GPUs.",
+          "We show that a missing principle is making GNN-MD IO-aware, carefully accounting for reads and writes between GPU high-bandwidth memory (HBM) and on-chip SRAM.",
+          "We present FlashSchNet, an efficient and accurate IO-aware SchNet-style GNN-MD framework built on four techniques: (1) flash radial basis, which fuses pairwise distance computation, Gaussian basis expansion, and cosine envelope into a single tiled pass, computing each distance once and reusing it across all basis functions; (2) flash message passing, which fuses cutoff, neighbor gather, filter multiplication, and reduction to avoid materializing edge tensors in HBM; (3) flash aggregation, which reformulates scatter-add via CSR segment reduce, reducing atomic writes by a factor of feature dimension and enabling contention-free accumulation in both forward and backward passes; (4) channel-wise 16-bit quantization that exploits the low per-channel dynamic range in SchNet MLP weights to further improve throughput with negligible accuracy loss."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.13140v1.mp3"
       }
     }
   ]

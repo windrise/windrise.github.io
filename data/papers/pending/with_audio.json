@@ -3,115 +3,52 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.17395v1",
-      "title": "SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery",
+      "id": "2602.18322v1",
+      "title": "Unifying Color and Lightness Correction with View-Adaptive Curve Adjustment for Robust 3D Novel View Synthesis",
       "authors": [
-        "Lorenzo Caselli",
-        "Marco Mistretta",
-        "Simone Magistri",
-        "Andrew D. Bagdanov"
+        "Ziteng Cui",
+        "Shuhong Liu",
+        "Xiaoyu Dong",
+        "Xuangeng Chu",
+        "Lin Gu",
+        "Ming-Hsuan Yang",
+        "Tatsuya Harada"
       ],
-      "abstract": "Generalized Category Discovery (GCD) aims to identify novel categories in unlabeled data while leveraging a small labeled subset of known classes. Training a parametric classifier solely on image features often leads to overfitting to old classes, and recent multimodal approaches improve performance by incorporating textual information. However, they treat modalities independently and incur high computational cost. We propose SpectralGCD, an efficient and effective multimodal approach to GCD that uses CLIP cross-modal image-concept similarities as a unified cross-modal representation. Each image is expressed as a mixture over semantic concepts from a large task-agnostic dictionary, which anchors learning to explicit semantics and reduces reliance on spurious visual cues. To maintain the semantic quality of representations learned by an efficient student, we introduce Spectral Filtering which exploits a cross-modal covariance matrix over the softmaxed similarities measured by a strong teacher model to automatically retain only relevant concepts from the dictionary. Forward and reverse knowledge distillation from the same teacher ensures that the cross-modal representations of the student remain both semantically sufficient and well-aligned. Across six benchmarks, SpectralGCD delivers accuracy comparable to or significantly superior to state-of-the-art methods at a fraction of the computational cost. The code is publicly available at: https://github.com/miccunifi/SpectralGCD.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
+      "abstract": "High-quality image acquisition in real-world environments remains challenging due to complex illumination variations and inherent limitations of camera imaging pipelines. These issues are exacerbated in multi-view capture, where differences in lighting, sensor responses, and image signal processor (ISP) configurations introduce photometric and chromatic inconsistencies that violate the assumptions of photometric consistency underlying modern 3D novel view synthesis (NVS) methods, including Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), leading to degraded reconstruction and rendering quality. We propose Luminance-GS++, a 3DGS-based framework for robust NVS under diverse illumination conditions. Our method combines a globally view-adaptive lightness adjustment with a local pixel-wise residual refinement for precise color correction. We further design unsupervised objectives that jointly enforce lightness correction and multi-view geometric and photometric consistency. Extensive experiments demonstrate state-of-the-art performance across challenging scenarios, including low-light, overexposure, and complex luminance and chromatic variations. Unlike prior approaches that modify the underlying representation, our method preserves the explicit 3DGS formulation, improving reconstruction fidelity while maintaining real-time rendering efficiency.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.17395v1",
-        "pdf": "https://arxiv.org/pdf/2602.17395v1"
+        "paper": "http://arxiv.org/abs/2602.18322v1",
+        "pdf": "https://arxiv.org/pdf/2602.18322v1"
       },
-      "arxiv_id": "2602.17395v1",
-      "comment": "Accepted at ICLR 2026. Code available at https://github.com/miccunifi/SpectralGCD",
+      "arxiv_id": "2602.18322v1",
+      "comment": "Journal extension version of CVPR 2025 paper: arXiv:2504.01503",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.300000000000001,
+      "has_code": false,
+      "relevance_score": 5.702542372881356,
       "score_breakdown": {
-        "total_score": 5.3,
+        "total_score": 5.7,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.88,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "neural radiance",
+            "nerf"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
           "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Generalized Category Discovery (GCD) aims to identify novel categories in unlabeled data while leveraging a small labeled subset of known classes. Training a parametric classifier solely on image features often leads to overfitting to old classes, and recent multimodal approaches improve performance by incorporating textual information. However, they treat modalities independently and incur high c...",
-        "key_contributions": [
-          "Generalized Category Discovery (GCD) aims to identify novel categories in unlabeled data while leveraging a small labeled subset of known classes.",
-          "Training a parametric classifier solely on image features often leads to overfitting to old classes, and recent multimodal approaches improve performance by incorporating textual information.",
-          "However, they treat modalities independently and incur high computational cost."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.17395v1.mp3"
-      }
-    },
-    {
-      "id": "2602.17560v1",
-      "title": "ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment",
-      "authors": [
-        "Hongjue Zhao",
-        "Haosen Sun",
-        "Jiangtao Kong",
-        "Xiaochang Li",
-        "Qineng Wang",
-        "Liwei Jiang",
-        "Qi Zhu",
-        "Tarek Abdelzaher",
-        "Yejin Choi",
-        "Manling Li",
-        "Huajie Shao"
-      ],
-      "abstract": "Activation steering, or representation engineering, offers a lightweight approach to align large language models (LLMs) by manipulating their internal activations at inference time. However, current methods suffer from two key limitations: \\textit{(i)} the lack of a unified theoretical framework for guiding the design of steering directions, and \\textit{(ii)} an over-reliance on \\textit{one-step steering} that fail to capture complex patterns of activation distributions. In this work, we propose a unified ordinary differential equations (ODEs)-based \\textit{theoretical} framework for activation steering in LLM alignment. We show that conventional activation addition can be interpreted as a first-order approximation to the solution of an ODE. Based on this ODE perspective, identifying a steering direction becomes equivalent to designing a \\textit{barrier function} from control theory. Derived from this framework, we introduce ODESteer, a kind of ODE-based steering guided by barrier functions, which shows \\textit{empirical} advancement in LLM alignment. ODESteer identifies steering directions by defining the barrier function as the log-density ratio between positive and negative activations, and employs it to construct an ODE for \\textit{multi-step and adaptive} steering. Compared to state-of-the-art activation steering methods, ODESteer achieves consistent empirical improvements on diverse LLM alignment benchmarks, a notable $5.7\\%$ improvement over TruthfulQA, $2.5\\%$ over UltraFeedback, and $2.4\\%$ over RealToxicityPrompts. Our work establishes a principled new view of activation steering in LLM alignment by unifying its theoretical foundations via ODEs, and validating it empirically through the proposed ODESteer method.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.17560v1",
-        "pdf": "https://arxiv.org/pdf/2602.17560v1"
-      },
-      "arxiv_id": "2602.17560v1",
-      "comment": "Accepted by ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.85,
-      "score_breakdown": {
-        "total_score": 4.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -125,51 +62,187 @@
         }
       },
       "ai_summaries": {
-        "short": "Activation steering, or representation engineering, offers a lightweight approach to align large language models (LLMs) by manipulating their internal activations at inference time. However, current methods suffer from two key limitations: \\textit{(i)} the lack of a unified theoretical framework for guiding the design of steering directions, and \\textit{(ii)} an over-reliance on \\textit{one-step s...",
+        "short": "High-quality image acquisition in real-world environments remains challenging due to complex illumination variations and inherent limitations of camera imaging pipelines. These issues are exacerbated in multi-view capture, where differences in lighting, sensor responses, and image signal processor (ISP) configurations introduce photometric and chromatic inconsistencies that violate the assumptions...",
         "key_contributions": [
-          "Activation steering, or representation engineering, offers a lightweight approach to align large language models (LLMs) by manipulating their internal activations at inference time.",
-          "However, current methods suffer from two key limitations: \\textit{(i)} the lack of a unified theoretical framework for guiding the design of steering directions, and \\textit{(ii)} an over-reliance on \\textit{one-step steering} that fail to capture complex patterns of activation distributions.",
-          "In this work, we propose a unified ordinary differential equations (ODEs)-based \\textit{theoretical} framework for activation steering in LLM alignment."
+          "High-quality image acquisition in real-world environments remains challenging due to complex illumination variations and inherent limitations of camera imaging pipelines.",
+          "These issues are exacerbated in multi-view capture, where differences in lighting, sensor responses, and image signal processor (ISP) configurations introduce photometric and chromatic inconsistencies that violate the assumptions of photometric consistency underlying modern 3D novel view synthesis (NVS) methods, including Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), leading to degraded reconstruction and rendering quality.",
+          "We propose Luminance-GS++, a 3DGS-based framework for robust NVS under diverse illumination conditions."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.17560v1.mp3"
+        "audio_url": "/audio/2602.18322v1.mp3"
       }
     },
     {
-      "id": "2602.17337v1",
-      "title": "Polaffini: A feature-based approach for robust affine and polyaffine image registration",
+      "id": "2602.18426v1",
+      "title": "Spatio-Spectroscopic Representation Learning using Unsupervised Convolutional Long-Short Term Memory Networks",
       "authors": [
-        "Antoine Legouhy",
-        "Cosimo Campo",
-        "Ross Callaghan",
-        "Hojjat Azadbakht",
-        "Hui Zhang"
+        "Kameswara Bharadwaj Mantha",
+        "Lucy Fortson",
+        "Ramanakumar Sankar",
+        "Claudia Scarlata",
+        "Chris Lintott",
+        "Sandor Kruk",
+        "Mike Walmsley",
+        "Hugh Dickinson",
+        "Karen Masters",
+        "Brooke Simmons",
+        "Rebecca Smethurst"
       ],
-      "abstract": "In this work we present Polaffini, a robust and versatile framework for anatomically grounded registration. Medical image registration is dominated by intensity-based registration methods that rely on surrogate measures of alignment quality. In contrast, feature-based approaches that operate by identifying explicit anatomical correspondences, while more desirable in theory, have largely fallen out of favor due to the challenges of reliably extracting features. However, such challenges are now significantly overcome thanks to recent advances in deep learning, which provide pre-trained segmentation models capable of instantly delivering reliable, fine-grained anatomical delineations. We aim to demonstrate that these advances can be leveraged to create new anatomically-grounded image registration algorithms. To this end, we propose Polaffini, which obtains, from these segmented regions, anatomically grounded feature points with 1-to-1 correspondence in a particularly simple way: extracting their centroids. These enable efficient global and local affine matching via closed-form solutions. Those are used to produce an overall transformation ranging from affine to polyaffine with tunable smoothness. Polyaffine transformations can have many more degrees of freedom than affine ones allowing for finer alignment, and their embedding in the log-Euclidean framework ensures diffeomorphic properties. Polaffini has applications both for standalone registration and as pre-alignment for subsequent non-linear registration, and we evaluate it against popular intensity-based registration techniques. Results demonstrate that Polaffini outperforms competing methods in terms of structural alignment and provides improved initialisation for downstream non-linear registration. Polaffini is fast, robust, and accurate, making it particularly well-suited for integration into medical image processing pipelines.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
+      "abstract": "Integral Field Spectroscopy (IFS) surveys offer a unique new landscape in which to learn in both spatial and spectroscopic dimensions and could help uncover previously unknown insights into galaxy evolution. In this work, we demonstrate a new unsupervised deep learning framework using Convolutional Long-Short Term Memory Network Autoencoders to encode generalized feature representations across both spatial and spectroscopic dimensions spanning $19$ optical emission lines (3800A $< λ<$ 8000A) among a sample of $\\sim 9000$ galaxies from the MaNGA IFS survey. As a demonstrative exercise, we assess our model on a sample of $290$ Active Galactic Nuclei (AGN) and highlight scientifically interesting characteristics of some highly anomalous AGN.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "categories": [
+        "astro-ph.GA",
+        "cs.CV"
+      ],
+      "primary_category": "astro-ph.GA",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.18426v1",
+        "pdf": "https://arxiv.org/pdf/2602.18426v1"
+      },
+      "arxiv_id": "2602.18426v1",
+      "comment": "This manuscript was previously submitted to ICML for peer review. Reviewers noted that while the underlying VAE-based architecture builds on established methods, its application to spatially-resolved IFS data is promising for unsupervised representation learning in astronomy. This version is released for community visibility. Reviewer decisions: Weak accept and Weak reject (Final: Reject)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.569491525423729,
+      "score_breakdown": {
+        "total_score": 4.57,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Integral Field Spectroscopy (IFS) surveys offer a unique new landscape in which to learn in both spatial and spectroscopic dimensions and could help uncover previously unknown insights into galaxy evolution. In this work, we demonstrate a new unsupervised deep learning framework using Convolutional Long-Short Term Memory Network Autoencoders to encode generalized feature representations across bot...",
+        "key_contributions": [
+          "Integral Field Spectroscopy (IFS) surveys offer a unique new landscape in which to learn in both spatial and spectroscopic dimensions and could help uncover previously unknown insights into galaxy evolution.",
+          "In this work, we demonstrate a new unsupervised deep learning framework using Convolutional Long-Short Term Memory Network Autoencoders to encode generalized feature representations across both spatial and spectroscopic dimensions spanning $19$ optical emission lines (3800A $< λ<$ 8000A) among a sample of $\\sim 9000$ galaxies from the MaNGA IFS survey.",
+          "As a demonstrative exercise, we assess our model on a sample of $290$ Active Galactic Nuclei (AGN) and highlight scientifically interesting characteristics of some highly anomalous AGN."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.18426v1.mp3"
+      }
+    },
+    {
+      "id": "2602.18043v1",
+      "title": "Spatio-temporal Decoupled Knowledge Compensator for Few-Shot Action Recognition",
+      "authors": [
+        "Hongyu Qu",
+        "Xiangbo Shu",
+        "Rui Yan",
+        "Hailiang Gao",
+        "Wenguan Wang",
+        "Jinhui Tang"
+      ],
+      "abstract": "Few-Shot Action Recognition (FSAR) is a challenging task that requires recognizing novel action categories with a few labeled videos. Recent works typically apply semantically coarse category names as auxiliary contexts to guide the learning of discriminative visual features. However, such context provided by the action names is too limited to provide sufficient background knowledge for capturing novel spatial and temporal concepts in actions. In this paper, we propose DiST, an innovative Decomposition-incorporation framework for FSAR that makes use of decoupled Spatial and Temporal knowledge provided by large language models to learn expressive multi-granularity prototypes. In the decomposition stage, we decouple vanilla action names into diverse spatio-temporal attribute descriptions (action-related knowledge). Such commonsense knowledge complements semantic contexts from spatial and temporal perspectives. In the incorporation stage, we propose Spatial/Temporal Knowledge Compensators (SKC/TKC) to discover discriminative object-level and frame-level prototypes, respectively. In SKC, object-level prototypes adaptively aggregate important patch tokens under the guidance of spatial knowledge. Moreover, in TKC, frame-level prototypes utilize temporal attributes to assist in inter-frame temporal relation modeling. These learned prototypes thus provide transparency in capturing fine-grained spatial details and diverse temporal patterns. Experimental results show DiST achieves state-of-the-art results on five standard FSAR datasets.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.17337v1",
-        "pdf": "https://arxiv.org/pdf/2602.17337v1"
+        "paper": "http://arxiv.org/abs/2602.18043v1",
+        "pdf": "https://arxiv.org/pdf/2602.18043v1"
       },
-      "arxiv_id": "2602.17337v1",
-      "comment": "associated github repo: https://github.com/CIG-UCL/polaffini",
+      "arxiv_id": "2602.18043v1",
+      "comment": "Accepted to TPAMI 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.73135593220339,
+      "has_code": false,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 4.73,
+        "total_score": 4.55,
         "field_match": {
-          "score": 2.2,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "PAMI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Few-Shot Action Recognition (FSAR) is a challenging task that requires recognizing novel action categories with a few labeled videos. Recent works typically apply semantically coarse category names as auxiliary contexts to guide the learning of discriminative visual features. However, such context provided by the action names is too limited to provide sufficient background knowledge for capturing ...",
+        "key_contributions": [
+          "Few-Shot Action Recognition (FSAR) is a challenging task that requires recognizing novel action categories with a few labeled videos.",
+          "Recent works typically apply semantically coarse category names as auxiliary contexts to guide the learning of discriminative visual features.",
+          "However, such context provided by the action names is too limited to provide sufficient background knowledge for capturing novel spatial and temporal concepts in actions."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.18043v1.mp3"
+      }
+    },
+    {
+      "id": "2602.18314v1",
+      "title": "Diff2DGS: Reliable Reconstruction of Occluded Surgical Scenes via 2D Gaussian Splatting",
+      "authors": [
+        "Tianyi Song",
+        "Danail Stoyanov",
+        "Evangelos Mazomenos",
+        "Francisco Vasconcelos"
+      ],
+      "abstract": "Real-time reconstruction of deformable surgical scenes is vital for advancing robotic surgery, improving surgeon guidance, and enabling automation. Recent methods achieve dense reconstructions from da Vinci robotic surgery videos, with Gaussian Splatting (GS) offering real-time performance via graphics acceleration. However, reconstruction quality in occluded regions remains limited, and depth accuracy has not been fully assessed, as benchmarks like EndoNeRF and StereoMIS lack 3D ground truth. We propose Diff2DGS, a novel two-stage framework for reliable 3D reconstruction of occluded surgical scenes. In the first stage, a diffusion-based video module with temporal priors inpaints tissue occluded by instruments with high spatial-temporal consistency. In the second stage, we adapt 2D Gaussian Splatting (2DGS) with a Learnable Deformation Model (LDM) to capture dynamic tissue deformation and anatomical geometry. We also extend evaluation beyond prior image-quality metrics by performing quantitative depth accuracy analysis on the SCARED dataset. Diff2DGS outperforms state-of-the-art approaches in both appearance and geometry, reaching 38.02 dB PSNR on EndoNeRF and 34.40 dB on StereoMIS. Furthermore, our experiments demonstrate that optimizing for image quality alone does not necessarily translate into optimal 3D reconstruction accuracy. To address this, we further optimize the depth quality of the reconstructed 3D results, ensuring more faithful geometry in addition to high-fidelity appearance.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.18314v1",
+        "pdf": "https://arxiv.org/pdf/2602.18314v1"
+      },
+      "arxiv_id": "2602.18314v1",
+      "comment": "This work has been submitted to the IEEE for possible publication",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.313559322033898,
+      "score_breakdown": {
+        "total_score": 4.31,
+        "field_match": {
+          "score": 2.03,
           "matches": [
-            "medical image",
-            "segmentation",
-            "registration",
-            "deep learning"
+            "gaussian splatting",
+            "3d reconstruction",
+            "nerf"
           ],
           "weight": 0.4
         },
@@ -179,72 +252,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "In this work we present Polaffini, a robust and versatile framework for anatomically grounded registration. Medical image registration is dominated by intensity-based registration methods that rely on surrogate measures of alignment quality. In contrast, feature-based approaches that operate by identifying explicit anatomical correspondences, while more desirable in theory, have largely fallen out...",
-        "key_contributions": [
-          "In this work we present Polaffini, a robust and versatile framework for anatomically grounded registration.",
-          "Medical image registration is dominated by intensity-based registration methods that rely on surrogate measures of alignment quality.",
-          "In contrast, feature-based approaches that operate by identifying explicit anatomical correspondences, while more desirable in theory, have largely fallen out of favor due to the challenges of reliably extracting features."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.17337v1.mp3"
-      }
-    },
-    {
-      "id": "2602.17559v1",
-      "title": "Revisiting Weight Regularization for Low-Rank Continual Learning",
-      "authors": [
-        "Yaoyue Zheng",
-        "Yin Zhang",
-        "Joost van de Weijer",
-        "Gido M van de Ven",
-        "Shaoyi Du",
-        "Xuetao Zhang",
-        "Zhiqiang Tian"
-      ],
-      "abstract": "Continual Learning (CL) with large-scale pre-trained models (PTMs) has recently gained wide attention, shifting the focus from training from scratch to continually adapting PTMs. This has given rise to a promising paradigm: parameter-efficient continual learning (PECL), where task interference is typically mitigated by assigning a task-specific module during training, such as low-rank adapters. However, weight regularization techniques, such as Elastic Weight Consolidation (EWC)-a key strategy in CL-remain underexplored in this new paradigm. In this paper, we revisit weight regularization in low-rank CL as a new perspective for mitigating task interference in PECL. Unlike existing low-rank CL methods, we mitigate task interference by regularizing a shared low-rank update through EWC, thereby keeping the storage requirement and inference costs constant regardless of the number of tasks. Our proposed method EWC-LoRA leverages a low-rank representation to estimate parameter importance over the full-dimensional space. This design offers a practical, computational- and memory-efficient solution for CL with PTMs, and provides insights that may inform the broader application of regularization techniques within PECL. Extensive experiments on various benchmarks demonstrate the effectiveness of EWC-LoRA, achieving a stability-plasticity trade-off superior to existing low-rank CL approaches. These results indicate that, even under low-rank parameterizations, weight regularization remains an effective mechanism for mitigating task interference. Code is available at: https://github.com/yaoyz96/low-rank-cl.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.17559v1",
-        "pdf": "https://arxiv.org/pdf/2602.17559v1"
-      },
-      "arxiv_id": "2602.17559v1",
-      "comment": "Accepted by ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.65,
-      "score_breakdown": {
-        "total_score": 4.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -253,182 +261,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Continual Learning (CL) with large-scale pre-trained models (PTMs) has recently gained wide attention, shifting the focus from training from scratch to continually adapting PTMs. This has given rise to a promising paradigm: parameter-efficient continual learning (PECL), where task interference is typically mitigated by assigning a task-specific module during training, such as low-rank adapters. Ho...",
+        "short": "Real-time reconstruction of deformable surgical scenes is vital for advancing robotic surgery, improving surgeon guidance, and enabling automation. Recent methods achieve dense reconstructions from da Vinci robotic surgery videos, with Gaussian Splatting (GS) offering real-time performance via graphics acceleration. However, reconstruction quality in occluded regions remains limited, and depth acc...",
         "key_contributions": [
-          "Continual Learning (CL) with large-scale pre-trained models (PTMs) has recently gained wide attention, shifting the focus from training from scratch to continually adapting PTMs.",
-          "This has given rise to a promising paradigm: parameter-efficient continual learning (PECL), where task interference is typically mitigated by assigning a task-specific module during training, such as low-rank adapters.",
-          "However, weight regularization techniques, such as Elastic Weight Consolidation (EWC)-a key strategy in CL-remain underexplored in this new paradigm."
+          "Real-time reconstruction of deformable surgical scenes is vital for advancing robotic surgery, improving surgeon guidance, and enabling automation.",
+          "Recent methods achieve dense reconstructions from da Vinci robotic surgery videos, with Gaussian Splatting (GS) offering real-time performance via graphics acceleration.",
+          "However, reconstruction quality in occluded regions remains limited, and depth accuracy has not been fully assessed, as benchmarks like EndoNeRF and StereoMIS lack 3D ground truth."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.17559v1.mp3"
+        "audio_url": "/audio/2602.18314v1.mp3"
       }
     },
     {
-      "id": "2602.17385v1",
-      "title": "Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature",
+      "id": "2602.18117v1",
+      "title": "Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning",
       "authors": [
-        "Angelo Porrello",
-        "Pietro Buzzega",
-        "Felix Dangel",
-        "Thomas Sommariva",
-        "Riccardo Salami",
-        "Lorenzo Bonicelli",
-        "Simone Calderara"
+        "Yongjae Shin",
+        "Jongseong Chae",
+        "Jongeui Park",
+        "Youngchul Sung"
       ],
-      "abstract": "Task Arithmetic yields a modular, scalable way to adapt foundation models. Combining multiple task vectors, however, can lead to cross-task interference, causing representation drift and degraded performance. Representation drift regularization provides a natural remedy to disentangle task vectors; however, existing approaches typically require external task data, conflicting with modularity and data availability constraints (e.g., privacy requirements). We propose a dataless approach by framing regularization against representation drift as a curvature matrix approximation problem. This allows us to leverage well-established techniques; in particular, we adopt Kronecker-Factored Approximate Curvature and obtain a practical regularizer that achieves state-of-the-art results in task addition and negation. Our method has constant complexity in the number of tasks and promotes robustness to task vector rescaling, eliminating the need for held-out tuning.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.17385v1",
-        "pdf": "https://arxiv.org/pdf/2602.17385v1"
-      },
-      "arxiv_id": "2602.17385v1",
-      "comment": "Accepted to ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Task Arithmetic yields a modular, scalable way to adapt foundation models. Combining multiple task vectors, however, can lead to cross-task interference, causing representation drift and degraded performance. Representation drift regularization provides a natural remedy to disentangle task vectors; however, existing approaches typically require external task data, conflicting with modularity and d...",
-        "key_contributions": [
-          "Task Arithmetic yields a modular, scalable way to adapt foundation models.",
-          "Combining multiple task vectors, however, can lead to cross-task interference, causing representation drift and degraded performance.",
-          "Representation drift regularization provides a natural remedy to disentangle task vectors; however, existing approaches typically require external task data, conflicting with modularity and data availability constraints (e."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.17385v1.mp3"
-      }
-    },
-    {
-      "id": "2602.17530v1",
-      "title": "Provably Explaining Neural Additive Models",
-      "authors": [
-        "Shahaf Bassan",
-        "Yizhak Yisrael Elboher",
-        "Tobias Ladner",
-        "Volkan Şahin",
-        "Jan Kretinsky",
-        "Matthias Althoff",
-        "Guy Katz"
-      ],
-      "abstract": "Despite significant progress in post-hoc explanation methods for neural networks, many remain heuristic and lack provable guarantees. A key approach for obtaining explanations with provable guarantees is by identifying a cardinally-minimal subset of input features which by itself is provably sufficient to determine the prediction. However, for standard neural networks, this task is often computationally infeasible, as it demands a worst-case exponential number of verification queries in the number of input features, each of which is NP-hard.\n  In this work, we show that for Neural Additive Models (NAMs), a recent and more interpretable neural network family, we can efficiently generate explanations with such guarantees. We present a new model-specific algorithm for NAMs that generates provably cardinally-minimal explanations using only a logarithmic number of verification queries\n  in the number of input features, after a parallelized preprocessing step with logarithmic runtime in the required precision is applied to each small univariate NAM component.\n  Our algorithm not only makes the task of obtaining cardinally-minimal explanations feasible, but even outperforms existing algorithms designed to find the relaxed variant of subset-minimal explanations - which may be larger and less informative but easier to compute - despite our algorithm solving a much more difficult task.\n  Our experiments demonstrate that, compared to previous algorithms, our approach provides provably smaller explanations than existing works and substantially reduces the computation time. Moreover, we show that our generated provable explanations offer benefits that are unattainable by standard sampling-based techniques typically used to interpret NAMs.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
+      "abstract": "Generative models have recently demonstrated remarkable success across diverse domains, motivating their adoption as expressive policies in reinforcement learning (RL). While they have shown strong performance in offline RL, particularly where the target distribution is well defined, their extension to online fine-tuning has largely been treated as a direct continuation of offline pre-training, leaving key challenges unaddressed. In this paper, we propose Flow Matching with Injected Noise for Offline-to-Online RL (FINO), a novel method that leverages flow matching-based policies to enhance sample efficiency for offline-to-online RL. FINO facilitates effective exploration by injecting noise into policy training, thereby encouraging a broader range of actions beyond those observed in the offline dataset. In addition to exploration-enhanced flow policy training, we combine an entropy-guided sampling mechanism to balance exploration and exploitation, allowing the policy to adapt its behavior throughout online fine-tuning. Experiments across diverse, challenging tasks demonstrate that FINO consistently achieves superior performance under limited online budgets.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
       "categories": [
         "cs.LG",
-        "cs.CC",
-        "cs.LO"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.17530v1",
-        "pdf": "https://arxiv.org/pdf/2602.17530v1"
+        "paper": "http://arxiv.org/abs/2602.18117v1",
+        "pdf": "https://arxiv.org/pdf/2602.18117v1"
       },
-      "arxiv_id": "2602.17530v1",
-      "comment": "To appear in ICLR 2026",
+      "arxiv_id": "2602.18117v1",
+      "comment": "ICLR 2026 camera-ready",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
-      "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite significant progress in post-hoc explanation methods for neural networks, many remain heuristic and lack provable guarantees. A key approach for obtaining explanations with provable guarantees is by identifying a cardinally-minimal subset of input features which by itself is provably sufficient to determine the prediction. However, for standard neural networks, this task is often computati...",
-        "key_contributions": [
-          "Despite significant progress in post-hoc explanation methods for neural networks, many remain heuristic and lack provable guarantees.",
-          "A key approach for obtaining explanations with provable guarantees is by identifying a cardinally-minimal subset of input features which by itself is provably sufficient to determine the prediction.",
-          "However, for standard neural networks, this task is often computationally infeasible, as it demands a worst-case exponential number of verification queries in the number of input features, each of which is NP-hard."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.17530v1.mp3"
-      }
-    },
-    {
-      "id": "2602.17659v1",
-      "title": "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs",
-      "authors": [
-        "Yu Fang",
-        "Yuchun Feng",
-        "Dong Jing",
-        "Jiaqi Liu",
-        "Yue Yang",
-        "Zhenyu Wei",
-        "Daniel Szafir",
-        "Mingyu Ding"
-      ],
-      "abstract": "Vision-Language-Action models (VLAs) promise to ground language instructions in robot control, yet in practice often fail to faithfully follow language. When presented with instructions that lack strong scene-specific supervision, VLAs suffer from counterfactual failures: they act based on vision shortcuts induced by dataset biases, repeatedly executing well-learned behaviors and selecting objects frequently seen during training regardless of language intent. To systematically study it, we introduce LIBERO-CF, the first counterfactual benchmark for VLAs that evaluates language following capability by assigning alternative instructions under visually plausible LIBERO layouts. Our evaluation reveals that counterfactual failures are prevalent yet underexplored across state-of-the-art VLAs. We propose Counterfactual Action Guidance (CAG), a simple yet effective dual-branch inference scheme that explicitly regularizes language conditioning in VLAs. CAG combines a standard VLA policy with a language-unconditioned Vision-Action (VA) module, enabling counterfactual comparison during action selection. This design reduces reliance on visual shortcuts, improves robustness on under-observed tasks, and requires neither additional demonstrations nor modifications to existing architectures or pretrained models. Extensive experiments demonstrate its plug-and-play integration across diverse VLAs and consistent improvements. For example, on LIBERO-CF, CAG improves $π_{0.5}$ by 9.7% in language following accuracy and 3.6% in task success on under-observed tasks using a training-free strategy, with further gains of 15.5% and 8.5%, respectively, when paired with a VA model. In real-world evaluations, CAG reduces counterfactual failures of 9.4% and improves task success by 17.2% on average.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.17659v1",
-        "pdf": "https://arxiv.org/pdf/2602.17659v1"
-      },
-      "arxiv_id": "2602.17659v1",
-      "comment": "Website: https://vla-va.github.io/",
-      "journal_ref": "",
-      "has_code": true,
       "relevance_score": 4.25,
       "score_breakdown": {
         "total_score": 4.25,
@@ -438,146 +310,12 @@
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Vision-Language-Action models (VLAs) promise to ground language instructions in robot control, yet in practice often fail to faithfully follow language. When presented with instructions that lack strong scene-specific supervision, VLAs suffer from counterfactual failures: they act based on vision shortcuts induced by dataset biases, repeatedly executing well-learned behaviors and selecting objects...",
-        "key_contributions": [
-          "Vision-Language-Action models (VLAs) promise to ground language instructions in robot control, yet in practice often fail to faithfully follow language.",
-          "When presented with instructions that lack strong scene-specific supervision, VLAs suffer from counterfactual failures: they act based on vision shortcuts induced by dataset biases, repeatedly executing well-learned behaviors and selecting objects frequently seen during training regardless of language intent.",
-          "To systematically study it, we introduce LIBERO-CF, the first counterfactual benchmark for VLAs that evaluates language following capability by assigning alternative instructions under visually plausible LIBERO layouts."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.17659v1.mp3"
-      }
-    },
-    {
-      "id": "2602.17478v1",
-      "title": "QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery",
-      "authors": [
-        "Xuan-Bac Nguyen",
-        "Hoang-Quan Nguyen",
-        "Sankalp Pandey",
-        "Tim Faltermeier",
-        "Nicholas Borys",
-        "Hugh Churchill",
-        "Khoa Luu"
-      ],
-      "abstract": "Characterizing two-dimensional quantum materials from optical microscopy images is challenging due to the subtle layer-dependent contrast, limited labeled data, and significant variation across laboratories and imaging setups. Existing vision models struggle in this domain since they lack physical priors and cannot generalize to new materials or hardware conditions. This work presents a new physics-aware multimodal framework that addresses these limitations from both the data and model perspectives. We first present Synthia, a physics-based synthetic data generator that simulates realistic optical responses of quantum material flakes under thin-film interference. Synthia produces diverse and high-quality samples, helping reduce the dependence on expert manual annotation. We introduce QMat-Instruct, the first large-scale instruction dataset for quantum materials, comprising multimodal, physics-informed question-answer pairs designed to teach Multimodal Large Language Models (MLLMs) to understand the appearance and thickness of flakes. Then, we propose Physics-Aware Instruction Tuning (QuPAINT), a multimodal architecture that incorporates a Physics-Informed Attention module to fuse visual embeddings with optical priors, enabling more robust and discriminative flake representations. Finally, we establish QF-Bench, a comprehensive benchmark spanning multiple materials, substrates, and imaging settings, offering standardized protocols for fair and reproducible evaluation.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.17478v1",
-        "pdf": "https://arxiv.org/pdf/2602.17478v1"
-      },
-      "arxiv_id": "2602.17478v1",
-      "comment": "Project page: https://uark-cviu.github.io/projects/qupaint/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Characterizing two-dimensional quantum materials from optical microscopy images is challenging due to the subtle layer-dependent contrast, limited labeled data, and significant variation across laboratories and imaging setups. Existing vision models struggle in this domain since they lack physical priors and cannot generalize to new materials or hardware conditions. This work presents a new physic...",
-        "key_contributions": [
-          "Characterizing two-dimensional quantum materials from optical microscopy images is challenging due to the subtle layer-dependent contrast, limited labeled data, and significant variation across laboratories and imaging setups.",
-          "Existing vision models struggle in this domain since they lack physical priors and cannot generalize to new materials or hardware conditions.",
-          "This work presents a new physics-aware multimodal framework that addresses these limitations from both the data and model perspectives."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2602.17478v1.mp3"
-      }
-    },
-    {
-      "id": "2602.17473v1",
-      "title": "4D Monocular Surgical Reconstruction under Arbitrary Camera Motions",
-      "authors": [
-        "Jiwei Shan",
-        "Zeyu Cai",
-        "Cheng-Tai Hsieh",
-        "Yirui Li",
-        "Hao Liu",
-        "Lijun Han",
-        "Hesheng Wang",
-        "Shing Shin Cheng"
-      ],
-      "abstract": "Reconstructing deformable surgical scenes from endoscopic videos is challenging and clinically important. Recent state-of-the-art methods based on implicit neural representations or 3D Gaussian splatting have made notable progress. However, most are designed for deformable scenes with fixed endoscope viewpoints and rely on stereo depth priors or accurate structure-from-motion for initialization and optimization, limiting their ability to handle monocular sequences with large camera motion in real clinical settings. To address this, we propose Local-EndoGS, a high-quality 4D reconstruction framework for monocular endoscopic sequences with arbitrary camera motion. Local-EndoGS introduces a progressive, window-based global representation that allocates local deformable scene models to each observed window, enabling scalability to long sequences with substantial motion. To overcome unreliable initialization without stereo depth or accurate structure-from-motion, we design a coarse-to-fine strategy integrating multi-view geometry, cross-window information, and monocular depth priors, providing a robust foundation for optimization. We further incorporate long-range 2D pixel trajectory constraints and physical motion priors to improve deformation plausibility. Experiments on three public endoscopic datasets with deformable scenes and varying camera motions show that Local-EndoGS consistently outperforms state-of-the-art methods in appearance quality and geometry. Ablation studies validate the effectiveness of our key designs. Code will be released upon acceptance at: https://github.com/IRMVLab/Local-EndoGS.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.17473v1",
-        "pdf": "https://arxiv.org/pdf/2602.17473v1"
-      },
-      "arxiv_id": "2602.17473v1",
-      "comment": "Due to the limitation \"The abstract field cannot be longer than 1,920 characters\", the abstract here is shorter than that in the PDF file Subjects",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.877966101694915,
-      "score_breakdown": {
-        "total_score": 3.88,
-        "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -586,53 +324,177 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reconstructing deformable surgical scenes from endoscopic videos is challenging and clinically important. Recent state-of-the-art methods based on implicit neural representations or 3D Gaussian splatting have made notable progress. However, most are designed for deformable scenes with fixed endoscope viewpoints and rely on stereo depth priors or accurate structure-from-motion for initialization an...",
+        "short": "Generative models have recently demonstrated remarkable success across diverse domains, motivating their adoption as expressive policies in reinforcement learning (RL). While they have shown strong performance in offline RL, particularly where the target distribution is well defined, their extension to online fine-tuning has largely been treated as a direct continuation of offline pre-training, le...",
         "key_contributions": [
-          "Reconstructing deformable surgical scenes from endoscopic videos is challenging and clinically important.",
-          "Recent state-of-the-art methods based on implicit neural representations or 3D Gaussian splatting have made notable progress.",
-          "However, most are designed for deformable scenes with fixed endoscope viewpoints and rely on stereo depth priors or accurate structure-from-motion for initialization and optimization, limiting their ability to handle monocular sequences with large camera motion in real clinical settings."
+          "Generative models have recently demonstrated remarkable success across diverse domains, motivating their adoption as expressive policies in reinforcement learning (RL).",
+          "While they have shown strong performance in offline RL, particularly where the target distribution is well defined, their extension to online fine-tuning has largely been treated as a direct continuation of offline pre-training, leaving key challenges unaddressed.",
+          "In this paper, we propose Flow Matching with Injected Noise for Offline-to-Online RL (FINO), a novel method that leverages flow matching-based policies to enhance sample efficiency for offline-to-online RL."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.17473v1.mp3"
+        "audio_url": "/audio/2602.18117v1.mp3"
       }
     },
     {
-      "id": "2602.17663v1",
-      "title": "CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts",
+      "id": "2602.18160v1",
+      "title": "Unifying Formal Explanations: A Complexity-Theoretic Perspective",
       "authors": [
-        "Juri Opitz",
-        "Corina Raclé",
-        "Emanuela Boros",
-        "Andrianos Michail",
-        "Matteo Romanello",
-        "Maud Ehrmann",
-        "Simon Clematide"
+        "Shahaf Bassan",
+        "Xuanxiang Huang",
+        "Guy Katz"
       ],
-      "abstract": "HIPE-2026 is a CLEF evaluation lab dedicated to person-place relation extraction from noisy, multilingual historical texts. Building on the HIPE-2020 and HIPE-2022 campaigns, it extends the series toward semantic relation extraction by targeting the task of identifying person--place associations in multiple languages and time periods. Systems are asked to classify relations of two types - $at$ (\"Has the person ever been at this place?\") and $isAt$ (\"Is the person located at this place around publication time?\") - requiring reasoning over temporal and geographical cues. The lab introduces a three-fold evaluation profile that jointly assesses accuracy, computational efficiency, and domain generalization. By linking relation extraction to large-scale historical data processing, HIPE-2026 aims to support downstream applications in knowledge-graph construction, historical biography reconstruction, and spatial analysis in digital humanities.",
-      "published": "2026-02-19",
-      "updated": "2026-02-19",
+      "abstract": "Previous work has explored the computational complexity of deriving two fundamental types of explanations for ML model predictions: (1) *sufficient reasons*, which are subsets of input features that, when fixed, determine a prediction, and (2) *contrastive reasons*, which are subsets of input features that, when modified, alter a prediction. Prior studies have examined these explanations in different contexts, such as non-probabilistic versus probabilistic frameworks and local versus global settings. In this study, we introduce a unified framework for analyzing these explanations, demonstrating that they can all be characterized through the minimization of a unified probabilistic value function. We then prove that the complexity of these computations is influenced by three key properties of the value function: (1) *monotonicity*, (2) *submodularity*, and (3) *supermodularity* - which are three fundamental properties in *combinatorial optimization*. Our findings uncover some counterintuitive results regarding the nature of these properties within the explanation settings examined. For instance, although the *local* value functions do not exhibit monotonicity or submodularity/supermodularity whatsoever, we demonstrate that the *global* value functions do possess these properties. This distinction enables us to prove a series of novel polynomial-time results for computing various explanations with provable guarantees in the global explainability setting, across a range of ML models that span the interpretability spectrum, such as neural networks, decision trees, and tree ensembles. In contrast, we show that even highly simplified versions of these explanations become NP-hard to compute in the corresponding local explainability setting.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
       "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.IR"
+        "cs.LG",
+        "cs.CC",
+        "cs.DS",
+        "math.OC"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.17663v1",
-        "pdf": "https://arxiv.org/pdf/2602.17663v1"
+        "paper": "http://arxiv.org/abs/2602.18160v1",
+        "pdf": "https://arxiv.org/pdf/2602.18160v1"
       },
-      "arxiv_id": "2602.17663v1",
-      "comment": "ECIR 2026. CLEF Evaluation Lab. Registration DL: 2026/04/23. Task Homepage at https://hipe-eval.github.io/HIPE-2026/",
+      "arxiv_id": "2602.18160v1",
+      "comment": "To appear in ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Previous work has explored the computational complexity of deriving two fundamental types of explanations for ML model predictions: (1) *sufficient reasons*, which are subsets of input features that, when fixed, determine a prediction, and (2) *contrastive reasons*, which are subsets of input features that, when modified, alter a prediction. Prior studies have examined these explanations in differ...",
+        "key_contributions": [
+          "Previous work has explored the computational complexity of deriving two fundamental types of explanations for ML model predictions: (1) *sufficient reasons*, which are subsets of input features that, when fixed, determine a prediction, and (2) *contrastive reasons*, which are subsets of input features that, when modified, alter a prediction.",
+          "Prior studies have examined these explanations in different contexts, such as non-probabilistic versus probabilistic frameworks and local versus global settings.",
+          "In this study, we introduce a unified framework for analyzing these explanations, demonstrating that they can all be characterized through the minimization of a unified probabilistic value function."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.18160v1.mp3"
+      }
+    },
+    {
+      "id": "2602.18116v1",
+      "title": "Cut Less, Fold More: Model Compression through the Lens of Projection Geometry",
+      "authors": [
+        "Olga Saukh",
+        "Dong Wang",
+        "Haris Šikić",
+        "Yun Cheng",
+        "Lothar Thiele"
+      ],
+      "abstract": "Compressing neural networks without retraining is vital for deployment at scale. We study calibration-free compression through the lens of projection geometry: structured pruning is an axis-aligned projection, whereas model folding performs a low-rank projection via weight clustering. We formalize both as orthogonal operators and show that, within a rank distance of one, folding provably yields smaller parameter reconstruction error, and under mild smoothness assumptions, smaller functional perturbations than pruning. At scale, we evaluate >1000 checkpoints spanning ResNet18, PreActResNet18, ViT-B/32, and CLIP ViT-B/32 on CIFAR-10 and ImageNet-1K, covering diverse training hyperparameters (optimizers, learning rates, augmentations, regularization, sharpness-aware training), as well as multiple LLaMA-family 60M and 130M parameter models trained on C4. We show that folding typically achieves higher post-compression accuracy, with the largest gains at moderate-high compression. The gap narrows and occasionally reverses at specific training setups. Our results position folding as a geometry-aware, calibration-free alternative to pruning that is often superior in practice and principled in theory.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.18116v1",
+        "pdf": "https://arxiv.org/pdf/2602.18116v1"
+      },
+      "arxiv_id": "2602.18116v1",
+      "comment": "Accepted by ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Compressing neural networks without retraining is vital for deployment at scale. We study calibration-free compression through the lens of projection geometry: structured pruning is an axis-aligned projection, whereas model folding performs a low-rank projection via weight clustering. We formalize both as orthogonal operators and show that, within a rank distance of one, folding provably yields sm...",
+        "key_contributions": [
+          "Compressing neural networks without retraining is vital for deployment at scale.",
+          "We study calibration-free compression through the lens of projection geometry: structured pruning is an axis-aligned projection, whereas model folding performs a low-rank projection via weight clustering.",
+          "We formalize both as orthogonal operators and show that, within a rank distance of one, folding provably yields smaller parameter reconstruction error, and under mild smoothness assumptions, smaller functional perturbations than pruning."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.18116v1.mp3"
+      }
+    },
+    {
+      "id": "2602.18432v1",
+      "title": "SARAH: Spatially Aware Real-time Agentic Humans",
+      "authors": [
+        "Evonne Ng",
+        "Siwei Zhang",
+        "Zhang Chen",
+        "Michael Zollhoefer",
+        "Alexander Richard"
+      ],
+      "abstract": "As embodied agents become central to VR, telepresence, and digital human applications, their motion must go beyond speech-aligned gestures: agents should turn toward users, respond to their movement, and maintain natural gaze. Current methods lack this spatial awareness. We close this gap with the first real-time, fully causal method for spatially-aware conversational motion, deployable on a streaming VR headset. Given a user's position and dyadic audio, our approach produces full-body motion that aligns gestures with speech while orienting the agent according to the user. Our architecture combines a causal transformer-based VAE with interleaved latent tokens for streaming inference and a flow matching model conditioned on user trajectory and audio. To support varying gaze preferences, we introduce a gaze scoring mechanism with classifier-free guidance to decouple learning from control: the model captures natural spatial alignment from data, while users can adjust eye contact intensity at inference time. On the Embody 3D dataset, our method achieves state-of-the-art motion quality at over 300 FPS -- 3x faster than non-causal baselines -- while capturing the subtle spatial dynamics of natural conversation. We validate our approach on a live VR system, bringing spatially-aware conversational agents to real-time deployment. Please see https://evonneng.github.io/sarah/ for details.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.18432v1",
+        "pdf": "https://arxiv.org/pdf/2602.18432v1"
+      },
+      "arxiv_id": "2602.18432v1",
+      "comment": "Project page: https://evonneng.github.io/sarah/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8499999999999996,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 3.85,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -644,7 +506,73 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "As embodied agents become central to VR, telepresence, and digital human applications, their motion must go beyond speech-aligned gestures: agents should turn toward users, respond to their movement, and maintain natural gaze. Current methods lack this spatial awareness. We close this gap with the first real-time, fully causal method for spatially-aware conversational motion, deployable on a strea...",
+        "key_contributions": [
+          "As embodied agents become central to VR, telepresence, and digital human applications, their motion must go beyond speech-aligned gestures: agents should turn toward users, respond to their movement, and maintain natural gaze.",
+          "Current methods lack this spatial awareness.",
+          "We close this gap with the first real-time, fully causal method for spatially-aware conversational motion, deployable on a streaming VR headset."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.18432v1.mp3"
+      }
+    },
+    {
+      "id": "2602.18309v1",
+      "title": "Multi-Level Conditioning by Pairing Localized Text and Sketch for Fashion Image Generation",
+      "authors": [
+        "Ziyue Liu",
+        "Davide Talon",
+        "Federico Girella",
+        "Zanxi Ruan",
+        "Mattia Mondo",
+        "Loris Bazzani",
+        "Yiming Wang",
+        "Marco Cristani"
+      ],
+      "abstract": "Sketches offer designers a concise yet expressive medium for early-stage fashion ideation by specifying structure, silhouette, and spatial relationships, while textual descriptions complement sketches to convey material, color, and stylistic details. Effectively combining textual and visual modalities requires adherence to the sketch visual structure when leveraging the guidance of localized attributes from text. We present LOcalized Text and Sketch with multi-level guidance (LOTS), a framework that enhances fashion image generation by combining global sketch guidance with multiple localized sketch-text pairs. LOTS employs a Multi-level Conditioning Stage to independently encode local features within a shared latent space while maintaining global structural coordination. Then, the Diffusion Pair Guidance stage integrates both local and global conditioning via attention-based guidance within the diffusion model's multi-step denoising process. To validate our method, we develop Sketchy, the first fashion dataset where multiple text-sketch pairs are provided per image. Sketchy provides high-quality, clean sketches with a professional look and consistent structure. To assess robustness beyond this setting, we also include an \"in the wild\" split with non-expert sketches, featuring higher variability and imperfections. Experiments demonstrate that our method strengthens global structural adherence while leveraging richer localized semantic guidance, achieving improvement over state-of-the-art. The dataset, platform, and code are publicly available.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.18309v1",
+        "pdf": "https://arxiv.org/pdf/2602.18309v1"
+      },
+      "arxiv_id": "2602.18309v1",
+      "comment": "Project page: https://intelligolabs.github.io/lots/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -658,14 +586,77 @@
         }
       },
       "ai_summaries": {
-        "short": "HIPE-2026 is a CLEF evaluation lab dedicated to person-place relation extraction from noisy, multilingual historical texts. Building on the HIPE-2020 and HIPE-2022 campaigns, it extends the series toward semantic relation extraction by targeting the task of identifying person--place associations in multiple languages and time periods. Systems are asked to classify relations of two types - $at$ (\"H...",
+        "short": "Sketches offer designers a concise yet expressive medium for early-stage fashion ideation by specifying structure, silhouette, and spatial relationships, while textual descriptions complement sketches to convey material, color, and stylistic details. Effectively combining textual and visual modalities requires adherence to the sketch visual structure when leveraging the guidance of localized attri...",
         "key_contributions": [
-          "HIPE-2026 is a CLEF evaluation lab dedicated to person-place relation extraction from noisy, multilingual historical texts.",
-          "Building on the HIPE-2020 and HIPE-2022 campaigns, it extends the series toward semantic relation extraction by targeting the task of identifying person--place associations in multiple languages and time periods.",
-          "Systems are asked to classify relations of two types - $at$ (\"Has the person ever been at this place?\") and $isAt$ (\"Is the person located at this place around publication time?\") - requiring reasoning over temporal and geographical cues."
+          "Sketches offer designers a concise yet expressive medium for early-stage fashion ideation by specifying structure, silhouette, and spatial relationships, while textual descriptions complement sketches to convey material, color, and stylistic details.",
+          "Effectively combining textual and visual modalities requires adherence to the sketch visual structure when leveraging the guidance of localized attributes from text.",
+          "We present LOcalized Text and Sketch with multi-level guidance (LOTS), a framework that enhances fashion image generation by combining global sketch guidance with multiple localized sketch-text pairs."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2602.17663v1.mp3"
+        "audio_url": "/audio/2602.18309v1.mp3"
+      }
+    },
+    {
+      "id": "2602.18434v1",
+      "title": "Going Down Memory Lane: Scaling Tokens for Video Stream Understanding with Dynamic KV-Cache Memory",
+      "authors": [
+        "Vatsal Agarwal",
+        "Saksham Suri",
+        "Matthew Gwilliam",
+        "Pulkit Kumar",
+        "Abhinav Shrivastava"
+      ],
+      "abstract": "Streaming video understanding requires models to robustly encode, store, and retrieve information from a continuous video stream to support accurate video question answering (VQA). Existing state-of-the-art approaches rely on key-value caching to accumulate frame-level information over time, but use a limited number of tokens per frame, leading to the loss of fine-grained visual details. In this work, we propose scaling the token budget to enable more granular spatiotemporal understanding and reasoning. First, we find that current methods are ill-equipped to handle dense streams: their feature encoding causes query-frame similarity scores to increase over time, biasing retrieval toward later frames. To address this, we introduce an adaptive selection strategy that reduces token redundancy while preserving local spatiotemporal information. We further propose a training-free retrieval mixture-of-experts that leverages external models to better identify relevant frames. Our method, MemStream, achieves +8.0% on CG-Bench, +8.5% on LVBench, and +2.4% on VideoMME (Long) over ReKV with Qwen2.5-VL-7B.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.18434v1",
+        "pdf": "https://arxiv.org/pdf/2602.18434v1"
+      },
+      "arxiv_id": "2602.18434v1",
+      "comment": "Project page: see https://vatsalag99.github.io/memstream/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Streaming video understanding requires models to robustly encode, store, and retrieve information from a continuous video stream to support accurate video question answering (VQA). Existing state-of-the-art approaches rely on key-value caching to accumulate frame-level information over time, but use a limited number of tokens per frame, leading to the loss of fine-grained visual details. In this w...",
+        "key_contributions": [
+          "Streaming video understanding requires models to robustly encode, store, and retrieve information from a continuous video stream to support accurate video question answering (VQA).",
+          "Existing state-of-the-art approaches rely on key-value caching to accumulate frame-level information over time, but use a limited number of tokens per frame, leading to the loss of fine-grained visual details.",
+          "In this work, we propose scaling the token budget to enable more granular spatiotemporal understanding and reasoning."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2602.18434v1.mp3"
       }
     }
   ]

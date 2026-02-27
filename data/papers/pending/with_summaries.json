@@ -3,43 +3,295 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.21105v1",
-      "title": "BrepGaussian: CAD reconstruction from Multi-View Images with Gaussian Splatting",
+      "id": "2602.21877v1",
+      "title": "How to Take a Memorable Picture? Empowering Users with Actionable Feedback",
       "authors": [
-        "Jiaxing Yu",
-        "Dongyang Ren",
-        "Hangyu Xu",
-        "Zhouyuxiao Yang",
-        "Yuanqi Li",
-        "Jie Guo",
-        "Zhengkang Zhou",
-        "Yanwen Guo"
+        "Francesco Laiti",
+        "Davide Talon",
+        "Jacopo Staiano",
+        "Elisa Ricci"
       ],
-      "abstract": "The boundary representation (B-rep) models a 3D solid as its explicit boundaries: trimmed corners, edges, and faces. Recovering B-rep representation from unstructured data is a challenging and valuable task of computer vision and graphics. Recent advances in deep learning have greatly improved the recovery of 3D shape geometry, but still depend on dense and clean point clouds and struggle to generalize to novel shapes. We propose B-rep Gaussian Splatting (BrepGaussian), a novel framework that learns 3D parametric representations from 2D images. We employ a Gaussian Splatting renderer with learnable features, followed by a specific fitting strategy. To disentangle geometry reconstruction and feature learning, we introduce a two-stage learning framework that first captures geometry and edges and then refines patch features to achieve clean geometry and coherent instance representations. Extensive experiments demonstrate the superior performance of our approach to state-of-the-art methods. We will release our code and datasets upon acceptance.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
+      "abstract": "Image memorability, i.e., how likely an image is to be remembered, has traditionally been studied in computer vision either as a passive prediction task, with models regressing a scalar score, or with generative methods altering the visual input to boost the image likelihood of being remembered. Yet, none of these paradigms supports users at capture time, when the crucial question is how to improve a photo memorability. We introduce the task of Memorability Feedback (MemFeed), where an automated model should provide actionable, human-interpretable guidance to users with the goal to enhance an image future recall. We also present MemCoach, the first approach designed to provide concrete suggestions in natural language for memorability improvement (e.g., \"emphasize facial expression,\" \"bring the subject forward\"). Our method, based on Multimodal Large Language Models (MLLMs), is training-free and employs a teacher-student steering strategy, aligning the model internal activations toward more memorable patterns learned from a teacher model progressing along least-to-most memorable samples. To enable systematic evaluation on this novel task, we further introduce MemBench, a new benchmark featuring sequence-aligned photoshoots with annotated memorability scores. Our experiments, considering multiple MLLMs, demonstrate the effectiveness of MemCoach, showing consistently improved performance over several zero-shot models. The results indicate that memorability can not only be predicted but also taught and instructed, shifting the focus from mere prediction to actionable feedback for human creators.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.21105v1",
-        "pdf": "https://arxiv.org/pdf/2602.21105v1"
+        "paper": "http://arxiv.org/abs/2602.21877v1",
+        "pdf": "https://arxiv.org/pdf/2602.21877v1"
       },
-      "arxiv_id": "2602.21105v1",
-      "comment": "Accepted to CVPR 2026",
+      "arxiv_id": "2602.21877v1",
+      "comment": "Accepted @ CVPR 2026. Project page: https://laitifranz.github.io/MemCoach/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.3779661016949145,
+      "has_code": true,
+      "relevance_score": 5.569491525423729,
       "score_breakdown": {
-        "total_score": 5.38,
+        "total_score": 5.57,
         "field_match": {
-          "score": 1.69,
+          "score": 0.42,
           "matches": [
-            "gaussian splatting",
-            "deep learning",
             "computer vision"
           ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Image memorability, i.e., how likely an image is to be remembered, has traditionally been studied in computer vision either as a passive prediction task, with models regressing a scalar score, or with generative methods altering the visual input to boost the image likelihood of being remembered. Yet, none of these paradigms supports users at capture time, when the crucial question is how to improv...",
+        "key_contributions": [
+          "Image memorability, i.",
+          "e.",
+          ", how likely an image is to be remembered, has traditionally been studied in computer vision either as a passive prediction task, with models regressing a scalar score, or with generative methods altering the visual input to boost the image likelihood of being remembered."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.22013v1",
+      "title": "RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations",
+      "authors": [
+        "I-Hsiang Chen",
+        "Yu-Wei Liu",
+        "Tse-Yu Wu",
+        "Yu-Chien Chiang",
+        "Jen-Chien Yang",
+        "Wei-Ting Chen"
+      ],
+      "abstract": "Vision-based Retrieval-Augmented Generation (VisRAG) leverages vision-language models (VLMs) to jointly retrieve relevant visual documents and generate grounded answers based on multimodal evidence. However, existing VisRAG models degrade in performance when visual inputs suffer from distortions such as blur, noise, low light, or shadow, where semantic and degradation factors become entangled within pretrained visual encoders, leading to errors in both retrieval and generation stages. To address this limitation, we introduce RobustVisRAG, a causality-guided dual-path framework that improves VisRAG robustness while preserving efficiency and zero-shot generalization. RobustVisRAG uses a non-causal path to capture degradation signals through unidirectional attention and a causal path to learn purified semantics guided by these signals. Together with the proposed Non-Causal Distortion Modeling and Causal Semantic Alignment objectives, the framework enforces a clear separation between semantics and degradations, enabling stable retrieval and generation under challenging visual conditions. To evaluate robustness under realistic conditions, we introduce the Distortion-VisRAG dataset, a large-scale benchmark containing both synthetic and real-world degraded documents across seven domains, with 12 synthetic and 5 real distortion types that comprehensively reflect practical visual degradations. Experimental results show that RobustVisRAG improves retrieval, generation, and end-to-end performance by 7.35%, 6.35%, and 12.40%, respectively, on real-world degradations, while maintaining comparable accuracy on clean inputs.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.22013v1",
+        "pdf": "https://arxiv.org/pdf/2602.22013v1"
+      },
+      "arxiv_id": "2602.22013v1",
+      "comment": "Accepted by CVPR2026; Project Page: https://robustvisrag.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.25,
+      "score_breakdown": {
+        "total_score": 5.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Vision-based Retrieval-Augmented Generation (VisRAG) leverages vision-language models (VLMs) to jointly retrieve relevant visual documents and generate grounded answers based on multimodal evidence. However, existing VisRAG models degrade in performance when visual inputs suffer from distortions such as blur, noise, low light, or shadow, where semantic and degradation factors become entangled with...",
+        "key_contributions": [
+          "Vision-based Retrieval-Augmented Generation (VisRAG) leverages vision-language models (VLMs) to jointly retrieve relevant visual documents and generate grounded answers based on multimodal evidence.",
+          "However, existing VisRAG models degrade in performance when visual inputs suffer from distortions such as blur, noise, low light, or shadow, where semantic and degradation factors become entangled within pretrained visual encoders, leading to errors in both retrieval and generation stages.",
+          "To address this limitation, we introduce RobustVisRAG, a causality-guided dual-path framework that improves VisRAG robustness while preserving efficiency and zero-shot generalization."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.22212v1",
+      "title": "Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences",
+      "authors": [
+        "Julian Kaltheuner",
+        "Hannah Dröge",
+        "Markus Plack",
+        "Patrick Stotko",
+        "Reinhard Klein"
+      ],
+      "abstract": "Temporally consistent surface reconstruction of dynamic 3D objects from unstructured point cloud data remains challenging, especially for very long sequences. Existing methods either optimize deformations incrementally, risking drift and requiring long runtimes, or rely on complex learned models that demand category-specific training. We present Neu-PiG, a fast deformation optimization method based on a novel preconditioned latent-grid encoding that distributes spatial features parameterized on the position and normal direction of a keyframe surface. Our method encodes entire deformations across all time steps at various spatial scales into a multi-resolution latent grid, parameterized by the position and normal direction of a reference surface from a single keyframe. This latent representation is then augmented for time modulation and decoded into per-frame 6-DoF deformations via a lightweight multilayer perceptron (MLP). To achieve high-fidelity, drift-free surface reconstructions in seconds, we employ Sobolev preconditioning during gradient-based training of the latent space, completely avoiding the need for any explicit correspondences or further priors. Experiments across diverse human and animal datasets demonstrate that Neu-PiG outperforms state-the-art approaches, offering both superior accuracy and scalability to long sequences while running at least 60x faster than existing training-free methods and achieving inference speeds on the same order as heavy pretrained models.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.22212v1",
+        "pdf": "https://arxiv.org/pdf/2602.22212v1"
+      },
+      "arxiv_id": "2602.22212v1",
+      "comment": "CVPR 2026, Code: https://github.com/vc-bonn/neu-pig",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.1,
+      "score_breakdown": {
+        "total_score": 5.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Temporally consistent surface reconstruction of dynamic 3D objects from unstructured point cloud data remains challenging, especially for very long sequences. Existing methods either optimize deformations incrementally, risking drift and requiring long runtimes, or rely on complex learned models that demand category-specific training. We present Neu-PiG, a fast deformation optimization method base...",
+        "key_contributions": [
+          "Temporally consistent surface reconstruction of dynamic 3D objects from unstructured point cloud data remains challenging, especially for very long sequences.",
+          "Existing methods either optimize deformations incrementally, risking drift and requiring long runtimes, or rely on complex learned models that demand category-specific training.",
+          "We present Neu-PiG, a fast deformation optimization method based on a novel preconditioned latent-grid encoding that distributes spatial features parameterized on the position and normal direction of a keyframe surface."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.22091v1",
+      "title": "Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos",
+      "authors": [
+        "Matthew Strong",
+        "Wei-Jer Chang",
+        "Quentin Herau",
+        "Jiezhi Yang",
+        "Yihan Hu",
+        "Chensheng Peng",
+        "Wei Zhan"
+      ],
+      "abstract": "Ego-centric driving videos available online provide an abundant source of visual data for autonomous driving, yet their lack of annotations makes it difficult to learn representations that capture both semantic structure and 3D geometry. Recent advances in large feedforward spatial models demonstrate that point maps and ego-motion can be inferred in a single forward pass, suggesting a promising direction for scalable driving perception. We therefore propose a label-free, teacher-guided framework for learning autonomous driving representations directly from unposed videos. Unlike prior self-supervised approaches that focus primarily on frame-to-frame consistency, we posit that safe and reactive driving depends critically on temporal context. To this end, we leverage a feedforward architecture equipped with a lightweight autoregressive module, trained using multi-modal supervisory signals that guide the model to jointly predict current and future point maps, camera poses, semantic segmentation, and motion masks. Multi-modal teachers provide sequence-level pseudo-supervision, enabling LFG to learn a unified pseudo-4D representation from raw YouTube videos without poses, labels, or LiDAR. The resulting encoder not only transfers effectively to downstream autonomous driving planning on the NAVSIM benchmark, surpassing multi-camera and LiDAR baselines with only a single monocular camera, but also yields strong performance when evaluated on a range of semantic, geometric, and qualitative motion prediction tasks. These geometry and motion-aware features position LFG as a compelling video-centric foundation model for autonomous driving.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.22091v1",
+        "pdf": "https://arxiv.org/pdf/2602.22091v1"
+      },
+      "arxiv_id": "2602.22091v1",
+      "comment": "Accepted at CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.874576271186441,
+      "score_breakdown": {
+        "total_score": 4.87,
+        "field_match": {
+          "score": 1.19,
+          "matches": [
+            "self-supervised",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Ego-centric driving videos available online provide an abundant source of visual data for autonomous driving, yet their lack of annotations makes it difficult to learn representations that capture both semantic structure and 3D geometry. Recent advances in large feedforward spatial models demonstrate that point maps and ego-motion can be inferred in a single forward pass, suggesting a promising di...",
+        "key_contributions": [
+          "Ego-centric driving videos available online provide an abundant source of visual data for autonomous driving, yet their lack of annotations makes it difficult to learn representations that capture both semantic structure and 3D geometry.",
+          "Recent advances in large feedforward spatial models demonstrate that point maps and ego-motion can be inferred in a single forward pass, suggesting a promising direction for scalable driving perception.",
+          "We therefore propose a label-free, teacher-guided framework for learning autonomous driving representations directly from unposed videos."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.21917v1",
+      "title": "Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration",
+      "authors": [
+        "Chen Wu",
+        "Ling Wang",
+        "Zhuoran Zheng",
+        "Yuning Cui",
+        "Zhixiong Yang",
+        "Xiangyu Chen",
+        "Yue Zhang",
+        "Weidong Jiang",
+        "Jingyuan Xia"
+      ],
+      "abstract": "Ultra-High-Definition (UHD) image restoration is trapped in a scalability crisis: existing models, bound to pixel-wise operations, demand unsustainable computation. While state space models (SSMs) like Mamba promise linear complexity, their pixel-serial scanning remains a fundamental bottleneck for the millions of pixels in UHD content. We ask: must we process every pixel to understand the image? This paper introduces C$^2$SSM, a visual state space model that breaks this taboo by shifting from pixel-serial to cluster-serial scanning. Our core discovery is that the rich feature distribution of a UHD image can be distilled into a sparse set of semantic centroids via a neural-parameterized mixture model. C$^2$SSM leverages this to reformulate global modeling into a novel dual-path process: it scans and reasons over a handful of cluster centers, then diffuses the global context back to all pixels through a principled similarity distribution, all while a lightweight modulator preserves fine details. This cluster-centric paradigm achieves a decisive leap in efficiency, slashing computational costs while establishing new state-of-the-art results across five UHD restoration tasks. More than a solution, C$^2$SSM charts a new course for efficient large-scale vision: scan clusters, not pixels.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.21917v1",
+        "pdf": "https://arxiv.org/pdf/2602.21917v1"
+      },
+      "arxiv_id": "2602.21917v1",
+      "comment": "Aceepted by CVPR26",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6499999999999995,
+      "score_breakdown": {
+        "total_score": 4.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -57,119 +309,57 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The boundary representation (B-rep) models a 3D solid as its explicit boundaries: trimmed corners, edges, and faces. Recovering B-rep representation from unstructured data is a challenging and valuable task of computer vision and graphics. Recent advances in deep learning have greatly improved the recovery of 3D shape geometry, but still depend on dense and clean point clouds and struggle to gener...",
+        "short": "Ultra-High-Definition (UHD) image restoration is trapped in a scalability crisis: existing models, bound to pixel-wise operations, demand unsustainable computation. While state space models (SSMs) like Mamba promise linear complexity, their pixel-serial scanning remains a fundamental bottleneck for the millions of pixels in UHD content. We ask: must we process every pixel to understand the image? ...",
         "key_contributions": [
-          "The boundary representation (B-rep) models a 3D solid as its explicit boundaries: trimmed corners, edges, and faces.",
-          "Recovering B-rep representation from unstructured data is a challenging and valuable task of computer vision and graphics.",
-          "Recent advances in deep learning have greatly improved the recovery of 3D shape geometry, but still depend on dense and clean point clouds and struggle to generalize to novel shapes."
+          "Ultra-High-Definition (UHD) image restoration is trapped in a scalability crisis: existing models, bound to pixel-wise operations, demand unsustainable computation.",
+          "While state space models (SSMs) like Mamba promise linear complexity, their pixel-serial scanning remains a fundamental bottleneck for the millions of pixels in UHD content.",
+          "We ask: must we process every pixel to understand the image? This paper introduces C$^2$SSM, a visual state space model that breaks this taboo by shifting from pixel-serial to cluster-serial scanning."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.20880v1",
-      "title": "When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance",
+      "id": "2602.21929v1",
+      "title": "Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context",
       "authors": [
-        "Yongli Xiang",
-        "Ziming Hong",
-        "Zhaoqing Wang",
-        "Xiangyu Zhao",
-        "Bo Han",
-        "Tongliang Liu"
+        "JiaKui Hu",
+        "Jialun Liu",
+        "Liying Yang",
+        "Xinliang Zhang",
+        "Kaiwen Li",
+        "Shuang Zeng",
+        "Yuanwei Li",
+        "Haibin Huang",
+        "Chi Zhang",
+        "Yanye Lu"
       ],
-      "abstract": "Text-to-Image (T2I) diffusion models have demonstrated significant advancements in generating high-quality images, while raising potential safety concerns regarding harmful content generation. Safety-guidance-based methods have been proposed to mitigate harmful outputs by steering generation away from harmful zones, where the zones are averaged across multiple harmful categories based on predefined keywords. However, these approaches fail to capture the complex interplay among different harm categories, leading to \"harmful conflicts\" where mitigating one type of harm may inadvertently amplify another, thus increasing overall harmful rate. To address this issue, we propose Conflict-aware Adaptive Safety Guidance (CASG), a training-free framework that dynamically identifies and applies the category-aligned safety direction during generation. CASG is composed of two components: (i) Conflict-aware Category Identification (CaCI), which identifies the harmful category most aligned with the model's evolving generative state, and (ii) Conflict-resolving Guidance Application (CrGA), which applies safety steering solely along the identified category to avoid multi-category interference. CASG can be applied to both latent-space and text-space safeguards. Experiments on T2I safety benchmarks demonstrate CASG's state-of-the-art performance, reducing the harmful rate by up to 15.4% compared to existing methods.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
+      "abstract": "Scene-consistent video generation aims to create videos that explore 3D scenes based on a camera trajectory. Previous methods rely on video generation models with external memory for consistency, or iterative 3D reconstruction and inpainting, which accumulate errors during inference due to incorrect intermediary outputs, non-differentiable processes, and separate models. To overcome these limitations, we introduce ``geometry-as-context\". It iteratively completes the following steps using an autoregressive camera-controlled video generation model: (1) estimates the geometry of the current view necessary for 3D reconstruction, and (2) simulates and restores novel view images rendered by the 3D scene. Under this multi-task framework, we develop the camera gated attention module to enhance the model's capability to effectively leverage camera poses. During the training phase, text contexts are utilized to ascertain whether geometric or RGB images should be generated. To ensure that the model can generate RGB-only outputs during inference, the geometry context is randomly dropped from the interleaved text-image-geometry training sequence. The method has been tested on scene video generation with one-direction and forth-and-back trajectories. The results show its superiority over previous approaches in maintaining scene consistency and camera control.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.20880v1",
-        "pdf": "https://arxiv.org/pdf/2602.20880v1"
+        "paper": "http://arxiv.org/abs/2602.21929v1",
+        "pdf": "https://arxiv.org/pdf/2602.21929v1"
       },
-      "arxiv_id": "2602.20880v1",
-      "comment": "CVPR 2026; Code is released at https://github.com/tmllab/2026_CVPR_CASG",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.300000000000001,
-      "score_breakdown": {
-        "total_score": 5.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Text-to-Image (T2I) diffusion models have demonstrated significant advancements in generating high-quality images, while raising potential safety concerns regarding harmful content generation. Safety-guidance-based methods have been proposed to mitigate harmful outputs by steering generation away from harmful zones, where the zones are averaged across multiple harmful categories based on predefine...",
-        "key_contributions": [
-          "Text-to-Image (T2I) diffusion models have demonstrated significant advancements in generating high-quality images, while raising potential safety concerns regarding harmful content generation.",
-          "Safety-guidance-based methods have been proposed to mitigate harmful outputs by steering generation away from harmful zones, where the zones are averaged across multiple harmful categories based on predefined keywords.",
-          "However, these approaches fail to capture the complex interplay among different harm categories, leading to \"harmful conflicts\" where mitigating one type of harm may inadvertently amplify another, thus increasing overall harmful rate."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.20933v1",
-      "title": "Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting",
-      "authors": [
-        "Shuangkang Fang",
-        "I-Chao Shen",
-        "Xuanyang Zhang",
-        "Zesheng Wang",
-        "Yufeng Wang",
-        "Wenrui Ding",
-        "Gang Yu",
-        "Takeo Igarashi"
-      ],
-      "abstract": "Recent 3D Gaussian Splatting (3DGS) Dropout methods address overfitting under sparse-view conditions by randomly nullifying Gaussian opacities. However, we identify a neighbor compensation effect in these approaches: dropped Gaussians are often compensated by their neighbors, weakening the intended regularization. Moreover, these methods overlook the contribution of high-degree spherical harmonic coefficients (SH) to overfitting. To address these issues, we propose DropAnSH-GS, a novel anchor-based Dropout strategy. Rather than dropping Gaussians independently, our method randomly selects certain Gaussians as anchors and simultaneously removes their spatial neighbors. This effectively disrupts local redundancies near anchors and encourages the model to learn more robust, globally informed representations. Furthermore, we extend the Dropout to color attributes by randomly dropping higher-degree SH to concentrate appearance information in lower-degree SH. This strategy further mitigates overfitting and enables flexible post-training model compression via SH truncation. Experimental results demonstrate that DropAnSH-GS substantially outperforms existing Dropout methods with negligible computational overhead, and can be readily integrated into various 3DGS variants to enhance their performances. Project Website: https://sk-fun.fun/DropAnSH-GS",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.20933v1",
-        "pdf": "https://arxiv.org/pdf/2602.20933v1"
-      },
-      "arxiv_id": "2602.20933v1",
+      "arxiv_id": "2602.21929v1",
       "comment": "Accepted by CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 5.027966101694915,
+      "relevance_score": 4.58728813559322,
       "score_breakdown": {
-        "total_score": 5.03,
+        "total_score": 4.59,
         "field_match": {
-          "score": 1.69,
+          "score": 0.59,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "3d reconstruction"
           ],
           "weight": 0.4
         },
@@ -193,43 +383,41 @@
         }
       },
       "ai_summaries": {
-        "short": "Recent 3D Gaussian Splatting (3DGS) Dropout methods address overfitting under sparse-view conditions by randomly nullifying Gaussian opacities. However, we identify a neighbor compensation effect in these approaches: dropped Gaussians are often compensated by their neighbors, weakening the intended regularization. Moreover, these methods overlook the contribution of high-degree spherical harmonic ...",
+        "short": "Scene-consistent video generation aims to create videos that explore 3D scenes based on a camera trajectory. Previous methods rely on video generation models with external memory for consistency, or iterative 3D reconstruction and inpainting, which accumulate errors during inference due to incorrect intermediary outputs, non-differentiable processes, and separate models. To overcome these limitati...",
         "key_contributions": [
-          "Recent 3D Gaussian Splatting (3DGS) Dropout methods address overfitting under sparse-view conditions by randomly nullifying Gaussian opacities.",
-          "However, we identify a neighbor compensation effect in these approaches: dropped Gaussians are often compensated by their neighbors, weakening the intended regularization.",
-          "Moreover, these methods overlook the contribution of high-degree spherical harmonic coefficients (SH) to overfitting."
+          "Scene-consistent video generation aims to create videos that explore 3D scenes based on a camera trajectory.",
+          "Previous methods rely on video generation models with external memory for consistency, or iterative 3D reconstruction and inpainting, which accumulate errors during inference due to incorrect intermediary outputs, non-differentiable processes, and separate models.",
+          "To overcome these limitations, we introduce ``geometry-as-context\"."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.21010v1",
-      "title": "Le-DETR: Revisiting Real-Time Detection Transformer with Efficient Encoder Design",
+      "id": "2602.22142v1",
+      "title": "WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs",
       "authors": [
-        "Jiannan Huang",
-        "Aditya Kane",
-        "Fengzhe Zhou",
-        "Yunchao Wei",
-        "Humphrey Shi"
+        "Yulin Zhang",
+        "Cheng Shi",
+        "Sibei Yang"
       ],
-      "abstract": "Real-time object detection is crucial for real-world applications as it requires high accuracy with low latency. While Detection Transformers (DETR) have demonstrated significant performance improvements, current real-time DETR models are challenging to reproduce from scratch due to excessive pre-training overheads on the backbone, constraining research advancements by hindering the exploration of novel backbone architectures. In this paper, we want to show that by using general good design, it is possible to have \\textbf{high performance} with \\textbf{low pre-training cost}. After a thorough study of the backbone architecture, we propose EfficientNAT at various scales, which incorporates modern efficient convolution and local attention mechanisms. Moreover, we re-design the hybrid encoder with local attention, significantly enhancing both performance and inference speed. Based on these advancements, we present Le-DETR (\\textbf{L}ow-cost and \\textbf{E}fficient \\textbf{DE}tection \\textbf{TR}ansformer), which achieves a new \\textbf{SOTA} in real-time detection using only ImageNet1K and COCO2017 training datasets, saving about 80\\% images in pre-training stage compared with previous methods. We demonstrate that with well-designed, real-time DETR models can achieve strong performance without the need for complex and computationally expensive pretraining. Extensive experiments show that Le-DETR-M/L/X achieves \\textbf{52.9/54.3/55.1 mAP} on COCO Val2017 with \\textbf{4.45/5.01/6.68 ms} on an RTX4090. It surpasses YOLOv12-L/X by \\textbf{+0.6/-0.1 mAP} while achieving similar speed and \\textbf{+20\\%} speedup. Compared with DEIM-D-FINE, Le-DETR-M achieves \\textbf{+0.2 mAP} with slightly faster inference, and surpasses DEIM-D-FINE-L by \\textbf{+0.4 mAP} with only \\textbf{0.4 ms} additional latency. Code and weights will be open-sourced.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
+      "abstract": "Recent advances in Multimodal Large Language Models have greatly improved visual understanding and reasoning, yet their quadratic attention and offline training protocols make them ill-suited for streaming settings where frames arrive sequentially and future observations are inaccessible. We diagnose a core limitation of current Video-LLMs, namely Time-Agnosticism, in which videos are treated as an unordered bag of evidence rather than a causally ordered sequence, yielding two failures in streams: temporal order ambiguity, in which the model cannot follow or reason over the correct chronological order, and past-current focus blindness where it fails to distinguish present observations from accumulated history. We present WeaveTime, a simple, efficient, and model agnostic framework that first teaches order and then uses order. We introduce a lightweight Temporal Reconstruction objective-our Streaming Order Perception enhancement-that instills order aware representations with minimal finetuning and no specialized streaming data. At inference, a Past-Current Dynamic Focus Cache performs uncertainty triggered, coarse-to-fine retrieval, expanding history only when needed. Plugged into exsiting Video-LLM without architectural changes, WeaveTime delivers consistent gains on representative streaming benchmarks, improving accuracy while reducing latency. These results establish WeaveTime as a practical path toward time aware stream Video-LLMs under strict online, time causal constraints. Code and weights will be made publicly available. Project Page: https://zhangyl4.github.io/publications/weavetime/",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.21010v1",
-        "pdf": "https://arxiv.org/pdf/2602.21010v1"
+        "paper": "http://arxiv.org/abs/2602.22142v1",
+        "pdf": "https://arxiv.org/pdf/2602.22142v1"
       },
-      "arxiv_id": "2602.21010v1",
-      "comment": "CVPR Findings",
+      "arxiv_id": "2602.22142v1",
+      "comment": "Accepted at CVPR 2026 (preview; camera-ready in preparation)",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.8,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.8,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -241,84 +429,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Real-time object detection is crucial for real-world applications as it requires high accuracy with low latency. While Detection Transformers (DETR) have demonstrated significant performance improvements, current real-time DETR models are challenging to reproduce from scratch due to excessive pre-training overheads on the backbone, constraining research advancements by hindering the exploration of...",
-        "key_contributions": [
-          "Real-time object detection is crucial for real-world applications as it requires high accuracy with low latency.",
-          "While Detection Transformers (DETR) have demonstrated significant performance improvements, current real-time DETR models are challenging to reproduce from scratch due to excessive pre-training overheads on the backbone, constraining research advancements by hindering the exploration of novel backbone architectures.",
-          "In this paper, we want to show that by using general good design, it is possible to have \\textbf{high performance} with \\textbf{low pre-training cost}."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.21143v1",
-      "title": "A Benchmark for Deep Information Synthesis",
-      "authors": [
-        "Debjit Paul",
-        "Daniel Murphy",
-        "Milan Gritta",
-        "Ronald Cardenas",
-        "Victor Prokhorov",
-        "Lena Sophia Bolliger",
-        "Aysim Toker",
-        "Roy Miles",
-        "Andreea-Maria Oncescu",
-        "Jasivan Alex Sivakumar",
-        "Philipp Borchert",
-        "Ismail Elezi",
-        "Meiru Zhang",
-        "Ka Yiu Lee",
-        "Guchun Zhang",
-        "Jun Wang",
-        "Gerasimos Lampouras"
-      ],
-      "abstract": "Large language model (LLM)-based agents are increasingly used to solve complex tasks involving tool use, such as web browsing, code execution, and data analysis. However, current evaluation benchmarks do not adequately assess their ability to solve real-world tasks that require synthesizing information from multiple sources and inferring insights beyond simple fact retrieval. To address this, we introduce DEEPSYNTH, a novel benchmark designed to evaluate agents on realistic, time-consuming problems that combine information gathering, synthesis, and structured reasoning to produce insights. DEEPSYNTH contains 120 tasks collected across 7 domains and data sources covering 67 countries. DEEPSYNTH is constructed using a multi-stage data collection pipeline that requires annotators to collect official data sources, create hypotheses, perform manual analysis, and design tasks with verifiable answers. When evaluated on DEEPSYNTH, 11 state-of-the-art LLMs and deep research agents achieve a maximum F1 score of 8.97 and 17.5 on the LLM-judge metric, underscoring the difficulty of the benchmark. Our analysis reveals that current agents struggle with hallucinations and reasoning over large information spaces, highlighting DEEPSYNTH as a crucial benchmark for guiding future research.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.IR",
-        "cs.LG"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.21143v1",
-        "pdf": "https://arxiv.org/pdf/2602.21143v1"
-      },
-      "arxiv_id": "2602.21143v1",
-      "comment": "Accepted at ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.75,
-      "score_breakdown": {
-        "total_score": 4.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -332,308 +443,63 @@
         }
       },
       "ai_summaries": {
-        "short": "Large language model (LLM)-based agents are increasingly used to solve complex tasks involving tool use, such as web browsing, code execution, and data analysis. However, current evaluation benchmarks do not adequately assess their ability to solve real-world tasks that require synthesizing information from multiple sources and inferring insights beyond simple fact retrieval. To address this, we i...",
+        "short": "Recent advances in Multimodal Large Language Models have greatly improved visual understanding and reasoning, yet their quadratic attention and offline training protocols make them ill-suited for streaming settings where frames arrive sequentially and future observations are inaccessible. We diagnose a core limitation of current Video-LLMs, namely Time-Agnosticism, in which videos are treated as a...",
         "key_contributions": [
-          "Large language model (LLM)-based agents are increasingly used to solve complex tasks involving tool use, such as web browsing, code execution, and data analysis.",
-          "However, current evaluation benchmarks do not adequately assess their ability to solve real-world tasks that require synthesizing information from multiple sources and inferring insights beyond simple fact retrieval.",
-          "To address this, we introduce DEEPSYNTH, a novel benchmark designed to evaluate agents on realistic, time-consuming problems that combine information gathering, synthesis, and structured reasoning to produce insights."
+          "Recent advances in Multimodal Large Language Models have greatly improved visual understanding and reasoning, yet their quadratic attention and offline training protocols make them ill-suited for streaming settings where frames arrive sequentially and future observations are inaccessible.",
+          "We diagnose a core limitation of current Video-LLMs, namely Time-Agnosticism, in which videos are treated as an unordered bag of evidence rather than a causally ordered sequence, yielding two failures in streams: temporal order ambiguity, in which the model cannot follow or reason over the correct chronological order, and past-current focus blindness where it fails to distinguish present observations from accumulated history.",
+          "We present WeaveTime, a simple, efficient, and model agnostic framework that first teaches order and then uses order."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2602.21078v1",
-      "title": "ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning",
+      "id": "2602.21904v1",
+      "title": "UNet-Based Keypoint Regression for 3D Cone Localization in Autonomous Racing",
       "authors": [
-        "Duowen Chen",
-        "Yan Wang"
+        "Mariia Baidachna",
+        "James Carty",
+        "Aidan Ferguson",
+        "Joseph Agrane",
+        "Varad Kulkarni",
+        "Aubrey Agub",
+        "Michael Baxendale",
+        "Aaron David",
+        "Rachel Horton",
+        "Elliott Atkinson"
       ],
-      "abstract": "Federated Semi-Supervised Learning (FSSL) aims to collaboratively train a global model across clients by leveraging partially-annotated local data in a privacy-preserving manner. In FSSL, data heterogeneity is a challenging issue, which exists both across clients and within clients. External heterogeneity refers to the data distribution discrepancy across different clients, while internal heterogeneity represents the mismatch between labeled and unlabeled data within clients. Most FSSL methods typically design fixed or dynamic parameter aggregation strategies to collect client knowledge on the server (external) and / or filter out low-confidence unlabeled samples to reduce mistakes in local client (internal). But, the former is hard to precisely fit the ideal global distribution via direct weights, and the latter results in fewer data participation into FL training. To this end, we propose a proxy-guided framework called ProxyFL that focuses on simultaneously mitigating external and internal heterogeneity via a unified proxy. I.e., we consider the learnable weights of classifier as proxy to simulate the category distribution both locally and globally. For external, we explicitly optimize global proxy against outliers instead of direct weights; for internal, we re-include the discarded samples into training by a positive-negative proxy pool to mitigate the impact of potentially-incorrect pseudo-labels. Insight experiments & theoretical analysis show our significant performance and convergence in FSSL.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
-      "categories": [
-        "cs.LG",
-        "cs.CV"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.21078v1",
-        "pdf": "https://arxiv.org/pdf/2602.21078v1"
-      },
-      "arxiv_id": "2602.21078v1",
-      "comment": "CVPR 2026. code: https://github.com/DuowenC/FSSLlib",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.75,
-      "score_breakdown": {
-        "total_score": 4.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Federated Semi-Supervised Learning (FSSL) aims to collaboratively train a global model across clients by leveraging partially-annotated local data in a privacy-preserving manner. In FSSL, data heterogeneity is a challenging issue, which exists both across clients and within clients. External heterogeneity refers to the data distribution discrepancy across different clients, while internal heteroge...",
-        "key_contributions": [
-          "Federated Semi-Supervised Learning (FSSL) aims to collaboratively train a global model across clients by leveraging partially-annotated local data in a privacy-preserving manner.",
-          "In FSSL, data heterogeneity is a challenging issue, which exists both across clients and within clients.",
-          "External heterogeneity refers to the data distribution discrepancy across different clients, while internal heterogeneity represents the mismatch between labeled and unlabeled data within clients."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.21043v1",
-      "title": "T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation",
-      "authors": [
-        "Dongik Park",
-        "Hyunwoo Ryu",
-        "Suahn Bae",
-        "Keondo Park",
-        "Hyung-Sin Kim"
-      ],
-      "abstract": "Imputing missing values in multivariate time series remains challenging, especially under diverse missing patterns and heavy missingness. Existing methods suffer from suboptimal performance as corrupted temporal features hinder effective cross-variable information transfer, amplifying reconstruction errors. Robust imputation requires both extracting temporal patterns from sparse observations within each variable and selectively transferring information across variables--yet current approaches excel at one while compromising the other. We introduce T1 (Time series imputation with 1-to-1 channel-head binding), a CNN-Transformer hybrid architecture that achieves robust imputation through Channel-Head Binding--a mechanism creating one-to-one correspondence between CNN channels and attention heads. This design enables selective information transfer: when missingness corrupts certain temporal patterns, their corresponding attention pathways adaptively down-weight based on remaining observable patterns while preserving reliable cross-variable connections through unaffected channels. Experiments on 11 benchmark datasets demonstrate that T1 achieves state-of-the-art performance, reducing MSE by 46% on average compared to the second-best baseline, with particularly strong gains under extreme sparsity (70% missing ratio). The model generalizes to unseen missing patterns without retraining and uses a consistent hyperparameter configuration across all datasets. The code is available at https://github.com/Oppenheimerdinger/T1.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.21043v1",
-        "pdf": "https://arxiv.org/pdf/2602.21043v1"
-      },
-      "arxiv_id": "2602.21043v1",
-      "comment": "Accepted at ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Imputing missing values in multivariate time series remains challenging, especially under diverse missing patterns and heavy missingness. Existing methods suffer from suboptimal performance as corrupted temporal features hinder effective cross-variable information transfer, amplifying reconstruction errors. Robust imputation requires both extracting temporal patterns from sparse observations withi...",
-        "key_contributions": [
-          "Imputing missing values in multivariate time series remains challenging, especially under diverse missing patterns and heavy missingness.",
-          "Existing methods suffer from suboptimal performance as corrupted temporal features hinder effective cross-variable information transfer, amplifying reconstruction errors.",
-          "Robust imputation requires both extracting temporal patterns from sparse observations within each variable and selectively transferring information across variables--yet current approaches excel at one while compromising the other."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.20985v1",
-      "title": "EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer",
-      "authors": [
-        "Munish Monga",
-        "Vishal Chudasama",
-        "Pankaj Wasnik",
-        "C. V. Jawahar"
-      ],
-      "abstract": "Real-world object detection must operate in evolving environments where new classes emerge, domains shift, and unseen objects must be identified as \"unknown\": all without accessing prior data. We introduce Evolving World Object Detection (EWOD), a paradigm coupling incremental learning, domain adaptation, and unknown detection under exemplar-free constraints. To tackle EWOD, we propose EW-DETR framework that augments DETR-based detectors with three synergistic modules: Incremental LoRA Adapters for exemplar-free incremental learning under evolving domains; a Query-Norm Objectness Adapter that decouples objectness-aware features from DETR decoder queries; and Entropy-Aware Unknown Mixing for calibrated unknown detection. This framework generalises across DETR-based detectors, enabling state-of-the-art RF-DETR to operate effectively in evolving-world settings. We also introduce FOGS (Forgetting, Openness, Generalisation Score) to holistically evaluate performance across these dimensions. Extensive experiments on Pascal Series and Diverse Weather benchmarks show EW-DETR outperforms other methods, improving FOGS by 57.24%.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.20985v1",
-        "pdf": "https://arxiv.org/pdf/2602.20985v1"
-      },
-      "arxiv_id": "2602.20985v1",
-      "comment": "Accepted at CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Real-world object detection must operate in evolving environments where new classes emerge, domains shift, and unseen objects must be identified as \"unknown\": all without accessing prior data. We introduce Evolving World Object Detection (EWOD), a paradigm coupling incremental learning, domain adaptation, and unknown detection under exemplar-free constraints. To tackle EWOD, we propose EW-DETR fra...",
-        "key_contributions": [
-          "Real-world object detection must operate in evolving environments where new classes emerge, domains shift, and unseen objects must be identified as \"unknown\": all without accessing prior data.",
-          "We introduce Evolving World Object Detection (EWOD), a paradigm coupling incremental learning, domain adaptation, and unknown detection under exemplar-free constraints.",
-          "To tackle EWOD, we propose EW-DETR framework that augments DETR-based detectors with three synergistic modules: Incremental LoRA Adapters for exemplar-free incremental learning under evolving domains; a Query-Norm Objectness Adapter that decouples objectness-aware features from DETR decoder queries; and Entropy-Aware Unknown Mixing for calibrated unknown detection."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.20873v1",
-      "title": "MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification",
-      "authors": [
-        "Jiahao Xu",
-        "Sheng Huang",
-        "Xin Zhang",
-        "Zhixiong Nan",
-        "Jiajun Dong",
-        "Nankun Mu"
-      ],
-      "abstract": "In computational pathology, few-shot whole slide image classification is primarily driven by the extreme scarcity of expert-labeled slides. Recent vision-language methods incorporate textual semantics generated by large language models, but treat these descriptions as static class-level priors that are shared across all samples and lack sample-wise refinement. This limits both the diversity and precision of visual-semantic alignment, hindering generalization under limited supervision. To overcome this, we propose the stochastic MUlti-view Semantic Enhancement (MUSE), a framework that first refines semantic precision via sample-wise adaptation and then enhances semantic richness through retrieval-augmented multi-view generation. Specifically, MUSE introduces Sample-wise Fine-grained Semantic Enhancement (SFSE), which yields a fine-grained semantic prior for each sample through MoE-based adaptive visual-semantic interaction. Guided by this prior, Stochastic Multi-view Model Optimization (SMMO) constructs an LLM-generated knowledge base of diverse pathological descriptions per class, then retrieves and stochastically integrates multiple matched textual views during training. These dynamically selected texts serve as enriched semantic supervisions to stochastically optimize the vision-language model, promoting robustness and mitigating overfitting. Experiments on three benchmark WSI datasets show that MUSE consistently outperforms existing vision-language baselines in few-shot settings, demonstrating that effective few-shot pathology learning requires not only richer semantic sources but also their active and sample-aware semantic optimization. Our code is available at: https://github.com/JiahaoXu-god/CVPR2026_MUSE.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.20873v1",
-        "pdf": "https://arxiv.org/pdf/2602.20873v1"
-      },
-      "arxiv_id": "2602.20873v1",
-      "comment": "Accepted by CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "In computational pathology, few-shot whole slide image classification is primarily driven by the extreme scarcity of expert-labeled slides. Recent vision-language methods incorporate textual semantics generated by large language models, but treat these descriptions as static class-level priors that are shared across all samples and lack sample-wise refinement. This limits both the diversity and pr...",
-        "key_contributions": [
-          "In computational pathology, few-shot whole slide image classification is primarily driven by the extreme scarcity of expert-labeled slides.",
-          "Recent vision-language methods incorporate textual semantics generated by large language models, but treat these descriptions as static class-level priors that are shared across all samples and lack sample-wise refinement.",
-          "This limits both the diversity and precision of visual-semantic alignment, hindering generalization under limited supervision."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2602.20981v1",
-      "title": "Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models",
-      "authors": [
-        "Christian Simon",
-        "MAsato Ishii",
-        "Wei-Yao Wang",
-        "Koichi Saito",
-        "Akio Hayakawa",
-        "Dongseok Shim",
-        "Zhi Zhong",
-        "Shuyang Cui",
-        "Shusuke Takahashi",
-        "Takashi Shibuya",
-        "Yuki Mitsufuji"
-      ],
-      "abstract": "Scaling multimodal alignment between video and audio is challenging, particularly due to limited data and the mismatch between text descriptions and frame-level video information. In this work, we tackle the scaling challenge in multimodal-to-audio generation, examining whether models trained on short instances can generalize to longer ones during testing. To tackle this challenge, we present multimodal hierarchical networks so-called MMHNet, an enhanced extension of state-of-the-art video-to-audio models. Our approach integrates a hierarchical method and non-causal Mamba to support long-form audio generation. Our proposed method significantly improves long audio generation up to more than 5 minutes. We also prove that training short and testing long is possible in the video-to-audio generation tasks without training on the longer durations. We show in our experiments that our proposed method could achieve remarkable results on long-video to audio benchmarks, beating prior works in video-to-audio tasks. Moreover, we showcase our model capability in generating more than 5 minutes, while prior video-to-audio methods fall short in generating with long durations.",
-      "published": "2026-02-24",
-      "updated": "2026-02-24",
+      "abstract": "Accurate cone localization in 3D space is essential in autonomous racing for precise navigation around the track. Approaches that rely on traditional computer vision algorithms are sensitive to environmental variations, and neural networks are often trained on limited data and are infeasible to run in real time. We present a UNet-based neural network for keypoint detection on cones, leveraging the largest custom-labeled dataset we have assembled. Our approach enables accurate cone position estimation and the potential for color prediction. Our model achieves substantial improvements in keypoint accuracy over conventional methods. Furthermore, we leverage our predicted keypoints in the perception pipeline and evaluate the end-to-end autonomous system. Our results show high-quality performance across all metrics, highlighting the effectiveness of this approach and its potential for adoption in competitive autonomous racing systems.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.20981v1",
-        "pdf": "https://arxiv.org/pdf/2602.20981v1"
+        "paper": "http://arxiv.org/abs/2602.21904v1",
+        "pdf": "https://arxiv.org/pdf/2602.21904v1"
       },
-      "arxiv_id": "2602.20981v1",
-      "comment": "Accepted to CVPR 2026",
+      "arxiv_id": "2602.21904v1",
+      "comment": "8 pages, 9 figures. Accepted to ICCV End-to-End 3D Learning Workshop 2025 and presented as a poster; not included in the final proceedings due to a conference administrative error",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.55,
+      "relevance_score": 4.419491525423728,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 4.42,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "ICCV",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -647,11 +513,139 @@
         }
       },
       "ai_summaries": {
-        "short": "Scaling multimodal alignment between video and audio is challenging, particularly due to limited data and the mismatch between text descriptions and frame-level video information. In this work, we tackle the scaling challenge in multimodal-to-audio generation, examining whether models trained on short instances can generalize to longer ones during testing. To tackle this challenge, we present mult...",
+        "short": "Accurate cone localization in 3D space is essential in autonomous racing for precise navigation around the track. Approaches that rely on traditional computer vision algorithms are sensitive to environmental variations, and neural networks are often trained on limited data and are infeasible to run in real time. We present a UNet-based neural network for keypoint detection on cones, leveraging the...",
         "key_contributions": [
-          "Scaling multimodal alignment between video and audio is challenging, particularly due to limited data and the mismatch between text descriptions and frame-level video information.",
-          "In this work, we tackle the scaling challenge in multimodal-to-audio generation, examining whether models trained on short instances can generalize to longer ones during testing.",
-          "To tackle this challenge, we present multimodal hierarchical networks so-called MMHNet, an enhanced extension of state-of-the-art video-to-audio models."
+          "Accurate cone localization in 3D space is essential in autonomous racing for precise navigation around the track.",
+          "Approaches that rely on traditional computer vision algorithms are sensitive to environmental variations, and neural networks are often trained on limited data and are infeasible to run in real time.",
+          "We present a UNet-based neural network for keypoint detection on cones, leveraging the largest custom-labeled dataset we have assembled."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.22120v1",
+      "title": "GeoDiv: Framework For Measuring Geographical Diversity In Text-To-Image Models",
+      "authors": [
+        "Abhipsa Basu",
+        "Mohana Singh",
+        "Shashank Agnihotri",
+        "Margret Keuper",
+        "R. Venkatesh Babu"
+      ],
+      "abstract": "Text-to-image (T2I) models are rapidly gaining popularity, yet their outputs often lack geographical diversity, reinforce stereotypes, and misrepresent regions. Given their broad reach, it is critical to rigorously evaluate how these models portray the world. Existing diversity metrics either rely on curated datasets or focus on surface-level visual similarity, limiting interpretability. We introduce GeoDiv, a framework leveraging large language and vision-language models to assess geographical diversity along two complementary axes: the Socio-Economic Visual Index (SEVI), capturing economic and condition-related cues, and the Visual Diversity Index (VDI), measuring variation in primary entities and backgrounds. Applied to images generated by models such as Stable Diffusion and FLUX.1-dev across $10$ entities and $16$ countries, GeoDiv reveals a consistent lack of diversity and identifies fine-grained attributes where models default to biased portrayals. Strikingly, depictions of countries like India, Nigeria, and Colombia are disproportionately impoverished and worn, reflecting underlying socio-economic biases. These results highlight the need for greater geographical nuance in generative models. GeoDiv provides the first systematic, interpretable framework for measuring such biases, marking a step toward fairer and more inclusive generative systems. Project page: https://abhipsabasu.github.io/geodiv",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.22120v1",
+        "pdf": "https://arxiv.org/pdf/2602.22120v1"
+      },
+      "arxiv_id": "2602.22120v1",
+      "comment": "ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.3999999999999995,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Text-to-image (T2I) models are rapidly gaining popularity, yet their outputs often lack geographical diversity, reinforce stereotypes, and misrepresent regions. Given their broad reach, it is critical to rigorously evaluate how these models portray the world. Existing diversity metrics either rely on curated datasets or focus on surface-level visual similarity, limiting interpretability. We introd...",
+        "key_contributions": [
+          "Text-to-image (T2I) models are rapidly gaining popularity, yet their outputs often lack geographical diversity, reinforce stereotypes, and misrepresent regions.",
+          "Given their broad reach, it is critical to rigorously evaluate how these models portray the world.",
+          "Existing diversity metrics either rely on curated datasets or focus on surface-level visual similarity, limiting interpretability."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2602.22150v1",
+      "title": "CoLoGen: Progressive Learning of Concept`-`Localization Duality for Unified Image Generation",
+      "authors": [
+        "YuXin Song",
+        "Yu Lu",
+        "Haoyuan Sun",
+        "Huanjin Yao",
+        "Fanglong Liu",
+        "Yifan Sun",
+        "Haocheng Feng",
+        "Hang Zhou",
+        "Jingdong Wang"
+      ],
+      "abstract": "Unified conditional image generation remains difficult because different tasks depend on fundamentally different internal representations. Some require conceptual understanding for semantic synthesis, while others rely on localization cues for spatial precision. Forcing these heterogeneous tasks to share a single representation leads to concept`-`localization representational conflict. To address this issue, we propose CoLoGen, a unified diffusion framework that progressively learns and reconciles this concept`-`localization duality. CoLoGen uses a staged curriculum that first builds core conceptual and localization abilities, then adapts them to diverse visual conditions, and finally refines their synergy for complex instruction`-`driven tasks. Central to this process is the Progressive Representation Weaving (PRW) module, which dynamically routes features to specialized experts and stably integrates their outputs across stages. Experiments on editing, controllable generation, and customized generation show that CoLoGen achieves competitive or superior performance, offering a principled representational perspective for unified image generation.",
+      "published": "2026-02-25",
+      "updated": "2026-02-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.22150v1",
+        "pdf": "https://arxiv.org/pdf/2602.22150v1"
+      },
+      "arxiv_id": "2602.22150v1",
+      "comment": "Accepted by CVPR2026. 15 pages, 8 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Unified conditional image generation remains difficult because different tasks depend on fundamentally different internal representations. Some require conceptual understanding for semantic synthesis, while others rely on localization cues for spatial precision. Forcing these heterogeneous tasks to share a single representation leads to concept`-`localization representational conflict. To address ...",
+        "key_contributions": [
+          "Unified conditional image generation remains difficult because different tasks depend on fundamentally different internal representations.",
+          "Some require conceptual understanding for semantic synthesis, while others rely on localization cues for spatial precision.",
+          "Forcing these heterogeneous tasks to share a single representation leads to concept`-`localization representational conflict."
         ],
         "provider": "gemini"
       }

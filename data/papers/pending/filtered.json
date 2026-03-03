@@ -3,30 +3,152 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2602.23286v1",
-      "title": "SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables",
+      "id": "2602.24290v1",
+      "title": "UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images",
       "authors": [
-        "Sungho Park",
-        "Jueun Kim",
-        "Wook-Shin Han"
+        "Junhwa Hur",
+        "Charles Herrmann",
+        "Songyou Peng",
+        "Philipp Henzler",
+        "Zeyu Ma",
+        "Todd Zickler",
+        "Deqing Sun"
       ],
-      "abstract": "Real-world Table-Text question answering (QA) tasks require models that can reason across long text and source tables, traversing multiple hops and executing complex operations such as aggregation. Yet existing benchmarks are small, manually curated - and therefore error-prone - and contain shallow questions that seldom demand more than two hops or invoke aggregations, grouping, or other advanced analytical operations expressible in natural-language queries. We present SPARTA, an end-to-end construction framework that automatically generates large-scale Table-Text QA benchmarks with lightweight human validation, requiring only one quarter of the annotation time of HybridQA. The framework first constructs a reference fact database by enriching each source table with grounding tables whose tuples are atomic facts automatically extracted from the accompanying unstructured passages, then synthesizes nested queries whose number of nested predicates matches the desired hop count. To ensure that every SQL statement is executable and that its verbalization yields a fluent, human-sounding question, we propose two novel techniques: provenance-based refinement, which rewrites any syntactically valid query that returns a non-empty result, and realistic-structure enforcement, which confines generation to post-order traversals of the query graph. The resulting pipeline produces thousands of high-fidelity question-answer pairs covering aggregations, grouping, and deep multi-hop reasoning across text and tables. On SPARTA, state-of-the-art models that reach over 70 F1 on HybridQA or over 50 F1 on OTT-QA drop by more than 30 F1 points, exposing fundamental weaknesses in current cross-modal reasoning. Our benchmark, construction code, and baseline models are available at https://github.com/pshlego/SPARTA/tree/main.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
+      "abstract": "Dense 4D reconstruction from unposed images remains a critical challenge, with current methods relying on slow test-time optimization or fragmented, task-specific feedforward models. We introduce UFO-4D, a unified feedforward framework to reconstruct a dense, explicit 4D representation from just a pair of unposed images. UFO-4D directly estimates dynamic 3D Gaussian Splats, enabling the joint and consistent estimation of 3D geometry, 3D motion, and camera pose in a feedforward manner. Our core insight is that differentiably rendering multiple signals from a single Dynamic 3D Gaussian representation offers major training advantages. This approach enables a self-supervised image synthesis loss while tightly coupling appearance, depth, and motion. Since all modalities share the same geometric primitives, supervising one inherently regularizes and improves the others. This synergy overcomes data scarcity, allowing UFO-4D to outperform prior work by up to 3 times in joint geometry, motion, and camera pose estimation. Our representation also enables high-fidelity 4D interpolation across novel views and time. Please visit our project page for visual results: https://ufo-4d.github.io/",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
       "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.DB",
-        "cs.IR"
+        "cs.CV"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.23286v1",
-        "pdf": "https://arxiv.org/pdf/2602.23286v1"
+        "paper": "http://arxiv.org/abs/2602.24290v1",
+        "pdf": "https://arxiv.org/pdf/2602.24290v1"
       },
-      "arxiv_id": "2602.23286v1",
-      "comment": "10 pages, 5 figures. Published as a conference paper at ICLR 2026. Project page: https://sparta-projectpage.github.io/",
-      "journal_ref": "The Fourteenth International Conference on Learning Representations (ICLR), 2026",
+      "arxiv_id": "2602.24290v1",
+      "comment": "ICLR 2026, Project page: https://ufo-4d.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.660169491525424,
+      "score_breakdown": {
+        "total_score": 5.66,
+        "field_match": {
+          "score": 1.53,
+          "matches": [
+            "3d gaussian",
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.24020v1",
+      "title": "SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting",
+      "authors": [
+        "Xiang Feng",
+        "Xiangbo Wang",
+        "Tieshi Zhong",
+        "Chengkai Wang",
+        "Yiting Zhao",
+        "Tianxiang Xu",
+        "Zhenzhong Kuang",
+        "Feiwei Qin",
+        "Xuefei Yin",
+        "Yanming Zhu"
+      ],
+      "abstract": "3D super-resolution (3DSR) aims to reconstruct high-resolution (HR) 3D scenes from low-resolution (LR) multi-view images. Existing methods rely on dense LR inputs and per-scene optimization, which restricts the high-frequency priors for constructing HR 3D Gaussian Splatting (3DGS) to those inherited from pretrained 2D super-resolution (2DSR) models. This severely limits reconstruction fidelity, cross-scene generalization, and real-time usability. We propose to reformulate 3DSR as a direct feed-forward mapping from sparse LR views to HR 3DGS representations, enabling the model to autonomously learn 3D-specific high-frequency geometry and appearance from large-scale, multi-scene data. This fundamentally changes how 3DSR acquires high-frequency knowledge and enables robust generalization to unseen scenes. Specifically, we introduce SR3R, a feed-forward framework that directly predicts HR 3DGS representations from sparse LR views via the learned mapping network. To further enhance reconstruction fidelity, we introduce Gaussian offset learning and feature refinement, which stabilize reconstruction and sharpen high-frequency details. SR3R is plug-and-play and can be paired with any feed-forward 3DGS reconstruction backbone: the backbone provides an LR 3DGS scaffold, and SR3R upscales it to an HR 3DGS. Extensive experiments across three 3D benchmarks demonstrate that SR3R surpasses state-of-the-art (SOTA) 3DSR methods and achieves strong zero-shot generalization, even outperforming SOTA per-scene optimization methods on unseen scenes.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.24020v1",
+        "pdf": "https://arxiv.org/pdf/2602.24020v1"
+      },
+      "arxiv_id": "2602.24020v1",
+      "comment": "CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.615254237288135,
+      "score_breakdown": {
+        "total_score": 5.62,
+        "field_match": {
+          "score": 2.29,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.24233v1",
+      "title": "Enhancing Spatial Understanding in Image Generation via Reward Modeling",
+      "authors": [
+        "Zhenyu Tang",
+        "Chaoran Feng",
+        "Yufan Deng",
+        "Jie Wu",
+        "Xiaojie Li",
+        "Rui Wang",
+        "Yunpeng Chen",
+        "Daquan Zhou"
+      ],
+      "abstract": "Recent progress in text-to-image generation has greatly advanced visual fidelity and creativity, but it has also imposed higher demands on prompt complexity-particularly in encoding intricate spatial relationships. In such cases, achieving satisfactory results often requires multiple sampling attempts. To address this challenge, we introduce a novel method that strengthens the spatial understanding of current image generation models. We first construct the SpatialReward-Dataset with over 80k preference pairs. Building on this dataset, we build SpatialScore, a reward model designed to evaluate the accuracy of spatial relationships in text-to-image generation, achieving performance that even surpasses leading proprietary models on spatial evaluation. We further demonstrate that this reward model effectively enables online reinforcement learning for the complex spatial generation. Extensive experiments across multiple benchmarks show that our specialized reward model yields significant and consistent gains in spatial understanding for image generation.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.24233v1",
+        "pdf": "https://arxiv.org/pdf/2602.24233v1"
+      },
+      "arxiv_id": "2602.24233v1",
+      "comment": "Accepted at CVPR 2026. Github: https://github.com/DAGroup-PKU/SpatialT2I Project website: https://dagroup-pku.github.io/SpatialT2I/",
+      "journal_ref": "",
       "has_code": true,
       "relevance_score": 5.449999999999999,
       "score_breakdown": {
@@ -38,7 +160,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -57,427 +179,44 @@
       }
     },
     {
-      "id": "2602.23229v1",
-      "title": "Large Multimodal Models as General In-Context Classifiers",
+      "id": "2602.24136v1",
+      "title": "Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives",
       "authors": [
-        "Marco Garosi",
-        "Matteo Farina",
-        "Alessandro Conti",
-        "Massimiliano Mancini",
-        "Elisa Ricci"
+        "Haoran Wang",
+        "Guoxi Huang",
+        "Fan Zhang",
+        "David Bull",
+        "Nantheera Anantrasirichai"
       ],
-      "abstract": "Which multimodal model should we use for classification? Previous studies suggest that the answer lies in CLIP-like contrastive Vision-Language Models (VLMs), due to their remarkable performance in zero-shot classification. In contrast, Large Multimodal Models (LMM) are more suitable for complex tasks. In this work, we argue that this answer overlooks an important capability of LMMs: in-context learning. We benchmark state-of-the-art LMMs on diverse datasets for closed-world classification and find that, although their zero-shot performance is lower than CLIP's, LMMs with a few in-context examples can match or even surpass contrastive VLMs with cache-based adapters, their \"in-context\" equivalent. We extend this analysis to the open-world setting, where the generative nature of LMMs makes them more suitable for the task. In this challenging scenario, LMMs struggle whenever provided with imperfect context information. To address this issue, we propose CIRCLE, a simple training-free method that assigns pseudo-labels to in-context examples, iteratively refining them with the available context itself. Through extensive experiments, we show that CIRCLE establishes a robust baseline for open-world classification, surpassing VLM counterparts and highlighting the potential of LMMs to serve as unified classifiers, and a flexible alternative to specialized models.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
+      "abstract": "Recent significant advances in 3D scene representation have been driven by 3D Gaussian Splatting (3DGS), which has enabled real-time rendering with photorealistic quality. 3DGS often requires a large number of primitives to achieve high fidelity, leading to redundant representations and high resource consumption, thereby limiting its scalability for complex or large-scale scenes. Consequently, effective pruning strategies and more expressive primitives that can reduce redundancy while preserving visual quality are crucial for practical deployment. We propose an efficient, integrated reconstruction-aware pruning strategy that adaptively determines pruning timing and refining intervals based on reconstruction quality, thus reducing model size while enhancing rendering quality. Moreover, we introduce a 3D Difference-of-Gaussians primitive that jointly models both positive and negative densities in a single primitive, improving the expressiveness of Gaussians under compact configurations. Our method significantly improves model compactness, achieving up to 90\\% reduction in Gaussian-count while delivering visual quality that is similar to, or in some cases better than, that produced by state-of-the-art methods. Code will be made publicly available.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.23229v1",
-        "pdf": "https://arxiv.org/pdf/2602.23229v1"
+        "paper": "http://arxiv.org/abs/2602.24136v1",
+        "pdf": "https://arxiv.org/pdf/2602.24136v1"
       },
-      "arxiv_id": "2602.23229v1",
-      "comment": "CVPR Findings 2026. Project website at https://circle-lmm.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.300000000000001,
-      "score_breakdown": {
-        "total_score": 5.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23359v1",
-      "title": "SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation",
-      "authors": [
-        "Vaibhav Agrawal",
-        "Rishubh Parihar",
-        "Pradhaan Bhat",
-        "Ravi Kiran Sarvadevabhatla",
-        "R. Venkatesh Babu"
-      ],
-      "abstract": "We identify occlusion reasoning as a fundamental yet overlooked aspect for 3D layout-conditioned generation. It is essential for synthesizing partially occluded objects with depth-consistent geometry and scale. While existing methods can generate realistic scenes that follow input layouts, they often fail to model precise inter-object occlusions. We propose SeeThrough3D, a model for 3D layout conditioned generation that explicitly models occlusions. We introduce an occlusion-aware 3D scene representation (OSCR), where objects are depicted as translucent 3D boxes placed within a virtual environment and rendered from desired camera viewpoint. The transparency encodes hidden object regions, enabling the model to reason about occlusions, while the rendered viewpoint provides explicit camera control during generation. We condition a pretrained flow based text-to-image image generation model by introducing a set of visual tokens derived from our rendered 3D representation. Furthermore, we apply masked self-attention to accurately bind each object bounding box to its corresponding textual description, enabling accurate generation of multiple objects without object attribute mixing. To train the model, we construct a synthetic dataset with diverse multi-object scenes with strong inter-object occlusions. SeeThrough3D generalizes effectively to unseen object categories and enables precise 3D layout control with realistic occlusions and consistent camera control.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23359v1",
-        "pdf": "https://arxiv.org/pdf/2602.23359v1"
-      },
-      "arxiv_id": "2602.23359v1",
-      "comment": "Project page: https://seethrough3d.github.io. Accepted at CVPR 2026",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.95,
-      "score_breakdown": {
-        "total_score": 4.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23141v1",
-      "title": "No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors",
-      "authors": [
-        "Tao Liu",
-        "Gang Wan",
-        "Kan Ren",
-        "Shibo Wen"
-      ],
-      "abstract": "We propose a new unsupervised framework for online video stabilization. Unlike methods based on deep learning that require paired stable and unstable datasets, our approach instantiates the classical stabilization pipeline with three stages and incorporates a multithreaded buffering mechanism. This design addresses three longstanding challenges in end-to-end learning: limited data, poor controllability, and inefficiency on hardware with constrained resources. Existing benchmarks focus mainly on handheld videos with a forward view in visible light, which restricts the applicability of stabilization to domains such as UAV nighttime remote sensing. To fill this gap, we introduce a new multimodal UAV aerial video dataset (UAV-Test). Experiments show that our method consistently outperforms state-of-the-art online stabilizers in both quantitative metrics and visual quality, while achieving performance comparable to offline methods.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23141v1",
-        "pdf": "https://arxiv.org/pdf/2602.23141v1"
-      },
-      "arxiv_id": "2602.23141v1",
+      "arxiv_id": "2602.24136v1",
       "comment": "CVPR2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.769491525423728,
+      "relevance_score": 5.077966101694915,
       "score_breakdown": {
-        "total_score": 4.77,
+        "total_score": 5.08,
         "field_match": {
-          "score": 0.42,
+          "score": 1.69,
           "matches": [
-            "deep learning"
+            "3d gaussian",
+            "gaussian splatting"
           ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
           "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23306v1",
-      "title": "ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding",
-      "authors": [
-        "Yiran Guan",
-        "Sifan Tu",
-        "Dingkang Liang",
-        "Linghao Zhu",
-        "Jianzhong Ju",
-        "Zhenbo Luo",
-        "Jian Luan",
-        "Yuliang Liu",
-        "Xiang Bai"
-      ],
-      "abstract": "Omni-modal reasoning is essential for intelligent systems to understand and draw inferences from diverse data sources. While existing omni-modal large language models (OLLM) excel at perceiving diverse modalities, they lack the complex reasoning abilities of recent large reasoning models (LRM). However, enhancing the reasoning ability of OLLMs through additional training presents significant challenges, including the need for high-quality data, task-specific adaptation, and substantial computational costs. To address these limitations, we propose ThinkOmni, a training-free and data-free framework that lifts textual reasoning to omni-modal scenarios. ThinkOmni introduces two key components: 1) LRM-as-a-Guide, which leverages off-the-shelf LRMs to guide the OLLM decoding process; 2) Stepwise Contrastive Scaling, which adaptively balances perception and reasoning signals without manual hyperparameter tuning. Experiments on six multi-modal reasoning benchmarks demonstrate that ThinkOmni consistently delivers performance improvements, with main results achieving 70.2 on MathVista and 75.5 on MMAU. Overall, ThinkOmni offers a flexible and generalizable solution for omni-modal reasoning and provides new insights into the generalization and application of reasoning capabilities.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23306v1",
-        "pdf": "https://arxiv.org/pdf/2602.23306v1"
-      },
-      "arxiv_id": "2602.23306v1",
-      "comment": "Accept by ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23153v1",
-      "title": "Efficient Encoder-Free Fourier-based 3D Large Multimodal Model",
-      "authors": [
-        "Guofeng Mei",
-        "Wei Lin",
-        "Luigi Riz",
-        "Yujiao Wu",
-        "Yiming Wang",
-        "Fabio Poiesi"
-      ],
-      "abstract": "Large Multimodal Models (LMMs) that process 3D data typically rely on heavy, pre-trained visual encoders to extract geometric features. While recent 2D LMMs have begun to eliminate such encoders for efficiency and scalability, extending this paradigm to 3D remains challenging due to the unordered and large-scale nature of point clouds. This leaves a critical unanswered question: How can we design an LMM that tokenizes unordered 3D data effectively and efficiently without a cumbersome encoder? We propose Fase3D, the first efficient encoder-free Fourier-based 3D scene LMM. Fase3D tackles the challenges of scalability and permutation invariance with a novel tokenizer that combines point cloud serialization and the Fast Fourier Transform (FFT) to approximate self-attention. This design enables an effective and computationally minimal architecture, built upon three key innovations: First, we represent large scenes compactly via structured superpoints. Second, our space-filling curve serialization followed by an FFT enables efficient global context modeling and graph-based token merging. Lastly, our Fourier-augmented LoRA adapters inject global frequency-aware interactions into the LLMs at a negligible cost. Fase3D achieves performance comparable to encoder-based 3D LMMs while being significantly more efficient in computation and parameters. Project website: https://tev-fbk.github.io/Fase3D.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23153v1",
-        "pdf": "https://arxiv.org/pdf/2602.23153v1"
-      },
-      "arxiv_id": "2602.23153v1",
-      "comment": "",
-      "journal_ref": "CVPR 2026",
-      "has_code": false,
-      "relevance_score": 4.5,
-      "score_breakdown": {
-        "total_score": 4.5,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23120v1",
-      "title": "TriLite: Efficient Weakly Supervised Object Localization with Universal Visual Features and Tri-Region Disentanglement",
-      "authors": [
-        "Arian Sabaghi",
-        "José Oramas"
-      ],
-      "abstract": "Weakly supervised object localization (WSOL) aims to localize target objects in images using only image-level labels. Despite recent progress, many approaches still rely on multi-stage pipelines or full fine-tuning of large backbones, which increases training cost, while the broader WSOL community continues to face the challenge of partial object coverage. We present TriLite, a single-stage WSOL framework that leverages a frozen Vision Transformer with Dinov2 pre-training in a self-supervised manner, and introduces only a minimal number of trainable parameters (fewer than 800K on ImageNet-1K) for both classification and localization. At its core is the proposed TriHead module, which decomposes patch features into foreground, background, and ambiguous regions, thereby improving object coverage while suppressing spurious activations. By disentangling classification and localization objectives, TriLite effectively exploits the universal representations learned by self-supervised ViTs without requiring expensive end-to-end training. Extensive experiments on CUB-200-2011, ImageNet-1K, and OpenImages demonstrate that TriLite sets a new state of the art, while remaining significantly more parameter-efficient and easier to train than prior methods. The code will be released soon.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23120v1",
-        "pdf": "https://arxiv.org/pdf/2602.23120v1"
-      },
-      "arxiv_id": "2602.23120v1",
-      "comment": "This paper consists of 8 pages including 6 figures. Accepted at CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.4711864406779664,
-      "score_breakdown": {
-        "total_score": 4.47,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23361v1",
-      "title": "VGG-T$^3$: Offline Feed-Forward 3D Reconstruction at Scale",
-      "authors": [
-        "Sven Elflein",
-        "Ruilong Li",
-        "Sérgio Agostinho",
-        "Zan Gojcic",
-        "Laura Leal-Taixé",
-        "Qunjie Zhou",
-        "Aljosa Osep"
-      ],
-      "abstract": "We present a scalable 3D reconstruction model that addresses a critical limitation in offline feed-forward methods: their computational and memory requirements grow quadratically w.r.t. the number of input images. Our approach is built on the key insight that this bottleneck stems from the varying-length Key-Value (KV) space representation of scene geometry, which we distill into a fixed-size Multi-Layer Perceptron (MLP) via test-time training. VGG-T$^3$ (Visual Geometry Grounded Test Time Training) scales linearly w.r.t. the number of input views, similar to online models, and reconstructs a $1k$ image collection in just $54$ seconds, achieving a $11.6\\times$ speed-up over baselines that rely on softmax attention. Since our method retains global scene aggregation capability, our point map reconstruction error outperforming other linear-time methods by large margins. Finally, we demonstrate visual localization capabilities of our model by querying the scene representation with unseen images.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23361v1",
-        "pdf": "https://arxiv.org/pdf/2602.23361v1"
-      },
-      "arxiv_id": "2602.23361v1",
-      "comment": "CVPR 2026, Project page: https://research.nvidia.com/labs/dvl/projects/vgg-ttt",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.43728813559322,
-      "score_breakdown": {
-        "total_score": 4.44,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2602.23292v1",
-      "title": "PGVMS: A Prompt-Guided Unified Framework for Virtual Multiplex IHC Staining with Pathological Semantic Learning",
-      "authors": [
-        "Fuqiang Chen",
-        "Ranran Zhang",
-        "Wanming Hu",
-        "Deboch Eyob Abera",
-        "Yue Peng",
-        "Boyun Zheng",
-        "Yiwen Sun",
-        "Jing Cai",
-        "Wenjian Qin"
-      ],
-      "abstract": "Immunohistochemical (IHC) staining enables precise molecular profiling of protein expression, with over 200 clinically available antibody-based tests in modern pathology. However, comprehensive IHC analysis is frequently limited by insufficient tissue quantities in small biopsies. Therefore, virtual multiplex staining emerges as an innovative solution to digitally transform H&E images into multiple IHC representations, yet current methods still face three critical challenges: (1) inadequate semantic guidance for multi-staining, (2) inconsistent distribution of immunochemistry staining, and (3) spatial misalignment across different stain modalities. To overcome these limitations, we present a prompt-guided framework for virtual multiplex IHC staining using only uniplex training data (PGVMS). Our framework introduces three key innovations corresponding to each challenge: First, an adaptive prompt guidance mechanism employing a pathological visual language model dynamically adjusts staining prompts to resolve semantic guidance limitations (Challenge 1). Second, our protein-aware learning strategy (PALS) maintains precise protein expression patterns by direct quantification and constraint of protein distributions (Challenge 2). Third, the prototype-consistent learning strategy (PCLS) establishes cross-image semantic interaction to correct spatial misalignments (Challenge 3).",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2602.23292v1",
-        "pdf": "https://arxiv.org/pdf/2602.23292v1"
-      },
-      "arxiv_id": "2602.23292v1",
-      "comment": "Accepted by TMI",
-      "journal_ref": "IEEE Transactions on Medical Imaging, 2026",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "TMI",
           "weight": 0.25
         },
         "citation_potential": {
@@ -496,48 +235,202 @@
       }
     },
     {
-      "id": "2602.23172v1",
-      "title": "Latent Gaussian Splatting for 4D Panoptic Occupancy Tracking",
+      "id": "2602.24021v1",
+      "title": "Steering and Rectifying Latent Representation Manifolds in Frozen Multi-modal LLMs for Video Anomaly Detection",
       "authors": [
-        "Maximilian Luz",
-        "Rohit Mohan",
-        "Thomas Nürnberg",
-        "Yakov Miron",
-        "Daniele Cattaneo",
-        "Abhinav Valada"
+        "Zhaolin Cai",
+        "Fan Li",
+        "Huiyu Duan",
+        "Lijun He",
+        "Guangtao Zhai"
       ],
-      "abstract": "Capturing 4D spatiotemporal surroundings is crucial for the safe and reliable operation of robots in dynamic environments. However, most existing methods address only one side of the problem: they either provide coarse geometric tracking via bounding boxes, or detailed 3D structures like voxel-based occupancy that lack explicit temporal association. In this work, we present Latent Gaussian Splatting for 4D Panoptic Occupancy Tracking (LaGS) that advances spatiotemporal scene understanding in a holistic direction. Our approach incorporates camera-based end-to-end tracking with mask-based multi-view panoptic occupancy prediction, and addresses the key challenge of efficiently aggregating multi-view information into 3D voxel grids via a novel latent Gaussian splatting approach. Specifically, we first fuse observations into 3D Gaussians that serve as a sparse point-centric latent representation of the 3D scene, and then splat the aggregated features onto a 3D voxel grid that is decoded by a mask-based segmentation head. We evaluate LaGS on the Occ3D nuScenes and Waymo datasets, achieving state-of-the-art performance for 4D panoptic occupancy tracking. We make our code available at https://lags.cs.uni-freiburg.de/.",
-      "published": "2026-02-26",
-      "updated": "2026-02-26",
+      "abstract": "Video anomaly detection (VAD) aims to identify abnormal events in videos. Traditional VAD methods generally suffer from the high costs of labeled data and full training, thus some recent works have explored leveraging frozen multi-modal large language models (MLLMs) in a tuning-free manner to perform VAD. However, their performance is limited as they directly inherit pre-training biases and cannot adapt internal representations to specific video contexts, leading to difficulties in handling subtle or ambiguous anomalies. To address these limitations, we propose a novel intervention framework, termed SteerVAD, which advances MLLM-based VAD by shifting from passively reading to actively steering and rectifying internal representations. Our approach first leverages the gradient-free representational separability analysis (RSA) to identify top attention heads as latent anomaly experts (LAEs) which are most discriminative for VAD. Then a hierarchical meta-controller (HMC) generates dynamic rectification signals by jointly conditioning on global context and these LAE outputs. The signals execute targeted, anisotropic scaling directly upon the LAE representation manifolds, amplifying anomaly-relevant dimensions while suppressing inherent biases. Extensive experiments on mainstream benchmarks demonstrate our method achieves state-of-the-art performance among tuning-free approaches requiring only 1% of training data, establishing it as a powerful new direction for video anomaly detection. The code will be released upon the publication.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.RO"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2602.23172v1",
-        "pdf": "https://arxiv.org/pdf/2602.23172v1"
+        "paper": "http://arxiv.org/abs/2602.24021v1",
+        "pdf": "https://arxiv.org/pdf/2602.24021v1"
       },
-      "arxiv_id": "2602.23172v1",
-      "comment": "",
+      "arxiv_id": "2602.24021v1",
+      "comment": "Accepted by ICLR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.381355932203389,
+      "relevance_score": 4.85,
       "score_breakdown": {
-        "total_score": 4.38,
+        "total_score": 4.85,
         "field_match": {
-          "score": 2.2,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.24275v1",
+      "title": "Hierarchical Action Learning for Weakly-Supervised Action Segmentation",
+      "authors": [
+        "Junxian Huang",
+        "Ruichu Cai",
+        "Hao Zhu",
+        "Juntao Fang",
+        "Boyan Xu",
+        "Weilin Chen",
+        "Zijian Li",
+        "Shenghua Gao"
+      ],
+      "abstract": "Humans perceive actions through key transitions that structure actions across multiple abstraction levels, whereas machines, relying on visual features, tend to over-segment. This highlights the difficulty of enabling hierarchical reasoning in video understanding. Interestingly, we observe that lower-level visual and high-level action latent variables evolve at different rates, with low-level visual variables changing rapidly, while high-level action variables evolve more slowly, making them easier to identify. Building on this insight, we propose the Hierarchical Action Learning (\\textbf{HAL}) model for weakly-supervised action segmentation. Our approach introduces a hierarchical causal data generation process, where high-level latent action governs the dynamics of low-level visual features. To model these varying timescales effectively, we introduce deterministic processes to align these latent variables over time. The \\textbf{HAL} model employs a hierarchical pyramid transformer to capture both visual features and latent variables, and a sparse transition constraint is applied to enforce the slower dynamics of high-level action variables. This mechanism enhances the identification of these latent variables over time. Under mild assumptions, we prove that these latent action variables are strictly identifiable. Experimental results on several benchmarks show that the \\textbf{HAL} model significantly outperforms existing methods for weakly-supervised action segmentation, confirming its practical effectiveness in real-world applications.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.24275v1",
+        "pdf": "https://arxiv.org/pdf/2602.24275v1"
+      },
+      "arxiv_id": "2602.24275v1",
+      "comment": "",
+      "journal_ref": "CVPR2026",
+      "has_code": false,
+      "relevance_score": 4.753389830508475,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.51,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting",
             "segmentation"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.24084v1",
+      "title": "FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting",
+      "authors": [
+        "Matteo Ballegeer",
+        "Dries F. Benoit"
+      ],
+      "abstract": "Learning directly from boundary representations (B-reps) has significantly advanced 3D CAD analysis. However, state-of-the-art B-rep learning methods rely on absolute coordinates and normals to encode global context, making them highly sensitive to rotations. Our experiments reveal that models achieving over 95% accuracy on aligned benchmarks can collapse to as low as 10% under arbitrary $\\mathbf{SO}(3)$ rotations. To address this, we introduce FoV-Net, the first B-rep learning framework that captures both local surface geometry and global structural context in a rotation-invariant manner. Each face is represented by a Local Reference Frame (LRF) UV-grid that encodes its local surface geometry, and by Field-of-View (FoV) grids that capture the surrounding 3D context by casting rays and recording intersections with neighboring faces. Lightweight CNNs extract per-face features, which are propagated over the B-rep graph using a graph attention network. FoV-Net achieves state-of-the-art performance on B-rep classification and segmentation benchmarks, demonstrating robustness to arbitrary rotations while also requiring less training data to achieve strong results.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.24084v1",
+        "pdf": "https://arxiv.org/pdf/2602.24084v1"
+      },
+      "arxiv_id": "2602.24084v1",
+      "comment": "Manuscript accepted at CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.753389830508474,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.23980v1",
+      "title": "Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping",
+      "authors": [
+        "Tianxiang Du",
+        "Hulingxiao He",
+        "Yuxin Peng"
+      ],
+      "abstract": "The widespread use of smartphones has made photography ubiquitous, yet a clear gap remains between ordinary users and professional photographers, who can identify aesthetic issues and provide actionable shooting guidance during capture. We define this capability as aesthetic guidance (AG) -- an essential but largely underexplored domain in computational aesthetics. Existing multimodal large language models (MLLMs) primarily offer overly positive feedback, failing to identify issues or provide actionable guidance. Without AG capability, they cannot effectively identify distracting regions or optimize compositional balance, thus also struggling in aesthetic cropping, which aims to refine photo composition through reframing after capture. To address this, we introduce AesGuide, the first large-scale AG dataset and benchmark with 10,748 photos annotated with aesthetic scores, analyses, and guidance. Building upon it, we propose Venus, a two-stage framework that first empowers MLLMs with AG capability through progressively complex aesthetic questions and then activates their aesthetic cropping power via CoT-based rationales. Extensive experiments show that Venus substantially improves AG capability and achieves state-of-the-art (SOTA) performance in aesthetic cropping, enabling interpretable and interactive aesthetic refinement across both stages of photo creation. Code is available at https://github.com/PKU-ICST-MIPL/Venus_CVPR2026.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.23980v1",
+        "pdf": "https://arxiv.org/pdf/2602.23980v1"
+      },
+      "arxiv_id": "2602.23980v1",
+      "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.75,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -551,6 +444,122 @@
         },
         "practicality": {
           "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.24181v1",
+      "title": "A Mixed Diet Makes DINO An Omnivorous Vision Encoder",
+      "authors": [
+        "Rishabh Kabra",
+        "Maks Ovsjanikov",
+        "Drew A. Hudson",
+        "Ye Xia",
+        "Skanda Koppula",
+        "Andre Araujo",
+        "Joao Carreira",
+        "Niloy J. Mitra"
+      ],
+      "abstract": "Pre-trained vision encoders like DINOv2 have demonstrated exceptional performance on unimodal tasks. However, we observe that their feature representations are poorly aligned across different modalities. For instance, the feature embedding for an RGB image and its corresponding depth map of the same scene exhibit a cosine similarity that is nearly identical to that of two random, unrelated images. To address this, we propose the Omnivorous Vision Encoder, a novel framework that learns a modality-agnostic feature space. We train the encoder with a dual objective: first, to maximize the feature alignment between different modalities of the same scene; and second, a distillation objective that anchors the learned representations to the output of a fully frozen teacher such as DINOv2. The resulting student encoder becomes \"omnivorous\" by producing a consistent, powerful embedding for a given scene, regardless of the input modality (RGB, Depth, Segmentation, etc.). This approach enables robust cross-modal understanding while retaining the discriminative semantics of the original foundation model.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.24181v1",
+        "pdf": "https://arxiv.org/pdf/2602.24181v1"
+      },
+      "arxiv_id": "2602.24181v1",
+      "comment": "CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.703389830508474,
+      "score_breakdown": {
+        "total_score": 4.7,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2602.24080v1",
+      "title": "Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction",
+      "authors": [
+        "Xiang Li",
+        "Jiabao Gao",
+        "Sipei Lin",
+        "Xuan Zhou",
+        "Chi Zhang",
+        "Bo Cheng",
+        "Jiale Han",
+        "Benyou Wang"
+      ],
+      "abstract": "The pursuit of human-like conversational agents has long been guided by the Turing test. For modern speech-to-speech (S2S) systems, a critical yet unanswered question is whether they can converse like humans. To tackle this, we conduct the first Turing test for S2S systems, collecting 2,968 human judgments on dialogues between 9 state-of-the-art S2S systems and 28 human participants. Our results deliver a clear finding: no existing evaluated S2S system passes the test, revealing a significant gap in human-likeness. To diagnose this failure, we develop a fine-grained taxonomy of 18 human-likeness dimensions and crowd-annotate our collected dialogues accordingly. Our analysis shows that the bottleneck is not semantic understanding but stems from paralinguistic features, emotional expressivity, and conversational persona. Furthermore, we find that off-the-shelf AI models perform unreliably as Turing test judges. In response, we propose an interpretable model that leverages the fine-grained human-likeness ratings and delivers accurate and transparent human-vs-machine discrimination, offering a powerful tool for automatic human-likeness evaluation. Our work establishes the first human-likeness evaluation for S2S systems and moves beyond binary outcomes to enable detailed diagnostic insights, paving the way for human-like improvements in conversational AI systems.",
+      "published": "2026-02-27",
+      "updated": "2026-02-27",
+      "categories": [
+        "cs.AI",
+        "cs.SD"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2602.24080v1",
+        "pdf": "https://arxiv.org/pdf/2602.24080v1"
+      },
+      "arxiv_id": "2602.24080v1",
+      "comment": "Accepted by ICLR 2026 Conference",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6499999999999995,
+      "score_breakdown": {
+        "total_score": 4.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
           "weight": 0.1
         }
       }

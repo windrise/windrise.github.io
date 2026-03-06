@@ -3,36 +3,425 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.03278v1",
-      "title": "Tether: Autonomous Functional Play with Correspondence-Driven Trajectory Warping",
+      "id": "2603.04254v1",
+      "title": "EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding",
       "authors": [
-        "William Liang",
-        "Sam Wang",
-        "Hung-Ju Wang",
-        "Osbert Bastani",
-        "Yecheng Jason Ma",
-        "Dinesh Jayaraman"
+        "Seungjun Lee",
+        "Zihan Wang",
+        "Yunsong Wang",
+        "Gim Hee Lee"
       ],
-      "abstract": "The ability to conduct and learn from interaction and experience is a central challenge in robotics, offering a scalable alternative to labor-intensive human demonstrations. However, realizing such \"play\" requires (1) a policy robust to diverse, potentially out-of-distribution environment states, and (2) a procedure that continuously produces useful robot experience. To address these challenges, we introduce Tether, a method for autonomous functional play involving structured, task-directed interactions. First, we design a novel open-loop policy that warps actions from a small set of source demonstrations (<=10) by anchoring them to semantic keypoint correspondences in the target scene. We show that this design is extremely data-efficient and robust even under significant spatial and semantic variations. Second, we deploy this policy for autonomous functional play in the real world via a continuous cycle of task selection, execution, evaluation, and improvement, guided by the visual understanding capabilities of vision-language models. This procedure generates diverse, high-quality datasets with minimal human intervention. In a household-like multi-object setup, our method is the first to perform many hours of autonomous multi-task play in the real world starting from only a handful of demonstrations. This produces a stream of data that consistently improves the performance of closed-loop imitation policies over time, ultimately yielding over 1000 expert-level trajectories and training policies competitive with those learned from human-collected demonstrations.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
+      "abstract": "Understanding a 3D scene immediately with its exploration is essential for embodied tasks, where an agent must construct and comprehend the 3D scene in an online and nearly real-time manner. In this study, we propose EmbodiedSplat, an online feed-forward 3DGS for open-vocabulary scene understanding that enables simultaneous online 3D reconstruction and 3D semantic understanding from the streaming images. Unlike existing open-vocabulary 3DGS methods which are typically restricted to either offline or per-scene optimization setting, our objectives are two-fold: 1) Reconstructs the semantic-embedded 3DGS of the entire scene from over 300 streaming images in an online manner. 2) Highly generalizable to novel scenes with feed-forward design and supports nearly real-time 3D semantic reconstruction when combined with real-time 2D models. To achieve these objectives, we propose an Online Sparse Coefficients Field with a CLIP Global Codebook where it binds the 2D CLIP embeddings to each 3D Gaussian while minimizing memory consumption and preserving the full semantic generalizability of CLIP. Furthermore, we generate 3D geometric-aware CLIP features by aggregating the partial point cloud of 3DGS through 3D U-Net to compensate the 3D geometric prior to 2D-oriented language embeddings. Extensive experiments on diverse indoor datasets, including ScanNet, ScanNet++, and Replica, demonstrate both the effectiveness and efficiency of our method. Check out our project page in https://0nandon.github.io/EmbodiedSplat/.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
       "categories": [
-        "cs.RO",
-        "cs.AI",
         "cs.CV"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.03278v1",
-        "pdf": "https://arxiv.org/pdf/2603.03278v1"
+        "paper": "http://arxiv.org/abs/2603.04254v1",
+        "pdf": "https://arxiv.org/pdf/2603.04254v1"
       },
-      "arxiv_id": "2603.03278v1",
-      "comment": "International Conference on Learning Representations (ICLR), 2026. Project website and code: https://tether-research.github.io",
+      "arxiv_id": "2603.04254v1",
+      "comment": "CVPR 2026, Project Page: https://0nandon.github.io/EmbodiedSplat/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.526271186440678,
+      "score_breakdown": {
+        "total_score": 5.53,
+        "field_match": {
+          "score": 1.44,
+          "matches": [
+            "3d gaussian",
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Understanding a 3D scene immediately with its exploration is essential for embodied tasks, where an agent must construct and comprehend the 3D scene in an online and nearly real-time manner. In this study, we propose EmbodiedSplat, an online feed-forward 3DGS for open-vocabulary scene understanding that enables simultaneous online 3D reconstruction and 3D semantic understanding from the streaming ...",
+        "key_contributions": [
+          "Understanding a 3D scene immediately with its exploration is essential for embodied tasks, where an agent must construct and comprehend the 3D scene in an online and nearly real-time manner.",
+          "In this study, we propose EmbodiedSplat, an online feed-forward 3DGS for open-vocabulary scene understanding that enables simultaneous online 3D reconstruction and 3D semantic understanding from the streaming images.",
+          "Unlike existing open-vocabulary 3DGS methods which are typically restricted to either offline or per-scene optimization setting, our objectives are two-fold: 1) Reconstructs the semantic-embedded 3DGS of the entire scene from over 300 streaming images in an online manner."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04239v1",
+      "title": "DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers",
+      "authors": [
+        "Mengping Yang",
+        "Zhiyu Tan",
+        "Binglei Li",
+        "Xiaomeng Yang",
+        "Hesen Chen",
+        "Hao Li"
+      ],
+      "abstract": "Recent breakthroughs in Diffusion Transformers (DiTs) have revolutionized the field of visual synthesis due to their superior scalability. To facilitate DiTs' capability of capturing meaningful internal representations, recent works such as REPA incorporate external pretrained encoders for representation alignment. However, the underlying mechanisms governing representation learning within DiTs are not well understood. To this end, we first systematically investigate the representation dynamics of DiTs. Through analyzing the evolution and influence of internal representations under various settings, we reveal that representation diversity across blocks is a crucial factor for effective learning. Based on this key insight, we propose DiverseDiT, a novel framework that explicitly promotes representation diversity. DiverseDiT incorporates long residual connections to diversify input representations across blocks and a representation diversity loss to encourage blocks to learn distinct features. Extensive experiments on ImageNet 256x256 and 512x512 demonstrate that our DiverseDiT yields consistent performance gains and convergence acceleration when applied to different backbones with various sizes, even when tested on the challenging one-step generation setting. Furthermore, we show that DiverseDiT is complementary to existing representation learning techniques, leading to further performance gains. Our work provides valuable insights into the representation learning dynamics of DiTs and offers a practical approach for enhancing their performance.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04239v1",
+        "pdf": "https://arxiv.org/pdf/2603.04239v1"
+      },
+      "arxiv_id": "2603.04239v1",
+      "comment": "To appear in CVPR 2026, GitHub Code: https://github.com/kobeshegu/DiverseDiT, Project Page: https://forevermamba.work/projects/DiverseDiT/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 5.3999999999999995,
       "score_breakdown": {
         "total_score": 5.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent breakthroughs in Diffusion Transformers (DiTs) have revolutionized the field of visual synthesis due to their superior scalability. To facilitate DiTs' capability of capturing meaningful internal representations, recent works such as REPA incorporate external pretrained encoders for representation alignment. However, the underlying mechanisms governing representation learning within DiTs ar...",
+        "key_contributions": [
+          "Recent breakthroughs in Diffusion Transformers (DiTs) have revolutionized the field of visual synthesis due to their superior scalability.",
+          "To facilitate DiTs' capability of capturing meaningful internal representations, recent works such as REPA incorporate external pretrained encoders for representation alignment.",
+          "However, the underlying mechanisms governing representation learning within DiTs are not well understood."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04179v1",
+      "title": "NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction",
+      "authors": [
+        "Weirong Chen",
+        "Chuanxia Zheng",
+        "Ganlin Zhang",
+        "Andrea Vedaldi",
+        "Daniel Cremers"
+      ],
+      "abstract": "We present NOVA3R, an effective approach for non-pixel-aligned 3D reconstruction from a set of unposed images in a feed-forward manner. Unlike pixel-aligned methods that tie geometry to per-ray predictions, our formulation learns a global, view-agnostic scene representation that decouples reconstruction from pixel alignment. This addresses two key limitations in pixel-aligned 3D: (1) it recovers both visible and invisible points with a complete scene representation, and (2) it produces physically plausible geometry with fewer duplicated structures in overlapping regions. To achieve this, we introduce a scene-token mechanism that aggregates information across unposed images and a diffusion-based 3D decoder that reconstructs complete, non-pixel-aligned point clouds. Extensive experiments on both scene-level and object-level datasets demonstrate that NOVA3R outperforms state-of-the-art methods in terms of reconstruction accuracy and completeness.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04179v1",
+        "pdf": "https://arxiv.org/pdf/2603.04179v1"
+      },
+      "arxiv_id": "2603.04179v1",
+      "comment": "Accepted to ICLR 2026. Project Page: https://wrchen530.github.io/nova3r",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.33728813559322,
+      "score_breakdown": {
+        "total_score": 5.34,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We present NOVA3R, an effective approach for non-pixel-aligned 3D reconstruction from a set of unposed images in a feed-forward manner. Unlike pixel-aligned methods that tie geometry to per-ray predictions, our formulation learns a global, view-agnostic scene representation that decouples reconstruction from pixel alignment. This addresses two key limitations in pixel-aligned 3D: (1) it recovers b...",
+        "key_contributions": [
+          "We present NOVA3R, an effective approach for non-pixel-aligned 3D reconstruction from a set of unposed images in a feed-forward manner.",
+          "Unlike pixel-aligned methods that tie geometry to per-ray predictions, our formulation learns a global, view-agnostic scene representation that decouples reconstruction from pixel alignment.",
+          "This addresses two key limitations in pixel-aligned 3D: (1) it recovers both visible and invisible points with a complete scene representation, and (2) it produces physically plausible geometry with fewer duplicated structures in overlapping regions."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04099v1",
+      "title": "Efficient Point Cloud Processing with High-Dimensional Positional Encoding and Non-Local MLPs",
+      "authors": [
+        "Yanmei Zou",
+        "Hongshan Yu",
+        "Yaonan Wang",
+        "Zhengeng Yang",
+        "Xieyuanli Chen",
+        "Kailun Yang",
+        "Naveed Akhtar"
+      ],
+      "abstract": "Multi-Layer Perceptron (MLP) models are the foundation of contemporary point cloud processing. However, their complex network architectures obscure the source of their strength and limit the application of these models. In this article, we develop a two-stage abstraction and refinement (ABS-REF) view for modular feature extraction in point cloud processing. This view elucidates that whereas the early models focused on ABS stages, the more recent techniques devise sophisticated REF stages to attain performance advantages. Then, we propose a High-dimensional Positional Encoding (HPE) module to explicitly utilize intrinsic positional information, extending the ``positional encoding'' concept from Transformer literature. HPE can be readily deployed in MLP-based architectures and is compatible with transformer-based methods. Within our ABS-REF view, we rethink local aggregation in MLP-based methods and propose replacing time-consuming local MLP operations, which are used to capture local relationships among neighbors. Instead, we use non-local MLPs for efficient non-local information updates, combined with the proposed HPE for effective local information representation. We leverage our modules to develop HPENets, a suite of MLP networks that follow the ABS-REF paradigm, incorporating a scalable HPE-based REF stage. Extensive experiments on seven public datasets across four different tasks show that HPENets deliver a strong balance between efficiency and effectiveness. Notably, HPENet surpasses PointNeXt, a strong MLP-based counterpart, by 1.1% mAcc, 4.0% mIoU, 1.8% mIoU, and 0.2% Cls. mIoU, with only 50.0%, 21.5%, 23.1%, 44.4% of FLOPs on ScanObjectNN, S3DIS, ScanNet, and ShapeNetPart, respectively. Source code is available at https://github.com/zouyanmei/HPENet_v2.git.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04099v1",
+        "pdf": "https://arxiv.org/pdf/2603.04099v1"
+      },
+      "arxiv_id": "2603.04099v1",
+      "comment": "Accepted to IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). Source code is available at https://github.com/zouyanmei/HPENet_v2.git",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.0,
+      "score_breakdown": {
+        "total_score": 5.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "PAMI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Multi-Layer Perceptron (MLP) models are the foundation of contemporary point cloud processing. However, their complex network architectures obscure the source of their strength and limit the application of these models. In this article, we develop a two-stage abstraction and refinement (ABS-REF) view for modular feature extraction in point cloud processing. This view elucidates that whereas the ea...",
+        "key_contributions": [
+          "Multi-Layer Perceptron (MLP) models are the foundation of contemporary point cloud processing.",
+          "However, their complex network architectures obscure the source of their strength and limit the application of these models.",
+          "In this article, we develop a two-stage abstraction and refinement (ABS-REF) view for modular feature extraction in point cloud processing."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04291v1",
+      "title": "CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video",
+      "authors": [
+        "Lingen Li",
+        "Guangzhi Wang",
+        "Xiaoyu Li",
+        "Zhaoyang Zhang",
+        "Qi Dou",
+        "Jinwei Gu",
+        "Tianfan Xue",
+        "Ying Shan"
+      ],
+      "abstract": "Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience. Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting $\\leq$ 1K resolution native generation and relying on suboptimal post super-resolution to increase resolution. We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos. By decomposing videos into cubemap representations with six faces, CubeComposer autoregressively synthesizes content in a well-planned spatio-temporal order, reducing memory demands while enabling high-resolution output. Specifically, to address challenges in multi-dimensional autoregression, we propose: (1) a spatio-temporal autoregressive strategy that orchestrates 360° video generation across cube faces and time windows for coherent synthesis; (2) a cube face context management mechanism, equipped with a sparse context attention design to improve efficiency; and (3) continuity-aware techniques, including cube-aware positional encoding, padding, and blending to eliminate boundary seams. Extensive experiments on benchmark datasets demonstrate that CubeComposer outperforms state-of-the-art methods in native resolution and visual quality, supporting practical VR application scenarios. Project page: https://lg-li.github.io/project/cubecomposer",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04291v1",
+        "pdf": "https://arxiv.org/pdf/2603.04291v1"
+      },
+      "arxiv_id": "2603.04291v1",
+      "comment": "Accepted to CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.85,
+      "score_breakdown": {
+        "total_score": 4.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience. Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting $\\leq$ 1K resolution native generation and relying on suboptimal post super-resol...",
+        "key_contributions": [
+          "Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience.",
+          "Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting $\\leq$ 1K resolution native generation and relying on suboptimal post super-resolution to increase resolution.",
+          "We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04337v1",
+      "title": "Pointer-CAD: Unifying B-Rep and Command Sequences via Pointer-based Edges & Faces Selection",
+      "authors": [
+        "Dacheng Qi",
+        "Chenyu Wang",
+        "Jingwei Xu",
+        "Tianzhe Chu",
+        "Zibo Zhao",
+        "Wen Liu",
+        "Wenrui Ding",
+        "Yi Ma",
+        "Shenghua Gao"
+      ],
+      "abstract": "Constructing computer-aided design (CAD) models is labor-intensive but essential for engineering and manufacturing. Recent advances in Large Language Models (LLMs) have inspired the LLM-based CAD generation by representing CAD as command sequences. But these methods struggle in practical scenarios because command sequence representation does not support entity selection (e.g. faces or edges), limiting its ability to support complex editing operations such as chamfer or fillet. Further, the discretization of a continuous variable during sketch and extrude operations may result in topological errors. To address these limitations, we present Pointer-CAD, a novel LLM-based CAD generation framework that leverages a pointer-based command sequence representation to explicitly incorporate the geometric information of B-rep models into sequential modeling. In particular, Pointer-CAD decomposes CAD model generation into steps, conditioning the generation of each subsequent step on both the textual description and the B-rep generated from previous steps. Whenever an operation requires the selection of a specific geometric entity, the LLM predicts a Pointer that selects the most feature-consistent candidate from the available set. Such a selection operation also reduces the quantization error in the command sequence-based representation. To support the training of Pointer-CAD, we develop a data annotation pipeline that produces expert-level natural language descriptions and apply it to build a dataset of approximately 575K CAD models. Extensive experimental results demonstrate that Pointer-CAD effectively supports the generation of complex geometric structures and reduces segmentation error to an extremely low level, achieving a significant improvement over prior command sequence methods, thereby significantly mitigating the topological inaccuracies introduced by quantization error.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04337v1",
+        "pdf": "https://arxiv.org/pdf/2603.04337v1"
+      },
+      "arxiv_id": "2603.04337v1",
+      "comment": "Accepted by CVPR2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.653389830508475,
+      "score_breakdown": {
+        "total_score": 4.65,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Constructing computer-aided design (CAD) models is labor-intensive but essential for engineering and manufacturing. Recent advances in Large Language Models (LLMs) have inspired the LLM-based CAD generation by representing CAD as command sequences. But these methods struggle in practical scenarios because command sequence representation does not support entity selection (e.g. faces or edges), limi...",
+        "key_contributions": [
+          "Constructing computer-aided design (CAD) models is labor-intensive but essential for engineering and manufacturing.",
+          "Recent advances in Large Language Models (LLMs) have inspired the LLM-based CAD generation by representing CAD as command sequences.",
+          "But these methods struggle in practical scenarios because command sequence representation does not support entity selection (e."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04356v1",
+      "title": "RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots",
+      "authors": [
+        "Soroush Nasiriany",
+        "Sepehr Nasiriany",
+        "Abhiram Maddukuri",
+        "Yuke Zhu"
+      ],
+      "abstract": "Recent advances in robot learning have accelerated progress toward generalist robots that can perform everyday tasks in human environments. Yet it remains difficult to gauge how close we are to this vision. The field lacks a reproducible, large-scale benchmark for systematic evaluation. To fill this gap, we present RoboCasa365, a comprehensive simulation benchmark for household mobile manipulation. Built on the RoboCasa platform, RoboCasa365 introduces 365 everyday tasks across 2,500 diverse kitchen environments, with over 600 hours of human demonstration data and over 1600 hours of synthetically generated demonstration data -- making it one of the most diverse and large-scale resources for studying generalist policies. RoboCasa365 is designed to support systematic evaluations for different problem settings, including multi-task learning, robot foundation model training, and lifelong learning. We conduct extensive experiments on this benchmark with state-of-the-art methods and analyze the impacts of task diversity, dataset scale, and environment variation on generalization. Our results provide new insights into what factors most strongly affect the performance of generalist robots and inform strategies for future progress in the field.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04356v1",
+        "pdf": "https://arxiv.org/pdf/2603.04356v1"
+      },
+      "arxiv_id": "2603.04356v1",
+      "comment": "ICLR 2026; First three authors contributed equally",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6,
+      "score_breakdown": {
+        "total_score": 4.6,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -44,342 +433,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The ability to conduct and learn from interaction and experience is a central challenge in robotics, offering a scalable alternative to labor-intensive human demonstrations. However, realizing such \"play\" requires (1) a policy robust to diverse, potentially out-of-distribution environment states, and (2) a procedure that continuously produces useful robot experience. To address these challenges, w...",
-        "key_contributions": [
-          "The ability to conduct and learn from interaction and experience is a central challenge in robotics, offering a scalable alternative to labor-intensive human demonstrations.",
-          "However, realizing such \"play\" requires (1) a policy robust to diverse, potentially out-of-distribution environment states, and (2) a procedure that continuously produces useful robot experience.",
-          "To address these challenges, we introduce Tether, a method for autonomous functional play involving structured, task-directed interactions."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.03195v1",
-      "title": "Chain of World: World Model Thinking in Latent Motion",
-      "authors": [
-        "Fuxiang Yang",
-        "Donglin Di",
-        "Lulu Tang",
-        "Xuancheng Zhang",
-        "Lei Fan",
-        "Hao Li",
-        "Chen Wei",
-        "Tonghua Su",
-        "Baorui Ma"
-      ],
-      "abstract": "Vision-Language-Action (VLA) models are a promising path toward embodied intelligence, yet they often overlook the predictive and temporal-causal structure underlying visual dynamics. World-model VLAs address this by predicting future frames, but waste capacity reconstructing redundant backgrounds. Latent-action VLAs encode frame-to-frame transitions compactly, but lack temporally continuous dynamic modeling and world knowledge. To overcome these limitations, we introduce CoWVLA (Chain-of-World VLA), a new \"Chain of World\" paradigm that unifies world-model temporal reasoning with a disentangled latent motion representation. First, a pretrained video VAE serves as a latent motion extractor, explicitly factorizing video segments into structure and motion latents. Then, during pre-training, the VLA learns from an instruction and an initial frame to infer a continuous latent motion chain and predict the segment's terminal frame. Finally, during co-fine-tuning, this latent dynamic is aligned with discrete action prediction by jointly modeling sparse keyframes and action sequences in a unified autoregressive decoder. This design preserves the world-model benefits of temporal reasoning and world knowledge while retaining the compactness and interpretability of latent actions, enabling efficient visuomotor learning. Extensive experiments on robotic simulation benchmarks show that CoWVLA outperforms existing world-model and latent-action approaches and achieves moderate computational efficiency, highlighting its potential as a more effective VLA pretraining paradigm. The project website can be found at https://fx-hit.github.io/cowvla-io.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.03195v1",
-        "pdf": "https://arxiv.org/pdf/2603.03195v1"
-      },
-      "arxiv_id": "2603.03195v1",
-      "comment": "Accepted by CVPR2026. Project page: https://fx-hit.github.io/cowvla-io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.3999999999999995,
-      "score_breakdown": {
-        "total_score": 5.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Vision-Language-Action (VLA) models are a promising path toward embodied intelligence, yet they often overlook the predictive and temporal-causal structure underlying visual dynamics. World-model VLAs address this by predicting future frames, but waste capacity reconstructing redundant backgrounds. Latent-action VLAs encode frame-to-frame transitions compactly, but lack temporally continuous dynam...",
-        "key_contributions": [
-          "Vision-Language-Action (VLA) models are a promising path toward embodied intelligence, yet they often overlook the predictive and temporal-causal structure underlying visual dynamics.",
-          "World-model VLAs address this by predicting future frames, but waste capacity reconstructing redundant backgrounds.",
-          "Latent-action VLAs encode frame-to-frame transitions compactly, but lack temporally continuous dynamic modeling and world knowledge."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.03265v1",
-      "title": "DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction",
-      "authors": [
-        "Yufu Wang",
-        "Evonne Ng",
-        "Soyong Shin",
-        "Rawal Khirodkar",
-        "Yuan Dong",
-        "Zhaoen Su",
-        "Jinhyung Park",
-        "Kris Kitani",
-        "Alexander Richard",
-        "Fabian Prada",
-        "Michael Zollhofer"
-      ],
-      "abstract": "We present DuoMo, a generative method that recovers human motion in world-space coordinates from unconstrained videos with noisy or incomplete observations. Reconstructing such motion requires solving a fundamental trade-off: generalizing from diverse and noisy video inputs while maintaining global motion consistency. Our approach addresses this problem by factorizing motion learning into two diffusion models. The camera-space model first estimates motion from videos in camera coordinates. The world-space model then lifts this initial estimate into world coordinates and refines it to be globally consistent. Together, the two models can reconstruct motion across diverse scenes and trajectories, even from highly noisy or incomplete observations. Moreover, our formulation is general, generating the motion of mesh vertices directly and bypassing parametric models. DuoMo achieves state-of-the-art performance. On EMDB, our method obtains a 16% reduction in world-space reconstruction error while maintaining low foot skating. On RICH, it obtains a 30% reduction in world-space error. Project page: https://yufu-wang.github.io/duomo/",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.03265v1",
-        "pdf": "https://arxiv.org/pdf/2603.03265v1"
-      },
-      "arxiv_id": "2603.03265v1",
-      "comment": "CVPR 2026. Project page: https://yufu-wang.github.io/duomo/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.2,
-      "score_breakdown": {
-        "total_score": 5.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
           "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We present DuoMo, a generative method that recovers human motion in world-space coordinates from unconstrained videos with noisy or incomplete observations. Reconstructing such motion requires solving a fundamental trade-off: generalizing from diverse and noisy video inputs while maintaining global motion consistency. Our approach addresses this problem by factorizing motion learning into two diff...",
-        "key_contributions": [
-          "We present DuoMo, a generative method that recovers human motion in world-space coordinates from unconstrained videos with noisy or incomplete observations.",
-          "Reconstructing such motion requires solving a fundamental trade-off: generalizing from diverse and noisy video inputs while maintaining global motion consistency.",
-          "Our approach addresses this problem by factorizing motion learning into two diffusion models."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.03281v1",
-      "title": "CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance",
-      "authors": [
-        "Hanyang Wang",
-        "Yiyang Liu",
-        "Jiawei Chi",
-        "Fangfu Liu",
-        "Ran Xue",
-        "Yueqi Duan"
-      ],
-      "abstract": "Classifier-Free Guidance (CFG) has emerged as a central approach for enhancing semantic alignment in flow-based diffusion models. In this paper, we explore a unified framework called CFG-Ctrl, which reinterprets CFG as a control applied to the first-order continuous-time generative flow, using the conditional-unconditional discrepancy as an error signal to adjust the velocity field. From this perspective, we summarize vanilla CFG as a proportional controller (P-control) with fixed gain, and typical follow-up variants develop extended control-law designs derived from it. However, existing methods mainly rely on linear control, inherently leading to instability, overshooting, and degraded semantic fidelity especially on large guidance scales. To address this, we introduce Sliding Mode Control CFG (SMC-CFG), which enforces the generative flow toward a rapidly convergent sliding manifold. Specifically, we define an exponential sliding mode surface over the semantic prediction error and introduce a switching control term to establish nonlinear feedback-guided correction. Moreover, we provide a Lyapunov stability analysis to theoretically support finite-time convergence. Experiments across text-to-image generation models including Stable Diffusion 3.5, Flux, and Qwen-Image demonstrate that SMC-CFG outperforms standard CFG in semantic alignment and enhances robustness across a wide range of guidance scales. Project Page: https://hanyang-21.github.io/CFG-Ctrl",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.03281v1",
-        "pdf": "https://arxiv.org/pdf/2603.03281v1"
-      },
-      "arxiv_id": "2603.03281v1",
-      "comment": "Accepted by CVPR 2026; Project Page: https://hanyang-21.github.io/CFG-Ctrl",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.05,
-      "score_breakdown": {
-        "total_score": 5.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Classifier-Free Guidance (CFG) has emerged as a central approach for enhancing semantic alignment in flow-based diffusion models. In this paper, we explore a unified framework called CFG-Ctrl, which reinterprets CFG as a control applied to the first-order continuous-time generative flow, using the conditional-unconditional discrepancy as an error signal to adjust the velocity field. From this pers...",
-        "key_contributions": [
-          "Classifier-Free Guidance (CFG) has emerged as a central approach for enhancing semantic alignment in flow-based diffusion models.",
-          "In this paper, we explore a unified framework called CFG-Ctrl, which reinterprets CFG as a control applied to the first-order continuous-time generative flow, using the conditional-unconditional discrepancy as an error signal to adjust the velocity field.",
-          "From this perspective, we summarize vanilla CFG as a proportional controller (P-control) with fixed gain, and typical follow-up variants develop extended control-law designs derived from it."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.03192v1",
-      "title": "MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization",
-      "authors": [
-        "Ashutosh Chaubey",
-        "Jiacheng Pang",
-        "Mohammad Soleymani"
-      ],
-      "abstract": "Omni-modal large language models (omni LLMs) have recently achieved strong performance across audiovisual understanding tasks, yet they remain highly susceptible to cross-modal hallucinations arising from spurious correlations and dominant language priors. In this work, we propose Modality-Decoupled Direct Preference Optimization (MoD-DPO), a simple and effective framework for improving modality grounding in omni LLMs. MoD-DPO introduces modality-aware regularization terms that explicitly enforce invariance to corruptions in irrelevant modalities and sensitivity to perturbations in relevant modalities, thereby reducing unintended cross-modal interactions. To further mitigate over-reliance on textual priors, we incorporate a language-prior debiasing penalty that discourages hallucination-prone text-only responses. Extensive experiments across multiple audiovisual hallucination benchmarks demonstrate that MoD-DPO consistently improves perception accuracy and hallucination resistance, outperforming previous preference optimization baselines under similar training budgets. Our findings underscore the importance of modality-faithful alignment and demonstrate a scalable path toward more reliable and resilient multimodal foundation models.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.CV",
-        "cs.CL",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.03192v1",
-        "pdf": "https://arxiv.org/pdf/2603.03192v1"
-      },
-      "arxiv_id": "2603.03192v1",
-      "comment": "CVPR 2026. Project Page: https://mod-dpo.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.95,
-      "score_breakdown": {
-        "total_score": 4.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Omni-modal large language models (omni LLMs) have recently achieved strong performance across audiovisual understanding tasks, yet they remain highly susceptible to cross-modal hallucinations arising from spurious correlations and dominant language priors. In this work, we propose Modality-Decoupled Direct Preference Optimization (MoD-DPO), a simple and effective framework for improving modality g...",
-        "key_contributions": [
-          "Omni-modal large language models (omni LLMs) have recently achieved strong performance across audiovisual understanding tasks, yet they remain highly susceptible to cross-modal hallucinations arising from spurious correlations and dominant language priors.",
-          "In this work, we propose Modality-Decoupled Direct Preference Optimization (MoD-DPO), a simple and effective framework for improving modality grounding in omni LLMs.",
-          "MoD-DPO introduces modality-aware regularization terms that explicitly enforce invariance to corruptions in irrelevant modalities and sensitivity to perturbations in relevant modalities, thereby reducing unintended cross-modal interactions."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.03269v1",
-      "title": "LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory",
-      "authors": [
-        "Junyi Zhang",
-        "Charles Herrmann",
-        "Junhwa Hur",
-        "Chen Sun",
-        "Ming-Hsuan Yang",
-        "Forrester Cole",
-        "Trevor Darrell",
-        "Deqing Sun"
-      ],
-      "abstract": "Feedforward geometric foundation models achieve strong short-window reconstruction, yet scaling them to minutes-long videos is bottlenecked by quadratic attention complexity or limited effective memory in recurrent designs. We present LoGeR (Long-context Geometric Reconstruction), a novel architecture that scales dense 3D reconstruction to extremely long sequences without post-optimization. LoGeR processes video streams in chunks, leveraging strong bidirectional priors for high-fidelity intra-chunk reasoning. To manage the critical challenge of coherence across chunk boundaries, we propose a learning-based hybrid memory module. This dual-component system combines a parametric Test-Time Training (TTT) memory to anchor the global coordinate frame and prevent scale drift, alongside a non-parametric Sliding Window Attention (SWA) mechanism to preserve uncompressed context for high-precision adjacent alignment. Remarkably, this memory architecture enables LoGeR to be trained on sequences of 128 frames, and generalize up to thousands of frames during inference. Evaluated across standard benchmarks and a newly repurposed VBR dataset with sequences of up to 19k frames, LoGeR substantially outperforms prior state-of-the-art feedforward methods--reducing ATE on KITTI by over 74%--and achieves robust, globally consistent reconstruction over unprecedented horizons.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.03269v1",
-        "pdf": "https://arxiv.org/pdf/2603.03269v1"
-      },
-      "arxiv_id": "2603.03269v1",
-      "comment": "Project page: https://LoGeR-project.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.587288135593221,
-      "score_breakdown": {
-        "total_score": 4.59,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -388,171 +447,36 @@
         }
       },
       "ai_summaries": {
-        "short": "Feedforward geometric foundation models achieve strong short-window reconstruction, yet scaling them to minutes-long videos is bottlenecked by quadratic attention complexity or limited effective memory in recurrent designs. We present LoGeR (Long-context Geometric Reconstruction), a novel architecture that scales dense 3D reconstruction to extremely long sequences without post-optimization. LoGeR ...",
+        "short": "Recent advances in robot learning have accelerated progress toward generalist robots that can perform everyday tasks in human environments. Yet it remains difficult to gauge how close we are to this vision. The field lacks a reproducible, large-scale benchmark for systematic evaluation. To fill this gap, we present RoboCasa365, a comprehensive simulation benchmark for household mobile manipulation...",
         "key_contributions": [
-          "Feedforward geometric foundation models achieve strong short-window reconstruction, yet scaling them to minutes-long videos is bottlenecked by quadratic attention complexity or limited effective memory in recurrent designs.",
-          "We present LoGeR (Long-context Geometric Reconstruction), a novel architecture that scales dense 3D reconstruction to extremely long sequences without post-optimization.",
-          "LoGeR processes video streams in chunks, leveraging strong bidirectional priors for high-fidelity intra-chunk reasoning."
+          "Recent advances in robot learning have accelerated progress toward generalist robots that can perform everyday tasks in human environments.",
+          "Yet it remains difficult to gauge how close we are to this vision.",
+          "The field lacks a reproducible, large-scale benchmark for systematic evaluation."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.03197v1",
-      "title": "Specificity-aware reinforcement learning for fine-grained open-world classification",
+      "id": "2603.04265v1",
+      "title": "ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning in Instructional Videos",
       "authors": [
-        "Samuele Angheben",
-        "Davide Berasi",
-        "Alessandro Conti",
-        "Elisa Ricci",
-        "Yiming Wang"
+        "Luigi Seminara",
+        "Davide Moltisanti",
+        "Antonino Furnari"
       ],
-      "abstract": "Classifying fine-grained visual concepts under open-world settings, i.e., without a predefined label set, demands models to be both accurate and specific. Recent reasoning Large Multimodal Models (LMMs) exhibit strong visual understanding capability but tend to produce overly generic predictions when performing fine-grained image classification. Our preliminary analysis reveals that models do possess the intrinsic fine-grained domain knowledge. However, promoting more specific predictions (specificity) without compromising correct ones (correctness) remains a non-trivial and understudied challenge. In this work, we investigate how to steer reasoning LMMs toward predictions that are both correct and specific. We propose a novel specificity-aware reinforcement learning framework, SpeciaRL, to fine-tune reasoning LMMs on fine-grained image classification under the open-world setting. SpeciaRL introduces a dynamic, verifier-based reward signal anchored to the best predictions within online rollouts, promoting specificity while respecting the model's capabilities to prevent incorrect predictions. Our out-of-domain experiments show that SpeciaRL delivers the best trade-off between correctness and specificity across extensive fine-grained benchmarks, surpassing existing methods and advancing open-world fine-grained image classification. Code and model are publicly available at https://github.com/s-angheben/SpeciaRL.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
+      "abstract": "Procedural planning aims to predict a sequence of actions that transforms an initial visual state into a desired goal, a fundamental ability for intelligent agents operating in complex environments. Existing approaches typically rely on large-scale models that learn procedural structures implicitly, resulting in limited sample-efficiency and high computational cost. In this work we introduce ViterbiPlanNet, a principled framework that explicitly integrates procedural knowledge into the learning process through a Differentiable Viterbi Layer (DVL). The DVL embeds a Procedural Knowledge Graph (PKG) directly with the Viterbi decoding algorithm, replacing non-differentiable operations with smooth relaxations that enable end-to-end optimization. This design allows the model to learn through graph-based decoding. Experiments on CrossTask, COIN, and NIV demonstrate that ViterbiPlanNet achieves state-of-the-art performance with an order of magnitude fewer parameters than diffusion- and LLM-based planners. Extensive ablations show that performance gains arise from our differentiable structure-aware training rather than post-hoc refinement, resulting in improved sample efficiency and robustness to shorter unseen horizons. We also address testing inconsistencies establishing a unified testing protocol with consistent splits and evaluation metrics. With this new protocol, we run experiments multiple times and report results using bootstrapping to assess statistical significance.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.03197v1",
-        "pdf": "https://arxiv.org/pdf/2603.03197v1"
+        "paper": "http://arxiv.org/abs/2603.04265v1",
+        "pdf": "https://arxiv.org/pdf/2603.04265v1"
       },
-      "arxiv_id": "2603.03197v1",
+      "arxiv_id": "2603.04265v1",
       "comment": "Accepted at CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Classifying fine-grained visual concepts under open-world settings, i.e., without a predefined label set, demands models to be both accurate and specific. Recent reasoning Large Multimodal Models (LMMs) exhibit strong visual understanding capability but tend to produce overly generic predictions when performing fine-grained image classification. Our preliminary analysis reveals that models do poss...",
-        "key_contributions": [
-          "Classifying fine-grained visual concepts under open-world settings, i.",
-          "e.",
-          ", without a predefined label set, demands models to be both accurate and specific."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.02986v1",
-      "title": "VIRGi: View-dependent Instant Recoloring of 3D Gaussians Splats",
-      "authors": [
-        "Alessio Mazzucchelli",
-        "Ivan Ojeda-Martin",
-        "Fernando Rivas-Manzaneque",
-        "Elena Garces",
-        "Adrian Penate-Sanchez",
-        "Francesc Moreno-Noguer"
-      ],
-      "abstract": "3D Gaussian Splatting (3DGS) has recently transformed the fields of novel view synthesis and 3D reconstruction due to its ability to accurately model complex 3D scenes and its unprecedented rendering performance. However, a significant challenge persists: the absence of an efficient and photorealistic method for editing the appearance of the scene's content. In this paper we introduce VIRGi, a novel approach for rapidly editing the color of scenes modeled by 3DGS while preserving view-dependent effects such as specular highlights. Key to our method are a novel architecture that separates color into diffuse and view-dependent components, and a multi-view training strategy that integrates image patches from multiple viewpoints. Improving over the conventional single-view batch training, our 3DGS representation provides more accurate reconstruction and serves as a solid representation for the recoloring task. For 3DGS recoloring, we then introduce a rapid scheme requiring only one manually edited image of the scene from the end-user. By fine-tuning the weights of a single MLP, alongside a module for single-shot segmentation of the editable area, the color edits are seamlessly propagated to the entire scene in just two seconds, facilitating real-time interaction and providing control over the strength of the view-dependent effects. An exhaustive validation on diverse datasets demonstrates significant quantitative and qualitative advancements over competitors based on Neural Radiance Fields representations.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.CV",
-        "cs.GR"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.02986v1",
-        "pdf": "https://arxiv.org/pdf/2603.02986v1"
-      },
-      "arxiv_id": "2603.02986v1",
-      "comment": "IEEE Transactions on Pattern Analysis and Machine Intelligence. 2026 Feb 24",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.50593220338983,
-      "score_breakdown": {
-        "total_score": 4.51,
-        "field_match": {
-          "score": 3.39,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "3d reconstruction",
-            "neural radiance",
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "3D Gaussian Splatting (3DGS) has recently transformed the fields of novel view synthesis and 3D reconstruction due to its ability to accurately model complex 3D scenes and its unprecedented rendering performance. However, a significant challenge persists: the absence of an efficient and photorealistic method for editing the appearance of the scene's content. In this paper we introduce VIRGi, a nov...",
-        "key_contributions": [
-          "3D Gaussian Splatting (3DGS) has recently transformed the fields of novel view synthesis and 3D reconstruction due to its ability to accurately model complex 3D scenes and its unprecedented rendering performance.",
-          "However, a significant challenge persists: the absence of an efficient and photorealistic method for editing the appearance of the scene's content.",
-          "In this paper we introduce VIRGi, a novel approach for rapidly editing the color of scenes modeled by 3DGS while preserving view-dependent effects such as specular highlights."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.03258v1",
-      "title": "Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals",
-      "authors": [
-        "Achyutha Menon",
-        "Magnus Saebo",
-        "Tyler Crosse",
-        "Spencer Gibson",
-        "Eyon Jang",
-        "Diogo Cruz"
-      ],
-      "abstract": "The accelerating adoption of language models (LMs) as agents for deployment in long-context tasks motivates a thorough understanding of goal drift: agents' tendency to deviate from an original objective. While prior-generation language model agents have been shown to be susceptible to drift, the extent to which drift affects more recent models remains unclear. In this work, we provide an updated characterization of the extent and causes of goal drift. We investigate drift in state-of-the-art models within a simulated stock-trading environment (Arike et al., 2025). These models are largely shown to be robust even when subjected to adversarial pressure. We show, however, that this robustness is brittle: across multiple settings, the same models often inherit drift when conditioned on prefilled trajectories from weaker agents. The extent of conditioning-induced drift varies significantly by model family, with only GPT-5.1 maintaining consistent resilience among tested models. We find that drift behavior is inconsistent between prompt variations and correlates poorly with instruction hierarchy following behavior, with strong hierarchy following failing to reliably predict resistance to drift. Finally, we run analogous experiments in a new emergency room triage environment to show preliminary evidence for the transferability of our results across qualitatively different settings. Our findings underscore the continued vulnerability of modern LM agents to contextual pressures and the need for refined post-training techniques to mitigate this.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.03258v1",
-        "pdf": "https://arxiv.org/pdf/2603.03258v1"
-      },
-      "arxiv_id": "2603.03258v1",
-      "comment": "22 pages, 7 figures. Accepted at ICLR 2026 Lifelong Agents Workshop",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.5,
@@ -565,7 +489,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -583,55 +507,58 @@
         }
       },
       "ai_summaries": {
-        "short": "The accelerating adoption of language models (LMs) as agents for deployment in long-context tasks motivates a thorough understanding of goal drift: agents' tendency to deviate from an original objective. While prior-generation language model agents have been shown to be susceptible to drift, the extent to which drift affects more recent models remains unclear. In this work, we provide an updated c...",
+        "short": "Procedural planning aims to predict a sequence of actions that transforms an initial visual state into a desired goal, a fundamental ability for intelligent agents operating in complex environments. Existing approaches typically rely on large-scale models that learn procedural structures implicitly, resulting in limited sample-efficiency and high computational cost. In this work we introduce Viter...",
         "key_contributions": [
-          "The accelerating adoption of language models (LMs) as agents for deployment in long-context tasks motivates a thorough understanding of goal drift: agents' tendency to deviate from an original objective.",
-          "While prior-generation language model agents have been shown to be susceptible to drift, the extent to which drift affects more recent models remains unclear.",
-          "In this work, we provide an updated characterization of the extent and causes of goal drift."
+          "Procedural planning aims to predict a sequence of actions that transforms an initial visual state into a desired goal, a fundamental ability for intelligent agents operating in complex environments.",
+          "Existing approaches typically rely on large-scale models that learn procedural structures implicitly, resulting in limited sample-efficiency and high computational cost.",
+          "In this work we introduce ViterbiPlanNet, a principled framework that explicitly integrates procedural knowledge into the learning process through a Differentiable Viterbi Layer (DVL)."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.03101v1",
-      "title": "MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection",
+      "id": "2603.04343v1",
+      "title": "Enhancing Authorship Attribution with Synthetic Paintings",
       "authors": [
-        "Jun Yeong Park",
-        "JunYoung Seo",
-        "Minji Kang",
-        "Yu Rang Park"
+        "Clarissa Loures",
+        "Caio Hosken",
+        "Luan Oliveira",
+        "Gianlucca Zuin",
+        "Adriano Veloso"
       ],
-      "abstract": "The CLIP model's outstanding generalization has driven recent success in Zero-Shot Anomaly Detection (ZSAD) for detecting anomalies in unseen categories. The core challenge in ZSAD is to specialize the model for anomaly detection tasks while preserving CLIP's powerful generalization capability. Existing approaches attempting to solve this challenge share the fundamental limitation of a patch-agnostic design that processes all patches monolithically without regard for their unique characteristics. To address this limitation, we propose \\textbf{MoECLIP}, a Mixture-of-Experts (MoE) architecture for the ZSAD task, which achieves patch-level adaptation by dynamically routing each image patch to a specialized Low-Rank Adaptation (LoRA) expert based on its unique characteristics. Furthermore, to prevent functional redundancy among the LoRA experts, we introduce (1) Frozen Orthogonal Feature Separation (FOFS), which orthogonally separates the input feature space to force experts to focus on distinct information, and (2) a simplex equiangular tight frame (ETF) loss to regulate the expert outputs to form maximally equiangular representations. Comprehensive experimental results across 14 benchmark datasets spanning industrial and medical domains demonstrate that MoECLIP outperforms existing state-of-the-art methods. The code is available at https://github.com/CoCoRessa/MoECLIP.",
-      "published": "2026-03-03",
-      "updated": "2026-03-03",
+      "abstract": "Attributing authorship to paintings is a historically complex task, and one of its main challenges is the limited availability of real artworks for training computational models. This study investigates whether synthetic images, generated through DreamBooth fine-tuning of Stable Diffusion, can improve the performance of classification models in this context. We propose a hybrid approach that combines real and synthetic data to enhance model accuracy and generalization across similar artistic styles. Experimental results show that adding synthetic images leads to higher ROC-AUC and accuracy compared to using only real paintings. By integrating generative and discriminative methods, this work contributes to the development of computer vision techniques for artwork authentication in data-scarce scenarios.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.03101v1",
-        "pdf": "https://arxiv.org/pdf/2603.03101v1"
+        "paper": "http://arxiv.org/abs/2603.04343v1",
+        "pdf": "https://arxiv.org/pdf/2603.04343v1"
       },
-      "arxiv_id": "2603.03101v1",
-      "comment": "Accepted by CVPR 2026",
+      "arxiv_id": "2603.04343v1",
+      "comment": "Accepted for publication at the 24th IEEE International Conference on Machine Learning and Applications (ICMLA 2025)",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "relevance_score": 4.419491525423728,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.42,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -640,16 +567,80 @@
           "weight": 0.1
         },
         "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Attributing authorship to paintings is a historically complex task, and one of its main challenges is the limited availability of real artworks for training computational models. This study investigates whether synthetic images, generated through DreamBooth fine-tuning of Stable Diffusion, can improve the performance of classification models in this context. We propose a hybrid approach that combi...",
+        "key_contributions": [
+          "Attributing authorship to paintings is a historically complex task, and one of its main challenges is the limited availability of real artworks for training computational models.",
+          "This study investigates whether synthetic images, generated through DreamBooth fine-tuning of Stable Diffusion, can improve the performance of classification models in this context.",
+          "We propose a hybrid approach that combines real and synthetic data to enhance model accuracy and generalization across similar artistic styles."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.04165v1",
+      "title": "PlaneCycle: Training-Free 2D-to-3D Lifting of Foundation Models Without Adapters",
+      "authors": [
+        "Yinghong Yu",
+        "Guangyuan Li",
+        "Jiancheng Yang"
+      ],
+      "abstract": "Large-scale 2D foundation models exhibit strong transferable representations, yet extending them to 3D volumetric data typically requires retraining, adapters, or architectural redesign. We introduce PlaneCycle, a training-free, adapter-free operator for architecture-agnostic 2D-to-3D lifting of foundation models. PlaneCycle reuses the original pretrained 2D backbone by cyclically distributing spatial aggregation across orthogonal HW, DW, and DH planes throughout network depth, enabling progressive 3D fusion while preserving pretrained inductive biases. The method introduces no additional parameters and is applicable to arbitrary 2D networks. Using pretrained DINOv3 models, we evaluate PlaneCycle on six 3D classification and three 3D segmentation benchmarks. Without any training, the lifted models exhibit intrinsic 3D fusion capability and, under linear probing, outperform slice-wise 2D baselines and strong 3D counterparts, approaching the performance of fully trained models. With full fine-tuning, PlaneCycle matches standard 3D architectures, highlighting its potential as a seamless and practical 2D-to-3D lifting operator. These results demonstrate that 3D capability can be unlocked from pretrained 2D foundation models without structural modification or retraining. Code is available at https://github.com/HINTLab/PlaneCycle.",
+      "published": "2026-03-04",
+      "updated": "2026-03-04",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.04165v1",
+        "pdf": "https://arxiv.org/pdf/2603.04165v1"
+      },
+      "arxiv_id": "2603.04165v1",
+      "comment": "Code is available at https://github.com/HINTLab/PlaneCycle",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1906779661016955,
+      "score_breakdown": {
+        "total_score": 4.19,
+        "field_match": {
+          "score": 1.1,
+          "matches": [
+            "volumetric",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The CLIP model's outstanding generalization has driven recent success in Zero-Shot Anomaly Detection (ZSAD) for detecting anomalies in unseen categories. The core challenge in ZSAD is to specialize the model for anomaly detection tasks while preserving CLIP's powerful generalization capability. Existing approaches attempting to solve this challenge share the fundamental limitation of a patch-agnos...",
+        "short": "Large-scale 2D foundation models exhibit strong transferable representations, yet extending them to 3D volumetric data typically requires retraining, adapters, or architectural redesign. We introduce PlaneCycle, a training-free, adapter-free operator for architecture-agnostic 2D-to-3D lifting of foundation models. PlaneCycle reuses the original pretrained 2D backbone by cyclically distributing spa...",
         "key_contributions": [
-          "The CLIP model's outstanding generalization has driven recent success in Zero-Shot Anomaly Detection (ZSAD) for detecting anomalies in unseen categories.",
-          "The core challenge in ZSAD is to specialize the model for anomaly detection tasks while preserving CLIP's powerful generalization capability.",
-          "Existing approaches attempting to solve this challenge share the fundamental limitation of a patch-agnostic design that processes all patches monolithically without regard for their unique characteristics."
+          "Large-scale 2D foundation models exhibit strong transferable representations, yet extending them to 3D volumetric data typically requires retraining, adapters, or architectural redesign.",
+          "We introduce PlaneCycle, a training-free, adapter-free operator for architecture-agnostic 2D-to-3D lifting of foundation models.",
+          "PlaneCycle reuses the original pretrained 2D backbone by cyclically distributing spatial aggregation across orthogonal HW, DW, and DH planes throughout network depth, enabling progressive 3D fusion while preserving pretrained inductive biases."
         ],
         "provider": "gemini"
       }

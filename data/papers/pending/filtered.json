@@ -3,31 +3,32 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.05256v1",
-      "title": "Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum",
+      "id": "2603.06495v1",
+      "title": "COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics",
       "authors": [
-        "Shan Ning",
-        "Longtian Qiu",
-        "Xuming He"
+        "Kartik Sharma",
+        "Rakshit S. Trivedi"
       ],
-      "abstract": "Knowledge-Based Visual Question Answering (KB-VQA) requires models to answer questions about an image by integrating external knowledge, posing significant challenges due to noisy retrieval and the structured, encyclopedic nature of the knowledge base. These characteristics create a distributional gap from pretrained multimodal large language models (MLLMs), making effective reasoning and domain adaptation difficult in the post-training stage. In this work, we propose \\textit{Wiki-R1}, a data-generation-based curriculum reinforcement learning framework that systematically incentivizes reasoning in MLLMs for KB-VQA. Wiki-R1 constructs a sequence of training distributions aligned with the model's evolving capability, bridging the gap from pretraining to the KB-VQA target distribution. We introduce \\textit{controllable curriculum data generation}, which manipulates the retriever to produce samples at desired difficulty levels, and a \\textit{curriculum sampling strategy} that selects informative samples likely to yield non-zero advantages during RL updates. Sample difficulty is estimated using observed rewards and propagated to unobserved samples to guide learning. Experiments on two KB-VQA benchmarks, Encyclopedic VQA and InfoSeek, demonstrate that Wiki-R1 achieves new state-of-the-art results, improving accuracy from 35.5\\% to 37.1\\% on Encyclopedic VQA and from 40.1\\% to 44.1\\% on InfoSeek. The project page is available at https://artanic30.github.io/project_pages/WikiR1/.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
+      "abstract": "Activation steering methods enable inference-time control of large language model (LLM) behavior without retraining, but current approaches face a fundamental trade-off: sample-efficient methods suboptimally capture steering signals from labeled examples, while methods that better extract these signals require hundreds to thousands of examples. We introduce COLD-Steer, a training-free framework that steers LLM activations by approximating the representational changes that would result from gradient descent on in-context examples. Our key insight is that the effect of fine-tuning on a small set of examples can be efficiently approximated at inference time without actual parameter updates. We formalize this through two complementary approaches: (i) a unit kernel approximation method that updates the activations directly using gradients with respect to them, normalized across examples, and (ii) a finite-difference approximation requiring only two forward passes regardless of example count. Experiments across a variety of steering tasks and benchmarks demonstrate that COLD-Steer achieves upto 95% steering effectiveness while using 50 times fewer samples compared to the best baseline. COLD-Steer facilitates accommodating diverse perspectives without extensive demonstration data, which we validate through our experiments on pluralistic alignment tasks. Our framework opens new possibilities for adaptive, context-aware model control that can flexibly address varying loss-driven human preferences through principled approximation of learning dynamics rather than specialized training procedures.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.05256v1",
-        "pdf": "https://arxiv.org/pdf/2603.05256v1"
+        "paper": "http://arxiv.org/abs/2603.06495v1",
+        "pdf": "https://arxiv.org/pdf/2603.06495v1"
       },
-      "arxiv_id": "2603.05256v1",
-      "comment": "Accepted by ICLR 26, code and weights are publicly available",
+      "arxiv_id": "2603.06495v1",
+      "comment": "ICLR 2026. Code available at https://github.com/Ksartik/cold-steer",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.25,
+      "relevance_score": 5.15,
       "score_breakdown": {
-        "total_score": 5.25,
+        "total_score": 5.15,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -39,118 +40,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
           "score": 10.0,
           "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.05506v1",
-      "title": "FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning",
-      "authors": [
-        "Weijie Lyu",
-        "Ming-Hsuan Yang",
-        "Zhixin Shu"
-      ],
-      "abstract": "We introduce FaceCam, a system that generates video under customizable camera trajectories for monocular human portrait video input. Recent camera control approaches based on large video-generation models have shown promising progress but often exhibit geometric distortions and visual artifacts on portrait videos due to scale-ambiguous camera representations or 3D reconstruction errors. To overcome these limitations, we propose a face-tailored scale-aware representation for camera transformations that provides deterministic conditioning without relying on 3D priors. We train a video generation model on both multi-view studio captures and in-the-wild monocular videos, and introduce two camera-control data generation strategies: synthetic camera motion and multi-shot stitching, to exploit stationary training cameras while generalizing to dynamic, continuous camera trajectories at inference time. Experiments on Ava-256 dataset and diverse in-the-wild videos demonstrate that FaceCam achieves superior performance in camera controllability, visual quality, identity and motion preservation.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.05506v1",
-        "pdf": "https://arxiv.org/pdf/2603.05506v1"
-      },
-      "arxiv_id": "2603.05506v1",
-      "comment": "Accepted by CVPR 2026. Project page: https://weijielyu.github.io/FaceCam",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.0372881355932195,
-      "score_breakdown": {
-        "total_score": 5.04,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.05181v1",
-      "title": "Mario: Multimodal Graph Reasoning with Large Language Models",
-      "authors": [
-        "Yuanfu Sun",
-        "Kang Li",
-        "Pengkang Guo",
-        "Jiajin Liu",
-        "Qiaoyu Tan"
-      ],
-      "abstract": "Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing methods still rely on pretrained vision-language models (VLMs) to encode image-text pairs in isolation, ignoring the relational structure that real-world multimodal data naturally form. This motivates reasoning on multimodal graphs (MMGs), where each node has textual and visual attributes and edges provide structural cues. Enabling LLM-based reasoning on such heterogeneous multimodal signals while preserving graph topology introduces two key challenges: resolving weak cross-modal consistency and handling heterogeneous modality preference. To address this, we propose Mario, a unified framework that simultaneously resolves the two above challenges and enables effective LLM-based reasoning over MMGs. Mario consists of two innovative stages. Firstly, a graph-conditioned VLM design that jointly refines textual and visual features through fine-grained cross-modal contrastive learning guided by graph topology. Secondly, a modality-adaptive graph instruction tuning mechanism that organizes aligned multimodal features into graph-aware instruction views and employs a learnable router to surface, for each node and its neighborhood, the most informative modality configuration to the LLM. Extensive experiments across diverse MMG benchmarks demonstrate that Mario consistently outperforms state-of-the-art graph models in both supervised and zero-shot scenarios for node classification and link prediction. The code will be made available at https://github.com/sunyuanfu/Mario.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.05181v1",
-        "pdf": "https://arxiv.org/pdf/2603.05181v1"
-      },
-      "arxiv_id": "2603.05181v1",
-      "comment": "CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.9,
-      "score_breakdown": {
-        "total_score": 4.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -160,38 +55,94 @@
       }
     },
     {
-      "id": "2603.05330v1",
-      "title": "Dark3R: Learning Structure from Motion in the Dark",
+      "id": "2603.06572v1",
+      "title": "SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation",
       "authors": [
-        "Andrew Y Guo",
-        "Anagh Malik",
-        "SaiKiran Tedla",
-        "Yutong Dai",
-        "Yiqian Qin",
-        "Zach Salehe",
-        "Benjamin Attal",
-        "Sotiris Nousias",
-        "Kyros Kutulakos",
-        "David B. Lindell"
+        "Vishal Thengane",
+        "Zhaochong An",
+        "Tianjin Huang",
+        "Son Lam Phung",
+        "Abdesselam Bouzerdoum",
+        "Lu Yin",
+        "Na Zhao",
+        "Xiatian Zhu"
       ],
-      "abstract": "We introduce Dark3R, a framework for structure from motion in the dark that operates directly on raw images with signal-to-noise ratios (SNRs) below $-4$ dB -- a regime where conventional feature- and learning-based methods break down. Our key insight is to adapt large-scale 3D foundation models to extreme low-light conditions through a teacher--student distillation process, enabling robust feature matching and camera pose estimation in low light. Dark3R requires no 3D supervision; it is trained solely on noisy--clean raw image pairs, which can be either captured directly or synthesized using a simple Poisson--Gaussian noise model applied to well-exposed raw images. To train and evaluate our approach, we introduce a new, exposure-bracketed dataset that includes $\\sim$42,000 multi-view raw images with ground-truth 3D annotations, and we demonstrate that Dark3R achieves state-of-the-art structure from motion in the low-SNR regime. Further, we demonstrate state-of-the-art novel view synthesis in the dark using Dark3R's predicted poses and a coarse-to-fine radiance field optimization procedure.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
+      "abstract": "Incremental Few-Shot (IFS) segmentation aims to learn new categories over time from only a few annotations. Although widely studied in 2D, it remains underexplored for 3D point clouds. Existing methods suffer from catastrophic forgetting or fail to learn discriminative prototypes under sparse supervision, and often overlook a key cue: novel categories frequently appear as unlabelled background in base-training scenes. We introduce SCOPE (Scene-COntextualised Prototype Enrichment), a plug-and-play background-guided prototype enrichment framework that integrates with any prototype-based 3D segmentation method. After base training, a class-agnostic segmentation model extracts high-confidence pseudo-instances from background regions to build a prototype pool. When novel classes arrive with few labelled samples, relevant background prototypes are retrieved and fused with few-shot prototypes to form enriched representations without retraining the backbone or adding parameters. Experiments on ScanNet and S3DIS show that SCOPE achieves SOTA performance, improving novel-class IoU by up to 6.98% and 3.61%, and mean IoU by 2.25% and 1.70%, respectively, while maintaining low forgetting. Code is available https://github.com/Surrey-UP-Lab/SCOPE.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.05330v1",
-        "pdf": "https://arxiv.org/pdf/2603.05330v1"
+        "paper": "http://arxiv.org/abs/2603.06572v1",
+        "pdf": "https://arxiv.org/pdf/2603.06572v1"
       },
-      "arxiv_id": "2603.05330v1",
-      "comment": "CVPR 2026, Project Page: https://andrewguo.com/pub/dark3r",
+      "arxiv_id": "2603.06572v1",
+      "comment": "Accepted at CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.699999999999999,
+      "relevance_score": 4.853389830508474,
       "score_breakdown": {
-        "total_score": 4.7,
+        "total_score": 4.85,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.06242v1",
+      "title": "DC-Merge: Improving Model Merging with Directional Consistency",
+      "authors": [
+        "Han-Chen Zhang",
+        "Zi-Hao Zhou",
+        "Mao-Lin Luo",
+        "Shimin Di",
+        "Min-Ling Zhang",
+        "Tong Wei"
+      ],
+      "abstract": "Model merging aims to integrate multiple task-adapted models into a unified model that preserves the knowledge of each task. In this paper, we identify that the key to this knowledge retention lies in maintaining the directional consistency of singular spaces between merged multi-task vector and individual task vectors. However, this consistency is frequently compromised by two issues: i) an imbalanced energy distribution within task vectors, where a small fraction of singular values dominate the total energy, leading to the neglect of semantically important but weaker components upon merging, and ii) the geometric inconsistency of task vectors in parameter space, which causes direct merging to distort their underlying directional geometry. To address these challenges, we propose DC-Merge, a method for directional-consistent model merging. It first balances the energy distribution of each task vector by smoothing its singular values, ensuring all knowledge components are adequately represented. These energy-balanced vectors are then projected onto a shared orthogonal subspace to align their directional geometries with minimal reconstruction error. Finally, the aligned vectors are aggregated in the shared orthogonal subspace and projected back to the original parameter space. Extensive experiments on vision and vision-language benchmarks show that DC-Merge consistently achieves state-of-the-art performance in both full fine-tuning and LoRA settings. The implementation code is available at https://github.com/Tobeginwith/DC-Merge.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.06242v1",
+        "pdf": "https://arxiv.org/pdf/2603.06242v1"
+      },
+      "arxiv_id": "2603.06242v1",
+      "comment": "Accepted by CVPR 2026 Main Track",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.75,
+      "score_breakdown": {
+        "total_score": 4.75,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -212,92 +163,38 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2603.05280v1",
-      "title": "Layer by layer, module by module: Choose both for optimal OOD probing of ViT",
+      "id": "2603.06366v1",
+      "title": "OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis",
       "authors": [
-        "Ambroise Odonnat",
-        "Vasilii Feofanov",
-        "Laetitia Chapel",
-        "Romain Tavenard",
-        "Ievgen Redko"
+        "Yuxuan Fan",
+        "Jing Hao",
+        "Hong Chen",
+        "Jiahao Bao",
+        "Yihua Shao",
+        "Yuci Liang",
+        "Kuo Feng Hung",
+        "Hao Tang"
       ],
-      "abstract": "Recent studies have observed that intermediate layers of foundation models often yield more discriminative representations than the final layer. While initially attributed to autoregressive pretraining, this phenomenon has also been identified in models trained via supervised and discriminative self-supervised objectives. In this paper, we conduct a comprehensive study to analyze the behavior of intermediate layers in pretrained vision transformers. Through extensive linear probing experiments across a diverse set of image classification benchmarks, we find that distribution shift between pretraining and downstream data is the primary cause of performance degradation in deeper layers. Furthermore, we perform a fine-grained analysis at the module level. Our findings reveal that standard probing of transformer block outputs is suboptimal; instead, probing the activation within the feedforward network yields the best performance under significant distribution shift, whereas the normalized output of the multi-head self-attention module is optimal when the shift is weak.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
+      "abstract": "Panoramic dental radiographs require fine-grained spatial reasoning, bilateral symmetry understanding, and multi-step diagnostic verification, yet existing vision-language models operate under a static single-pass paradigm that limits their clinical reliability. In this paper, we introduce OralGPT-Plus, an agentic vision-language model designed to perform iterative and symmetry-aware diagnostic reasoning for panoramic dental radiograph analysis. To support this paradigm, we construct DentalProbe, a five-thousand-image dataset with expert-curated diagnostic trajectories that provide structured supervision for localized inspection and contralateral comparison. We further develop a Reinspection-driven reinforcement learning framework that encourages clinically meaningful re-examination and stabilizes long-horizon reasoning with rubric-based reward and conditioned diagnostic-driven reward. In parallel, we present MMOral-X, the first benchmark for holistic panoramic diagnosis, containing 300 open-ended questions and region-level annotations across multiple difficulty levels. OralGPT-Plus demonstrates consistent and reliable improvements over strong baselines on MMOral-X and established panoramic benchmarks, indicating the effectiveness of interactive and symmetry-informed reasoning. Our work highlights the value of agentic modeling for dental imaging and provides a foundation for future research in clinically aligned panoramic radiograph analysis.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
       "categories": [
-        "cs.CV",
-        "cs.LG",
-        "stat.ML"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.05280v1",
-        "pdf": "https://arxiv.org/pdf/2603.05280v1"
+        "paper": "http://arxiv.org/abs/2603.06366v1",
+        "pdf": "https://arxiv.org/pdf/2603.06366v1"
       },
-      "arxiv_id": "2603.05280v1",
-      "comment": "Accepted at ICLR 2026 CAO Workshop",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.671186440677966,
-      "score_breakdown": {
-        "total_score": 4.67,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.05399v1",
-      "title": "Judge Reliability Harness: Stress Testing the Reliability of LLM Judges",
-      "authors": [
-        "Sunishchal Dev",
-        "Andrew Sloan",
-        "Joshua Kavner",
-        "Nicholas Kong",
-        "Morgan Sandler"
-      ],
-      "abstract": "We present the Judge Reliability Harness, an open source library for constructing validation suites that test the reliability of LLM judges. As LLM based scoring is widely deployed in AI benchmarks, more tooling is needed to efficiently assess the reliability of these methods. Given a benchmark dataset and an LLM judge configuration, the harness generates reliability tests that evaluate both binary judgment accuracy and ordinal grading performance for free-response and agentic task formats. We evaluate four state-of-the-art judges across four benchmarks spanning safety, persuasion, misuse, and agentic behavior, and find meaningful variation in performance across models and perturbation types, highlighting opportunities to improve the robustness of LLM judges. No judge that we evaluated is uniformly reliable across benchmarks using our harness. For example, our preliminary experiments on judges revealed consistency issues as measured by accuracy in judging another LLM's ability to complete a task due to simple text formatting changes, paraphrasing, changes in verbosity, and flipping the ground truth label in LLM-produced responses. The code for this tool is available at: https://github.com/RANDCorporation/judge-reliability-harness",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.05399v1",
-        "pdf": "https://arxiv.org/pdf/2603.05399v1"
-      },
-      "arxiv_id": "2603.05399v1",
-      "comment": "Accepted at Agents in the Wild: Safety, Security, and Beyond Workshop at ICLR 2026 - April 26, 2026, Rio de Janeiro, Brazil",
-      "journal_ref": "",
+      "arxiv_id": "2603.06366v1",
+      "comment": "34 pages, 24 figures, conference",
+      "journal_ref": "CVPR 2026",
       "has_code": false,
       "relevance_score": 4.65,
       "score_breakdown": {
@@ -309,7 +206,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -328,137 +225,29 @@
       }
     },
     {
-      "id": "2603.05473v1",
-      "title": "Towards 3D Scene Understanding of Gas Plumes in LWIR Hyperspectral Images Using Neural Radiance Fields",
+      "id": "2603.06260v1",
+      "title": "Learning to Solve Orienteering Problem with Time Windows and Variable Profits",
       "authors": [
-        "Scout Jarman",
-        "Zigfried Hampel-Arias",
-        "Adra Carr",
-        "Kevin R. Moon"
+        "Songqun Gao",
+        "Zanxi Ruan",
+        "Patrick Floor",
+        "Marco Roveri",
+        "Luigi Palopoli",
+        "Daniele Fontanelli"
       ],
-      "abstract": "Hyperspectral images (HSI) have many applications, ranging from environmental monitoring to national security, and can be used for material detection and identification. Longwave infrared (LWIR) HSI can be used for gas plume detection and analysis. Oftentimes, only a few images of a scene of interest are available and are analyzed individually. The ability to combine information from multiple images into a single, cohesive representation could enhance analysis by providing more context on the scene's geometry and spectral properties. Neural radiance fields (NeRFs) create a latent neural representation of volumetric scene properties that enable novel-view rendering and geometry reconstruction, offering a promising avenue for hyperspectral 3D scene reconstruction. We explore the possibility of using NeRFs to create 3D scene reconstructions from LWIR HSI and demonstrate that the model can be used for the basic downstream analysis task of gas plume detection. The physics-based DIRSIG software suite was used to generate a synthetic multi-view LWIR HSI dataset of a simple facility with a strong sulfur hexafluoride gas plume. Our method, built on the standard Mip-NeRF architecture, combines state-of-the-art methods for hyperspectral NeRFs and sparse-view NeRFs, along with a novel adaptive weighted MSE loss. Our final NeRF method requires around 50% fewer training images than the standard Mip-NeRF and achieves an average PSNR of 39.8 dB with as few as 30 training images. Gas plume detection applied to NeRF-rendered test images using the adaptive coherence estimator achieves an average AUC of 0.821 when compared with detection masks generated from ground-truth test images.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.05473v1",
-        "pdf": "https://arxiv.org/pdf/2603.05473v1"
-      },
-      "arxiv_id": "2603.05473v1",
-      "comment": "This manuscript was submitted to SPIE JARS and is under review. Code and Data can be found at https://github.com/lanl/HSI-Nerfstudio and https://zenodo.org/records/18626884 respectively. Video 1 and Video 2 can be found at https://github.com/lanl/HSI-Nerfstudio/blob/main/renders/paper/grid_Falsecolor.mp4 and https://github.com/lanl/HSI-Nerfstudio/blob/main/renders/paper/grid_ACE.mp4 respectively",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.611864406779661,
-      "score_breakdown": {
-        "total_score": 4.61,
-        "field_match": {
-          "score": 1.78,
-          "matches": [
-            "volumetric",
-            "neural radiance",
-            "nerf"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.05483v1",
-      "title": "SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis",
-      "authors": [
-        "Shahriar Noroozizadeh",
-        "Xiaobin Shen",
-        "Jeremy C. Weiss",
-        "George H. Chen"
-      ],
-      "abstract": "Estimating heterogeneous treatment effects (HTEs) from right-censored survival data is critical in high-stakes applications such as precision medicine and individualized policy-making. Yet, the survival analysis setting poses unique challenges for HTE estimation due to censoring, unobserved counterfactuals, and complex identification assumptions. Despite recent advances, from Causal Survival Forests to survival meta-learners and outcome imputation approaches, evaluation practices remain fragmented and inconsistent. We introduce SurvHTE-Bench, the first comprehensive benchmark for HTE estimation with censored outcomes. The benchmark spans (i) a modular suite of synthetic datasets with known ground truth, systematically varying causal assumptions and survival dynamics, (ii) semi-synthetic datasets that pair real-world covariates with simulated treatments and outcomes, and (iii) real-world datasets from a twin study (with known ground truth) and from an HIV clinical trial. Across synthetic, semi-synthetic, and real-world settings, we provide the first rigorous comparison of survival HTE methods under diverse conditions and realistic assumption violations. SurvHTE-Bench establishes a foundation for fair, reproducible, and extensible evaluation of causal survival methods. The data and code of our benchmark are available at: https://github.com/Shahriarnz14/SurvHTE-Bench .",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
+      "abstract": "The orienteering problem with time windows and variable profits (OPTWVP) is common in many real-world applications and involves continuous time variables. Current approaches fail to develop an efficient solver for this orienteering problem variant with discrete and continuous variables. In this paper, we propose a learning-based two-stage DEcoupled discrete-Continuous optimization with Service-time-guided Trajectory (DeCoST), which aims to effectively decouple the discrete and continuous decision variables in the OPTWVP problem, while enabling efficient and learnable coordination between them. In the first stage, a parallel decoding structure is employed to predict the path and the initial service time allocation. The second stage optimizes the service times through a linear programming (LP) formulation and provides a long-horizon learning of structure estimation. We rigorously prove the global optimality of the second-stage solution. Experiments on OPTWVP instances demonstrate that DeCoST outperforms both state-of-the-art constructive solvers and the latest meta-heuristic algorithms in terms of solution quality and computational efficiency, achieving up to 6.6x inference speedup on instances with fewer than 500 nodes. Moreover, the proposed framework is compatible with various constructive solvers and consistently enhances the solution quality for OPTWVP.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
       "categories": [
         "cs.LG",
-        "cs.AI",
-        "stat.ML"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.05483v1",
-        "pdf": "https://arxiv.org/pdf/2603.05483v1"
+        "paper": "http://arxiv.org/abs/2603.06260v1",
+        "pdf": "https://arxiv.org/pdf/2603.06260v1"
       },
-      "arxiv_id": "2603.05483v1",
-      "comment": "The Fourteenth International Conference on Learning Representations (ICLR 2026)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.05454v1",
-      "title": "Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes",
-      "authors": [
-        "Pengxiang Li",
-        "Joey Tsai",
-        "Hongwei Xue",
-        "Kunyu Shi",
-        "Shilin Yan"
-      ],
-      "abstract": "Diffusion Language Models (DLMs) promise highly parallel text generation, yet their practical inference speed is often bottlenecked by suboptimal decoding schedulers. Standard approaches rely on 'scattered acceptance'-committing high confidence tokens at disjoint positions throughout the sequence. This approach inadvertently fractures the Key-Value (KV) cache, destroys memory locality, and forces the model into costly, repeated repairs across unstable token boundaries. To resolve this, we present the Longest Stable Prefix (LSP) scheduler, a training-free and model-agnostic inference paradigm based on monolithic prefix absorption. In each denoising step, LSP evaluates token stability via a single forward pass, dynamically identifies a contiguous left-aligned block of stable predictions, and snaps its boundary to natural linguistic or structural delimiters before an atomic commitment. This prefix-first topology yields dual benefits: systemically, it converts fragmented KV cache updates into efficient, contiguous appends; algorithmically, it preserves bidirectional lookahead over a geometrically shrinking active suffix, drastically reducing token flip rates and denoiser calls. Extensive evaluations on LLaDA-8B and Dream-7B demonstrate that LSP accelerates inference by up to 3.4x across rigorous benchmarks including mathematical reasoning, code generation, multilingual (CJK) tasks, and creative writing while matching or slightly improving output quality. By fundamentally restructuring the commitment topology, LSP bridges the gap between the theoretical parallelism of DLMs and practical hardware efficiency.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.05454v1",
-        "pdf": "https://arxiv.org/pdf/2603.05454v1"
-      },
-      "arxiv_id": "2603.05454v1",
+      "arxiv_id": "2603.06260v1",
       "comment": "Accepted at ICLR 2026",
       "journal_ref": "",
       "has_code": false,
@@ -491,34 +280,90 @@
       }
     },
     {
-      "id": "2603.05255v1",
-      "title": "CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception",
+      "id": "2603.06557v1",
+      "title": "Causal Interpretation of Neural Network Computations with Contribution Decomposition",
       "authors": [
-        "Gong Chen",
-        "Chaokun Zhang",
-        "Tao Tang",
-        "Pengcheng Lv",
-        "Feng Li",
-        "Xin Xie"
+        "Joshua Brendan Melander",
+        "Zaki Alaoui",
+        "Shenghua Liu",
+        "Surya Ganguli",
+        "Stephen A. Baccus"
       ],
-      "abstract": "Cooperative perception significantly enhances scene understanding by integrating complementary information from diverse agents. However, existing research often overlooks critical challenges inherent in real-world multi-source data integration, specifically high temporal latency and multi-source noise. To address these practical limitations, we propose Collaborative Alignment and Transformation Network (CATNet), an adaptive compensation framework that resolves temporal latency and noise interference in multi-agent systems. Our key innovations can be summarized in three aspects. First, we introduce a Spatio-Temporal Recurrent Synchronization (STSync) that aligns asynchronous feature streams via adjacent-frame differential modeling, establishing a temporal-spatially unified representation space. Second, we design a Dual-Branch Wavelet Enhanced Denoiser (WTDen) that suppresses global noise and reconstructs localized feature distortions within aligned representations. Third, we construct an Adaptive Feature Selector (AdpSel) that dynamically focuses on critical perceptual features for robust fusion. Extensive experiments on multiple datasets demonstrate that CATNet consistently outperforms existing methods under complex traffic conditions, proving its superior robustness and adaptability.",
-      "published": "2026-03-05",
-      "updated": "2026-03-05",
+      "abstract": "Understanding how neural networks transform inputs into outputs is crucial for interpreting and manipulating their behavior. Most existing approaches analyze internal representations by identifying hidden-layer activation patterns correlated with human-interpretable concepts. Here we take a direct approach to examine how hidden neurons act to drive network outputs. We introduce CODEC (Contribution Decomposition), a method that uses sparse autoencoders to decompose network behavior into sparse motifs of hidden-neuron contributions, revealing causal processes that cannot be determined by analyzing activations alone. Applying CODEC to benchmark image-classification networks, we find that contributions grow in sparsity and dimensionality across layers and, unexpectedly, that they progressively decorrelate positive and negative effects on network outputs. We further show that decomposing contributions into sparse modes enables greater control and interpretation of intermediate layers, supporting both causal manipulations of network output and human-interpretable visualizations of distinct image components that combine to drive that output. Finally, by analyzing state-of-the-art models of neural activity in the vertebrate retina, we demonstrate that CODEC uncovers combinatorial actions of model interneurons and identifies the sources of dynamic receptive fields. Overall, CODEC provides a rich and interpretable framework for understanding how nonlinear computations evolve across hierarchical layers, establishing contribution modes as an informative unit of analysis for mechanistic insights into artificial neural networks.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "q-bio.NC"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.06557v1",
+        "pdf": "https://arxiv.org/pdf/2603.06557v1"
+      },
+      "arxiv_id": "2603.06557v1",
+      "comment": "32 pages, 19 figures. ICLR 2026 poster",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.06408v1",
+      "title": "Physical Simulator In-the-Loop Video Generation",
+      "authors": [
+        "Lin Geng Foo",
+        "Mark He Huang",
+        "Alexandros Lattas",
+        "Stylianos Moschoglou",
+        "Thabo Beeler",
+        "Christian Theobalt"
+      ],
+      "abstract": "Recent advances in diffusion-based video generation have achieved remarkable visual realism but still struggle to obey basic physical laws such as gravity, inertia, and collision. Generated objects often move inconsistently across frames, exhibit implausible dynamics, or violate physical constraints, limiting the realism and reliability of AI-generated videos. We address this gap by introducing Physical Simulator In-the-loop Video Generation (PSIVG), a novel framework that integrates a physical simulator into the video diffusion process. Starting from a template video generated by a pre-trained diffusion model, PSIVG reconstructs the 4D scene and foreground object meshes, initializes them within a physical simulator, and generates physically consistent trajectories. These simulated trajectories are then used to guide the video generator toward spatio-temporally physically coherent motion. To further improve texture consistency during object movement, we propose a Test-Time Texture Consistency Optimization (TTCO) technique that adapts text and feature embeddings based on pixel correspondences from the simulator. Comprehensive experiments demonstrate that PSIVG produces videos that better adhere to real-world physics while preserving visual quality and diversity. Project Page: https://vcai.mpi-inf.mpg.de/projects/PSIVG/",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.05255v1",
-        "pdf": "https://arxiv.org/pdf/2603.05255v1"
+        "paper": "http://arxiv.org/abs/2603.06408v1",
+        "pdf": "https://arxiv.org/pdf/2603.06408v1"
       },
-      "arxiv_id": "2603.05255v1",
-      "comment": "Accepted by CVPR26",
+      "arxiv_id": "2603.06408v1",
+      "comment": "Accepted to CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.5,
+      "relevance_score": 4.3999999999999995,
       "score_breakdown": {
-        "total_score": 4.5,
+        "total_score": 4.4,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -539,7 +384,175 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.06300v1",
+      "title": "3D CBCT Artefact Removal Using Perpendicular Score-Based Diffusion Models",
+      "authors": [
+        "Susanne Schaub",
+        "Florentin Bieder",
+        "Matheus L. Oliveira",
+        "Yulan Wang",
+        "Dorothea Dagassan-Berndt",
+        "Michael M. Bornstein",
+        "Philippe C. Cattin"
+      ],
+      "abstract": "Cone-beam computed tomography (CBCT) is a widely used 3D imaging technique in dentistry, offering high-resolution images while minimising radiation exposure for patients. However, CBCT is highly susceptible to artefacts arising from high-density objects such as dental implants, which can compromise image quality and diagnostic accuracy. To reduce artefacts, implant inpainting in the sequence of projections plays a crucial role in many artefact reduction approaches. Recently, diffusion models have achieved state-of-the-art results in image generation and have widely been applied to image inpainting tasks. However, to our knowledge, existing diffusion-based methods for implant inpainting operate on independent 2D projections. This approach neglects the correlations among individual projections, resulting in inconsistencies in the reconstructed images. To address this, we propose a 3D dental implant inpainting approach based on perpendicular score-based diffusion models, each trained in two different planes and operating in the projection domain. The 3D distribution of the projection series is modelled by combining the two 2D score-based diffusion models in the sampling scheme. Our results demonstrate the method's effectiveness in producing high-quality, artefact-reduced 3D CBCT images, making it a promising solution for improving clinical imaging.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.06300v1",
+        "pdf": "https://arxiv.org/pdf/2603.06300v1"
+      },
+      "arxiv_id": "2603.06300v1",
+      "comment": "Accepted at DGM4MICCAI 2025",
+      "journal_ref": "Lecture Notes in Computer Science, vol. 16128, Springer, 2025, pp. 244-253",
+      "has_code": false,
+      "relevance_score": 4.3999999999999995,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.06508v1",
+      "title": "When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models",
+      "authors": [
+        "Qitong Wang",
+        "Haoran Dai",
+        "Haotian Zhang",
+        "Christopher Rasmussen",
+        "Binghui Wang"
+      ],
+      "abstract": "While diffusion models have revolutionized visual content generation, their rapid adoption has underscored the critical need to investigate vulnerabilities, e.g., to backdoor attacks. In multimodal diffusion models, it is natural to expect that attacking multiple modalities simultaneously (e.g., text and image) would yield complementary effects and strengthen the overall backdoor. In this paper, we challenge this assumption by investigating the phenomenon of Backdoor Modality Collapse, a scenario where the backdoor mechanism degenerates to rely predominantly on a subset of modalities, rendering others redundant. To rigorously quantify this behavior, we introduce two novel metrics: Trigger Modality Attribution (TMA) and Cross-Trigger Interaction (CTI). Through extensive experiments across diverse training configurations in multimodal conditional diffusion, we consistently observe a ``winner-takes-all'' dynamic in backdoor behavior. Our results reveal that (1) attacks often collapse into subset-modality dominance, and (2) cross-modal interaction is negligible or even negative, contradicting the intuition of synergistic vulnerability. These findings highlight a critical blind spot in current assessments, suggesting that high attack success rates often mask a fundamental reliance on a subset of modalities. This establishes a principled foundation for mechanistic analysis and future defense development.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.06508v1",
+        "pdf": "https://arxiv.org/pdf/2603.06508v1"
+      },
+      "arxiv_id": "2603.06508v1",
+      "comment": "Accepted to the ICLR 2026 Workshop on Principled Design for Trustworthy AI. The first two authors contributed equally",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.06279v1",
+      "title": "Can we Trust Unreliable Voxels? Exploring 3D Semantic Occupancy Prediction under Label Noise",
+      "authors": [
+        "Wenxin Li",
+        "Kunyu Peng",
+        "Di Wen",
+        "Junwei Zheng",
+        "Jiale Wei",
+        "Mengfei Duan",
+        "Yuheng Zhang",
+        "Rui Fan",
+        "Kailun Yang"
+      ],
+      "abstract": "3D semantic occupancy prediction is a cornerstone of robotic perception, yet real-world voxel annotations are inherently corrupted by structural artifacts and dynamic trailing effects. This raises a critical but underexplored question: can autonomous systems safely rely on such unreliable occupancy supervision? To systematically investigate this issue, we establish OccNL, the first benchmark dedicated to 3D occupancy under occupancy-asymmetric and dynamic trailing noise. Our analysis reveals a fundamental domain gap: state-of-the-art 2D label noise learning strategies collapse catastrophically in sparse 3D voxel spaces, exposing a critical vulnerability in existing paradigms. To address this challenge, we propose DPR-Occ, a principled label noise-robust framework that constructs reliable supervision through dual-source partial label reasoning. By synergizing temporal model memory with representation-level structural affinity, DPR-Occ dynamically expands and prunes candidate label sets to preserve true semantics while suppressing noise propagation. Extensive experiments on SemanticKITTI demonstrate that DPR-Occ prevents geometric and semantic collapse under extreme corruption. Notably, even at 90% label noise, our method achieves significant performance gains (up to 2.57% mIoU and 13.91% IoU) over existing label noise learning baselines adapted to the 3D occupancy prediction task. By bridging label noise learning and 3D perception, OccNL and DPR-Occ provide a reliable foundation for safety-critical robotic perception in dynamic environments. The benchmark and source code will be made publicly available at https://github.com/mylwx/OccNL.",
+      "published": "2026-03-06",
+      "updated": "2026-03-06",
+      "categories": [
+        "cs.CV",
+        "cs.RO",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.06279v1",
+        "pdf": "https://arxiv.org/pdf/2603.06279v1"
+      },
+      "arxiv_id": "2603.06279v1",
+      "comment": "The benchmark and source code will be made publicly available at https://github.com/mylwx/OccNL",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.199999999999999,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
           "weight": 0.1
         }
       }

@@ -3,32 +3,33 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.06495v1",
-      "title": "COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics",
+      "id": "2603.08589v1",
+      "title": "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing",
       "authors": [
-        "Kartik Sharma",
-        "Rakshit S. Trivedi"
+        "Yucheng Wang",
+        "Zedong Wang",
+        "Yuetong Wu",
+        "Yue Ma",
+        "Dan Xu"
       ],
-      "abstract": "Activation steering methods enable inference-time control of large language model (LLM) behavior without retraining, but current approaches face a fundamental trade-off: sample-efficient methods suboptimally capture steering signals from labeled examples, while methods that better extract these signals require hundreds to thousands of examples. We introduce COLD-Steer, a training-free framework that steers LLM activations by approximating the representational changes that would result from gradient descent on in-context examples. Our key insight is that the effect of fine-tuning on a small set of examples can be efficiently approximated at inference time without actual parameter updates. We formalize this through two complementary approaches: (i) a unit kernel approximation method that updates the activations directly using gradients with respect to them, normalized across examples, and (ii) a finite-difference approximation requiring only two forward passes regardless of example count. Experiments across a variety of steering tasks and benchmarks demonstrate that COLD-Steer achieves upto 95% steering effectiveness while using 50 times fewer samples compared to the best baseline. COLD-Steer facilitates accommodating diverse perspectives without extensive demonstration data, which we validate through our experiments on pluralistic alignment tasks. Our framework opens new possibilities for adaptive, context-aware model control that can flexibly address varying loss-driven human preferences through principled approximation of learning dynamics rather than specialized training procedures.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
+      "abstract": "Unified diffusion editors often rely on a fixed, shared backbone for diverse tasks, suffering from task interference and poor adaptation to heterogeneous demands (e.g., local vs global, semantic vs photometric). In particular, prevalent ControlNet and OmniControl variants combine multiple conditioning signals (e.g., text, mask, reference) via static concatenation or additive adapters which cannot dynamically prioritize or suppress conflicting modalities, thus resulting in artifacts like color bleeding across mask boundaries, identity or style drift, and unpredictable behavior under multi-condition inputs. To address this, we propose Condition-Aware Routing of Experts (CARE-Edit) that aligns model computation with specific editing competencies. At its core, a lightweight latent-attention router assigns encoded diffusion tokens to four specialized experts--Text, Mask, Reference, and Base--based on multi-modal conditions and diffusion timesteps: (i) a Mask Repaint module first refines coarse user-defined masks for precise spatial guidance; (ii) the router applies sparse top-K selection to dynamically allocate computation to the most relevant experts; (iii) a Latent Mixture module subsequently fuses expert outputs, coherently integrating semantic, spatial, and stylistic information to the base images. Experiments validate CARE-Edit's strong performance on contextual editing tasks, including erasure, replacement, text-driven edits, and style transfer. Empirical analysis further reveals task-specific behavior of specialized experts, showcasing the importance of dynamic, condition-aware processing to mitigate multi-condition conflicts.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
       "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.06495v1",
-        "pdf": "https://arxiv.org/pdf/2603.06495v1"
+        "paper": "http://arxiv.org/abs/2603.08589v1",
+        "pdf": "https://arxiv.org/pdf/2603.08589v1"
       },
-      "arxiv_id": "2603.06495v1",
-      "comment": "ICLR 2026. Code available at https://github.com/Ksartik/cold-steer",
+      "arxiv_id": "2603.08589v1",
+      "comment": "Accepted by CVPR 2026. Project page: https://care-edit.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.15,
+      "relevance_score": 5.05,
       "score_breakdown": {
-        "total_score": 5.15,
+        "total_score": 5.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -36,7 +37,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -49,173 +50,56 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.06572v1",
-      "title": "SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation",
-      "authors": [
-        "Vishal Thengane",
-        "Zhaochong An",
-        "Tianjin Huang",
-        "Son Lam Phung",
-        "Abdesselam Bouzerdoum",
-        "Lu Yin",
-        "Na Zhao",
-        "Xiatian Zhu"
-      ],
-      "abstract": "Incremental Few-Shot (IFS) segmentation aims to learn new categories over time from only a few annotations. Although widely studied in 2D, it remains underexplored for 3D point clouds. Existing methods suffer from catastrophic forgetting or fail to learn discriminative prototypes under sparse supervision, and often overlook a key cue: novel categories frequently appear as unlabelled background in base-training scenes. We introduce SCOPE (Scene-COntextualised Prototype Enrichment), a plug-and-play background-guided prototype enrichment framework that integrates with any prototype-based 3D segmentation method. After base training, a class-agnostic segmentation model extracts high-confidence pseudo-instances from background regions to build a prototype pool. When novel classes arrive with few labelled samples, relevant background prototypes are retrieved and fused with few-shot prototypes to form enriched representations without retraining the backbone or adding parameters. Experiments on ScanNet and S3DIS show that SCOPE achieves SOTA performance, improving novel-class IoU by up to 6.98% and 3.61%, and mean IoU by 2.25% and 1.70%, respectively, while maintaining low forgetting. Code is available https://github.com/Surrey-UP-Lab/SCOPE.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.06572v1",
-        "pdf": "https://arxiv.org/pdf/2603.06572v1"
-      },
-      "arxiv_id": "2603.06572v1",
-      "comment": "Accepted at CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.853389830508474,
-      "score_breakdown": {
-        "total_score": 4.85,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2603.06242v1",
-      "title": "DC-Merge: Improving Model Merging with Directional Consistency",
+      "id": "2603.08661v1",
+      "title": "ImprovedGS+: A High-Performance C++/CUDA Re-Implementation Strategy for 3D Gaussian Splatting",
       "authors": [
-        "Han-Chen Zhang",
-        "Zi-Hao Zhou",
-        "Mao-Lin Luo",
-        "Shimin Di",
-        "Min-Ling Zhang",
-        "Tong Wei"
+        "Jordi Muñoz Vicente"
       ],
-      "abstract": "Model merging aims to integrate multiple task-adapted models into a unified model that preserves the knowledge of each task. In this paper, we identify that the key to this knowledge retention lies in maintaining the directional consistency of singular spaces between merged multi-task vector and individual task vectors. However, this consistency is frequently compromised by two issues: i) an imbalanced energy distribution within task vectors, where a small fraction of singular values dominate the total energy, leading to the neglect of semantically important but weaker components upon merging, and ii) the geometric inconsistency of task vectors in parameter space, which causes direct merging to distort their underlying directional geometry. To address these challenges, we propose DC-Merge, a method for directional-consistent model merging. It first balances the energy distribution of each task vector by smoothing its singular values, ensuring all knowledge components are adequately represented. These energy-balanced vectors are then projected onto a shared orthogonal subspace to align their directional geometries with minimal reconstruction error. Finally, the aligned vectors are aggregated in the shared orthogonal subspace and projected back to the original parameter space. Extensive experiments on vision and vision-language benchmarks show that DC-Merge consistently achieves state-of-the-art performance in both full fine-tuning and LoRA settings. The implementation code is available at https://github.com/Tobeginwith/DC-Merge.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
-      "categories": [
-        "cs.LG",
-        "cs.CV"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.06242v1",
-        "pdf": "https://arxiv.org/pdf/2603.06242v1"
-      },
-      "arxiv_id": "2603.06242v1",
-      "comment": "Accepted by CVPR 2026 Main Track",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.75,
-      "score_breakdown": {
-        "total_score": 4.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.06366v1",
-      "title": "OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis",
-      "authors": [
-        "Yuxuan Fan",
-        "Jing Hao",
-        "Hong Chen",
-        "Jiahao Bao",
-        "Yihua Shao",
-        "Yuci Liang",
-        "Kuo Feng Hung",
-        "Hao Tang"
-      ],
-      "abstract": "Panoramic dental radiographs require fine-grained spatial reasoning, bilateral symmetry understanding, and multi-step diagnostic verification, yet existing vision-language models operate under a static single-pass paradigm that limits their clinical reliability. In this paper, we introduce OralGPT-Plus, an agentic vision-language model designed to perform iterative and symmetry-aware diagnostic reasoning for panoramic dental radiograph analysis. To support this paradigm, we construct DentalProbe, a five-thousand-image dataset with expert-curated diagnostic trajectories that provide structured supervision for localized inspection and contralateral comparison. We further develop a Reinspection-driven reinforcement learning framework that encourages clinically meaningful re-examination and stabilizes long-horizon reasoning with rubric-based reward and conditioned diagnostic-driven reward. In parallel, we present MMOral-X, the first benchmark for holistic panoramic diagnosis, containing 300 open-ended questions and region-level annotations across multiple difficulty levels. OralGPT-Plus demonstrates consistent and reliable improvements over strong baselines on MMOral-X and established panoramic benchmarks, indicating the effectiveness of interactive and symmetry-informed reasoning. Our work highlights the value of agentic modeling for dental imaging and provides a foundation for future research in clinically aligned panoramic radiograph analysis.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
+      "abstract": "Recent advancements in 3D Gaussian Splatting (3DGS) have shifted the focus toward balancing reconstruction fidelity with computational efficiency. In this work, we propose ImprovedGS+, a high-performance, low-level reinvention of the ImprovedGS strategy, implemented natively within the LichtFeld-Studio framework. By transitioning from high-level Python logic to hardware-optimized C++/CUDA kernels, we achieve a significant reduction in host-device synchronization and training latency. Our implementation introduces a Long-Axis-Split (LAS) CUDA kernel, custom Laplacian-based importance kernels with Non-Maximum Suppression (NMS) for edge scores, and an adaptive Exponential Scale Scheduler. Experimental results on the Mip-NeRF360 dataset demonstrate that ImprovedGS+ establishes a new Pareto-optimal front for scene reconstruction. Our 1M-budget variant outperforms the state-of-the-art MCMC baseline by achieving a 26.8% reduction in training time (saving 17 minutes per session) and utilizing 13.3% fewer Gaussians while maintaining superior visual quality. Furthermore, our full variant demonstrates a 1.28 dB PSNR increase over the ADC baseline with a 38.4% reduction in parametric complexity. These results validate ImprovedGS+ as a scalable, high-speed solution that upholds the core pillars of Speed, Quality, and Usability within the LichtFeld-Studio ecosystem.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.06366v1",
-        "pdf": "https://arxiv.org/pdf/2603.06366v1"
+        "paper": "http://arxiv.org/abs/2603.08661v1",
+        "pdf": "https://arxiv.org/pdf/2603.08661v1"
       },
-      "arxiv_id": "2603.06366v1",
-      "comment": "34 pages, 24 figures, conference",
-      "journal_ref": "CVPR 2026",
-      "has_code": false,
-      "relevance_score": 4.65,
+      "arxiv_id": "2603.08661v1",
+      "comment": "6 pages, 1 figure. Technical Report. This work introduces ImprovedGS+, a library-free C++/CUDA implementation for 3D Gaussian Splatting within the LichtFeld-Studio framework. Source code available at https://github.com/jordizv/ImprovedGS-Plus",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.865254237288136,
       "score_breakdown": {
-        "total_score": 4.65,
+        "total_score": 4.87,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.29,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "nerf"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -225,30 +109,91 @@
       }
     },
     {
-      "id": "2603.06260v1",
-      "title": "Learning to Solve Orienteering Problem with Time Windows and Variable Profits",
+      "id": "2603.08503v1",
+      "title": "Spherical-GOF: Geometry-Aware Panoramic Gaussian Opacity Fields for 3D Scene Reconstruction",
       "authors": [
-        "Songqun Gao",
-        "Zanxi Ruan",
-        "Patrick Floor",
-        "Marco Roveri",
-        "Luigi Palopoli",
-        "Daniele Fontanelli"
+        "Zhe Yang",
+        "Guoqiang Zhao",
+        "Sheng Wu",
+        "Kai Luo",
+        "Kailun Yang"
       ],
-      "abstract": "The orienteering problem with time windows and variable profits (OPTWVP) is common in many real-world applications and involves continuous time variables. Current approaches fail to develop an efficient solver for this orienteering problem variant with discrete and continuous variables. In this paper, we propose a learning-based two-stage DEcoupled discrete-Continuous optimization with Service-time-guided Trajectory (DeCoST), which aims to effectively decouple the discrete and continuous decision variables in the OPTWVP problem, while enabling efficient and learnable coordination between them. In the first stage, a parallel decoding structure is employed to predict the path and the initial service time allocation. The second stage optimizes the service times through a linear programming (LP) formulation and provides a long-horizon learning of structure estimation. We rigorously prove the global optimality of the second-stage solution. Experiments on OPTWVP instances demonstrate that DeCoST outperforms both state-of-the-art constructive solvers and the latest meta-heuristic algorithms in terms of solution quality and computational efficiency, achieving up to 6.6x inference speedup on instances with fewer than 500 nodes. Moreover, the proposed framework is compatible with various constructive solvers and consistently enhances the solution quality for OPTWVP.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
+      "abstract": "Omnidirectional images are increasingly used in robotics and vision due to their wide field of view. However, extending 3D Gaussian Splatting (3DGS) to panoramic camera models remains challenging, as existing formulations are designed for perspective projections and naive adaptations often introduce distortion and geometric inconsistencies. We present Spherical-GOF, an omnidirectional Gaussian rendering framework built upon Gaussian Opacity Fields (GOF). Unlike projection-based rasterization, Spherical-GOF performs GOF ray sampling directly on the unit sphere in spherical ray space, enabling consistent ray-Gaussian interactions for panoramic rendering. To make the spherical ray casting efficient and robust, we derive a conservative spherical bounding rule for fast ray-Gaussian culling and introduce a spherical filtering scheme that adapts Gaussian footprints to distortion-varying panoramic pixel sampling. Extensive experiments on standard panoramic benchmarks (OmniBlender and OmniPhotos) demonstrate competitive photometric quality and substantially improved geometric consistency. Compared with the strongest baseline, Spherical-GOF reduces depth reprojection error by 57% and improves cycle inlier ratio by 21%. Qualitative results show cleaner depth and more coherent normal maps, with strong robustness to global panorama rotations. We further validate generalization on OmniRob, a real-world robotic omnidirectional dataset introduced in this work, featuring UAV and quadruped platforms. The source code and the OmniRob dataset will be released at https://github.com/1170632760/Spherical-GOF.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.CV",
+        "cs.GR",
+        "cs.RO",
+        "eess.IV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.06260v1",
-        "pdf": "https://arxiv.org/pdf/2603.06260v1"
+        "paper": "http://arxiv.org/abs/2603.08503v1",
+        "pdf": "https://arxiv.org/pdf/2603.08503v1"
       },
-      "arxiv_id": "2603.06260v1",
-      "comment": "Accepted at ICLR 2026",
+      "arxiv_id": "2603.08503v1",
+      "comment": "The source code and dataset will be released at https://github.com/1170632760/Spherical-GOF",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.627966101694915,
+      "score_breakdown": {
+        "total_score": 4.63,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.08674v1",
+      "title": "Talking Together: Synthesizing Co-Located 3D Conversations from Audio",
+      "authors": [
+        "Mengyi Shan",
+        "Shouchieh Chang",
+        "Ziqian Bai",
+        "Shichen Liu",
+        "Yinda Zhang",
+        "Luchuan Song",
+        "Rohit Pandey",
+        "Sean Fanello",
+        "Zeng Huang"
+      ],
+      "abstract": "We tackle the challenging task of generating complete 3D facial animations for two interacting, co-located participants from a mixed audio stream. While existing methods often produce disembodied \"talking heads\" akin to a video conference call, our work is the first to explicitly model the dynamic 3D spatial relationship -- including relative position, orientation, and mutual gaze -- that is crucial for realistic in-person dialogues. Our system synthesizes the full performance of both individuals, including precise lip-sync, and uniquely allows their relative head poses to be controlled via textual descriptions. To achieve this, we propose a dual-stream architecture where each stream is responsible for one participant's output. We employ speaker's role embeddings and inter-speaker cross-attention mechanisms designed to disentangle the mixed audio and model the interaction. Furthermore, we introduce a novel eye gaze loss to promote natural, mutual eye contact. To power our data-hungry approach, we introduce a novel pipeline to curate a large-scale conversational dataset consisting of over 2 million dyadic pairs from in-the-wild videos. Our method generates fluid, controllable, and spatially aware dyadic animations suitable for immersive applications in VR and telepresence, significantly outperforming existing baselines in perceived realism and interaction coherence.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.08674v1",
+        "pdf": "https://arxiv.org/pdf/2603.08674v1"
+      },
+      "arxiv_id": "2603.08674v1",
+      "comment": "Accepted to CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.6,
@@ -261,7 +206,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -280,29 +225,83 @@
       }
     },
     {
-      "id": "2603.06557v1",
-      "title": "Causal Interpretation of Neural Network Computations with Contribution Decomposition",
+      "id": "2603.08498v1",
+      "title": "All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference",
       "authors": [
-        "Joshua Brendan Melander",
-        "Zaki Alaoui",
-        "Shenghua Liu",
-        "Surya Ganguli",
-        "Stephen A. Baccus"
+        "Yi Yu",
+        "Libing Wu",
+        "Zhuangzhuang Zhang",
+        "Jing Qiu",
+        "Lijuan Huo",
+        "Jiaqi Feng"
       ],
-      "abstract": "Understanding how neural networks transform inputs into outputs is crucial for interpreting and manipulating their behavior. Most existing approaches analyze internal representations by identifying hidden-layer activation patterns correlated with human-interpretable concepts. Here we take a direct approach to examine how hidden neurons act to drive network outputs. We introduce CODEC (Contribution Decomposition), a method that uses sparse autoencoders to decompose network behavior into sparse motifs of hidden-neuron contributions, revealing causal processes that cannot be determined by analyzing activations alone. Applying CODEC to benchmark image-classification networks, we find that contributions grow in sparsity and dimensionality across layers and, unexpectedly, that they progressively decorrelate positive and negative effects on network outputs. We further show that decomposing contributions into sparse modes enables greater control and interpretation of intermediate layers, supporting both causal manipulations of network output and human-interpretable visualizations of distinct image components that combine to drive that output. Finally, by analyzing state-of-the-art models of neural activity in the vertebrate retina, we demonstrate that CODEC uncovers combinatorial actions of model interneurons and identifies the sources of dynamic receptive fields. Overall, CODEC provides a rich and interpretable framework for understanding how nonlinear computations evolve across hierarchical layers, establishing contribution modes as an informative unit of analysis for mechanistic insights into artificial neural networks.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
+      "abstract": "Collaborative perception (CP) enables multiple vehicles to augment their individual perception capacities through the exchange of feature-level sensory data. However, this fusion mechanism is inherently vulnerable to adversarial attacks, especially in fully untrusted-vehicle environments. Existing defense approaches often assume a trusted ego vehicle as a reference or incorporate additional binary classifiers. These assumptions limit their practicality in real-world deployments due to the questionable trustworthiness of ego vehicles, the requirement for real-time detection, and the need for generalizability across diverse scenarios. To address these challenges, we propose a novel Pseudo-Random Bayesian Inference (PRBI) framework, a first efficient defense method tailored for fully untrusted-vehicle CP. PRBI detects adversarial behavior by leveraging temporal perceptual discrepancies, using the reliable perception from the preceding frame as a dynamic reference. Additionally, it employs a pseudo-random grouping strategy that requires only two verifications per frame, while applying Bayesian inference to estimate both the number and identities of malicious vehicles. Theoretical analysis has proven the convergence and stability of the proposed PRBI framework. Extensive experiments show that PRBI requires only 2.5 verifications per frame on average, outperforming existing methods significantly, and restores detection precision to between 79.4% and 86.9% of pre-attack levels.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.08498v1",
+        "pdf": "https://arxiv.org/pdf/2603.08498v1"
+      },
+      "arxiv_id": "2603.08498v1",
+      "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6,
+      "score_breakdown": {
+        "total_score": 4.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.08506v1",
+      "title": "Oracle-Guided Soft Shielding for Safe Move Prediction in Chess",
+      "authors": [
+        "Prajit T Rajendran",
+        "Fabio Arnez",
+        "Huascar Espinoza",
+        "Agnes Delaborde",
+        "Chokri Mraidha"
+      ],
+      "abstract": "In high stakes environments, agents relying purely on imitation learning or reinforcement learning often struggle to avoid safety-critical errors during exploration. Existing reinforcement learning approaches for environments such as chess require hundreds of thousands of episodes and substantial computational resources to converge. Imitation learning, on the other hand, is more sample efficient but is brittle under distributional shift and lacks mechanisms for proactive risk avoidance. In this work, we propose Oracle-Guided Soft Shielding (OGSS), a simple yet effective framework for safer decision-making, enabling safe exploration by learning a probabilistic safety model from oracle feedback in an imitation learning setting. Focusing on the domain of chess, we train a model to predict strong moves based on past games, and separately learn a blunder prediction model from Stockfish evaluations to estimate the tactical risk of each move. During inference, the agent first generates a set of candidate moves and then uses the blunder model to determine high-risk options, and uses a utility function combining the predicted move likelihood from the policy model and the blunder probability to select actions that strike a balance between performance and safety. This enables the agent to explore and play competitively while significantly reducing the chance of tactical mistakes. Across hundreds of games against a strong chess engine, we compare our approach with other methods in the literature, such as action pruning, SafeDAgger, and uncertainty-based sampling. Our results demonstrate that OGSS variants maintain a lower blunder rate even as the agent's exploration ratio is increased by several folds, highlighting its ability to support broader exploration without compromising tactical soundness.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
       "categories": [
         "cs.LG",
-        "q-bio.NC"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.06557v1",
-        "pdf": "https://arxiv.org/pdf/2603.06557v1"
+        "paper": "http://arxiv.org/abs/2603.08506v1",
+        "pdf": "https://arxiv.org/pdf/2603.08506v1"
       },
-      "arxiv_id": "2603.06557v1",
-      "comment": "32 pages, 19 figures. ICLR 2026 poster",
+      "arxiv_id": "2603.08506v1",
+      "comment": "Accepted for publication at the 24th International Conference on Machine Learning and Applications (ICMLA), 2025. Preprint version in Arxiv",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.55,
@@ -315,7 +314,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
@@ -334,145 +333,50 @@
       }
     },
     {
-      "id": "2603.06408v1",
-      "title": "Physical Simulator In-the-Loop Video Generation",
+      "id": "2603.08660v1",
+      "title": "How Far Can Unsupervised RLVR Scale LLM Training?",
       "authors": [
-        "Lin Geng Foo",
-        "Mark He Huang",
-        "Alexandros Lattas",
-        "Stylianos Moschoglou",
-        "Thabo Beeler",
-        "Christian Theobalt"
+        "Bingxiang He",
+        "Yuxin Zuo",
+        "Zeyuan Liu",
+        "Shangziqi Zhao",
+        "Zixuan Fu",
+        "Junlin Yang",
+        "Cheng Qian",
+        "Kaiyan Zhang",
+        "Yuchen Fan",
+        "Ganqu Cui",
+        "Xiusi Chen",
+        "Youbang Sun",
+        "Xingtai Lv",
+        "Xuekai Zhu",
+        "Li Sheng",
+        "Ran Li",
+        "Huan-ang Gao",
+        "Yuchen Zhang",
+        "Bowen Zhou",
+        "Zhiyuan Liu",
+        "Ning Ding"
       ],
-      "abstract": "Recent advances in diffusion-based video generation have achieved remarkable visual realism but still struggle to obey basic physical laws such as gravity, inertia, and collision. Generated objects often move inconsistently across frames, exhibit implausible dynamics, or violate physical constraints, limiting the realism and reliability of AI-generated videos. We address this gap by introducing Physical Simulator In-the-loop Video Generation (PSIVG), a novel framework that integrates a physical simulator into the video diffusion process. Starting from a template video generated by a pre-trained diffusion model, PSIVG reconstructs the 4D scene and foreground object meshes, initializes them within a physical simulator, and generates physically consistent trajectories. These simulated trajectories are then used to guide the video generator toward spatio-temporally physically coherent motion. To further improve texture consistency during object movement, we propose a Test-Time Texture Consistency Optimization (TTCO) technique that adapts text and feature embeddings based on pixel correspondences from the simulator. Comprehensive experiments demonstrate that PSIVG produces videos that better adhere to real-world physics while preserving visual quality and diversity. Project Page: https://vcai.mpi-inf.mpg.de/projects/PSIVG/",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
+      "abstract": "Unsupervised reinforcement learning with verifiable rewards (URLVR) offers a pathway to scale LLM training beyond the supervision bottleneck by deriving rewards without ground truth labels. Recent works leverage model intrinsic signals, showing promising early gains, yet their potential and limitations remain unclear. In this work, we revisit URLVR and provide a comprehensive analysis spanning taxonomy, theory and extensive experiments. We first classify URLVR methods into intrinsic versus external based on reward sources, then establish a unified theoretical framework revealing that all intrinsic methods converge toward sharpening the model's initial distribution This sharpening mechanism succeeds when initial confidence aligns with correctness but fails catastrophically when misaligned. Through systematic experiments, we show intrinsic rewards consistently follow a rise-then-fall pattern across methods, with collapse timing determined by model prior rather than engineering choices. Despite these scaling limits, we find intrinsic rewards remain valuable in test-time training on small datasets, and propose Model Collapse Step to measure model prior, serving as a practical indicator for RL trainability. Finally, we explore external reward methods that ground verification in computational asymmetries, showing preliminary evidence they may escape the confidence-correctness ceiling. Our findings chart boundaries for intrinsic URLVR while motivating paths toward scalable alternatives.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.GR"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.06408v1",
-        "pdf": "https://arxiv.org/pdf/2603.06408v1"
-      },
-      "arxiv_id": "2603.06408v1",
-      "comment": "Accepted to CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.06300v1",
-      "title": "3D CBCT Artefact Removal Using Perpendicular Score-Based Diffusion Models",
-      "authors": [
-        "Susanne Schaub",
-        "Florentin Bieder",
-        "Matheus L. Oliveira",
-        "Yulan Wang",
-        "Dorothea Dagassan-Berndt",
-        "Michael M. Bornstein",
-        "Philippe C. Cattin"
-      ],
-      "abstract": "Cone-beam computed tomography (CBCT) is a widely used 3D imaging technique in dentistry, offering high-resolution images while minimising radiation exposure for patients. However, CBCT is highly susceptible to artefacts arising from high-density objects such as dental implants, which can compromise image quality and diagnostic accuracy. To reduce artefacts, implant inpainting in the sequence of projections plays a crucial role in many artefact reduction approaches. Recently, diffusion models have achieved state-of-the-art results in image generation and have widely been applied to image inpainting tasks. However, to our knowledge, existing diffusion-based methods for implant inpainting operate on independent 2D projections. This approach neglects the correlations among individual projections, resulting in inconsistencies in the reconstructed images. To address this, we propose a 3D dental implant inpainting approach based on perpendicular score-based diffusion models, each trained in two different planes and operating in the projection domain. The 3D distribution of the projection series is modelled by combining the two 2D score-based diffusion models in the sampling scheme. Our results demonstrate the method's effectiveness in producing high-quality, artefact-reduced 3D CBCT images, making it a promising solution for improving clinical imaging.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.06300v1",
-        "pdf": "https://arxiv.org/pdf/2603.06300v1"
-      },
-      "arxiv_id": "2603.06300v1",
-      "comment": "Accepted at DGM4MICCAI 2025",
-      "journal_ref": "Lecture Notes in Computer Science, vol. 16128, Springer, 2025, pp. 244-253",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "MICCAI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.06508v1",
-      "title": "When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models",
-      "authors": [
-        "Qitong Wang",
-        "Haoran Dai",
-        "Haotian Zhang",
-        "Christopher Rasmussen",
-        "Binghui Wang"
-      ],
-      "abstract": "While diffusion models have revolutionized visual content generation, their rapid adoption has underscored the critical need to investigate vulnerabilities, e.g., to backdoor attacks. In multimodal diffusion models, it is natural to expect that attacking multiple modalities simultaneously (e.g., text and image) would yield complementary effects and strengthen the overall backdoor. In this paper, we challenge this assumption by investigating the phenomenon of Backdoor Modality Collapse, a scenario where the backdoor mechanism degenerates to rely predominantly on a subset of modalities, rendering others redundant. To rigorously quantify this behavior, we introduce two novel metrics: Trigger Modality Attribution (TMA) and Cross-Trigger Interaction (CTI). Through extensive experiments across diverse training configurations in multimodal conditional diffusion, we consistently observe a ``winner-takes-all'' dynamic in backdoor behavior. Our results reveal that (1) attacks often collapse into subset-modality dominance, and (2) cross-modal interaction is negligible or even negative, contradicting the intuition of synergistic vulnerability. These findings highlight a critical blind spot in current assessments, suggesting that high attack success rates often mask a fundamental reliance on a subset of modalities. This establishes a principled foundation for mechanistic analysis and future defense development.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
-      "categories": [
-        "cs.LG"
+        "cs.LG",
+        "cs.CL"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.06508v1",
-        "pdf": "https://arxiv.org/pdf/2603.06508v1"
+        "paper": "http://arxiv.org/abs/2603.08660v1",
+        "pdf": "https://arxiv.org/pdf/2603.08660v1"
       },
-      "arxiv_id": "2603.06508v1",
-      "comment": "Accepted to the ICLR 2026 Workshop on Principled Design for Trustworthy AI. The first two authors contributed equally",
+      "arxiv_id": "2603.08660v1",
+      "comment": "Accepted to the ICLR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -493,43 +397,89 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2603.06279v1",
-      "title": "Can we Trust Unreliable Voxels? Exploring 3D Semantic Occupancy Prediction under Label Noise",
+      "id": "2603.08620v1",
+      "title": "StreamReady: Learning What to Answer and When in Long Streaming Videos",
       "authors": [
-        "Wenxin Li",
-        "Kunyu Peng",
-        "Di Wen",
-        "Junwei Zheng",
-        "Jiale Wei",
-        "Mengfei Duan",
-        "Yuheng Zhang",
-        "Rui Fan",
-        "Kailun Yang"
+        "Shehreen Azad",
+        "Vibhav Vineet",
+        "Yogesh Singh Rawat"
       ],
-      "abstract": "3D semantic occupancy prediction is a cornerstone of robotic perception, yet real-world voxel annotations are inherently corrupted by structural artifacts and dynamic trailing effects. This raises a critical but underexplored question: can autonomous systems safely rely on such unreliable occupancy supervision? To systematically investigate this issue, we establish OccNL, the first benchmark dedicated to 3D occupancy under occupancy-asymmetric and dynamic trailing noise. Our analysis reveals a fundamental domain gap: state-of-the-art 2D label noise learning strategies collapse catastrophically in sparse 3D voxel spaces, exposing a critical vulnerability in existing paradigms. To address this challenge, we propose DPR-Occ, a principled label noise-robust framework that constructs reliable supervision through dual-source partial label reasoning. By synergizing temporal model memory with representation-level structural affinity, DPR-Occ dynamically expands and prunes candidate label sets to preserve true semantics while suppressing noise propagation. Extensive experiments on SemanticKITTI demonstrate that DPR-Occ prevents geometric and semantic collapse under extreme corruption. Notably, even at 90% label noise, our method achieves significant performance gains (up to 2.57% mIoU and 13.91% IoU) over existing label noise learning baselines adapted to the 3D occupancy prediction task. By bridging label noise learning and 3D perception, OccNL and DPR-Occ provide a reliable foundation for safety-critical robotic perception in dynamic environments. The benchmark and source code will be made publicly available at https://github.com/mylwx/OccNL.",
-      "published": "2026-03-06",
-      "updated": "2026-03-06",
+      "abstract": "Streaming video understanding often involves time-sensitive scenarios where models need to answer exactly when the supporting visual evidence appears: answering before the evidence reflects speculation, answering after it has passed reduces real-time utility. To capture this behavior, we introduce a readiness-aware formulation of streaming video understanding with the Answer Readiness Score (ARS), a timing-aware objective with asymmetric early and late penalties. When combined with correctness, ARS defines an effective accuracy that measures not just whether a model is right, but whether it answers at the appropriate moment. Building on this formulation, we introduce StreamReady, a framework to unify temporal reasoning with on-time answering through a lightweight readiness mechanism that decides if sufficient evidence has been observed before responding. To evaluate this capability, we further introduce ProReady-QA, a benchmark with annotated answer evidence windows and proactive multi-turn questions across local and global contexts. StreamReady achieves superior performance on ProReady-QA, and consistently outperforms prior methods across eight additional streaming and offline long-video benchmarks, demonstrating robust and broadly generalizable video understanding capability.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
       "categories": [
-        "cs.CV",
-        "cs.RO",
-        "eess.IV"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.06279v1",
-        "pdf": "https://arxiv.org/pdf/2603.06279v1"
+        "paper": "http://arxiv.org/abs/2603.08620v1",
+        "pdf": "https://arxiv.org/pdf/2603.08620v1"
       },
-      "arxiv_id": "2603.06279v1",
-      "comment": "The benchmark and source code will be made publicly available at https://github.com/mylwx/OccNL",
+      "arxiv_id": "2603.08620v1",
+      "comment": "Accepted in CVPR 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.08578v1",
+      "title": "Drift-to-Action Controllers: Budgeted Interventions with Online Risk Certificates",
+      "authors": [
+        "Ismail Lamaakal",
+        "Chaymae Yahyati",
+        "Khalid El Makkaoui",
+        "Ibrahim Ouahbi",
+        "Yassine Maleh"
+      ],
+      "abstract": "Deployed machine learning systems face distribution drift, yet most monitoring pipelines stop at alarms and leave the response underspecified under labeling, compute, and latency constraints. We introduce Drift2Act, a drift-to-action controller that treats monitoring as constrained decision-making with explicit safety. Drift2Act combines a sensing layer that maps unlabeled monitoring signals to a belief over drift types with an active risk certificate that queries a small set of delayed labels from a recent window to produce an anytime-valid upper bound $U_t(δ)$ on current risk. The certificate gates operation: if $U_t(δ) \\le τ$, the controller selects low-cost actions (e.g., recalibration or test-time adaptation); if $U_t(δ) > τ$, it activates abstain/handoff and escalates to rollback or retraining under cooldowns. In a realistic streaming protocol with label delay and explicit intervention costs, Drift2Act achieves near-zero safety violations and fast recovery at moderate cost on WILDS Camelyon17, DomainNet, and a controlled synthetic drift stream, outperforming alarm-only monitoring, adapt-always adaptation, schedule-based retraining, selective prediction alone, and an ablation without certification. Overall, online risk certification enables reliable drift response and reframes monitoring as decision-making with safety.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.08578v1",
+        "pdf": "https://arxiv.org/pdf/2603.08578v1"
+      },
+      "arxiv_id": "2603.08578v1",
+      "comment": "Published as a conference paper at CAO Workshop at ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
       "score_breakdown": {
         "total_score": 4.2,
         "field_match": {
@@ -538,21 +488,72 @@
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.08658v1",
+      "title": "Context-free Self-Conditioned GAN for Trajectory Forecasting",
+      "authors": [
+        "Tiago Rodrigues de Almeida",
+        "Eduardo Gutierrez Maestro",
+        "Oscar Martinez Mozos"
+      ],
+      "abstract": "In this paper, we present a context-free unsupervised approach based on a self-conditioned GAN to learn different modes from 2D trajectories. Our intuition is that each mode indicates a different behavioral moving pattern in the discriminator's feature space. We apply this approach to the problem of trajectory forecasting. We present three different training settings based on self-conditioned GAN, which produce better forecasters. We test our method in two data sets: human motion and road agents. Experimental results show that our approach outperforms previous context-free methods in the least representative supervised labels while performing well in the remaining labels. In addition, our approach outperforms globally in human motion, while performing well in road agents.",
+      "published": "2026-03-09",
+      "updated": "2026-03-09",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.08658v1",
+        "pdf": "https://arxiv.org/pdf/2603.08658v1"
+      },
+      "arxiv_id": "2603.08658v1",
+      "comment": "Accepted at the 2022 21st IEEE International Conference on Machine Learning and Applications (ICMLA)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.1,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
           "weight": 0.1
         }
       }

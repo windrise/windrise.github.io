@@ -3,162 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.08589v1",
-      "title": "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing",
+      "id": "2603.09668v1",
+      "title": "DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics",
       "authors": [
-        "Yucheng Wang",
-        "Zedong Wang",
-        "Yuetong Wu",
-        "Yue Ma",
-        "Dan Xu"
+        "Yuanhang Lei",
+        "Boming Zhao",
+        "Zesong Yang",
+        "Xingxuan Li",
+        "Tao Cheng",
+        "Haocheng Peng",
+        "Ru Zhang",
+        "Yang Yang",
+        "Siyuan Huang",
+        "Yujun Shen",
+        "Ruizhen Hu",
+        "Hujun Bao",
+        "Zhaopeng Cui"
       ],
-      "abstract": "Unified diffusion editors often rely on a fixed, shared backbone for diverse tasks, suffering from task interference and poor adaptation to heterogeneous demands (e.g., local vs global, semantic vs photometric). In particular, prevalent ControlNet and OmniControl variants combine multiple conditioning signals (e.g., text, mask, reference) via static concatenation or additive adapters which cannot dynamically prioritize or suppress conflicting modalities, thus resulting in artifacts like color bleeding across mask boundaries, identity or style drift, and unpredictable behavior under multi-condition inputs. To address this, we propose Condition-Aware Routing of Experts (CARE-Edit) that aligns model computation with specific editing competencies. At its core, a lightweight latent-attention router assigns encoded diffusion tokens to four specialized experts--Text, Mask, Reference, and Base--based on multi-modal conditions and diffusion timesteps: (i) a Mask Repaint module first refines coarse user-defined masks for precise spatial guidance; (ii) the router applies sparse top-K selection to dynamically allocate computation to the most relevant experts; (iii) a Latent Mixture module subsequently fuses expert outputs, coherently integrating semantic, spatial, and stylistic information to the base images. Experiments validate CARE-Edit's strong performance on contextual editing tasks, including erasure, replacement, text-driven edits, and style transfer. Empirical analysis further reveals task-specific behavior of specialized experts, showcasing the importance of dynamic, condition-aware processing to mitigate multi-condition conflicts.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
+      "abstract": "Modeling wind-driven object dynamics from video observations is highly challenging due to the invisibility and spatio-temporal variability of wind, as well as the complex deformations of objects. We present DiffWind, a physics-informed differentiable framework that unifies wind-object interaction modeling, video-based reconstruction, and forward simulation. Specifically, we represent wind as a grid-based physical field and objects as particle systems derived from 3D Gaussian Splatting, with their interaction modeled by the Material Point Method (MPM). To recover wind-driven object dynamics, we introduce a reconstruction framework that jointly optimizes the spatio-temporal wind force field and object motion through differentiable rendering and simulation. To ensure physical validity, we incorporate the Lattice Boltzmann Method (LBM) as a physics-informed constraint, enforcing compliance with fluid dynamics laws. Beyond reconstruction, our method naturally supports forward simulation under novel wind conditions and enables new applications such as wind retargeting. We further introduce WD-Objects, a dataset of synthetic and real-world wind-driven scenes. Extensive experiments demonstrate that our method significantly outperforms prior dynamic scene modeling approaches in both reconstruction accuracy and simulation fidelity, opening a new avenue for video-based wind-object interaction modeling.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.08589v1",
-        "pdf": "https://arxiv.org/pdf/2603.08589v1"
+        "paper": "http://arxiv.org/abs/2603.09668v1",
+        "pdf": "https://arxiv.org/pdf/2603.09668v1"
       },
-      "arxiv_id": "2603.08589v1",
-      "comment": "Accepted by CVPR 2026. Project page: https://care-edit.github.io/",
+      "arxiv_id": "2603.09668v1",
+      "comment": "Accepted by ICLR 2026. Project page: https://zju3dv.github.io/DiffWind/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.05,
+      "relevance_score": 6.027966101694916,
       "score_breakdown": {
-        "total_score": 5.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Unified diffusion editors often rely on a fixed, shared backbone for diverse tasks, suffering from task interference and poor adaptation to heterogeneous demands (e.g., local vs global, semantic vs photometric). In particular, prevalent ControlNet and OmniControl variants combine multiple conditioning signals (e.g., text, mask, reference) via static concatenation or additive adapters which cannot ...",
-        "key_contributions": [
-          "Unified diffusion editors often rely on a fixed, shared backbone for diverse tasks, suffering from task interference and poor adaptation to heterogeneous demands (e.",
-          "g.",
-          ", local vs global, semantic vs photometric)."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.08589v1.mp3"
-      }
-    },
-    {
-      "id": "2603.08661v1",
-      "title": "ImprovedGS+: A High-Performance C++/CUDA Re-Implementation Strategy for 3D Gaussian Splatting",
-      "authors": [
-        "Jordi Muñoz Vicente"
-      ],
-      "abstract": "Recent advancements in 3D Gaussian Splatting (3DGS) have shifted the focus toward balancing reconstruction fidelity with computational efficiency. In this work, we propose ImprovedGS+, a high-performance, low-level reinvention of the ImprovedGS strategy, implemented natively within the LichtFeld-Studio framework. By transitioning from high-level Python logic to hardware-optimized C++/CUDA kernels, we achieve a significant reduction in host-device synchronization and training latency. Our implementation introduces a Long-Axis-Split (LAS) CUDA kernel, custom Laplacian-based importance kernels with Non-Maximum Suppression (NMS) for edge scores, and an adaptive Exponential Scale Scheduler. Experimental results on the Mip-NeRF360 dataset demonstrate that ImprovedGS+ establishes a new Pareto-optimal front for scene reconstruction. Our 1M-budget variant outperforms the state-of-the-art MCMC baseline by achieving a 26.8% reduction in training time (saving 17 minutes per session) and utilizing 13.3% fewer Gaussians while maintaining superior visual quality. Furthermore, our full variant demonstrates a 1.28 dB PSNR increase over the ADC baseline with a 38.4% reduction in parametric complexity. These results validate ImprovedGS+ as a scalable, high-speed solution that upholds the core pillars of Speed, Quality, and Usability within the LichtFeld-Studio ecosystem.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.08661v1",
-        "pdf": "https://arxiv.org/pdf/2603.08661v1"
-      },
-      "arxiv_id": "2603.08661v1",
-      "comment": "6 pages, 1 figure. Technical Report. This work introduces ImprovedGS+, a library-free C++/CUDA implementation for 3D Gaussian Splatting within the LichtFeld-Studio framework. Source code available at https://github.com/jordizv/ImprovedGS-Plus",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.865254237288136,
-      "score_breakdown": {
-        "total_score": 4.87,
-        "field_match": {
-          "score": 2.29,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "nerf"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advancements in 3D Gaussian Splatting (3DGS) have shifted the focus toward balancing reconstruction fidelity with computational efficiency. In this work, we propose ImprovedGS+, a high-performance, low-level reinvention of the ImprovedGS strategy, implemented natively within the LichtFeld-Studio framework. By transitioning from high-level Python logic to hardware-optimized C++/CUDA kernels,...",
-        "key_contributions": [
-          "Recent advancements in 3D Gaussian Splatting (3DGS) have shifted the focus toward balancing reconstruction fidelity with computational efficiency.",
-          "In this work, we propose ImprovedGS+, a high-performance, low-level reinvention of the ImprovedGS strategy, implemented natively within the LichtFeld-Studio framework.",
-          "By transitioning from high-level Python logic to hardware-optimized C++/CUDA kernels, we achieve a significant reduction in host-device synchronization and training latency."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.08661v1.mp3"
-      }
-    },
-    {
-      "id": "2603.08503v1",
-      "title": "Spherical-GOF: Geometry-Aware Panoramic Gaussian Opacity Fields for 3D Scene Reconstruction",
-      "authors": [
-        "Zhe Yang",
-        "Guoqiang Zhao",
-        "Sheng Wu",
-        "Kai Luo",
-        "Kailun Yang"
-      ],
-      "abstract": "Omnidirectional images are increasingly used in robotics and vision due to their wide field of view. However, extending 3D Gaussian Splatting (3DGS) to panoramic camera models remains challenging, as existing formulations are designed for perspective projections and naive adaptations often introduce distortion and geometric inconsistencies. We present Spherical-GOF, an omnidirectional Gaussian rendering framework built upon Gaussian Opacity Fields (GOF). Unlike projection-based rasterization, Spherical-GOF performs GOF ray sampling directly on the unit sphere in spherical ray space, enabling consistent ray-Gaussian interactions for panoramic rendering. To make the spherical ray casting efficient and robust, we derive a conservative spherical bounding rule for fast ray-Gaussian culling and introduce a spherical filtering scheme that adapts Gaussian footprints to distortion-varying panoramic pixel sampling. Extensive experiments on standard panoramic benchmarks (OmniBlender and OmniPhotos) demonstrate competitive photometric quality and substantially improved geometric consistency. Compared with the strongest baseline, Spherical-GOF reduces depth reprojection error by 57% and improves cycle inlier ratio by 21%. Qualitative results show cleaner depth and more coherent normal maps, with strong robustness to global panorama rotations. We further validate generalization on OmniRob, a real-world robotic omnidirectional dataset introduced in this work, featuring UAV and quadruped platforms. The source code and the OmniRob dataset will be released at https://github.com/1170632760/Spherical-GOF.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
-      "categories": [
-        "cs.CV",
-        "cs.GR",
-        "cs.RO",
-        "eess.IV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.08503v1",
-        "pdf": "https://arxiv.org/pdf/2603.08503v1"
-      },
-      "arxiv_id": "2603.08503v1",
-      "comment": "The source code and dataset will be released at https://github.com/1170632760/Spherical-GOF",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.627966101694915,
-      "score_breakdown": {
-        "total_score": 4.63,
+        "total_score": 6.03,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -168,12 +47,12 @@
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -187,51 +66,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Omnidirectional images are increasingly used in robotics and vision due to their wide field of view. However, extending 3D Gaussian Splatting (3DGS) to panoramic camera models remains challenging, as existing formulations are designed for perspective projections and naive adaptations often introduce distortion and geometric inconsistencies. We present Spherical-GOF, an omnidirectional Gaussian ren...",
+        "short": "Modeling wind-driven object dynamics from video observations is highly challenging due to the invisibility and spatio-temporal variability of wind, as well as the complex deformations of objects. We present DiffWind, a physics-informed differentiable framework that unifies wind-object interaction modeling, video-based reconstruction, and forward simulation. Specifically, we represent wind as a gri...",
         "key_contributions": [
-          "Omnidirectional images are increasingly used in robotics and vision due to their wide field of view.",
-          "However, extending 3D Gaussian Splatting (3DGS) to panoramic camera models remains challenging, as existing formulations are designed for perspective projections and naive adaptations often introduce distortion and geometric inconsistencies.",
-          "We present Spherical-GOF, an omnidirectional Gaussian rendering framework built upon Gaussian Opacity Fields (GOF)."
+          "Modeling wind-driven object dynamics from video observations is highly challenging due to the invisibility and spatio-temporal variability of wind, as well as the complex deformations of objects.",
+          "We present DiffWind, a physics-informed differentiable framework that unifies wind-object interaction modeling, video-based reconstruction, and forward simulation.",
+          "Specifically, we represent wind as a grid-based physical field and objects as particle systems derived from 3D Gaussian Splatting, with their interaction modeled by the Material Point Method (MPM)."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.08503v1.mp3"
+        "audio_url": "/audio/2603.09668v1.mp3"
       }
     },
     {
-      "id": "2603.08674v1",
-      "title": "Talking Together: Synthesizing Co-Located 3D Conversations from Audio",
+      "id": "2603.09673v1",
+      "title": "VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM",
       "authors": [
-        "Mengyi Shan",
-        "Shouchieh Chang",
-        "Ziqian Bai",
-        "Shichen Liu",
-        "Yinda Zhang",
-        "Luchuan Song",
-        "Rohit Pandey",
-        "Sean Fanello",
-        "Zeng Huang"
+        "Anh Thuan Tran",
+        "Jana Kosecka"
       ],
-      "abstract": "We tackle the challenging task of generating complete 3D facial animations for two interacting, co-located participants from a mixed audio stream. While existing methods often produce disembodied \"talking heads\" akin to a video conference call, our work is the first to explicitly model the dynamic 3D spatial relationship -- including relative position, orientation, and mutual gaze -- that is crucial for realistic in-person dialogues. Our system synthesizes the full performance of both individuals, including precise lip-sync, and uniquely allows their relative head poses to be controlled via textual descriptions. To achieve this, we propose a dual-stream architecture where each stream is responsible for one participant's output. We employ speaker's role embeddings and inter-speaker cross-attention mechanisms designed to disentangle the mixed audio and model the interaction. Furthermore, we introduce a novel eye gaze loss to promote natural, mutual eye contact. To power our data-hungry approach, we introduce a novel pipeline to curate a large-scale conversational dataset consisting of over 2 million dyadic pairs from in-the-wild videos. Our method generates fluid, controllable, and spatially aware dyadic animations suitable for immersive applications in VR and telepresence, significantly outperforming existing baselines in perceived realism and interaction coherence.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
+      "abstract": "Simultaneous Localization and Mapping (SLAM) with 3D Gaussian Splatting (3DGS) enables fast, differentiable rendering and high-fidelity reconstruction across diverse real-world scenes. However, existing 3DGS-SLAM approaches handle measurement reliability implicitly, making pose estimation and global alignment susceptible to drift in low-texture regions, transparent surfaces, or areas with complex reflectance properties. To this end, we introduce VarSplat, an uncertainty-aware 3DGS-SLAM system that explicitly learns per-splat appearance variance. By using the law of total variance with alpha compositing, we then render differentiable per-pixel uncertainty map via efficient, single-pass rasterization. This map guides tracking, submap registration, and loop detection toward focusing on reliable regions and contributes to more stable optimization. Experimental results on Replica (synthetic) and TUM-RGBD, ScanNet, and ScanNet++ (real-world) show that VarSplat improves robustness and achieves competitive or superior tracking, mapping, and novel view synthesis rendering compared to existing studies for dense RGB-D SLAM.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.08674v1",
-        "pdf": "https://arxiv.org/pdf/2603.08674v1"
+        "paper": "http://arxiv.org/abs/2603.09673v1",
+        "pdf": "https://arxiv.org/pdf/2603.09673v1"
       },
-      "arxiv_id": "2603.08674v1",
+      "arxiv_id": "2603.09673v1",
       "comment": "Accepted to CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.6,
+      "relevance_score": 5.131355932203389,
       "score_breakdown": {
-        "total_score": 4.6,
+        "total_score": 5.13,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.2,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "registration"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -240,7 +116,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -249,45 +125,174 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We tackle the challenging task of generating complete 3D facial animations for two interacting, co-located participants from a mixed audio stream. While existing methods often produce disembodied \"talking heads\" akin to a video conference call, our work is the first to explicitly model the dynamic 3D spatial relationship -- including relative position, orientation, and mutual gaze -- that is cruci...",
+        "short": "Simultaneous Localization and Mapping (SLAM) with 3D Gaussian Splatting (3DGS) enables fast, differentiable rendering and high-fidelity reconstruction across diverse real-world scenes. However, existing 3DGS-SLAM approaches handle measurement reliability implicitly, making pose estimation and global alignment susceptible to drift in low-texture regions, transparent surfaces, or areas with complex ...",
         "key_contributions": [
-          "We tackle the challenging task of generating complete 3D facial animations for two interacting, co-located participants from a mixed audio stream.",
-          "While existing methods often produce disembodied \"talking heads\" akin to a video conference call, our work is the first to explicitly model the dynamic 3D spatial relationship -- including relative position, orientation, and mutual gaze -- that is crucial for realistic in-person dialogues.",
-          "Our system synthesizes the full performance of both individuals, including precise lip-sync, and uniquely allows their relative head poses to be controlled via textual descriptions."
+          "Simultaneous Localization and Mapping (SLAM) with 3D Gaussian Splatting (3DGS) enables fast, differentiable rendering and high-fidelity reconstruction across diverse real-world scenes.",
+          "However, existing 3DGS-SLAM approaches handle measurement reliability implicitly, making pose estimation and global alignment susceptible to drift in low-texture regions, transparent surfaces, or areas with complex reflectance properties.",
+          "To this end, we introduce VarSplat, an uncertainty-aware 3DGS-SLAM system that explicitly learns per-splat appearance variance."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.08674v1.mp3"
+        "audio_url": "/audio/2603.09673v1.mp3"
       }
     },
     {
-      "id": "2603.08498v1",
-      "title": "All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference",
+      "id": "2603.09921v1",
+      "title": "WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition",
       "authors": [
-        "Yi Yu",
-        "Libing Wu",
-        "Zhuangzhuang Zhang",
-        "Jing Qiu",
-        "Lijuan Huo",
-        "Jiaqi Feng"
+        "Shan Ning",
+        "Longtian Qiu",
+        "Jiaxuan Sun",
+        "Xuming He"
       ],
-      "abstract": "Collaborative perception (CP) enables multiple vehicles to augment their individual perception capacities through the exchange of feature-level sensory data. However, this fusion mechanism is inherently vulnerable to adversarial attacks, especially in fully untrusted-vehicle environments. Existing defense approaches often assume a trusted ego vehicle as a reference or incorporate additional binary classifiers. These assumptions limit their practicality in real-world deployments due to the questionable trustworthiness of ego vehicles, the requirement for real-time detection, and the need for generalizability across diverse scenarios. To address these challenges, we propose a novel Pseudo-Random Bayesian Inference (PRBI) framework, a first efficient defense method tailored for fully untrusted-vehicle CP. PRBI detects adversarial behavior by leveraging temporal perceptual discrepancies, using the reliable perception from the preceding frame as a dynamic reference. Additionally, it employs a pseudo-random grouping strategy that requires only two verifications per frame, while applying Bayesian inference to estimate both the number and identities of malicious vehicles. Theoretical analysis has proven the convergence and stability of the proposed PRBI framework. Extensive experiments show that PRBI requires only 2.5 verifications per frame on average, outperforming existing methods significantly, and restores detection precision to between 79.4% and 86.9% of pre-attack levels.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
+      "abstract": "Open-domain visual entity recognition (VER) seeks to associate images with entities in encyclopedic knowledge bases such as Wikipedia. Recent generative methods tailored for VER demonstrate strong performance but incur high computational costs, limiting their scalability and practical deployment. In this work, we revisit the contrastive paradigm for VER and introduce WikiCLIP, a simple yet effective framework that establishes a strong and efficient baseline for open-domain VER. WikiCLIP leverages large language model embeddings as knowledge-rich entity representations and enhances them with a Vision-Guided Knowledge Adaptor (VGKA) that aligns textual semantics with visual cues at the patch level. To further encourage fine-grained discrimination, a Hard Negative Synthesis Mechanism generates visually similar but semantically distinct negatives during training. Experimental results on popular open-domain VER benchmarks, such as OVEN, demonstrate that WikiCLIP significantly outperforms strong baselines. Specifically, WikiCLIP achieves a 16% improvement on the challenging OVEN unseen set, while reducing inference latency by nearly 100 times compared with the leading generative model, AutoVER. The project page is available at https://artanic30.github.io/project_pages/WikiCLIP/",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.08498v1",
-        "pdf": "https://arxiv.org/pdf/2603.08498v1"
+        "paper": "http://arxiv.org/abs/2603.09921v1",
+        "pdf": "https://arxiv.org/pdf/2603.09921v1"
       },
-      "arxiv_id": "2603.08498v1",
+      "arxiv_id": "2603.09921v1",
+      "comment": "Accepted by CVPR26, codes and weights are publicly available",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.0,
+      "score_breakdown": {
+        "total_score": 5.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Open-domain visual entity recognition (VER) seeks to associate images with entities in encyclopedic knowledge bases such as Wikipedia. Recent generative methods tailored for VER demonstrate strong performance but incur high computational costs, limiting their scalability and practical deployment. In this work, we revisit the contrastive paradigm for VER and introduce WikiCLIP, a simple yet effecti...",
+        "key_contributions": [
+          "Open-domain visual entity recognition (VER) seeks to associate images with entities in encyclopedic knowledge bases such as Wikipedia.",
+          "Recent generative methods tailored for VER demonstrate strong performance but incur high computational costs, limiting their scalability and practical deployment.",
+          "In this work, we revisit the contrastive paradigm for VER and introduce WikiCLIP, a simple yet effective framework that establishes a strong and efficient baseline for open-domain VER."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.09921v1.mp3"
+      }
+    },
+    {
+      "id": "2603.09798v1",
+      "title": "Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency",
+      "authors": [
+        "Zhaofeng Shi",
+        "Heqian Qiu",
+        "Lanxiao Wang",
+        "Qingbo Wu",
+        "Fanman Meng",
+        "Lili Pan",
+        "Hongliang Li"
+      ],
+      "abstract": "Efficient adaptation between Egocentric (Ego) and Exocentric (Exo) views is crucial for applications such as human-robot cooperation. However, the success of most existing Ego-Exo adaptation methods relies heavily on target-view data for training, thereby increasing computational and data collection costs. In this paper, we make the first exploration of a Test-time Ego-Exo Adaptation for Action Anticipation (TE$^{2}$A$^{3}$) task, which aims to adjust the source-view-trained model online during test time to anticipate target-view actions. It is challenging for existing Test-Time Adaptation (TTA) methods to address this task due to the multi-action candidates and significant temporal-spatial inter-view gap. Hence, we propose a novel Dual-Clue enhanced Prototype Growing Network (DCPGN), which accumulates multi-label knowledge and integrates cross-modality clues for effective test-time Ego-Exo adaptation and action anticipation. Specifically, we propose a Multi-Label Prototype Growing Module (ML-PGM) to balance multiple positive classes via multi-label assignment and confidence-based reweighting for class-wise memory banks, which are updated by an entropy priority queue strategy. Then, the Dual-Clue Consistency Module (DCCM) introduces a lightweight narrator to generate textual clues indicating action progressions, which complement the visual clues containing various objects. Moreover, we constrain the inferred textual and visual logits to construct dual-clue consistency for temporally and spatially bridging Ego and Exo views. Extensive experiments on the newly proposed EgoMe-anti and the existing EgoExoLearn benchmarks show the effectiveness of our method, which outperforms related state-of-the-art methods by a large margin. Code is available at \\href{https://github.com/ZhaofengSHI/DCPGN}{https://github.com/ZhaofengSHI/DCPGN}.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.09798v1",
+        "pdf": "https://arxiv.org/pdf/2603.09798v1"
+      },
+      "arxiv_id": "2603.09798v1",
       "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.9,
+      "score_breakdown": {
+        "total_score": 4.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Efficient adaptation between Egocentric (Ego) and Exocentric (Exo) views is crucial for applications such as human-robot cooperation. However, the success of most existing Ego-Exo adaptation methods relies heavily on target-view data for training, thereby increasing computational and data collection costs. In this paper, we make the first exploration of a Test-time Ego-Exo Adaptation for Action An...",
+        "key_contributions": [
+          "Efficient adaptation between Egocentric (Ego) and Exocentric (Exo) views is crucial for applications such as human-robot cooperation.",
+          "However, the success of most existing Ego-Exo adaptation methods relies heavily on target-view data for training, thereby increasing computational and data collection costs.",
+          "In this paper, we make the first exploration of a Test-time Ego-Exo Adaptation for Action Anticipation (TE$^{2}$A$^{3}$) task, which aims to adjust the source-view-trained model online during test time to anticipate target-view actions."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.09798v1.mp3"
+      }
+    },
+    {
+      "id": "2603.09826v1",
+      "title": "VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models",
+      "authors": [
+        "Shuhao Kang",
+        "Youqi Liao",
+        "Peijie Wang",
+        "Wenlong Liao",
+        "Qilin Zhang",
+        "Benjamin Busam",
+        "Xieyuanli Chen",
+        "Yun Liu"
+      ],
+      "abstract": "Text-to-point-cloud (T2P) localization aims to infer precise spatial positions within 3D point cloud maps from natural language descriptions, reflecting how humans perceive and communicate spatial layouts through language. However, existing methods largely rely on shallow text-point cloud correspondence without effective spatial reasoning, limiting their accuracy in complex environments. To address this limitation, we propose VLM-Loc, a framework that leverages the spatial reasoning capability of large vision-language models (VLMs) for T2P localization. Specifically, we transform point clouds into bird's-eye-view (BEV) images and scene graphs that jointly encode geometric and semantic context, providing structured inputs for the VLM to learn cross-modal representations bridging linguistic and spatial semantics. On top of these representations, we introduce a partial node assignment mechanism that explicitly associates textual cues with scene graph nodes, enabling interpretable spatial reasoning for accurate localization. To facilitate systematic evaluation across diverse scenes, we present CityLoc, a benchmark built from multi-source point clouds for fine-grained T2P localization. Experiments on CityLoc demonstrate VLM-Loc achieves superior accuracy and robustness compared to state-of-the-art methods. Our code, model, and dataset are available at \\href{https://github.com/MCG-NKU/nku-3d-vision}{repository}.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.09826v1",
+        "pdf": "https://arxiv.org/pdf/2603.09826v1"
+      },
+      "arxiv_id": "2603.09826v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.6,
@@ -318,53 +323,121 @@
         }
       },
       "ai_summaries": {
-        "short": "Collaborative perception (CP) enables multiple vehicles to augment their individual perception capacities through the exchange of feature-level sensory data. However, this fusion mechanism is inherently vulnerable to adversarial attacks, especially in fully untrusted-vehicle environments. Existing defense approaches often assume a trusted ego vehicle as a reference or incorporate additional binary...",
+        "short": "Text-to-point-cloud (T2P) localization aims to infer precise spatial positions within 3D point cloud maps from natural language descriptions, reflecting how humans perceive and communicate spatial layouts through language. However, existing methods largely rely on shallow text-point cloud correspondence without effective spatial reasoning, limiting their accuracy in complex environments. To addres...",
         "key_contributions": [
-          "Collaborative perception (CP) enables multiple vehicles to augment their individual perception capacities through the exchange of feature-level sensory data.",
-          "However, this fusion mechanism is inherently vulnerable to adversarial attacks, especially in fully untrusted-vehicle environments.",
-          "Existing defense approaches often assume a trusted ego vehicle as a reference or incorporate additional binary classifiers."
+          "Text-to-point-cloud (T2P) localization aims to infer precise spatial positions within 3D point cloud maps from natural language descriptions, reflecting how humans perceive and communicate spatial layouts through language.",
+          "However, existing methods largely rely on shallow text-point cloud correspondence without effective spatial reasoning, limiting their accuracy in complex environments.",
+          "To address this limitation, we propose VLM-Loc, a framework that leverages the spatial reasoning capability of large vision-language models (VLMs) for T2P localization."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.08498v1.mp3"
+        "audio_url": "/audio/2603.09826v1.mp3"
       }
     },
     {
-      "id": "2603.08506v1",
-      "title": "Oracle-Guided Soft Shielding for Safe Move Prediction in Chess",
+      "id": "2603.09661v1",
+      "title": "FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting",
       "authors": [
-        "Prajit T Rajendran",
-        "Fabio Arnez",
-        "Huascar Espinoza",
-        "Agnes Delaborde",
-        "Chokri Mraidha"
+        "Boya Zhang",
+        "Shuaijie Yin",
+        "Huiwen Zhu",
+        "Xing He"
       ],
-      "abstract": "In high stakes environments, agents relying purely on imitation learning or reinforcement learning often struggle to avoid safety-critical errors during exploration. Existing reinforcement learning approaches for environments such as chess require hundreds of thousands of episodes and substantial computational resources to converge. Imitation learning, on the other hand, is more sample efficient but is brittle under distributional shift and lacks mechanisms for proactive risk avoidance. In this work, we propose Oracle-Guided Soft Shielding (OGSS), a simple yet effective framework for safer decision-making, enabling safe exploration by learning a probabilistic safety model from oracle feedback in an imitation learning setting. Focusing on the domain of chess, we train a model to predict strong moves based on past games, and separately learn a blunder prediction model from Stockfish evaluations to estimate the tactical risk of each move. During inference, the agent first generates a set of candidate moves and then uses the blunder model to determine high-risk options, and uses a utility function combining the predicted move likelihood from the policy model and the blunder probability to select actions that strike a balance between performance and safety. This enables the agent to explore and play competitively while significantly reducing the chance of tactical mistakes. Across hundreds of games against a strong chess engine, we compare our approach with other methods in the literature, such as action pruning, SafeDAgger, and uncertainty-based sampling. Our results demonstrate that OGSS variants maintain a lower blunder rate even as the agent's exploration ratio is increased by several folds, highlighting its ability to support broader exploration without compromising tactical soundness.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
+      "abstract": "Mining time-frequency features is critical for time series forecasting. Existing research has predominantly focused on modeling low-frequency patterns, where most time series energy is concentrated. The overlooking of mid to high frequency continues to limit further performance gains in deep learning models. We propose FreqCycle, a novel framework integrating: (i) a Filter-Enhanced Cycle Forecasting (FECF) module to extract low-frequency features by explicitly learning shared periodic patterns in the time domain, and (ii) a Segmented Frequency-domain Pattern Learning (SFPL) module to enhance mid to high frequency energy proportion via learnable filters and adaptive weighting. Furthermore, time series data often exhibit coupled multi-periodicity, such as intertwined weekly and daily cycles. To address coupled multi-periodicity as well as long lookback window challenges, we extend FreqCycle hierarchically into MFreqCycle, which decouples nested periodic features through cross-scale interactions. Extensive experiments on seven diverse domain benchmarks demonstrate that FreqCycle achieves state-of-the-art accuracy while maintaining faster inference speeds, striking an optimal balance between performance and efficiency.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.LG"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.08506v1",
-        "pdf": "https://arxiv.org/pdf/2603.08506v1"
+        "paper": "http://arxiv.org/abs/2603.09661v1",
+        "pdf": "https://arxiv.org/pdf/2603.09661v1"
       },
-      "arxiv_id": "2603.08506v1",
-      "comment": "Accepted for publication at the 24th International Conference on Machine Learning and Applications (ICMLA), 2025. Preprint version in Arxiv",
+      "arxiv_id": "2603.09661v1",
+      "comment": "18 pages, 17 figures, accepted to AAAI 2026. Code available at https://github.com/boya-zhang-ai/FreqCycle",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
+      "has_code": true,
+      "relevance_score": 4.219491525423729,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 4.22,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Mining time-frequency features is critical for time series forecasting. Existing research has predominantly focused on modeling low-frequency patterns, where most time series energy is concentrated. The overlooking of mid to high frequency continues to limit further performance gains in deep learning models. We propose FreqCycle, a novel framework integrating: (i) a Filter-Enhanced Cycle Forecasti...",
+        "key_contributions": [
+          "Mining time-frequency features is critical for time series forecasting.",
+          "Existing research has predominantly focused on modeling low-frequency patterns, where most time series energy is concentrated.",
+          "The overlooking of mid to high frequency continues to limit further performance gains in deep learning models."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.09661v1.mp3"
+      }
+    },
+    {
+      "id": "2603.09718v1",
+      "title": "GSStream: 3D Gaussian Splatting based Volumetric Scene Streaming System",
+      "authors": [
+        "Zhiye Tang",
+        "Qiudan Zhang",
+        "Lei Zhang",
+        "Junhui Hou",
+        "You Yang",
+        "Xu Wang"
+      ],
+      "abstract": "Recently, the 3D Gaussian splatting (3DGS) technique for real-time radiance field rendering has revolutionized the field of volumetric scene representation, providing users with an immersive experience. But in return, it also poses a large amount of data volume, which is extremely bandwidth-intensive. Cutting-edge researchers have tried to introduce different approaches and construct multiple variants for 3DGS to obtain a more compact scene representation, but it is still challenging for real-time distribution. In this paper, we propose GSStream, a novel volumetric scene streaming system to support 3DGS data format. Specifically, GSStream integrates a collaborative viewport prediction module to better predict users' future behaviors by learning collaborative priors and historical priors from multiple users and users' viewport sequences and a deep reinforcement learning (DRL)-based bitrate adaptation module to tackle the state and action space variability challenge of the bitrate adaptation problem, achieving efficient volumetric scene delivery. Besides, we first build a user viewport trajectory dataset for volumetric scenes to support the training and streaming simulation. Extensive experiments prove that our proposed GSStream system outperforms existing representative volumetric scene streaming systems in visual quality and network usage. Demo video: https://youtu.be/3WEe8PN8yvA.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.09718v1",
+        "pdf": "https://arxiv.org/pdf/2603.09718v1"
+      },
+      "arxiv_id": "2603.09718v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.215254237288136,
+      "score_breakdown": {
+        "total_score": 4.22,
+        "field_match": {
+          "score": 2.29,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "volumetric"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -382,69 +455,119 @@
         }
       },
       "ai_summaries": {
-        "short": "In high stakes environments, agents relying purely on imitation learning or reinforcement learning often struggle to avoid safety-critical errors during exploration. Existing reinforcement learning approaches for environments such as chess require hundreds of thousands of episodes and substantial computational resources to converge. Imitation learning, on the other hand, is more sample efficient b...",
+        "short": "Recently, the 3D Gaussian splatting (3DGS) technique for real-time radiance field rendering has revolutionized the field of volumetric scene representation, providing users with an immersive experience. But in return, it also poses a large amount of data volume, which is extremely bandwidth-intensive. Cutting-edge researchers have tried to introduce different approaches and construct multiple vari...",
         "key_contributions": [
-          "In high stakes environments, agents relying purely on imitation learning or reinforcement learning often struggle to avoid safety-critical errors during exploration.",
-          "Existing reinforcement learning approaches for environments such as chess require hundreds of thousands of episodes and substantial computational resources to converge.",
-          "Imitation learning, on the other hand, is more sample efficient but is brittle under distributional shift and lacks mechanisms for proactive risk avoidance."
+          "Recently, the 3D Gaussian splatting (3DGS) technique for real-time radiance field rendering has revolutionized the field of volumetric scene representation, providing users with an immersive experience.",
+          "But in return, it also poses a large amount of data volume, which is extremely bandwidth-intensive.",
+          "Cutting-edge researchers have tried to introduce different approaches and construct multiple variants for 3DGS to obtain a more compact scene representation, but it is still challenging for real-time distribution."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.08506v1.mp3"
+        "audio_url": "/audio/2603.09718v1.mp3"
       }
     },
     {
-      "id": "2603.08660v1",
-      "title": "How Far Can Unsupervised RLVR Scale LLM Training?",
+      "id": "2603.09760v1",
+      "title": "PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments",
       "authors": [
-        "Bingxiang He",
-        "Yuxin Zuo",
-        "Zeyuan Liu",
-        "Shangziqi Zhao",
-        "Zixuan Fu",
-        "Junlin Yang",
-        "Cheng Qian",
-        "Kaiyan Zhang",
-        "Yuchen Fan",
-        "Ganqu Cui",
-        "Xiusi Chen",
-        "Youbang Sun",
-        "Xingtai Lv",
-        "Xuekai Zhu",
-        "Li Sheng",
-        "Ran Li",
-        "Huan-ang Gao",
-        "Yuchen Zhang",
-        "Bowen Zhou",
-        "Zhiyuan Liu",
-        "Ning Ding"
+        "Guoliang Zhu",
+        "Wanjun Jia",
+        "Caoyang Shao",
+        "Yuheng Zhang",
+        "Zhiyong Li",
+        "Kailun Yang"
       ],
-      "abstract": "Unsupervised reinforcement learning with verifiable rewards (URLVR) offers a pathway to scale LLM training beyond the supervision bottleneck by deriving rewards without ground truth labels. Recent works leverage model intrinsic signals, showing promising early gains, yet their potential and limitations remain unclear. In this work, we revisit URLVR and provide a comprehensive analysis spanning taxonomy, theory and extensive experiments. We first classify URLVR methods into intrinsic versus external based on reward sources, then establish a unified theoretical framework revealing that all intrinsic methods converge toward sharpening the model's initial distribution This sharpening mechanism succeeds when initial confidence aligns with correctness but fails catastrophically when misaligned. Through systematic experiments, we show intrinsic rewards consistently follow a rise-then-fall pattern across methods, with collapse timing determined by model prior rather than engineering choices. Despite these scaling limits, we find intrinsic rewards remain valuable in test-time training on small datasets, and propose Model Collapse Step to measure model prior, serving as a practical indicator for RL trainability. Finally, we explore external reward methods that ground verification in computational asymmetries, showing preliminary evidence they may escape the confidence-correctness ceiling. Our findings chart boundaries for intrinsic URLVR while motivating paths toward scalable alternatives.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
+      "abstract": "Global perception is essential for embodied agents in 360° spaces, yet current affordance grounding remains largely object-centric and restricted to perspective views. To bridge this gap, we introduce a novel task: Holistic Affordance Grounding in 360° Indoor Environments. This task faces unique challenges, including severe geometric distortions from Equirectangular Projection (ERP), semantic dispersion, and cross-scale alignment difficulties. We propose PanoAffordanceNet, an end-to-end framework featuring a Distortion-Aware Spectral Modulator (DASM) for latitude-dependent calibration and an Omni-Spherical Densification Head (OSDH) to restore topological continuity from sparse activations. By integrating multi-level constraints comprising pixel-wise, distributional, and region-text contrastive objectives, our framework effectively suppresses semantic drift under low supervision. Furthermore, we construct 360-AGD, the first high-quality panoramic affordance grounding dataset. Extensive experiments demonstrate that PanoAffordanceNet significantly outperforms existing methods, establishing a solid baseline for scene-level perception in embodied intelligence. The source code and benchmark dataset will be made publicly available at https://github.com/GL-ZHU925/PanoAffordanceNet.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
       "categories": [
-        "cs.LG",
-        "cs.CL"
+        "cs.CV",
+        "cs.RO",
+        "eess.IV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.08660v1",
-        "pdf": "https://arxiv.org/pdf/2603.08660v1"
+        "paper": "http://arxiv.org/abs/2603.09760v1",
+        "pdf": "https://arxiv.org/pdf/2603.09760v1"
       },
-      "arxiv_id": "2603.08660v1",
-      "comment": "Accepted to the ICLR 2026",
+      "arxiv_id": "2603.09760v1",
+      "comment": "The source code and benchmark dataset will be made publicly available at https://github.com/GL-ZHU925/PanoAffordanceNet",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "has_code": true,
+      "relevance_score": 4.199999999999999,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Global perception is essential for embodied agents in 360° spaces, yet current affordance grounding remains largely object-centric and restricted to perspective views. To bridge this gap, we introduce a novel task: Holistic Affordance Grounding in 360° Indoor Environments. This task faces unique challenges, including severe geometric distortions from Equirectangular Projection (ERP), semantic disp...",
+        "key_contributions": [
+          "Global perception is essential for embodied agents in 360° spaces, yet current affordance grounding remains largely object-centric and restricted to perspective views.",
+          "To bridge this gap, we introduce a novel task: Holistic Affordance Grounding in 360° Indoor Environments.",
+          "This task faces unique challenges, including severe geometric distortions from Equirectangular Projection (ERP), semantic dispersion, and cross-scale alignment difficulties."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.09760v1.mp3"
+      }
+    },
+    {
+      "id": "2603.09932v1",
+      "title": "Unsupervised Domain Adaptation with Target-Only Margin Disparity Discrepancy",
+      "authors": [
+        "Gauthier Miralles",
+        "Loïc Le Folgoc",
+        "Vincent Jugnon",
+        "Pietro Gori"
+      ],
+      "abstract": "In interventional radiology, Cone-Beam Computed Tomography (CBCT) is a helpful imaging modality that provides guidance to practicians during minimally invasive procedures. CBCT differs from traditional Computed Tomography (CT) due to its limited reconstructed field of view, specific artefacts, and the intra-arterial administration of contrast medium. While CT benefits from abundant publicly available annotated datasets, interventional CBCT data remain scarce and largely unannotated, with existing datasets focused primarily on radiotherapy applications. To address this limitation, we leverage a proprietary collection of unannotated interventional CBCT scans in conjunction with annotated CT data, employing domain adaptation techniques to bridge the modality gap and enhance liver segmentation performance on CBCT. We propose a novel unsupervised domain adaptation (UDA) framework based on the formalism of Margin Disparity Discrepancy (MDD), which improves target domain performance through a reformulation of the original MDD optimization framework. Experimental results on CT and CBCT datasets for liver segmentation demonstrate that our method achieves state-of-the-art performance in UDA, as well as in the few-shot setting.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.09932v1",
+        "pdf": "https://arxiv.org/pdf/2603.09932v1"
+      },
+      "arxiv_id": "2603.09932v1",
+      "comment": "ISBI 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.153389830508475,
+      "score_breakdown": {
+        "total_score": 4.15,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
           "weight": 0.25
         },
         "citation_potential": {
@@ -462,200 +585,80 @@
         }
       },
       "ai_summaries": {
-        "short": "Unsupervised reinforcement learning with verifiable rewards (URLVR) offers a pathway to scale LLM training beyond the supervision bottleneck by deriving rewards without ground truth labels. Recent works leverage model intrinsic signals, showing promising early gains, yet their potential and limitations remain unclear. In this work, we revisit URLVR and provide a comprehensive analysis spanning tax...",
+        "short": "In interventional radiology, Cone-Beam Computed Tomography (CBCT) is a helpful imaging modality that provides guidance to practicians during minimally invasive procedures. CBCT differs from traditional Computed Tomography (CT) due to its limited reconstructed field of view, specific artefacts, and the intra-arterial administration of contrast medium. While CT benefits from abundant publicly availa...",
         "key_contributions": [
-          "Unsupervised reinforcement learning with verifiable rewards (URLVR) offers a pathway to scale LLM training beyond the supervision bottleneck by deriving rewards without ground truth labels.",
-          "Recent works leverage model intrinsic signals, showing promising early gains, yet their potential and limitations remain unclear.",
-          "In this work, we revisit URLVR and provide a comprehensive analysis spanning taxonomy, theory and extensive experiments."
+          "In interventional radiology, Cone-Beam Computed Tomography (CBCT) is a helpful imaging modality that provides guidance to practicians during minimally invasive procedures.",
+          "CBCT differs from traditional Computed Tomography (CT) due to its limited reconstructed field of view, specific artefacts, and the intra-arterial administration of contrast medium.",
+          "While CT benefits from abundant publicly available annotated datasets, interventional CBCT data remain scarce and largely unannotated, with existing datasets focused primarily on radiotherapy applications."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.08660v1.mp3"
+        "audio_url": "/audio/2603.09932v1.mp3"
       }
     },
     {
-      "id": "2603.08620v1",
-      "title": "StreamReady: Learning What to Answer and When in Long Streaming Videos",
+      "id": "2603.09737v1",
+      "title": "$M^2$-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs",
       "authors": [
-        "Shehreen Azad",
-        "Vibhav Vineet",
-        "Yogesh Singh Rawat"
+        "Kaixin Lin",
+        "Kunyu Peng",
+        "Di Wen",
+        "Yufan Chen",
+        "Ruiping Liu",
+        "Kailun Yang"
       ],
-      "abstract": "Streaming video understanding often involves time-sensitive scenarios where models need to answer exactly when the supporting visual evidence appears: answering before the evidence reflects speculation, answering after it has passed reduces real-time utility. To capture this behavior, we introduce a readiness-aware formulation of streaming video understanding with the Answer Readiness Score (ARS), a timing-aware objective with asymmetric early and late penalties. When combined with correctness, ARS defines an effective accuracy that measures not just whether a model is right, but whether it answers at the appropriate moment. Building on this formulation, we introduce StreamReady, a framework to unify temporal reasoning with on-time answering through a lightweight readiness mechanism that decides if sufficient evidence has been observed before responding. To evaluate this capability, we further introduce ProReady-QA, a benchmark with annotated answer evidence windows and proactive multi-turn questions across local and global contexts. StreamReady achieves superior performance on ProReady-QA, and consistently outperforms prior methods across eight additional streaming and offline long-video benchmarks, demonstrating robust and broadly generalizable video understanding capability.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
+      "abstract": "Semantic occupancy prediction enables dense 3D geometric and semantic understanding for autonomous driving. However, existing camera-based approaches implicitly assume complete surround-view observations, an assumption that rarely holds in real-world deployment due to occlusion, hardware malfunction, or communication failures. We study semantic occupancy prediction under incomplete multi-camera inputs and introduce $M^2$-Occ, a framework designed to preserve geometric structure and semantic coherence when views are missing. $M^2$-Occ addresses two complementary challenges. First, a Multi-view Masked Reconstruction (MMR) module leverages the spatial overlap among neighboring cameras to recover missing-view representations directly in the feature space. Second, a Feature Memory Module (FMM) introduces a learnable memory bank that stores class-level semantic prototypes. By retrieving and integrating these global priors, the FMM refines ambiguous voxel features, ensuring semantic consistency even when observational evidence is incomplete. We introduce a systematic missing-view evaluation protocol on the nuScenes-based SurroundOcc benchmark, encompassing both deterministic single-view failures and stochastic multi-view dropout scenarios. Under the safety-critical missing back-view setting, $M^2$-Occ improves the IoU by 4.93%. As the number of missing cameras increases, the robustness gap further widens; for instance, under the setting with five missing views, our method boosts the IoU by 5.01%. These gains are achieved without compromising full-view performance. The source code will be publicly released at https://github.com/qixi7up/M2-Occ.",
+      "published": "2026-03-10",
+      "updated": "2026-03-10",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.RO",
+        "eess.IV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.08620v1",
-        "pdf": "https://arxiv.org/pdf/2603.08620v1"
+        "paper": "http://arxiv.org/abs/2603.09737v1",
+        "pdf": "https://arxiv.org/pdf/2603.09737v1"
       },
-      "arxiv_id": "2603.08620v1",
-      "comment": "Accepted in CVPR 2026",
+      "arxiv_id": "2603.09737v1",
+      "comment": "The source code will be publicly released at https://github.com/qixi7up/M2-Occ",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
+      "has_code": true,
+      "relevance_score": 4.050000000000001,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Streaming video understanding often involves time-sensitive scenarios where models need to answer exactly when the supporting visual evidence appears: answering before the evidence reflects speculation, answering after it has passed reduces real-time utility. To capture this behavior, we introduce a readiness-aware formulation of streaming video understanding with the Answer Readiness Score (ARS),...",
-        "key_contributions": [
-          "Streaming video understanding often involves time-sensitive scenarios where models need to answer exactly when the supporting visual evidence appears: answering before the evidence reflects speculation, answering after it has passed reduces real-time utility.",
-          "To capture this behavior, we introduce a readiness-aware formulation of streaming video understanding with the Answer Readiness Score (ARS), a timing-aware objective with asymmetric early and late penalties.",
-          "When combined with correctness, ARS defines an effective accuracy that measures not just whether a model is right, but whether it answers at the appropriate moment."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.08620v1.mp3"
-      }
-    },
-    {
-      "id": "2603.08578v1",
-      "title": "Drift-to-Action Controllers: Budgeted Interventions with Online Risk Certificates",
-      "authors": [
-        "Ismail Lamaakal",
-        "Chaymae Yahyati",
-        "Khalid El Makkaoui",
-        "Ibrahim Ouahbi",
-        "Yassine Maleh"
-      ],
-      "abstract": "Deployed machine learning systems face distribution drift, yet most monitoring pipelines stop at alarms and leave the response underspecified under labeling, compute, and latency constraints. We introduce Drift2Act, a drift-to-action controller that treats monitoring as constrained decision-making with explicit safety. Drift2Act combines a sensing layer that maps unlabeled monitoring signals to a belief over drift types with an active risk certificate that queries a small set of delayed labels from a recent window to produce an anytime-valid upper bound $U_t(δ)$ on current risk. The certificate gates operation: if $U_t(δ) \\le τ$, the controller selects low-cost actions (e.g., recalibration or test-time adaptation); if $U_t(δ) > τ$, it activates abstain/handoff and escalates to rollback or retraining under cooldowns. In a realistic streaming protocol with label delay and explicit intervention costs, Drift2Act achieves near-zero safety violations and fast recovery at moderate cost on WILDS Camelyon17, DomainNet, and a controlled synthetic drift stream, outperforming alarm-only monitoring, adapt-always adaptation, schedule-based retraining, selective prediction alone, and an ablation without certification. Overall, online risk certification enables reliable drift response and reframes monitoring as decision-making with safety.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.08578v1",
-        "pdf": "https://arxiv.org/pdf/2603.08578v1"
-      },
-      "arxiv_id": "2603.08578v1",
-      "comment": "Published as a conference paper at CAO Workshop at ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.2,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Deployed machine learning systems face distribution drift, yet most monitoring pipelines stop at alarms and leave the response underspecified under labeling, compute, and latency constraints. We introduce Drift2Act, a drift-to-action controller that treats monitoring as constrained decision-making with explicit safety. Drift2Act combines a sensing layer that maps unlabeled monitoring signals to a ...",
-        "key_contributions": [
-          "Deployed machine learning systems face distribution drift, yet most monitoring pipelines stop at alarms and leave the response underspecified under labeling, compute, and latency constraints.",
-          "We introduce Drift2Act, a drift-to-action controller that treats monitoring as constrained decision-making with explicit safety.",
-          "Drift2Act combines a sensing layer that maps unlabeled monitoring signals to a belief over drift types with an active risk certificate that queries a small set of delayed labels from a recent window to produce an anytime-valid upper bound $U_t(δ)$ on current risk."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.08578v1.mp3"
-      }
-    },
-    {
-      "id": "2603.08658v1",
-      "title": "Context-free Self-Conditioned GAN for Trajectory Forecasting",
-      "authors": [
-        "Tiago Rodrigues de Almeida",
-        "Eduardo Gutierrez Maestro",
-        "Oscar Martinez Mozos"
-      ],
-      "abstract": "In this paper, we present a context-free unsupervised approach based on a self-conditioned GAN to learn different modes from 2D trajectories. Our intuition is that each mode indicates a different behavioral moving pattern in the discriminator's feature space. We apply this approach to the problem of trajectory forecasting. We present three different training settings based on self-conditioned GAN, which produce better forecasters. We test our method in two data sets: human motion and road agents. Experimental results show that our approach outperforms previous context-free methods in the least representative supervised labels while performing well in the remaining labels. In addition, our approach outperforms globally in human motion, while performing well in road agents.",
-      "published": "2026-03-09",
-      "updated": "2026-03-09",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.08658v1",
-        "pdf": "https://arxiv.org/pdf/2603.08658v1"
-      },
-      "arxiv_id": "2603.08658v1",
-      "comment": "Accepted at the 2022 21st IEEE International Conference on Machine Learning and Applications (ICMLA)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.1,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "In this paper, we present a context-free unsupervised approach based on a self-conditioned GAN to learn different modes from 2D trajectories. Our intuition is that each mode indicates a different behavioral moving pattern in the discriminator's feature space. We apply this approach to the problem of trajectory forecasting. We present three different training settings based on self-conditioned GAN,...",
+        "short": "Semantic occupancy prediction enables dense 3D geometric and semantic understanding for autonomous driving. However, existing camera-based approaches implicitly assume complete surround-view observations, an assumption that rarely holds in real-world deployment due to occlusion, hardware malfunction, or communication failures. We study semantic occupancy prediction under incomplete multi-camera in...",
         "key_contributions": [
-          "In this paper, we present a context-free unsupervised approach based on a self-conditioned GAN to learn different modes from 2D trajectories.",
-          "Our intuition is that each mode indicates a different behavioral moving pattern in the discriminator's feature space.",
-          "We apply this approach to the problem of trajectory forecasting."
+          "Semantic occupancy prediction enables dense 3D geometric and semantic understanding for autonomous driving.",
+          "However, existing camera-based approaches implicitly assume complete surround-view observations, an assumption that rarely holds in real-world deployment due to occlusion, hardware malfunction, or communication failures.",
+          "We study semantic occupancy prediction under incomplete multi-camera inputs and introduce $M^2$-Occ, a framework designed to preserve geometric structure and semantic coherence when views are missing."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.08658v1.mp3"
+        "audio_url": "/audio/2603.09737v1.mp3"
       }
     }
   ]

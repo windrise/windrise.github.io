@@ -3,47 +3,209 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.09668v1",
-      "title": "DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics",
+      "id": "2603.10967v1",
+      "title": "Med-DualLoRA: Local Adaptation of Foundation Models for 3D Cardiac MRI",
       "authors": [
-        "Yuanhang Lei",
-        "Boming Zhao",
-        "Zesong Yang",
-        "Xingxuan Li",
-        "Tao Cheng",
-        "Haocheng Peng",
-        "Ru Zhang",
-        "Yang Yang",
-        "Siyuan Huang",
-        "Yujun Shen",
-        "Ruizhen Hu",
-        "Hujun Bao",
-        "Zhaopeng Cui"
+        "Joan Perramon-Llussà",
+        "Amelia Jiménez-Sánchez",
+        "Grzegorz Skorupko",
+        "Fotis Avgoustidis",
+        "Carlos Martín-Isla",
+        "Karim Lekadir",
+        "Polyxeni Gkontra"
       ],
-      "abstract": "Modeling wind-driven object dynamics from video observations is highly challenging due to the invisibility and spatio-temporal variability of wind, as well as the complex deformations of objects. We present DiffWind, a physics-informed differentiable framework that unifies wind-object interaction modeling, video-based reconstruction, and forward simulation. Specifically, we represent wind as a grid-based physical field and objects as particle systems derived from 3D Gaussian Splatting, with their interaction modeled by the Material Point Method (MPM). To recover wind-driven object dynamics, we introduce a reconstruction framework that jointly optimizes the spatio-temporal wind force field and object motion through differentiable rendering and simulation. To ensure physical validity, we incorporate the Lattice Boltzmann Method (LBM) as a physics-informed constraint, enforcing compliance with fluid dynamics laws. Beyond reconstruction, our method naturally supports forward simulation under novel wind conditions and enables new applications such as wind retargeting. We further introduce WD-Objects, a dataset of synthetic and real-world wind-driven scenes. Extensive experiments demonstrate that our method significantly outperforms prior dynamic scene modeling approaches in both reconstruction accuracy and simulation fidelity, opening a new avenue for video-based wind-object interaction modeling.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
+      "abstract": "Foundation models (FMs) show great promise for robust downstream performance across medical imaging tasks and modalities, including cardiac magnetic resonance (CMR), following task-specific adaptation. However, adaptation using single-site data may lead to suboptimal performance and increased model bias, while centralized fine-tuning on clinical data is often infeasible due to privacy constraints. Federated fine-tuning offers a privacy-preserving alternative; yet conventional approaches struggle under heterogeneous, non-IID multi-center data and incur substantial communication overhead when adapting large models. In this work, we study federated FM fine-tuning for 3D CMR disease detection and propose Med-DualLoRA, a client-aware parameter-efficient fine-tuning (PEFT) federated framework that disentangles globally shared and local low-rank adaptations (LoRA) through additive decomposition. Global and local LoRA modules are trained locally, but only the global component is shared and aggregated across sites, keeping local adapters private. This design improves personalization while significantly reducing communication cost, and experiments show that adapting only two transformer blocks preserves performance while further improving efficiency. We evaluate our method on a multi-center state-of-the-art cine 3D CMR FM fine-tuned for disease detection using ACDC and combined M\\&Ms datasets, treating each vendor as a federated client. Med-DualLoRA achieves statistically significant improved performance (balanced accuracy 0.768, specificity 0.612) compared to other federated PEFT baselines, while maintaining communication efficiency. Our approach provides a scalable solution for local federated adaptation of medical FMs under realistic clinical constraints.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.09668v1",
-        "pdf": "https://arxiv.org/pdf/2603.09668v1"
+        "paper": "http://arxiv.org/abs/2603.10967v1",
+        "pdf": "https://arxiv.org/pdf/2603.10967v1"
       },
-      "arxiv_id": "2603.09668v1",
-      "comment": "Accepted by ICLR 2026. Project page: https://zju3dv.github.io/DiffWind/",
+      "arxiv_id": "2603.10967v1",
+      "comment": "11 pages, 2 figures. Submitted to MICCAI 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.060169491525423,
+      "score_breakdown": {
+        "total_score": 5.06,
+        "field_match": {
+          "score": 1.53,
+          "matches": [
+            "medical imaging",
+            "cardiac"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.10703v1",
+      "title": "WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation",
+      "authors": [
+        "Rafi Ibn Sultan",
+        "Hui Zhu",
+        "Xiangyu Zhou",
+        "Chengyin Li",
+        "Prashant Khanduri",
+        "Marco Brocanelli",
+        "Dongxiao Zhu"
+      ],
+      "abstract": "Ensuring accessible pedestrian navigation requires reasoning about both semantic and spatial aspects of complex urban scenes, a challenge that existing Large Vision-Language Models (LVLMs) struggle to meet. Although these models can describe visual content, their lack of explicit grounding leads to object hallucinations and unreliable depth reasoning, limiting their usefulness for accessibility guidance. We introduce WalkGPT, a pixel-grounded LVLM for the new task of Grounded Navigation Guide, unifying language reasoning and segmentation within a single architecture for depth-aware accessibility guidance. Given a pedestrian-view image and a navigation query, WalkGPT generates a conversational response with segmentation masks that delineate accessible and harmful features, along with relative depth estimation. The model incorporates a Multi-Scale Query Projector (MSQP) that shapes the final image tokens by aggregating them along text tokens across spatial hierarchies, and a Calibrated Text Projector (CTP), guided by a proposed Region Alignment Loss, that maps language embeddings into segmentation-aware representations. These components enable fine-grained grounding and depth inference without user-provided cues or anchor points, allowing the model to generate complete and realistic navigation guidance. We also introduce PAVE, a large-scale benchmark of 41k pedestrian-view images paired with accessibility-aware questions and depth-grounded answers. Experiments show that WalkGPT achieves strong grounded reasoning and segmentation performance. The source code and dataset are available on the \\href{https://sites.google.com/view/walkgpt-26/home}{project website}.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
+      "categories": [
+        "cs.CV",
+        "cs.CY"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.10703v1",
+        "pdf": "https://arxiv.org/pdf/2603.10703v1"
+      },
+      "arxiv_id": "2603.10703v1",
+      "comment": "Accepted by CVPR-2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.803389830508474,
+      "score_breakdown": {
+        "total_score": 4.8,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.11047v1",
+      "title": "LiTo: Surface Light Field Tokenization",
+      "authors": [
+        "Jen-Hao Rick Chang",
+        "Xiaoming Zhao",
+        "Dorian Chan",
+        "Oncel Tuzel"
+      ],
+      "abstract": "We propose a 3D latent representation that jointly models object geometry and view-dependent appearance. Most prior works focus on either reconstructing 3D geometry or predicting view-independent diffuse appearance, and thus struggle to capture realistic view-dependent effects. Our approach leverages that RGB-depth images provide samples of a surface light field. By encoding random subsamples of this surface light field into a compact set of latent vectors, our model learns to represent both geometry and appearance within a unified 3D latent space. This representation reproduces view-dependent effects such as specular highlights and Fresnel reflections under complex lighting. We further train a latent flow matching model on this representation to learn its distribution conditioned on a single input image, enabling the generation of 3D objects with appearances consistent with the lighting and materials in the input. Experiments show that our approach achieves higher visual quality and better input fidelity than existing methods.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.11047v1",
+        "pdf": "https://arxiv.org/pdf/2603.11047v1"
+      },
+      "arxiv_id": "2603.11047v1",
+      "comment": "ICLR 2026; Project page: https://apple.github.io/ml-lito/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 6.027966101694916,
+      "relevance_score": 4.75,
       "score_breakdown": {
-        "total_score": 6.03,
+        "total_score": 4.75,
         "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.10899v1",
+      "title": "LookaheadKV: Fast and Accurate KV Cache Eviction by Glimpsing into the Future without Generation",
+      "authors": [
+        "Jinwoo Ahn",
+        "Ingyu Seong",
+        "Akhil Kedia",
+        "Junhan Kim",
+        "Hyemi Jang",
+        "Kangwook Lee",
+        "Yongkweon Jeon"
+      ],
+      "abstract": "Transformer-based large language models (LLMs) rely on key-value (KV) caching to avoid redundant computation during autoregressive inference. While this mechanism greatly improves efficiency, the cache size grows linearly with the input sequence length, quickly becoming a bottleneck for long-context tasks. Existing solutions mitigate this problem by evicting prompt KV that are deemed unimportant, guided by estimated importance scores. Notably, a recent line of work proposes to improve eviction quality by \"glimpsing into the future\", in which a draft generator produces a surrogate future response approximating the target model's true response, and this surrogate is subsequently used to estimate the importance of cached KV more accurately. However, these approaches rely on computationally expensive draft generation, which introduces substantial prefilling overhead and limits their practicality in real-world deployment. To address this challenge, we propose LookaheadKV, a lightweight eviction framework that leverages the strength of surrogate future response without requiring explicit draft generation. LookaheadKV augments transformer layers with parameter-efficient modules trained to predict true importance scores with high accuracy. Our design ensures negligible runtime overhead comparable to existing inexpensive heuristics, while achieving accuracy superior to more costly approximation methods. Extensive experiments on long-context understanding benchmarks, across a wide range of models, demonstrate that our method not only outperforms recent competitive baselines in various long-context understanding tasks, but also reduces the eviction cost by up to 14.5x, leading to significantly faster time-to-first-token. Our code is available at https://github.com/SamsungLabs/LookaheadKV.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.10899v1",
+        "pdf": "https://arxiv.org/pdf/2603.10899v1"
+      },
+      "arxiv_id": "2603.10899v1",
+      "comment": "ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.65,
+      "score_breakdown": {
+        "total_score": 4.65,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -56,8 +218,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -67,192 +229,29 @@
       }
     },
     {
-      "id": "2603.09673v1",
-      "title": "VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM",
+      "id": "2603.10872v1",
+      "title": "Bilevel Layer-Positioning LoRA for Real Image Dehazing",
       "authors": [
-        "Anh Thuan Tran",
-        "Jana Kosecka"
+        "Yan Zhang",
+        "Long Ma",
+        "Yuxin Feng",
+        "Zhe Huang",
+        "Fan Zhou",
+        "Zhuo Su"
       ],
-      "abstract": "Simultaneous Localization and Mapping (SLAM) with 3D Gaussian Splatting (3DGS) enables fast, differentiable rendering and high-fidelity reconstruction across diverse real-world scenes. However, existing 3DGS-SLAM approaches handle measurement reliability implicitly, making pose estimation and global alignment susceptible to drift in low-texture regions, transparent surfaces, or areas with complex reflectance properties. To this end, we introduce VarSplat, an uncertainty-aware 3DGS-SLAM system that explicitly learns per-splat appearance variance. By using the law of total variance with alpha compositing, we then render differentiable per-pixel uncertainty map via efficient, single-pass rasterization. This map guides tracking, submap registration, and loop detection toward focusing on reliable regions and contributes to more stable optimization. Experimental results on Replica (synthetic) and TUM-RGBD, ScanNet, and ScanNet++ (real-world) show that VarSplat improves robustness and achieves competitive or superior tracking, mapping, and novel view synthesis rendering compared to existing studies for dense RGB-D SLAM.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
+      "abstract": "Learning-based real image dehazing methods have achieved notable progress, yet they still face adaptation challenges in diverse real haze scenes. These challenges mainly stem from the lack of effective unsupervised mechanisms for unlabeled data and the heavy cost of full model fine-tuning. To address these challenges, we propose the haze-to-clear text-directed loss that leverages CLIP's cross-modal capabilities to reformulate real image dehazing as a semantic alignment problem in latent space, thereby providing explicit unsupervised cross-modal guidance in the absence of reference images. Furthermore, we introduce the Bilevel Layer-positioning LoRA (BiLaLoRA) strategy, which learns both the LoRA parameters and automatically search the injection layers, enabling targeted adaptation of critical network layers. Extensive experiments demonstrate our superiority against state-of-the-art methods on multiple real-world dehazing benchmarks. The code is publicly available at https://github.com/YanZhang-zy/BiLaLoRA.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.09673v1",
-        "pdf": "https://arxiv.org/pdf/2603.09673v1"
+        "paper": "http://arxiv.org/abs/2603.10872v1",
+        "pdf": "https://arxiv.org/pdf/2603.10872v1"
       },
-      "arxiv_id": "2603.09673v1",
-      "comment": "Accepted to CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.131355932203389,
-      "score_breakdown": {
-        "total_score": 5.13,
-        "field_match": {
-          "score": 2.2,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "registration"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.09921v1",
-      "title": "WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition",
-      "authors": [
-        "Shan Ning",
-        "Longtian Qiu",
-        "Jiaxuan Sun",
-        "Xuming He"
-      ],
-      "abstract": "Open-domain visual entity recognition (VER) seeks to associate images with entities in encyclopedic knowledge bases such as Wikipedia. Recent generative methods tailored for VER demonstrate strong performance but incur high computational costs, limiting their scalability and practical deployment. In this work, we revisit the contrastive paradigm for VER and introduce WikiCLIP, a simple yet effective framework that establishes a strong and efficient baseline for open-domain VER. WikiCLIP leverages large language model embeddings as knowledge-rich entity representations and enhances them with a Vision-Guided Knowledge Adaptor (VGKA) that aligns textual semantics with visual cues at the patch level. To further encourage fine-grained discrimination, a Hard Negative Synthesis Mechanism generates visually similar but semantically distinct negatives during training. Experimental results on popular open-domain VER benchmarks, such as OVEN, demonstrate that WikiCLIP significantly outperforms strong baselines. Specifically, WikiCLIP achieves a 16% improvement on the challenging OVEN unseen set, while reducing inference latency by nearly 100 times compared with the leading generative model, AutoVER. The project page is available at https://artanic30.github.io/project_pages/WikiCLIP/",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.09921v1",
-        "pdf": "https://arxiv.org/pdf/2603.09921v1"
-      },
-      "arxiv_id": "2603.09921v1",
-      "comment": "Accepted by CVPR26, codes and weights are publicly available",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.0,
-      "score_breakdown": {
-        "total_score": 5.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.09798v1",
-      "title": "Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency",
-      "authors": [
-        "Zhaofeng Shi",
-        "Heqian Qiu",
-        "Lanxiao Wang",
-        "Qingbo Wu",
-        "Fanman Meng",
-        "Lili Pan",
-        "Hongliang Li"
-      ],
-      "abstract": "Efficient adaptation between Egocentric (Ego) and Exocentric (Exo) views is crucial for applications such as human-robot cooperation. However, the success of most existing Ego-Exo adaptation methods relies heavily on target-view data for training, thereby increasing computational and data collection costs. In this paper, we make the first exploration of a Test-time Ego-Exo Adaptation for Action Anticipation (TE$^{2}$A$^{3}$) task, which aims to adjust the source-view-trained model online during test time to anticipate target-view actions. It is challenging for existing Test-Time Adaptation (TTA) methods to address this task due to the multi-action candidates and significant temporal-spatial inter-view gap. Hence, we propose a novel Dual-Clue enhanced Prototype Growing Network (DCPGN), which accumulates multi-label knowledge and integrates cross-modality clues for effective test-time Ego-Exo adaptation and action anticipation. Specifically, we propose a Multi-Label Prototype Growing Module (ML-PGM) to balance multiple positive classes via multi-label assignment and confidence-based reweighting for class-wise memory banks, which are updated by an entropy priority queue strategy. Then, the Dual-Clue Consistency Module (DCCM) introduces a lightweight narrator to generate textual clues indicating action progressions, which complement the visual clues containing various objects. Moreover, we constrain the inferred textual and visual logits to construct dual-clue consistency for temporally and spatially bridging Ego and Exo views. Extensive experiments on the newly proposed EgoMe-anti and the existing EgoExoLearn benchmarks show the effectiveness of our method, which outperforms related state-of-the-art methods by a large margin. Code is available at \\href{https://github.com/ZhaofengSHI/DCPGN}{https://github.com/ZhaofengSHI/DCPGN}.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.09798v1",
-        "pdf": "https://arxiv.org/pdf/2603.09798v1"
-      },
-      "arxiv_id": "2603.09798v1",
+      "arxiv_id": "2603.10872v1",
       "comment": "Accepted by CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.9,
-      "score_breakdown": {
-        "total_score": 4.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.09826v1",
-      "title": "VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models",
-      "authors": [
-        "Shuhao Kang",
-        "Youqi Liao",
-        "Peijie Wang",
-        "Wenlong Liao",
-        "Qilin Zhang",
-        "Benjamin Busam",
-        "Xieyuanli Chen",
-        "Yun Liu"
-      ],
-      "abstract": "Text-to-point-cloud (T2P) localization aims to infer precise spatial positions within 3D point cloud maps from natural language descriptions, reflecting how humans perceive and communicate spatial layouts through language. However, existing methods largely rely on shallow text-point cloud correspondence without effective spatial reasoning, limiting their accuracy in complex environments. To address this limitation, we propose VLM-Loc, a framework that leverages the spatial reasoning capability of large vision-language models (VLMs) for T2P localization. Specifically, we transform point clouds into bird's-eye-view (BEV) images and scene graphs that jointly encode geometric and semantic context, providing structured inputs for the VLM to learn cross-modal representations bridging linguistic and spatial semantics. On top of these representations, we introduce a partial node assignment mechanism that explicitly associates textual cues with scene graph nodes, enabling interpretable spatial reasoning for accurate localization. To facilitate systematic evaluation across diverse scenes, we present CityLoc, a benchmark built from multi-source point clouds for fine-grained T2P localization. Experiments on CityLoc demonstrate VLM-Loc achieves superior accuracy and robustness compared to state-of-the-art methods. Our code, model, and dataset are available at \\href{https://github.com/MCG-NKU/nku-3d-vision}{repository}.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.09826v1",
-        "pdf": "https://arxiv.org/pdf/2603.09826v1"
-      },
-      "arxiv_id": "2603.09826v1",
-      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.6,
@@ -284,42 +283,49 @@
       }
     },
     {
-      "id": "2603.09661v1",
-      "title": "FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting",
+      "id": "2603.10757v1",
+      "title": "CodePercept: Code-Grounded Visual STEM Perception for MLLMs",
       "authors": [
-        "Boya Zhang",
-        "Shuaijie Yin",
-        "Huiwen Zhu",
-        "Xing He"
+        "Tongkun Guan",
+        "Zhibo Yang",
+        "Jianqiang Wan",
+        "Mingkun Yang",
+        "Zhengtao Guo",
+        "Zijian Hu",
+        "Ruilin Luo",
+        "Ruize Chen",
+        "Songtao Jiang",
+        "Peng Wang",
+        "Wei Shen",
+        "Junyang Lin",
+        "Xiaokang Yang"
       ],
-      "abstract": "Mining time-frequency features is critical for time series forecasting. Existing research has predominantly focused on modeling low-frequency patterns, where most time series energy is concentrated. The overlooking of mid to high frequency continues to limit further performance gains in deep learning models. We propose FreqCycle, a novel framework integrating: (i) a Filter-Enhanced Cycle Forecasting (FECF) module to extract low-frequency features by explicitly learning shared periodic patterns in the time domain, and (ii) a Segmented Frequency-domain Pattern Learning (SFPL) module to enhance mid to high frequency energy proportion via learnable filters and adaptive weighting. Furthermore, time series data often exhibit coupled multi-periodicity, such as intertwined weekly and daily cycles. To address coupled multi-periodicity as well as long lookback window challenges, we extend FreqCycle hierarchically into MFreqCycle, which decouples nested periodic features through cross-scale interactions. Extensive experiments on seven diverse domain benchmarks demonstrate that FreqCycle achieves state-of-the-art accuracy while maintaining faster inference speeds, striking an optimal balance between performance and efficiency.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
+      "abstract": "When MLLMs fail at Science, Technology, Engineering, and Mathematics (STEM) visual reasoning, a fundamental question arises: is it due to perceptual deficiencies or reasoning limitations? Through systematic scaling analysis that independently scales perception and reasoning components, we uncover a critical insight: scaling perception consistently outperforms scaling reasoning. This reveals perception as the true lever limiting current STEM visual reasoning. Motivated by this insight, our work focuses on systematically enhancing the perception capabilities of MLLMs by establishing code as a powerful perceptual medium--executable code provides precise semantics that naturally align with the structured nature of STEM visuals. Specifically, we construct ICC-1M, a large-scale dataset comprising 1M Image-Caption-Code triplets that materializes this code-as-perception paradigm through two complementary approaches: (1) Code-Grounded Caption Generation treats executable code as ground truth for image captions, eliminating the hallucinations inherent in existing knowledge distillation methods; (2) STEM Image-to-Code Translation prompts models to generate reconstruction code, mitigating the ambiguity of natural language for perception enhancement. To validate this paradigm, we further introduce STEM2Code-Eval, a novel benchmark that directly evaluates visual perception in STEM domains. Unlike existing work relying on problem-solving accuracy as a proxy that only measures problem-relevant understanding, our benchmark requires comprehensive visual comprehension through executable code generation for image reconstruction, providing deterministic and verifiable assessment. Code is available at https://github.com/TongkunGuan/Qwen-CodePercept.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.09661v1",
-        "pdf": "https://arxiv.org/pdf/2603.09661v1"
+        "paper": "http://arxiv.org/abs/2603.10757v1",
+        "pdf": "https://arxiv.org/pdf/2603.10757v1"
       },
-      "arxiv_id": "2603.09661v1",
-      "comment": "18 pages, 17 figures, accepted to AAAI 2026. Code available at https://github.com/boya-zhang-ai/FreqCycle",
+      "arxiv_id": "2603.10757v1",
+      "comment": "Accepted by CVPR2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.219491525423729,
+      "has_code": false,
+      "relevance_score": 4.6,
       "score_breakdown": {
-        "total_score": 4.22,
+        "total_score": 4.6,
         "field_match": {
-          "score": 0.42,
-          "matches": [
-            "deep learning"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -327,8 +333,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -338,46 +344,39 @@
       }
     },
     {
-      "id": "2603.09718v1",
-      "title": "GSStream: 3D Gaussian Splatting based Volumetric Scene Streaming System",
+      "id": "2603.10744v1",
+      "title": "Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers",
       "authors": [
-        "Zhiye Tang",
-        "Qiudan Zhang",
-        "Lei Zhang",
-        "Junhui Hou",
-        "You Yang",
-        "Xu Wang"
+        "Wenhao Sun",
+        "Ji Li",
+        "Zhaoqiang Liu"
       ],
-      "abstract": "Recently, the 3D Gaussian splatting (3DGS) technique for real-time radiance field rendering has revolutionized the field of volumetric scene representation, providing users with an immersive experience. But in return, it also poses a large amount of data volume, which is extremely bandwidth-intensive. Cutting-edge researchers have tried to introduce different approaches and construct multiple variants for 3DGS to obtain a more compact scene representation, but it is still challenging for real-time distribution. In this paper, we propose GSStream, a novel volumetric scene streaming system to support 3DGS data format. Specifically, GSStream integrates a collaborative viewport prediction module to better predict users' future behaviors by learning collaborative priors and historical priors from multiple users and users' viewport sequences and a deep reinforcement learning (DRL)-based bitrate adaptation module to tackle the state and action space variability challenge of the bitrate adaptation problem, achieving efficient volumetric scene delivery. Besides, we first build a user viewport trajectory dataset for volumetric scenes to support the training and streaming simulation. Extensive experiments prove that our proposed GSStream system outperforms existing representative volumetric scene streaming systems in visual quality and network usage. Demo video: https://youtu.be/3WEe8PN8yvA.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
+      "abstract": "Diffusion Transformers have established a new state-of-the-art in image synthesis, but the high computational cost of iterative sampling severely hampers their practical deployment. While existing acceleration methods often focus on the temporal domain, they overlook the substantial spatial redundancy inherent in the generative process, where global structures emerge long before fine-grained details are formed. The uniform computational treatment of all spatial regions represents a critical inefficiency. In this paper, we introduce Just-in-Time (JiT), a novel training-free framework that addresses this challenge by acceleration in the spatial domain. JiT formulates a spatially approximated generative ordinary differential equation (ODE) that drives the full latent state evolution based on computations from a dynamically selected, sparse subset of anchor tokens. To ensure seamless transitions as new tokens are incorporated to expand the dimensions of the latent state, we propose a deterministic micro-flow, a simple and effective finite-time ODE that maintains both structural coherence and statistical correctness. Extensive experiments on the state-of-the-art FLUX.1-dev model demonstrate that JiT achieves up to a 7x speedup with nearly lossless performance, significantly outperforming existing acceleration methods and establishing a new and superior trade-off between inference speed and generation fidelity.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.09718v1",
-        "pdf": "https://arxiv.org/pdf/2603.09718v1"
+        "paper": "http://arxiv.org/abs/2603.10744v1",
+        "pdf": "https://arxiv.org/pdf/2603.10744v1"
       },
-      "arxiv_id": "2603.09718v1",
-      "comment": "",
+      "arxiv_id": "2603.10744v1",
+      "comment": "Accepted by CVPR2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.215254237288136,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 4.22,
+        "total_score": 4.55,
         "field_match": {
-          "score": 2.29,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "volumetric"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -396,98 +395,44 @@
       }
     },
     {
-      "id": "2603.09760v1",
-      "title": "PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments",
+      "id": "2603.10990v1",
+      "title": "Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity",
       "authors": [
-        "Guoliang Zhu",
-        "Wanjun Jia",
-        "Caoyang Shao",
-        "Yuheng Zhang",
-        "Zhiyong Li",
-        "Kailun Yang"
+        "Zhengyao Fang",
+        "Zexi Jia",
+        "Yijia Zhong",
+        "Pengcheng Luo",
+        "Jinchao Zhang",
+        "Guangming Lu",
+        "Jun Yu",
+        "Wenjie Pei"
       ],
-      "abstract": "Global perception is essential for embodied agents in 360° spaces, yet current affordance grounding remains largely object-centric and restricted to perspective views. To bridge this gap, we introduce a novel task: Holistic Affordance Grounding in 360° Indoor Environments. This task faces unique challenges, including severe geometric distortions from Equirectangular Projection (ERP), semantic dispersion, and cross-scale alignment difficulties. We propose PanoAffordanceNet, an end-to-end framework featuring a Distortion-Aware Spectral Modulator (DASM) for latitude-dependent calibration and an Omni-Spherical Densification Head (OSDH) to restore topological continuity from sparse activations. By integrating multi-level constraints comprising pixel-wise, distributional, and region-text contrastive objectives, our framework effectively suppresses semantic drift under low supervision. Furthermore, we construct 360-AGD, the first high-quality panoramic affordance grounding dataset. Extensive experiments demonstrate that PanoAffordanceNet significantly outperforms existing methods, establishing a solid baseline for scene-level perception in embodied intelligence. The source code and benchmark dataset will be made publicly available at https://github.com/GL-ZHU925/PanoAffordanceNet.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
+      "abstract": "Recent advances in text-to-image (T2I) generation have greatly improved visual quality, yet producing images that appear visually authentic to real-world photography remains challenging. This is partly due to biases in existing evaluation paradigms: human ratings and preference-trained metrics often favor visually vivid images with exaggerated saturation and contrast, which make generations often too vivid to be real even when prompted for realistic-style images. To address this issue, we present Color Fidelity Dataset (CFD) and Color Fidelity Metric (CFM) for objective evaluation of color fidelity in realistic-style generations. CFD contains over 1.3M real and synthetic images with ordered levels of color realism, while CFM employs a multimodal encoder to learn perceptual color fidelity. In addition, we propose a training-free Color Fidelity Refinement (CFR) that adaptively modulates spatial-temporal guidance scale in generation, thereby enhancing color authenticity. Together, CFD supports CFM for assessment, whose learned attention further guides CFR to refine T2I fidelity, forming a progressive framework for assessing and improving color fidelity in realistic-style T2I generation. The dataset and code are available at https://github.com/ZhengyaoFang/CFM.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
       "categories": [
-        "cs.CV",
-        "cs.RO",
-        "eess.IV"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.09760v1",
-        "pdf": "https://arxiv.org/pdf/2603.09760v1"
+        "paper": "http://arxiv.org/abs/2603.10990v1",
+        "pdf": "https://arxiv.org/pdf/2603.10990v1"
       },
-      "arxiv_id": "2603.09760v1",
-      "comment": "The source code and benchmark dataset will be made publicly available at https://github.com/GL-ZHU925/PanoAffordanceNet",
+      "arxiv_id": "2603.10990v1",
+      "comment": "accepted by CVPR2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
+      "has_code": false,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2603.09932v1",
-      "title": "Unsupervised Domain Adaptation with Target-Only Margin Disparity Discrepancy",
-      "authors": [
-        "Gauthier Miralles",
-        "Loïc Le Folgoc",
-        "Vincent Jugnon",
-        "Pietro Gori"
-      ],
-      "abstract": "In interventional radiology, Cone-Beam Computed Tomography (CBCT) is a helpful imaging modality that provides guidance to practicians during minimally invasive procedures. CBCT differs from traditional Computed Tomography (CT) due to its limited reconstructed field of view, specific artefacts, and the intra-arterial administration of contrast medium. While CT benefits from abundant publicly available annotated datasets, interventional CBCT data remain scarce and largely unannotated, with existing datasets focused primarily on radiotherapy applications. To address this limitation, we leverage a proprietary collection of unannotated interventional CBCT scans in conjunction with annotated CT data, employing domain adaptation techniques to bridge the modality gap and enhance liver segmentation performance on CBCT. We propose a novel unsupervised domain adaptation (UDA) framework based on the formalism of Margin Disparity Discrepancy (MDD), which improves target domain performance through a reformulation of the original MDD optimization framework. Experimental results on CT and CBCT datasets for liver segmentation demonstrate that our method achieves state-of-the-art performance in UDA, as well as in the few-shot setting.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.09932v1",
-        "pdf": "https://arxiv.org/pdf/2603.09932v1"
-      },
-      "arxiv_id": "2603.09932v1",
-      "comment": "ISBI 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.153389830508475,
-      "score_breakdown": {
-        "total_score": 4.15,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 8,
-          "venue": "ISBI",
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -506,57 +451,107 @@
       }
     },
     {
-      "id": "2603.09737v1",
-      "title": "$M^2$-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs",
+      "id": "2603.10963v1",
+      "title": "Pointy - A Lightweight Transformer for Point Cloud Foundation Models",
       "authors": [
-        "Kaixin Lin",
-        "Kunyu Peng",
-        "Di Wen",
-        "Yufan Chen",
-        "Ruiping Liu",
-        "Kailun Yang"
+        "Konrad Szafer",
+        "Marek Kraft",
+        "Dominik Belter"
       ],
-      "abstract": "Semantic occupancy prediction enables dense 3D geometric and semantic understanding for autonomous driving. However, existing camera-based approaches implicitly assume complete surround-view observations, an assumption that rarely holds in real-world deployment due to occlusion, hardware malfunction, or communication failures. We study semantic occupancy prediction under incomplete multi-camera inputs and introduce $M^2$-Occ, a framework designed to preserve geometric structure and semantic coherence when views are missing. $M^2$-Occ addresses two complementary challenges. First, a Multi-view Masked Reconstruction (MMR) module leverages the spatial overlap among neighboring cameras to recover missing-view representations directly in the feature space. Second, a Feature Memory Module (FMM) introduces a learnable memory bank that stores class-level semantic prototypes. By retrieving and integrating these global priors, the FMM refines ambiguous voxel features, ensuring semantic consistency even when observational evidence is incomplete. We introduce a systematic missing-view evaluation protocol on the nuScenes-based SurroundOcc benchmark, encompassing both deterministic single-view failures and stochastic multi-view dropout scenarios. Under the safety-critical missing back-view setting, $M^2$-Occ improves the IoU by 4.93%. As the number of missing cameras increases, the robustness gap further widens; for instance, under the setting with five missing views, our method boosts the IoU by 5.01%. These gains are achieved without compromising full-view performance. The source code will be publicly released at https://github.com/qixi7up/M2-Occ.",
-      "published": "2026-03-10",
-      "updated": "2026-03-10",
+      "abstract": "Foundation models for point cloud data have recently grown in capability, often leveraging extensive representation learning from language or vision. In this work, we take a more controlled approach by introducing a lightweight transformer-based point cloud architecture. In contrast to the heavy reliance on cross-modal supervision, our model is trained only on 39k point clouds - yet it outperforms several larger foundation models trained on over 200k training samples. Interestingly, our method approaches state-of-the-art results from models that have seen over a million point clouds, images, and text samples, demonstrating the value of a carefully curated training setup and architecture. To ensure rigorous evaluation, we conduct a comprehensive replication study that standardizes the training regime and benchmarks across multiple point cloud architectures. This unified experimental framework isolates the impact of architectural choices, allowing for transparent comparisons and highlighting the benefits of our design and other tokenizer-free architectures. Our results show that simple backbones can deliver competitive results to more complex or data-rich strategies. The implementation, including code, pre-trained models, and training protocols, is available at https://github.com/KonradSzafer/Pointy.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
       "categories": [
         "cs.CV",
-        "cs.RO",
-        "eess.IV"
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.09737v1",
-        "pdf": "https://arxiv.org/pdf/2603.09737v1"
+        "paper": "http://arxiv.org/abs/2603.10963v1",
+        "pdf": "https://arxiv.org/pdf/2603.10963v1"
       },
-      "arxiv_id": "2603.09737v1",
-      "comment": "The source code will be publicly released at https://github.com/qixi7up/M2-Occ",
+      "arxiv_id": "2603.10963v1",
+      "comment": "To appear in the proceedings of ACIVS 2025. An earlier version was presented at the SCI-FM workshop at ICLR 2025",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
+      "has_code": false,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
           "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2603.10887v1",
+      "title": "Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models",
+      "authors": [
+        "Yixiu Mao",
+        "Yun Qu",
+        "Qi Wang",
+        "Heming Zou",
+        "Xiangyang Ji"
+      ],
+      "abstract": "Reinforcement learning (RL) finetuning has become a key technique for enhancing the reasoning abilities of large language models (LLMs). However, its effectiveness critically depends on the selection of training data. Recent advances underscore the importance of online prompt selection methods, which typically concentrate training on partially solved or moderately challenging examples under the current policy, thereby yielding more effective model updates. While significantly accelerating RL finetuning in terms of training steps, they also incur substantial computational overhead by requiring extensive LLM rollouts over large candidate batches to identify informative samples, an expense that can outweigh the finetuning process itself. To address this challenge, this work proposes Dynamics-Predictive Sampling (DPS), which online predicts and selects informative prompts by inferring their learning dynamics prior to costly rollouts. Specifically, we introduce a new perspective by modeling each prompt's solving progress during RL finetuning as a dynamical system, where the extent of solving is represented as the state and the transition is characterized by a hidden Markov model. Using historical rollout reward signals, we perform online Bayesian inference to estimate evolving state distributions, and the inference outcome provides a predictive prior for efficient prompt selection without rollout-intensive filtering. Empirical results across diverse reasoning tasks, including mathematics, planning, and visual geometry, demonstrate that DPS substantially reduces redundant rollouts, accelerates the training process, and achieves superior reasoning performance.",
+      "published": "2026-03-11",
+      "updated": "2026-03-11",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.10887v1",
+        "pdf": "https://arxiv.org/pdf/2603.10887v1"
+      },
+      "arxiv_id": "2603.10887v1",
+      "comment": "Accepted to ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
           "weight": 0.1
         }
       }

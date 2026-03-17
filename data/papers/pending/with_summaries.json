@@ -3,441 +3,48 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.12083v1",
-      "title": "Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis",
+      "id": "2603.13044v1",
+      "title": "Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study",
       "authors": [
-        "Xiaolong Qian",
-        "Qi Jiang",
-        "Yao Gao",
-        "Lei Sun",
-        "Zhonghua Yi",
-        "Kailun Yang",
-        "Luc Van Gool",
-        "Kaiwei Wang"
+        "Vanessa Borst",
+        "Samuel Kounev"
       ],
-      "abstract": "Prevalent Computational Aberration Correction (CAC) methods are typically tailored to specific optical systems, leading to poor generalization and labor-intensive re-training for new lenses. Developing CAC paradigms capable of generalizing across diverse photographic lenses offers a promising solution to these challenges. However, efforts to achieve such cross-lens universality within consumer photography are still in their early stages due to the lack of a comprehensive benchmark that encompasses a sufficiently wide range of optical aberrations. Furthermore, it remains unclear which specific factors influence existing CAC methods and how these factors affect their performance. In this paper, we present comprehensive experiments and evaluations involving 24 image restoration and CAC algorithms, utilizing our newly proposed UniCAC, a large-scale benchmark for photographic cameras constructed via automatic optical design. The Optical Degradation Evaluator (ODE) is introduced as a novel framework to objectively assess the difficulty of CAC tasks, offering credible quantification of optical aberrations and enabling reliable evaluation. Drawing on our comparative analysis, we identify three key factors -- prior utilization, network architecture, and training strategy -- that most significantly influence CAC performance, and further investigate their respective effects. We believe that our benchmark, dataset, and observations contribute foundational insights to related areas and lay the groundwork for future investigations. Benchmarks, codes, and Zemax files will be available at https://github.com/XiaolongQian/UniCAC.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
+      "abstract": "Medical image segmentation (MIS) is a fundamental component of computer-assisted diagnosis and clinical decision support systems. Over the past decade, numerous architectures specifically tailored to medical imaging have emerged to address domain-specific challenges such as low contrast, small anatomical structures, and limited annotated data. In parallel, rapid progress in computer vision has produced highly capable general-purpose vision models (GP-VMs) originally designed for natural images. Despite their strong performance on standard vision benchmarks, their effectiveness for MIS remains insufficiently understood. In this work, we conduct a controlled empirical study to examine whether specialized medical segmentation architectures (SMAs) provide systematic advantages over modern GP-VMs for 2D MIS. We compare eleven SMAs and GP-VMs using a unified training and evaluation protocol. Experiments are performed across three heterogeneous datasets covering different imaging modalities, class structures, and data characteristics. Beyond segmentation accuracy, we analyze qualitative Grad-CAM visualizations to investigate explainability (XAI) behavior. Our results demonstrate that, for the analyzed datasets, GP-VMs out-perform the majority of specialized MIS models. Moreover, XAI analyses indicate that GP-VMs can capture clinically relevant structures without explicit domain-specific architectural design. These findings suggest that GP-VMs can represent a viable alternative to domain-specific methods, highlighting the importance of informed model selection for end-to-end MIS systems. All code and resources are available at GitHub.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
       "categories": [
         "cs.CV",
-        "cs.RO",
-        "eess.IV",
-        "physics.optics"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.12083v1",
-        "pdf": "https://arxiv.org/pdf/2603.12083v1"
+        "paper": "http://arxiv.org/abs/2603.13044v1",
+        "pdf": "https://arxiv.org/pdf/2603.13044v1"
       },
-      "arxiv_id": "2603.12083v1",
-      "comment": "Accepted to CVPR 2026. Benchmarks, codes, and Zemax files will be available at https://github.com/XiaolongQian/UniCAC",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.449999999999999,
-      "score_breakdown": {
-        "total_score": 5.45,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Prevalent Computational Aberration Correction (CAC) methods are typically tailored to specific optical systems, leading to poor generalization and labor-intensive re-training for new lenses. Developing CAC paradigms capable of generalizing across diverse photographic lenses offers a promising solution to these challenges. However, efforts to achieve such cross-lens universality within consumer pho...",
-        "key_contributions": [
-          "Prevalent Computational Aberration Correction (CAC) methods are typically tailored to specific optical systems, leading to poor generalization and labor-intensive re-training for new lenses.",
-          "Developing CAC paradigms capable of generalizing across diverse photographic lenses offers a promising solution to these challenges.",
-          "However, efforts to achieve such cross-lens universality within consumer photography are still in their early stages due to the lack of a comprehensive benchmark that encompasses a sufficiently wide range of optical aberrations."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.12193v1",
-      "title": "SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics",
-      "authors": [
-        "Mengzhen Liu",
-        "Enshen Zhou",
-        "Cheng Chi",
-        "Yi Han",
-        "Shanyu Rong",
-        "Liming Chen",
-        "Pengwei Wang",
-        "Zhongyuan Wang",
-        "Shanghang Zhang"
-      ],
-      "abstract": "Active perception and manipulation are crucial for robots to interact with complex scenes. Existing methods struggle to unify semantic-driven active perception with robust, viewpoint-invariant execution. We propose SaPaVe, an end-to-end framework that jointly learns these capabilities in a data-efficient manner. Our approach decouples camera and manipulation actions rather than placing them in a shared action space, and follows a bottom-up training strategy: we first train semantic camera control on a large-scale dataset, then jointly optimize both action types using hybrid data. To support this framework, we introduce ActiveViewPose-200K, a dataset of 200k image-language-camera movement pairs for semantic camera movement learning, and a 3D geometry-aware module that improves execution robustness under dynamic viewpoints. We also present ActiveManip-Bench, the first benchmark for evaluating active manipulation beyond fixed-view settings. Extensive experiments in both simulation and real-world environments show that SaPaVe outperforms recent vision-language-action models such as GR00T N1 and \\(π_0\\), achieving up to 31.25\\% higher success rates in real-world tasks. These results show that tightly coupled perception and execution, when trained with decoupled yet coordinated strategies, enable efficient and generalizable active manipulation. Project page: https://lmzpai.github.io/SaPaVe",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.12193v1",
-        "pdf": "https://arxiv.org/pdf/2603.12193v1"
-      },
-      "arxiv_id": "2603.12193v1",
-      "comment": "Accepted to CVPR 2026. See project page at https://lmzpai.github.io/SaPaVe",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.3500000000000005,
-      "score_breakdown": {
-        "total_score": 5.35,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Active perception and manipulation are crucial for robots to interact with complex scenes. Existing methods struggle to unify semantic-driven active perception with robust, viewpoint-invariant execution. We propose SaPaVe, an end-to-end framework that jointly learns these capabilities in a data-efficient manner. Our approach decouples camera and manipulation actions rather than placing them in a s...",
-        "key_contributions": [
-          "Active perception and manipulation are crucial for robots to interact with complex scenes.",
-          "Existing methods struggle to unify semantic-driven active perception with robust, viewpoint-invariant execution.",
-          "We propose SaPaVe, an end-to-end framework that jointly learns these capabilities in a data-efficient manner."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.11991v1",
-      "title": "BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs",
-      "authors": [
-        "Ilias Aarab"
-      ],
-      "abstract": "Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions. While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have challenged the dominance of NLI-based architectures. Yet, systematically comparing these diverse approaches remains difficult. Existing evaluations, such as MTEB, often incorporate labeled examples through supervised probes or fine-tuning, leaving genuine zero-shot capabilities underexplored. To address this, we introduce BTZSC, a comprehensive benchmark of 22 public datasets spanning sentiment, topic, intent, and emotion classification, capturing diverse domains, class cardinalities, and document lengths. Leveraging BTZSC, we conduct a systematic comparison across four major model families, NLI cross-encoders, embedding models, rerankers and instruction-tuned LLMs, encompassing 38 public and custom checkpoints. Our results show that: (i) modern rerankers, exemplified by Qwen3-Reranker-8B, set a new state-of-the-art with macro F1 = 0.72; (ii) strong embedding models such as GTE-large-en-v1.5 substantially close the accuracy gap while offering the best trade-off between accuracy and latency; (iii) instruction-tuned LLMs at 4--12B parameters achieve competitive performance (macro F1 up to 0.67), excelling particularly on topic classification but trailing specialized rerankers; (iv) NLI cross-encoders plateau even as backbone size increases; and (v) scaling primarily benefits rerankers and LLMs over embedding models. BTZSC and accompanying evaluation code are publicly released to support fair and reproducible progress in zero-shot text understanding.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG",
-        "stat.ML"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.11991v1",
-        "pdf": "https://arxiv.org/pdf/2603.11991v1"
-      },
-      "arxiv_id": "2603.11991v1",
-      "comment": "Accepted at ICLR 2026. 31 pages, 5 figures, 9 tables. Code: https://github.com/IliasAarab/btzsc ; Dataset: https://huggingface.co/datasets/btzsc/btzsc ; Leaderboard: https://huggingface.co/spaces/btzsc/btzsc-leaderboard . Proceedings of the Fourteenth International Conference on Learning Representations (ICLR 2026), 2026",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.300000000000001,
-      "score_breakdown": {
-        "total_score": 5.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions. While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have ch...",
-        "key_contributions": [
-          "Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions.",
-          "While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have challenged the dominance of NLI-based architectures.",
-          "Yet, systematically comparing these diverse approaches remains difficult."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.12254v1",
-      "title": "Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing",
-      "authors": [
-        "Baifeng Shi",
-        "Stephanie Fu",
-        "Long Lian",
-        "Hanrong Ye",
-        "David Eigen",
-        "Aaron Reite",
-        "Boyi Li",
-        "Jan Kautz",
-        "Song Han",
-        "David M. Chan",
-        "Pavlo Molchanov",
-        "Trevor Darrell",
-        "Hongxu Yin"
-      ],
-      "abstract": "Multi-modal large language models (MLLMs) have advanced general-purpose video understanding but struggle with long, high-resolution videos -- they process every pixel equally in their vision transformers (ViTs) or LLMs despite significant spatiotemporal redundancy. We introduce AutoGaze, a lightweight module that removes redundant patches before processed by a ViT or an MLLM. Trained with next-token prediction and reinforcement learning, AutoGaze autoregressively selects a minimal set of multi-scale patches that can reconstruct the video within a user-specified error threshold, eliminating redundancy while preserving information. Empirically, AutoGaze reduces visual tokens by 4x-100x and accelerates ViTs and MLLMs by up to 19x, enabling scaling MLLMs to 1K-frame 4K-resolution videos and achieving superior results on video benchmarks (e.g., 67.0% on VideoMME). Furthermore, we introduce HLVid: the first high-resolution, long-form video QA benchmark with 5-minute 4K-resolution videos, where an MLLM scaled with AutoGaze improves over the baseline by 10.1% and outperforms the previous best MLLM by 4.5%. Project page: https://autogaze.github.io/.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.12254v1",
-        "pdf": "https://arxiv.org/pdf/2603.12254v1"
-      },
-      "arxiv_id": "2603.12254v1",
-      "comment": "CVPR 2026. Project page: https://autogaze.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.25,
-      "score_breakdown": {
-        "total_score": 5.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Multi-modal large language models (MLLMs) have advanced general-purpose video understanding but struggle with long, high-resolution videos -- they process every pixel equally in their vision transformers (ViTs) or LLMs despite significant spatiotemporal redundancy. We introduce AutoGaze, a lightweight module that removes redundant patches before processed by a ViT or an MLLM. Trained with next-tok...",
-        "key_contributions": [
-          "Multi-modal large language models (MLLMs) have advanced general-purpose video understanding but struggle with long, high-resolution videos -- they process every pixel equally in their vision transformers (ViTs) or LLMs despite significant spatiotemporal redundancy.",
-          "We introduce AutoGaze, a lightweight module that removes redundant patches before processed by a ViT or an MLLM.",
-          "Trained with next-token prediction and reinforcement learning, AutoGaze autoregressively selects a minimal set of multi-scale patches that can reconstruct the video within a user-specified error threshold, eliminating redundancy while preserving information."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.12267v1",
-      "title": "EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation",
-      "authors": [
-        "Tianwei Xiong",
-        "Jun Hao Liew",
-        "Zilong Huang",
-        "Zhijie Lin",
-        "Jiashi Feng",
-        "Xihui Liu"
-      ],
-      "abstract": "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences. The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost. Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static, or repetitive segments while underserving dynamic or complex ones. To address this inefficiency, we introduce $\\textbf{EVATok}$, a framework to produce $\\textbf{E}$fficient $\\textbf{V}$ideo $\\textbf{A}$daptive $\\textbf{Tok}$enizers. Our framework estimates optimal token assignments for each video to achieve the best quality-cost trade-off, develops lightweight routers for fast prediction of these optimal assignments, and trains adaptive tokenizers that encode videos based on the assignments predicted by routers. We demonstrate that EVATok delivers substantial improvements in efficiency and overall quality for video reconstruction and downstream AR generation. Enhanced by our advanced training recipe that integrates video semantic encoders, EVATok achieves superior reconstruction and state-of-the-art class-to-video generation on UCF-101, with at least 24.4% savings in average token usage compared to the prior state-of-the-art LARP and our fixed-length baseline.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.12267v1",
-        "pdf": "https://arxiv.org/pdf/2603.12267v1"
-      },
-      "arxiv_id": "2603.12267v1",
-      "comment": "Accepted by CVPR 2026. Project page: https://silentview.github.io/EVATok/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.05,
-      "score_breakdown": {
-        "total_score": 5.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences. The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost. Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static,...",
-        "key_contributions": [
-          "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences.",
-          "The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost.",
-          "Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static, or repetitive segments while underserving dynamic or complex ones."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.12240v1",
-      "title": "BiGain: Unified Token Compression for Joint Generation and Classification",
-      "authors": [
-        "Jiacheng Liu",
-        "Shengkun Tang",
-        "Jiacheng Cui",
-        "Dongkuan Xu",
-        "Zhiqiang Shen"
-      ],
-      "abstract": "Acceleration methods for diffusion models (e.g., token merging or downsampling) typically optimize synthesis quality under reduced compute, yet often ignore discriminative capacity. We revisit token compression with a joint objective and present BiGain, a training-free, plug-and-play framework that preserves generation quality while improving classification in accelerated diffusion models. Our key insight is frequency separation: mapping feature-space signals into a frequency-aware representation disentangles fine detail from global semantics, enabling compression that respects both generative fidelity and discriminative utility. BiGain reflects this principle with two frequency-aware operators: (1) Laplacian-gated token merging, which encourages merges among spectrally smooth tokens while discouraging merges of high-contrast tokens, thereby retaining edges and textures; and (2) Interpolate-Extrapolate KV Downsampling, which downsamples keys/values via a controllable interextrapolation between nearest and average pooling while keeping queries intact, thereby conserving attention precision. Across DiT- and U-Net-based backbones and ImageNet-1K, ImageNet-100, Oxford-IIIT Pets, and COCO-2017, our operators consistently improve the speed-accuracy trade-off for diffusion-based classification, while maintaining or enhancing generation quality under comparable acceleration. For instance, on ImageNet-1K, with 70% token merging on Stable Diffusion 2.0, BiGain increases classification accuracy by 7.15% while improving FID by 0.34 (1.85%). Our analyses indicate that balanced spectral retention, preserving high-frequency detail and low/mid-frequency semantics, is a reliable design rule for token compression in diffusion models. To our knowledge, BiGain is the first framework to jointly study and advance both generation and classification under accelerated diffusion, supporting lower-cost deployment.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.12240v1",
-        "pdf": "https://arxiv.org/pdf/2603.12240v1"
-      },
-      "arxiv_id": "2603.12240v1",
-      "comment": "CVPR 2026. Code: https://github.com/Greenoso/BiGain",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.05,
-      "score_breakdown": {
-        "total_score": 5.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Acceleration methods for diffusion models (e.g., token merging or downsampling) typically optimize synthesis quality under reduced compute, yet often ignore discriminative capacity. We revisit token compression with a joint objective and present BiGain, a training-free, plug-and-play framework that preserves generation quality while improving classification in accelerated diffusion models. Our key...",
-        "key_contributions": [
-          "Acceleration methods for diffusion models (e.",
-          "g.",
-          ", token merging or downsampling) typically optimize synthesis quality under reduced compute, yet often ignore discriminative capacity."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.12149v1",
-      "title": "Linking Perception, Confidence and Accuracy in MLLMs",
-      "authors": [
-        "Yuetian Du",
-        "Yucheng Wang",
-        "Rongyu Zhang",
-        "Zhijie Xu",
-        "Boyu Yang",
-        "Ming Kong",
-        "Jie Liu",
-        "Qiang Zhu"
-      ],
-      "abstract": "Recent advances in Multi-modal Large Language Models (MLLMs) have predominantly focused on enhancing visual perception to improve accuracy. However, a critical question remains unexplored: Do models know when they do not know? Through a probing experiment, we reveal a severe confidence miscalibration problem in MLLMs. To address this, we propose Confidence-Driven Reinforcement Learning (CDRL), which uses original-noise image pairs and a novel confidence-based reward to enhance perceptual sensitivity and robustly calibrate the model's confidence. Beyond training benefits, calibrated confidence enables more effective test-time scaling as a free lunch. We further propose Confidence-Aware Test-Time Scaling (CA-TTS), which dynamically coordinates Self-Consistency, Self-Reflection, and Visual Self-Check modules guided by confidence signals. An Expert Model acts in multiple roles (e.g., Planner, Critic, Voter) to schedule these modules and provide external verification. Our integrated framework establishes new state-of-the-art results with consistent 8.8% gains across four benchmarks. More ablation studies demonstrate the effectiveness of each module and scaling superiority.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
-      "categories": [
-        "cs.CV",
-        "cs.CL"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.12149v1",
-        "pdf": "https://arxiv.org/pdf/2603.12149v1"
-      },
-      "arxiv_id": "2603.12149v1",
-      "comment": "Accepted by CVPR2026",
+      "arxiv_id": "2603.13044v1",
+      "comment": "Under review, MICCAI 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.85,
+      "relevance_score": 5.333050847457627,
       "score_breakdown": {
-        "total_score": 4.85,
+        "total_score": 5.33,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.46,
+          "matches": [
+            "medical image",
+            "medical imaging",
+            "segmentation",
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "MICCAI",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -446,48 +53,109 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent advances in Multi-modal Large Language Models (MLLMs) have predominantly focused on enhancing visual perception to improve accuracy. However, a critical question remains unexplored: Do models know when they do not know? Through a probing experiment, we reveal a severe confidence miscalibration problem in MLLMs. To address this, we propose Confidence-Driven Reinforcement Learning (CDRL), whi...",
+        "short": "Medical image segmentation (MIS) is a fundamental component of computer-assisted diagnosis and clinical decision support systems. Over the past decade, numerous architectures specifically tailored to medical imaging have emerged to address domain-specific challenges such as low contrast, small anatomical structures, and limited annotated data. In parallel, rapid progress in computer vision has pro...",
         "key_contributions": [
-          "Recent advances in Multi-modal Large Language Models (MLLMs) have predominantly focused on enhancing visual perception to improve accuracy.",
-          "However, a critical question remains unexplored: Do models know when they do not know? Through a probing experiment, we reveal a severe confidence miscalibration problem in MLLMs.",
-          "To address this, we propose Confidence-Driven Reinforcement Learning (CDRL), which uses original-noise image pairs and a novel confidence-based reward to enhance perceptual sensitivity and robustly calibrate the model's confidence."
+          "Medical image segmentation (MIS) is a fundamental component of computer-assisted diagnosis and clinical decision support systems.",
+          "Over the past decade, numerous architectures specifically tailored to medical imaging have emerged to address domain-specific challenges such as low contrast, small anatomical structures, and limited annotated data.",
+          "In parallel, rapid progress in computer vision has produced highly capable general-purpose vision models (GP-VMs) originally designed for natural images."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.12146v1",
-      "title": "FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance",
+      "id": "2603.12903v1",
+      "title": "Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis",
       "authors": [
-        "Quanhao Li",
-        "Zhen Xing",
-        "Rui Wang",
-        "Haidong Cao",
-        "Qi Dai",
-        "Daoguo Dong",
-        "Zuxuan Wu"
+        "Yinuo Jiang",
+        "Jun Cheng",
+        "Yiran Wang",
+        "Cheng Cheng"
       ],
-      "abstract": "Recent advances in trajectory-controllable video generation have achieved remarkable progress. Previous methods mainly use adapter-based architectures for precise motion control along predefined trajectories. However, all these methods rely on a multi-step denoising process, leading to substantial time redundancy and computational overhead. While existing video distillation methods successfully distill multi-step generators into few-step, directly applying these approaches to trajectory-controllable video generation results in noticeable degradation in both video quality and trajectory accuracy. To bridge this gap, we introduce FlashMotion, a novel training framework designed for few-step trajectory-controllable video generation. We first train a trajectory adapter on a multi-step video generator for precise trajectory control. Then, we distill the generator into a few-step version to accelerate video generation. Finally, we finetune the adapter using a hybrid strategy that combines diffusion and adversarial objectives, aligning it with the few-step generator to produce high-quality, trajectory-accurate videos. For evaluation, we introduce FlashBench, a benchmark for long-sequence trajectory-controllable video generation that measures both video quality and trajectory accuracy across varying numbers of foreground objects. Experiments on two adapter architectures show that FlashMotion surpasses existing video distillation methods and previous multi-step models in both visual quality and trajectory consistency.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
+      "abstract": "Neural Radiance Fields (NeRF) have shown remarkable success in image novel view synthesis (NVS), inspiring extensions to LiDAR NVS. However, most methods heavily rely on accurate camera poses for scene reconstruction. The sparsity and textureless nature of LiDAR data also present distinct challenges, leading to geometric holes and discontinuous surfaces. To address these issues, we propose SG-NLF, a pose-free LiDAR NeRF framework that integrates spectral information with geometric consistency. Specifically, we design a hybrid representation based on spectral priors to reconstruct smooth geometry. For pose optimization, we construct a confidence-aware graph based on feature compatibility to achieve global alignment. In addition, an adversarial learning strategy is introduced to enforce cross-frame consistency, thereby enhancing reconstruction quality. Comprehensive experiments demonstrate the effectiveness of our framework, especially in challenging low-frequency scenarios. Compared to previous state-of-the-art methods, SG-NLF improves reconstruction quality and pose accuracy by over 35.8% and 68.8%. Our work can provide a novel perspective for LiDAR view synthesis.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "cs.MM"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.12146v1",
-        "pdf": "https://arxiv.org/pdf/2603.12146v1"
+        "paper": "http://arxiv.org/abs/2603.12903v1",
+        "pdf": "https://arxiv.org/pdf/2603.12903v1"
       },
-      "arxiv_id": "2603.12146v1",
-      "comment": "Accepted by CVPR2026",
+      "arxiv_id": "2603.12903v1",
+      "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.824576271186441,
+      "score_breakdown": {
+        "total_score": 4.82,
+        "field_match": {
+          "score": 1.19,
+          "matches": [
+            "neural radiance",
+            "nerf"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Neural Radiance Fields (NeRF) have shown remarkable success in image novel view synthesis (NVS), inspiring extensions to LiDAR NVS. However, most methods heavily rely on accurate camera poses for scene reconstruction. The sparsity and textureless nature of LiDAR data also present distinct challenges, leading to geometric holes and discontinuous surfaces. To address these issues, we propose SG-NLF,...",
+        "key_contributions": [
+          "Neural Radiance Fields (NeRF) have shown remarkable success in image novel view synthesis (NVS), inspiring extensions to LiDAR NVS.",
+          "However, most methods heavily rely on accurate camera poses for scene reconstruction.",
+          "The sparsity and textureless nature of LiDAR data also present distinct challenges, leading to geometric holes and discontinuous surfaces."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.12918v1",
+      "title": "VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation",
+      "authors": [
+        "Juhye Park",
+        "Wooju Lee",
+        "Dasol Hong",
+        "Changki Sung",
+        "Youngwoo Seo",
+        "Dongwan Kang",
+        "Hyun Myung"
+      ],
+      "abstract": "Accurate global localization is crucial for autonomous driving and robotics, but GNSS-based approaches often degrade due to occlusion and multipath effects. As an emerging alternative, cross-view pose estimation predicts the 3-DoF camera pose corresponding to a ground-view image with respect to a geo-referenced satellite image. However, existing methods struggle to bridge the significant viewpoint gap between the ground and satellite views mainly due to limited spatial correspondences. We propose a novel cross-view pose estimation method that constructs view-invariant representations through dual-axis transformation (VIRD). VIRD first applies a polar transformation to the satellite view to establish horizontal correspondence, then uses context-enhanced positional attention on the ground and polar-transformed satellite features to resolve vertical misalignment, explicitly mitigating the viewpoint gap. A view-reconstruction loss is introduced to strengthen the view invariance further, encouraging the derived representations to reconstruct the original and cross-view images. Experiments on the KITTI and VIGOR datasets demonstrate that VIRD outperforms the state-of-the-art methods without orientation priors, reducing median position and orientation errors by 50.7% and 76.5% on KITTI, and 18.0% and 46.8% on VIGOR, respectively.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.12918v1",
+        "pdf": "https://arxiv.org/pdf/2603.12918v1"
+      },
+      "arxiv_id": "2603.12918v1",
+      "comment": "Accepted to CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.699999999999999,
@@ -518,46 +186,305 @@
         }
       },
       "ai_summaries": {
-        "short": "Recent advances in trajectory-controllable video generation have achieved remarkable progress. Previous methods mainly use adapter-based architectures for precise motion control along predefined trajectories. However, all these methods rely on a multi-step denoising process, leading to substantial time redundancy and computational overhead. While existing video distillation methods successfully di...",
+        "short": "Accurate global localization is crucial for autonomous driving and robotics, but GNSS-based approaches often degrade due to occlusion and multipath effects. As an emerging alternative, cross-view pose estimation predicts the 3-DoF camera pose corresponding to a ground-view image with respect to a geo-referenced satellite image. However, existing methods struggle to bridge the significant viewpoint...",
         "key_contributions": [
-          "Recent advances in trajectory-controllable video generation have achieved remarkable progress.",
-          "Previous methods mainly use adapter-based architectures for precise motion control along predefined trajectories.",
-          "However, all these methods rely on a multi-step denoising process, leading to substantial time redundancy and computational overhead."
+          "Accurate global localization is crucial for autonomous driving and robotics, but GNSS-based approaches often degrade due to occlusion and multipath effects.",
+          "As an emerging alternative, cross-view pose estimation predicts the 3-DoF camera pose corresponding to a ground-view image with respect to a geo-referenced satellite image.",
+          "However, existing methods struggle to bridge the significant viewpoint gap between the ground and satellite views mainly due to limited spatial correspondences."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.12138v1",
-      "title": "HATS: Hardness-Aware Trajectory Synthesis for GUI Agents",
+      "id": "2603.13108v1",
+      "title": "Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots",
       "authors": [
-        "Rui Shao",
-        "Ruize Gao",
-        "Bin Xie",
-        "Yixing Li",
-        "Kaiwen Zhou",
-        "Shuai Wang",
-        "Weili Guan",
-        "Gongwei Chen"
+        "Guoqiang Zhao",
+        "Zhe Yang",
+        "Sheng Wu",
+        "Fei Teng",
+        "Mengfei Duan",
+        "Yuanfan Zheng",
+        "Kai Luo",
+        "Kailun Yang"
       ],
-      "abstract": "Graphical user interface (GUI) agents powered by large vision-language models (VLMs) have shown remarkable potential in automating digital tasks, highlighting the need for high-quality trajectory data to support effective agent training. Yet existing trajectory synthesis pipelines often yield agents that fail to generalize beyond simple interactions. We identify this limitation as stemming from the neglect of semantically ambiguous actions, whose meanings are context-dependent, sequentially dependent, or visually ambiguous. Such actions are crucial for real-world robustness but are under-represented and poorly processed in current datasets, leading to semantic misalignment between task instructions and execution. To address these issues, we propose HATS, a Hardness-Aware Trajectory Synthesis framework designed to mitigate the impact of semantic ambiguity. We define hardness as the degree of semantic ambiguity associated with an action and develop two complementary modules: (1) hardness-driven exploration, which guides data collection toward ambiguous yet informative interactions, and (2) alignment-guided refinement, which iteratively validates and repairs instruction-execution alignment. The two modules operate in a closed loop: exploration supplies refinement with challenging trajectories, while refinement feedback updates the hardness signal to guide future exploration. Extensive experiments show that agents trained with HATS consistently outperform state-of-the-art baselines across benchmark GUI environments.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
+      "abstract": "Panoramic imagery provides holistic 360° visual coverage for perception in quadruped robots. However, existing occupancy prediction methods are mainly designed for wheeled autonomous driving and rely heavily on RGB cues, limiting their robustness in complex environments. To bridge this gap, (1) we present PanoMMOcc, the first real-world panoramic multimodal occupancy dataset for quadruped robots, featuring four sensing modalities across diverse scenes. (2) We propose a panoramic multimodal occupancy perception framework, VoxelHound, tailored for legged mobility and spherical imaging. Specifically, we design (i) a Vertical Jitter Compensation (VJC) module to mitigate severe viewpoint perturbations caused by body pitch and roll during mobility, enabling more consistent spatial reasoning, and (ii) an effective Multimodal Information Prompt Fusion (MIPF) module that jointly leverages panoramic visual cues and auxiliary modalities to enhance volumetric occupancy prediction. (3) We establish a benchmark based on PanoMMOcc and provide detailed data analysis to enable systematic evaluation of perception methods under challenging embodied scenarios. Extensive experiments demonstrate that VoxelHound achieves state-of-the-art performance on PanoMMOcc (+4.16%} in mIoU). The dataset and code will be publicly released to facilitate future research on panoramic multimodal 3D perception for embodied robotic systems at https://github.com/SXDR/PanoMMOcc, along with the calibration tools released at https://github.com/losehu/CameraLiDAR-Calib.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
       "categories": [
+        "cs.RO",
+        "cs.CV",
+        "eess.IV"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.13108v1",
+        "pdf": "https://arxiv.org/pdf/2603.13108v1"
+      },
+      "arxiv_id": "2603.13108v1",
+      "comment": "The dataset and code will be publicly released at https://github.com/SXDR/PanoMMOcc",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.487288135593221,
+      "score_breakdown": {
+        "total_score": 4.49,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "volumetric"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Panoramic imagery provides holistic 360° visual coverage for perception in quadruped robots. However, existing occupancy prediction methods are mainly designed for wheeled autonomous driving and rely heavily on RGB cues, limiting their robustness in complex environments. To bridge this gap, (1) we present PanoMMOcc, the first real-world panoramic multimodal occupancy dataset for quadruped robots, ...",
+        "key_contributions": [
+          "Panoramic imagery provides holistic 360° visual coverage for perception in quadruped robots.",
+          "However, existing occupancy prediction methods are mainly designed for wheeled autonomous driving and rely heavily on RGB cues, limiting their robustness in complex environments.",
+          "To bridge this gap, (1) we present PanoMMOcc, the first real-world panoramic multimodal occupancy dataset for quadruped robots, featuring four sensing modalities across diverse scenes."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.13227v1",
+      "title": "Representation Learning for Spatiotemporal Physical Systems",
+      "authors": [
+        "Helen Qu",
+        "Rudy Morel",
+        "Michael McCabe",
+        "Alberto Bietti",
+        "François Lanusse",
+        "Shirley Ho",
+        "Yann LeCun"
+      ],
+      "abstract": "Machine learning approaches to spatiotemporal physical systems have primarily focused on next-frame prediction, with the goal of learning an accurate emulator for the system's evolution in time. However, these emulators are computationally expensive to train and are subject to performance pitfalls, such as compounding errors during autoregressive rollout. In this work, we take a different perspective and look at scientific tasks further downstream of predicting the next frame, such as estimation of a system's governing physical parameters. Accuracy on these tasks offers a uniquely quantifiable glimpse into the physical relevance of the representations of these models. We evaluate the effectiveness of general-purpose self-supervised methods in learning physics-grounded representations that are useful for downstream scientific tasks. Surprisingly, we find that not all methods designed for physical modeling outperform generic self-supervised learning methods on these tasks, and methods that learn in the latent space (e.g., joint embedding predictive architectures, or JEPAs) outperform those optimizing pixel-level prediction objectives. Code is available at https://github.com/helenqu/physical-representation-learning.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
+      "categories": [
+        "cs.LG",
         "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.13227v1",
+        "pdf": "https://arxiv.org/pdf/2603.13227v1"
+      },
+      "arxiv_id": "2603.13227v1",
+      "comment": "Published at ICLR 2026 Workshop on AI & PDE",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.4711864406779664,
+      "score_breakdown": {
+        "total_score": 4.47,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Machine learning approaches to spatiotemporal physical systems have primarily focused on next-frame prediction, with the goal of learning an accurate emulator for the system's evolution in time. However, these emulators are computationally expensive to train and are subject to performance pitfalls, such as compounding errors during autoregressive rollout. In this work, we take a different perspect...",
+        "key_contributions": [
+          "Machine learning approaches to spatiotemporal physical systems have primarily focused on next-frame prediction, with the goal of learning an accurate emulator for the system's evolution in time.",
+          "However, these emulators are computationally expensive to train and are subject to performance pitfalls, such as compounding errors during autoregressive rollout.",
+          "In this work, we take a different perspective and look at scientific tasks further downstream of predicting the next frame, such as estimation of a system's governing physical parameters."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.13100v1",
+      "title": "Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences",
+      "authors": [
+        "Wenxi Wu",
+        "Jingjing Zhang",
+        "Martim Brandão"
+      ],
+      "abstract": "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks. The natural language and spatial reasoning capabilities of Vision-Language Models (VLMs) have the potential to enhance the generalization of robot planners on new tasks, objects, and motion specifications. While foundation models have been applied to task planning, it is still unclear the degree to which they have the capability of spatial reasoning required to enforce user preferences or constraints on motion, such as desired distances from objects, topological properties, or motion style preferences. In this paper, we evaluate the capability of four state-of-the-art VLMs at spatial reasoning over robot motion, using four different querying methods. Our results show that, with the highest-performing querying method, Qwen2.5-VL achieves 71.4% accuracy zero-shot and 75% on a smaller model after fine-tuning, and GPT-4o leads to lower performance. We evaluate two types of motion preferences (object-proximity and path-style), and we also analyze the trade-off between accuracy and computation cost in number of tokens. This work shows some promise in the potential of VLM integration with robot motion planning pipelines.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.13100v1",
+        "pdf": "https://arxiv.org/pdf/2603.13100v1"
+      },
+      "arxiv_id": "2603.13100v1",
+      "comment": "Accepted to the First Workshop on Efficient Spatial Reasoning at ICLR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks. The natural language and spatial reasoning capabilities of Vision-Language Models (VLMs) have the potential to enhance the generalization of robot planners on new tasks, objects, and motion specifications. While foundation models have ...",
+        "key_contributions": [
+          "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks.",
+          "The natural language and spatial reasoning capabilities of Vision-Language Models (VLMs) have the potential to enhance the generalization of robot planners on new tasks, objects, and motion specifications.",
+          "While foundation models have been applied to task planning, it is still unclear the degree to which they have the capability of spatial reasoning required to enforce user preferences or constraints on motion, such as desired distances from objects, topological properties, or motion style preferences."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.12997v1",
+      "title": "Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis",
+      "authors": [
+        "Chen Feng",
+        "Zhuo Zhi",
+        "Zhao Huang",
+        "Jiawei Ge",
+        "Ling Xiao",
+        "Nicu Sebe",
+        "Georgios Tzimiropoulos",
+        "Ioannis Patras"
+      ],
+      "abstract": "Statistically consistent methods based on the noise transition matrix ($T$) offer a theoretically grounded solution to Learning with Noisy Labels (LNL), with guarantees of convergence to the optimal clean-data classifier. In practice, however, these methods are often outperformed by empirical approaches such as sample selection, and this gap is usually attributed to the difficulty of accurately estimating $T$. The common assumption is that, given a perfect $T$, noise-correction methods would recover their theoretical advantage. In this work, we put this longstanding hypothesis to a decisive test. We conduct experiments under idealized conditions, providing correction methods with a perfect, oracle transition matrix. Even under these ideal conditions, we observe that these methods still suffer from performance collapse during training. This compellingly demonstrates that the failure is not fundamentally a $T$-estimation problem, but stems from a more deeply rooted flaw. To explain this behaviour, we provide a unified analysis that links three levels: macroscopic convergence states, microscopic optimisation dynamics, and information-theoretic limits on what can be learned from noisy labels. Together, these results give a formal account of why ideal noise correction fails and offer concrete guidance for designing more reliable methods for learning with noisy labels.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.12997v1",
+        "pdf": "https://arxiv.org/pdf/2603.12997v1"
+      },
+      "arxiv_id": "2603.12997v1",
+      "comment": "Accepted to CVPR2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Statistically consistent methods based on the noise transition matrix ($T$) offer a theoretically grounded solution to Learning with Noisy Labels (LNL), with guarantees of convergence to the optimal clean-data classifier. In practice, however, these methods are often outperformed by empirical approaches such as sample selection, and this gap is usually attributed to the difficulty of accurately es...",
+        "key_contributions": [
+          "Statistically consistent methods based on the noise transition matrix ($T$) offer a theoretically grounded solution to Learning with Noisy Labels (LNL), with guarantees of convergence to the optimal clean-data classifier.",
+          "In practice, however, these methods are often outperformed by empirical approaches such as sample selection, and this gap is usually attributed to the difficulty of accurately estimating $T$.",
+          "The common assumption is that, given a perfect $T$, noise-correction methods would recover their theoretical advantage."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.12915v1",
+      "title": "Stake the Points: Structure-Faithful Instance Unlearning",
+      "authors": [
+        "Kiseong Hong",
+        "JungKyoo Shin",
+        "Eunwoo Kim"
+      ],
+      "abstract": "Machine unlearning (MU) addresses privacy risks in pretrained models. The main goal of MU is to remove the influence of designated data while preserving the utility of retained knowledge. Achieving this goal requires preserving semantic relations among retained instances, which existing studies often overlook. We observe that without such preservation, models suffer from progressive structural collapse, undermining both the deletion-retention balance. In this work, we propose a novel structure-faithful framework that introduces stakes, i.e., semantic anchors that serve as reference points to maintain the knowledge structure. By leveraging these anchors, our framework captures and stabilizes the semantic organization of knowledge. Specifically, we instantiate the anchors from language-driven attribute descriptions encoded by a semantic encoder (e.g., CLIP). We enforce preservation of the knowledge structure via structure-aware alignment and regularization: the former aligns the organization of retained knowledge before and after unlearning around anchors, while the latter regulates updates to structure-critical parameters. Results from image classification, retrieval, and face recognition show average gains of 32.9%, 22.5%, and 19.3% in performance, balancing the deletion-retention trade-off and enhancing generalization.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.12138v1",
-        "pdf": "https://arxiv.org/pdf/2603.12138v1"
+        "paper": "http://arxiv.org/abs/2603.12915v1",
+        "pdf": "https://arxiv.org/pdf/2603.12915v1"
       },
-      "arxiv_id": "2603.12138v1",
+      "arxiv_id": "2603.12915v1",
       "comment": "Accepted by CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.65,
+      "relevance_score": 4.2,
       "score_breakdown": {
-        "total_score": 4.65,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -569,7 +496,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -578,78 +505,150 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Graphical user interface (GUI) agents powered by large vision-language models (VLMs) have shown remarkable potential in automating digital tasks, highlighting the need for high-quality trajectory data to support effective agent training. Yet existing trajectory synthesis pipelines often yield agents that fail to generalize beyond simple interactions. We identify this limitation as stemming from th...",
+        "short": "Machine unlearning (MU) addresses privacy risks in pretrained models. The main goal of MU is to remove the influence of designated data while preserving the utility of retained knowledge. Achieving this goal requires preserving semantic relations among retained instances, which existing studies often overlook. We observe that without such preservation, models suffer from progressive structural col...",
         "key_contributions": [
-          "Graphical user interface (GUI) agents powered by large vision-language models (VLMs) have shown remarkable potential in automating digital tasks, highlighting the need for high-quality trajectory data to support effective agent training.",
-          "Yet existing trajectory synthesis pipelines often yield agents that fail to generalize beyond simple interactions.",
-          "We identify this limitation as stemming from the neglect of semantically ambiguous actions, whose meanings are context-dependent, sequentially dependent, or visually ambiguous."
+          "Machine unlearning (MU) addresses privacy risks in pretrained models.",
+          "The main goal of MU is to remove the influence of designated data while preserving the utility of retained knowledge.",
+          "Achieving this goal requires preserving semantic relations among retained instances, which existing studies often overlook."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.12013v1",
-      "title": "Pano360: Perspective to Panoramic Vision with Geometric Consistency",
+      "id": "2603.13082v1",
+      "title": "InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing",
       "authors": [
-        "Zhengdong Zhu",
-        "Weiyi Xue",
-        "Zuyuan Yang",
-        "Wenlve Zhou",
-        "Zhiheng Zhou"
+        "Yebin Yang",
+        "Di Wen",
+        "Lei Qi",
+        "Weitong Kong",
+        "Junwei Zheng",
+        "Ruiping Liu",
+        "Yufan Chen",
+        "Chengzhi Wu",
+        "Kailun Yang",
+        "Yuqian Fu",
+        "Danda Pani Paudel",
+        "Luc Van Gool",
+        "Kunyu Peng"
       ],
-      "abstract": "Prior panorama stitching approaches heavily rely on pairwise feature correspondences and are unable to leverage geometric consistency across multiple views. This leads to severe distortion and misalignment, especially in challenging scenes with weak textures, large parallax, and repetitive patterns. Given that multi-view geometric correspondences can be directly constructed in 3D space, making them more accurate and globally consistent, we extend the 2D alignment task to the 3D photogrammetric space. We adopt a novel transformer-based architecture to achieve 3D awareness and aggregate global information across all views. It directly utilizes camera poses to guide image warping for global alignment in 3D space and employs a multi-feature joint optimization strategy to compute the seams. Additionally, to establish an evaluation benchmark and train our network, we constructed a large-scale dataset of real-world scenes. Extensive experiments show that our method significantly outperforms existing alternatives in alignment accuracy and perceptual quality.",
-      "published": "2026-03-12",
-      "updated": "2026-03-12",
+      "abstract": "Text-guided 3D motion editing has seen success in single-person scenarios, but its extension to multi-person settings is less explored due to limited paired data and the complexity of inter-person interactions. We introduce the task of multi-person 3D motion editing, where a target motion is generated from a source and a text instruction. To support this, we propose InterEdit3D, a new dataset with manual two-person motion change annotations, and a Text-guided Multi-human Motion Editing (TMME) benchmark. We present InterEdit, a synchronized classifier-free conditional diffusion model for TMME. It introduces Semantic-Aware Plan Token Alignment with learnable tokens to capture high-level interaction cues and an Interaction-Aware Frequency Token Alignment strategy using DCT and energy pooling to model periodic motion dynamics. Experiments show that InterEdit improves text-to-motion consistency and edit fidelity, achieving state-of-the-art TMME performance. The dataset and code will be released at https://github.com/YNG916/InterEdit.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.RO",
+        "eess.IV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.12013v1",
-        "pdf": "https://arxiv.org/pdf/2603.12013v1"
+        "paper": "http://arxiv.org/abs/2603.13082v1",
+        "pdf": "https://arxiv.org/pdf/2603.13082v1"
       },
-      "arxiv_id": "2603.12013v1",
-      "comment": "Accepted by CVPR2026",
+      "arxiv_id": "2603.13082v1",
+      "comment": "The dataset and code will be released at https://github.com/YNG916/InterEdit",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.65,
+      "has_code": true,
+      "relevance_score": 4.199999999999999,
       "score_breakdown": {
-        "total_score": 4.65,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Prior panorama stitching approaches heavily rely on pairwise feature correspondences and are unable to leverage geometric consistency across multiple views. This leads to severe distortion and misalignment, especially in challenging scenes with weak textures, large parallax, and repetitive patterns. Given that multi-view geometric correspondences can be directly constructed in 3D space, making the...",
+        "short": "Text-guided 3D motion editing has seen success in single-person scenarios, but its extension to multi-person settings is less explored due to limited paired data and the complexity of inter-person interactions. We introduce the task of multi-person 3D motion editing, where a target motion is generated from a source and a text instruction. To support this, we propose InterEdit3D, a new dataset with...",
         "key_contributions": [
-          "Prior panorama stitching approaches heavily rely on pairwise feature correspondences and are unable to leverage geometric consistency across multiple views.",
-          "This leads to severe distortion and misalignment, especially in challenging scenes with weak textures, large parallax, and repetitive patterns.",
-          "Given that multi-view geometric correspondences can be directly constructed in 3D space, making them more accurate and globally consistent, we extend the 2D alignment task to the 3D photogrammetric space."
+          "Text-guided 3D motion editing has seen success in single-person scenarios, but its extension to multi-person settings is less explored due to limited paired data and the complexity of inter-person interactions.",
+          "We introduce the task of multi-person 3D motion editing, where a target motion is generated from a source and a text instruction.",
+          "To support this, we propose InterEdit3D, a new dataset with manual two-person motion change annotations, and a Text-guided Multi-human Motion Editing (TMME) benchmark."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.13121v1",
+      "title": "FDeID-Toolbox: Face De-Identification Toolbox",
+      "authors": [
+        "Hui Wei",
+        "Hao Yu",
+        "Guoying Zhao"
+      ],
+      "abstract": "Face de-identification (FDeID) aims to remove personally identifiable information from facial images while preserving task-relevant utility attributes such as age, gender, and expression. It is critical for privacy-preserving computer vision, yet the field suffers from fragmented implementations, inconsistent evaluation protocols, and incomparable results across studies. These challenges stem from the inherent complexity of the task: FDeID spans multiple downstream applications (e.g., age estimation, gender recognition, expression analysis) and requires evaluation across three dimensions (e.g., privacy protection, utility preservation, and visual quality), making existing codebases difficult to use and extend. To address these issues, we present FDeID-Toolbox, a comprehensive toolbox designed for reproducible FDeID research. Our toolbox features a modular architecture comprising four core components: (1) standardized data loaders for mainstream benchmark datasets, (2) unified method implementations spanning classical approaches to SOTA generative models, (3) flexible inference pipelines, and (4) systematic evaluation protocols covering privacy, utility, and quality metrics. Through experiments, we demonstrate that FDeID-Toolbox enables fair and reproducible comparison of diverse FDeID methods under consistent conditions.",
+      "published": "2026-03-13",
+      "updated": "2026-03-13",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.13121v1",
+        "pdf": "https://arxiv.org/pdf/2603.13121v1"
+      },
+      "arxiv_id": "2603.13121v1",
+      "comment": "Technical Report. Codebase: https://github.com/infraface/FDeID-Toolbox",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.169491525423729,
+      "score_breakdown": {
+        "total_score": 4.17,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Face de-identification (FDeID) aims to remove personally identifiable information from facial images while preserving task-relevant utility attributes such as age, gender, and expression. It is critical for privacy-preserving computer vision, yet the field suffers from fragmented implementations, inconsistent evaluation protocols, and incomparable results across studies. These challenges stem from...",
+        "key_contributions": [
+          "Face de-identification (FDeID) aims to remove personally identifiable information from facial images while preserving task-relevant utility attributes such as age, gender, and expression.",
+          "It is critical for privacy-preserving computer vision, yet the field suffers from fragmented implementations, inconsistent evaluation protocols, and incomparable results across studies.",
+          "These challenges stem from the inherent complexity of the task: FDeID spans multiple downstream applications (e."
         ],
         "provider": "gemini"
       }

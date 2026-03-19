@@ -3,40 +3,101 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.15475v1",
-      "title": "Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation",
+      "id": "2603.16616v1",
+      "title": "ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery",
       "authors": [
-        "Yuanfan Zheng",
-        "Kunyu Peng",
-        "Xu Zheng",
-        "Kailun Yang"
+        "Weiqin Jiao",
+        "Hao Cheng",
+        "George Vosselman",
+        "Claudio Persello"
       ],
-      "abstract": "Cross-domain panoramic semantic segmentation has attracted growing interest as it enables comprehensive 360° scene understanding for real-world applications. However, it remains particularly challenging due to severe geometric Field of View (FoV) distortions and inconsistent open-set semantics across domains. In this work, we formulate an open-set domain adaptation setting, and propose Extrapolative Domain Adaptive Panoramic Segmentation (EDA-PSeg) framework that trains on local perspective views and tests on full 360° panoramic images, explicitly tackling both geometric FoV shifts across domains and semantic uncertainty arising from previously unseen classes. To this end, we propose the Euler-Margin Attention (EMA), which introduces an angular margin to enhance viewpoint-invariant semantic representation, while performing amplitude and phase modulation to improve generalization toward unseen classes. Additionally, we design the Graph Matching Adapter (GMA), which builds high-order graph relations to align shared semantics across FoV shifts while effectively separating novel categories through structural adaptation. Extensive experiments on four benchmark datasets under camera-shift, weather-condition, and open-set scenarios demonstrate that EDA-PSeg achieves state-of-the-art performance, robust generalization to diverse viewing geometries, and resilience under varying environmental conditions. The code is available at https://github.com/zyfone/EDA-PSeg.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
+      "abstract": "We tackle the problem of generating a complete vector map representation from aerial imagery in a single run: producing polygons for all land-cover classes with shared boundaries and without gaps or overlaps. Existing polygonization methods are typically class-specific; extending them to multiple classes via per-class runs commonly leads to topological inconsistencies, such as duplicated edges, gaps, and overlaps. We formalize this new task as All-Class Polygonal Vectorization (ACPV) and release the first public benchmark, Deventer-512, with standardized metrics jointly evaluating semantic fidelity, geometric accuracy, vertex efficiency, per-class topological fidelity and global topological consistency. To realize ACPV, we propose ACPV-Net, a unified framework introducing a novel Semantically Supervised Conditioning (SSC) mechanism coupling semantic perception with geometric primitive generation, along with a topological reconstruction that enforces shared-edge consistency by design. While enforcing such strict topological constraints, ACPV-Net surpasses all class-specific baselines in polygon quality across classes on Deventer-512. It also applies to single-class polygonal vectorization without any architectural modification, achieving the best-reported results on WHU-Building. Data, code, and models will be released at: https://github.com/HeinzJiao/ACPV-Net.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
       "categories": [
-        "cs.CV",
-        "cs.LG",
-        "cs.RO",
-        "eess.IV"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.15475v1",
-        "pdf": "https://arxiv.org/pdf/2603.15475v1"
+        "paper": "http://arxiv.org/abs/2603.16616v1",
+        "pdf": "https://arxiv.org/pdf/2603.16616v1"
       },
-      "arxiv_id": "2603.15475v1",
-      "comment": "Accepted to CVPR 2026. The code is available at https://github.com/zyfone/EDA-PSeg",
+      "arxiv_id": "2603.16616v1",
+      "comment": "Accepted to CVPR 2026. The supplementary material available in the conference proceedings",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.603389830508474,
+      "has_code": false,
+      "relevance_score": 4.699999999999999,
       "score_breakdown": {
-        "total_score": 5.6,
+        "total_score": 4.7,
         "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We tackle the problem of generating a complete vector map representation from aerial imagery in a single run: producing polygons for all land-cover classes with shared boundaries and without gaps or overlaps. Existing polygonization methods are typically class-specific; extending them to multiple classes via per-class runs commonly leads to topological inconsistencies, such as duplicated edges, ga...",
+        "key_contributions": [
+          "We tackle the problem of generating a complete vector map representation from aerial imagery in a single run: producing polygons for all land-cover classes with shared boundaries and without gaps or overlaps.",
+          "Existing polygonization methods are typically class-specific; extending them to multiple classes via per-class runs commonly leads to topological inconsistencies, such as duplicated edges, gaps, and overlaps.",
+          "We formalize this new task as All-Class Polygonal Vectorization (ACPV) and release the first public benchmark, Deventer-512, with standardized metrics jointly evaluating semantic fidelity, geometric accuracy, vertex efficiency, per-class topological fidelity and global topological consistency."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.16777v1",
+      "title": "Anticipatory Planning for Multimodal AI Agents",
+      "authors": [
+        "Yongyuan Liang",
+        "Shijie Zhou",
+        "Yu Gu",
+        "Hao Tan",
+        "Gang Wu",
+        "Franck Dernoncourt",
+        "Jihyung Kil",
+        "Ryan A. Rossi",
+        "Ruiyi Zhang"
+      ],
+      "abstract": "Recent advances in multimodal agents have improved computer-use interaction and tool-usage, yet most existing systems remain reactive, optimizing actions in isolation without reasoning about future states or long-term goals. This limits planning coherence and prevents agents from reliably solving high-level, multi-step tasks. We introduce TraceR1, a two-stage reinforcement learning framework that explicitly trains anticipatory reasoning by forecasting short-horizon trajectories before execution. The first stage performs trajectory-level reinforcement learning with rewards that enforce global consistency across predicted action sequences. The second stage applies grounded reinforcement fine-tuning, using execution feedback from frozen tool agents to refine step-level accuracy and executability. TraceR1 is evaluated across seven benchmarks, covering online computer-use, offline computer-use benchmarks, and multimodal tool-use reasoning tasks, where it achieves substantial improvements in planning stability, execution robustness, and generalization over reactive and single-stage baselines. These results show that anticipatory trajectory reasoning is a key principle for building multimodal agents that can reason, plan, and act effectively in complex real-world environments.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.16777v1",
+        "pdf": "https://arxiv.org/pdf/2603.16777v1"
+      },
+      "arxiv_id": "2603.16777v1",
+      "comment": "Published at CVPR 2026 Findings Track",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6,
+      "score_breakdown": {
+        "total_score": 4.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -49,187 +110,54 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Cross-domain panoramic semantic segmentation has attracted growing interest as it enables comprehensive 360° scene understanding for real-world applications. However, it remains particularly challenging due to severe geometric Field of View (FoV) distortions and inconsistent open-set semantics across domains. In this work, we formulate an open-set domain adaptation setting, and propose Extrapolati...",
+        "short": "Recent advances in multimodal agents have improved computer-use interaction and tool-usage, yet most existing systems remain reactive, optimizing actions in isolation without reasoning about future states or long-term goals. This limits planning coherence and prevents agents from reliably solving high-level, multi-step tasks. We introduce TraceR1, a two-stage reinforcement learning framework that ...",
         "key_contributions": [
-          "Cross-domain panoramic semantic segmentation has attracted growing interest as it enables comprehensive 360° scene understanding for real-world applications.",
-          "However, it remains particularly challenging due to severe geometric Field of View (FoV) distortions and inconsistent open-set semantics across domains.",
-          "In this work, we formulate an open-set domain adaptation setting, and propose Extrapolative Domain Adaptive Panoramic Segmentation (EDA-PSeg) framework that trains on local perspective views and tests on full 360° panoramic images, explicitly tackling both geometric FoV shifts across domains and semantic uncertainty arising from previously unseen classes."
+          "Recent advances in multimodal agents have improved computer-use interaction and tool-usage, yet most existing systems remain reactive, optimizing actions in isolation without reasoning about future states or long-term goals.",
+          "This limits planning coherence and prevents agents from reliably solving high-level, multi-step tasks.",
+          "We introduce TraceR1, a two-stage reinforcement learning framework that explicitly trains anticipatory reasoning by forecasting short-horizon trajectories before execution."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.15470v1",
-      "title": "Automated Counting of Stacked Objects in Industrial Inspection",
+      "id": "2603.16671v1",
+      "title": "$x^2$-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space",
       "authors": [
-        "Corentin Dumery",
-        "Noa Etté",
-        "Aoxiang Fan",
-        "Ren Li",
-        "Jingyi Xu",
-        "Hieu Le",
-        "Pascal Fua"
+        "Ruishan Guo",
+        "Ciyu Ruan",
+        "Haoyang Wang",
+        "Zihang Gong",
+        "Jingao Xu",
+        "Xinlei Chen"
       ],
-      "abstract": "Visual object counting is a fundamental computer vision task in industrial inspection, where accurate, high-throughput inventory tracking and quality assurance are critical. Moreover, manufactured parts are often too light to reliably deduce their count from their weight, or too heavy to move the stack on a scale safely and practically, making automated visual counting the more robust solution in many scenarios. However, existing methods struggle with stacked 3D items in containers, pallets, or bins, where most objects are heavily occluded and only a few are directly visible. To address this important yet underexplored challenge, we propose a novel 3D counting approach that decomposes the task into two complementary subproblems: estimating the 3D geometry of the stack and its occupancy ratio from multi-view images. By combining geometric reconstruction with deep learning-based depth analysis, our method can accurately count identical manufactured parts inside containers, even when they are irregularly stacked and partially hidden. We validate our 3D counting pipeline on large-scale synthetic and diverse real-world data with manually verified total counts, demonstrating robust performance under realistic inspection conditions.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
+      "abstract": "Estimating dense 2D optical flow and 3D scene flow is essential for dynamic scene understanding. Recent work combines images, LiDAR, and event data to jointly predict 2D and 3D motion, yet most approaches operate in separate heterogeneous feature spaces. Without a shared latent space that all modalities can align to, these systems rely on multiple modality-specific blocks, leaving cross-sensor mismatches unresolved and making fusion unnecessarily complex.Event cameras naturally provide a spatiotemporal edge signal, which we can treat as an intrinsic edge field to anchor a unified latent representation, termed the Event Edge Space. Building on this idea, we introduce $x^2$-Fusion, which reframes multimodal fusion as representation unification: event-derived spatiotemporal edges define an edge-centric homogeneous space, and image and LiDAR features are explicitly aligned in this shared representation.Within this space, we perform reliability-aware adaptive fusion to estimate modality reliability and emphasize stable cues under degradation. We further employ cross-dimension contrast learning to tightly couple 2D optical flow with 3D scene flow. Extensive experiments on both synthetic and real benchmarks show that $x^2$-Fusion achieves state-of-the-art accuracy under standard conditions and delivers substantial improvements in challenging scenarios.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.15470v1",
-        "pdf": "https://arxiv.org/pdf/2603.15470v1"
+        "paper": "http://arxiv.org/abs/2603.16671v1",
+        "pdf": "https://arxiv.org/pdf/2603.16671v1"
       },
-      "arxiv_id": "2603.15470v1",
-      "comment": "This preprint is a journal extension of our ICCV25 Oral paper: https://corentindumery.github.io/projects/stacks.html",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.488983050847457,
-      "score_breakdown": {
-        "total_score": 5.49,
-        "field_match": {
-          "score": 0.85,
-          "matches": [
-            "deep learning",
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICCV",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Visual object counting is a fundamental computer vision task in industrial inspection, where accurate, high-throughput inventory tracking and quality assurance are critical. Moreover, manufactured parts are often too light to reliably deduce their count from their weight, or too heavy to move the stack on a scale safely and practically, making automated visual counting the more robust solution in ...",
-        "key_contributions": [
-          "Visual object counting is a fundamental computer vision task in industrial inspection, where accurate, high-throughput inventory tracking and quality assurance are critical.",
-          "Moreover, manufactured parts are often too light to reliably deduce their count from their weight, or too heavy to move the stack on a scale safely and practically, making automated visual counting the more robust solution in many scenarios.",
-          "However, existing methods struggle with stacked 3D items in containers, pallets, or bins, where most objects are heavily occluded and only a few are directly visible."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.15483v1",
-      "title": "Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis",
-      "authors": [
-        "Penny Chong",
-        "Harshavardhan Abichandani",
-        "Jiyuan Shen",
-        "Atin Ghosh",
-        "Min Pyae Moe",
-        "Yifan Mai",
-        "Daniel Dahlmeier"
-      ],
-      "abstract": "Agent applications are increasingly adopted to automate workflows across diverse tasks. However, due to the heterogeneous domains they operate in, it is challenging to create a scalable evaluation framework. Prior works each employ their own methods to determine task success, such as database lookups, regex match, etc., adding complexity to the development of a unified agent evaluation approach. Moreover, they do not systematically account for the user's role nor expertise in the interaction, providing incomplete insights into the agent's performance. We argue that effective agent evaluation goes beyond correctness alone, incorporating conversation quality, efficiency and systematic diagnosis of agent errors. To address this, we introduce the TED framework (Talk, Evaluate, Diagnose). (1) Talk: We leverage reusable, generic expert and non-expert user persona templates for user-agent interaction. (2) Evaluate: We adapt existing datasets by representing subgoals-such as tool signatures, and responses-as natural language grading notes, evaluated automatically with LLM-as-a-judge. We propose new metrics that capture both turn efficiency and intermediate progress of the agent complementing the user-aware setup. (3) Diagnose: We introduce an automated error analysis tool that analyzes the inconsistencies of the judge and agents, uncovering common errors, and providing actionable feedback for agent improvement. We show that our TED framework reveals new insights regarding agent performance across models and user expertise levels. We also demonstrate potential gains in agent performance with peaks of 8-10% on our proposed metrics after incorporating the identified error remedies into the agent's design.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.15483v1",
-        "pdf": "https://arxiv.org/pdf/2603.15483v1"
-      },
-      "arxiv_id": "2603.15483v1",
-      "comment": "Accepted as a conference paper at ICLR 2026. Code and dataset are available in the repository https://github.com/SAP-samples/agent-quality-inspect",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.300000000000001,
-      "score_breakdown": {
-        "total_score": 5.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Agent applications are increasingly adopted to automate workflows across diverse tasks. However, due to the heterogeneous domains they operate in, it is challenging to create a scalable evaluation framework. Prior works each employ their own methods to determine task success, such as database lookups, regex match, etc., adding complexity to the development of a unified agent evaluation approach. M...",
-        "key_contributions": [
-          "Agent applications are increasingly adopted to automate workflows across diverse tasks.",
-          "However, due to the heterogeneous domains they operate in, it is challenging to create a scalable evaluation framework.",
-          "Prior works each employ their own methods to determine task success, such as database lookups, regex match, etc."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.15569v1",
-      "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
-      "authors": [
-        "Aakash Lahoti",
-        "Kevin Y. Li",
-        "Berlin Chen",
-        "Caitlin Wang",
-        "Aviv Bick",
-        "J. Zico Kolter",
-        "Tri Dao",
-        "Albert Gu"
-      ],
-      "abstract": "Scaling inference-time compute has emerged as an important driver of LLM performance, making inference efficiency a central focus of model design alongside model quality. While the current Transformer-based models deliver strong model quality, their quadratic compute and linear memory make inference expensive. This has spurred the development of sub-quadratic models with reduced linear compute and constant memory requirements. However, many recent linear models trade off model quality and capability for algorithmic efficiency, failing on tasks such as state tracking. Moreover, their theoretically linear inference remains hardware-inefficient in practice. Guided by an inference-first perspective, we introduce three core methodological improvements inspired by the state space model (SSM) viewpoint of linear models. We combine: (1) a more expressive recurrence derived from SSM discretization, (2) a complex-valued state update rule that enables richer state tracking, and (3) a multi-input, multi-output (MIMO) formulation for better model performance without increasing decode latency. Together with architectural refinements, our Mamba-3 model achieves significant gains across retrieval, state-tracking, and downstream language modeling tasks. At the 1.5B scale, Mamba-3 improves average downstream accuracy by 0.6 percentage points compared to the next best model (Gated DeltaNet), with Mamba-3's MIMO variant further improving accuracy by another 1.2 points for a total 1.8 point gain. Across state-size experiments, Mamba-3 achieves comparable perplexity to Mamba-2 despite using half of its predecessor's state size. Our evaluations demonstrate Mamba-3's ability to advance the performance-efficiency Pareto frontier.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.15569v1",
-        "pdf": "https://arxiv.org/pdf/2603.15569v1"
-      },
-      "arxiv_id": "2603.15569v1",
-      "comment": "ICLR 2026",
+      "arxiv_id": "2603.16671v1",
+      "comment": "This version is the camera-ready version accepted at CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.5,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 4.5,
+        "total_score": 4.55,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -237,7 +165,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -250,70 +178,65 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Scaling inference-time compute has emerged as an important driver of LLM performance, making inference efficiency a central focus of model design alongside model quality. While the current Transformer-based models deliver strong model quality, their quadratic compute and linear memory make inference expensive. This has spurred the development of sub-quadratic models with reduced linear compute and...",
+        "short": "Estimating dense 2D optical flow and 3D scene flow is essential for dynamic scene understanding. Recent work combines images, LiDAR, and event data to jointly predict 2D and 3D motion, yet most approaches operate in separate heterogeneous feature spaces. Without a shared latent space that all modalities can align to, these systems rely on multiple modality-specific blocks, leaving cross-sensor mis...",
         "key_contributions": [
-          "Scaling inference-time compute has emerged as an important driver of LLM performance, making inference efficiency a central focus of model design alongside model quality.",
-          "While the current Transformer-based models deliver strong model quality, their quadratic compute and linear memory make inference expensive.",
-          "This has spurred the development of sub-quadratic models with reduced linear compute and constant memory requirements."
+          "Estimating dense 2D optical flow and 3D scene flow is essential for dynamic scene understanding.",
+          "Recent work combines images, LiDAR, and event data to jointly predict 2D and 3D motion, yet most approaches operate in separate heterogeneous feature spaces.",
+          "Without a shared latent space that all modalities can align to, these systems rely on multiple modality-specific blocks, leaving cross-sensor mismatches unresolved and making fusion unnecessarily complex."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.15612v1",
-      "title": "HSImul3R: Physics-in-the-Loop Reconstruction of Simulation-Ready Human-Scene Interactions",
+      "id": "2603.16835v1",
+      "title": "An assessment of data-centric methods for label noise identification in remote sensing data sets",
       "authors": [
-        "Yukang Cao",
-        "Haozhe Xie",
-        "Fangzhou Hong",
-        "Long Zhuo",
-        "Zhaoxi Chen",
-        "Liang Pan",
-        "Ziwei Liu"
+        "Felix Kröber",
+        "Genc Hoxha",
+        "Ribana Roscher"
       ],
-      "abstract": "We present HSImul3R, a unified framework for simulation-ready 3D reconstruction of human-scene interactions (HSI) from casual captures, including sparse-view images and monocular videos. Existing methods suffer from a perception-simulation gap: visually plausible reconstructions often violate physical constraints, leading to instability in physics engines and failure in embodied AI applications. To bridge this gap, we introduce a physically-grounded bi-directional optimization pipeline that treats the physics simulator as an active supervisor to jointly refine human dynamics and scene geometry. In the forward direction, we employ Scene-targeted Reinforcement Learning to optimize human motion under dual supervision of motion fidelity and contact stability. In the reverse direction, we propose Direct Simulation Reward Optimization, which leverages simulation feedback on gravitational stability and interaction success to refine scene geometry. We further present HSIBench, a new benchmark with diverse objects and interaction scenarios. Extensive experiments demonstrate that HSImul3R produces the first stable, simulation-ready HSI reconstructions and can be directly deployed to real-world humanoid robots.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
+      "abstract": "Label noise in the sense of incorrect labels is present in many real-world data sets and is known to severely limit the generalizability of deep learning models. In the field of remote sensing, however, automated treatment of label noise in data sets has received little attention to date. In particular, there is a lack of systematic analysis of the performance of data-centric methods that not only cope with label noise but also explicitly identify and isolate noisy labels. In this paper, we examine three such methods and evaluate their behavior under different label noise assumptions. To do this, we inject different types of label noise with noise levels ranging from 10 to 70% into two benchmark data sets, followed by an analysis of how well the selected methods filter the label noise and how this affects task performances. With our analyses, we clearly prove the value of data-centric methods for both parts - label noise identification and task performance improvements. Our analyses provide insights into which method is the best choice depending on the setting and objective. Finally, we show in which areas there is still a need for research in the transfer of data-centric label noise methods to remote sensing data. As such, our work is a step forward in bridging the methodological establishment of data-centric label noise methods and their usage in practical settings in the remote sensing domain.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
       "categories": [
-        "cs.CV",
-        "cs.RO"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.15612v1",
-        "pdf": "https://arxiv.org/pdf/2603.15612v1"
+        "paper": "http://arxiv.org/abs/2603.16835v1",
+        "pdf": "https://arxiv.org/pdf/2603.16835v1"
       },
-      "arxiv_id": "2603.15612v1",
-      "comment": "https://yukangcao.github.io/HSImul3R/",
+      "arxiv_id": "2603.16835v1",
+      "comment": "Accepted for publication in International Society for Photogrammetry and Remote Sensing (ISPRS) Annals 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.487288135593221,
+      "has_code": false,
+      "relevance_score": 4.519491525423729,
       "score_breakdown": {
-        "total_score": 4.49,
+        "total_score": 4.52,
         "field_match": {
-          "score": 0.59,
+          "score": 0.42,
           "matches": [
-            "3d reconstruction"
+            "deep learning"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "TOG",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -322,46 +245,44 @@
         }
       },
       "ai_summaries": {
-        "short": "We present HSImul3R, a unified framework for simulation-ready 3D reconstruction of human-scene interactions (HSI) from casual captures, including sparse-view images and monocular videos. Existing methods suffer from a perception-simulation gap: visually plausible reconstructions often violate physical constraints, leading to instability in physics engines and failure in embodied AI applications. T...",
+        "short": "Label noise in the sense of incorrect labels is present in many real-world data sets and is known to severely limit the generalizability of deep learning models. In the field of remote sensing, however, automated treatment of label noise in data sets has received little attention to date. In particular, there is a lack of systematic analysis of the performance of data-centric methods that not only...",
         "key_contributions": [
-          "We present HSImul3R, a unified framework for simulation-ready 3D reconstruction of human-scene interactions (HSI) from casual captures, including sparse-view images and monocular videos.",
-          "Existing methods suffer from a perception-simulation gap: visually plausible reconstructions often violate physical constraints, leading to instability in physics engines and failure in embodied AI applications.",
-          "To bridge this gap, we introduce a physically-grounded bi-directional optimization pipeline that treats the physics simulator as an active supervisor to jointly refine human dynamics and scene geometry."
+          "Label noise in the sense of incorrect labels is present in many real-world data sets and is known to severely limit the generalizability of deep learning models.",
+          "In the field of remote sensing, however, automated treatment of label noise in data sets has received little attention to date.",
+          "In particular, there is a lack of systematic analysis of the performance of data-centric methods that not only cope with label noise but also explicitly identify and isolate noisy labels."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.15555v1",
-      "title": "Learning Latent Proxies for Controllable Single-Image Relighting",
+      "id": "2603.16737v1",
+      "title": "Retrieving Counterfactuals Improves Visual In-Context Learning",
       "authors": [
-        "Haoze Zheng",
-        "Zihao Wang",
-        "Xianfeng Wu",
-        "Yajing Bai",
-        "Yexin Liu",
-        "Yun Li",
-        "Xiaogang Xu",
-        "Harry Yang"
+        "Guangzhi Xiong",
+        "Sanchit Sinha",
+        "Zhenghao He",
+        "Aidong Zhang"
       ],
-      "abstract": "Single-image relighting is highly under-constrained: small illumination changes can produce large, nonlinear variations in shading, shadows, and specularities, while geometry and materials remain unobserved. Existing diffusion-based approaches either rely on intrinsic or G-buffer pipelines that require dense and fragile supervision, or operate purely in latent space without physical grounding, making fine-grained control of direction, intensity, and color unreliable. We observe that a full intrinsic decomposition is unnecessary and redundant for accurate relighting. Instead, sparse but physically meaningful cues, indicating where illumination should change and how materials should respond, are sufficient to guide a diffusion model. Based on this insight, we introduce LightCtrl that integrates physical priors at two levels: a few-shot latent proxy encoder that extracts compact material-geometry cues from limited PBR supervision, and a lighting-aware mask that identifies sensitive illumination regions and steers the denoiser toward shading relevant pixels. To compensate for scarce PBR data, we refine the proxy branch using a DPO-based objective that enforces physical consistency in the predicted cues. We also present ScaLight, a large-scale object-level dataset with systematically varied illumination and complete camera-light metadata, enabling physically consistent and controllable training. Across object and scene level benchmarks, our method achieves photometrically faithful relighting with accurate continuous control, surpassing prior diffusion and intrinsic-based baselines, including gains of up to +2.4 dB PSNR and 35% lower RMSE under controlled lighting shifts.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
+      "abstract": "Vision-language models (VLMs) have achieved impressive performance across a wide range of multimodal reasoning tasks, but they often struggle to disentangle fine-grained visual attributes and reason about underlying causal relationships. In-context learning (ICL) offers a promising avenue for VLMs to adapt to new tasks, but its effectiveness critically depends on the selection of demonstration examples. Existing retrieval-augmented approaches typically rely on passive similarity-based retrieval, which tends to select correlated but non-causal examples, amplifying spurious associations and limiting model robustness. We introduce CIRCLES (Composed Image Retrieval for Causal Learning Example Selection), a novel framework that actively constructs demonstration sets by retrieving counterfactual-style examples through targeted, attribute-guided composed image retrieval. By incorporating counterfactual-style examples, CIRCLES enables VLMs to implicitly reason about the causal relations between attributes and outcomes, moving beyond superficial correlations and fostering more robust and grounded reasoning. Comprehensive experiments on four diverse datasets demonstrate that CIRCLES consistently outperforms existing methods across multiple architectures, especially on small-scale models, with pronounced gains under information scarcity. Furthermore, CIRCLES retrieves more diverse and causally informative examples, providing qualitative insights into how models leverage in-context demonstrations for improved reasoning. Our code is available at https://github.com/gzxiong/CIRCLES.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.15555v1",
-        "pdf": "https://arxiv.org/pdf/2603.15555v1"
+        "paper": "http://arxiv.org/abs/2603.16737v1",
+        "pdf": "https://arxiv.org/pdf/2603.16737v1"
       },
-      "arxiv_id": "2603.15555v1",
-      "comment": "Accepted by CVPR2026",
+      "arxiv_id": "2603.16737v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "relevance_score": 4.3999999999999995,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.4,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -382,56 +303,117 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Single-image relighting is highly under-constrained: small illumination changes can produce large, nonlinear variations in shading, shadows, and specularities, while geometry and materials remain unobserved. Existing diffusion-based approaches either rely on intrinsic or G-buffer pipelines that require dense and fragile supervision, or operate purely in latent space without physical grounding, mak...",
+        "short": "Vision-language models (VLMs) have achieved impressive performance across a wide range of multimodal reasoning tasks, but they often struggle to disentangle fine-grained visual attributes and reason about underlying causal relationships. In-context learning (ICL) offers a promising avenue for VLMs to adapt to new tasks, but its effectiveness critically depends on the selection of demonstration exa...",
         "key_contributions": [
-          "Single-image relighting is highly under-constrained: small illumination changes can produce large, nonlinear variations in shading, shadows, and specularities, while geometry and materials remain unobserved.",
-          "Existing diffusion-based approaches either rely on intrinsic or G-buffer pipelines that require dense and fragile supervision, or operate purely in latent space without physical grounding, making fine-grained control of direction, intensity, and color unreliable.",
-          "We observe that a full intrinsic decomposition is unnecessary and redundant for accurate relighting."
+          "Vision-language models (VLMs) have achieved impressive performance across a wide range of multimodal reasoning tasks, but they often struggle to disentangle fine-grained visual attributes and reason about underlying causal relationships.",
+          "In-context learning (ICL) offers a promising avenue for VLMs to adapt to new tasks, but its effectiveness critically depends on the selection of demonstration examples.",
+          "Existing retrieval-augmented approaches typically rely on passive similarity-based retrieval, which tends to select correlated but non-causal examples, amplifying spurious associations and limiting model robustness."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.15368v1",
-      "title": "IRIS: Intersection-aware Ray-based Implicit Editable Scenes",
+      "id": "2603.16641v1",
+      "title": "FlowComposer: Composable Flows for Compositional Zero-Shot Learning",
       "authors": [
-        "Grzegorz Wilczyński",
-        "Mikołaj Zieliński",
-        "Krzysztof Byrski",
-        "Joanna Waczyńska",
-        "Dominik Belter",
-        "Przemysław Spurek"
+        "Zhenqi He",
+        "Lin Li",
+        "Long Chen"
       ],
-      "abstract": "Neural Radiance Fields achieve high-fidelity scene representation but suffer from costly training and rendering, while 3D Gaussian splatting offers real-time performance with strong empirical results. Recently, solutions that harness the best of both worlds by using Gaussians as proxies to guide neural field evaluations, still suffer from significant computational inefficiencies. They typically rely on stochastic volumetric sampling to aggregate features, which severely limits rendering performance. To address this issue, a novel framework named IRIS (Intersection-aware Ray-based Implicit Editable Scenes) is introduced as a method designed for efficient and interactive scene editing. To overcome the limitations of standard ray marching, an analytical sampling strategy is employed that precisely identifies interaction points between rays and scene primitives, effectively eliminating empty space processing. Furthermore, to address the computational bottleneck of spatial neighbor lookups, a continuous feature aggregation mechanism is introduced that operates directly along the ray. By interpolating latent attributes from sorted intersections, costly 3D searches are bypassed, ensuring geometric consistency, enabling high-fidelity, real-time rendering, and flexible shape editing. Code can be found at https://github.com/gwilczynski95/iris.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
+      "abstract": "Compositional zero-shot learning (CZSL) aims to recognize unseen attribute-object compositions by recombining primitives learned from seen pairs. Recent CZSL methods built on vision-language models (VLMs) typically adopt parameter-efficient fine-tuning (PEFT). They apply visual disentanglers for decomposition and manipulate token-level prompts or prefixes to encode compositions. However, such PEFT-based designs suffer from two fundamental limitations: (1) Implicit Composition Construction, where composition is realized only via token concatenation or branch-wise prompt tuning rather than an explicit operation in the embedding space; (2) Remained Feature Entanglement, where imperfect disentanglement leaves attribute, object, and composition features mutually contaminated. Together, these issues limit the generalization ability of current CZSL models. In this paper, we are the first to systematically study flow matching for CZSL and introduce FlowComposer, a model-agnostic framework that learns two primitive flows to transport visual features toward attribute and object text embeddings, and a learnable Composer that explicitly fuses their velocity fields into a composition flow. To exploit the inevitable residual entanglement, we further devise a leakage-guided augmentation scheme that reuses leaked features as auxiliary signals. We thoroughly evaluate FlowComposer on three public CZSL benchmarks by integrating it as a plug-and-play component into various baselines, consistently achieving significant improvements.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.15368v1",
-        "pdf": "https://arxiv.org/pdf/2603.15368v1"
+        "paper": "http://arxiv.org/abs/2603.16641v1",
+        "pdf": "https://arxiv.org/pdf/2603.16641v1"
       },
-      "arxiv_id": "2603.15368v1",
-      "comment": "",
+      "arxiv_id": "2603.16641v1",
+      "comment": "Accepted to CVPR2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.402542372881356,
+      "relevance_score": 4.3999999999999995,
       "score_breakdown": {
         "total_score": 4.4,
         "field_match": {
-          "score": 2.88,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Compositional zero-shot learning (CZSL) aims to recognize unseen attribute-object compositions by recombining primitives learned from seen pairs. Recent CZSL methods built on vision-language models (VLMs) typically adopt parameter-efficient fine-tuning (PEFT). They apply visual disentanglers for decomposition and manipulate token-level prompts or prefixes to encode compositions. However, such PEFT...",
+        "key_contributions": [
+          "Compositional zero-shot learning (CZSL) aims to recognize unseen attribute-object compositions by recombining primitives learned from seen pairs.",
+          "Recent CZSL methods built on vision-language models (VLMs) typically adopt parameter-efficient fine-tuning (PEFT).",
+          "They apply visual disentanglers for decomposition and manipulate token-level prompts or prefixes to encode compositions."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.16844v1",
+      "title": "M^3: Dense Matching Meets Multi-View Foundation Models for Monocular Gaussian Splatting SLAM",
+      "authors": [
+        "Kerui Ren",
+        "Guanghao Li",
+        "Changjian Jiang",
+        "Yingxiang Xu",
+        "Tao Lu",
+        "Linning Xu",
+        "Junting Dong",
+        "Jiangmiao Pang",
+        "Mulin Yu",
+        "Bo Dai"
+      ],
+      "abstract": "Streaming reconstruction from uncalibrated monocular video remains challenging, as it requires both high-precision pose estimation and computationally efficient online refinement in dynamic environments. While coupling 3D foundation models with SLAM frameworks is a promising paradigm, a critical bottleneck persists: most multi-view foundation models estimate poses in a feed-forward manner, yielding pixel-level correspondences that lack the requisite precision for rigorous geometric optimization. To address this, we present M^3, which augments the Multi-view foundation model with a dedicated Matching head to facilitate fine-grained dense correspondences and integrates it into a robust Monocular Gaussian Splatting SLAM. M^3 further enhances tracking stability by incorporating dynamic area suppression and cross-inference intrinsic alignment. Extensive experiments on diverse indoor and outdoor benchmarks demonstrate state-of-the-art accuracy in both pose estimation and scene reconstruction. Notably, M^3 reduces ATE RMSE by 64.3% compared to VGGT-SLAM 2.0 and outperforms ARTDECO by 2.11 dB in PSNR on the ScanNet++ dataset.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.16844v1",
+        "pdf": "https://arxiv.org/pdf/2603.16844v1"
+      },
+      "arxiv_id": "2603.16844v1",
+      "comment": "Project page: https://city-super.github.io/M3/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.388983050847457,
+      "score_breakdown": {
+        "total_score": 4.39,
+        "field_match": {
+          "score": 0.85,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "volumetric",
-            "neural radiance"
+            "gaussian splatting"
           ],
           "weight": 0.4
         },
@@ -445,182 +427,52 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Neural Radiance Fields achieve high-fidelity scene representation but suffer from costly training and rendering, while 3D Gaussian splatting offers real-time performance with strong empirical results. Recently, solutions that harness the best of both worlds by using Gaussians as proxies to guide neural field evaluations, still suffer from significant computational inefficiencies. They typically re...",
+        "short": "Streaming reconstruction from uncalibrated monocular video remains challenging, as it requires both high-precision pose estimation and computationally efficient online refinement in dynamic environments. While coupling 3D foundation models with SLAM frameworks is a promising paradigm, a critical bottleneck persists: most multi-view foundation models estimate poses in a feed-forward manner, yieldin...",
         "key_contributions": [
-          "Neural Radiance Fields achieve high-fidelity scene representation but suffer from costly training and rendering, while 3D Gaussian splatting offers real-time performance with strong empirical results.",
-          "Recently, solutions that harness the best of both worlds by using Gaussians as proxies to guide neural field evaluations, still suffer from significant computational inefficiencies.",
-          "They typically rely on stochastic volumetric sampling to aggregate features, which severely limits rendering performance."
+          "Streaming reconstruction from uncalibrated monocular video remains challenging, as it requires both high-precision pose estimation and computationally efficient online refinement in dynamic environments.",
+          "While coupling 3D foundation models with SLAM frameworks is a promising paradigm, a critical bottleneck persists: most multi-view foundation models estimate poses in a feed-forward manner, yielding pixel-level correspondences that lack the requisite precision for rigorous geometric optimization.",
+          "To address this, we present M^3, which augments the Multi-view foundation model with a dedicated Matching head to facilitate fine-grained dense correspondences and integrates it into a robust Monocular Gaussian Splatting SLAM."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.15597v1",
-      "title": "AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer",
+      "id": "2603.16596v1",
+      "title": "FSMC-Pose: Frequency and Spatial Fusion with Multiscale Self-calibration for Cattle Mounting Pose Estimation",
       "authors": [
-        "Pengjun Fang",
-        "Yingqing He",
-        "Yazhou Xing",
-        "Qifeng Chen",
-        "Ser-Nam Lim",
-        "Harry Yang"
+        "Fangjing Li",
+        "Zhihai Wang",
+        "Xinxin Ding",
+        "Haiyang Liu",
+        "Ronghua Gao",
+        "Rong Wang",
+        "Yao Zhu",
+        "Ming Jin"
       ],
-      "abstract": "Existing video-to-audio (V2A) generation methods predominantly rely on text prompts alongside visual information to synthesize audio. However, two critical bottlenecks persist: semantic granularity gaps in training data, such as conflating acoustically distinct sounds under coarse labels, and textual ambiguity in describing micro-acoustic features. These bottlenecks make it difficult to perform fine-grained sound synthesis using text-controlled modes. To address these limitations, we propose AC-Foley, an audio-conditioned V2A model that directly leverages reference audio to achieve precise and fine-grained control over generated sounds. This approach enables fine-grained sound synthesis, timbre transfer, zero-shot sound generation, and improved audio quality. By directly conditioning on audio signals, our approach bypasses the semantic ambiguities of text descriptions while enabling precise manipulation of acoustic attributes. Empirically, AC-Foley achieves state-of-the-art performance for Foley generation when conditioned on reference audio, while remaining competitive with state-of-the-art video-to-audio methods even without audio conditioning.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
+      "abstract": "Mounting posture is an important visual indicator of estrus in dairy cattle. However, achieving reliable mounting pose estimation in real-world environments remains challenging due to cluttered backgrounds and frequent inter-animal occlusion. We present FSMC-Pose, a top-down framework that integrates a lightweight frequency-spatial fusion backbone, CattleMountNet, and a multiscale self-calibration head, SC2Head. Specifically, we design two algorithmic components for CattleMountNet: the Spatial Frequency Enhancement Block (SFEBlock) and the Receptive Aggregation Block (RABlock). SFEBlock separates cattle from cluttered backgrounds, while RABlock captures multiscale contextual information. The Spatial-Channel Self-Calibration Head (SC2Head) attends to spatial and channel dependencies and introduces a self-calibration branch to mitigate structural misalignment under inter-animal overlap. We construct a mounting dataset, MOUNT-Cattle, covering 1176 mounting instances, which follows the COCO format and supports drop-in training across pose estimation models. Using a comprehensive dataset that combines MOUNT-Cattle with the public NWAFU-Cattle dataset, FSMC-Pose achieves higher accuracy than strong baselines, with markedly lower computational and parameter costs, while maintaining real-time inference on commodity GPUs. Extensive experiments and qualitative analyses show that FSMC-Pose effectively captures and estimates cattle mounting pose in complex and cluttered environments. Dataset and code are available at https://github.com/elianafang/FSMC-Pose.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
       "categories": [
-        "cs.SD",
         "cs.CV",
-        "cs.LG",
-        "cs.MM",
-        "eess.AS"
-      ],
-      "primary_category": "cs.SD",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.15597v1",
-        "pdf": "https://arxiv.org/pdf/2603.15597v1"
-      },
-      "arxiv_id": "2603.15597v1",
-      "comment": "Accepted at ICLR 2026. 15 pages, 5 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.35,
-      "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Existing video-to-audio (V2A) generation methods predominantly rely on text prompts alongside visual information to synthesize audio. However, two critical bottlenecks persist: semantic granularity gaps in training data, such as conflating acoustically distinct sounds under coarse labels, and textual ambiguity in describing micro-acoustic features. These bottlenecks make it difficult to perform fi...",
-        "key_contributions": [
-          "Existing video-to-audio (V2A) generation methods predominantly rely on text prompts alongside visual information to synthesize audio.",
-          "However, two critical bottlenecks persist: semantic granularity gaps in training data, such as conflating acoustically distinct sounds under coarse labels, and textual ambiguity in describing micro-acoustic features.",
-          "These bottlenecks make it difficult to perform fine-grained sound synthesis using text-controlled modes."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.15431v1",
-      "title": "Physics-informed fine-tuning of foundation models for partial differential equations",
-      "authors": [
-        "Vlad Medvedev",
-        "Leon Armbruster",
-        "Christopher Straub",
-        "Georg Kruse",
-        "Andreas Rosskopf"
-      ],
-      "abstract": "Foundation models for partial differential equations (PDEs) have emerged as powerful surrogates pre-trained on diverse physical systems, but adapting them to new downstream tasks remains challenging due to limited task-specific data and distribution shifts. While fine-tuning has proven transformative in natural language processing, best practices for adapting PDE foundation models remain underexplored. Although physics-informed training has successfully trained accurate solvers across a wide range of PDE problems, its potential for fine-tuning data-based foundation models has not been systematically studied. In this work, we introduce a physics-informed fine-tuning framework that adapts pre-trained PDE foundation models by incorporating physical constraints (PDE residuals and boundary conditions) directly into the fine-tuning objective. This enables effective adaptation in data-scarce regimes while promoting physical consistency. We evaluate our method on a downstream task composed of an unseen PDE class and compare it with data-driven finetuning counterparts. Our results demonstrate that physics-informed fine-tuning achieves competitive accuracy without requiring PDE solutions for training. Furthermore, a hybrid fine-tuning strategy yields superior generalization to out-of-distribution scenarios when only minimal training data is available. These findings establish physics-informed fine-tuning as a scalable and data-efficient paradigm, providing a physically interpretable pathway for adapting foundation models in scientific machine learning.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "math.AP",
-        "math.NA"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.15431v1",
-        "pdf": "https://arxiv.org/pdf/2603.15431v1"
-      },
-      "arxiv_id": "2603.15431v1",
-      "comment": "12 pages, 6 figures, 1 table",
-      "journal_ref": "ICLR 2026 Workshop on Artificial Intelligence and Partial Differential Equations",
-      "has_code": false,
-      "relevance_score": 4.35,
-      "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Foundation models for partial differential equations (PDEs) have emerged as powerful surrogates pre-trained on diverse physical systems, but adapting them to new downstream tasks remains challenging due to limited task-specific data and distribution shifts. While fine-tuning has proven transformative in natural language processing, best practices for adapting PDE foundation models remain underexpl...",
-        "key_contributions": [
-          "Foundation models for partial differential equations (PDEs) have emerged as powerful surrogates pre-trained on diverse physical systems, but adapting them to new downstream tasks remains challenging due to limited task-specific data and distribution shifts.",
-          "While fine-tuning has proven transformative in natural language processing, best practices for adapting PDE foundation models remain underexplored.",
-          "Although physics-informed training has successfully trained accurate solvers across a wide range of PDE problems, its potential for fine-tuning data-based foundation models has not been systematically studied."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.15452v1",
-      "title": "Unlocking the Value of Text: Event-Driven Reasoning and Multi-Level Alignment for Time Series Forecasting",
-      "authors": [
-        "Siyuan Wang",
-        "Peng Chen",
-        "Yihang Wang",
-        "Wanghui Qiu",
-        "Chenjuan Guo",
-        "Bin Yang",
-        "Yang Shu"
-      ],
-      "abstract": "Existing time series forecasting methods primarily rely on the numerical data itself. However, real-world time series exhibit complex patterns associated with multimodal information, making them difficult to predict with numerical data alone. While several multimodal time series forecasting methods have emerged, they either utilize text with limited supplementary information or focus merely on representation extraction, extracting minimal textual information for forecasting. To unlock the Value of Text, we propose VoT, a method with Event-driven Reasoning and Multi-level Alignment. Event-driven Reasoning combines the rich information in exogenous text with the powerful reasoning capabilities of LLMs for time series forecasting. To guide the LLMs in effective reasoning, we propose the Historical In-context Learning that retrieves and applies historical examples as in-context guidance. To maximize the utilization of text, we propose Multi-level Alignment. At the representation level, we utilize the Endogenous Text Alignment to integrate the endogenous text information with the time series. At the prediction level, we design the Adaptive Frequency Fusion to fuse the frequency components of event-driven prediction and numerical prediction to achieve complementary advantages. Experiments on real-world datasets across 10 domains demonstrate significant improvements over existing methods, validating the effectiveness of our approach in the utilization of text. The code is made available at https://github.com/decisionintelligence/VoT.",
-      "published": "2026-03-16",
-      "updated": "2026-03-16",
-      "categories": [
         "cs.AI"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.15452v1",
-        "pdf": "https://arxiv.org/pdf/2603.15452v1"
+        "paper": "http://arxiv.org/abs/2603.16596v1",
+        "pdf": "https://arxiv.org/pdf/2603.16596v1"
       },
-      "arxiv_id": "2603.15452v1",
-      "comment": "Accepted by ICLR 2026",
+      "arxiv_id": "2603.16596v1",
+      "comment": "10 pages, 6 figures. Accept by CVPR2026 Findings",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.300000000000001,
@@ -633,7 +485,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -651,11 +503,135 @@
         }
       },
       "ai_summaries": {
-        "short": "Existing time series forecasting methods primarily rely on the numerical data itself. However, real-world time series exhibit complex patterns associated with multimodal information, making them difficult to predict with numerical data alone. While several multimodal time series forecasting methods have emerged, they either utilize text with limited supplementary information or focus merely on rep...",
+        "short": "Mounting posture is an important visual indicator of estrus in dairy cattle. However, achieving reliable mounting pose estimation in real-world environments remains challenging due to cluttered backgrounds and frequent inter-animal occlusion. We present FSMC-Pose, a top-down framework that integrates a lightweight frequency-spatial fusion backbone, CattleMountNet, and a multiscale self-calibration...",
         "key_contributions": [
-          "Existing time series forecasting methods primarily rely on the numerical data itself.",
-          "However, real-world time series exhibit complex patterns associated with multimodal information, making them difficult to predict with numerical data alone.",
-          "While several multimodal time series forecasting methods have emerged, they either utilize text with limited supplementary information or focus merely on representation extraction, extracting minimal textual information for forecasting."
+          "Mounting posture is an important visual indicator of estrus in dairy cattle.",
+          "However, achieving reliable mounting pose estimation in real-world environments remains challenging due to cluttered backgrounds and frequent inter-animal occlusion.",
+          "We present FSMC-Pose, a top-down framework that integrates a lightweight frequency-spatial fusion backbone, CattleMountNet, and a multiscale self-calibration head, SC2Head."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.16645v1",
+      "title": "BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection",
+      "authors": [
+        "Melissa Schween",
+        "Mathis Kruse",
+        "Bodo Rosenhahn"
+      ],
+      "abstract": "We propose Bijective Universal Scene-Specific Anomalous Relationship Detection (BUSSARD), a normalizing flow-based model for detecting anomalous relations in scene graphs, generated from images. Our work follows a multimodal approach, embedding object and relationship tokens from scene graphs with a language model to leverage semantic knowledge from the real world. A normalizing flow model is used to learn bijective transformations that map object-relation-object triplets from scene graphs to a simple base distribution (typically Gaussian), allowing anomaly detection through likelihood estimation. We evaluate our approach on the SARD dataset containing office and dining room scenes. Our method achieves around 10% better AUROC results compared to the current state-of-the-art model, while simultaneously being five times faster. Through ablation studies, we demonstrate superior robustness and universality, particularly regarding the use of synonyms, with our model maintaining stable performance while the baseline shows 17.5% deviation. This work demonstrates the strong potential of learning-based methods for relationship anomaly detection in scene graphs. Our code is available at https://github.com/mschween/BUSSARD .",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.16645v1",
+        "pdf": "https://arxiv.org/pdf/2603.16645v1"
+      },
+      "arxiv_id": "2603.16645v1",
+      "comment": "CVPR 2026 Main Track",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We propose Bijective Universal Scene-Specific Anomalous Relationship Detection (BUSSARD), a normalizing flow-based model for detecting anomalous relations in scene graphs, generated from images. Our work follows a multimodal approach, embedding object and relationship tokens from scene graphs with a language model to leverage semantic knowledge from the real world. A normalizing flow model is used...",
+        "key_contributions": [
+          "We propose Bijective Universal Scene-Specific Anomalous Relationship Detection (BUSSARD), a normalizing flow-based model for detecting anomalous relations in scene graphs, generated from images.",
+          "Our work follows a multimodal approach, embedding object and relationship tokens from scene graphs with a language model to leverage semantic knowledge from the real world.",
+          "A normalizing flow model is used to learn bijective transformations that map object-relation-object triplets from scene graphs to a simple base distribution (typically Gaussian), allowing anomaly detection through likelihood estimation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.16843v1",
+      "title": "Internalizing Agency from Reflective Experience",
+      "authors": [
+        "Rui Ge",
+        "Yichao Fu",
+        "Yuyang Qian",
+        "Junda Su",
+        "Yiming Zhao",
+        "Peng Zhao",
+        "Hao Zhang"
+      ],
+      "abstract": "Large language models are increasingly deployed as autonomous agents that must plan, act, and recover from mistakes through long-horizon interaction with environments that provide rich feedback. However, prevailing outcome-driven post-training methods (e.g., RL with verifiable rewards) primarily optimize final success signals, leaving rich environment feedback underutilized. Consequently, they often lead to distribution sharpening: the policy becomes better at reproducing a narrow set of already-successful behaviors, while failing to improve the feedback-grounded agency needed to expand problem-solving capacity (e.g., Pass@k) in long-horizon settings.\n  To address this, we propose LEAFE (Learning Feedback-Grounded Agency from Reflective Experience), a framework that internalizes recovery agency from reflective experience. Specifically, during exploration, the agent summarizes environment feedback into actionable experience, backtracks to earlier decision points, and explores alternative branches with revised actions. We then distill these experience-guided corrections into the model through supervised fine-tuning, enabling the policy to recover more effectively in future interactions. Across a diverse set of interactive coding and agentic tasks under fixed interaction budgets, LEAFE consistently improves Pass@1 over the base model and achieves higher Pass@k than outcome-driven baselines (GRPO) and experience-based methods such as Early Experience, with gains of up to 14% on Pass@128.",
+      "published": "2026-03-17",
+      "updated": "2026-03-17",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.16843v1",
+        "pdf": "https://arxiv.org/pdf/2603.16843v1"
+      },
+      "arxiv_id": "2603.16843v1",
+      "comment": "17 pages, 5 figures; Submitted to ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Large language models are increasingly deployed as autonomous agents that must plan, act, and recover from mistakes through long-horizon interaction with environments that provide rich feedback. However, prevailing outcome-driven post-training methods (e.g., RL with verifiable rewards) primarily optimize final success signals, leaving rich environment feedback underutilized. Consequently, they oft...",
+        "key_contributions": [
+          "Large language models are increasingly deployed as autonomous agents that must plan, act, and recover from mistakes through long-horizon interaction with environments that provide rich feedback.",
+          "However, prevailing outcome-driven post-training methods (e.",
+          "g."
         ],
         "provider": "gemini"
       }

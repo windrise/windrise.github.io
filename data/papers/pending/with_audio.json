@@ -3,37 +3,31 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.17995v1",
-      "title": "LoST: Level of Semantics Tokenization for 3D Shapes",
+      "id": "2603.19176v1",
+      "title": "Few-shot Acoustic Synthesis with Multimodal Flow Matching",
       "authors": [
-        "Niladri Shekhar Dutt",
-        "Zifan Shi",
-        "Paul Guerrero",
-        "Chun-Hao Paul Huang",
-        "Duygu Ceylan",
-        "Niloy J. Mitra",
-        "Xuelin Chen"
+        "Amandine Brunetto"
       ],
-      "abstract": "Tokenization is a fundamental technique in the generative modeling of various modalities. In particular, it plays a critical role in autoregressive (AR) models, which have recently emerged as a compelling option for 3D generation. However, optimal tokenization of 3D shapes remains an open question. State-of-the-art (SOTA) methods primarily rely on geometric level-of-detail (LoD) hierarchies, originally designed for rendering and compression. These spatial hierarchies are often token-inefficient and lack semantic coherence for AR modeling. We propose Level-of-Semantics Tokenization (LoST), which orders tokens by semantic salience, such that early prefixes decode into complete, plausible shapes that possess principal semantics, while subsequent tokens refine instance-specific geometric and semantic details. To train LoST, we introduce Relational Inter-Distance Alignment (RIDA), a novel 3D semantic alignment loss that aligns the relational structure of the 3D shape latent space with that of the semantic DINO feature space. Experiments show that LoST achieves SOTA reconstruction, surpassing previous LoD-based 3D shape tokenizers by large margins on both geometric and semantic reconstruction metrics. Moreover, LoST achieves efficient, high-quality AR 3D generation and enables downstream tasks like semantic retrieval, while using only 0.1%-10% of the tokens needed by prior AR models.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
+      "abstract": "Generating audio that is acoustically consistent with a scene is essential for immersive virtual environments. Recent neural acoustic field methods enable spatially continuous sound rendering but remain scene-specific, requiring dense audio measurements and costly training for each environment. Few-shot approaches improve scalability across rooms but still rely on multiple recordings and, being deterministic, fail to capture the inherent uncertainty of scene acoustics under sparse context. We introduce flow-matching acoustic generation (FLAC), a probabilistic method for few-shot acoustic synthesis that models the distribution of plausible room impulse responses (RIRs) given minimal scene context. FLAC leverages a diffusion transformer trained with a flow-matching objective to generate RIRs at arbitrary positions in novel scenes, conditioned on spatial, geometric, and acoustic cues. FLAC outperforms state-of-the-art eight-shot baselines with one-shot on both the AcousticRooms and Hearing Anything Anywhere datasets. To complement standard perceptual metrics, we further introduce AGREE, a joint acoustic-geometry embedding, enabling geometry-consistent evaluation of generated RIRs through retrieval and distributional metrics. This work is the first to apply generative flow matching to explicit RIR synthesis, establishing a new direction for robust and data-efficient acoustic synthesis.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
       "categories": [
+        "cs.SD",
         "cs.CV",
-        "cs.GR",
-        "cs.LG"
+        "eess.AS"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.SD",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.17995v1",
-        "pdf": "https://arxiv.org/pdf/2603.17995v1"
+        "paper": "http://arxiv.org/abs/2603.19176v1",
+        "pdf": "https://arxiv.org/pdf/2603.19176v1"
       },
-      "arxiv_id": "2603.17995v1",
-      "comment": "CVPR 2026; Project website-- https://lost3d.github.io",
+      "arxiv_id": "2603.19176v1",
+      "comment": "To appear at CVPR 2026. 23 pages, 16 figures. Project Page: https://amandinebtto.github.io/FLAC/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.35,
+      "relevance_score": 5.55,
       "score_breakdown": {
-        "total_score": 5.35,
+        "total_score": 5.55,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -45,7 +39,75 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Generating audio that is acoustically consistent with a scene is essential for immersive virtual environments. Recent neural acoustic field methods enable spatially continuous sound rendering but remain scene-specific, requiring dense audio measurements and costly training for each environment. Few-shot approaches improve scalability across rooms but still rely on multiple recordings and, being de...",
+        "key_contributions": [
+          "Generating audio that is acoustically consistent with a scene is essential for immersive virtual environments.",
+          "Recent neural acoustic field methods enable spatially continuous sound rendering but remain scene-specific, requiring dense audio measurements and costly training for each environment.",
+          "Few-shot approaches improve scalability across rooms but still rely on multiple recordings and, being deterministic, fail to capture the inherent uncertainty of scene acoustics under sparse context."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.19176v1.mp3"
+      }
+    },
+    {
+      "id": "2603.19232v1",
+      "title": "Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens",
+      "authors": [
+        "Yuqing Wang",
+        "Chuofan Ma",
+        "Zhijie Lin",
+        "Yao Teng",
+        "Lijun Yu",
+        "Shuai Wang",
+        "Jiaming Han",
+        "Jiashi Feng",
+        "Yi Jiang",
+        "Xihui Liu"
+      ],
+      "abstract": "Visual generation with discrete tokens has gained significant attention as it enables a unified token prediction paradigm shared with language models, promising seamless multimodal architectures. However, current discrete generation methods remain limited to low-dimensional latent tokens (typically 8-32 dims), sacrificing the semantic richness essential for understanding. While high-dimensional pretrained representations (768-1024 dims) could bridge this gap, their discrete generation poses fundamental challenges. In this paper, we present Cubic Discrete Diffusion (CubiD), the first discrete generation model for high-dimensional representations. CubiD performs fine-grained masking throughout the high-dimensional discrete representation -- any dimension at any position can be masked and predicted from partial observations. This enables the model to learn rich correlations both within and across spatial positions, with the number of generation steps fixed at $T$ regardless of feature dimensionality, where $T \\ll hwd$. On ImageNet-256, CubiD achieves state-of-the-art discrete generation with strong scaling behavior from 900M to 3.7B parameters. Crucially, we validate that these discretized tokens preserve original representation capabilities, demonstrating that the same discrete tokens can effectively serve both understanding and generation tasks. We hope this work will inspire future research toward unified multimodal architectures. Code is available at: https://github.com/YuqingWang1029/CubiD.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.19232v1",
+        "pdf": "https://arxiv.org/pdf/2603.19232v1"
+      },
+      "arxiv_id": "2603.19232v1",
+      "comment": "Accepted by CVPR 2026 main track; Code: https://github.com/YuqingWang1029/CubiD",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.2,
+      "score_breakdown": {
+        "total_score": 5.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -59,54 +121,183 @@
         }
       },
       "ai_summaries": {
-        "short": "Tokenization is a fundamental technique in the generative modeling of various modalities. In particular, it plays a critical role in autoregressive (AR) models, which have recently emerged as a compelling option for 3D generation. However, optimal tokenization of 3D shapes remains an open question. State-of-the-art (SOTA) methods primarily rely on geometric level-of-detail (LoD) hierarchies, origi...",
+        "short": "Visual generation with discrete tokens has gained significant attention as it enables a unified token prediction paradigm shared with language models, promising seamless multimodal architectures. However, current discrete generation methods remain limited to low-dimensional latent tokens (typically 8-32 dims), sacrificing the semantic richness essential for understanding. While high-dimensional pr...",
         "key_contributions": [
-          "Tokenization is a fundamental technique in the generative modeling of various modalities.",
-          "In particular, it plays a critical role in autoregressive (AR) models, which have recently emerged as a compelling option for 3D generation.",
-          "However, optimal tokenization of 3D shapes remains an open question."
+          "Visual generation with discrete tokens has gained significant attention as it enables a unified token prediction paradigm shared with language models, promising seamless multimodal architectures.",
+          "However, current discrete generation methods remain limited to low-dimensional latent tokens (typically 8-32 dims), sacrificing the semantic richness essential for understanding.",
+          "While high-dimensional pretrained representations (768-1024 dims) could bridge this gap, their discrete generation poses fundamental challenges."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.17995v1.mp3"
+        "audio_url": "/audio/2603.19232v1.mp3"
       }
     },
     {
-      "id": "2603.17779v1",
-      "title": "CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image",
+      "id": "2603.19028v1",
+      "title": "SEM: Sparse Embedding Modulation for Post-Hoc Debiasing of Vision-Language Models",
       "authors": [
-        "Yizheng Song",
-        "Yiyu Zhuang",
-        "Qipeng Xu",
-        "Haixiang Wang",
-        "Jiahe Zhu",
-        "Jing Tian",
-        "Siyu Zhu",
-        "Hao Zhu"
+        "Quentin Guimard",
+        "Federico Bartsch",
+        "Simone Caldarella",
+        "Rahaf Aljundi",
+        "Elisa Ricci",
+        "Massimiliano Mancini"
       ],
-      "abstract": "Single-view 3D human reconstruction has garnered significant attention in recent years. Despite numerous advancements, prior research has concentrated on reconstructing 3D models from clear, close-up images of individual subjects, often yielding subpar results in the more prevalent multi-person scenarios. Reconstructing 3D human crowd models is a highly intricate task, laden with challenges such as: 1) extensive occlusions, 2) low clarity, and 3) numerous and various appearances. To address this task, we propose CrowdGaussian, a unified framework that directly reconstructs multi-person 3D Gaussian Splatting (3DGS) representations from single-image inputs. To handle occlusions, we devise a self-supervised adaptation pipeline that enables the pretrained large human model to reconstruct complete 3D humans with plausible geometry and appearance from heavily occluded inputs. Furthermore, we introduce Self-Calibrated Learning (SCL). This training strategy enables single-step diffusion models to adaptively refine coarse renderings to optimal quality by blending identity-preserving samples with clean/corrupted image pairs. The outputs can be distilled back to enhance the quality of multi-person 3DGS representations. Extensive experiments demonstrate that CrowdGaussian generates photorealistic, geometrically coherent reconstructions of multi-person scenes.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
+      "abstract": "Models that bridge vision and language, such as CLIP, are key components of multimodal AI, yet their large-scale, uncurated training data introduce severe social and spurious biases. Existing post-hoc debiasing methods often operate directly in the dense CLIP embedding space, where bias and task-relevant information are highly entangled. This entanglement limits their ability to remove bias without degrading semantic fidelity. In this work, we propose Sparse Embedding Modulation (SEM), a post-hoc, zero-shot debiasing framework that operates in a Sparse Autoencoder (SAE) latent space. By decomposing CLIP text embeddings into disentangled features, SEM identifies and modulates bias-relevant neurons while preserving query-relevant ones. This enables more precise, non-linear interventions. Across four benchmark datasets and two CLIP backbones, SEM achieves substantial fairness gains in retrieval and zero-shot classification. Our results demonstrate that sparse latent representations provide an effective foundation for post-hoc debiasing of vision-language models.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.19028v1",
+        "pdf": "https://arxiv.org/pdf/2603.19028v1"
+      },
+      "arxiv_id": "2603.19028v1",
+      "comment": "CVPR Findings 2026. Project website: https://sparse-embedding-modulation.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.15,
+      "score_breakdown": {
+        "total_score": 5.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Models that bridge vision and language, such as CLIP, are key components of multimodal AI, yet their large-scale, uncurated training data introduce severe social and spurious biases. Existing post-hoc debiasing methods often operate directly in the dense CLIP embedding space, where bias and task-relevant information are highly entangled. This entanglement limits their ability to remove bias withou...",
+        "key_contributions": [
+          "Models that bridge vision and language, such as CLIP, are key components of multimodal AI, yet their large-scale, uncurated training data introduce severe social and spurious biases.",
+          "Existing post-hoc debiasing methods often operate directly in the dense CLIP embedding space, where bias and task-relevant information are highly entangled.",
+          "This entanglement limits their ability to remove bias without degrading semantic fidelity."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.19028v1.mp3"
+      }
+    },
+    {
+      "id": "2603.19193v1",
+      "title": "Reconstruction Matters: Learning Geometry-Aligned BEV Representation through 3D Gaussian Splatting",
+      "authors": [
+        "Yiren Lu",
+        "Xin Ye",
+        "Burhaneddin Yaman",
+        "Jingru Luo",
+        "Zhexiao Xiong",
+        "Liu Ren",
+        "Yu Yin"
+      ],
+      "abstract": "Bird's-Eye-View (BEV) perception serves as a cornerstone for autonomous driving, offering a unified spatial representation that fuses surrounding-view images to enable reasoning for various downstream tasks, such as semantic segmentation, 3D object detection, and motion prediction. However, most existing BEV perception frameworks adopt an end-to-end training paradigm, where image features are directly transformed into the BEV space and optimized solely through downstream task supervision. This formulation treats the entire perception process as a black box, often lacking explicit 3D geometric understanding and interpretability, leading to suboptimal performance. In this paper, we claim that an explicit 3D representation matters for accurate BEV perception, and we propose Splat2BEV, a Gaussian Splatting-assisted framework for BEV tasks. Splat2BEV aims to learn BEV feature representations that are both semantically rich and geometrically precise. We first pre-train a Gaussian generator that explicitly reconstructs 3D scenes from multi-view inputs, enabling the generation of geometry-aligned feature representations. These representations are then projected into the BEV space to serve as inputs for downstream tasks. Extensive experiments on nuScenes and argoverse dataset demonstrate that Splat2BEV achieves state-of-the-art performance and validate the effectiveness of incorporating explicit 3D reconstruction into BEV perception.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.17779v1",
-        "pdf": "https://arxiv.org/pdf/2603.17779v1"
+        "paper": "http://arxiv.org/abs/2603.19193v1",
+        "pdf": "https://arxiv.org/pdf/2603.19193v1"
       },
-      "arxiv_id": "2603.17779v1",
-      "comment": "Accepted by CVPR 2026",
+      "arxiv_id": "2603.19193v1",
+      "comment": "Project page at https://vulab-ai.github.io/Splat2BEV/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.149152542372881,
+      "has_code": true,
+      "relevance_score": 5.11864406779661,
       "score_breakdown": {
-        "total_score": 5.15,
+        "total_score": 5.12,
         "field_match": {
-          "score": 2.37,
+          "score": 2.8,
           "matches": [
             "3d gaussian",
             "gaussian splatting",
-            "self-supervised"
+            "3d reconstruction",
+            "segmentation"
           ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Bird's-Eye-View (BEV) perception serves as a cornerstone for autonomous driving, offering a unified spatial representation that fuses surrounding-view images to enable reasoning for various downstream tasks, such as semantic segmentation, 3D object detection, and motion prediction. However, most existing BEV perception frameworks adopt an end-to-end training paradigm, where image features are dire...",
+        "key_contributions": [
+          "Bird's-Eye-View (BEV) perception serves as a cornerstone for autonomous driving, offering a unified spatial representation that fuses surrounding-view images to enable reasoning for various downstream tasks, such as semantic segmentation, 3D object detection, and motion prediction.",
+          "However, most existing BEV perception frameworks adopt an end-to-end training paradigm, where image features are directly transformed into the BEV space and optimized solely through downstream task supervision.",
+          "This formulation treats the entire perception process as a black box, often lacking explicit 3D geometric understanding and interpretability, leading to suboptimal performance."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.19193v1.mp3"
+      }
+    },
+    {
+      "id": "2603.19076v1",
+      "title": "DROID-SLAM in the Wild",
+      "authors": [
+        "Moyang Li",
+        "Zihan Zhu",
+        "Marc Pollefeys",
+        "Daniel Barath"
+      ],
+      "abstract": "We present a robust, real-time RGB SLAM system that handles dynamic environments by leveraging differentiable Uncertainty-aware Bundle Adjustment. Traditional SLAM methods typically assume static scenes, leading to tracking failures in the presence of motion. Recent dynamic SLAM approaches attempt to address this challenge using predefined dynamic priors or uncertainty-aware mapping, but they remain limited when confronted with unknown dynamic objects or highly cluttered scenes where geometric mapping becomes unreliable. In contrast, our method estimates per-pixel uncertainty by exploiting multi-view visual feature inconsistency, enabling robust tracking and reconstruction even in real-world environments. The proposed system achieves state-of-the-art camera poses and scene geometry in cluttered dynamic scenarios while running in real time at around 10 FPS. Code and datasets are available at https://github.com/MoyangLi00/DROID-W.git.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.19076v1",
+        "pdf": "https://arxiv.org/pdf/2603.19076v1"
+      },
+      "arxiv_id": "2603.19076v1",
+      "comment": "CVPR 2026, Project Page: https://moyangli00.github.io/droid-w/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.0,
+      "score_breakdown": {
+        "total_score": 5.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -119,54 +310,63 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Single-view 3D human reconstruction has garnered significant attention in recent years. Despite numerous advancements, prior research has concentrated on reconstructing 3D models from clear, close-up images of individual subjects, often yielding subpar results in the more prevalent multi-person scenarios. Reconstructing 3D human crowd models is a highly intricate task, laden with challenges such a...",
+        "short": "We present a robust, real-time RGB SLAM system that handles dynamic environments by leveraging differentiable Uncertainty-aware Bundle Adjustment. Traditional SLAM methods typically assume static scenes, leading to tracking failures in the presence of motion. Recent dynamic SLAM approaches attempt to address this challenge using predefined dynamic priors or uncertainty-aware mapping, but they rema...",
         "key_contributions": [
-          "Single-view 3D human reconstruction has garnered significant attention in recent years.",
-          "Despite numerous advancements, prior research has concentrated on reconstructing 3D models from clear, close-up images of individual subjects, often yielding subpar results in the more prevalent multi-person scenarios.",
-          "Reconstructing 3D human crowd models is a highly intricate task, laden with challenges such as: 1) extensive occlusions, 2) low clarity, and 3) numerous and various appearances."
+          "We present a robust, real-time RGB SLAM system that handles dynamic environments by leveraging differentiable Uncertainty-aware Bundle Adjustment.",
+          "Traditional SLAM methods typically assume static scenes, leading to tracking failures in the presence of motion.",
+          "Recent dynamic SLAM approaches attempt to address this challenge using predefined dynamic priors or uncertainty-aware mapping, but they remain limited when confronted with unknown dynamic objects or highly cluttered scenes where geometric mapping becomes unreliable."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.17779v1.mp3"
+        "audio_url": "/audio/2603.19076v1.mp3"
       }
     },
     {
-      "id": "2603.17975v1",
-      "title": "AHOY! Animatable Humans under Occlusion from YouTube Videos with Gaussian Splatting and Video Diffusion Priors",
+      "id": "2603.19234v1",
+      "title": "Matryoshka Gaussian Splatting",
       "authors": [
-        "Aymen Mir",
-        "Riza Alp Guler",
-        "Xiangjun Tang",
-        "Peter Wonka",
-        "Gerard Pons-Moll"
+        "Zhilin Guo",
+        "Boqiao Zhang",
+        "Hakan Aktas",
+        "Kyle Fogarty",
+        "Jeffrey Hu",
+        "Nursena Koprucu Aslan",
+        "Wenzhao Li",
+        "Canberk Baykal",
+        "Albert Miao",
+        "Josef Bengtson",
+        "Chenliang Zhou",
+        "Weihao Xia",
+        "Cristina Nader Vasconcelos. Cengiz Oztireli"
       ],
-      "abstract": "We present AHOY, a method for reconstructing complete, animatable 3D Gaussian avatars from in-the-wild monocular video despite heavy occlusion. Existing methods assume unoccluded input-a fully visible subject, often in a canonical pose-excluding the vast majority of real-world footage where people are routinely occluded by furniture, objects, or other people. Reconstructing from such footage poses fundamental challenges: large body regions may never be observed, and multi-view supervision per pose is unavailable. We address these challenges with four contributions: (i) a hallucination-as-supervision pipeline that uses identity-finetuned diffusion models to generate dense supervision for previously unobserved body regions; (ii) a two-stage canonical-to-pose-dependent architecture that bootstraps from sparse observations to full pose-dependent Gaussian maps; (iii) a map-pose/LBS-pose decoupling that absorbs multi-view inconsistencies from the generated data; (iv) a head/body split supervision strategy that preserves facial identity. We evaluate on YouTube videos and on multi-view capture data with significant occlusion and demonstrate state-of-the-art reconstruction quality. We also demonstrate that the resulting avatars are robust enough to be animated with novel poses and composited into 3DGS scenes captured using cell-phone video. Our project page is available at https://miraymen.github.io/ahoy/",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
+      "abstract": "The ability to render scenes at adjustable fidelity from a single model, known as level of detail (LoD), is crucial for practical deployment of 3D Gaussian Splatting (3DGS). Existing discrete LoD methods expose only a limited set of operating points, while concurrent continuous LoD approaches enable smoother scaling but often suffer noticeable quality degradation at full capacity, making LoD a costly design decision. We introduce Matryoshka Gaussian Splatting (MGS), a training framework that enables continuous LoD for standard 3DGS pipelines without sacrificing full-capacity rendering quality. MGS learns a single ordered set of Gaussians such that rendering any prefix, the first k splats, produces a coherent reconstruction whose fidelity improves smoothly with increasing budget. Our key idea is stochastic budget training: each iteration samples a random splat budget and optimises both the corresponding prefix and the full set. This strategy requires only two forward passes and introduces no architectural modifications. Experiments across four benchmarks and six baselines show that MGS matches the full-capacity performance of its backbone while enabling a continuous speed-quality trade-off from a single model. Extensive ablations on ordering strategies, training objectives, and model capacity further validate the designs.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.17975v1",
-        "pdf": "https://arxiv.org/pdf/2603.17975v1"
+        "paper": "http://arxiv.org/abs/2603.19234v1",
+        "pdf": "https://arxiv.org/pdf/2603.19234v1"
       },
-      "arxiv_id": "2603.17975v1",
-      "comment": "Our project page is available at https://miraymen.github.io/ahoy/",
+      "arxiv_id": "2603.19234v1",
+      "comment": "project page: https://zhilinguo.github.io/MGS",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.677966101694915,
+      "relevance_score": 4.727966101694916,
       "score_breakdown": {
-        "total_score": 4.68,
+        "total_score": 4.73,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -190,249 +390,51 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We present AHOY, a method for reconstructing complete, animatable 3D Gaussian avatars from in-the-wild monocular video despite heavy occlusion. Existing methods assume unoccluded input-a fully visible subject, often in a canonical pose-excluding the vast majority of real-world footage where people are routinely occluded by furniture, objects, or other people. Reconstructing from such footage poses...",
+        "short": "The ability to render scenes at adjustable fidelity from a single model, known as level of detail (LoD), is crucial for practical deployment of 3D Gaussian Splatting (3DGS). Existing discrete LoD methods expose only a limited set of operating points, while concurrent continuous LoD approaches enable smoother scaling but often suffer noticeable quality degradation at full capacity, making LoD a cos...",
         "key_contributions": [
-          "We present AHOY, a method for reconstructing complete, animatable 3D Gaussian avatars from in-the-wild monocular video despite heavy occlusion.",
-          "Existing methods assume unoccluded input-a fully visible subject, often in a canonical pose-excluding the vast majority of real-world footage where people are routinely occluded by furniture, objects, or other people.",
-          "Reconstructing from such footage poses fundamental challenges: large body regions may never be observed, and multi-view supervision per pose is unavailable."
+          "The ability to render scenes at adjustable fidelity from a single model, known as level of detail (LoD), is crucial for practical deployment of 3D Gaussian Splatting (3DGS).",
+          "Existing discrete LoD methods expose only a limited set of operating points, while concurrent continuous LoD approaches enable smoother scaling but often suffer noticeable quality degradation at full capacity, making LoD a costly design decision.",
+          "We introduce Matryoshka Gaussian Splatting (MGS), a training framework that enables continuous LoD for standard 3DGS pipelines without sacrificing full-capacity rendering quality."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.17975v1.mp3"
+        "audio_url": "/audio/2603.19234v1.mp3"
       }
     },
     {
-      "id": "2603.17910v1",
-      "title": "SpiderCam: Low-Power Snapshot Depth from Differential Defocus",
+      "id": "2603.18991v1",
+      "title": "CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think",
       "authors": [
-        "Marcos A. Ferreira",
-        "Tianao Li",
-        "John Mamish",
-        "Josiah Hester",
-        "Yaman Sangar",
-        "Qi Guo",
-        "Emma Alexander"
+        "Zening Sun",
+        "Zhengpeng Xie",
+        "Lichen Bai",
+        "Shitong Shao",
+        "Shuo Yang",
+        "Zeke Xie"
       ],
-      "abstract": "We introduce SpiderCam, an FPGA-based snapshot depth-from-defocus camera which produces 480x400 sparse depth maps in real-time at 32.5 FPS over a working range of 52 cm while consuming 624 mW of power in total. SpiderCam comprises a custom camera that simultaneously captures two differently focused images of the same scene, processed with a SystemVerilog implementation of depth from differential defocus (DfDD) on a low-power FPGA. To achieve state-of-the-art power consumption, we present algorithmic improvements to DfDD that overcome challenges caused by low-power sensors, and design a memory-local implementation for streaming depth computation on a device that is too small to store even a single image pair. We report the first sub-Watt total power measurement for passive FPGA-based 3D cameras in the literature.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.17910v1",
-        "pdf": "https://arxiv.org/pdf/2603.17910v1"
-      },
-      "arxiv_id": "2603.17910v1",
-      "comment": "Accepted to IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
-      "score_breakdown": {
-        "total_score": 4.55,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We introduce SpiderCam, an FPGA-based snapshot depth-from-defocus camera which produces 480x400 sparse depth maps in real-time at 32.5 FPS over a working range of 52 cm while consuming 624 mW of power in total. SpiderCam comprises a custom camera that simultaneously captures two differently focused images of the same scene, processed with a SystemVerilog implementation of depth from differential d...",
-        "key_contributions": [
-          "We introduce SpiderCam, an FPGA-based snapshot depth-from-defocus camera which produces 480x400 sparse depth maps in real-time at 32.",
-          "5 FPS over a working range of 52 cm while consuming 624 mW of power in total.",
-          "SpiderCam comprises a custom camera that simultaneously captures two differently focused images of the same scene, processed with a SystemVerilog implementation of depth from differential defocus (DfDD) on a low-power FPGA."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.17910v1.mp3"
-      }
-    },
-    {
-      "id": "2603.17839v1",
-      "title": "How do LLMs Compute Verbal Confidence",
-      "authors": [
-        "Dharshan Kumaran",
-        "Arthur Conmy",
-        "Federico Barbero",
-        "Simon Osindero",
-        "Viorica Patraucean",
-        "Petar Velickovic"
-      ],
-      "abstract": "Verbal confidence -- prompting LLMs to state their confidence as a number or category -- is widely used to extract uncertainty estimates from black-box models. However, how LLMs internally generate such scores remains unknown. We address two questions: first, when confidence is computed - just-in-time when requested, or automatically during answer generation and cached for later retrieval; and second, what verbal confidence represents - token log-probabilities, or a richer evaluation of answer quality? Focusing on Gemma 3 27B and Qwen 2.5 7B, we provide convergent evidence for cached retrieval. Activation steering, patching, noising, and swap experiments reveal that confidence representations emerge at answer-adjacent positions before appearing at the verbalization site. Attention blocking pinpoints the information flow: confidence is gathered from answer tokens, cached at the first post-answer position, then retrieved for output. Critically, linear probing and variance partitioning reveal that these cached representations explain substantial variance in verbal confidence beyond token log-probabilities, suggesting a richer answer-quality evaluation rather than a simple fluency readout. These findings demonstrate that verbal confidence reflects automatic, sophisticated self-evaluation -- not post-hoc reconstruction -- with implications for understanding metacognition in LLMs and improving calibration.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.17839v1",
-        "pdf": "https://arxiv.org/pdf/2603.17839v1"
-      },
-      "arxiv_id": "2603.17839v1",
-      "comment": "Submitted to ICML 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.5,
-      "score_breakdown": {
-        "total_score": 4.5,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Verbal confidence -- prompting LLMs to state their confidence as a number or category -- is widely used to extract uncertainty estimates from black-box models. However, how LLMs internally generate such scores remains unknown. We address two questions: first, when confidence is computed - just-in-time when requested, or automatically during answer generation and cached for later retrieval; and sec...",
-        "key_contributions": [
-          "Verbal confidence -- prompting LLMs to state their confidence as a number or category -- is widely used to extract uncertainty estimates from black-box models.",
-          "However, how LLMs internally generate such scores remains unknown.",
-          "We address two questions: first, when confidence is computed - just-in-time when requested, or automatically during answer generation and cached for later retrieval; and second, what verbal confidence represents - token log-probabilities, or a richer evaluation of answer quality? Focusing on Gemma 3 27B and Qwen 2."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.17839v1.mp3"
-      }
-    },
-    {
-      "id": "2603.17828v1",
-      "title": "TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models",
-      "authors": [
-        "Qianlong Xiang",
-        "Miao Zhang",
-        "Haoyu Zhang",
-        "Kun Wang",
-        "Junhui Hou",
-        "Liqiang Nie"
-      ],
-      "abstract": "Although text-to-image diffusion models exhibit remarkable generative power, concept erasure techniques are essential for their safe deployment to prevent the creation of harmful content. This has fostered a dynamic interplay between the development of erasure defenses and the adversarial probes designed to bypass them, and this co-evolution has progressively enhanced the efficacy of erasure methods. However, this adversarial co-evolution has converged on a narrow, text-centric paradigm that equates erasure with severing the text-to-image mapping, ignoring that the underlying visual knowledge related to undesired concepts still persist. To substantiate this claim, we investigate from a visual perspective, leveraging DDIM inversion to probe whether a generative pathway for the erased concept can still be found. However, identifying such a visual generative pathway is challenging because standard text-guided DDIM inversion is actively resisted by text-centric defenses within the erased model. To address this, we introduce TINA, a novel Text-free INversion Attack, which enforces this visual-only probe by operating under a null-text condition, thereby avoiding existing text-centric defenses. Moreover, TINA integrates an optimization procedure to overcome the accumulating approximation errors that arise when standard inversion operates without its usual textual guidance. Our experiments demonstrate that TINA regenerates erased concepts from models treated with state-of-the-art unlearning. The success of TINA proves that current methods merely obscure concepts, highlighting an urgent need for paradigms that operate directly on internal visual knowledge.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.17828v1",
-        "pdf": "https://arxiv.org/pdf/2603.17828v1"
-      },
-      "arxiv_id": "2603.17828v1",
-      "comment": "16 pages, accepted by CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.5,
-      "score_breakdown": {
-        "total_score": 4.5,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Although text-to-image diffusion models exhibit remarkable generative power, concept erasure techniques are essential for their safe deployment to prevent the creation of harmful content. This has fostered a dynamic interplay between the development of erasure defenses and the adversarial probes designed to bypass them, and this co-evolution has progressively enhanced the efficacy of erasure metho...",
-        "key_contributions": [
-          "Although text-to-image diffusion models exhibit remarkable generative power, concept erasure techniques are essential for their safe deployment to prevent the creation of harmful content.",
-          "This has fostered a dynamic interplay between the development of erasure defenses and the adversarial probes designed to bypass them, and this co-evolution has progressively enhanced the efficacy of erasure methods.",
-          "However, this adversarial co-evolution has converged on a narrow, text-centric paradigm that equates erasure with severing the text-to-image mapping, ignoring that the underlying visual knowledge related to undesired concepts still persist."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.17828v1.mp3"
-      }
-    },
-    {
-      "id": "2603.17809v1",
-      "title": "Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients",
-      "authors": [
-        "Ziwei Xiang",
-        "Fanhu Zeng",
-        "Hongjian Fang",
-        "Rui-Qi Wang",
-        "Renxing Chen",
-        "Yanan Zhu",
-        "Yi Chen",
-        "Peipei Yang",
-        "Xu-Yao Zhang"
-      ],
-      "abstract": "Large Vision Language Models (LVLMs) have achieved remarkable success in a range of downstream tasks that require multimodal interaction, but their capabilities come with substantial computational and memory overhead, which hinders practical deployment. Among numerous acceleration techniques, post-training quantization is a popular and effective strategy for reducing memory cost and accelerating inference. However, existing LVLM quantization methods typically measure token sensitivity at the modality level, which fails to capture the complex cross-token interactions and falls short in quantitatively measuring the quantization error at the token level. As tokens interact within the model, the distinction between modalities gradually diminishes, suggesting the need for fine-grained calibration. Inspired by axiomatic attribution in mechanistic interpretability, we introduce a fine-grained quantization strategy on Quantization-aware Integrated Gradients (QIG), which leverages integrated gradients to quantitatively evaluate token sensitivity and push the granularity from modality level to token level, reflecting both inter-modality and intra-modality dynamics. Extensive experiments on multiple LVLMs under both W4A8 and W3A16 settings show that our method improves accuracy across models and benchmarks with negligible latency overhead. For example, under 3-bit weight-only quantization, our method improves the average accuracy of LLaVA-onevision-7B by 1.60%, reducing the gap to its full-precision counterpart to only 1.33%. The code is available at https://github.com/ucas-xiang/QIG.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
+      "abstract": "Aligning Diffusion models has achieved remarkable breakthroughs in generating high-quality, human preference-aligned images. Existing techniques, such as supervised fine-tuning (SFT) and DPO-style preference optimization, have become principled tools for fine-tuning diffusion models. However, SFT relies on high-quality images that are costly to obtain, while DPO-style methods depend on large-scale preference datasets, which are often inconsistent in quality. Beyond data dependency, these methods are further constrained by computational inefficiency. To address these two challenges, we propose Composite Reward Assisted Fine-Tuning (CRAFT), a lightweight yet powerful fine-tuning paradigm that requires significantly reduced training data while maintaining computational efficiency. It first leverages a Composite Reward Filtering (CRF) technique to construct a high-quality and consistent training dataset and then perform an enhanced variant of SFT. We also theoretically prove that CRAFT actually optimizes the lower bound of group-based reinforcement learning, establishing a principled connection between SFT with selected data and reinforcement learning. Our extensive empirical results demonstrate that CRAFT with only 100 samples can easily outperform recent SOTA preference optimization methods with thousands of preference-paired samples. Moreover, CRAFT can even achieve 11-220$\\times$ faster convergences than the baseline preference optimization methods, highlighting its extremely high efficiency.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.17809v1",
-        "pdf": "https://arxiv.org/pdf/2603.17809v1"
+        "paper": "http://arxiv.org/abs/2603.18991v1",
+        "pdf": "https://arxiv.org/pdf/2603.18991v1"
       },
-      "arxiv_id": "2603.17809v1",
-      "comment": "Accepted by CVPR 2026 Main Conference",
+      "arxiv_id": "2603.18991v1",
+      "comment": "CVPR2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "relevance_score": 4.699999999999999,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.7,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -444,7 +446,72 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Aligning Diffusion models has achieved remarkable breakthroughs in generating high-quality, human preference-aligned images. Existing techniques, such as supervised fine-tuning (SFT) and DPO-style preference optimization, have become principled tools for fine-tuning diffusion models. However, SFT relies on high-quality images that are costly to obtain, while DPO-style methods depend on large-scale...",
+        "key_contributions": [
+          "Aligning Diffusion models has achieved remarkable breakthroughs in generating high-quality, human preference-aligned images.",
+          "Existing techniques, such as supervised fine-tuning (SFT) and DPO-style preference optimization, have become principled tools for fine-tuning diffusion models.",
+          "However, SFT relies on high-quality images that are costly to obtain, while DPO-style methods depend on large-scale preference datasets, which are often inconsistent in quality."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2603.18991v1.mp3"
+      }
+    },
+    {
+      "id": "2603.19039v1",
+      "title": "TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation",
+      "authors": [
+        "Yan Shu",
+        "Bin Ren",
+        "Zhitong Xiong",
+        "Xiao Xiang Zhu",
+        "Begüm Demir",
+        "Nicu Sebe",
+        "Paolo Rota"
+      ],
+      "abstract": "Vision-language models (VLMs) have shown promise in earth observation (EO), yet they struggle with tasks that require grounding complex spatial reasoning in precise pixel-level visual representations. To address this problem, we introduce TerraScope, a unified VLM that delivers pixel-grounded geospatial reasoning with two key capabilities: (1) modality-flexible reasoning: it handles single-modality inputs (optical or SAR) and adaptively fuses different modalities into the reasoning process when both are available; (2) multi-temporal reasoning: it integrates temporal sequences for change analysis across multiple time points. In addition, we curate Terra-CoT, a large-scale dataset containing 1 million samples with pixel-level masks embedded in reasoning chains across multiple sources. We also propose TerraScope-Bench, the first benchmark for pixel-grounded geospatial reasoning with six sub-tasks that evaluates both answer accuracy and mask quality to ensure authentic pixel-grounded reasoning. Experiments show that TerraScope significantly outperforms existing VLMs on pixel-grounded geospatial reasoning while providing interpretable visual evidence.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.19039v1",
+        "pdf": "https://arxiv.org/pdf/2603.19039v1"
+      },
+      "arxiv_id": "2603.19039v1",
+      "comment": "Accepted by CVPR20206 (Main Track)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6,
+      "score_breakdown": {
+        "total_score": 4.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -458,54 +525,55 @@
         }
       },
       "ai_summaries": {
-        "short": "Large Vision Language Models (LVLMs) have achieved remarkable success in a range of downstream tasks that require multimodal interaction, but their capabilities come with substantial computational and memory overhead, which hinders practical deployment. Among numerous acceleration techniques, post-training quantization is a popular and effective strategy for reducing memory cost and accelerating i...",
+        "short": "Vision-language models (VLMs) have shown promise in earth observation (EO), yet they struggle with tasks that require grounding complex spatial reasoning in precise pixel-level visual representations. To address this problem, we introduce TerraScope, a unified VLM that delivers pixel-grounded geospatial reasoning with two key capabilities: (1) modality-flexible reasoning: it handles single-modalit...",
         "key_contributions": [
-          "Large Vision Language Models (LVLMs) have achieved remarkable success in a range of downstream tasks that require multimodal interaction, but their capabilities come with substantial computational and memory overhead, which hinders practical deployment.",
-          "Among numerous acceleration techniques, post-training quantization is a popular and effective strategy for reducing memory cost and accelerating inference.",
-          "However, existing LVLM quantization methods typically measure token sensitivity at the modality level, which fails to capture the complex cross-token interactions and falls short in quantitatively measuring the quantization error at the token level."
+          "Vision-language models (VLMs) have shown promise in earth observation (EO), yet they struggle with tasks that require grounding complex spatial reasoning in precise pixel-level visual representations.",
+          "To address this problem, we introduce TerraScope, a unified VLM that delivers pixel-grounded geospatial reasoning with two key capabilities: (1) modality-flexible reasoning: it handles single-modality inputs (optical or SAR) and adaptively fuses different modalities into the reasoning process when both are available; (2) multi-temporal reasoning: it integrates temporal sequences for change analysis across multiple time points.",
+          "In addition, we curate Terra-CoT, a large-scale dataset containing 1 million samples with pixel-level masks embedded in reasoning chains across multiple sources."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.17809v1.mp3"
+        "audio_url": "/audio/2603.19039v1.mp3"
       }
     },
     {
-      "id": "2603.17746v1",
-      "title": "Concept-to-Pixel: Prompt-Free Universal Medical Image Segmentation",
+      "id": "2603.19026v1",
+      "title": "Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token",
       "authors": [
-        "Haoyun Chen",
-        "Fenghe Tang",
-        "Wenxin Ma",
-        "Shaohua Kevin Zhou"
+        "Anqi Zhang",
+        "Xiaokang Ji",
+        "Guangyu Gao",
+        "Jianbo Jiao",
+        "Chi Harold Liu",
+        "Yunchao Wei"
       ],
-      "abstract": "Universal medical image segmentation seeks to use a single foundational model to handle diverse tasks across multiple imaging modalities. However, existing approaches often rely heavily on manual visual prompts or retrieved reference images, which limits their automation and robustness. In addition, naive joint training across modalities often fails to address large domain shifts. To address these limitations, we propose Concept-to-Pixel (C2P), a novel prompt-free universal segmentation framework. C2P explicitly separates anatomical knowledge into two components: Geometric and Semantic representations. It leverages Multimodal Large Language Models (MLLMs) to distill abstract, high-level medical concepts into learnable Semantic Tokens and introduces explicitly supervised Geometric Tokens to enforce universal physical and structural constraints. These disentangled tokens interact deeply with image features to generate input-specific dynamic kernels for precise mask prediction. Furthermore, we introduce a Geometry-Aware Inference Consensus mechanism, which utilizes the model's predicted geometric constraints to assess prediction reliability and suppress outliers. Extensive experiments and analysis on a unified benchmark comprising eight diverse datasets across seven modalities demonstrate the significant superiority of our jointly trained approach, compared to universe- or single-model approaches. Remarkably, our unified model demonstrates strong generalization, achieving impressive results not only on zero-shot tasks involving unseen cases but also in cross-modal transfers across similar tasks. Code is available at: https://github.com/Yundi218/Concept-to-Pixel",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
+      "abstract": "Recent segmentation methods leveraging Multi-modal Large Language Models (MLLMs) have shown reliable object-level segmentation and enhanced spatial perception. However, almost all previous methods predominantly rely on specialist mask decoders to interpret masks from generated segmentation-related embeddings and visual features, or incorporate multiple additional tokens to assist. This paper aims to investigate whether and how we can unlock segmentation from MLLM itSELF with 1 segmentation Embedding (SELF1E) while achieving competitive results, which eliminates the need for external decoders. To this end, our approach targets the fundamental limitation of resolution reduction in pixel-shuffled image features from MLLMs. First, we retain image features at their original uncompressed resolution, and refill them with residual features extracted from MLLM-processed compressed features, thereby improving feature precision. Subsequently, we integrate pixel-unshuffle operations on image features with and without LLM processing, respectively, to unleash the details of compressed features and amplify the residual features under uncompressed resolution, which further enhances the resolution of refilled features. Moreover, we redesign the attention mask with dual perception pathways, i.e., image-to-image and image-to-segmentation, enabling rich feature interaction between pixels and the segmentation token. Comprehensive experiments across multiple segmentation tasks validate that SELF1E achieves performance competitive with specialist mask decoder-based methods, demonstrating the feasibility of decoder-free segmentation in MLLMs. Project page: https://github.com/ANDYZAQ/SELF1E.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.17746v1",
-        "pdf": "https://arxiv.org/pdf/2603.17746v1"
+        "paper": "http://arxiv.org/abs/2603.19026v1",
+        "pdf": "https://arxiv.org/pdf/2603.19026v1"
       },
-      "arxiv_id": "2603.17746v1",
-      "comment": "32 pages, code is available at: https://github.com/Yundi218/Concept-to-Pixel",
+      "arxiv_id": "2603.19026v1",
+      "comment": "Paper is accepted by CVPR 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.408474576271187,
+      "has_code": false,
+      "relevance_score": 4.553389830508475,
       "score_breakdown": {
-        "total_score": 4.41,
+        "total_score": 4.55,
         "field_match": {
-          "score": 1.27,
+          "score": 0.51,
           "matches": [
-            "medical image",
             "segmentation"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -513,57 +581,59 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Universal medical image segmentation seeks to use a single foundational model to handle diverse tasks across multiple imaging modalities. However, existing approaches often rely heavily on manual visual prompts or retrieved reference images, which limits their automation and robustness. In addition, naive joint training across modalities often fails to address large domain shifts. To address these...",
+        "short": "Recent segmentation methods leveraging Multi-modal Large Language Models (MLLMs) have shown reliable object-level segmentation and enhanced spatial perception. However, almost all previous methods predominantly rely on specialist mask decoders to interpret masks from generated segmentation-related embeddings and visual features, or incorporate multiple additional tokens to assist. This paper aims ...",
         "key_contributions": [
-          "Universal medical image segmentation seeks to use a single foundational model to handle diverse tasks across multiple imaging modalities.",
-          "However, existing approaches often rely heavily on manual visual prompts or retrieved reference images, which limits their automation and robustness.",
-          "In addition, naive joint training across modalities often fails to address large domain shifts."
+          "Recent segmentation methods leveraging Multi-modal Large Language Models (MLLMs) have shown reliable object-level segmentation and enhanced spatial perception.",
+          "However, almost all previous methods predominantly rely on specialist mask decoders to interpret masks from generated segmentation-related embeddings and visual features, or incorporate multiple additional tokens to assist.",
+          "This paper aims to investigate whether and how we can unlock segmentation from MLLM itSELF with 1 segmentation Embedding (SELF1E) while achieving competitive results, which eliminates the need for external decoders."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.17746v1.mp3"
+        "audio_url": "/audio/2603.19026v1.mp3"
       }
     },
     {
-      "id": "2603.17841v1",
-      "title": "Omni-3DEdit: Generalized Versatile 3D Editing in One-Pass",
+      "id": "2603.19053v1",
+      "title": "SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation",
       "authors": [
-        "Chen Liyi",
-        "Wang Pengfei",
-        "Zhang Guowen",
-        "Ma Zhiyuan",
-        "Zhang Lei"
+        "Phuc Pham",
+        "Uy Dieu Tran",
+        "Binh-Son Hua",
+        "Phong Nguyen"
       ],
-      "abstract": "Most instruction-driven 3D editing methods rely on 2D models to guide the explicit and iterative optimization of 3D representations. This paradigm, however, suffers from two primary drawbacks. First, it lacks a universal design of different 3D editing tasks because the explicit manipulation of 3D geometry necessitates task-dependent rules, e.g., 3D appearance editing demands inherent source 3D geometry, while 3D removal alters source geometry. Second, the iterative optimization process is highly time-consuming, often requiring thousands of invocations of 2D/3D updating. We present Omni-3DEdit, a unified, learning-based model that generalizes various 3D editing tasks implicitly. One key challenge to achieve our goal is the scarcity of paired source-edited multi-view assets for training. To address this issue, we construct a data pipeline, synthesizing a relatively rich number of high-quality paired multi-view editing samples. Subsequently, we adapt the pre-trained generative model SEVA as our backbone by concatenating source view latents along with conditional tokens in sequence space. A dual-stream LoRA module is proposed to disentangle different view cues, largely enhancing our model's representational learning capability. As a learning-based model, our model is free of the time-consuming online optimization, and it can complete various 3D editing tasks in one forward pass, reducing the inference time from tens of minutes to approximately two minutes. Extensive experiments demonstrate the effectiveness and efficiency of Omni-3DEdit.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
+      "abstract": "Realistic and efficient 3D garment generation remains a longstanding challenge in computer vision and digital fashion. Existing methods typically rely on large vision- language models to produce serialized representations of 2D sewing patterns, which are then transformed into simulation-ready 3D meshes using garment modeling framework such as GarmentCode. Although these approaches yield high-quality results, they often suffer from slow inference times, ranging from 30 seconds to a minute. In this work, we introduce SwiftTailor, a novel two-stage framework that unifies sewing-pattern reasoning and geometry-based mesh synthesis through a compact geometry image representation. SwiftTailor comprises two lightweight modules: PatternMaker, an efficient vision-language model that predicts sewing patterns from diverse input modalities, and GarmentSewer, an efficient dense prediction transformer that converts these patterns into a novel Garment Geometry Image, encoding the 3D surface of all garment panels in a unified UV space. The final 3D mesh is reconstructed through an efficient inverse mapping process that incorporates remeshing and dynamic stitching algorithms to directly assemble the garment, thereby amortizing the cost of physical simulation. Extensive experiments on the Multimodal GarmentCodeData demonstrate that SwiftTailor achieves state-of-the-art accuracy and visual fidelity while significantly reducing inference time. This work offers a scalable, interpretable, and high-performance solution for next-generation 3D garment generation.",
+      "published": "2026-03-19",
+      "updated": "2026-03-19",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.17841v1",
-        "pdf": "https://arxiv.org/pdf/2603.17841v1"
+        "paper": "http://arxiv.org/abs/2603.19053v1",
+        "pdf": "https://arxiv.org/pdf/2603.19053v1"
       },
-      "arxiv_id": "2603.17841v1",
-      "comment": "accepted by CVPR26",
+      "arxiv_id": "2603.19053v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.519491525423729,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.52,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -586,82 +656,14 @@
         }
       },
       "ai_summaries": {
-        "short": "Most instruction-driven 3D editing methods rely on 2D models to guide the explicit and iterative optimization of 3D representations. This paradigm, however, suffers from two primary drawbacks. First, it lacks a universal design of different 3D editing tasks because the explicit manipulation of 3D geometry necessitates task-dependent rules, e.g., 3D appearance editing demands inherent source 3D geo...",
+        "short": "Realistic and efficient 3D garment generation remains a longstanding challenge in computer vision and digital fashion. Existing methods typically rely on large vision- language models to produce serialized representations of 2D sewing patterns, which are then transformed into simulation-ready 3D meshes using garment modeling framework such as GarmentCode. Although these approaches yield high-quali...",
         "key_contributions": [
-          "Most instruction-driven 3D editing methods rely on 2D models to guide the explicit and iterative optimization of 3D representations.",
-          "This paradigm, however, suffers from two primary drawbacks.",
-          "First, it lacks a universal design of different 3D editing tasks because the explicit manipulation of 3D geometry necessitates task-dependent rules, e."
+          "Realistic and efficient 3D garment generation remains a longstanding challenge in computer vision and digital fashion.",
+          "Existing methods typically rely on large vision- language models to produce serialized representations of 2D sewing patterns, which are then transformed into simulation-ready 3D meshes using garment modeling framework such as GarmentCode.",
+          "Although these approaches yield high-quality results, they often suffer from slow inference times, ranging from 30 seconds to a minute."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2603.17841v1.mp3"
-      }
-    },
-    {
-      "id": "2603.17946v1",
-      "title": "CARE: Covariance-Aware and Rank-Enhanced Decomposition for Enabling Multi-Head Latent Attention",
-      "authors": [
-        "Zhongzhu Zhou",
-        "Fengxiang Bie",
-        "Ziyan Chen",
-        "Zhenyu Zhang",
-        "Yibo Yang",
-        "Junxiong Wang",
-        "Ben Athiwaratkun",
-        "Xiaoxia Wu",
-        "Shuaiwen Leon Song"
-      ],
-      "abstract": "Converting pretrained attention modules such as grouped-query attention (GQA) into multi-head latent attention (MLA) can improve expressivity without increasing KV-cache cost, making it attractive for efficient inference. However, many practical conversion baselines rely on weight-only low-rank approximations (e.g., SVD-style initializations) and uniform rank allocation. They focus on minimizing the difference between weight matrices rather than on how those weights affect input activations, ignore the covariance structure of activations, and enforce uniform rank across layers, causing activation drift and degraded attention fidelity. To address these issues, we propose CARE, a Covariance-Aware, Rank-Enhanced MLA conversion pipeline under a fixed KV width. CARE introduces three key steps: (i) activation-preserving factorization, which aligns the approximation with the actual input activations rather than just the weights; (ii) adjusted-rank allocation, which spreads a fixed KV budget across layers by giving more capacity to layers that need it most; and (iii) KV-parity mapping, which reparameterizes the converted K and V to fit the MLA format while keeping the KV-cache size unchanged. Our method outperforms a uniform-rank SVD baseline on Qwen3-4B/30B-A3B-Instruct-2507 and Llama-3.1-8B/70B-Instruct, reducing one-shot perplexity by up to 215x and improving mean accuracy by up to 1.70x at matched KV budgets. With a brief post-SVD healing fine-tune, we fully recover the original model's accuracy.",
-      "published": "2026-03-18",
-      "updated": "2026-03-18",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.17946v1",
-        "pdf": "https://arxiv.org/pdf/2603.17946v1"
-      },
-      "arxiv_id": "2603.17946v1",
-      "comment": "Accepted at ICLR 2026. Conference paper. 10 pages main text; 34 pages total including references and appendix. 11 figures and 20 tables in total",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Converting pretrained attention modules such as grouped-query attention (GQA) into multi-head latent attention (MLA) can improve expressivity without increasing KV-cache cost, making it attractive for efficient inference. However, many practical conversion baselines rely on weight-only low-rank approximations (e.g., SVD-style initializations) and uniform rank allocation. They focus on minimizing t...",
-        "key_contributions": [
-          "Converting pretrained attention modules such as grouped-query attention (GQA) into multi-head latent attention (MLA) can improve expressivity without increasing KV-cache cost, making it attractive for efficient inference.",
-          "However, many practical conversion baselines rely on weight-only low-rank approximations (e.",
-          "g."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2603.17946v1.mp3"
+        "audio_url": "/audio/2603.19053v1.mp3"
       }
     }
   ]

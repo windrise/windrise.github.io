@@ -3,180 +3,38 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.20193v1",
-      "title": "From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering",
+      "id": "2603.21936v1",
+      "title": "Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment",
       "authors": [
-        "Xinyi Shang",
-        "Yi Tang",
-        "Jiacheng Cui",
-        "Ahmed Elhagry",
-        "Salwa K. Al Khatib",
-        "Sondos Mahmoud Bsharat",
-        "Jiacheng Liu",
-        "Xiaohan Zhao",
-        "Jing-Hao Xue",
-        "Hao Li",
-        "Salman Khan",
-        "Zhiqiang Shen"
+        "Roy Amoyal",
+        "Oren Freifeld",
+        "Chaim Baskin"
       ],
-      "abstract": "Existing tampering detection benchmarks largely rely on object masks, which severely misalign with the true edit signal: many pixels inside a mask are untouched or only trivially modified, while subtle yet consequential edits outside the mask are treated as natural. We reformulate VLM image tampering from coarse region labels to a pixel-grounded, meaning and language-aware task. First, we introduce a taxonomy spanning edit primitives (replace/remove/splice/inpaint/attribute/colorization, etc.) and their semantic class of tampered object, linking low-level changes to high-level understanding. Second, we release a new benchmark with per-pixel tamper maps and paired category supervision to evaluate detection and classification within a unified protocol. Third, we propose a training framework and evaluation metrics that quantify pixel-level correctness with localization to assess confidence or prediction on true edit intensity, and further measure tamper meaning understanding via semantics-aware classification and natural language descriptions for the predicted regions. We also re-evaluate the existing strong segmentation/localization baselines on recent strong tamper detectors and reveal substantial over- and under-scoring using mask-only metrics, and expose failure modes on micro-edits and off-mask changes. Our framework advances the field from masks to pixels, meanings and language descriptions, establishing a rigorous standard for tamper localization, semantic classification and description. Code and benchmark data are available at https://github.com/VILA-Lab/PIXAR.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
+      "abstract": "We present Gaussian Splatting Alignment (GSA), a novel method for aligning two independent 3D Gaussian Splatting (3DGS) models via a similarity transformation (rotation, translation, and scale), even when they are of different objects in the same category (e.g., different cars). In contrast, existing methods can only align 3DGS models of the same object (e.g., the same car) and often must be given true scale as input, while we estimate it successfully. GSA leverages viewpoint-guided spherical map features to obtain robust correspondences and introduces a two-step optimization framework that aligns 3DGS models while keeping them fixed. First, we apply an iterative feature-guided absolute orientation solver as our coarse registration, which is robust to poor initialization (e.g., 180 degrees misalignment or a 10x scale gap). Next, we use a fine registration step that enforces multi-view feature consistency, inspired by inverse radiance-field formulations. The first step already achieves state-of-the-art performance, and the second further improves results. In the same-object case, GSA outperforms prior works, often by a large margin, even when the other methods are given the true scale. In the harder case of different objects in the same category, GSA vastly surpasses them, providing the first effective solution for category-level 3DGS registration and unlocking new applications. Project webpage: https://bgu-cs-vil.github.io/GSA-project/",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.20193v1",
-        "pdf": "https://arxiv.org/pdf/2603.20193v1"
+        "paper": "http://arxiv.org/abs/2603.21936v1",
+        "pdf": "https://arxiv.org/pdf/2603.21936v1"
       },
-      "arxiv_id": "2603.20193v1",
-      "comment": "Code and data at: https://github.com/VILA-Lab/PIXAR (Accepted in CVPR 2026 Findings, but not opted in)",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.603389830508474,
-      "score_breakdown": {
-        "total_score": 5.6,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Existing tampering detection benchmarks largely rely on object masks, which severely misalign with the true edit signal: many pixels inside a mask are untouched or only trivially modified, while subtle yet consequential edits outside the mask are treated as natural. We reformulate VLM image tampering from coarse region labels to a pixel-grounded, meaning and language-aware task. First, we introduc...",
-        "key_contributions": [
-          "Existing tampering detection benchmarks largely rely on object masks, which severely misalign with the true edit signal: many pixels inside a mask are untouched or only trivially modified, while subtle yet consequential edits outside the mask are treated as natural.",
-          "We reformulate VLM image tampering from coarse region labels to a pixel-grounded, meaning and language-aware task.",
-          "First, we introduce a taxonomy spanning edit primitives (replace/remove/splice/inpaint/attribute/colorization, etc."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.20192v1",
-      "title": "LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation",
-      "authors": [
-        "Jiazheng Xing",
-        "Fei Du",
-        "Hangjie Yuan",
-        "Pengwei Liu",
-        "Hongbin Xu",
-        "Hai Ci",
-        "Ruigang Niu",
-        "Weihua Chen",
-        "Fan Wang",
-        "Yong Liu"
-      ],
-      "abstract": "Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources. We therefore propose LumosX, a framework that advances both data and model design. On the data side, a tailored collection pipeline orchestrates captions and visual cues from independent videos, while multimodal large language models (MLLMs) infer and assign subject-specific dependencies. These extracted relational priors impose a finer-grained structure that amplifies the expressive control of personalized video generation and enables the construction of a comprehensive benchmark. On the modeling side, Relational Self-Attention and Relational Cross-Attention intertwine position-aware embeddings with refined attention dynamics to inscribe explicit subject-attribute dependencies, enforcing disciplined intra-group cohesion and amplifying the separation between distinct subject clusters. Comprehensive evaluations on our benchmark demonstrate that LumosX achieves state-of-the-art performance in fine-grained, identity-consistent, and semantically aligned personalized multi-subject video generation. Code and models are available at https://jiazheng-xing.github.io/lumosx-home/.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.20192v1",
-        "pdf": "https://arxiv.org/pdf/2603.20192v1"
-      },
-      "arxiv_id": "2603.20192v1",
-      "comment": "ICLR 2026 Camera Ready Version. Code and Models: https://jiazheng-xing.github.io/lumosx-home/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.25,
-      "score_breakdown": {
-        "total_score": 5.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explic...",
-        "key_contributions": [
-          "Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements.",
-          "However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency.",
-          "Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.19918v1",
-      "title": "Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery",
-      "authors": [
-        "Jizhou Han",
-        "Chenhao Ding",
-        "Yuhang He",
-        "Qiang Wang",
-        "Shaokun Wang",
-        "SongLin Dong",
-        "Yihong Gong"
-      ],
-      "abstract": "Generalized Category Discovery (GCD) seeks to uncover novel categories in unlabeled data while preserving recognition of known categories, yet prevailing visual-only pipelines and the loose coupling between supervised learning and discovery often yield brittle boundaries on fine-grained, look-alike categories. We introduce the Analogical Textual Concept Generator (ATCG), a plug-and-play module that analogizes from labeled knowledge to new observations, forming textual concepts for unlabeled samples. Fusing these analogical textual concepts with visual features turns discovery into a visual-textual reasoning process, transferring prior knowledge to novel data and sharpening category separation. ATCG attaches to both parametric and clustering style GCD pipelines and requires no changes to their overall design. Across six benchmarks, ATCG consistently improves overall, known-class, and novel-class performance, with the largest gains on fine-grained data. Our code is available at: https://github.com/zhou-9527/AnaLogical-GCD.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.19918v1",
-        "pdf": "https://arxiv.org/pdf/2603.19918v1"
-      },
-      "arxiv_id": "2603.19918v1",
-      "comment": "Accept by CVPR 2026",
+      "arxiv_id": "2603.21936v1",
+      "comment": "Accepted to CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.699999999999999,
+      "relevance_score": 5.581355932203389,
       "score_breakdown": {
-        "total_score": 4.7,
+        "total_score": 5.58,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.2,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "registration"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -199,41 +57,373 @@
         }
       },
       "ai_summaries": {
-        "short": "Generalized Category Discovery (GCD) seeks to uncover novel categories in unlabeled data while preserving recognition of known categories, yet prevailing visual-only pipelines and the loose coupling between supervised learning and discovery often yield brittle boundaries on fine-grained, look-alike categories. We introduce the Analogical Textual Concept Generator (ATCG), a plug-and-play module tha...",
+        "short": "We present Gaussian Splatting Alignment (GSA), a novel method for aligning two independent 3D Gaussian Splatting (3DGS) models via a similarity transformation (rotation, translation, and scale), even when they are of different objects in the same category (e.g., different cars). In contrast, existing methods can only align 3DGS models of the same object (e.g., the same car) and often must be given...",
         "key_contributions": [
-          "Generalized Category Discovery (GCD) seeks to uncover novel categories in unlabeled data while preserving recognition of known categories, yet prevailing visual-only pipelines and the loose coupling between supervised learning and discovery often yield brittle boundaries on fine-grained, look-alike categories.",
-          "We introduce the Analogical Textual Concept Generator (ATCG), a plug-and-play module that analogizes from labeled knowledge to new observations, forming textual concepts for unlabeled samples.",
-          "Fusing these analogical textual concepts with visual features turns discovery into a visual-textual reasoning process, transferring prior knowledge to novel data and sharpening category separation."
+          "We present Gaussian Splatting Alignment (GSA), a novel method for aligning two independent 3D Gaussian Splatting (3DGS) models via a similarity transformation (rotation, translation, and scale), even when they are of different objects in the same category (e.",
+          "g.",
+          ", different cars)."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.20190v1",
-      "title": "CoVR-R:Reason-Aware Composed Video Retrieval",
+      "id": "2603.22102v1",
+      "title": "FreeArtGS: Articulated Gaussian Splatting Under Free-moving Scenario",
       "authors": [
-        "Omkar Thawakar",
-        "Dmitry Demidov",
-        "Vaishnav Potlapalli",
-        "Sai Prasanna Teja Reddy Bogireddy",
-        "Viswanatha Reddy Gajjala",
-        "Alaa Mostafa Lasheen",
-        "Rao Muhammad Anwer",
-        "Fahad Khan"
+        "Hang Dai",
+        "Hongwei Fan",
+        "Han Zhang",
+        "Duojin Wu",
+        "Jiyao Zhang",
+        "Hao Dong"
       ],
-      "abstract": "Composed Video Retrieval (CoVR) aims to find a target video given a reference video and a textual modification. Prior work assumes the modification text fully specifies the visual changes, overlooking after-effects and implicit consequences (e.g., motion, state transitions, viewpoint or duration cues) that emerge from the edit. We argue that successful CoVR requires reasoning about these after-effects. We introduce a reasoning-first, zero-shot approach that leverages large multimodal models to (i) infer causal and temporal consequences implied by the edit, and (ii) align the resulting reasoned queries to candidate videos without task-specific finetuning. To evaluate reasoning in CoVR, we also propose CoVR-Reason, a benchmark that pairs each (reference, edit, target) triplet with structured internal reasoning traces and challenging distractors that require predicting after-effects rather than keyword matching. Experiments show that our zero-shot method outperforms strong retrieval baselines on recall at K and particularly excels on implicit-effect subsets. Our automatic and human analysis confirm higher step consistency and effect factuality in our retrieved results. Our findings show that incorporating reasoning into general-purpose multimodal models enables effective CoVR by explicitly accounting for causal and temporal after-effects. This reduces dependence on task-specific supervision, improves generalization to challenging implicit-effect cases, and enhances interpretability of retrieval outcomes. These results point toward a scalable and principled framework for explainable video search. The model, code, and benchmark are available at https://github.com/mbzuai-oryx/CoVR-R.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
+      "abstract": "The increasing demand for augmented reality and robotics is driving the need for articulated object reconstruction with high scalability. However, existing settings for reconstructing from discrete articulation states or casual monocular videos require non-trivial axis alignment or suffer from insufficient coverage, limiting their applicability. In this paper, we introduce FreeArtGS, a novel method for reconstructing articulated objects under free-moving scenario, a new setting with a simple setup and high scalability. FreeArtGS combines free-moving part segmentation with joint estimation and end-to-end optimization, taking only a monocular RGB-D video as input. By optimizing with the priors from off-the-shelf point-tracking and feature models, the free-moving part segmentation module identifies rigid parts from relative motion under unconstrained capture. The joint estimation module calibrates the unified object-to-camera poses and recovers joint type and axis robustly from part segmentation. Finally, 3DGS-based end-to-end optimization is implemented to jointly reconstruct visual textures, geometry, and joint angles of the articulated object. We conduct experiments on two benchmarks and real-world free-moving articulated objects. Experimental results demonstrate that FreeArtGS consistently excels in reconstructing free-moving articulated objects and remains highly competitive in previous reconstruction settings, proving itself a practical and effective solution for realistic asset generation. The project page is available at: https://freeartgs.github.io/",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.22102v1",
+        "pdf": "https://arxiv.org/pdf/2603.22102v1"
+      },
+      "arxiv_id": "2603.22102v1",
+      "comment": "Accepted to CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.342372881355932,
+      "score_breakdown": {
+        "total_score": 5.34,
+        "field_match": {
+          "score": 1.36,
+          "matches": [
+            "gaussian splatting",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The increasing demand for augmented reality and robotics is driving the need for articulated object reconstruction with high scalability. However, existing settings for reconstructing from discrete articulation states or casual monocular videos require non-trivial axis alignment or suffer from insufficient coverage, limiting their applicability. In this paper, we introduce FreeArtGS, a novel metho...",
+        "key_contributions": [
+          "The increasing demand for augmented reality and robotics is driving the need for articulated object reconstruction with high scalability.",
+          "However, existing settings for reconstructing from discrete articulation states or casual monocular videos require non-trivial axis alignment or suffer from insufficient coverage, limiting their applicability.",
+          "In this paper, we introduce FreeArtGS, a novel method for reconstructing articulated objects under free-moving scenario, a new setting with a simple setup and high scalability."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.22193v1",
+      "title": "PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation",
+      "authors": [
+        "Mingju Gao",
+        "Kaisen Yang",
+        "Huan-ang Gao",
+        "Bohan Li",
+        "Ao Ding",
+        "Wenyi Li",
+        "Yangcheng Yu",
+        "Jinkun Liu",
+        "Shaocong Xu",
+        "Yike Niu",
+        "Haohan Chi",
+        "Hao Chen",
+        "Hao Tang",
+        "Li Yi",
+        "Hao Zhao"
+      ],
+      "abstract": "Hand-object interaction (HOI) reconstruction and synthesis are becoming central to embodied AI and AR/VR. Yet, despite rapid progress, existing HOI generation research remains fragmented across three disjoint tracks: (1) pose-only synthesis that predicts MANO trajectories without producing pixels; (2) single-image HOI generation that hallucinates appearance from masks or 2D cues but lacks dynamics; and (3) video generation methods that require both the entire pose sequence and the ground-truth first frame as inputs, preventing true sim-to-real deployment. Inspired by the philosophy of Joo et al. (2018), we think that HOI generation requires a unified engine that brings together pose, appearance, and motion within one coherent framework. Thus we introduce PAM: a Pose-Appearance-Motion Engine for controllable HOI video generation. The performance of our engine is validated by: (1) On DexYCB, we obtain an FVD of 29.13 (vs. 38.83 for InterDyn), and MPJPE of 19.37 mm (vs. 30.05 mm for CosHand), while generating higher-resolution 480x720 videos compared to 256x256 and 256x384 baselines. (2) On OAKINK2, our full multi-condition model improves FVD from 68.76 to 46.31. (3) An ablation over input conditions on DexYCB shows that combining depth, segmentation, and keypoints consistently yields the best results. (4) For a downstream hand pose estimation task using SimpleHand, augmenting training with 3,400 synthetic videos (207k frames) allows a model trained on only 50% of the real data plus our synthetic data to match the 100% real baseline.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.20190v1",
-        "pdf": "https://arxiv.org/pdf/2603.20190v1"
+        "paper": "http://arxiv.org/abs/2603.22193v1",
+        "pdf": "https://arxiv.org/pdf/2603.22193v1"
       },
-      "arxiv_id": "2603.20190v1",
-      "comment": "CVPR 2026 (findings)",
+      "arxiv_id": "2603.22193v1",
+      "comment": "Accepted to CVPR 2026 Code: https://github.com/GasaiYU/PAM",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.253389830508475,
+      "score_breakdown": {
+        "total_score": 5.25,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Hand-object interaction (HOI) reconstruction and synthesis are becoming central to embodied AI and AR/VR. Yet, despite rapid progress, existing HOI generation research remains fragmented across three disjoint tracks: (1) pose-only synthesis that predicts MANO trajectories without producing pixels; (2) single-image HOI generation that hallucinates appearance from masks or 2D cues but lacks dynamics...",
+        "key_contributions": [
+          "Hand-object interaction (HOI) reconstruction and synthesis are becoming central to embodied AI and AR/VR.",
+          "Yet, despite rapid progress, existing HOI generation research remains fragmented across three disjoint tracks: (1) pose-only synthesis that predicts MANO trajectories without producing pixels; (2) single-image HOI generation that hallucinates appearance from masks or 2D cues but lacks dynamics; and (3) video generation methods that require both the entire pose sequence and the ground-truth first frame as inputs, preventing true sim-to-real deployment.",
+          "Inspired by the philosophy of Joo et al."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.22121v1",
+      "title": "Mamba-VMR: Multimodal Query Augmentation via Generated Videos for Precise Temporal Grounding",
+      "authors": [
+        "Yunzhuo Sun",
+        "Xinyue Liu",
+        "Yanyang Li",
+        "Nanding Wu",
+        "Yifang Xu",
+        "Linlin Zong",
+        "Xianchao Zhang",
+        "Wenxin Liang"
+      ],
+      "abstract": "Text-driven video moment retrieval (VMR) remains challenging due to limited capture of hidden temporal dynamics in untrimmed videos, leading to imprecise grounding in long sequences. Traditional methods rely on natural language queries (NLQs) or static image augmentations, overlooking motion sequences and suffering from high computational costs in Transformer-based architectures. Existing approaches fail to integrate subtitle contexts and generated temporal priors effectively, we therefore propose a novel two-stage framework for enhanced temporal grounding. In the first stage, LLM-guided subtitle matching identifies relevant textual cues from video subtitles, fused with the query to generate auxiliary short videos via text-to-video models, capturing implicit motion information as temporal priors. In the second stage, augmented queries are processed through a multi-modal controlled Mamba network, extending text-controlled selection with video-guided gating for efficient fusion of generated priors and long sequences while filtering noise. Our framework is agnostic to base retrieval models and widely applicable for multimodal VMR. Experimental evaluations on the TVR benchmark demonstrate significant improvements over state-of-the-art methods, including reduced computational overhead and higher recall in long-sequence grounding.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.22121v1",
+        "pdf": "https://arxiv.org/pdf/2603.22121v1"
+      },
+      "arxiv_id": "2603.22121v1",
+      "comment": "The paper is accepted by CVPR-2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.85,
+      "score_breakdown": {
+        "total_score": 4.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Text-driven video moment retrieval (VMR) remains challenging due to limited capture of hidden temporal dynamics in untrimmed videos, leading to imprecise grounding in long sequences. Traditional methods rely on natural language queries (NLQs) or static image augmentations, overlooking motion sequences and suffering from high computational costs in Transformer-based architectures. Existing approach...",
+        "key_contributions": [
+          "Text-driven video moment retrieval (VMR) remains challenging due to limited capture of hidden temporal dynamics in untrimmed videos, leading to imprecise grounding in long sequences.",
+          "Traditional methods rely on natural language queries (NLQs) or static image augmentations, overlooking motion sequences and suffering from high computational costs in Transformer-based architectures.",
+          "Existing approaches fail to integrate subtitle contexts and generated temporal priors effectively, we therefore propose a novel two-stage framework for enhanced temporal grounding."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.21978v1",
+      "title": "GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design",
+      "authors": [
+        "Xiaolei Zhou",
+        "Chuangjie Fang",
+        "Jie Wu",
+        "Jingyi Yang",
+        "Boyi Lin",
+        "Jianwei Zheng"
+      ],
+      "abstract": "Parametric Computer-Aided Design (CAD) is fundamental to modern 3D modeling, yet existing methods struggle to generate long command sequences, especially under complex geometric and topological dependencies. Transformer-based architectures dominate CAD sequence generation due to their strong dependency modeling, but their quadratic attention cost and limited context windowing hinder scalability to long programs. We propose GeoFusion-CAD, an end-to-end diffusion framework for scalable and structure-aware generation. Our proposal encodes CAD programs as hierarchical trees, jointly capturing geometry and topology within a state-space diffusion process. Specifically, a lightweight C-Mamba block models long-range structural dependencies through selective state transitions, enabling coherent generation across extended command sequences. To support long-sequence evaluation, we introduce DeepCAD-240, an extended benchmark that increases the sequence length ranging from 40 to 240 while preserving sketch-extrusion semantics from the ABC dataset. Extensive experiments demonstrate that GeoFusion-CAD achieves superior performance on both short and long command ranges, maintaining high geometric fidelity and topological consistency where Transformer-based models degrade. Our approach sets new state-of-the-art scores for long-sequence parametric CAD generation, establishing a scalable foundation for next-generation CAD modeling systems. Code and datasets are available at GitHub.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.21978v1",
+        "pdf": "https://arxiv.org/pdf/2603.21978v1"
+      },
+      "arxiv_id": "2603.21978v1",
+      "comment": "Accepted to CVPR 2026 (Findings). Includes supplementary material",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.75,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Parametric Computer-Aided Design (CAD) is fundamental to modern 3D modeling, yet existing methods struggle to generate long command sequences, especially under complex geometric and topological dependencies. Transformer-based architectures dominate CAD sequence generation due to their strong dependency modeling, but their quadratic attention cost and limited context windowing hinder scalability to...",
+        "key_contributions": [
+          "Parametric Computer-Aided Design (CAD) is fundamental to modern 3D modeling, yet existing methods struggle to generate long command sequences, especially under complex geometric and topological dependencies.",
+          "Transformer-based architectures dominate CAD sequence generation due to their strong dependency modeling, but their quadratic attention cost and limited context windowing hinder scalability to long programs.",
+          "We propose GeoFusion-CAD, an end-to-end diffusion framework for scalable and structure-aware generation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.21943v1",
+      "title": "GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction",
+      "authors": [
+        "Ayesh Abu Lehyeh",
+        "Xiaohan Zhang",
+        "Ahmad Arrabi",
+        "Waqas Sultani",
+        "Chen Chen",
+        "Safwan Wshah"
+      ],
+      "abstract": "Accurate and fast localization is vital for safe autonomous navigation in GPS-denied areas. Fine-Grained Cross-View Geolocalization (FG-CVG) aims to estimate the precise 2-Degree-of-Freedom (2-DoF) location of a ground image relative to a satellite image. However, current methods force a difficult trade-off, with high-accuracy models being slow for real-time use. In this paper, we introduce GeoFlow, a new approach that offers a lightweight and highly efficient framework that breaks this accuracy-speed trade-off. Our technique learns a direct probabilistic mapping, predicting the displacement (in distance and direction) required to correct any given location hypothesis. This is complemented by our novel inference algorithm, Iterative Refinement Sampling (IRS). Instead of trusting a single prediction, IRS refines a population of hypotheses, allowing them to iteratively 'flow' from random starting points to a robust, converged consensus. Even its iterative nature, this approach offers flexible inference-time scaling, allowing a direct trade-off between performance and computation without any re-training. Experiments on the KITTI and VIGOR datasets show that GeoFlow achieves state-of-the-art efficiency, running at real-time speeds of 29 FPS while maintaining competitive localization accuracy. This work opens a new path for the development of practical real-time geolocalization systems.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.21943v1",
+        "pdf": "https://arxiv.org/pdf/2603.21943v1"
+      },
+      "arxiv_id": "2603.21943v1",
+      "comment": "Accepted at the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.75,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Accurate and fast localization is vital for safe autonomous navigation in GPS-denied areas. Fine-Grained Cross-View Geolocalization (FG-CVG) aims to estimate the precise 2-Degree-of-Freedom (2-DoF) location of a ground image relative to a satellite image. However, current methods force a difficult trade-off, with high-accuracy models being slow for real-time use. In this paper, we introduce GeoFlo...",
+        "key_contributions": [
+          "Accurate and fast localization is vital for safe autonomous navigation in GPS-denied areas.",
+          "Fine-Grained Cross-View Geolocalization (FG-CVG) aims to estimate the precise 2-Degree-of-Freedom (2-DoF) location of a ground image relative to a satellite image.",
+          "However, current methods force a difficult trade-off, with high-accuracy models being slow for real-time use."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.21957v1",
+      "title": "Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention",
+      "authors": [
+        "Junhao Du",
+        "Jialong Xue",
+        "Anqi Li",
+        "Jincheng Dai",
+        "Guo Lu"
+      ],
+      "abstract": "Video large language models (Video-LLMs) face high computational costs due to large volumes of visual tokens. Existing token compression methods typically adopt a two-stage spatiotemporal compression strategy, relying on stage-specific metrics and an implicit assumption of spatiotemporal separability. Under extremely low retention ratios, however, such approaches often result in unbalanced allocation and loss of visual evidence essential for question answering. We reformulate token compression as a spatiotemporal allocation task within a global token retention pool. We propose a unified selection mechanism that integrates attention weights and semantic similarity to globally select tokens with high contribution and low redundancy. Unselected tokens are merged via clustering and refilled, preserving information integrity. Inside the LLM, we further introduce text-aware merging to perform secondary compression based on query relevance. Without requiring retraining, our method serves as a plug-and-play module compatible with existing Video-LLMs. Experiments show that retaining only about 2% of visual tokens preserves 90.1% of baseline performance across multiple benchmarks, while reducing FLOPs to roughly 2.6%. These benefits generalize across diverse backbones, decreasing end-to-end inference latency and memory consumption. Our unified spatiotemporal token compression strategy establishes the state-of-the-art in video understanding under ultra-low token retention.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.21957v1",
+        "pdf": "https://arxiv.org/pdf/2603.21957v1"
+      },
+      "arxiv_id": "2603.21957v1",
+      "comment": "Accepted by CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.55,
@@ -264,115 +454,45 @@
         }
       },
       "ai_summaries": {
-        "short": "Composed Video Retrieval (CoVR) aims to find a target video given a reference video and a textual modification. Prior work assumes the modification text fully specifies the visual changes, overlooking after-effects and implicit consequences (e.g., motion, state transitions, viewpoint or duration cues) that emerge from the edit. We argue that successful CoVR requires reasoning about these after-eff...",
+        "short": "Video large language models (Video-LLMs) face high computational costs due to large volumes of visual tokens. Existing token compression methods typically adopt a two-stage spatiotemporal compression strategy, relying on stage-specific metrics and an implicit assumption of spatiotemporal separability. Under extremely low retention ratios, however, such approaches often result in unbalanced allocat...",
         "key_contributions": [
-          "Composed Video Retrieval (CoVR) aims to find a target video given a reference video and a textual modification.",
-          "Prior work assumes the modification text fully specifies the visual changes, overlooking after-effects and implicit consequences (e.",
-          "g."
+          "Video large language models (Video-LLMs) face high computational costs due to large volumes of visual tokens.",
+          "Existing token compression methods typically adopt a two-stage spatiotemporal compression strategy, relying on stage-specific metrics and an implicit assumption of spatiotemporal separability.",
+          "Under extremely low retention ratios, however, such approaches often result in unbalanced allocation and loss of visual evidence essential for question answering."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.20012v1",
-      "title": "Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features",
+      "id": "2603.22153v1",
+      "title": "Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation",
       "authors": [
-        "Zheng Gao",
-        "Debin Meng",
-        "Yunqi Miao",
-        "Zhensong Zhang",
-        "Songcen Xu",
-        "Ioannis Patras",
-        "Jifei Song"
+        "Kejia Liu",
+        "Haoyang Zhou",
+        "Ruoyu Xu",
+        "Peicheng Wang",
+        "Mingli Song",
+        "Haofei Zhang"
       ],
-      "abstract": "Current diffusion-based makeup transfer methods commonly use the makeup information encoded by off-the-shelf foundation models (e.g., CLIP) as condition to preserve the makeup style of reference image in the generation. Although effective, these works mainly have two limitations: (1) foundation models pre-trained for generic tasks struggle to capture makeup styles; (2) the makeup features of reference image are injected to the diffusion denoising model as a whole for global makeup transfer, overlooking the facial region-aware makeup features (i.e., eyes, mouth, etc) and limiting the regional controllability for region-specific makeup transfer. To address these, in this work, we propose Facial Region-Aware Makeup features (FRAM), which has two stages: (1) makeup CLIP fine-tuning; (2) identity and facial region-aware makeup injection. For makeup CLIP fine-tuning, unlike prior works using off-the-shelf CLIP, we synthesize annotated makeup style data using GPT-o3 and text-driven image editing model, and then use the data to train a makeup CLIP encoder through self-supervised and image-text contrastive learning. For identity and facial region-aware makeup injection, we construct before-and-after makeup image pairs from the edited images in stage 1 and then use them to learn to inject identity of source image and makeup of reference image to the diffusion denoising model for makeup transfer. Specifically, we use learnable tokens to query the makeup CLIP encoder to extract facial region-aware makeup features for makeup injection, which is learned via an attention loss to enable regional control. As for identity injection, we use a ControlNet Union to encode source image and its 3D mesh simultaneously. The experimental results verify the superiority of our regional controllability and our makeup transfer performance.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.20012v1",
-        "pdf": "https://arxiv.org/pdf/2603.20012v1"
-      },
-      "arxiv_id": "2603.20012v1",
-      "comment": "Accepted by CVPR'26",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.4711864406779664,
-      "score_breakdown": {
-        "total_score": 4.47,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Current diffusion-based makeup transfer methods commonly use the makeup information encoded by off-the-shelf foundation models (e.g., CLIP) as condition to preserve the makeup style of reference image in the generation. Although effective, these works mainly have two limitations: (1) foundation models pre-trained for generic tasks struggle to capture makeup styles; (2) the makeup features of refer...",
-        "key_contributions": [
-          "Current diffusion-based makeup transfer methods commonly use the makeup information encoded by off-the-shelf foundation models (e.",
-          "g.",
-          ", CLIP) as condition to preserve the makeup style of reference image in the generation."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.20185v1",
-      "title": "VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking",
-      "authors": [
-        "Jingyang Lin",
-        "Jialian Wu",
-        "Jiang Liu",
-        "Ximeng Sun",
-        "Ze Wang",
-        "Xiaodong Yu",
-        "Jiebo Luo",
-        "Zicheng Liu",
-        "Emad Barsoum"
-      ],
-      "abstract": "Video agentic models have advanced challenging video-language tasks. However, most agentic approaches still heavily rely on greedy parsing over densely sampled video frames, resulting in high computational cost. We present VideoSeek, a long-horizon video agent that leverages video logic flow to actively seek answer-critical evidence instead of exhaustively parsing the full video. This insight allows the model to use far fewer frames while maintaining, or even improving, its video understanding capability. VideoSeek operates in a think-act-observe loop with a well-designed toolkit for collecting multi-granular video observations. This design enables query-aware exploration over accumulated observations and supports practical video understanding and reasoning. Experiments on four challenging video understanding and reasoning benchmarks demonstrate that VideoSeek achieves strong accuracy while using far fewer frames than prior video agents and standalone LMMs. Notably, VideoSeek achieves a 10.2 absolute points improvement on LVBench over its base model, GPT-5, while using 93% fewer frames. Further analysis highlights the significance of leveraging video logic flow, strong reasoning capability, and the complementary roles of toolkit design.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
+      "abstract": "Recent advances in cross-view geo-localization (CVGL) methods have shown strong potential for supporting unmanned aerial vehicle (UAV) navigation in GNSS-denied environments. However, existing work predominantly focuses on matching UAV views to onboard map tiles, which introduces an inherent trade-off between accuracy and storage overhead, and overlooks the importance of the UAV's heading during navigation. Moreover, the substantial discrepancies and varying overlaps in cross-view scenarios have been insufficiently considered, limiting their generalization to real-world scenarios. In this paper, we present Bearing-UAV, a purely vision-driven cross-view navigation method that jointly predicts UAV absolute location and heading from neighboring features, enabling accurate, lightweight, and robust navigation in the wild. Our method leverages global and local structural features and explicitly encodes relative spatial relationships, making it robust to cross-view variations, misalignment, and feature-sparse conditions. We also present Bearing-UAV-90k, a multi-city benchmark for evaluating cross-view localization and navigation. Extensive experiments show encouraging results that Bearing-UAV yields lower localization error than previous matching/retrieval paradigm across diverse terrains. Our code and dataset will be made publicly available.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.CL"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.20185v1",
-        "pdf": "https://arxiv.org/pdf/2603.20185v1"
+        "paper": "http://arxiv.org/abs/2603.22153v1",
+        "pdf": "https://arxiv.org/pdf/2603.22153v1"
       },
-      "arxiv_id": "2603.20185v1",
-      "comment": "Accepted at CVPR 2026",
+      "arxiv_id": "2603.22153v1",
+      "comment": "Accepted as a conference paper by CVPR2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "relevance_score": 4.5,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.5,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -393,45 +513,45 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Video agentic models have advanced challenging video-language tasks. However, most agentic approaches still heavily rely on greedy parsing over densely sampled video frames, resulting in high computational cost. We present VideoSeek, a long-horizon video agent that leverages video logic flow to actively seek answer-critical evidence instead of exhaustively parsing the full video. This insight allo...",
+        "short": "Recent advances in cross-view geo-localization (CVGL) methods have shown strong potential for supporting unmanned aerial vehicle (UAV) navigation in GNSS-denied environments. However, existing work predominantly focuses on matching UAV views to onboard map tiles, which introduces an inherent trade-off between accuracy and storage overhead, and overlooks the importance of the UAV's heading during n...",
         "key_contributions": [
-          "Video agentic models have advanced challenging video-language tasks.",
-          "However, most agentic approaches still heavily rely on greedy parsing over densely sampled video frames, resulting in high computational cost.",
-          "We present VideoSeek, a long-horizon video agent that leverages video logic flow to actively seek answer-critical evidence instead of exhaustively parsing the full video."
+          "Recent advances in cross-view geo-localization (CVGL) methods have shown strong potential for supporting unmanned aerial vehicle (UAV) navigation in GNSS-denied environments.",
+          "However, existing work predominantly focuses on matching UAV views to onboard map tiles, which introduces an inherent trade-off between accuracy and storage overhead, and overlooks the importance of the UAV's heading during navigation.",
+          "Moreover, the substantial discrepancies and varying overlaps in cross-view scenarios have been insufficiently considered, limiting their generalization to real-world scenarios."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.20005v1",
-      "title": "NEC-Diff: Noise-Robust Event-RAW Complementary Diffusion for Seeing Motion in Extreme Darkness",
+      "id": "2603.22094v1",
+      "title": "Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models",
       "authors": [
-        "Haoyue Liu",
-        "Jinghan Xu",
-        "Luxin Feng",
-        "Hanyu Zhou",
-        "Haozhi Zhao",
-        "Yi Chang",
-        "Luxin Yan"
+        "Xingyu Zhu",
+        "Beier Zhu",
+        "Shuo Wang",
+        "Junfeng Fang",
+        "Kesen Zhao",
+        "Hanwang Zhang",
+        "Xiangnan He"
       ],
-      "abstract": "High-quality imaging of dynamic scenes in extremely low-light conditions is highly challenging. Photon scarcity induces severe noise and texture loss, causing significant image degradation. Event cameras, featuring a high dynamic range (120 dB) and high sensitivity to motion, serve as powerful complements to conventional cameras by offering crucial cues for preserving subtle textures. However, most existing approaches emphasize texture recovery from events, while paying little attention to image noise or the intrinsic noise of events themselves, which ultimately hinders accurate pixel reconstruction under photon-starved conditions. In this work, we propose NEC-Diff, a novel diffusion-based event-RAW hybrid imaging framework that extracts reliable information from heavily noisy signals to reconstruct fine scene structures. The framework is driven by two key insights: (1) combining the linear light-response property of RAW images with the brightness-change nature of events to establish a physics-driven constraint for robust dual-modal denoising; and (2) dynamically estimating the SNR of both modalities based on denoising results to guide adaptive feature fusion, thereby injecting reliable cues into the diffusion process for high-fidelity visual reconstruction. Furthermore, we construct the REAL (Raw and Event Acquired in Low-light) dataset which provides 47,800 pixel-aligned low-light RAW images, events, and high-quality references under 0.001-0.8 lux illumination. Extensive experiments demonstrate the superiority of NEC-Diff under extreme darkness. The project are available at: https://github.com/jinghan-xu/NEC-Diff.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
+      "abstract": "As vision-language models (VLMs) are increasingly deployed in open-world scenarios, they can be easily induced by visual jailbreak attacks to generate harmful content, posing serious risks to model safety and trustworthy usage. Recent activation steering methods inject directional vectors into model activations during inference to induce refusal behaviors and have demonstrated effectiveness. However, a steering vector may both enhance refusal ability and cause over-refusal, thereby degrading model performance on benign inputs. Moreover, due to the lack of theoretical interpretability, these methods still suffer from limited robustness and effectiveness. To better balance safety and utility, we propose NullSteer, a null-space projected activation defense framework. Our method constructs refusal directions within model activations through a linear transformation: it maintains zero perturbation within the benign subspace while dynamically inducing refusal along potentially harmful directions, thereby theoretically achieving safety enhancement without impairing the model's general capabilities. Extensive experiments show that NullSteer significantly reduces harmful outputs under various jailbreak attacks (average ASR reduction over 15 percent on MiniGPT-4) while maintaining comparable performance to the original model on general benchmarks.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.20005v1",
-        "pdf": "https://arxiv.org/pdf/2603.20005v1"
+        "paper": "http://arxiv.org/abs/2603.22094v1",
+        "pdf": "https://arxiv.org/pdf/2603.22094v1"
       },
-      "arxiv_id": "2603.20005v1",
-      "comment": "Accepted by CVPR 2026",
+      "arxiv_id": "2603.22094v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.3999999999999995,
@@ -462,45 +582,45 @@
         }
       },
       "ai_summaries": {
-        "short": "High-quality imaging of dynamic scenes in extremely low-light conditions is highly challenging. Photon scarcity induces severe noise and texture loss, causing significant image degradation. Event cameras, featuring a high dynamic range (120 dB) and high sensitivity to motion, serve as powerful complements to conventional cameras by offering crucial cues for preserving subtle textures. However, mos...",
+        "short": "As vision-language models (VLMs) are increasingly deployed in open-world scenarios, they can be easily induced by visual jailbreak attacks to generate harmful content, posing serious risks to model safety and trustworthy usage. Recent activation steering methods inject directional vectors into model activations during inference to induce refusal behaviors and have demonstrated effectiveness. Howev...",
         "key_contributions": [
-          "High-quality imaging of dynamic scenes in extremely low-light conditions is highly challenging.",
-          "Photon scarcity induces severe noise and texture loss, causing significant image degradation.",
-          "Event cameras, featuring a high dynamic range (120 dB) and high sensitivity to motion, serve as powerful complements to conventional cameras by offering crucial cues for preserving subtle textures."
+          "As vision-language models (VLMs) are increasingly deployed in open-world scenarios, they can be easily induced by visual jailbreak attacks to generate harmful content, posing serious risks to model safety and trustworthy usage.",
+          "Recent activation steering methods inject directional vectors into model activations during inference to induce refusal behaviors and have demonstrated effectiveness.",
+          "However, a steering vector may both enhance refusal ability and cause over-refusal, thereby degrading model performance on benign inputs."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.19961v1",
-      "title": "Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation",
+      "id": "2603.22070v1",
+      "title": "Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning",
       "authors": [
-        "Nassim Ali Ousalah",
-        "Peyman Rostami",
-        "Vincent Gaudillière",
-        "Emmanuel Koumandakis",
-        "Anis Kacem",
-        "Enjie Ghorbel",
-        "Djamila Aouada"
+        "Xingyu Zhu",
+        "Liang Yi",
+        "Shuo Wang",
+        "Wenbo Zhu",
+        "Yonglinag Wu",
+        "Beier Zhu",
+        "Hanwang Zhang"
       ],
-      "abstract": "In this paper, we address the problem of 6-DoF object pose estimation from a single RGB image. Indirect methods that typically predict intermediate 2D keypoints, followed by a Perspective-n-Point solver, have shown great performance. Direct approaches, which regress the pose in an end-to-end manner, are usually computationally more efficient but less accurate. However, direct heads rely on globally pooled features, ignoring spatial second-order statistics despite their informativeness in pose prediction. They also predict, in most cases, discontinuous pose representations that lack robustness. Herein, we therefore propose a covariance-pooled representation that encodes convolutional feature distributions as a symmetric positive definite (SPD) matrix. Moreover, we propose a novel pose encoding in the form of an SPD matrix via its Cholesky decomposition. Pose is then regressed in an end-to-end manner with a manifold-aware network head, taking into account the Riemannian geometry of SPD matrices. Experiments and ablations consistently demonstrate the relevance of second-order pooling and continuous representations for direct pose regression, including under partial occlusion.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
+      "abstract": "Multimodal 3D vision-language models show strong generalization across diverse 3D tasks, but their performance still degrades notably under domain shifts. This has motivated recent studies on test-time adaptation (TTA), which enables models to adapt online using test-time data. Among existing TTA methods, cache-based mechanisms are widely adopted for leveraging previously observed samples in online prediction refinement. However, they store only limited historical information, leading to progressive information loss as the test stream evolves. In addition, their prediction logits are fused heuristically, making adaptation unstable. To address these limitations, we propose BayesMM, a Multimodal Bayesian Distribution Learning framework for test-time point cloud analysis. BayesMM models textual priors and streaming visual features of each class as Gaussian distributions: textual parameters are derived from semantic prompts, while visual parameters are updated online with arriving samples. The two modalities are fused via Bayesian model averaging, which automatically adjusts their contributions based on posterior evidence, yielding a unified prediction that adapts continually to evolving test-time data without training. Extensive experiments on multiple point cloud benchmarks demonstrate that BayesMM maintains robustness under distributional shifts, yielding over 4% average improvement.",
+      "published": "2026-03-23",
+      "updated": "2026-03-23",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.19961v1",
-        "pdf": "https://arxiv.org/pdf/2603.19961v1"
+        "paper": "http://arxiv.org/abs/2603.22070v1",
+        "pdf": "https://arxiv.org/pdf/2603.22070v1"
       },
-      "arxiv_id": "2603.19961v1",
-      "comment": "Accepted to the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026",
+      "arxiv_id": "2603.22070v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.3999999999999995,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.4,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -521,149 +641,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "In this paper, we address the problem of 6-DoF object pose estimation from a single RGB image. Indirect methods that typically predict intermediate 2D keypoints, followed by a Perspective-n-Point solver, have shown great performance. Direct approaches, which regress the pose in an end-to-end manner, are usually computationally more efficient but less accurate. However, direct heads rely on globall...",
+        "short": "Multimodal 3D vision-language models show strong generalization across diverse 3D tasks, but their performance still degrades notably under domain shifts. This has motivated recent studies on test-time adaptation (TTA), which enables models to adapt online using test-time data. Among existing TTA methods, cache-based mechanisms are widely adopted for leveraging previously observed samples in onlin...",
         "key_contributions": [
-          "In this paper, we address the problem of 6-DoF object pose estimation from a single RGB image.",
-          "Indirect methods that typically predict intermediate 2D keypoints, followed by a Perspective-n-Point solver, have shown great performance.",
-          "Direct approaches, which regress the pose in an end-to-end manner, are usually computationally more efficient but less accurate."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.20077v1",
-      "title": "A Unified Platform and Quality Assurance Framework for 3D Ultrasound Reconstruction with Robotic, Optical, and Electromagnetic Tracking",
-      "authors": [
-        "Lewis Howell",
-        "Manisha Waterston",
-        "Tze Min Wah",
-        "James H. Chandler",
-        "James R. McLaughlan"
-      ],
-      "abstract": "Three-dimensional (3D) Ultrasound (US) can facilitate diagnosis, treatment planning, and image-guided therapy. However, current studies rarely provide a comprehensive evaluation of volumetric accuracy and reproducibility, highlighting the need for robust Quality Assurance (QA) frameworks, particularly for tracked 3D US reconstruction using freehand or robotic acquisition. This study presents a QA framework for 3D US reconstruction and a flexible open source platform for tracked US research. A custom phantom containing geometric inclusions with varying symmetry properties enables straightforward evaluation of optical, electromagnetic, and robotic kinematic tracking for 3D US at different scanning speeds and insonation angles. A standardised pipeline performs real-time segmentation and 3D reconstruction of geometric targets (DSC = 0.97, FPS = 46) without GPU acceleration, followed by automated registration and comparison with ground-truth geometries. Applying this framework showed that our robotic 3D US achieves state-of-the-art reconstruction performance (DSC-3D = 0.94 +- 0.01, HD95 = 1.17 +- 0.12), approaching the spatial resolution limit imposed by the transducer. This work establishes a flexible experimental platform and a reproducible validation methodology for 3D US reconstruction. The proposed framework enables robust cross-platform comparisons and improved reporting practices, supporting the safe and effective clinical translation of 3D ultrasound in diagnostic and image-guided therapy applications.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
-      "categories": [
-        "cs.CV",
-        "cs.RO",
-        "eess.IV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.20077v1",
-        "pdf": "https://arxiv.org/pdf/2603.20077v1"
-      },
-      "arxiv_id": "2603.20077v1",
-      "comment": "This work has been submitted to the IEEE for possible publication",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.28135593220339,
-      "score_breakdown": {
-        "total_score": 4.28,
-        "field_match": {
-          "score": 2.2,
-          "matches": [
-            "3d reconstruction",
-            "volumetric",
-            "segmentation",
-            "registration"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Three-dimensional (3D) Ultrasound (US) can facilitate diagnosis, treatment planning, and image-guided therapy. However, current studies rarely provide a comprehensive evaluation of volumetric accuracy and reproducibility, highlighting the need for robust Quality Assurance (QA) frameworks, particularly for tracked 3D US reconstruction using freehand or robotic acquisition. This study presents a QA ...",
-        "key_contributions": [
-          "Three-dimensional (3D) Ultrasound (US) can facilitate diagnosis, treatment planning, and image-guided therapy.",
-          "However, current studies rarely provide a comprehensive evaluation of volumetric accuracy and reproducibility, highlighting the need for robust Quality Assurance (QA) frameworks, particularly for tracked 3D US reconstruction using freehand or robotic acquisition.",
-          "This study presents a QA framework for 3D US reconstruction and a flexible open source platform for tracked US research."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.20176v1",
-      "title": "LagerNVS: Latent Geometry for Fully Neural Real-time Novel View Synthesis",
-      "authors": [
-        "Stanislaw Szymanowicz",
-        "Minghao Chen",
-        "Jianyuan Wang",
-        "Christian Rupprecht",
-        "Andrea Vedaldi"
-      ],
-      "abstract": "Recent work has shown that neural networks can perform 3D tasks such as Novel View Synthesis (NVS) without explicit 3D reconstruction. Even so, we argue that strong 3D inductive biases are still helpful in the design of such networks. We show this point by introducing LagerNVS, an encoder-decoder neural network for NVS that builds on `3D-aware' latent features. The encoder is initialized from a 3D reconstruction network pre-trained using explicit 3D supervision. This is paired with a lightweight decoder, and trained end-to-end with photometric losses. LagerNVS achieves state-of-the-art deterministic feed-forward Novel View Synthesis (including 31.4 PSNR on Re10k), with and without known cameras, renders in real time, generalizes to in-the-wild data, and can be paired with a diffusion decoder for generative extrapolation.",
-      "published": "2026-03-20",
-      "updated": "2026-03-20",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.20176v1",
-        "pdf": "https://arxiv.org/pdf/2603.20176v1"
-      },
-      "arxiv_id": "2603.20176v1",
-      "comment": "IEEE CVF Conference on Computer Vision and Pattern Recognition 2026. Project page with code, models and examples: szymanowiczs.github.io/lagernvs",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.187288135593221,
-      "score_breakdown": {
-        "total_score": 4.19,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent work has shown that neural networks can perform 3D tasks such as Novel View Synthesis (NVS) without explicit 3D reconstruction. Even so, we argue that strong 3D inductive biases are still helpful in the design of such networks. We show this point by introducing LagerNVS, an encoder-decoder neural network for NVS that builds on `3D-aware' latent features. The encoder is initialized from a 3D...",
-        "key_contributions": [
-          "Recent work has shown that neural networks can perform 3D tasks such as Novel View Synthesis (NVS) without explicit 3D reconstruction.",
-          "Even so, we argue that strong 3D inductive biases are still helpful in the design of such networks.",
-          "We show this point by introducing LagerNVS, an encoder-decoder neural network for NVS that builds on `3D-aware' latent features."
+          "Multimodal 3D vision-language models show strong generalization across diverse 3D tasks, but their performance still degrades notably under domain shifts.",
+          "This has motivated recent studies on test-time adaptation (TTA), which enables models to adapt online using test-time data.",
+          "Among existing TTA methods, cache-based mechanisms are widely adopted for leveraging previously observed samples in online prediction refinement."
         ],
         "provider": "gemini"
       }

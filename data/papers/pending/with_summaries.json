@@ -3,36 +3,35 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2603.25411v1",
-      "title": "HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models",
+      "id": "2603.26362v1",
+      "title": "HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models",
       "authors": [
-        "Huizhi Liang",
-        "Yichao Shen",
-        "Yu Deng",
-        "Sicheng Xu",
-        "Zhiyuan Feng",
-        "Tong Zhang",
-        "Yaobo Liang",
-        "Jiaolong Yang"
+        "MD Khalequzzaman Chowdhury Sayem",
+        "Mubarrat Tajoar Chowdhury",
+        "Yihalem Yimolal Tiruneh",
+        "Muneeb A. Khan",
+        "Muhammad Salman Ali",
+        "Binod Bhattarai",
+        "Seungryul Baek"
       ],
-      "abstract": "Achieving human-like spatial intelligence for vision-language models (VLMs) requires inferring 3D structures from 2D observations, recognizing object properties and relations in 3D space, and performing high-level spatial reasoning. In this paper, we propose a principled hierarchical framework that decomposes the learning of 3D spatial understanding in VLMs into four progressively complex levels, from geometric perception to abstract spatial reasoning. Guided by this framework, we construct an automated pipeline that processes approximately 5M images with over 45M objects to generate 3D spatial VQA pairs across diverse tasks and scenes for VLM supervised fine-tuning. We also develop an RGB-D VLM incorporating metric-scale point maps as auxiliary inputs to further enhance spatial understanding. Extensive experiments demonstrate that our approach achieves state-of-the-art performance on multiple spatial understanding and reasoning benchmarks, surpassing specialized spatial models and large proprietary systems such as Gemini-2.5-pro and GPT-5. Moreover, our analysis reveals clear dependencies among hierarchical task levels, offering new insights into how multi-level task design facilitates the emergence of 3D spatial intelligence.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
+      "abstract": "Understanding the fine-grained articulation of human hands is critical in high-stakes settings such as robot-assisted surgery, chip manufacturing, and AR/VR-based human-AI interaction. Despite achieving near-human performance on general vision-language benchmarks, current vision-language models (VLMs) struggle with fine-grained spatial reasoning, especially in interpreting complex and articulated hand poses. We introduce HandVQA, a large-scale diagnostic benchmark designed to evaluate VLMs' understanding of detailed hand anatomy through visual question answering. Built upon high-quality 3D hand datasets (FreiHAND, InterHand2.6M, FPHA), our benchmark includes over 1.6M controlled multiple-choice questions that probe spatial relationships between hand joints, such as angles, distances, and relative positions. We evaluate several state-of-the-art VLMs (LLaVA, DeepSeek and Qwen-VL) in both base and fine-tuned settings, using lightweight fine-tuning via LoRA. Our findings reveal systematic limitations in current models, including hallucinated finger parts, incorrect geometric interpretations, and poor generalization. HandVQA not only exposes these critical reasoning gaps but provides a validated path to improvement. We demonstrate that the 3D-grounded spatial knowledge learned from our benchmark transfers in a zero-shot setting, significantly improving accuracy of model on novel downstream tasks like hand gesture recognition (+10.33%) and hand-object interaction (+2.63%).",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.25411v1",
-        "pdf": "https://arxiv.org/pdf/2603.25411v1"
+        "paper": "http://arxiv.org/abs/2603.26362v1",
+        "pdf": "https://arxiv.org/pdf/2603.26362v1"
       },
-      "arxiv_id": "2603.25411v1",
-      "comment": "Accepted by CVPR 2026. Project page: https://microsoft.github.io/HiSpatial",
+      "arxiv_id": "2603.26362v1",
+      "comment": "Accepted in CVPR 2026; Project page, code, and dataset: https://kcsayem.github.io/handvqa/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.3999999999999995,
+      "relevance_score": 5.449999999999999,
       "score_breakdown": {
-        "total_score": 5.4,
+        "total_score": 5.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -53,317 +52,51 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Achieving human-like spatial intelligence for vision-language models (VLMs) requires inferring 3D structures from 2D observations, recognizing object properties and relations in 3D space, and performing high-level spatial reasoning. In this paper, we propose a principled hierarchical framework that decomposes the learning of 3D spatial understanding in VLMs into four progressively complex levels, ...",
-        "key_contributions": [
-          "Achieving human-like spatial intelligence for vision-language models (VLMs) requires inferring 3D structures from 2D observations, recognizing object properties and relations in 3D space, and performing high-level spatial reasoning.",
-          "In this paper, we propose a principled hierarchical framework that decomposes the learning of 3D spatial understanding in VLMs into four progressively complex levels, from geometric perception to abstract spatial reasoning.",
-          "Guided by this framework, we construct an automated pipeline that processes approximately 5M images with over 45M objects to generate 3D spatial VQA pairs across diverse tasks and scenes for VLM supervised fine-tuning."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.25740v1",
-      "title": "Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving",
-      "authors": [
-        "Zehao Wang",
-        "Huaide Jiang",
-        "Shuaiwu Dong",
-        "Yuping Wang",
-        "Hang Qiu",
-        "Jiachen Li"
-      ],
-      "abstract": "Human driving behavior is inherently personal, which is shaped by long-term habits and influenced by short-term intentions. Individuals differ in how they accelerate, brake, merge, yield, and overtake across diverse situations. However, existing end-to-end autonomous driving systems either optimize for generic objectives or rely on fixed driving modes, lacking the ability to adapt to individual preferences or interpret natural language intent. To address this gap, we propose Drive My Way (DMW), a personalized Vision-Language-Action (VLA) driving framework that aligns with users' long-term driving habits and adapts to real-time user instructions. DMW learns a user embedding from our personalized driving dataset collected across multiple real drivers and conditions the policy on this embedding during planning, while natural language instructions provide additional short-term guidance. Closed-loop evaluation on the Bench2Drive benchmark demonstrates that DMW improves style instruction adaptation, and user studies show that its generated behaviors are recognizable as each driver's own style, highlighting personalization as a key capability for human-centered autonomous driving. Our data and code are available at https://dmw-cvpr.github.io/.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV",
-        "cs.LG",
-        "cs.MA"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.25740v1",
-        "pdf": "https://arxiv.org/pdf/2603.25740v1"
-      },
-      "arxiv_id": "2603.25740v1",
-      "comment": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026); Project website: https://dmw-cvpr.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.15,
-      "score_breakdown": {
-        "total_score": 5.15,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Human driving behavior is inherently personal, which is shaped by long-term habits and influenced by short-term intentions. Individuals differ in how they accelerate, brake, merge, yield, and overtake across diverse situations. However, existing end-to-end autonomous driving systems either optimize for generic objectives or rely on fixed driving modes, lacking the ability to adapt to individual pr...",
+        "short": "Understanding the fine-grained articulation of human hands is critical in high-stakes settings such as robot-assisted surgery, chip manufacturing, and AR/VR-based human-AI interaction. Despite achieving near-human performance on general vision-language benchmarks, current vision-language models (VLMs) struggle with fine-grained spatial reasoning, especially in interpreting complex and articulated ...",
         "key_contributions": [
-          "Human driving behavior is inherently personal, which is shaped by long-term habits and influenced by short-term intentions.",
-          "Individuals differ in how they accelerate, brake, merge, yield, and overtake across diverse situations.",
-          "However, existing end-to-end autonomous driving systems either optimize for generic objectives or rely on fixed driving modes, lacking the ability to adapt to individual preferences or interpret natural language intent."
+          "Understanding the fine-grained articulation of human hands is critical in high-stakes settings such as robot-assisted surgery, chip manufacturing, and AR/VR-based human-AI interaction.",
+          "Despite achieving near-human performance on general vision-language benchmarks, current vision-language models (VLMs) struggle with fine-grained spatial reasoning, especially in interpreting complex and articulated hand poses.",
+          "We introduce HandVQA, a large-scale diagnostic benchmark designed to evaluate VLMs' understanding of detailed hand anatomy through visual question answering."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.25706v1",
-      "title": "Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training",
+      "id": "2603.26385v1",
+      "title": "Restore, Assess, Repeat: A Unified Framework for Iterative Image Restoration",
       "authors": [
-        "Jinbo Xing",
-        "Zeyinzi Jiang",
-        "Yuxiang Tuo",
-        "Chaojie Mao",
-        "Xiaotang Gai",
-        "Xi Chen",
-        "Jingfeng Zhang",
-        "Yulin Pan",
-        "Zhen Han",
-        "Jie Xiao",
-        "Keyu Yan",
-        "Chenwei Xie",
-        "Chongyang Zhong",
-        "Kai Zhu",
-        "Tong Shen",
-        "Lianghua Huang",
-        "Yu Liu",
-        "Yujiu Yang"
-      ],
-      "abstract": "Recent unified models have made unprecedented progress in both understanding and generation. However, while most of them accept multi-modal inputs, they typically produce only single-modality outputs. This challenge of producing interleaved content is mainly due to training data scarcity and the difficulty of modeling long-range cross-modal context. To address this issue, we decompose interleaved generation into textual planning and visual consistency modeling, and introduce a framework consisting of a planner and a visualizer. The planner produces dense textual descriptions for visual content, while the visualizer synthesizes images accordingly. Under this guidance, we construct large-scale textual-proxy interleaved data (where visual content is represented in text) to train the planner, and curate reference-guided image data to train the visualizer. These designs give rise to Wan-Weaver, which exhibits emergent interleaved generation ability with long-range textual coherence and visual consistency. Meanwhile, the integration of diverse understanding and generation data into planner training enables Wan-Weaver to achieve robust task reasoning and generation proficiency. To assess the model's capability in interleaved generation, we further construct a benchmark that spans a wide range of use cases across multiple dimensions. Extensive experiments demonstrate that, even without access to any real interleaved data, Wan-Weaver achieves superior performance over existing methods.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.25706v1",
-        "pdf": "https://arxiv.org/pdf/2603.25706v1"
-      },
-      "arxiv_id": "2603.25706v1",
-      "comment": "CVPR 2026 Camera-ready, Webpage: https://doubiiu.github.io/projects/WanWeaver",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.1,
-      "score_breakdown": {
-        "total_score": 5.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent unified models have made unprecedented progress in both understanding and generation. However, while most of them accept multi-modal inputs, they typically produce only single-modality outputs. This challenge of producing interleaved content is mainly due to training data scarcity and the difficulty of modeling long-range cross-modal context. To address this issue, we decompose interleaved ...",
-        "key_contributions": [
-          "Recent unified models have made unprecedented progress in both understanding and generation.",
-          "However, while most of them accept multi-modal inputs, they typically produce only single-modality outputs.",
-          "This challenge of producing interleaved content is mainly due to training data scarcity and the difficulty of modeling long-range cross-modal context."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.25689v1",
-      "title": "LEMMA: Laplacian pyramids for Efficient Marine SeMAntic Segmentation",
-      "authors": [
-        "Ishaan Gakhar",
-        "Laven Srivastava",
-        "Sankarshanaa Sagaram",
-        "Aditya Kasliwal",
-        "Ujjwal Verma"
-      ],
-      "abstract": "Semantic segmentation in marine environments is crucial for the autonomous navigation of unmanned surface vessels (USVs) and coastal Earth Observation events such as oil spills. However, existing methods, often relying on deep CNNs and transformer-based architectures, face challenges in deployment due to their high computational costs and resource-intensive nature. These limitations hinder the practicality of real-time, low-cost applications in real-world marine settings.\n  To address this, we propose LEMMA, a lightweight semantic segmentation model designed specifically for accurate remote sensing segmentation under resource constraints. The proposed architecture leverages Laplacian Pyramids to enhance edge recognition, a critical component for effective feature extraction in complex marine environments for disaster response, environmental surveillance, and coastal monitoring. By integrating edge information early in the feature extraction process, LEMMA eliminates the need for computationally expensive feature map computations in deeper network layers, drastically reducing model size, complexity and inference time. LEMMA demonstrates state-of-the-art performance across datasets captured from diverse platforms while reducing trainable parameters and computational requirements by up to 71x, GFLOPs by up to 88.5\\%, and inference time by up to 84.65\\%, as compared to existing models. Experimental results highlight its effectiveness and real-world applicability, including 93.42\\% IoU on the Oil Spill dataset and 98.97\\% mIoU on Mastr1325.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.25689v1",
-        "pdf": "https://arxiv.org/pdf/2603.25689v1"
-      },
-      "arxiv_id": "2603.25689v1",
-      "comment": "Accepted at the MaCVi Workshop, CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.753389830508475,
-      "score_breakdown": {
-        "total_score": 4.75,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Semantic segmentation in marine environments is crucial for the autonomous navigation of unmanned surface vessels (USVs) and coastal Earth Observation events such as oil spills. However, existing methods, often relying on deep CNNs and transformer-based architectures, face challenges in deployment due to their high computational costs and resource-intensive nature. These limitations hinder the pra...",
-        "key_contributions": [
-          "Semantic segmentation in marine environments is crucial for the autonomous navigation of unmanned surface vessels (USVs) and coastal Earth Observation events such as oil spills.",
-          "However, existing methods, often relying on deep CNNs and transformer-based architectures, face challenges in deployment due to their high computational costs and resource-intensive nature.",
-          "These limitations hinder the practicality of real-time, low-cost applications in real-world marine settings."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.25398v1",
-      "title": "PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders",
-      "authors": [
-        "Niccolò Cavagnero",
-        "Narges Norouzi",
-        "Gijs Dubbelman",
-        "Daan de Geus"
-      ],
-      "abstract": "Vision Foundation Models (VFMs) pre-trained at scale enable a single frozen encoder to serve multiple downstream tasks simultaneously. Recent VFM-based encoder-only models for image and video segmentation, such as EoMT and VidEoMT, achieve competitive accuracy with remarkably low latency, yet they require finetuning the encoder, sacrificing the multi-task encoder sharing that makes VFMs practically attractive for large-scale deployment. To reconcile encoder-only simplicity and speed with frozen VFM features, we propose the Plain Mask Decoder (PMD), a fast Transformer-based segmentation decoder that operates on top of frozen VFM features. The resulting model, the Plain Mask Transformer (PMT), preserves the architectural simplicity and low latency of encoder-only designs while keeping the encoder representation unchanged and shareable. The design seamlessly applies to both image and video segmentation, inheriting the generality of the encoder-only framework. On standard image segmentation benchmarks, PMT matches the frozen-encoder state of the art while running up to ~3x faster. For video segmentation, it even performs on par with fully finetuned methods, while being up to 8x faster than state-of-the-art frozen-encoder models. Code: https://github.com/tue-mps/pmt.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.25398v1",
-        "pdf": "https://arxiv.org/pdf/2603.25398v1"
-      },
-      "arxiv_id": "2603.25398v1",
-      "comment": "8 pages, ECV 2026, CVPR Workshop",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.653389830508475,
-      "score_breakdown": {
-        "total_score": 4.65,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Vision Foundation Models (VFMs) pre-trained at scale enable a single frozen encoder to serve multiple downstream tasks simultaneously. Recent VFM-based encoder-only models for image and video segmentation, such as EoMT and VidEoMT, achieve competitive accuracy with remarkably low latency, yet they require finetuning the encoder, sacrificing the multi-task encoder sharing that makes VFMs practicall...",
-        "key_contributions": [
-          "Vision Foundation Models (VFMs) pre-trained at scale enable a single frozen encoder to serve multiple downstream tasks simultaneously.",
-          "Recent VFM-based encoder-only models for image and video segmentation, such as EoMT and VidEoMT, achieve competitive accuracy with remarkably low latency, yet they require finetuning the encoder, sacrificing the multi-task encoder sharing that makes VFMs practically attractive for large-scale deployment.",
-          "To reconcile encoder-only simplicity and speed with frozen VFM features, we propose the Plain Mask Decoder (PMD), a fast Transformer-based segmentation decoder that operates on top of frozen VFM features."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.25722v1",
-      "title": "No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models",
-      "authors": [
-        "Hai X. Pham",
-        "David T. Hoffmann",
-        "Ricardo Guerrero",
+        "I-Hsiang Chen",
+        "Isma Hadji",
+        "Enrique Sanchez",
+        "Adrian Bulat",
+        "Sy-Yen Kuo",
+        "Radu Timofte",
+        "Georgios Tzimiropoulos",
         "Brais Martinez"
       ],
-      "abstract": "Contrastive vision-language (V&L) models remain a popular choice for various applications. However, several limitations have emerged, most notably the limited ability of V&L models to learn compositional representations. Prior methods often addressed this limitation by generating custom training data to obtain hard negative samples. Hard negatives have been shown to improve performance on compositionality tasks, but are often specific to a single benchmark, do not generalize, and can cause substantial degradation of basic V&L capabilities such as zero-shot or retrieval performance, rendering them impractical. In this work we follow a different approach. We identify two root causes that limit compositionality performance of V&Ls: 1) Long training captions do not require a compositional representation; and 2) The final global pooling in the text and image encoders lead to a complete loss of the necessary information to learn binding in the first place. As a remedy, we propose two simple solutions: 1) We obtain short concept centric caption parts using standard NLP software and align those with the image; and 2) We introduce a parameter-free cross-modal attention-pooling to obtain concept centric visual embeddings from the image encoder. With these two changes and simple auxiliary contrastive losses, we obtain SOTA performance on standard compositionality benchmarks, while maintaining or improving strong zero-shot and retrieval capabilities. This is achieved without increasing inference cost. We release the code for this work at https://github.com/SamsungLabs/concept_centric_clip.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
+      "abstract": "Image restoration aims to recover high quality images from inputs degraded by various factors, such as adverse weather, blur, or low light. While recent studies have shown remarkable progress across individual or unified restoration tasks, they still suffer from limited generalization and inefficiency when handling unknown or composite degradations. To address these limitations, we propose RAR, a Restore, Assess and Repeat process, that integrates Image Quality Assessment (IQA) and Image Restoration (IR) into a unified framework to iteratively and efficiently achieve high quality image restoration. Specifically, we introduce a restoration process that operates entirely in the latent domain to jointly perform degradation identification, image restoration, and quality verification. The resulting model is fully trainable end to end and allows for an all-in-one assess and restore approach that dynamically adapts the restoration process. Also, the tight integration of IQA and IR into a unified model minimizes the latency and information loss that typically arises from keeping the two modules disjoint, (e.g. during image and/or text decoding). Extensive experiments show that our approach consistent improvements under single, unknown and composite degradations, thereby establishing a new state-of-the-art.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
       "categories": [
-        "cs.CV",
-        "cs.LG"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.25722v1",
-        "pdf": "https://arxiv.org/pdf/2603.25722v1"
+        "paper": "http://arxiv.org/abs/2603.26385v1",
+        "pdf": "https://arxiv.org/pdf/2603.26385v1"
       },
-      "arxiv_id": "2603.25722v1",
-      "comment": "Accepted at CVPR 2026",
+      "arxiv_id": "2603.26385v1",
+      "comment": "Accepted by CVPR2026; Project Page: https://restore-assess-repeat.github.io",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.65,
+      "has_code": true,
+      "relevance_score": 5.2,
       "score_breakdown": {
-        "total_score": 4.65,
+        "total_score": 5.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -379,52 +112,383 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Contrastive vision-language (V&L) models remain a popular choice for various applications. However, several limitations have emerged, most notably the limited ability of V&L models to learn compositional representations. Prior methods often addressed this limitation by generating custom training data to obtain hard negative samples. Hard negatives have been shown to improve performance on composit...",
+        "short": "Image restoration aims to recover high quality images from inputs degraded by various factors, such as adverse weather, blur, or low light. While recent studies have shown remarkable progress across individual or unified restoration tasks, they still suffer from limited generalization and inefficiency when handling unknown or composite degradations. To address these limitations, we propose RAR, a ...",
         "key_contributions": [
-          "Contrastive vision-language (V&L) models remain a popular choice for various applications.",
-          "However, several limitations have emerged, most notably the limited ability of V&L models to learn compositional representations.",
-          "Prior methods often addressed this limitation by generating custom training data to obtain hard negative samples."
+          "Image restoration aims to recover high quality images from inputs degraded by various factors, such as adverse weather, blur, or low light.",
+          "While recent studies have shown remarkable progress across individual or unified restoration tasks, they still suffer from limited generalization and inefficiency when handling unknown or composite degradations.",
+          "To address these limitations, we propose RAR, a Restore, Assess and Repeat process, that integrates Image Quality Assessment (IQA) and Image Restoration (IR) into a unified framework to iteratively and efficiently achieve high quality image restoration."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.25733v1",
-      "title": "SlotVTG: Object-Centric Adapter for Generalizable Video Temporal Grounding",
+      "id": "2603.26393v1",
+      "title": "Adapting Frozen Mono-modal Backbones for Multi-modal Registration via Contrast-Agnostic Instance Optimization",
       "authors": [
-        "Jiwook Han",
-        "Geo Ahn",
-        "Youngrae Kim",
-        "Jinwoo Choi"
+        "Yi Zhang",
+        "Yidong Zhao",
+        "Qian Tao"
       ],
-      "abstract": "Multimodal Large Language Models (MLLMs) have shown strong performance on Video Temporal Grounding (VTG). However, their coarse recognition capabilities are insufficient for fine-grained temporal understanding, making task-specific fine-tuning indispensable. This fine-tuning causes models to memorize dataset-specific shortcuts rather than faithfully grounding in the actual visual content, leading to poor Out-of-Domain (OOD) generalization. Object-centric learning offers a promising remedy by decomposing scenes into entity-level representations, but existing approaches require re-running the entire multi-stage training pipeline from scratch. We propose SlotVTG, a framework that steers MLLMs toward object-centric, input-grounded visual reasoning at minimal cost. SlotVTG introduces a lightweight slot adapter that decomposes visual tokens into abstract slots via slot attention and reconstructs the original sequence, where objectness priors from a self-supervised vision model encourage semantically coherent slot formation. Cross-domain evaluation on standard VTG benchmarks demonstrates that our approach significantly improves OOD robustness while maintaining competitive In-Domain (ID) performance with minimal overhead.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
+      "abstract": "Deformable image registration remains a central challenge in medical image analysis, particularly under multi-modal scenarios where intensity distributions vary significantly across scans. While deep learning methods provide efficient feed-forward predictions, they often fail to generalize robustly under distribution shifts at test time. A straightforward remedy is full network fine-tuning, yet for modern architectures such as Transformers or deep U-Nets, this adaptation is prohibitively expensive in both memory and runtime when operating in 3D. Meanwhile, the naive fine-tuning struggles more with potential degradation in performance in the existence of drastic domain shifts. In this work, we propose a registration framework that integrates a frozen pretrained \\textbf{mono-modal} registration model with a lightweight adaptation pipeline for \\textbf{multi-modal} image registration. Specifically, we employ style transfer based on contrast-agnostic representation generation and refinement modules to bridge modality and domain gaps with instance optimization at test time. This design is orthogonal to the choice of backbone mono-modal model, thus avoids the computational burden of full fine-tuning while retaining the flexibility to adapt to unseen domains. We evaluate our approach on the Learn2Reg 2025 LUMIR validation set and observe consistent improvements over the pretrained state-of-the-art mono-modal backbone. In particular, the method ranks second on the multi-modal subset, third on the out-of-domain subset, and achieves fourth place overall in Dice score. These results demonstrate that combining frozen mono-modal models with modality adaptation and lightweight instance optimization offers an effective and practical pathway toward robust multi-modal registration.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "primary_category": "eess.IV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.26393v1",
+        "pdf": "https://arxiv.org/pdf/2603.26393v1"
+      },
+      "arxiv_id": "2603.26393v1",
+      "comment": "MICCAI Learn2Reg Challenge",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.097457627118644,
+      "score_breakdown": {
+        "total_score": 5.1,
+        "field_match": {
+          "score": 2.12,
+          "matches": [
+            "medical image",
+            "registration",
+            "deep learning",
+            "image analysis"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Deformable image registration remains a central challenge in medical image analysis, particularly under multi-modal scenarios where intensity distributions vary significantly across scans. While deep learning methods provide efficient feed-forward predictions, they often fail to generalize robustly under distribution shifts at test time. A straightforward remedy is full network fine-tuning, yet fo...",
+        "key_contributions": [
+          "Deformable image registration remains a central challenge in medical image analysis, particularly under multi-modal scenarios where intensity distributions vary significantly across scans.",
+          "While deep learning methods provide efficient feed-forward predictions, they often fail to generalize robustly under distribution shifts at test time.",
+          "A straightforward remedy is full network fine-tuning, yet for modern architectures such as Transformers or deep U-Nets, this adaptation is prohibitively expensive in both memory and runtime when operating in 3D."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.26584v1",
+      "title": "Scene Grounding In the Wild",
+      "authors": [
+        "Tamir Cohen",
+        "Leo Segre",
+        "Shay Shomer-Chai",
+        "Shai Avidan",
+        "Hadar Averbuch-Elor"
+      ],
+      "abstract": "Reconstructing accurate 3D models of large-scale real-world scenes from unstructured, in-the-wild imagery remains a core challenge in computer vision, especially when the input views have little or no overlap. In such cases, existing reconstruction pipelines often produce multiple disconnected partial reconstructions or erroneously merge non-overlapping regions into overlapping geometry. In this work, we propose a framework that grounds each partial reconstruction to a complete reference model of the scene, enabling globally consistent alignment even in the absence of visual overlap. We obtain reference models from dense, geospatially accurate pseudo-synthetic renderings derived from Google Earth Studio. These renderings provide full scene coverage but differ substantially in appearance from real-world photographs. Our key insight is that, despite this significant domain gap, both domains share the same underlying scene semantics. We represent the reference model using 3D Gaussian Splatting, augmenting each Gaussian with semantic features, and formulate alignment as an inverse feature-based optimization scheme that estimates a global 6DoF pose and scale while keeping the reference model fixed. Furthermore, we introduce the WikiEarth dataset, which registers existing partial 3D reconstructions with pseudo-synthetic reference models. We demonstrate that our approach consistently improves global alignment when initialized with various classical and learning-based pipelines, while mitigating failure modes of state-of-the-art end-to-end models. All code and data will be released.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.25733v1",
-        "pdf": "https://arxiv.org/pdf/2603.25733v1"
+        "paper": "http://arxiv.org/abs/2603.26584v1",
+        "pdf": "https://arxiv.org/pdf/2603.26584v1"
       },
-      "arxiv_id": "2603.25733v1",
-      "comment": "Accepted to GRAIL-V workshop at CVPR 2026",
+      "arxiv_id": "2603.26584v1",
+      "comment": "Project page at https://tau-vailab.github.io/SceneGround/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.984745762711864,
+      "score_breakdown": {
+        "total_score": 4.98,
+        "field_match": {
+          "score": 2.71,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "3d reconstruction",
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Reconstructing accurate 3D models of large-scale real-world scenes from unstructured, in-the-wild imagery remains a core challenge in computer vision, especially when the input views have little or no overlap. In such cases, existing reconstruction pipelines often produce multiple disconnected partial reconstructions or erroneously merge non-overlapping regions into overlapping geometry. In this w...",
+        "key_contributions": [
+          "Reconstructing accurate 3D models of large-scale real-world scenes from unstructured, in-the-wild imagery remains a core challenge in computer vision, especially when the input views have little or no overlap.",
+          "In such cases, existing reconstruction pipelines often produce multiple disconnected partial reconstructions or erroneously merge non-overlapping regions into overlapping geometry.",
+          "In this work, we propose a framework that grounds each partial reconstruction to a complete reference model of the scene, enabling globally consistent alignment even in the absence of visual overlap."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.26475v1",
+      "title": "Foundation Model for Cardiac Time Series via Masked Latent Attention",
+      "authors": [
+        "Moritz Vandenhirtz",
+        "Samuel Ruipérez-Campillo",
+        "Simon Böhi",
+        "Sonia Laguna",
+        "Irene Cannistraci",
+        "Andrea Agostini",
+        "Ece Ozkan",
+        "Thomas M. Sutter",
+        "Julia E. Vogt"
+      ],
+      "abstract": "Electrocardiograms (ECGs) are among the most widely available clinical signals and play a central role in cardiovascular diagnosis. While recent foundation models (FMs) have shown promise for learning transferable ECG representations, most existing pretraining approaches treat leads as independent channels and fail to explicitly leverage their strong structural redundancy. We introduce the latent attention masked autoencoder (LAMAE) FM that directly exploits this structure by learning cross-lead connection mechanisms during self-supervised pretraining. Our approach models higher-order interactions across leads through latent attention, enabling permutation-invariant aggregation and adaptive weighting of lead-specific representations. We provide empirical evidence on the Mimic-IV-ECG database that leveraging the cross-lead connection constitutes an effective form of structural supervision, improving representation quality and transferability. Our method shows strong performance in predicting ICD-10 codes, outperforming independent-lead masked modeling and alignment-based baselines.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "eess.SP",
+        "math.RT"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.26475v1",
+        "pdf": "https://arxiv.org/pdf/2603.26475v1"
+      },
+      "arxiv_id": "2603.26475v1",
+      "comment": "First two authors are co-first. Last two authors are co-senior",
+      "journal_ref": "ICLR 2026: Workshop on Foundation Models for Science",
+      "has_code": false,
+      "relevance_score": 4.826271186440678,
+      "score_breakdown": {
+        "total_score": 4.83,
+        "field_match": {
+          "score": 1.44,
+          "matches": [
+            "cardiac",
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Electrocardiograms (ECGs) are among the most widely available clinical signals and play a central role in cardiovascular diagnosis. While recent foundation models (FMs) have shown promise for learning transferable ECG representations, most existing pretraining approaches treat leads as independent channels and fail to explicitly leverage their strong structural redundancy. We introduce the latent ...",
+        "key_contributions": [
+          "Electrocardiograms (ECGs) are among the most widely available clinical signals and play a central role in cardiovascular diagnosis.",
+          "While recent foundation models (FMs) have shown promise for learning transferable ECG representations, most existing pretraining approaches treat leads as independent channels and fail to explicitly leverage their strong structural redundancy.",
+          "We introduce the latent attention masked autoencoder (LAMAE) FM that directly exploits this structure by learning cross-lead connection mechanisms during self-supervised pretraining."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.26569v1",
+      "title": "Machine Unlearning under Retain-Forget Entanglement",
+      "authors": [
+        "Jingpu Cheng",
+        "Ping Liu",
+        "Qianxiao Li",
+        "Chi Zhang"
+      ],
+      "abstract": "Forgetting a subset in machine unlearning is rarely an isolated task. Often, retained samples that are closely related to the forget set can be unintentionally affected, particularly when they share correlated features from pretraining or exhibit strong semantic similarities. To address this challenge, we propose a novel two-phase optimization framework specifically designed to handle such retai-forget entanglements. In the first phase, an augmented Lagrangian method increases the loss on the forget set while preserving accuracy on less-related retained samples. The second phase applies a gradient projection step, regularized by the Wasserstein-2 distance, to mitigate performance degradation on semantically related retained samples without compromising the unlearning objective. We validate our approach through comprehensive experiments on multiple unlearning tasks, standard benchmark datasets, and diverse neural architectures, demonstrating that it achieves effective and reliable unlearning while outperforming existing baselines in both accuracy retention and removal fidelity.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.26569v1",
+        "pdf": "https://arxiv.org/pdf/2603.26569v1"
+      },
+      "arxiv_id": "2603.26569v1",
+      "comment": "ICLR 2026 camera-ready",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.571186440677966,
+      "relevance_score": 4.6,
       "score_breakdown": {
-        "total_score": 4.57,
+        "total_score": 4.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Forgetting a subset in machine unlearning is rarely an isolated task. Often, retained samples that are closely related to the forget set can be unintentionally affected, particularly when they share correlated features from pretraining or exhibit strong semantic similarities. To address this challenge, we propose a novel two-phase optimization framework specifically designed to handle such retai-f...",
+        "key_contributions": [
+          "Forgetting a subset in machine unlearning is rarely an isolated task.",
+          "Often, retained samples that are closely related to the forget set can be unintentionally affected, particularly when they share correlated features from pretraining or exhibit strong semantic similarities.",
+          "To address this challenge, we propose a novel two-phase optimization framework specifically designed to handle such retai-forget entanglements."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.26425v1",
+      "title": "CPUBone: Efficient Vision Backbone Design for Devices with Low Parallelization Capabilities",
+      "authors": [
+        "Moritz Nottebaum",
+        "Matteo Dunnhofer",
+        "Christian Micheloni"
+      ],
+      "abstract": "Recent research on vision backbone architectures has predominantly focused on optimizing efficiency for hardware platforms with high parallel processing capabilities. This category increasingly includes embedded systems such as mobile phones and embedded AI accelerator modules. In contrast, CPUs do not have the possibility to parallelize operations in the same manner, wherefore models benefit from a specific design philosophy that balances amount of operations (MACs) and hardware-efficient execution by having high MACs per second (MACpS). In pursuit of this, we investigate two modifications to standard convolutions, aimed at reducing computational cost: grouping convolutions and reducing kernel sizes. While both adaptations substantially decrease the total number of MACs required for inference, sustaining low latency necessitates preserving hardware-efficiency. Our experiments across diverse CPU devices confirm that these adaptations successfully retain high hardware-efficiency on CPUs. Based on these insights, we introduce CPUBone, a new family of vision backbone models optimized for CPU-based inference. CPUBone achieves state-of-the-art Speed-Accuracy Trade-offs (SATs) across a wide range of CPU devices and effectively transfers its efficiency to downstream tasks such as object detection and semantic segmentation. Models and code are available at https://github.com/altair199797/CPUBone.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.26425v1",
+        "pdf": "https://arxiv.org/pdf/2603.26425v1"
+      },
+      "arxiv_id": "2603.26425v1",
+      "comment": "Accepted at CVPR Findings 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.553389830508475,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent research on vision backbone architectures has predominantly focused on optimizing efficiency for hardware platforms with high parallel processing capabilities. This category increasingly includes embedded systems such as mobile phones and embedded AI accelerator modules. In contrast, CPUs do not have the possibility to parallelize operations in the same manner, wherefore models benefit from...",
+        "key_contributions": [
+          "Recent research on vision backbone architectures has predominantly focused on optimizing efficiency for hardware platforms with high parallel processing capabilities.",
+          "This category increasingly includes embedded systems such as mobile phones and embedded AI accelerator modules.",
+          "In contrast, CPUs do not have the possibility to parallelize operations in the same manner, wherefore models benefit from a specific design philosophy that balances amount of operations (MACs) and hardware-efficient execution by having high MACs per second (MACpS)."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.26597v1",
+      "title": "From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning",
+      "authors": [
+        "Yang Liu",
+        "Qianqian Xu",
+        "Peisong Wen",
+        "Siran Dai",
+        "Xilin Zhao",
+        "Qingming Huang"
+      ],
+      "abstract": "Recent studies have made notable progress in video representation learning by transferring image-pretrained models to video tasks, typically with complex temporal modules and video fine-tuning. However, fine-tuning heavy modules may compromise inter-video semantic separability, i.e., the essential ability to distinguish objects across videos. While reducing the tunable parameters hinders their intra-video temporal consistency, which is required for stable representations of the same object within a video. This dilemma indicates a potential trade-off between the intra-video temporal consistency and inter-video semantic separability during image-to-video transfer. To this end, we propose the Consistency-Separability Trade-off Transfer Learning (Co-Settle) framework, which applies a lightweight projection layer on top of the frozen image-pretrained encoder to adjust representation space with a temporal cycle consistency objective and a semantic separability constraint. We further provide a theoretical support showing that the optimized projection yields a better trade-off between the two properties under appropriate conditions. Experiments on eight image-pretrained models demonstrate consistent improvements across multiple levels of video tasks with only five epochs of self-supervised training. The code is available at https://github.com/yafeng19/Co-Settle.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.26597v1",
+        "pdf": "https://arxiv.org/pdf/2603.26597v1"
+      },
+      "arxiv_id": "2603.26597v1",
+      "comment": "Accepted at CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.4711864406779664,
+      "score_breakdown": {
+        "total_score": 4.47,
         "field_match": {
           "score": 0.68,
           "matches": [
@@ -447,52 +511,50 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Multimodal Large Language Models (MLLMs) have shown strong performance on Video Temporal Grounding (VTG). However, their coarse recognition capabilities are insufficient for fine-grained temporal understanding, making task-specific fine-tuning indispensable. This fine-tuning causes models to memorize dataset-specific shortcuts rather than faithfully grounding in the actual visual content, leading ...",
+        "short": "Recent studies have made notable progress in video representation learning by transferring image-pretrained models to video tasks, typically with complex temporal modules and video fine-tuning. However, fine-tuning heavy modules may compromise inter-video semantic separability, i.e., the essential ability to distinguish objects across videos. While reducing the tunable parameters hinders their int...",
         "key_contributions": [
-          "Multimodal Large Language Models (MLLMs) have shown strong performance on Video Temporal Grounding (VTG).",
-          "However, their coarse recognition capabilities are insufficient for fine-grained temporal understanding, making task-specific fine-tuning indispensable.",
-          "This fine-tuning causes models to memorize dataset-specific shortcuts rather than faithfully grounding in the actual visual content, leading to poor Out-of-Domain (OOD) generalization."
+          "Recent studies have made notable progress in video representation learning by transferring image-pretrained models to video tasks, typically with complex temporal modules and video fine-tuning.",
+          "However, fine-tuning heavy modules may compromise inter-video semantic separability, i.",
+          "e."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2603.25527v1",
-      "title": "Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training",
+      "id": "2603.26481v1",
+      "title": "SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras",
       "authors": [
-        "Xiangyang Luo",
-        "Qingyu Li",
-        "Yuming Li",
-        "Guanbo Huang",
-        "Yongjie Zhu",
-        "Wenyu Qin",
-        "Meng Wang",
-        "Pengfei Wan",
-        "Shao-Lun Huang"
+        "Weihong Pan",
+        "Xiaoyu Zhang",
+        "Zhuang Zhang",
+        "Zhichao Ye",
+        "Nan Wang",
+        "Haomin Liu",
+        "Guofeng Zhang"
       ],
-      "abstract": "Recent advances in video generation models have achieved impressive results. However, these models heavily rely on the use of high-quality data that combines both high visual quality and high motion quality. In this paper, we identify a key challenge in video data curation: the Motion-Vision Quality Dilemma. We discovered that visual quality and motion intensity inherently exhibit a negative correlation, making it hard to obtain golden data that excels in both aspects. To address this challenge, we first examine the hierarchical learning dynamics of video diffusion models and conduct gradient-based analysis on quality-degraded samples. We discover that quality-imbalanced data can produce gradients similar to golden data at appropriate timesteps. Based on this, we introduce the novel concept of Timestep selection in Training Process. We propose Timestep-aware Quality Decoupling (TQD), which modifies the data sampling distribution to better match the model's learning process. For certain types of data, the sampling distribution is skewed toward higher timesteps for motion-rich data, while high visual quality data is more likely to be sampled during lower timesteps. Through extensive experiments, we demonstrate that TQD enables training exclusively on separated imbalanced data to achieve performance surpassing conventional training with better data, challenging the necessity of perfect data in video generation. Moreover, our method also boosts model performance when trained on high-quality data, showcasing its effectiveness across different data scenarios.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
+      "abstract": "High-quality 4D reconstruction enables photorealistic and immersive rendering of the dynamic real world. However, unlike static scenes that can be fully captured with a single camera, high-quality dynamic scenes typically require dense arrays of tens or even hundreds of synchronized cameras. Dependence on such costly lab setups severely limits practical scalability. The reliance on such costly lab setups severely limits practical scalability. To this end, we propose a sparse-camera dynamic reconstruction framework that exploits abundant yet inconsistent generative observations. Our key innovation is the Spatio-Temporal Distortion Field, which provides a unified mechanism for modeling inconsistencies in generative observations across both spatial and temporal dimensions. Building on this, we develop a complete pipeline that enables 4D reconstruction from sparse and uncalibrated camera inputs. We evaluate our method on multi-camera dynamic scene benchmarks, achieving spatio-temporally consistent high-fidelity renderings and significantly outperforming existing approaches.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2603.25527v1",
-        "pdf": "https://arxiv.org/pdf/2603.25527v1"
+        "paper": "http://arxiv.org/abs/2603.26481v1",
+        "pdf": "https://arxiv.org/pdf/2603.26481v1"
       },
-      "arxiv_id": "2603.25527v1",
-      "comment": "Accepted to CVPR 2026",
+      "arxiv_id": "2603.26481v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.5,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.5,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -501,6 +563,76 @@
         "venue_quality": {
           "score": 10,
           "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "High-quality 4D reconstruction enables photorealistic and immersive rendering of the dynamic real world. However, unlike static scenes that can be fully captured with a single camera, high-quality dynamic scenes typically require dense arrays of tens or even hundreds of synchronized cameras. Dependence on such costly lab setups severely limits practical scalability. The reliance on such costly lab...",
+        "key_contributions": [
+          "High-quality 4D reconstruction enables photorealistic and immersive rendering of the dynamic real world.",
+          "However, unlike static scenes that can be fully captured with a single camera, high-quality dynamic scenes typically require dense arrays of tens or even hundreds of synchronized cameras.",
+          "Dependence on such costly lab setups severely limits practical scalability."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2603.26638v1",
+      "title": "Drive-Through 3D Vehicle Exterior Reconstruction via Dynamic-Scene SfM and Distortion-Aware Gaussian Splatting",
+      "authors": [
+        "Nitin Kulkarni",
+        "Akhil Devarashetti",
+        "Charlie Cluss",
+        "Livio Forte",
+        "Philip Schneider",
+        "Chunming Qiao",
+        "Alina Vereshchaka"
+      ],
+      "abstract": "High-fidelity 3D reconstruction of vehicle exteriors improves buyer confidence in online automotive marketplaces, but generating these models in cluttered dealership drive-throughs presents severe technical challenges. Unlike static-scene photogrammetry, this setting features a dynamic vehicle moving against heavily cluttered, static backgrounds. This problem is further compounded by wide-angle lens distortion, specular automotive paint, and non-rigid wheel rotations that violate classical epipolar constraints. We propose an end-to-end pipeline utilizing a two-pillar camera rig. First, we resolve dynamic-scene ambiguities by coupling SAM 3 for instance segmentation with motion-gating to cleanly isolate the moving vehicle, explicitly masking out non-rigid wheels to enforce strict epipolar geometry. Second, we extract robust correspondences directly on raw, distorted 4K imagery using the RoMa v2 learned matcher guided by semantic confidence masks. Third, these matches are integrated into a rig-aware SfM optimization that utilizes CAD-derived relative pose priors to eliminate scale drift. Finally, we use a distortion-aware 3D Gaussian Splatting framework (3DGUT) coupled with a stochastic Markov Chain Monte Carlo (MCMC) densification strategy to render reflective surfaces. Evaluations on 25 real-world vehicles across 10 dealerships demonstrate that our full pipeline achieves a PSNR of 28.66 dB, an SSIM of 0.89, and an LPIPS of 0.21 on held-out views, representing a 3.85 dB improvement over standard 3D-GS, delivering inspection-grade interactive 3D models without controlled studio infrastructure.",
+      "published": "2026-03-27",
+      "updated": "2026-03-27",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2603.26638v1",
+        "pdf": "https://arxiv.org/pdf/2603.26638v1"
+      },
+      "arxiv_id": "2603.26638v1",
+      "comment": "8 pages, 7 figures, Submitted to IEEE IROS 2026 (under review)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.41864406779661,
+      "score_breakdown": {
+        "total_score": 4.42,
+        "field_match": {
+          "score": 2.8,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "3d reconstruction",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -513,141 +645,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent advances in video generation models have achieved impressive results. However, these models heavily rely on the use of high-quality data that combines both high visual quality and high motion quality. In this paper, we identify a key challenge in video data curation: the Motion-Vision Quality Dilemma. We discovered that visual quality and motion intensity inherently exhibit a negative corre...",
+        "short": "High-fidelity 3D reconstruction of vehicle exteriors improves buyer confidence in online automotive marketplaces, but generating these models in cluttered dealership drive-throughs presents severe technical challenges. Unlike static-scene photogrammetry, this setting features a dynamic vehicle moving against heavily cluttered, static backgrounds. This problem is further compounded by wide-angle le...",
         "key_contributions": [
-          "Recent advances in video generation models have achieved impressive results.",
-          "However, these models heavily rely on the use of high-quality data that combines both high visual quality and high motion quality.",
-          "In this paper, we identify a key challenge in video data curation: the Motion-Vision Quality Dilemma."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.25738v1",
-      "title": "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow",
-      "authors": [
-        "Xincheng Shuai",
-        "Song Tang",
-        "Yutong Huang",
-        "Henghui Ding",
-        "Dacheng Tao"
-      ],
-      "abstract": "Graphic design is a creative and innovative process that plays a crucial role in applications such as e-commerce and advertising. However, developing an automated design system that can faithfully translate user intentions into editable design files remains an open challenge. Although recent studies have leveraged powerful text-to-image models and MLLMs to assist graphic design, they typically simplify professional workflows, resulting in limited flexibility and intuitiveness. To address these limitations, we propose PSDesigner, an automated graphic design system that emulates the creative workflow of human designers. Building upon multiple specialized components, PSDesigner collects theme-related assets based on user instructions, and autonomously infers and executes tool calls to manipulate design files, such as integrating new assets or refining inferior elements. To endow the system with strong tool-use capabilities, we construct a design dataset, CreativePSD, which contains a large amount of high-quality PSD design files annotated with operation traces across a wide range of design scenarios and artistic styles, enabling models to learn expert design procedures. Extensive experiments demonstrate that PSDesigner outperforms existing methods across diverse graphic design tasks, empowering non-specialists to conveniently create production-quality designs.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.25738v1",
-        "pdf": "https://arxiv.org/pdf/2603.25738v1"
-      },
-      "arxiv_id": "2603.25738v1",
-      "comment": "CVPR 2026, Project Page: https://henghuiding.com/PSDesigner/",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.449999999999999,
-      "score_breakdown": {
-        "total_score": 4.45,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Graphic design is a creative and innovative process that plays a crucial role in applications such as e-commerce and advertising. However, developing an automated design system that can faithfully translate user intentions into editable design files remains an open challenge. Although recent studies have leveraged powerful text-to-image models and MLLMs to assist graphic design, they typically sim...",
-        "key_contributions": [
-          "Graphic design is a creative and innovative process that plays a crucial role in applications such as e-commerce and advertising.",
-          "However, developing an automated design system that can faithfully translate user intentions into editable design files remains an open challenge.",
-          "Although recent studies have leveraged powerful text-to-image models and MLLMs to assist graphic design, they typically simplify professional workflows, resulting in limited flexibility and intuitiveness."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2603.25573v1",
-      "title": "Hierarchy-Guided Multimodal Representation Learning for Taxonomic Inference",
-      "authors": [
-        "Sk Miraj Ahmed",
-        "Xi Yu",
-        "Yunqi Li",
-        "Yuewei Lin",
-        "Wei Xu"
-      ],
-      "abstract": "Accurate biodiversity identification from large-scale field data is a foundational problem with direct impact on ecology, conservation, and environmental monitoring. In practice, the core task is taxonomic prediction - inferring order, family, genus, or species from imperfect inputs such as specimen images, DNA barcodes, or both. Existing multimodal methods often treat taxonomy as a flat label space and therefore fail to encode the hierarchical structure of biological classification, which is critical for robustness under noise and missing modalities. We present two end-to-end variants for hierarchy-aware multimodal learning: CLiBD-HiR, which introduces Hierarchical Information Regularization (HiR) to shape embedding geometry across taxonomic levels, yielding structured and noise-robust representations; and CLiBD-HiR-Fuse, which additionally trains a lightweight fusion predictor that supports image-only, DNA-only, or joint inference and is resilient to modality corruption. Across large-scale biodiversity benchmarks, our approach improves taxonomic classification accuracy by over 14 percent compared to strong multimodal baselines, with particularly large gains under partial and corrupted DNA conditions. These results highlight that explicitly encoding biological hierarchy, together with flexible fusion, is key for practical biodiversity foundation models.",
-      "published": "2026-03-26",
-      "updated": "2026-03-26",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2603.25573v1",
-        "pdf": "https://arxiv.org/pdf/2603.25573v1"
-      },
-      "arxiv_id": "2603.25573v1",
-      "comment": "Accepted at the ICLR 2026 Workshop on Foundation Models for Science (FM4Science)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.449999999999999,
-      "score_breakdown": {
-        "total_score": 4.45,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Accurate biodiversity identification from large-scale field data is a foundational problem with direct impact on ecology, conservation, and environmental monitoring. In practice, the core task is taxonomic prediction - inferring order, family, genus, or species from imperfect inputs such as specimen images, DNA barcodes, or both. Existing multimodal methods often treat taxonomy as a flat label spa...",
-        "key_contributions": [
-          "Accurate biodiversity identification from large-scale field data is a foundational problem with direct impact on ecology, conservation, and environmental monitoring.",
-          "In practice, the core task is taxonomic prediction - inferring order, family, genus, or species from imperfect inputs such as specimen images, DNA barcodes, or both.",
-          "Existing multimodal methods often treat taxonomy as a flat label space and therefore fail to encode the hierarchical structure of biological classification, which is critical for robustness under noise and missing modalities."
+          "High-fidelity 3D reconstruction of vehicle exteriors improves buyer confidence in online automotive marketplaces, but generating these models in cluttered dealership drive-throughs presents severe technical challenges.",
+          "Unlike static-scene photogrammetry, this setting features a dynamic vehicle moving against heavily cluttered, static backgrounds.",
+          "This problem is further compounded by wide-angle lens distortion, specular automotive paint, and non-rigid wheel rotations that violate classical epipolar constraints."
         ],
         "provider": "gemini"
       }

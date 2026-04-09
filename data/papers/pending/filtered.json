@@ -1,5 +1,586 @@
 {
   "filtered_at": "{\"timestamp\": \"now\"}",
-  "total_papers": 0,
-  "papers": []
+  "total_papers": 10,
+  "papers": [
+    {
+      "id": "2604.06169v1",
+      "title": "In-Place Test-Time Training",
+      "authors": [
+        "Guhao Feng",
+        "Shengjie Luo",
+        "Kai Hua",
+        "Ge Zhang",
+        "Di He",
+        "Wenhao Huang",
+        "Tianle Cai"
+      ],
+      "abstract": "The static ``train then deploy\" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks. Test-Time Training (TTT) offers a compelling alternative by updating a subset of model parameters (fast weights) at inference time, yet its potential in the current LLM ecosystem is hindered by critical barriers including architectural incompatibility, computational inefficiency and misaligned fast weight objectives for language modeling. In this work, we introduce In-Place Test-Time Training (In-Place TTT), a framework that seamlessly endows LLMs with Test-Time Training ability. In-Place TTT treats the final projection matrix of the ubiquitous MLP blocks as its adaptable fast weights, enabling a ``drop-in\" enhancement for LLMs without costly retraining from scratch. Furthermore, we replace TTT's generic reconstruction objective with a tailored, theoretically-grounded objective explicitly aligned with the Next-Token-Prediction task governing autoregressive language modeling. This principled objective, combined with an efficient chunk-wise update mechanism, results in a highly scalable algorithm compatible with context parallelism. Extensive experiments validate our framework's effectiveness: as an in-place enhancement, it enables a 4B-parameter model to achieve superior performance on tasks with contexts up to 128k, and when pretrained from scratch, it consistently outperforms competitive TTT-related approaches. Ablation study results further provide deeper insights on our design choices. Collectively, our results establish In-Place TTT as a promising step towards a paradigm of continual learning in LLMs.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.06169v1",
+        "pdf": "https://arxiv.org/pdf/2604.06169v1"
+      },
+      "arxiv_id": "2604.06169v1",
+      "comment": "ICLR 2026 Oral Presentation; Code is released at https://github.com/ByteDance-Seed/In-Place-TTT",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.1,
+      "score_breakdown": {
+        "total_score": 5.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.06099v1",
+      "title": "Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes",
+      "authors": [
+        "Athanasios Angelakis",
+        "Marta Gomez-Barrero"
+      ],
+      "abstract": "The recently introduced ZACH-ViT (Zero-token Adaptive Compact Hierarchical Vision Transformer) formalized a compact permutation-invariant Vision Transformer for medical imaging and argued that architectural alignment with spatial structure can matter more than universal benchmark dominance. Its design was motivated by the observation that positional embeddings and a dedicated class token encode fixed spatial assumptions that may be suboptimal when spatial organization is weakly informative, locally distributed, or variable across biomedical images. The foundational study established a regime-dependent clean performance profile across MedMNIST, but did not examine robustness in detail. In this work, we present the first robustness-focused extension of ZACH-ViT by evaluating its behavior under common image corruptions and adversarial perturbations in the same low-data setting. We compare ZACH-ViT with three scratch-trained compact baselines, ABMIL, Minimal-ViT, and TransMIL, on seven MedMNIST datasets using 50 samples per class, fixed hyperparameters, and five random seeds. Across the benchmark, ZACH-ViT achieves the best overall mean rank on clean data (1.57) and under common corruptions (1.57), indicating a favorable balance between baseline predictive performance and robustness to realistic image degradation. Under adversarial stress, all models deteriorate substantially; nevertheless, ZACH-ViT remains competitive, ranking first under FGSM (2.00) and second under PGD (2.29), where ABMIL performs best overall. These results extend the original ZACH-ViT narrative: the advantages of compact permutation-invariant transformers are not limited to clean evaluation, but can persist under realistic perturbation stress in low-data medical imaging, while adversarial robustness remains an open challenge for all evaluated models.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.06099v1",
+        "pdf": "https://arxiv.org/pdf/2604.06099v1"
+      },
+      "arxiv_id": "2604.06099v1",
+      "comment": "Accepted at CVPR 2026 Workshop (PHAROS-AIF-MIH)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.060169491525423,
+      "score_breakdown": {
+        "total_score": 5.06,
+        "field_match": {
+          "score": 1.53,
+          "matches": [
+            "medical image",
+            "medical imaging"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.05934v1",
+      "title": "Leveraging Image Editing Foundation Models for Data-Efficient CT Metal Artifact Reduction",
+      "authors": [
+        "Ahmet Rasim Emirdagi",
+        "Süleyman Aslan",
+        "Mısra Yavuz",
+        "Görkay Aydemir",
+        "Yunus Bilge Kurt",
+        "Nasrin Rahimi",
+        "Burak Can Biner",
+        "M. Akın Yılmaz"
+      ],
+      "abstract": "Metal artifacts from high-attenuation implants severely degrade CT image quality, obscuring critical anatomical structures and posing a challenge for standard deep learning methods that require extensive paired training data. We propose a paradigm shift: reframing artifact reduction as an in-context reasoning task by adapting a general-purpose vision-language diffusion foundation model via parameter-efficient Low-Rank Adaptation (LoRA). By leveraging rich visual priors, our approach achieves effective artifact suppression with only 16 to 128 paired training examples reducing data requirements by two orders of magnitude. Crucially, we demonstrate that domain adaptation is essential for hallucination mitigation; without it, foundation models interpret streak artifacts as erroneous natural objects (e.g., waffles or petri dishes). To ground the restoration, we propose a multi-reference conditioning strategy where clean anatomical exemplars from unrelated subjects are provided alongside the corrupted input, enabling the model to exploit category-specific context to infer uncorrupted anatomy. Extensive evaluation on the AAPM CT-MAR benchmark demonstrates that our method achieves state-of-the-art performance on perceptual and radiological-feature metrics . This work establishes that foundation models, when appropriately adapted, offer a scalable alternative for interpretable, data-efficient medical image reconstruction. Code is available at https://github.com/ahmetemirdagi/CT-EditMAR.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.05934v1",
+        "pdf": "https://arxiv.org/pdf/2604.05934v1"
+      },
+      "arxiv_id": "2604.05934v1",
+      "comment": "Accepted to CVPRW 2026 Med-Reasoner",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.02457627118644,
+      "score_breakdown": {
+        "total_score": 5.02,
+        "field_match": {
+          "score": 1.19,
+          "matches": [
+            "medical image",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.06129v1",
+      "title": "PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer",
+      "authors": [
+        "David Picard",
+        "Nicolas Dufour",
+        "Lucas Degeorge",
+        "Arijit Ghosh",
+        "Davide Allegro",
+        "Tom Ravaud",
+        "Yohann Perron",
+        "Corentin Sautier",
+        "Zeynep Sonat Baltaci",
+        "Fei Meng",
+        "Syrine Kalleli",
+        "Marta López-Rauhut",
+        "Thibaut Loiseau",
+        "Ségolène Albouy",
+        "Raphael Baena",
+        "Elliot Vincent",
+        "Loic Landrieu"
+      ],
+      "abstract": "This paper introduces the Polynomial Mixer (PoM), a novel token mixing mechanism with linear complexity that serves as a drop-in replacement for self-attention. PoM aggregates input tokens into a compact representation through a learned polynomial function, from which each token retrieves contextual information. We prove that PoM satisfies the contextual mapping property, ensuring that transformers equipped with PoM remain universal sequence-to-sequence approximators. We replace standard self-attention with PoM across five diverse domains: text generation, handwritten text recognition, image generation, 3D modeling, and Earth observation. PoM matches the performance of attention-based models while drastically reducing computational cost when working with long sequences. The code is available at https://github.com/davidpicard/pom.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.06129v1",
+        "pdf": "https://arxiv.org/pdf/2604.06129v1"
+      },
+      "arxiv_id": "2604.06129v1",
+      "comment": "Accepted to CVPR Findings 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.05839v1",
+      "title": "Vision-Guided Iterative Refinement for Frontend Code Generation",
+      "authors": [
+        "Hannah Sansford",
+        "Derek H. C. Law",
+        "Wei Liu",
+        "Abhishek Tripathi",
+        "Niresh Agarwal",
+        "Gerrit J. J. van den Burg"
+      ],
+      "abstract": "Code generation with large language models often relies on multi-stage human-in-the-loop refinement, which is effective but very costly - particularly in domains such as frontend web development where the solution quality depends on rendered visual output. We present a fully automated critic-in-the-loop framework in which a vision-language model serves as a visual critic that provides structured feedback on rendered webpages to guide iterative refinement of generated code. Across real-world user requests from the WebDev Arena dataset, this approach yields consistent improvements in solution quality, achieving up to 17.8% increase in performance over three refinement cycles. Next, we investigate parameter-efficient fine-tuning using LoRA to understand whether the improvements provided by the critic can be internalized by the code-generating LLM. Fine-tuning achieves 25% of the gains from the best critic-in-the-loop solution without a significant increase in token counts. Our findings indicate that automated, VLM-based critique of frontend code generation leads to significantly higher quality solutions than can be achieved through a single LLM inference pass, and highlight the importance of iterative refinement for the complex visual outputs associated with web development.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.05839v1",
+        "pdf": "https://arxiv.org/pdf/2604.05839v1"
+      },
+      "arxiv_id": "2604.05839v1",
+      "comment": "Accepted at ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.300000000000001,
+      "score_breakdown": {
+        "total_score": 4.3,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.05859v1",
+      "title": "When Do We Need LLMs? A Diagnostic for Language-Driven Bandits",
+      "authors": [
+        "Uljad Berdica",
+        "Fernando Acero",
+        "Anton Ipsen",
+        "Parisa Zehtabi",
+        "Michael Cashmore",
+        "Manuela Veloso"
+      ],
+      "abstract": "We study Contextual Multi-Armed Bandits (CMABs) for non-episodic sequential decision making problems where the context includes both textual and numerical information (e.g., recommendation systems, dynamic portfolio adjustments, offer selection; all frequent problems in finance). While Large Language Models (LLMs) are increasingly applied to these settings, utilizing LLMs for reasoning at every decision step is computationally expensive and uncertainty estimates are difficult to obtain. To address this, we introduce LLMP-UCB, a bandit algorithm that derives uncertainty estimates from LLMs via repeated inference. However, our experiments demonstrate that lightweight numerical bandits operating on text embeddings (dense or Matryoshka) match or exceed the accuracy of LLM-based solutions at a fraction of their cost. We further show that embedding dimensionality is a practical lever on the exploration-exploitation balance, enabling cost--performance tradeoffs without prompt complexity. Finally, to guide practitioners, we propose a geometric diagnostic based on the arms' embedding to decide when to use LLM-driven reasoning versus a lightweight numerical bandit. Our results provide a principled deployment framework for cost-effective, uncertainty-aware decision systems with broad applicability across AI use cases in financial services.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.05859v1",
+        "pdf": "https://arxiv.org/pdf/2604.05859v1"
+      },
+      "arxiv_id": "2604.05859v1",
+      "comment": "ICLR 2026 Workshop on AI Advances in Finance",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICLR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.05960v1",
+      "title": "A Mixture of Experts Foundation Model for Scanning Electron Microscopy Image Analysis",
+      "authors": [
+        "Sk Miraj Ahmed",
+        "Yuewei Lin",
+        "Chuntian Cao",
+        "Shinjae Yoo",
+        "Xinpei Wu",
+        "Won-Il Lee",
+        "Nikhil Tiwale",
+        "Dan N. Le",
+        "Thi Thu Huong Chu",
+        "Jiyoung Kim",
+        "Kevin G. Yager",
+        "Chang-Yong Nam"
+      ],
+      "abstract": "Scanning Electron Microscopy (SEM) is indispensable in modern materials science, enabling high-resolution imaging across a wide range of structural, chemical, and functional investigations. However, SEM imaging remains constrained by task-specific models and labor-intensive acquisition processes that limit its scalability across diverse applications. Here, we introduce the first foundation model for SEM images, pretrained on a large corpus of multi-instrument, multi-condition scientific micrographs, enabling generalization across diverse material systems and imaging conditions. Leveraging a self-supervised transformer architecture, our model learns rich and transferable representations that can be fine-tuned or adapted to a wide range of downstream tasks. As a compelling demonstration, we focus on defocus-to-focus image translation-an essential yet underexplored challenge in automated microscopy pipelines. Our method not only restores focused detail from defocused inputs without paired supervision but also outperforms state-of-the-art techniques across multiple evaluation metrics. This work lays the groundwork for a new class of adaptable SEM models, accelerating materials discovery by bridging foundational representation learning with real-world imaging needs.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.05960v1",
+        "pdf": "https://arxiv.org/pdf/2604.05960v1"
+      },
+      "arxiv_id": "2604.05960v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.090677966101694,
+      "score_breakdown": {
+        "total_score": 4.09,
+        "field_match": {
+          "score": 1.1,
+          "matches": [
+            "self-supervised",
+            "image analysis"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.05961v1",
+      "title": "HumANDiff: Articulated Noise Diffusion for Motion-Consistent Human Video Generation",
+      "authors": [
+        "Tao Hu",
+        "Varun Jampani"
+      ],
+      "abstract": "Despite tremendous recent progress in human video generation, generative video diffusion models still struggle to capture the dynamics and physics of human motions faithfully. In this paper, we propose a new framework for human video generation, HumANDiff, which enhances the human motion control with three key designs: 1) Articulated motion-consistent noise sampling that correlates the spatiotemporal distribution of latent noise and replaces the unstructured random Gaussian noise with 3D articulated noise sampled on the dense surface manifold of a statistical human body template. It inherits body topology priors for spatially and temporally consistent noise sampling. 2) Joint appearance-motion learning that enhances the standard training objective of video diffusion models by jointly predicting pixel appearances and corresponding physical motions from the articulated noises. It enables high-fidelity human video synthesis, e.g., capturing motion-dependent clothing wrinkles. 3) Geometric motion consistency learning that enforces physical motion consistency across frames via a novel geometric motion consistency loss defined in the articulated noise space. HumANDiff enables scalable controllable human video generation by fine-tuning video diffusion models with articulated noise sampling. Consequently, our method is agnostic to diffusion model design, and requires no modifications to the model architecture. During inference, HumANDiff enables image-to-video generation within a single framework, achieving intrinsic motion control without requiring additional motion modules. Extensive experiments demonstrate that our method achieves state-of-the-art performance in rendering motion-consistent, high-fidelity humans with diverse clothing styles. Project page: https://taohuumd.github.io/projects/HumANDiff/",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.05961v1",
+        "pdf": "https://arxiv.org/pdf/2604.05961v1"
+      },
+      "arxiv_id": "2604.05961v1",
+      "comment": "Project page: https://taohuumd.github.io/projects/HumANDiff/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.06168v1",
+      "title": "Action Images: End-to-End Policy Learning via Multiview Video Generation",
+      "authors": [
+        "Haoyu Zhen",
+        "Zixian Gao",
+        "Qiao Sun",
+        "Yilin Zhao",
+        "Yuncong Yang",
+        "Yilun Du",
+        "Tsun-Hsuan Wang",
+        "Yi-Ling Qiao",
+        "Chuang Gan"
+      ],
+      "abstract": "World action models (WAMs) have emerged as a promising direction for robot policy learning, as they can leverage powerful video backbones to model the future states. However, existing approaches often rely on separate action modules, or use action representations that are not pixel-grounded, making it difficult to fully exploit the pretrained knowledge of video models and limiting transfer across viewpoints and environments. In this work, we present Action Images, a unified world action model that formulates policy learning as multiview video generation. Instead of encoding control as low-dimensional tokens, we translate 7-DoF robot actions into interpretable action images: multi-view action videos that are grounded in 2D pixels and explicitly track robot-arm motion. This pixel-grounded action representation allows the video backbone itself to act as a zero-shot policy, without a separate policy head or action module. Beyond control, the same unified model supports video-action joint generation, action-conditioned video generation, and action labeling under a shared representation. On RLBench and real-world evaluations, our model achieves the strongest zero-shot success rates and improves video-action joint generation quality over prior video-space world models, suggesting that interpretable action images are a promising route to policy learning.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.06168v1",
+        "pdf": "https://arxiv.org/pdf/2604.06168v1"
+      },
+      "arxiv_id": "2604.06168v1",
+      "comment": "Project Page: https://actionimages.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.06161v1",
+      "title": "DiffHDR: Re-Exposing LDR Videos with Video Diffusion Models",
+      "authors": [
+        "Zhengming Yu",
+        "Li Ma",
+        "Mingming He",
+        "Leo Isikdogan",
+        "Yuancheng Xu",
+        "Dmitriy Smirnov",
+        "Pablo Salamanca",
+        "Dao Mi",
+        "Pablo Delgado",
+        "Ning Yu",
+        "Julien Philip",
+        "Xin Li",
+        "Wenping Wang",
+        "Paul Debevec"
+      ],
+      "abstract": "Most digital videos are stored in 8-bit low dynamic range (LDR) formats, where much of the original high dynamic range (HDR) scene radiance is lost due to saturation and quantization. This loss of highlight and shadow detail precludes mapping accurate luminance to HDR displays and limits meaningful re-exposure in post-production workflows. Although techniques have been proposed to convert LDR images to HDR through dynamic range expansion, they struggle to restore realistic detail in the over- and underexposed regions. To address this, we present DiffHDR, a framework that formulates LDR-to-HDR conversion as a generative radiance inpainting task within the latent space of a video diffusion model. By operating in Log-Gamma color space, DiffHDR leverages spatio-temporal generative priors from a pretrained video diffusion model to synthesize plausible HDR radiance in over- and underexposed regions while recovering the continuous scene radiance of the quantized pixels. Our framework further enables controllable LDR-to-HDR video conversion guided by text prompts or reference images. To address the scarcity of paired HDR video data, we develop a pipeline that synthesizes high-quality HDR video training data from static HDRI maps. Extensive experiments demonstrate that DiffHDR significantly outperforms state-of-the-art approaches in radiance fidelity and temporal stability, producing realistic HDR videos with considerable latitude for re-exposure.",
+      "published": "2026-04-07",
+      "updated": "2026-04-07",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.06161v1",
+        "pdf": "https://arxiv.org/pdf/2604.06161v1"
+      },
+      "arxiv_id": "2604.06161v1",
+      "comment": "Project page: https://yzmblog.github.io/projects/DiffHDR/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    }
+  ]
 }

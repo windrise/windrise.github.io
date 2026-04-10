@@ -3,50 +3,48 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.06169v1",
-      "title": "In-Place Test-Time Training",
+      "id": "2604.07337v1",
+      "title": "From Blobs to Spokes: High-Fidelity Surface Reconstruction via Oriented Gaussians",
       "authors": [
-        "Guhao Feng",
-        "Shengjie Luo",
-        "Kai Hua",
-        "Ge Zhang",
-        "Di He",
-        "Wenhao Huang",
-        "Tianle Cai"
+        "Diego Gomez",
+        "Antoine Guédon",
+        "Nissim Maruani",
+        "Bingchen Gong",
+        "Maks Ovsjanikov"
       ],
-      "abstract": "The static ``train then deploy\" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks. Test-Time Training (TTT) offers a compelling alternative by updating a subset of model parameters (fast weights) at inference time, yet its potential in the current LLM ecosystem is hindered by critical barriers including architectural incompatibility, computational inefficiency and misaligned fast weight objectives for language modeling. In this work, we introduce In-Place Test-Time Training (In-Place TTT), a framework that seamlessly endows LLMs with Test-Time Training ability. In-Place TTT treats the final projection matrix of the ubiquitous MLP blocks as its adaptable fast weights, enabling a ``drop-in\" enhancement for LLMs without costly retraining from scratch. Furthermore, we replace TTT's generic reconstruction objective with a tailored, theoretically-grounded objective explicitly aligned with the Next-Token-Prediction task governing autoregressive language modeling. This principled objective, combined with an efficient chunk-wise update mechanism, results in a highly scalable algorithm compatible with context parallelism. Extensive experiments validate our framework's effectiveness: as an in-place enhancement, it enables a 4B-parameter model to achieve superior performance on tasks with contexts up to 128k, and when pretrained from scratch, it consistently outperforms competitive TTT-related approaches. Ablation study results further provide deeper insights on our design choices. Collectively, our results establish In-Place TTT as a promising step towards a paradigm of continual learning in LLMs.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
+      "abstract": "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult. Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.\n  Inspired by the Objects as Volumes framework, we derive a principled occupancy field for Gaussian Splatting and show how it can be used to extract highly accurate watertight meshes of complex scenes. Our key contribution is to introduce a learnable oriented normal at each Gaussian element and to define an adapted attenuation formulation, which leads to closed-form expressions for both the normal and occupancy fields at arbitrary locations in space. We further introduce a novel consistency loss and a dedicated densification strategy to enforce Gaussians to wrap the entire surface by closing geometric holes, ensuring a complete shell of oriented primitives. We modify the differentiable rasterizer to output depth as an isosurface of our continuous model, and introduce Primal Adaptive Meshing for Region-of-Interest meshing at arbitrary resolution.\n  We additionally expose fundamental biases in standard surface evaluation protocols and propose two more rigorous alternatives. Overall, our method Gaussian Wrapping sets a new state-of-the-art on DTU and Tanks and Temples, producing complete, watertight meshes at a fraction of the size of concurrent work-recovering thin structures such as the notoriously elusive bicycle spokes.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
       "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "stat.ML"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.06169v1",
-        "pdf": "https://arxiv.org/pdf/2604.06169v1"
+        "paper": "http://arxiv.org/abs/2604.07337v1",
+        "pdf": "https://arxiv.org/pdf/2604.07337v1"
       },
-      "arxiv_id": "2604.06169v1",
-      "comment": "ICLR 2026 Oral Presentation; Code is released at https://github.com/ByteDance-Seed/In-Place-TTT",
+      "arxiv_id": "2604.07337v1",
+      "comment": "Our project page is available in http://diego1401.github.io/BlobsToSpokesWebsite/index.html",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.1,
+      "relevance_score": 4.927966101694915,
       "score_breakdown": {
-        "total_score": 5.1,
+        "total_score": 4.93,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -55,122 +53,50 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The static ``train then deploy\" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks. Test-Time Training (TTT) offers a compelling alternative by updating a subset of model parameters (fast weights) at inference time, yet its potential in the current LLM ecosystem is hind...",
+        "short": "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult. Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.\n  Inspired by the Objects as Volumes fr...",
         "key_contributions": [
-          "The static ``train then deploy\" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks.",
-          "Test-Time Training (TTT) offers a compelling alternative by updating a subset of model parameters (fast weights) at inference time, yet its potential in the current LLM ecosystem is hindered by critical barriers including architectural incompatibility, computational inefficiency and misaligned fast weight objectives for language modeling.",
-          "In this work, we introduce In-Place Test-Time Training (In-Place TTT), a framework that seamlessly endows LLMs with Test-Time Training ability."
+          "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult.",
+          "Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.",
+          "Inspired by the Objects as Volumes framework, we derive a principled occupancy field for Gaussian Splatting and show how it can be used to extract highly accurate watertight meshes of complex scenes."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.06169v1.mp3"
+        "audio_url": "/audio/2604.07337v1.mp3"
       }
     },
     {
-      "id": "2604.06099v1",
-      "title": "Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes",
+      "id": "2604.07097v1",
+      "title": "Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples",
       "authors": [
-        "Athanasios Angelakis",
-        "Marta Gomez-Barrero"
+        "Reiji Saito",
+        "Satoshi Kamiya",
+        "Kazuhiro Hotta"
       ],
-      "abstract": "The recently introduced ZACH-ViT (Zero-token Adaptive Compact Hierarchical Vision Transformer) formalized a compact permutation-invariant Vision Transformer for medical imaging and argued that architectural alignment with spatial structure can matter more than universal benchmark dominance. Its design was motivated by the observation that positional embeddings and a dedicated class token encode fixed spatial assumptions that may be suboptimal when spatial organization is weakly informative, locally distributed, or variable across biomedical images. The foundational study established a regime-dependent clean performance profile across MedMNIST, but did not examine robustness in detail. In this work, we present the first robustness-focused extension of ZACH-ViT by evaluating its behavior under common image corruptions and adversarial perturbations in the same low-data setting. We compare ZACH-ViT with three scratch-trained compact baselines, ABMIL, Minimal-ViT, and TransMIL, on seven MedMNIST datasets using 50 samples per class, fixed hyperparameters, and five random seeds. Across the benchmark, ZACH-ViT achieves the best overall mean rank on clean data (1.57) and under common corruptions (1.57), indicating a favorable balance between baseline predictive performance and robustness to realistic image degradation. Under adversarial stress, all models deteriorate substantially; nevertheless, ZACH-ViT remains competitive, ranking first under FGSM (2.00) and second under PGD (2.29), where ABMIL performs best overall. These results extend the original ZACH-ViT narrative: the advantages of compact permutation-invariant transformers are not limited to clean evaluation, but can persist under realistic perturbation stress in low-data medical imaging, while adversarial robustness remains an open challenge for all evaluated models.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
+      "abstract": "In conventional anomaly detection, training data consist of only normal samples. However, in real-world scenarios, the definition of a normal sample is often ambiguous. For example, there are cases where a sample has small scratches or stains but is still acceptable for practical usage. On the other hand, higher precision is required when manufacturing equipment is upgraded. In such cases, normal samples may include small scratches, tiny dust particles, or a foreign object that we would prefer to classify as an anomaly. Such cases frequently occur in industrial settings, yet they have not been discussed until now. Thus, we propose novel scenarios and an evaluation metric to accommodate specification changes in real-world applications. Furthermore, to address the ambiguity of normal samples, we propose the RePaste, which enhances learning by re-pasting regions with high anomaly scores from the previous step into the input for the next step. On our scenarios using the MVTec AD benchmark, RePaste achieved the state-of-the-art performance with respect to the proposed evaluation metric, while maintaining high AUROC and PRO scores. Code: https://github.com/ReijiSoftmaxSaito/Scenario",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.06099v1",
-        "pdf": "https://arxiv.org/pdf/2604.06099v1"
+        "paper": "http://arxiv.org/abs/2604.07097v1",
+        "pdf": "https://arxiv.org/pdf/2604.07097v1"
       },
-      "arxiv_id": "2604.06099v1",
-      "comment": "Accepted at CVPR 2026 Workshop (PHAROS-AIF-MIH)",
+      "arxiv_id": "2604.07097v1",
+      "comment": "Accepted by CVPR 2026 Workshop",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 5.060169491525423,
+      "relevance_score": 4.7,
       "score_breakdown": {
-        "total_score": 5.06,
+        "total_score": 4.7,
         "field_match": {
-          "score": 1.53,
-          "matches": [
-            "medical image",
-            "medical imaging"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The recently introduced ZACH-ViT (Zero-token Adaptive Compact Hierarchical Vision Transformer) formalized a compact permutation-invariant Vision Transformer for medical imaging and argued that architectural alignment with spatial structure can matter more than universal benchmark dominance. Its design was motivated by the observation that positional embeddings and a dedicated class token encode fi...",
-        "key_contributions": [
-          "The recently introduced ZACH-ViT (Zero-token Adaptive Compact Hierarchical Vision Transformer) formalized a compact permutation-invariant Vision Transformer for medical imaging and argued that architectural alignment with spatial structure can matter more than universal benchmark dominance.",
-          "Its design was motivated by the observation that positional embeddings and a dedicated class token encode fixed spatial assumptions that may be suboptimal when spatial organization is weakly informative, locally distributed, or variable across biomedical images.",
-          "The foundational study established a regime-dependent clean performance profile across MedMNIST, but did not examine robustness in detail."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.06099v1.mp3"
-      }
-    },
-    {
-      "id": "2604.05934v1",
-      "title": "Leveraging Image Editing Foundation Models for Data-Efficient CT Metal Artifact Reduction",
-      "authors": [
-        "Ahmet Rasim Emirdagi",
-        "Süleyman Aslan",
-        "Mısra Yavuz",
-        "Görkay Aydemir",
-        "Yunus Bilge Kurt",
-        "Nasrin Rahimi",
-        "Burak Can Biner",
-        "M. Akın Yılmaz"
-      ],
-      "abstract": "Metal artifacts from high-attenuation implants severely degrade CT image quality, obscuring critical anatomical structures and posing a challenge for standard deep learning methods that require extensive paired training data. We propose a paradigm shift: reframing artifact reduction as an in-context reasoning task by adapting a general-purpose vision-language diffusion foundation model via parameter-efficient Low-Rank Adaptation (LoRA). By leveraging rich visual priors, our approach achieves effective artifact suppression with only 16 to 128 paired training examples reducing data requirements by two orders of magnitude. Crucially, we demonstrate that domain adaptation is essential for hallucination mitigation; without it, foundation models interpret streak artifacts as erroneous natural objects (e.g., waffles or petri dishes). To ground the restoration, we propose a multi-reference conditioning strategy where clean anatomical exemplars from unrelated subjects are provided alongside the corrupted input, enabling the model to exploit category-specific context to infer uncorrupted anatomy. Extensive evaluation on the AAPM CT-MAR benchmark demonstrates that our method achieves state-of-the-art performance on perceptual and radiological-feature metrics . This work establishes that foundation models, when appropriately adapted, offer a scalable alternative for interpretable, data-efficient medical image reconstruction. Code is available at https://github.com/ahmetemirdagi/CT-EditMAR.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
-      "categories": [
-        "cs.CV",
-        "eess.IV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.05934v1",
-        "pdf": "https://arxiv.org/pdf/2604.05934v1"
-      },
-      "arxiv_id": "2604.05934v1",
-      "comment": "Accepted to CVPRW 2026 Med-Reasoner",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.02457627118644,
-      "score_breakdown": {
-        "total_score": 5.02,
-        "field_match": {
-          "score": 1.19,
-          "matches": [
-            "medical image",
-            "deep learning"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -188,62 +114,53 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 7.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Metal artifacts from high-attenuation implants severely degrade CT image quality, obscuring critical anatomical structures and posing a challenge for standard deep learning methods that require extensive paired training data. We propose a paradigm shift: reframing artifact reduction as an in-context reasoning task by adapting a general-purpose vision-language diffusion foundation model via paramet...",
+        "short": "In conventional anomaly detection, training data consist of only normal samples. However, in real-world scenarios, the definition of a normal sample is often ambiguous. For example, there are cases where a sample has small scratches or stains but is still acceptable for practical usage. On the other hand, higher precision is required when manufacturing equipment is upgraded. In such cases, normal ...",
         "key_contributions": [
-          "Metal artifacts from high-attenuation implants severely degrade CT image quality, obscuring critical anatomical structures and posing a challenge for standard deep learning methods that require extensive paired training data.",
-          "We propose a paradigm shift: reframing artifact reduction as an in-context reasoning task by adapting a general-purpose vision-language diffusion foundation model via parameter-efficient Low-Rank Adaptation (LoRA).",
-          "By leveraging rich visual priors, our approach achieves effective artifact suppression with only 16 to 128 paired training examples reducing data requirements by two orders of magnitude."
+          "In conventional anomaly detection, training data consist of only normal samples.",
+          "However, in real-world scenarios, the definition of a normal sample is often ambiguous.",
+          "For example, there are cases where a sample has small scratches or stains but is still acceptable for practical usage."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.05934v1.mp3"
+        "audio_url": "/audio/2604.07097v1.mp3"
       }
     },
     {
-      "id": "2604.06129v1",
-      "title": "PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer",
+      "id": "2604.07306v1",
+      "title": "Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment",
       "authors": [
-        "David Picard",
-        "Nicolas Dufour",
-        "Lucas Degeorge",
-        "Arijit Ghosh",
-        "Davide Allegro",
-        "Tom Ravaud",
-        "Yohann Perron",
-        "Corentin Sautier",
-        "Zeynep Sonat Baltaci",
-        "Fei Meng",
-        "Syrine Kalleli",
-        "Marta López-Rauhut",
-        "Thibaut Loiseau",
-        "Ségolène Albouy",
-        "Raphael Baena",
-        "Elliot Vincent",
-        "Loic Landrieu"
+        "Huaiyuan Qin",
+        "Muli Yang",
+        "Gabriel James Goenawan",
+        "Kai Wang",
+        "Zheng Wang",
+        "Peng Hu",
+        "Xi Peng",
+        "Hongyuan Zhu"
       ],
-      "abstract": "This paper introduces the Polynomial Mixer (PoM), a novel token mixing mechanism with linear complexity that serves as a drop-in replacement for self-attention. PoM aggregates input tokens into a compact representation through a learned polynomial function, from which each token retrieves contextual information. We prove that PoM satisfies the contextual mapping property, ensuring that transformers equipped with PoM remain universal sequence-to-sequence approximators. We replace standard self-attention with PoM across five diverse domains: text generation, handwritten text recognition, image generation, 3D modeling, and Earth observation. PoM matches the performance of attention-based models while drastically reducing computational cost when working with long sequences. The code is available at https://github.com/davidpicard/pom.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
+      "abstract": "Existing dynamic data pruning methods often fail under noisy-label settings, as they typically rely on per-sample loss as the ranking criterion. This could mistakenly lead to preserving noisy samples due to their high loss values, resulting in significant performance drop. To address this, we propose AlignPrune, a noise-robust module designed to enhance the reliability of dynamic pruning under label noise. Specifically, AlignPrune introduces the Dynamic Alignment Score (DAS), which is a loss-trajectory-based criterion that enables more accurate identification of noisy samples, thereby improving pruning effectiveness. As a simple yet effective plug-and-play module, AlignPrune can be seamlessly integrated into state-of-the-art dynamic pruning frameworks, consistently outperforming them without modifying either the model architecture or the training pipeline. Extensive experiments on five widely-used benchmarks across various noise types and pruning ratios demonstrate the effectiveness of AlignPrune, boosting accuracy by up to 6.3\\% over state-of-the-art baselines. Our results offer a generalizable solution for pruning under noisy data, encouraging further exploration of learning in real-world scenarios. Code is available at: https://github.com/leonqin430/AlignPrune.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.06129v1",
-        "pdf": "https://arxiv.org/pdf/2604.06129v1"
+        "paper": "http://arxiv.org/abs/2604.07306v1",
+        "pdf": "https://arxiv.org/pdf/2604.07306v1"
       },
-      "arxiv_id": "2604.06129v1",
-      "comment": "Accepted to CVPR Findings 2026",
+      "arxiv_id": "2604.07306v1",
+      "comment": "Published in CVPR 2026 Findings",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.6,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.6,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -255,7 +172,143 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Existing dynamic data pruning methods often fail under noisy-label settings, as they typically rely on per-sample loss as the ranking criterion. This could mistakenly lead to preserving noisy samples due to their high loss values, resulting in significant performance drop. To address this, we propose AlignPrune, a noise-robust module designed to enhance the reliability of dynamic pruning under lab...",
+        "key_contributions": [
+          "Existing dynamic data pruning methods often fail under noisy-label settings, as they typically rely on per-sample loss as the ranking criterion.",
+          "This could mistakenly lead to preserving noisy samples due to their high loss values, resulting in significant performance drop.",
+          "To address this, we propose AlignPrune, a noise-robust module designed to enhance the reliability of dynamic pruning under label noise."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.07306v1.mp3"
+      }
+    },
+    {
+      "id": "2604.07132v1",
+      "title": "CSA-Graphs: A Privacy-Preserving Structural Dataset for Child Sexual Abuse Research",
+      "authors": [
+        "Carlos Caetano",
+        "Camila Laranjeira",
+        "Clara Ernesto",
+        "Artur Barros",
+        "João Macedo",
+        "Leo S. F. Ribeiro",
+        "Jefersson A. dos Santos",
+        "Sandra Avila"
+      ],
+      "abstract": "Child Sexual Abuse Imagery (CSAI) classification is an important yet challenging problem for computer vision research due to the strict legal and ethical restrictions that prevent the public sharing of CSAI datasets. This limitation hinders reproducibility and slows progress in developing automated methods. In this work, we introduce CSA-Graphs, a privacy-preserving structural dataset. Instead of releasing the original images, we provide structural representations that remove explicit visual content while preserving contextual information. CSA-Graphs includes two complementary graph-based modalities: scene graphs describing object relationships and skeleton graphs encoding human pose. Experiments show that both representations retain useful information for classifying CSAI, and that combining them further improves performance. This dataset enables broader research on computer vision methods for child safety while respecting legal and ethical constraints.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.07132v1",
+        "pdf": "https://arxiv.org/pdf/2604.07132v1"
+      },
+      "arxiv_id": "2604.07132v1",
+      "comment": "Conference on Computer Vision and Pattern Recognition (CVPR 2026), in the Workshop on Computer Vision for Children (CV4CHL)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.419491525423728,
+      "score_breakdown": {
+        "total_score": 4.42,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Child Sexual Abuse Imagery (CSAI) classification is an important yet challenging problem for computer vision research due to the strict legal and ethical restrictions that prevent the public sharing of CSAI datasets. This limitation hinders reproducibility and slows progress in developing automated methods. In this work, we introduce CSA-Graphs, a privacy-preserving structural dataset. Instead of ...",
+        "key_contributions": [
+          "Child Sexual Abuse Imagery (CSAI) classification is an important yet challenging problem for computer vision research due to the strict legal and ethical restrictions that prevent the public sharing of CSAI datasets.",
+          "This limitation hinders reproducibility and slows progress in developing automated methods.",
+          "In this work, we introduce CSA-Graphs, a privacy-preserving structural dataset."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.07132v1.mp3"
+      }
+    },
+    {
+      "id": "2604.07201v1",
+      "title": "BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment",
+      "authors": [
+        "Mohamed Darwish Mounis",
+        "Mohamed Mahmoud",
+        "Shaimaa Sedek",
+        "Mahmoud Abdalla",
+        "Mahmoud SalahEldin Kasem",
+        "Abdelrahman Abdallah",
+        "Hyun-Soo Kang"
+      ],
+      "abstract": "Multimodal retrieval systems struggle to resolve image-text queries against text-only corpora: the best vision-language encoder achieves only 27.6 nDCG@10 on MM-BRIGHT, underperforming strong text-only retrievers. We argue the bottleneck is not the retriever but the query -- raw multimodal queries entangle visual descriptions, conversational noise, and retrieval intent in ways that systematically degrade embedding similarity. We present \\textbf{BRIDGE}, a two-component system that resolves this mismatch without multimodal encoders. \\textbf{FORGE} (\\textbf{F}ocused Retrieval Query Generato\\textbf{r}) is a query alignment model trained via reinforcement learning, which distills noisy multimodal queries into compact, retrieval-optimized search strings. \\textbf{LENS} (\\textbf{L}anguage-\\textbf{E}nhanced \\textbf{N}eural \\textbf{S}earch) is a reasoning-enhanced dense retriever fine-tuned on reasoning-intensive retrieval data to handle the intent-rich queries FORGE produces. Evaluated on MM-BRIGHT (2,803 queries, 29 domains), BRIDGE achieves \\textbf{29.7} nDCG@10, surpassing all multimodal encoder baselines including Nomic-Vision (27.6). When FORGE is applied as a plug-and-play aligner on top of Nomic-Vision, the combined system reaches \\textbf{33.3} nDCG@10 -- exceeding the best text-only retriever (32.2) -- demonstrating that \\textit{query alignment} is the key bottleneck in multimodal-to-text retrieval. https://github.com/mm-bright/multimodal-reasoning-retrieval",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
+      "categories": [
+        "cs.IR",
+        "cs.CV"
+      ],
+      "primary_category": "cs.IR",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.07201v1",
+        "pdf": "https://arxiv.org/pdf/2604.07201v1"
+      },
+      "arxiv_id": "2604.07201v1",
+      "comment": "Accepted at CVPR 2026 Workshop GRAIL-V",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -269,184 +322,115 @@
         }
       },
       "ai_summaries": {
-        "short": "This paper introduces the Polynomial Mixer (PoM), a novel token mixing mechanism with linear complexity that serves as a drop-in replacement for self-attention. PoM aggregates input tokens into a compact representation through a learned polynomial function, from which each token retrieves contextual information. We prove that PoM satisfies the contextual mapping property, ensuring that transformer...",
+        "short": "Multimodal retrieval systems struggle to resolve image-text queries against text-only corpora: the best vision-language encoder achieves only 27.6 nDCG@10 on MM-BRIGHT, underperforming strong text-only retrievers. We argue the bottleneck is not the retriever but the query -- raw multimodal queries entangle visual descriptions, conversational noise, and retrieval intent in ways that systematically ...",
         "key_contributions": [
-          "This paper introduces the Polynomial Mixer (PoM), a novel token mixing mechanism with linear complexity that serves as a drop-in replacement for self-attention.",
-          "PoM aggregates input tokens into a compact representation through a learned polynomial function, from which each token retrieves contextual information.",
-          "We prove that PoM satisfies the contextual mapping property, ensuring that transformers equipped with PoM remain universal sequence-to-sequence approximators."
+          "Multimodal retrieval systems struggle to resolve image-text queries against text-only corpora: the best vision-language encoder achieves only 27.",
+          "6 nDCG@10 on MM-BRIGHT, underperforming strong text-only retrievers.",
+          "We argue the bottleneck is not the retriever but the query -- raw multimodal queries entangle visual descriptions, conversational noise, and retrieval intent in ways that systematically degrade embedding similarity."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.06129v1.mp3"
+        "audio_url": "/audio/2604.07201v1.mp3"
       }
     },
     {
-      "id": "2604.05839v1",
-      "title": "Vision-Guided Iterative Refinement for Frontend Code Generation",
+      "id": "2604.07166v1",
+      "title": "DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification",
       "authors": [
-        "Hannah Sansford",
-        "Derek H. C. Law",
-        "Wei Liu",
-        "Abhishek Tripathi",
-        "Niresh Agarwal",
-        "Gerrit J. J. van den Burg"
+        "Robert Zimmermann",
+        "Thomas Norrenbrock",
+        "Bodo Rosenhahn"
       ],
-      "abstract": "Code generation with large language models often relies on multi-stage human-in-the-loop refinement, which is effective but very costly - particularly in domains such as frontend web development where the solution quality depends on rendered visual output. We present a fully automated critic-in-the-loop framework in which a vision-language model serves as a visual critic that provides structured feedback on rendered webpages to guide iterative refinement of generated code. Across real-world user requests from the WebDev Arena dataset, this approach yields consistent improvements in solution quality, achieving up to 17.8% increase in performance over three refinement cycles. Next, we investigate parameter-efficient fine-tuning using LoRA to understand whether the improvements provided by the critic can be internalized by the code-generating LLM. Fine-tuning achieves 25% of the gains from the best critic-in-the-loop solution without a significant increase in token counts. Our findings indicate that automated, VLM-based critique of frontend code generation leads to significantly higher quality solutions than can be achieved through a single LLM inference pass, and highlight the importance of iterative refinement for the complex visual outputs associated with web development.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
+      "abstract": "Although visual foundation models like DINOv2 provide state-of-the-art performance as feature extractors, their complex, high-dimensional representations create substantial hurdles for interpretability. This work proposes DINO-QPM, which converts these powerful but entangled features into contrastive, class-independent representations that are interpretable by humans. DINO-QPM is a lightweight interpretability adapter that pursues globally interpretable image classification, adapting the Quadratic Programming Enhanced Model (QPM) to operate on strictly frozen DINO backbones. While classification with visual foundation models typically relies on the \\texttt{CLS} token, we deliberately diverge from this standard. By leveraging average-pooling, we directly connect the patch embeddings to the model's features and therefore enable spatial localisation of DINO-QPM's globally interpretable features within the input space. Furthermore, we apply a sparsity loss to minimise spatial scatter and background noise, ensuring that explanations are grounded in relevant object parts. With DINO-QPM we make the level of interpretability of QPM available as an adapter while exceeding the accuracy of DINOv2 linear probe. Evaluated through an introduced Plausibility metric and other interpretability metrics, extensive experiments demonstrate that DINO-QPM is superior to other applicable methods for frozen visual foundation models in both classification accuracy and explanation quality.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
       "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.05839v1",
-        "pdf": "https://arxiv.org/pdf/2604.05839v1"
-      },
-      "arxiv_id": "2604.05839v1",
-      "comment": "Accepted at ICLR 2026 Workshop on AI with Recursive Self-Improvement",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.300000000000001,
-      "score_breakdown": {
-        "total_score": 4.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Code generation with large language models often relies on multi-stage human-in-the-loop refinement, which is effective but very costly - particularly in domains such as frontend web development where the solution quality depends on rendered visual output. We present a fully automated critic-in-the-loop framework in which a vision-language model serves as a visual critic that provides structured f...",
-        "key_contributions": [
-          "Code generation with large language models often relies on multi-stage human-in-the-loop refinement, which is effective but very costly - particularly in domains such as frontend web development where the solution quality depends on rendered visual output.",
-          "We present a fully automated critic-in-the-loop framework in which a vision-language model serves as a visual critic that provides structured feedback on rendered webpages to guide iterative refinement of generated code.",
-          "Across real-world user requests from the WebDev Arena dataset, this approach yields consistent improvements in solution quality, achieving up to 17."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.05839v1.mp3"
-      }
-    },
-    {
-      "id": "2604.05859v1",
-      "title": "When Do We Need LLMs? A Diagnostic for Language-Driven Bandits",
-      "authors": [
-        "Uljad Berdica",
-        "Fernando Acero",
-        "Anton Ipsen",
-        "Parisa Zehtabi",
-        "Michael Cashmore",
-        "Manuela Veloso"
-      ],
-      "abstract": "We study Contextual Multi-Armed Bandits (CMABs) for non-episodic sequential decision making problems where the context includes both textual and numerical information (e.g., recommendation systems, dynamic portfolio adjustments, offer selection; all frequent problems in finance). While Large Language Models (LLMs) are increasingly applied to these settings, utilizing LLMs for reasoning at every decision step is computationally expensive and uncertainty estimates are difficult to obtain. To address this, we introduce LLMP-UCB, a bandit algorithm that derives uncertainty estimates from LLMs via repeated inference. However, our experiments demonstrate that lightweight numerical bandits operating on text embeddings (dense or Matryoshka) match or exceed the accuracy of LLM-based solutions at a fraction of their cost. We further show that embedding dimensionality is a practical lever on the exploration-exploitation balance, enabling cost--performance tradeoffs without prompt complexity. Finally, to guide practitioners, we propose a geometric diagnostic based on the arms' embedding to decide when to use LLM-driven reasoning versus a lightweight numerical bandit. Our results provide a principled deployment framework for cost-effective, uncertainty-aware decision systems with broad applicability across AI use cases in financial services.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.05859v1",
-        "pdf": "https://arxiv.org/pdf/2604.05859v1"
-      },
-      "arxiv_id": "2604.05859v1",
-      "comment": "ICLR 2026 Workshop on AI Advances in Finance",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We study Contextual Multi-Armed Bandits (CMABs) for non-episodic sequential decision making problems where the context includes both textual and numerical information (e.g., recommendation systems, dynamic portfolio adjustments, offer selection; all frequent problems in finance). While Large Language Models (LLMs) are increasingly applied to these settings, utilizing LLMs for reasoning at every de...",
-        "key_contributions": [
-          "We study Contextual Multi-Armed Bandits (CMABs) for non-episodic sequential decision making problems where the context includes both textual and numerical information (e.",
-          "g.",
-          ", recommendation systems, dynamic portfolio adjustments, offer selection; all frequent problems in finance)."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.05859v1.mp3"
-      }
-    },
-    {
-      "id": "2604.05960v1",
-      "title": "A Mixture of Experts Foundation Model for Scanning Electron Microscopy Image Analysis",
-      "authors": [
-        "Sk Miraj Ahmed",
-        "Yuewei Lin",
-        "Chuntian Cao",
-        "Shinjae Yoo",
-        "Xinpei Wu",
-        "Won-Il Lee",
-        "Nikhil Tiwale",
-        "Dan N. Le",
-        "Thi Thu Huong Chu",
-        "Jiyoung Kim",
-        "Kevin G. Yager",
-        "Chang-Yong Nam"
-      ],
-      "abstract": "Scanning Electron Microscopy (SEM) is indispensable in modern materials science, enabling high-resolution imaging across a wide range of structural, chemical, and functional investigations. However, SEM imaging remains constrained by task-specific models and labor-intensive acquisition processes that limit its scalability across diverse applications. Here, we introduce the first foundation model for SEM images, pretrained on a large corpus of multi-instrument, multi-condition scientific micrographs, enabling generalization across diverse material systems and imaging conditions. Leveraging a self-supervised transformer architecture, our model learns rich and transferable representations that can be fine-tuned or adapted to a wide range of downstream tasks. As a compelling demonstration, we focus on defocus-to-focus image translation-an essential yet underexplored challenge in automated microscopy pipelines. Our method not only restores focused detail from defocused inputs without paired supervision but also outperforms state-of-the-art techniques across multiple evaluation metrics. This work lays the groundwork for a new class of adaptable SEM models, accelerating materials discovery by bridging foundational representation learning with real-world imaging needs.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
-      "categories": [
+        "cs.CV",
+        "cs.HC",
         "cs.LG"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.05960v1",
-        "pdf": "https://arxiv.org/pdf/2604.05960v1"
+        "paper": "http://arxiv.org/abs/2604.07166v1",
+        "pdf": "https://arxiv.org/pdf/2604.07166v1"
       },
-      "arxiv_id": "2604.05960v1",
+      "arxiv_id": "2604.07166v1",
+      "comment": "Accepted to the 5th Explainable AI for Computer Vision (XAI4CV) Workshop at CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Although visual foundation models like DINOv2 provide state-of-the-art performance as feature extractors, their complex, high-dimensional representations create substantial hurdles for interpretability. This work proposes DINO-QPM, which converts these powerful but entangled features into contrastive, class-independent representations that are interpretable by humans. DINO-QPM is a lightweight int...",
+        "key_contributions": [
+          "Although visual foundation models like DINOv2 provide state-of-the-art performance as feature extractors, their complex, high-dimensional representations create substantial hurdles for interpretability.",
+          "This work proposes DINO-QPM, which converts these powerful but entangled features into contrastive, class-independent representations that are interpretable by humans.",
+          "DINO-QPM is a lightweight interpretability adapter that pursues globally interpretable image classification, adapting the Quadratic Programming Enhanced Model (QPM) to operate on strictly frozen DINO backbones."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.07166v1.mp3"
+      }
+    },
+    {
+      "id": "2604.07053v1",
+      "title": "AnchorSplat: Feed-Forward 3D Gaussian SplattingWith 3D Geometric Priors",
+      "authors": [
+        "Xiaoxue Zhang",
+        "Xiaoxu Zheng",
+        "Yixuan Yin",
+        "Tiao Zhao",
+        "Kaihua Tang",
+        "Michael Bi Mi",
+        "Zhan Xu",
+        "Dave Zhenyu Chen"
+      ],
+      "abstract": "Recent feed-forward Gaussian reconstruction models adopt a pixel-aligned formulation that maps each 2D pixel to a 3D Gaussian, entangling Gaussian representations tightly with the input images. In this paper, we propose AnchorSplat, a novel feed-forward 3DGS framework for scene-level reconstruction that represents the scene directly in 3D space. AnchorSplat introduces an anchor-aligned Gaussian representation guided by 3D geometric priors (e.g., sparse point clouds, voxels, or RGB-D point clouds), enabling a more geometry-aware renderable 3D Gaussians that is independent of image resolution and number of views. This design substantially reduces the number of required Gaussians, improving computational efficiency while enhancing reconstruction fidelity. Beyond the anchor-aligned design, we utilize a Gaussian Refiner to adjust the intermediate Gaussiansy via merely a few forward passes. Experiments on the ScanNet++ v2 NVS benchmark demonstrate the SOTA performance, outperforming previous methods with more view-consistent and substantially fewer Gaussian primitives.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.07053v1",
+        "pdf": "https://arxiv.org/pdf/2604.07053v1"
+      },
+      "arxiv_id": "2604.07053v1",
       "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.090677966101694,
+      "relevance_score": 4.1279661016949145,
       "score_breakdown": {
-        "total_score": 4.09,
+        "total_score": 4.13,
         "field_match": {
-          "score": 1.1,
+          "score": 1.69,
           "matches": [
-            "self-supervised",
-            "image analysis"
+            "3d gaussian",
+            "gaussian splatting"
           ],
           "weight": 0.4
         },
@@ -456,7 +440,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -465,131 +449,64 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Scanning Electron Microscopy (SEM) is indispensable in modern materials science, enabling high-resolution imaging across a wide range of structural, chemical, and functional investigations. However, SEM imaging remains constrained by task-specific models and labor-intensive acquisition processes that limit its scalability across diverse applications. Here, we introduce the first foundation model f...",
+        "short": "Recent feed-forward Gaussian reconstruction models adopt a pixel-aligned formulation that maps each 2D pixel to a 3D Gaussian, entangling Gaussian representations tightly with the input images. In this paper, we propose AnchorSplat, a novel feed-forward 3DGS framework for scene-level reconstruction that represents the scene directly in 3D space. AnchorSplat introduces an anchor-aligned Gaussian re...",
         "key_contributions": [
-          "Scanning Electron Microscopy (SEM) is indispensable in modern materials science, enabling high-resolution imaging across a wide range of structural, chemical, and functional investigations.",
-          "However, SEM imaging remains constrained by task-specific models and labor-intensive acquisition processes that limit its scalability across diverse applications.",
-          "Here, we introduce the first foundation model for SEM images, pretrained on a large corpus of multi-instrument, multi-condition scientific micrographs, enabling generalization across diverse material systems and imaging conditions."
+          "Recent feed-forward Gaussian reconstruction models adopt a pixel-aligned formulation that maps each 2D pixel to a 3D Gaussian, entangling Gaussian representations tightly with the input images.",
+          "In this paper, we propose AnchorSplat, a novel feed-forward 3DGS framework for scene-level reconstruction that represents the scene directly in 3D space.",
+          "AnchorSplat introduces an anchor-aligned Gaussian representation guided by 3D geometric priors (e."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.05960v1.mp3"
+        "audio_url": "/audio/2604.07053v1.mp3"
       }
     },
     {
-      "id": "2604.05961v1",
-      "title": "HumANDiff: Articulated Noise Diffusion for Motion-Consistent Human Video Generation",
+      "id": "2604.07198v1",
+      "title": "Beyond the Mean: Modelling Annotation Distributions in Continuous Affect Prediction",
       "authors": [
-        "Tao Hu",
-        "Varun Jampani"
+        "Kosmas Pinitas",
+        "Ilias Maglogiannis"
       ],
-      "abstract": "Despite tremendous recent progress in human video generation, generative video diffusion models still struggle to capture the dynamics and physics of human motions faithfully. In this paper, we propose a new framework for human video generation, HumANDiff, which enhances the human motion control with three key designs: 1) Articulated motion-consistent noise sampling that correlates the spatiotemporal distribution of latent noise and replaces the unstructured random Gaussian noise with 3D articulated noise sampled on the dense surface manifold of a statistical human body template. It inherits body topology priors for spatially and temporally consistent noise sampling. 2) Joint appearance-motion learning that enhances the standard training objective of video diffusion models by jointly predicting pixel appearances and corresponding physical motions from the articulated noises. It enables high-fidelity human video synthesis, e.g., capturing motion-dependent clothing wrinkles. 3) Geometric motion consistency learning that enforces physical motion consistency across frames via a novel geometric motion consistency loss defined in the articulated noise space. HumANDiff enables scalable controllable human video generation by fine-tuning video diffusion models with articulated noise sampling. Consequently, our method is agnostic to diffusion model design, and requires no modifications to the model architecture. During inference, HumANDiff enables image-to-video generation within a single framework, achieving intrinsic motion control without requiring additional motion modules. Extensive experiments demonstrate that our method achieves state-of-the-art performance in rendering motion-consistent, high-fidelity humans with diverse clothing styles. Project page: https://taohuumd.github.io/projects/HumANDiff/",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
+      "abstract": "Emotion annotation is inherently subjective and cognitively demanding, producing signals that reflect diverse perceptions across annotators rather than a single ground truth. In continuous affect prediction, this variability is typically collapsed into point estimates such as the mean or median, discarding valuable information about annotator disagreement and uncertainty. In this work, we propose a distribution-aware framework that models annotation consensus using the Beta distribution. Instead of predicting a single affect value, models estimate the mean and standard deviation of the annotation distribution, which are transformed into valid Beta parameters through moment matching. This formulation enables the recovery of higher-order distributional descriptors, including skewness, kurtosis, and quantiles, in closed form. As a result, the model captures not only the central tendency of emotional perception but also variability, asymmetry, and uncertainty in annotator responses. We evaluate the proposed approach on the SEWA and RECOLA datasets using multimodal features. Experimental results show that Beta-based modelling produces predictive distributions that closely match the empirical annotator distributions while achieving competitive performance with conventional regression approaches. These findings highlight the importance of modelling annotation uncertainty in affective computing and demonstrate the potential of distribution-aware learning for subjective signal analysis.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.ET"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.05961v1",
-        "pdf": "https://arxiv.org/pdf/2604.05961v1"
+        "paper": "http://arxiv.org/abs/2604.07198v1",
+        "pdf": "https://arxiv.org/pdf/2604.07198v1"
       },
-      "arxiv_id": "2604.05961v1",
-      "comment": "Project page: https://taohuumd.github.io/projects/HumANDiff/",
+      "arxiv_id": "2604.07198v1",
+      "comment": "This paper has been accepted at the CVPR 2026 Workshop on Affective Behavior Analysis in-the-wild (ABAW)",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
+      "has_code": false,
+      "relevance_score": 4.1,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite tremendous recent progress in human video generation, generative video diffusion models still struggle to capture the dynamics and physics of human motions faithfully. In this paper, we propose a new framework for human video generation, HumANDiff, which enhances the human motion control with three key designs: 1) Articulated motion-consistent noise sampling that correlates the spatiotempo...",
-        "key_contributions": [
-          "Despite tremendous recent progress in human video generation, generative video diffusion models still struggle to capture the dynamics and physics of human motions faithfully.",
-          "In this paper, we propose a new framework for human video generation, HumANDiff, which enhances the human motion control with three key designs: 1) Articulated motion-consistent noise sampling that correlates the spatiotemporal distribution of latent noise and replaces the unstructured random Gaussian noise with 3D articulated noise sampled on the dense surface manifold of a statistical human body template.",
-          "It inherits body topology priors for spatially and temporally consistent noise sampling."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.05961v1.mp3"
-      }
-    },
-    {
-      "id": "2604.06168v1",
-      "title": "Action Images: End-to-End Policy Learning via Multiview Video Generation",
-      "authors": [
-        "Haoyu Zhen",
-        "Zixian Gao",
-        "Qiao Sun",
-        "Yilin Zhao",
-        "Yuncong Yang",
-        "Yilun Du",
-        "Tsun-Hsuan Wang",
-        "Yi-Ling Qiao",
-        "Chuang Gan"
-      ],
-      "abstract": "World action models (WAMs) have emerged as a promising direction for robot policy learning, as they can leverage powerful video backbones to model the future states. However, existing approaches often rely on separate action modules, or use action representations that are not pixel-grounded, making it difficult to fully exploit the pretrained knowledge of video models and limiting transfer across viewpoints and environments. In this work, we present Action Images, a unified world action model that formulates policy learning as multiview video generation. Instead of encoding control as low-dimensional tokens, we translate 7-DoF robot actions into interpretable action images: multi-view action videos that are grounded in 2D pixels and explicitly track robot-arm motion. This pixel-grounded action representation allows the video backbone itself to act as a zero-shot policy, without a separate policy head or action module. Beyond control, the same unified model supports video-action joint generation, action-conditioned video generation, and action labeling under a shared representation. On RLBench and real-world evaluations, our model achieves the strongest zero-shot success rates and improves video-action joint generation quality over prior video-space world models, suggesting that interpretable action images are a promising route to policy learning.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.06168v1",
-        "pdf": "https://arxiv.org/pdf/2604.06168v1"
-      },
-      "arxiv_id": "2604.06168v1",
-      "comment": "Project Page: https://actionimages.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -598,58 +515,52 @@
         }
       },
       "ai_summaries": {
-        "short": "World action models (WAMs) have emerged as a promising direction for robot policy learning, as they can leverage powerful video backbones to model the future states. However, existing approaches often rely on separate action modules, or use action representations that are not pixel-grounded, making it difficult to fully exploit the pretrained knowledge of video models and limiting transfer across ...",
+        "short": "Emotion annotation is inherently subjective and cognitively demanding, producing signals that reflect diverse perceptions across annotators rather than a single ground truth. In continuous affect prediction, this variability is typically collapsed into point estimates such as the mean or median, discarding valuable information about annotator disagreement and uncertainty. In this work, we propose ...",
         "key_contributions": [
-          "World action models (WAMs) have emerged as a promising direction for robot policy learning, as they can leverage powerful video backbones to model the future states.",
-          "However, existing approaches often rely on separate action modules, or use action representations that are not pixel-grounded, making it difficult to fully exploit the pretrained knowledge of video models and limiting transfer across viewpoints and environments.",
-          "In this work, we present Action Images, a unified world action model that formulates policy learning as multiview video generation."
+          "Emotion annotation is inherently subjective and cognitively demanding, producing signals that reflect diverse perceptions across annotators rather than a single ground truth.",
+          "In continuous affect prediction, this variability is typically collapsed into point estimates such as the mean or median, discarding valuable information about annotator disagreement and uncertainty.",
+          "In this work, we propose a distribution-aware framework that models annotation consensus using the Beta distribution."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.06168v1.mp3"
+        "audio_url": "/audio/2604.07198v1.mp3"
       }
     },
     {
-      "id": "2604.06161v1",
-      "title": "DiffHDR: Re-Exposing LDR Videos with Video Diffusion Models",
+      "id": "2604.07350v1",
+      "title": "Fast Spatial Memory with Elastic Test-Time Training",
       "authors": [
-        "Zhengming Yu",
-        "Li Ma",
-        "Mingming He",
-        "Leo Isikdogan",
-        "Yuancheng Xu",
-        "Dmitriy Smirnov",
-        "Pablo Salamanca",
-        "Dao Mi",
-        "Pablo Delgado",
-        "Ning Yu",
-        "Julien Philip",
-        "Xin Li",
-        "Wenping Wang",
-        "Paul Debevec"
+        "Ziqiao Ma",
+        "Xueyang Yu",
+        "Haoyu Zhen",
+        "Yuncong Yang",
+        "Joyce Chai",
+        "Chuang Gan"
       ],
-      "abstract": "Most digital videos are stored in 8-bit low dynamic range (LDR) formats, where much of the original high dynamic range (HDR) scene radiance is lost due to saturation and quantization. This loss of highlight and shadow detail precludes mapping accurate luminance to HDR displays and limits meaningful re-exposure in post-production workflows. Although techniques have been proposed to convert LDR images to HDR through dynamic range expansion, they struggle to restore realistic detail in the over- and underexposed regions. To address this, we present DiffHDR, a framework that formulates LDR-to-HDR conversion as a generative radiance inpainting task within the latent space of a video diffusion model. By operating in Log-Gamma color space, DiffHDR leverages spatio-temporal generative priors from a pretrained video diffusion model to synthesize plausible HDR radiance in over- and underexposed regions while recovering the continuous scene radiance of the quantized pixels. Our framework further enables controllable LDR-to-HDR video conversion guided by text prompts or reference images. To address the scarcity of paired HDR video data, we develop a pipeline that synthesizes high-quality HDR video training data from static HDRI maps. Extensive experiments demonstrate that DiffHDR significantly outperforms state-of-the-art approaches in radiance fidelity and temporal stability, producing realistic HDR videos with considerable latitude for re-exposure.",
-      "published": "2026-04-07",
-      "updated": "2026-04-07",
+      "abstract": "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass. We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state. The anchor evolves as an exponential moving average of past fast weights to balance stability and plasticity. Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations. We pre-trained FSM on large-scale curated 3D/4D data to capture the dynamics and semantics of complex spatial environments. Extensive experiments show that FSM supports fast adaptation over long sequences and delivers high-quality 3D/4D reconstruction with smaller chunks and mitigating the camera-interpolation shortcut. Overall, we hope to advance LaCT beyond the bounded single-chunk setting toward robust multi-chunk adaptation, a necessary step for generalization to genuinely longer sequences, while substantially alleviating the activation-memory bottleneck.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.GR"
+        "cs.GR",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.06161v1",
-        "pdf": "https://arxiv.org/pdf/2604.06161v1"
+        "paper": "http://arxiv.org/abs/2604.07350v1",
+        "pdf": "https://arxiv.org/pdf/2604.07350v1"
       },
-      "arxiv_id": "2604.06161v1",
-      "comment": "Project page: https://yzmblog.github.io/projects/DiffHDR/",
+      "arxiv_id": "2604.07350v1",
+      "comment": "Project Page: https://fast-spatial-memory.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8,
+      "relevance_score": 4.03728813559322,
       "score_breakdown": {
-        "total_score": 3.8,
+        "total_score": 4.04,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -672,14 +583,82 @@
         }
       },
       "ai_summaries": {
-        "short": "Most digital videos are stored in 8-bit low dynamic range (LDR) formats, where much of the original high dynamic range (HDR) scene radiance is lost due to saturation and quantization. This loss of highlight and shadow detail precludes mapping accurate luminance to HDR displays and limits meaningful re-exposure in post-production workflows. Although techniques have been proposed to convert LDR imag...",
+        "short": "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pa...",
         "key_contributions": [
-          "Most digital videos are stored in 8-bit low dynamic range (LDR) formats, where much of the original high dynamic range (HDR) scene radiance is lost due to saturation and quantization.",
-          "This loss of highlight and shadow detail precludes mapping accurate luminance to HDR displays and limits meaningful re-exposure in post-production workflows.",
-          "Although techniques have been proposed to convert LDR images to HDR through dynamic range expansion, they struggle to restore realistic detail in the over- and underexposed regions."
+          "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting.",
+          "As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass.",
+          "We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.06161v1.mp3"
+        "audio_url": "/audio/2604.07350v1.mp3"
+      }
+    },
+    {
+      "id": "2604.07180v1",
+      "title": "Energy-based Tissue Manifolds for Longitudinal Multiparametric MRI Analysis",
+      "authors": [
+        "Kartikay Tehlan",
+        "Lukas Förner",
+        "Nico Schmutzenhofer",
+        "Michael Frühwald",
+        "Matthias Wagner",
+        "Nassir Navab",
+        "Thomas Wendler"
+      ],
+      "abstract": "We propose a geometric framework for longitudinal multi-parametric MRI analysis based on patient-specific energy modelling in sequence space. Rather than operating on images with spatial networks, each voxel is represented by its multi-sequence intensity vector ($T1$, $T1c$, $T2$, FLAIR, ADC), and a compact implicit neural representation is trained via denoising score matching to learn an energy function $E_θ(\\mathbf{u})$ over $\\mathbb{R}^d$ from a single baseline scan. The learned energy landscape provides a differential-geometric description of tissue regimes without segmentation labels. Local minima define tissue basins, gradient magnitude reflects proximity to regime boundaries, and Laplacian curvature characterises local constraint structure. Importantly, this baseline energy manifold is treated as a fixed geometric reference: it encodes the set of contrast combinations observed at diagnosis and is not retrained at follow-up. Longitudinal assessment is therefore formulated as evaluation of subsequent scans relative to this baseline geometry. Rather than comparing anatomical segmentations, we analyse how the distribution of MRI sequence vectors evolves under the baseline energy function. In a paediatric case with later recurrence, follow-up scans show progressive deviation in energy and directional displacement in sequence space toward the baseline tumour-associated regime before clear radiological reappearance. In a case with stable disease, voxel distributions remain confined to established low-energy basins without systematic drift. The presented cases serve as proof-of-concept that patient-specific energy manifolds can function as geometric reference systems for longitudinal mpMRI analysis without explicit segmentation or supervised classification, providing a foundation for further investigation of manifold-based tissue-at-risk tracking in neuro-oncology.",
+      "published": "2026-04-08",
+      "updated": "2026-04-08",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.07180v1",
+        "pdf": "https://arxiv.org/pdf/2604.07180v1"
+      },
+      "arxiv_id": "2604.07180v1",
+      "comment": "The code is available at https://github.com/tkartikay/EnFold-MRI",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.003389830508475,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We propose a geometric framework for longitudinal multi-parametric MRI analysis based on patient-specific energy modelling in sequence space. Rather than operating on images with spatial networks, each voxel is represented by its multi-sequence intensity vector ($T1$, $T1c$, $T2$, FLAIR, ADC), and a compact implicit neural representation is trained via denoising score matching to learn an energy f...",
+        "key_contributions": [
+          "We propose a geometric framework for longitudinal multi-parametric MRI analysis based on patient-specific energy modelling in sequence space.",
+          "Rather than operating on images with spatial networks, each voxel is represented by its multi-sequence intensity vector ($T1$, $T1c$, $T2$, FLAIR, ADC), and a compact implicit neural representation is trained via denoising score matching to learn an energy function $E_θ(\\mathbf{u})$ over $\\mathbb{R}^d$ from a single baseline scan.",
+          "The learned energy landscape provides a differential-geometric description of tissue regimes without segmentation labels."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.07180v1.mp3"
       }
     }
   ]

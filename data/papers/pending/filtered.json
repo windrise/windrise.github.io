@@ -3,48 +3,58 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.07337v1",
-      "title": "From Blobs to Spokes: High-Fidelity Surface Reconstruction via Oriented Gaussians",
+      "id": "2604.08537v1",
+      "title": "Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding",
       "authors": [
-        "Diego Gomez",
-        "Antoine Guédon",
-        "Nissim Maruani",
-        "Bingchen Gong",
-        "Maks Ovsjanikov"
+        "Mu Nan",
+        "Muquan Yu",
+        "Weijian Mai",
+        "Jacob S. Prince",
+        "Hossein Adeli",
+        "Rui Zhang",
+        "Jiahang Cao",
+        "Benjamin Becker",
+        "John A. Pyles",
+        "Margaret M. Henderson",
+        "Chunfeng Song",
+        "Nikolaus Kriegeskorte",
+        "Michael J. Tarr",
+        "Xiaoqing Hu",
+        "Andrew F. Luo"
       ],
-      "abstract": "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult. Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.\n  Inspired by the Objects as Volumes framework, we derive a principled occupancy field for Gaussian Splatting and show how it can be used to extract highly accurate watertight meshes of complex scenes. Our key contribution is to introduce a learnable oriented normal at each Gaussian element and to define an adapted attenuation formulation, which leads to closed-form expressions for both the normal and occupancy fields at arbitrary locations in space. We further introduce a novel consistency loss and a dedicated densification strategy to enforce Gaussians to wrap the entire surface by closing geometric holes, ensuring a complete shell of oriented primitives. We modify the differentiable rasterizer to output depth as an isosurface of our continuous model, and introduce Primal Adaptive Meshing for Region-of-Interest meshing at arbitrary resolution.\n  We additionally expose fundamental biases in standard surface evaluation protocols and propose two more rigorous alternatives. Overall, our method Gaussian Wrapping sets a new state-of-the-art on DTU and Tanks and Temples, producing complete, watertight meshes at a fraction of the size of concurrent work-recovering thin structures such as the notoriously elusive bicycle spokes.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "Visual decoding from brain signals is a key challenge at the intersection of computer vision and neuroscience, requiring methods that bridge neural representations and computational models of vision. A field-wide goal is to achieve generalizable, cross-subject models. A major obstacle towards this goal is the substantial variability in neural representations across individuals, which has so far required training bespoke models or fine-tuning separately for each subject. To address this challenge, we introduce a meta-optimized approach for semantic visual decoding from fMRI that generalizes to novel subjects without any fine-tuning. By simply conditioning on a small set of image-brain activation examples from the new individual, our model rapidly infers their unique neural encoding patterns to facilitate robust and efficient visual decoding. Our approach is explicitly optimized for in-context learning of the new subject's encoding model and performs decoding by hierarchical inference, inverting the encoder. First, for multiple brain regions, we estimate the per-voxel visual response encoder parameters by constructing a context over multiple stimuli and responses. Second, we construct a context consisting of encoder parameters and response values over multiple voxels to perform aggregated functional inversion. We demonstrate strong cross-subject and cross-scanner generalization across diverse visual backbones without retraining or fine-tuning. Moreover, our approach requires neither anatomical alignment nor stimulus overlap. This work is a critical step towards a generalizable foundation model for non-invasive brain decoding.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "q-bio.NC"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07337v1",
-        "pdf": "https://arxiv.org/pdf/2604.07337v1"
+        "paper": "http://arxiv.org/abs/2604.08537v1",
+        "pdf": "https://arxiv.org/pdf/2604.08537v1"
       },
-      "arxiv_id": "2604.07337v1",
-      "comment": "Our project page is available in http://diego1401.github.io/BlobsToSpokesWebsite/index.html",
+      "arxiv_id": "2604.08537v1",
+      "comment": "Accepted to CVPR 2026, website: https://github.com/ezacngm/brainCodec",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.927966101694915,
+      "relevance_score": 5.519491525423729,
       "score_breakdown": {
-        "total_score": 4.93,
+        "total_score": 5.52,
         "field_match": {
-          "score": 1.69,
+          "score": 0.42,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "computer vision"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -59,31 +69,39 @@
       }
     },
     {
-      "id": "2604.07097v1",
-      "title": "Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples",
+      "id": "2604.08536v1",
+      "title": "RewardFlow: Generate Images by Optimizing What You Reward",
       "authors": [
-        "Reiji Saito",
-        "Satoshi Kamiya",
-        "Kazuhiro Hotta"
+        "Onkar Susladkar",
+        "Dong-Hwan Jang",
+        "Tushar Prakash",
+        "Adheesh Juvekar",
+        "Vedant Shah",
+        "Ayush Barik",
+        "Nabeel Bashir",
+        "Muntasir Wahed",
+        "Ritish Shrirao",
+        "Ismini Lourentzou"
       ],
-      "abstract": "In conventional anomaly detection, training data consist of only normal samples. However, in real-world scenarios, the definition of a normal sample is often ambiguous. For example, there are cases where a sample has small scratches or stains but is still acceptable for practical usage. On the other hand, higher precision is required when manufacturing equipment is upgraded. In such cases, normal samples may include small scratches, tiny dust particles, or a foreign object that we would prefer to classify as an anomaly. Such cases frequently occur in industrial settings, yet they have not been discussed until now. Thus, we propose novel scenarios and an evaluation metric to accommodate specification changes in real-world applications. Furthermore, to address the ambiguity of normal samples, we propose the RePaste, which enhances learning by re-pasting regions with high anomaly scores from the previous step into the input for the next step. On our scenarios using the MVTec AD benchmark, RePaste achieved the state-of-the-art performance with respect to the proposed evaluation metric, while maintaining high AUROC and PRO scores. Code: https://github.com/ReijiSoftmaxSaito/Scenario",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow unifies complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference, and further introduces a differentiable VQA-based reward that provides fine-grained semantic supervision through language-vision reasoning. To coordinate these heterogeneous objectives, we design a prompt-aware adaptive policy that extracts semantic primitives from the instruction, infers edit intent, and dynamically modulates reward weights and step sizes throughout sampling. Across several image editing and compositional generation benchmarks, RewardFlow delivers state-of-the-art edit fidelity and compositional alignment.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07097v1",
-        "pdf": "https://arxiv.org/pdf/2604.07097v1"
+        "paper": "http://arxiv.org/abs/2604.08536v1",
+        "pdf": "https://arxiv.org/pdf/2604.08536v1"
       },
-      "arxiv_id": "2604.07097v1",
-      "comment": "Accepted by CVPR 2026 Workshop",
+      "arxiv_id": "2604.08536v1",
+      "comment": "CVPR 2026. Project page: https://plan-lab.github.io/rewardflow",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.7,
+      "has_code": true,
+      "relevance_score": 5.25,
       "score_breakdown": {
-        "total_score": 4.7,
+        "total_score": 5.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -99,125 +117,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 7.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.07306v1",
-      "title": "Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment",
-      "authors": [
-        "Huaiyuan Qin",
-        "Muli Yang",
-        "Gabriel James Goenawan",
-        "Kai Wang",
-        "Zheng Wang",
-        "Peng Hu",
-        "Xi Peng",
-        "Hongyuan Zhu"
-      ],
-      "abstract": "Existing dynamic data pruning methods often fail under noisy-label settings, as they typically rely on per-sample loss as the ranking criterion. This could mistakenly lead to preserving noisy samples due to their high loss values, resulting in significant performance drop. To address this, we propose AlignPrune, a noise-robust module designed to enhance the reliability of dynamic pruning under label noise. Specifically, AlignPrune introduces the Dynamic Alignment Score (DAS), which is a loss-trajectory-based criterion that enables more accurate identification of noisy samples, thereby improving pruning effectiveness. As a simple yet effective plug-and-play module, AlignPrune can be seamlessly integrated into state-of-the-art dynamic pruning frameworks, consistently outperforming them without modifying either the model architecture or the training pipeline. Extensive experiments on five widely-used benchmarks across various noise types and pruning ratios demonstrate the effectiveness of AlignPrune, boosting accuracy by up to 6.3\\% over state-of-the-art baselines. Our results offer a generalizable solution for pruning under noisy data, encouraging further exploration of learning in real-world scenarios. Code is available at: https://github.com/leonqin430/AlignPrune.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.07306v1",
-        "pdf": "https://arxiv.org/pdf/2604.07306v1"
-      },
-      "arxiv_id": "2604.07306v1",
-      "comment": "Published in CVPR 2026 Findings",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.07132v1",
-      "title": "CSA-Graphs: A Privacy-Preserving Structural Dataset for Child Sexual Abuse Research",
-      "authors": [
-        "Carlos Caetano",
-        "Camila Laranjeira",
-        "Clara Ernesto",
-        "Artur Barros",
-        "João Macedo",
-        "Leo S. F. Ribeiro",
-        "Jefersson A. dos Santos",
-        "Sandra Avila"
-      ],
-      "abstract": "Child Sexual Abuse Imagery (CSAI) classification is an important yet challenging problem for computer vision research due to the strict legal and ethical restrictions that prevent the public sharing of CSAI datasets. This limitation hinders reproducibility and slows progress in developing automated methods. In this work, we introduce CSA-Graphs, a privacy-preserving structural dataset. Instead of releasing the original images, we provide structural representations that remove explicit visual content while preserving contextual information. CSA-Graphs includes two complementary graph-based modalities: scene graphs describing object relationships and skeleton graphs encoding human pose. Experiments show that both representations retain useful information for classifying CSAI, and that combining them further improves performance. This dataset enables broader research on computer vision methods for child safety while respecting legal and ethical constraints.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.07132v1",
-        "pdf": "https://arxiv.org/pdf/2604.07132v1"
-      },
-      "arxiv_id": "2604.07132v1",
-      "comment": "Conference on Computer Vision and Pattern Recognition (CVPR 2026), in the Workshop on Computer Vision for Children (CV4CHL)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.419491525423728,
-      "score_breakdown": {
-        "total_score": 4.42,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -227,36 +128,35 @@
       }
     },
     {
-      "id": "2604.07201v1",
-      "title": "BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment",
+      "id": "2604.08546v1",
+      "title": "When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models",
       "authors": [
-        "Mohamed Darwish Mounis",
-        "Mohamed Mahmoud",
-        "Shaimaa Sedek",
-        "Mahmoud Abdalla",
-        "Mahmoud SalahEldin Kasem",
-        "Abdelrahman Abdallah",
-        "Hyun-Soo Kang"
+        "Zhengyang Sun",
+        "Yu Chen",
+        "Xin Zhou",
+        "Xiaofan Li",
+        "Xiwu Chen",
+        "Dingkang Liang",
+        "Xiang Bai"
       ],
-      "abstract": "Multimodal retrieval systems struggle to resolve image-text queries against text-only corpora: the best vision-language encoder achieves only 27.6 nDCG@10 on MM-BRIGHT, underperforming strong text-only retrievers. We argue the bottleneck is not the retriever but the query -- raw multimodal queries entangle visual descriptions, conversational noise, and retrieval intent in ways that systematically degrade embedding similarity. We present \\textbf{BRIDGE}, a two-component system that resolves this mismatch without multimodal encoders. \\textbf{FORGE} (\\textbf{F}ocused Retrieval Query Generato\\textbf{r}) is a query alignment model trained via reinforcement learning, which distills noisy multimodal queries into compact, retrieval-optimized search strings. \\textbf{LENS} (\\textbf{L}anguage-\\textbf{E}nhanced \\textbf{N}eural \\textbf{S}earch) is a reasoning-enhanced dense retriever fine-tuned on reasoning-intensive retrieval data to handle the intent-rich queries FORGE produces. Evaluated on MM-BRIGHT (2,803 queries, 29 domains), BRIDGE achieves \\textbf{29.7} nDCG@10, surpassing all multimodal encoder baselines including Nomic-Vision (27.6). When FORGE is applied as a plug-and-play aligner on top of Nomic-Vision, the combined system reaches \\textbf{33.3} nDCG@10 -- exceeding the best text-only retriever (32.2) -- demonstrating that \\textit{query alignment} is the key bottleneck in multimodal-to-text retrieval. https://github.com/mm-bright/multimodal-reasoning-retrieval",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "Text-to-video diffusion models have enabled open-ended video synthesis, but often struggle with generating the correct number of objects specified in a prompt. We introduce NUMINA , a training-free identify-then-guide framework for improved numerical alignment. NUMINA identifies prompt-layout inconsistencies by selecting discriminative self- and cross-attention heads to derive a countable latent layout. It then refines this layout conservatively and modulates cross-attention to guide regeneration. On the introduced CountBench, NUMINA improves counting accuracy by up to 7.4% on Wan2.1-1.3B, and by 4.9% and 5.5% on 5B and 14B models, respectively. Furthermore, CLIP alignment is improved while maintaining temporal consistency. These results demonstrate that structural guidance complements seed search and prompt enhancement, offering a practical path toward count-accurate text-to-video diffusion. The code is available at https://github.com/H-EmbodVis/NUMINA.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
-        "cs.IR",
         "cs.CV"
       ],
-      "primary_category": "cs.IR",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07201v1",
-        "pdf": "https://arxiv.org/pdf/2604.07201v1"
+        "paper": "http://arxiv.org/abs/2604.08546v1",
+        "pdf": "https://arxiv.org/pdf/2604.08546v1"
       },
-      "arxiv_id": "2604.07201v1",
-      "comment": "Accepted at CVPR 2026 Workshop GRAIL-V",
+      "arxiv_id": "2604.08546v1",
+      "comment": "Accepted by CVPR 2026. Project page: https://h-embodvis.github.io/NUMINA",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.2,
+      "has_code": true,
+      "relevance_score": 4.95,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.95,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -272,44 +172,44 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2604.07166v1",
-      "title": "DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification",
+      "id": "2604.08526v1",
+      "title": "FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On",
       "authors": [
-        "Robert Zimmermann",
-        "Thomas Norrenbrock",
-        "Bodo Rosenhahn"
+        "Johanna Karras",
+        "Yuanhao Wang",
+        "Yingwei Li",
+        "Ira Kemelmacher-Shlizerman"
       ],
-      "abstract": "Although visual foundation models like DINOv2 provide state-of-the-art performance as feature extractors, their complex, high-dimensional representations create substantial hurdles for interpretability. This work proposes DINO-QPM, which converts these powerful but entangled features into contrastive, class-independent representations that are interpretable by humans. DINO-QPM is a lightweight interpretability adapter that pursues globally interpretable image classification, adapting the Quadratic Programming Enhanced Model (QPM) to operate on strictly frozen DINO backbones. While classification with visual foundation models typically relies on the \\texttt{CLS} token, we deliberately diverge from this standard. By leveraging average-pooling, we directly connect the patch embeddings to the model's features and therefore enable spatial localisation of DINO-QPM's globally interpretable features within the input space. Furthermore, we apply a sparsity loss to minimise spatial scatter and background noise, ensuring that explanations are grounded in relevant object parts. With DINO-QPM we make the level of interpretability of QPM available as an adapter while exceeding the accuracy of DINOv2 linear probe. Evaluated through an introduced Plausibility metric and other interpretability metrics, extensive experiments demonstrate that DINO-QPM is superior to other applicable methods for frozen visual foundation models in both classification accuracy and explanation quality.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "Given a person and a garment image, virtual try-on (VTO) aims to synthesize a realistic image of the person wearing the garment, while preserving their original pose and identity. Although recent VTO methods excel at visualizing garment appearance, they largely overlook a crucial aspect of the try-on experience: the accuracy of garment fit -- for example, depicting how an extra-large shirt looks on an extra-small person. A key obstacle is the absence of datasets that provide precise garment and body size information, particularly for \"ill-fit\" cases, where garments are significantly too large or too small. Consequently, current VTO methods default to generating well-fitted results regardless of the garment or person size.\n  In this paper, we take the first steps towards solving this open problem. We introduce FIT (Fit-Inclusive Try-on), a large-scale VTO dataset comprising over 1.13M try-on image triplets accompanied by precise body and garment measurements. We overcome the challenges of data collection via a scalable synthetic strategy: (1) We programmatically generate 3D garments using GarmentCode and drape them via physics simulation to capture realistic garment fit. (2) We employ a novel re-texturing framework to transform synthetic renderings into photorealistic images while strictly preserving geometry. (3) We introduce person identity preservation into our re-texturing model to generate paired person images (same person, different garments) for supervised training. Finally, we leverage our FIT dataset to train a baseline fit-aware virtual try-on model. Our data and results set the new state-of-the-art for fit-aware virtual try-on, as well as offer a robust benchmark for future research. We will make all data and code publicly available on our project page: https://johannakarras.github.io/FIT.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
         "cs.CV",
-        "cs.HC",
-        "cs.LG"
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07166v1",
-        "pdf": "https://arxiv.org/pdf/2604.07166v1"
+        "paper": "http://arxiv.org/abs/2604.08526v1",
+        "pdf": "https://arxiv.org/pdf/2604.08526v1"
       },
-      "arxiv_id": "2604.07166v1",
-      "comment": "Accepted to the 5th Explainable AI for Computer Vision (XAI4CV) Workshop at CVPR 2026",
+      "arxiv_id": "2604.08526v1",
+      "comment": "SIGGRAPH 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.2,
+      "relevance_score": 4.9,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.9,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -317,11 +217,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "SIGGRAPH",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -330,42 +230,38 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2604.07053v1",
-      "title": "AnchorSplat: Feed-Forward 3D Gaussian SplattingWith 3D Geometric Priors",
+      "id": "2604.08370v1",
+      "title": "SurfelSplat: Learning Efficient and Generalizable Gaussian Surfel Representations for Sparse-View Surface Reconstruction",
       "authors": [
-        "Xiaoxue Zhang",
-        "Xiaoxu Zheng",
-        "Yixuan Yin",
-        "Tiao Zhao",
-        "Kaihua Tang",
-        "Michael Bi Mi",
-        "Zhan Xu",
-        "Dave Zhenyu Chen"
+        "Chensheng Dai",
+        "Shengjun Zhang",
+        "Min Chen",
+        "Yueqi Duan"
       ],
-      "abstract": "Recent feed-forward Gaussian reconstruction models adopt a pixel-aligned formulation that maps each 2D pixel to a 3D Gaussian, entangling Gaussian representations tightly with the input images. In this paper, we propose AnchorSplat, a novel feed-forward 3DGS framework for scene-level reconstruction that represents the scene directly in 3D space. AnchorSplat introduces an anchor-aligned Gaussian representation guided by 3D geometric priors (e.g., sparse point clouds, voxels, or RGB-D point clouds), enabling a more geometry-aware renderable 3D Gaussians that is independent of image resolution and number of views. This design substantially reduces the number of required Gaussians, improving computational efficiency while enhancing reconstruction fidelity. Beyond the anchor-aligned design, we utilize a Gaussian Refiner to adjust the intermediate Gaussiansy via merely a few forward passes. Experiments on the ScanNet++ v2 NVS benchmark demonstrate the SOTA performance, outperforming previous methods with more view-consistent and substantially fewer Gaussian primitives.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "3D Gaussian Splatting (3DGS) has demonstrated impressive performance in 3D scene reconstruction. Beyond novel view synthesis, it shows great potential for multi-view surface reconstruction. Existing methods employ optimization-based reconstruction pipelines that achieve precise and complete surface extractions. However, these approaches typically require dense input views and high time consumption for per-scene optimization. To address these limitations, we propose SurfelSplat, a feed-forward framework that generates efficient and generalizable pixel-aligned Gaussian surfel representations from sparse-view images. We observe that conventional feed-forward structures struggle to recover accurate geometric attributes of Gaussian surfels because the spatial frequency of pixel-aligned primitives exceeds Nyquist sampling rates. Therefore, we propose a cross-view feature aggregation module based on the Nyquist sampling theorem. Specifically, we first adapt the geometric forms of Gaussian surfels with spatial sampling rate-guided low-pass filters. We then project the filtered surfels across all input views to obtain cross-view feature correlations. By processing these correlations through a specially designed feature fusion network, we can finally regress Gaussian surfels with precise geometry. Extensive experiments on DTU reconstruction benchmarks demonstrate that our model achieves comparable results with state-of-the-art methods, and predict Gaussian surfels within 1 second, offering a 100x speedup without costly per-scene training.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07053v1",
-        "pdf": "https://arxiv.org/pdf/2604.07053v1"
+        "paper": "http://arxiv.org/abs/2604.08370v1",
+        "pdf": "https://arxiv.org/pdf/2604.08370v1"
       },
-      "arxiv_id": "2604.07053v1",
-      "comment": "",
+      "arxiv_id": "2604.08370v1",
+      "comment": "Code is available at https://github.com/Simon-Dcs/Surfel_Splat",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.1279661016949145,
+      "has_code": true,
+      "relevance_score": 4.827966101694915,
       "score_breakdown": {
-        "total_score": 4.13,
+        "total_score": 4.83,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -384,8 +280,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -395,90 +291,100 @@
       }
     },
     {
-      "id": "2604.07198v1",
-      "title": "Beyond the Mean: Modelling Annotation Distributions in Continuous Affect Prediction",
+      "id": "2604.08509v1",
+      "title": "Visually-grounded Humanoid Agents",
       "authors": [
-        "Kosmas Pinitas",
-        "Ilias Maglogiannis"
+        "Hang Ye",
+        "Xiaoxuan Ma",
+        "Fan Lu",
+        "Wayne Wu",
+        "Kwan-Yee Lin",
+        "Yizhou Wang"
       ],
-      "abstract": "Emotion annotation is inherently subjective and cognitively demanding, producing signals that reflect diverse perceptions across annotators rather than a single ground truth. In continuous affect prediction, this variability is typically collapsed into point estimates such as the mean or median, discarding valuable information about annotator disagreement and uncertainty. In this work, we propose a distribution-aware framework that models annotation consensus using the Beta distribution. Instead of predicting a single affect value, models estimate the mean and standard deviation of the annotation distribution, which are transformed into valid Beta parameters through moment matching. This formulation enables the recovery of higher-order distributional descriptors, including skewness, kurtosis, and quantiles, in closed form. As a result, the model captures not only the central tendency of emotional perception but also variability, asymmetry, and uncertainty in annotator responses. We evaluate the proposed approach on the SEWA and RECOLA datasets using multimodal features. Experimental results show that Beta-based modelling produces predictive distributions that closely match the empirical annotator distributions while achieving competitive performance with conventional regression approaches. These findings highlight the importance of modelling annotation uncertainty in affective computing and demonstrate the potential of distribution-aware learning for subjective signal analysis.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
-      "categories": [
-        "cs.LG",
-        "cs.ET"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.07198v1",
-        "pdf": "https://arxiv.org/pdf/2604.07198v1"
-      },
-      "arxiv_id": "2604.07198v1",
-      "comment": "This paper has been accepted at the CVPR 2026 Workshop on Affective Behavior Analysis in-the-wild (ABAW)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.1,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.07350v1",
-      "title": "Fast Spatial Memory with Elastic Test-Time Training",
-      "authors": [
-        "Ziqiao Ma",
-        "Xueyang Yu",
-        "Haoyu Zhen",
-        "Yuncong Yang",
-        "Joyce Chai",
-        "Chuang Gan"
-      ],
-      "abstract": "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass. We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state. The anchor evolves as an exponential moving average of past fast weights to balance stability and plasticity. Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations. We pre-trained FSM on large-scale curated 3D/4D data to capture the dynamics and semantics of complex spatial environments. Extensive experiments show that FSM supports fast adaptation over long sequences and delivers high-quality 3D/4D reconstruction with smaller chunks and mitigating the camera-interpolation shortcut. Overall, we hope to advance LaCT beyond the bounded single-chunk setting toward robust multi-chunk adaptation, a necessary step for generalization to genuinely longer sequences, while substantially alleviating the activation-memory bottleneck.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "Digital human generation has been studied for decades and supports a wide range of real-world applications. However, most existing systems are passively animated, relying on privileged state or scripted control, which limits scalability to novel environments. We instead ask: how can digital humans actively behave using only visual observations and specified goals in novel scenes? Achieving this would enable populating any 3D environments with digital humans at scale that exhibit spontaneous, natural, goal-directed behaviors. To this end, we introduce Visually-grounded Humanoid Agents, a coupled two-layer (world-agent) paradigm that replicates humans at multiple levels: they look, perceive, reason, and behave like real people in real-world 3D scenes. The World Layer reconstructs semantically rich 3D Gaussian scenes from real-world videos via an occlusion-aware pipeline and accommodates animatable Gaussian-based human avatars. The Agent Layer transforms these avatars into autonomous humanoid agents, equipping them with first-person RGB-D perception and enabling them to perform accurate, embodied planning with spatial awareness and iterative reasoning, which is then executed at the low level as full-body actions to drive their behaviors in the scene. We further introduce a benchmark to evaluate humanoid-scene interaction in diverse reconstructed environments. Experiments show our agents achieve robust autonomous behavior, yielding higher task success rates and fewer collisions than ablations and state-of-the-art planning methods. This work enables active digital human population and advances human-centric embodied AI. Data, code, and models will be open-sourced.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
         "cs.CV",
-        "cs.GR",
-        "cs.LG"
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07350v1",
-        "pdf": "https://arxiv.org/pdf/2604.07350v1"
+        "paper": "http://arxiv.org/abs/2604.08509v1",
+        "pdf": "https://arxiv.org/pdf/2604.08509v1"
       },
-      "arxiv_id": "2604.07350v1",
-      "comment": "Project Page: https://fast-spatial-memory.github.io/",
+      "arxiv_id": "2604.08509v1",
+      "comment": "Project page: https://alvinyh.github.io/VGHuman/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.03728813559322,
+      "relevance_score": 4.738983050847458,
       "score_breakdown": {
-        "total_score": 4.04,
+        "total_score": 4.74,
         "field_match": {
-          "score": 0.59,
+          "score": 0.85,
           "matches": [
+            "3d gaussian"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.08542v1",
+      "title": "Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction",
+      "authors": [
+        "Tao Xie",
+        "Peishan Yang",
+        "Yudong Jin",
+        "Yingfeng Cai",
+        "Wei Yin",
+        "Weiqiang Ren",
+        "Qian Zhang",
+        "Wei Hua",
+        "Sida Peng",
+        "Xiaoyang Guo",
+        "Xiaowei Zhou"
+      ],
+      "abstract": "This paper addresses the task of large-scale 3D scene reconstruction from long video sequences. Recent feed-forward reconstruction models have shown promising results by directly regressing 3D geometry from RGB images without explicit 3D priors or geometric constraints. However, these methods often struggle to maintain reconstruction accuracy and consistency over long sequences due to limited memory capacity and the inability to effectively capture global contextual cues. In contrast, humans can naturally exploit the global understanding of the scene to inform local perception. Motivated by this, we propose a novel neural global context representation that efficiently compresses and retains long-range scene information, enabling the model to leverage extensive contextual cues for enhanced reconstruction accuracy and consistency. The context representation is realized through a set of lightweight neural sub-networks that are rapidly adapted during test time via self-supervised objectives, which substantially increases memory capacity without incurring significant computational overhead. The experiments on multiple large-scale benchmarks, including the KITTI Odometry~\\cite{Geiger2012CVPR} and Oxford Spires~\\cite{tao2025spires} datasets, demonstrate the effectiveness of our approach in handling ultra-large scenes, achieving leading pose accuracy and state-of-the-art 3D reconstruction accuracy while maintaining efficiency. Code is available at https://zju3dv.github.io/scal3r.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.08542v1",
+        "pdf": "https://arxiv.org/pdf/2604.08542v1"
+      },
+      "arxiv_id": "2604.08542v1",
+      "comment": "Project page: https://zju3dv.github.io/scal3r",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.708474576271186,
+      "score_breakdown": {
+        "total_score": 4.71,
+        "field_match": {
+          "score": 1.27,
+          "matches": [
+            "self-supervised",
             "3d reconstruction"
           ],
           "weight": 0.4
@@ -489,12 +395,66 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
           "score": 10.0,
           "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.08313v1",
+      "title": "Weakly-Supervised Lung Nodule Segmentation via Training-Free Guidance of 3D Rectified Flow",
+      "authors": [
+        "Richard Petersen",
+        "Fredrik Kahl",
+        "Jennifer Alvén"
+      ],
+      "abstract": "Dense annotations, such as segmentation masks, are expensive and time-consuming to obtain, especially for 3D medical images where expert voxel-wise labeling is required. Weakly supervised approaches aim to address this limitation, but often rely on attribution-based methods that struggle to accurately capture small structures such as lung nodules. In this paper, we propose a weakly-supervised segmentation method for lung nodules by combining pretrained state-of-the-art rectified flow and predictor models in a plug-and-play manner. Our approach uses training-free guidance of a 3D rectified flow model, requiring only fine-tuning of the predictor using image-level labels and no retraining of the generative model. The proposed method produces improved-quality segmentations for two separate predictors, consistently detecting lung nodules of varying size and shapes. Experiments on LUNA16 demonstrate improvements over baseline methods, highlighting the potential of generative foundation models as tools for weakly supervised 3D medical image segmentation.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.08313v1",
+        "pdf": "https://arxiv.org/pdf/2604.08313v1"
+      },
+      "arxiv_id": "2604.08313v1",
+      "comment": "Submitted to MICCAI 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.708474576271186,
+      "score_breakdown": {
+        "total_score": 4.71,
+        "field_match": {
+          "score": 1.27,
+          "matches": [
+            "medical image",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -504,40 +464,43 @@
       }
     },
     {
-      "id": "2604.07180v1",
-      "title": "Energy-based Tissue Manifolds for Longitudinal Multiparametric MRI Analysis",
+      "id": "2604.08410v1",
+      "title": "BLaDA: Bridging Language to Functional Dexterous Actions within 3DGS Fields",
       "authors": [
-        "Kartikay Tehlan",
-        "Lukas Förner",
-        "Nico Schmutzenhofer",
-        "Michael Frühwald",
-        "Matthias Wagner",
-        "Nassir Navab",
-        "Thomas Wendler"
+        "Fan Yang",
+        "Wenrui Chen",
+        "Guorun Yan",
+        "Ruize Liao",
+        "Wanjun Jia",
+        "Dongsheng Luo",
+        "Kailun Yang",
+        "Zhiyong Li",
+        "Yaonan Wang"
       ],
-      "abstract": "We propose a geometric framework for longitudinal multi-parametric MRI analysis based on patient-specific energy modelling in sequence space. Rather than operating on images with spatial networks, each voxel is represented by its multi-sequence intensity vector ($T1$, $T1c$, $T2$, FLAIR, ADC), and a compact implicit neural representation is trained via denoising score matching to learn an energy function $E_θ(\\mathbf{u})$ over $\\mathbb{R}^d$ from a single baseline scan. The learned energy landscape provides a differential-geometric description of tissue regimes without segmentation labels. Local minima define tissue basins, gradient magnitude reflects proximity to regime boundaries, and Laplacian curvature characterises local constraint structure. Importantly, this baseline energy manifold is treated as a fixed geometric reference: it encodes the set of contrast combinations observed at diagnosis and is not retrained at follow-up. Longitudinal assessment is therefore formulated as evaluation of subsequent scans relative to this baseline geometry. Rather than comparing anatomical segmentations, we analyse how the distribution of MRI sequence vectors evolves under the baseline energy function. In a paediatric case with later recurrence, follow-up scans show progressive deviation in energy and directional displacement in sequence space toward the baseline tumour-associated regime before clear radiological reappearance. In a case with stable disease, voxel distributions remain confined to established low-energy basins without systematic drift. The presented cases serve as proof-of-concept that patient-specific energy manifolds can function as geometric reference systems for longitudinal mpMRI analysis without explicit segmentation or supervised classification, providing a foundation for further investigation of manifold-based tissue-at-risk tracking in neuro-oncology.",
-      "published": "2026-04-08",
-      "updated": "2026-04-08",
+      "abstract": "In unstructured environments, functional dexterous grasping calls for the tight integration of semantic understanding, precise 3D functional localization, and physically interpretable execution. Modular hierarchical methods are more controllable and interpretable than end-to-end VLA approaches, but existing ones still rely on predefined affordance labels and lack the tight semantic--pose coupling needed for functional dexterous manipulation. To address this, we propose BLaDA (Bridging Language to Dexterous Actions in 3DGS fields), an interpretable zero-shot framework that grounds open-vocabulary instructions as perceptual and control constraints for functional dexterous manipulation. BLaDA establishes an interpretable reasoning chain by first parsing natural language into a structured sextuple of manipulation constraints via a Knowledge-guided Language Parsing (KLP) module. To achieve pose-consistent spatial reasoning, we introduce the Triangular Functional Point Localization (TriLocation) module, which utilizes 3D Gaussian Splatting as a continuous scene representation and identifies functional regions under triangular geometric constraints. Finally, the 3D Keypoint Grasp Matrix Transformation Execution (KGT3D+) module decodes these semantic-geometric constraints into physically plausible wrist poses and finger-level commands. Extensive experiments on complex benchmarks demonstrate that BLaDA significantly outperforms existing methods in both affordance grounding precision and the success rate of functional manipulation across diverse categories and tasks. Code will be publicly available at https://github.com/PopeyePxx/BLaDA.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.07180v1",
-        "pdf": "https://arxiv.org/pdf/2604.07180v1"
+        "paper": "http://arxiv.org/abs/2604.08410v1",
+        "pdf": "https://arxiv.org/pdf/2604.08410v1"
       },
-      "arxiv_id": "2604.07180v1",
-      "comment": "The code is available at https://github.com/tkartikay/EnFold-MRI",
+      "arxiv_id": "2604.08410v1",
+      "comment": "Code will be publicly available at https://github.com/PopeyePxx/BLaDA",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.003389830508475,
+      "relevance_score": 4.677966101694915,
       "score_breakdown": {
-        "total_score": 4.0,
+        "total_score": 4.68,
         "field_match": {
-          "score": 0.51,
+          "score": 1.69,
           "matches": [
-            "segmentation"
+            "3d gaussian",
+            "gaussian splatting"
           ],
           "weight": 0.4
         },
@@ -547,7 +510,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -556,7 +519,64 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.08366v1",
+      "title": "Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems",
+      "authors": [
+        "Tolga Dimlioglu",
+        "Nadine Chang",
+        "Maying Shen",
+        "Rafid Mahmood",
+        "Jose M. Alvarez"
+      ],
+      "abstract": "Large-scale deep learning models for physical AI applications depend on diverse training data collection efforts. These models and correspondingly, the training data, must address different evaluation criteria necessary for the models to be deployable in real-world environments. Data selection policies can guide the development of the training set, but current frameworks do not account for the ambiguity in how data points affect different metrics. In this work, we propose Mixture Optimization via Scaling-Aware Iterative Collection (MOSAIC), a general data selection framework that operates by: (i) partitioning the dataset into domains; (ii) fitting neural scaling laws from each data domain to the evaluation metrics; and (iii) optimizing a data mixture by iteratively adding data from domains that maximize the change in metrics. We apply MOSAIC to autonomous driving (AD), where an End-to-End (E2E) planner model is evaluated on the Extended Predictive Driver Model Score (EPDMS), an aggregate of driving rule compliance metrics. Here, MOSAIC outperforms a diverse set of baselines on EPDMS with up to 80\\% less data.",
+      "published": "2026-04-09",
+      "updated": "2026-04-09",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.08366v1",
+        "pdf": "https://arxiv.org/pdf/2604.08366v1"
+      },
+      "arxiv_id": "2604.08366v1",
+      "comment": "Accepted to CVPR 2026, 8 pages of main body and 10 pages of appendix",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.669491525423729,
+      "score_breakdown": {
+        "total_score": 4.67,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
           "weight": 0.1
         }
       }

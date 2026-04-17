@@ -3,99 +3,32 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.11792v1",
-      "title": "LottieGPT: Tokenizing Vector Animation for Autoregressive Generation",
+      "id": "2604.14147v1",
+      "title": "ROSE: Retrieval-Oriented Segmentation Enhancement",
       "authors": [
-        "Junhao Chen",
-        "Kejun Gao",
-        "Yuehan Cui",
-        "Mingze Sun",
-        "Mingjin Chen",
-        "Shaohui Wang",
-        "Xiaoxiao Long",
-        "Fei Ma",
-        "Qi Tian",
-        "Ruqi Huang",
-        "Hao Zhao"
+        "Song Tang",
+        "Guangquan Jie",
+        "Henghui Ding",
+        "Yu-Gang Jiang"
       ],
-      "abstract": "Despite rapid progress in video generation, existing models are incapable of producing vector animation, a dominant and highly expressive form of multimedia on the Internet. Vector animations offer resolution-independence, compactness, semantic structure, and editable parametric motion representations, yet current generative models operate exclusively in raster space and thus cannot synthesize them. Meanwhile, recent advances in large multimodal models demonstrate strong capabilities in generating structured data such as slides, 3D meshes, LEGO sequences, and indoor layouts, suggesting that native vector animation generation may be achievable. In this work, we present the first framework for tokenizing and autoregressively generating vector animations. We adopt Lottie, a widely deployed JSON-based animation standard, and design a tailored Lottie Tokenizer that encodes layered geometric primitives, transforms, and keyframe-based motion into a compact and semantically aligned token sequence. To support large-scale training, we also construct LottieAnimation-660K, the largest and most diverse vector animation dataset to date, consisting of 660k real-world Lottie animation and 15M static Lottie image files curated from broad Internet sources. Building upon these components, we finetune Qwen-VL to create LottieGPT, a native multimodal model capable of generating coherent, editable vector animations directly from natural language or visual prompts. Experiments show that our tokenizer dramatically reduces sequence length while preserving structural fidelity, enabling effective autoregressive learning of dynamic vector content. LottieGPT exhibits strong generalization across diverse animation styles and outperforms previous state-of-the-art models on SVG generation (a special case of single-frame vector animation).",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
+      "abstract": "Existing segmentation models based on multimodal large language models (MLLMs), such as LISA, often struggle with novel or emerging entities due to their inability to incorporate up-to-date knowledge. To address this challenge, we introduce the Novel Emerging Segmentation Task (NEST), which focuses on segmenting (i) novel entities that MLLMs fail to recognize due to their absence from training data, and (ii) emerging entities that exist within the model's knowledge but demand up-to-date external information for accurate recognition. To support the study of NEST, we construct a NEST benchmark using an automated pipeline that generates news-related data samples for comprehensive evaluation. Additionally, we propose ROSE: Retrieval-Oriented Segmentation Enhancement, a plug-and-play framework designed to augment any MLLM-based segmentation model. ROSE comprises four key components. First, an Internet Retrieval-Augmented Generation module is introduced to employ user-provided multimodal inputs to retrieve real-time web information. Then, a Textual Prompt Enhancer enriches the model with up-to-date information and rich background knowledge, improving the model's perception ability for emerging entities. Furthermore, a Visual Prompt Enhancer is proposed to compensate for MLLMs' lack of exposure to novel entities by leveraging internet-sourced images. To maintain efficiency, a WebSense module is introduced to intelligently decide when to invoke retrieval mechanisms based on user input. Experimental results demonstrate that ROSE significantly boosts performance on the NEST benchmark, outperforming a strong Gemini-2.0 Flash-based retrieval baseline by 19.2 in gIoU.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.11792v1",
-        "pdf": "https://arxiv.org/pdf/2604.11792v1"
+        "paper": "http://arxiv.org/abs/2604.14147v1",
+        "pdf": "https://arxiv.org/pdf/2604.14147v1"
       },
-      "arxiv_id": "2604.11792v1",
-      "comment": "Accepted by CVPR 2026. Project Page: https://lottiegpt.github.io/",
+      "arxiv_id": "2604.14147v1",
+      "comment": "CVPR 2026 Findings, Project Page: https://henghuiding.com/ROSE/",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.300000000000001,
+      "has_code": false,
+      "relevance_score": 4.903389830508474,
       "score_breakdown": {
-        "total_score": 5.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite rapid progress in video generation, existing models are incapable of producing vector animation, a dominant and highly expressive form of multimedia on the Internet. Vector animations offer resolution-independence, compactness, semantic structure, and editable parametric motion representations, yet current generative models operate exclusively in raster space and thus cannot synthesize the...",
-        "key_contributions": [
-          "Despite rapid progress in video generation, existing models are incapable of producing vector animation, a dominant and highly expressive form of multimedia on the Internet.",
-          "Vector animations offer resolution-independence, compactness, semantic structure, and editable parametric motion representations, yet current generative models operate exclusively in raster space and thus cannot synthesize them.",
-          "Meanwhile, recent advances in large multimodal models demonstrate strong capabilities in generating structured data such as slides, 3D meshes, LEGO sequences, and indoor layouts, suggesting that native vector animation generation may be achievable."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11585v1",
-      "title": "GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth",
-      "authors": [
-        "Krishna Jaganathan",
-        "Patricio Vela"
-      ],
-      "abstract": "Multimodal perception systems for robotics and embodied AI often assume reliable RGB-D sensing, but in practice, depth is frequently missing, noisy, or corrupted. We thus present GeomPrompt, a lightweight cross-modal adaptation module that synthesizes a task-driven geometric prompt from RGB alone for the fourth channel of a frozen RGB-D semantic segmentation model, without depth supervision. We further introduce GeomPrompt-Recovery, an adaptation module that compensates for degraded depth by predicting the fourth channel correction relevant for the frozen segmenter. Both modules are trained solely with downstream segmentation supervision, enabling recovery of the geometric prior useful for segmentation, rather than estimating depth signals. On SUN RGB-D, GeomPrompt improves over RGB-only inference by +6.1 mIoU on DFormer and +3.0 mIoU on GeminiFusion, while remaining competitive with strong monocular depth estimators. For degraded depth, GeomPrompt-Recovery consistently improves robustness, yielding gains up to +3.6 mIoU under severe depth corruptions. GeomPrompt is also substantially more efficient than monocular depth baselines, reaching 7.8 ms latency versus 38.3 ms and 71.9 ms. These results suggest that task-driven geometric prompting is an efficient mechanism for cross-modal compensation under missing and degraded depth inputs in RGB-D perception.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11585v1",
-        "pdf": "https://arxiv.org/pdf/2604.11585v1"
-      },
-      "arxiv_id": "2604.11585v1",
-      "comment": "Accepted to the CVPR 2026 URVIS Workshop. Project page: https://geomprompt.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.953389830508474,
-      "score_breakdown": {
-        "total_score": 4.95,
+        "total_score": 4.9,
         "field_match": {
           "score": 0.51,
           "matches": [
@@ -109,325 +42,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Multimodal perception systems for robotics and embodied AI often assume reliable RGB-D sensing, but in practice, depth is frequently missing, noisy, or corrupted. We thus present GeomPrompt, a lightweight cross-modal adaptation module that synthesizes a task-driven geometric prompt from RGB alone for the fourth channel of a frozen RGB-D semantic segmentation model, without depth supervision. We fu...",
-        "key_contributions": [
-          "Multimodal perception systems for robotics and embodied AI often assume reliable RGB-D sensing, but in practice, depth is frequently missing, noisy, or corrupted.",
-          "We thus present GeomPrompt, a lightweight cross-modal adaptation module that synthesizes a task-driven geometric prompt from RGB alone for the fourth channel of a frozen RGB-D semantic segmentation model, without depth supervision.",
-          "We further introduce GeomPrompt-Recovery, an adaptation module that compensates for degraded depth by predicting the fourth channel correction relevant for the frozen segmenter."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11539v1",
-      "title": "CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space",
-      "authors": [
-        "Sohwi Lim",
-        "Lee Hyoseok",
-        "Jungjoon Park",
-        "Tae-Hyun Oh"
-      ],
-      "abstract": "Human perception of visual similarity is inherently adaptive and subjective, depending on the users' interests and focus. However, most image retrieval systems fail to reflect this flexibility, relying on a fixed, monolithic metric that cannot incorporate multiple conditions simultaneously. To address this, we propose CLAY, an adaptive similarity computation method that reframes the embedding space of pretrained Vision-Language Models (VLMs) as a text-conditional similarity space without additional training. This design separates the textual conditioning process and visual feature extraction, allowing highly efficient and multi-conditioned retrieval with fixed visual embeddings. We also construct a synthetic evaluation dataset CLAY-EVAL, for comprehensive assessment under diverse conditioned retrieval settings. Experiments on standard datasets and our proposed dataset show that CLAY achieves high retrieval accuracy and notable computational efficiency compared to previous works.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11539v1",
-        "pdf": "https://arxiv.org/pdf/2604.11539v1"
-      },
-      "arxiv_id": "2604.11539v1",
-      "comment": "CVPR 2026, Project page: https://sohwi-lim.github.io/CLAY",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.95,
-      "score_breakdown": {
-        "total_score": 4.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Human perception of visual similarity is inherently adaptive and subjective, depending on the users' interests and focus. However, most image retrieval systems fail to reflect this flexibility, relying on a fixed, monolithic metric that cannot incorporate multiple conditions simultaneously. To address this, we propose CLAY, an adaptive similarity computation method that reframes the embedding spac...",
-        "key_contributions": [
-          "Human perception of visual similarity is inherently adaptive and subjective, depending on the users' interests and focus.",
-          "However, most image retrieval systems fail to reflect this flexibility, relying on a fixed, monolithic metric that cannot incorporate multiple conditions simultaneously.",
-          "To address this, we propose CLAY, an adaptive similarity computation method that reframes the embedding space of pretrained Vision-Language Models (VLMs) as a text-conditional similarity space without additional training."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11711v1",
-      "title": "Seeing Through the Tool: A Controlled Benchmark for Occlusion Robustness in Foundation Segmentation Models",
-      "authors": [
-        "Nhan Ho",
-        "Luu Le",
-        "Thanh-Huy Nguyen",
-        "Thien Nguyen",
-        "Xiaofeng Liu",
-        "Ulas Bagci"
-      ],
-      "abstract": "Occlusion, where target structures are partially hidden by surgical instruments or overlapping tissues, remains a critical yet underexplored challenge for foundation segmentation models in clinical endoscopy. We introduce OccSAM-Bench, a benchmark designed to systematically evaluate SAM-family models under controlled, synthesized surgical occlusion. Our framework simulates two occlusion types (i.e., surgical tool overlay and cutout) across three calibrated severity levels on three public polyp datasets. We propose a novel three-region evaluation protocol that decomposes segmentation performance into full, visible-only, and invisible targets. This metric exposes behaviors that standard amodal evaluation obscures, revealing two distinct model archetypes: Occluder-Aware models (SAM, SAM 2, SAM 3, MedSAM3), which prioritize visible tissue delineation and reject instruments, and Occluder-Agnostic models (MedSAM, MedSAM2), which confidently predict into occluded regions. SAM-Med2D aligns with neither and underperforms across all conditions. Ultimately, our results demonstrate that occlusion robustness is not uniform across architectures, and model selection must be driven by specific clinical intent-whether prioritizing conservative visible-tissue segmentation or the amodal inference of hidden anatomy.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11711v1",
-        "pdf": "https://arxiv.org/pdf/2604.11711v1"
-      },
-      "arxiv_id": "2604.11711v1",
-      "comment": "Accepted at CV4Clinic, CVPR 2026. 10 pages, 4 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.853389830508474,
-      "score_breakdown": {
-        "total_score": 4.85,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Occlusion, where target structures are partially hidden by surgical instruments or overlapping tissues, remains a critical yet underexplored challenge for foundation segmentation models in clinical endoscopy. We introduce OccSAM-Bench, a benchmark designed to systematically evaluate SAM-family models under controlled, synthesized surgical occlusion. Our framework simulates two occlusion types (i.e...",
-        "key_contributions": [
-          "Occlusion, where target structures are partially hidden by surgical instruments or overlapping tissues, remains a critical yet underexplored challenge for foundation segmentation models in clinical endoscopy.",
-          "We introduce OccSAM-Bench, a benchmark designed to systematically evaluate SAM-family models under controlled, synthesized surgical occlusion.",
-          "Our framework simulates two occlusion types (i."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11579v1",
-      "title": "Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions",
-      "authors": [
-        "Seongyu Kim",
-        "Seungwoo Lee",
-        "Hyeonggon Ryu",
-        "Joon Son Chung",
-        "Arda Senocak"
-      ],
-      "abstract": "We address the problem of tactile localization, where the goal is to identify image regions that share the same material properties as a tactile input. Existing visuo-tactile methods rely on global alignment and thus fail to capture the fine-grained local correspondences required for this task. The challenge is amplified by existing datasets, which predominantly contain close-up, low-diversity images. We propose a model that learns local visuo-tactile alignment via dense cross-modal feature interactions, producing tactile saliency maps for touch-conditioned material segmentation. To overcome dataset constraints, we introduce: (i) in-the-wild multi-material scene images that expand visual diversity, and (ii) a material-diversity pairing strategy that aligns each tactile sample with visually varied yet tactilely consistent images, improving contextual localization and robustness to weak signals. We also construct two new tactile-grounded material segmentation datasets for quantitative evaluation. Experiments on both new and existing benchmarks show that our approach substantially outperforms prior visuo-tactile methods in tactile localization.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11579v1",
-        "pdf": "https://arxiv.org/pdf/2604.11579v1"
-      },
-      "arxiv_id": "2604.11579v1",
-      "comment": "CVPR 2026. Project page: https://mm.kaist.ac.kr/projects/SeeingThroughTouch/",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.803389830508474,
-      "score_breakdown": {
-        "total_score": 4.8,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We address the problem of tactile localization, where the goal is to identify image regions that share the same material properties as a tactile input. Existing visuo-tactile methods rely on global alignment and thus fail to capture the fine-grained local correspondences required for this task. The challenge is amplified by existing datasets, which predominantly contain close-up, low-diversity ima...",
-        "key_contributions": [
-          "We address the problem of tactile localization, where the goal is to identify image regions that share the same material properties as a tactile input.",
-          "Existing visuo-tactile methods rely on global alignment and thus fail to capture the fine-grained local correspondences required for this task.",
-          "The challenge is amplified by existing datasets, which predominantly contain close-up, low-diversity images."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11637v1",
-      "title": "STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding",
-      "authors": [
-        "Wenhao Li",
-        "Xueying Jiang",
-        "Gongjie Zhang",
-        "Xiaoqin Zhang",
-        "Ling Shao",
-        "Shijian Lu"
-      ],
-      "abstract": "4D point cloud videos capture rich spatial and temporal dynamics of scenes which possess unique values in various 4D understanding tasks. However, most existing methods work in the spatiotemporal domain where the underlying geometric characteristics of 4D point cloud videos are hard to capture, leading to degraded representation learning and understanding of 4D point cloud videos. We address the above challenge from a complementary spectral perspective. By transforming 4D point cloud videos into graph spectral signals, we can decompose them into multiple frequency bands each of which captures distinct geometric structures of point cloud videos. Our spectral analysis reveals that the decomposed low-frequency signals capture more coarse shapes while high-frequency signals encode more fine-grained geometry details. Building on these observations, we design Spatio-Temporal-Spectral Mixer (STS-Mixer), a unified framework that mixes spatial, temporal, and spectral representations of point cloud videos. STS-Mixer integrates multi-band delineated spectral signals with spatiotemporal information to capture rich geometries and temporal dynamics, while enabling fine-grained and holistic understanding of 4D point cloud videos. Extensive experiments show that STS-Mixer achieves superior performance consistently across multiple widely adopted benchmarks on both 3D action recognition and 4D semantic segmentation tasks. Code and models are available at https://github.com/Vegetebird/STS-Mixer.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11637v1",
-        "pdf": "https://arxiv.org/pdf/2604.11637v1"
-      },
-      "arxiv_id": "2604.11637v1",
-      "comment": "Accepted by CVPR 2026, Open Sourced",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.653389830508475,
-      "score_breakdown": {
-        "total_score": 4.65,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "4D point cloud videos capture rich spatial and temporal dynamics of scenes which possess unique values in various 4D understanding tasks. However, most existing methods work in the spatiotemporal domain where the underlying geometric characteristics of 4D point cloud videos are hard to capture, leading to degraded representation learning and understanding of 4D point cloud videos. We address the a...",
-        "key_contributions": [
-          "4D point cloud videos capture rich spatial and temporal dynamics of scenes which possess unique values in various 4D understanding tasks.",
-          "However, most existing methods work in the spatiotemporal domain where the underlying geometric characteristics of 4D point cloud videos are hard to capture, leading to degraded representation learning and understanding of 4D point cloud videos.",
-          "We address the above challenge from a complementary spectral perspective."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11668v1",
-      "title": "UNIGEOCLIP: Unified Geospatial Contrastive Learning",
-      "authors": [
-        "Guillaume Astruc",
-        "Eduard Trulls",
-        "Jan Hosang",
-        "Loic Landrieu",
-        "Paul-Edouard Sarlin"
-      ],
-      "abstract": "The growing availability of co-located geospatial data spanning aerial imagery, street-level views, elevation models, text, and geographic coordinates offers a unique opportunity for multimodal representation learning. We introduce UNIGEOCLIP, a massively multimodal contrastive framework to jointly align five complementary geospatial modalities in a single unified embedding space. Unlike prior approaches that fuse modalities or rely on a central pivot representation, our method performs all-to-all contrastive alignment, enabling seamless comparison, retrieval, and reasoning across arbitrary combinations of modalities. We further propose a scaled latitude-longitude encoder that improves spatial representation by capturing multi-scale geographic structure. Extensive experiments across downstream geospatial tasks demonstrate that UNIGEOCLIP consistently outperforms single-modality contrastive models and coordinate-only baselines, highlighting the benefits of holistic multimodal geospatial alignment. A reference implementation is available at https://gastruc.github.io/unigeoclip.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11668v1",
-        "pdf": "https://arxiv.org/pdf/2604.11668v1"
-      },
-      "arxiv_id": "2604.11668v1",
-      "comment": "",
-      "journal_ref": "CVPR 2026 EarthVision",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -441,116 +56,59 @@
         }
       },
       "ai_summaries": {
-        "short": "The growing availability of co-located geospatial data spanning aerial imagery, street-level views, elevation models, text, and geographic coordinates offers a unique opportunity for multimodal representation learning. We introduce UNIGEOCLIP, a massively multimodal contrastive framework to jointly align five complementary geospatial modalities in a single unified embedding space. Unlike prior app...",
+        "short": "Existing segmentation models based on multimodal large language models (MLLMs), such as LISA, often struggle with novel or emerging entities due to their inability to incorporate up-to-date knowledge. To address this challenge, we introduce the Novel Emerging Segmentation Task (NEST), which focuses on segmenting (i) novel entities that MLLMs fail to recognize due to their absence from training dat...",
         "key_contributions": [
-          "The growing availability of co-located geospatial data spanning aerial imagery, street-level views, elevation models, text, and geographic coordinates offers a unique opportunity for multimodal representation learning.",
-          "We introduce UNIGEOCLIP, a massively multimodal contrastive framework to jointly align five complementary geospatial modalities in a single unified embedding space.",
-          "Unlike prior approaches that fuse modalities or rely on a central pivot representation, our method performs all-to-all contrastive alignment, enabling seamless comparison, retrieval, and reasoning across arbitrary combinations of modalities."
+          "Existing segmentation models based on multimodal large language models (MLLMs), such as LISA, often struggle with novel or emerging entities due to their inability to incorporate up-to-date knowledge.",
+          "To address this challenge, we introduce the Novel Emerging Segmentation Task (NEST), which focuses on segmenting (i) novel entities that MLLMs fail to recognize due to their absence from training data, and (ii) emerging entities that exist within the model's knowledge but demand up-to-date external information for accurate recognition.",
+          "To support the study of NEST, we construct a NEST benchmark using an automated pipeline that generates news-related data samples for comprehensive evaluation."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.11576v1",
-      "title": "Finetune Like You Pretrain: Boosting Zero-shot Adversarial Robustness in Vision-language Models",
+      "id": "2604.14025v1",
+      "title": "Feed-Forward 3D Scene Modeling: A Problem-Driven Perspective",
       "authors": [
-        "Songlong Xing",
         "Weijie Wang",
-        "Zhengyu Zhao",
-        "Jindong Gu",
-        "Philip Torr",
-        "Nicu Sebe"
+        "Qihang Cao",
+        "Sensen Gao",
+        "Donny Y. Chen",
+        "Haofei Xu",
+        "Wenjing Bian",
+        "Songyou Peng",
+        "Tat-Jen Cham",
+        "Chuanxia Zheng",
+        "Andreas Geiger",
+        "Jianfei Cai",
+        "Jia-Wang Bian",
+        "Bohan Zhuang"
       ],
-      "abstract": "Despite their impressive zero-shot abilities, vision-language models such as CLIP have been shown to be susceptible to adversarial attacks. To enhance its adversarial robustness, recent studies finetune the pretrained vision encoder of CLIP with adversarial examples on a proxy dataset such as ImageNet by aligning adversarial images with correct class labels. However, these methods overlook the important roles of training data distributions and learning objectives, resulting in reduced zero-shot capabilities and limited transferability of robustness across domains and datasets. In this work, we propose a simple yet effective paradigm AdvFLYP, which follows the training recipe of CLIP's pretraining process when performing adversarial finetuning to the model. Specifically, AdvFLYP finetunes CLIP with adversarial images created based on image-text pairs collected from the web, and match them with their corresponding texts via a contrastive loss. To alleviate distortion of adversarial image embeddings of noisy web images, we further propose to regularise AdvFLYP by penalising deviation of adversarial image features. We show that logit- and feature-level regularisation terms benefit robustness and clean accuracy, respectively. Extensive experiments on 14 downstream datasets spanning various domains show the superiority of our paradigm over mainstream practices. Our code and model weights are released at https://github.com/Sxing2/AdvFLYP.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
+      "abstract": "Reconstructing 3D representations from 2D inputs is a fundamental task in computer vision and graphics, serving as a cornerstone for understanding and interacting with the physical world. While traditional methods achieve high fidelity, they are limited by slow per-scene optimization or category-specific training, which hinders their practical deployment and scalability. Hence, generalizable feed-forward 3D reconstruction has witnessed rapid development in recent years. By learning a model that maps images directly to 3D representations in a single forward pass, these methods enable efficient reconstruction and robust cross-scene generalization. Our survey is motivated by a critical observation: despite the diverse geometric output representations, ranging from implicit fields to explicit primitives, existing feed-forward approaches share similar high-level architectural patterns, such as image feature extraction backbones, multi-view information fusion mechanisms, and geometry-aware design principles. Consequently, we abstract away from these representation differences and instead focus on model design, proposing a novel taxonomy centered on model design strategies that are agnostic to the output format. Our proposed taxonomy organizes the research directions into five key problems that drive recent research development: feature enhancement, geometry awareness, model efficiency, augmentation strategies and temporal-aware models. To support this taxonomy with empirical grounding and standardized evaluation, we further comprehensively review related benchmarks and datasets, and extensively discuss and categorize real-world applications based on feed-forward 3D models. Finally, we outline future directions to address open challenges such as scalability, evaluation standards, and world modeling.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.11576v1",
-        "pdf": "https://arxiv.org/pdf/2604.11576v1"
+        "paper": "http://arxiv.org/abs/2604.14025v1",
+        "pdf": "https://arxiv.org/pdf/2604.14025v1"
       },
-      "arxiv_id": "2604.11576v1",
-      "comment": "Accepted to CVPR Findings Track 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite their impressive zero-shot abilities, vision-language models such as CLIP have been shown to be susceptible to adversarial attacks. To enhance its adversarial robustness, recent studies finetune the pretrained vision encoder of CLIP with adversarial examples on a proxy dataset such as ImageNet by aligning adversarial images with correct class labels. However, these methods overlook the imp...",
-        "key_contributions": [
-          "Despite their impressive zero-shot abilities, vision-language models such as CLIP have been shown to be susceptible to adversarial attacks.",
-          "To enhance its adversarial robustness, recent studies finetune the pretrained vision encoder of CLIP with adversarial examples on a proxy dataset such as ImageNet by aligning adversarial images with correct class labels.",
-          "However, these methods overlook the important roles of training data distributions and learning objectives, resulting in reduced zero-shot capabilities and limited transferability of robustness across domains and datasets."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.11804v1",
-      "title": "OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation",
-      "authors": [
-        "Donghao Zhou",
-        "Guisheng Liu",
-        "Hao Yang",
-        "Jiatong Li",
-        "Jingyu Lin",
-        "Xiaohu Huang",
-        "Yichen Liu",
-        "Xin Gao",
-        "Cunjian Chen",
-        "Shilei Wen",
-        "Chi-Wing Fu",
-        "Pheng-Ann Heng"
-      ],
-      "abstract": "In this work, we study Human-Object Interaction Video Generation (HOIVG), which aims to synthesize high-quality human-object interaction videos conditioned on text, reference images, audio, and pose. This task holds significant practical value for automating content creation in real-world applications, such as e-commerce demonstrations, short video production, and interactive entertainment. However, existing approaches fail to accommodate all these requisite conditions. We present OmniShow, an end-to-end framework tailored for this practical yet challenging task, capable of harmonizing multimodal conditions and delivering industry-grade performance. To overcome the trade-off between controllability and quality, we introduce Unified Channel-wise Conditioning for efficient image and pose injection, and Gated Local-Context Attention to ensure precise audio-visual synchronization. To effectively address data scarcity, we develop a Decoupled-Then-Joint Training strategy that leverages a multi-stage training process with model merging to efficiently harness heterogeneous sub-task datasets. Furthermore, to fill the evaluation gap in this field, we establish HOIVG-Bench, a dedicated and comprehensive benchmark for HOIVG. Extensive experiments demonstrate that OmniShow achieves overall state-of-the-art performance across various multimodal conditioning settings, setting a solid standard for the emerging HOIVG task.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.11804v1",
-        "pdf": "https://arxiv.org/pdf/2604.11804v1"
-      },
-      "arxiv_id": "2604.11804v1",
-      "comment": "Project page: https://correr-zhou.github.io/OmniShow/",
+      "arxiv_id": "2604.14025v1",
+      "comment": "67 pages, 395 references. Project page: https://ff3d-survey.github.io. Code: https://github.com/ziplab/Awesome-Feed-Forward-3D. This work has been submitted to Springer for possible publication",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.2,
+      "relevance_score": 4.606779661016949,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.61,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.02,
+          "matches": [
+            "3d reconstruction",
+            "computer vision"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -573,48 +131,112 @@
         }
       },
       "ai_summaries": {
-        "short": "In this work, we study Human-Object Interaction Video Generation (HOIVG), which aims to synthesize high-quality human-object interaction videos conditioned on text, reference images, audio, and pose. This task holds significant practical value for automating content creation in real-world applications, such as e-commerce demonstrations, short video production, and interactive entertainment. Howeve...",
+        "short": "Reconstructing 3D representations from 2D inputs is a fundamental task in computer vision and graphics, serving as a cornerstone for understanding and interacting with the physical world. While traditional methods achieve high fidelity, they are limited by slow per-scene optimization or category-specific training, which hinders their practical deployment and scalability. Hence, generalizable feed-...",
         "key_contributions": [
-          "In this work, we study Human-Object Interaction Video Generation (HOIVG), which aims to synthesize high-quality human-object interaction videos conditioned on text, reference images, audio, and pose.",
-          "This task holds significant practical value for automating content creation in real-world applications, such as e-commerce demonstrations, short video production, and interactive entertainment.",
-          "However, existing approaches fail to accommodate all these requisite conditions."
+          "Reconstructing 3D representations from 2D inputs is a fundamental task in computer vision and graphics, serving as a cornerstone for understanding and interacting with the physical world.",
+          "While traditional methods achieve high fidelity, they are limited by slow per-scene optimization or category-specific training, which hinders their practical deployment and scalability.",
+          "Hence, generalizable feed-forward 3D reconstruction has witnessed rapid development in recent years."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.11626v1",
-      "title": "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time",
+      "id": "2604.13906v1",
+      "title": "Blind Bitstream-corrupted Video Recovery via Metadata-guided Diffusion Model",
       "authors": [
-        "Haozhe Wang",
-        "Cong Wei",
-        "Weiming Ren",
-        "Jiaming Liu",
-        "Fangzhen Lin",
-        "Wenhu Chen"
+        "Shuyun Wang",
+        "Hu Zhang",
+        "Xin Shen",
+        "Dadong Wang",
+        "Xin Yu"
       ],
-      "abstract": "Most reward models for visual generation reduce rich human judgments to a single unexplained score, discarding the reasoning that underlies preference. We show that teaching reward models to produce explicit, multi-dimensional critiques before scoring transforms them from passive evaluators into active optimization tools, improving generators in two complementary ways: at training time, structured rationales provide interpretable, fine-grained rewards for reinforcement learning; at test time, a Generate-Critique-Refine loop turns critiques into targeted prompt revisions that improve outputs without any parameter updates. To train such a reward model without costly rationale annotations, we introduce Preference-Anchored Rationalization (PARROT), a principled framework that recovers high-quality rationales from readily available preference data through anchored generation, consistency filtering, and distillation. The resulting model, RationalRewards (8B), achieves state-of-the-art preference prediction among open-source reward models, competitive with Gemini-2.5-Pro, while using 10-20x less training data than comparable baselines. As an RL reward, it consistently improves text-to-image and image-editing generators beyond scalar alternatives. Most strikingly, its test-time critique-and-refine loop matches or exceeds RL-based fine-tuning on several benchmarks, suggesting that structured reasoning can unlock latent capabilities in existing generators that suboptimal prompts fail to elicit.",
-      "published": "2026-04-13",
-      "updated": "2026-04-13",
+      "abstract": "Bitstream-corrupted video recovery aims to restore realistic content degraded during video storage or transmission. Existing methods typically assume that predefined masks of corrupted regions are available, but manually annotating these masks is labor-intensive and impractical in real-world scenarios. To address this limitation, we introduce a new blind video recovery setting that removes the reliance on predefined masks. This setting presents two major challenges: accurately identifying corrupted regions and recovering content from extensive and irregular degradations. We propose a Metadata-Guided Diffusion Model (M-GDM) to tackle these challenges. Specifically, intrinsic video metadata are leveraged as corruption indicators through a dual-stream metadata encoder that separately embeds motion vectors and frame types before fusing them into a unified representation. This representation interacts with corrupted latent features via cross-attention at each diffusion step. To preserve intact regions, we design a prior-driven mask predictor that generates pseudo masks using both metadata and diffusion priors, enabling the separation and recombination of intact and recovered regions through hard masking. To mitigate boundary artifacts caused by imperfect masks, a post-refinement module enhances consistency between intact and recovered regions. Extensive experiments demonstrate the effectiveness of our method and its superiority in blind video recovery. Code is available at: https://github.com/Shuyun-Wang/M-GDM.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
       "categories": [
-        "cs.AI",
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.11626v1",
-        "pdf": "https://arxiv.org/pdf/2604.11626v1"
+        "paper": "http://arxiv.org/abs/2604.13906v1",
+        "pdf": "https://arxiv.org/pdf/2604.13906v1"
       },
-      "arxiv_id": "2604.11626v1",
-      "comment": "Project Page: https://tiger-ai-lab.github.io/RationalRewards/ ; Code, Dataset, Models are released",
+      "arxiv_id": "2604.13906v1",
+      "comment": "CVPR 2025",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
+      "has_code": false,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Bitstream-corrupted video recovery aims to restore realistic content degraded during video storage or transmission. Existing methods typically assume that predefined masks of corrupted regions are available, but manually annotating these masks is labor-intensive and impractical in real-world scenarios. To address this limitation, we introduce a new blind video recovery setting that removes the rel...",
+        "key_contributions": [
+          "Bitstream-corrupted video recovery aims to restore realistic content degraded during video storage or transmission.",
+          "Existing methods typically assume that predefined masks of corrupted regions are available, but manually annotating these masks is labor-intensive and impractical in real-world scenarios.",
+          "To address this limitation, we introduce a new blind video recovery setting that removes the reliance on predefined masks."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.13905v1",
+      "title": "Rethinking Image-to-3D Generation with Sparse Queries: Efficiency, Capacity, and Input-View Bias",
+      "authors": [
+        "Zhiyuan Xu",
+        "Jiuming Liu",
+        "Yuxin Chen",
+        "Masayoshi Tomizuka",
+        "Chenfeng Xu",
+        "Chensheng Peng"
+      ],
+      "abstract": "We present SparseGen, a novel framework for efficient image-to-3D generation, which exhibits low input-view bias while being significantly faster. Unlike traditional approaches that rely on dense volumetric grids, triplanes, or pixel-aligned primitives, we model scenes with a compact sparse set of learned 3D anchor queries and a learned expansion operator that decodes each transformed query into a small local set of 3D Gaussian primitives. Trained under a rectified-flow reconstruction objective without 3D supervision, our model learns to allocate representation capacity where geometry and appearance matter, achieving significant reductions in memory and inference time while preserving multi-view fidelity. We introduce quantitative measures of input-view bias and utilization to show that sparse queries reduce overfitting to conditioning views while being representationally efficient. Our results argue that sparse set-latent expansion is a principled, practical alternative for efficient 3D generative modeling.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.13905v1",
+        "pdf": "https://arxiv.org/pdf/2604.13905v1"
+      },
+      "arxiv_id": "2604.13905v1",
+      "comment": "Code is available at https://github.com/Pixtella/SparseGen",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.426271186440678,
+      "score_breakdown": {
+        "total_score": 4.43,
+        "field_match": {
+          "score": 1.44,
+          "matches": [
+            "3d gaussian",
+            "volumetric"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -623,7 +245,69 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We present SparseGen, a novel framework for efficient image-to-3D generation, which exhibits low input-view bias while being significantly faster. Unlike traditional approaches that rely on dense volumetric grids, triplanes, or pixel-aligned primitives, we model scenes with a compact sparse set of learned 3D anchor queries and a learned expansion operator that decodes each transformed query into a...",
+        "key_contributions": [
+          "We present SparseGen, a novel framework for efficient image-to-3D generation, which exhibits low input-view bias while being significantly faster.",
+          "Unlike traditional approaches that rely on dense volumetric grids, triplanes, or pixel-aligned primitives, we model scenes with a compact sparse set of learned 3D anchor queries and a learned expansion operator that decodes each transformed query into a small local set of 3D Gaussian primitives.",
+          "Trained under a rectified-flow reconstruction objective without 3D supervision, our model learns to allocate representation capacity where geometry and appearance matter, achieving significant reductions in memory and inference time while preserving multi-view fidelity."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.14048v1",
+      "title": "Free Geometry: Refining 3D Reconstruction from Longer Versions of Itself",
+      "authors": [
+        "Yuhang Dai",
+        "Xingyi Yang"
+      ],
+      "abstract": "Feed-forward 3D reconstruction models are efficient but rigid: once trained, they perform inference in a zero-shot manner and cannot adapt to the test scene. As a result, visually plausible reconstructions often contain errors, particularly under occlusions, specularities, and ambiguous cues. To address this, we introduce Free Geometry, a framework that enables feed-forward 3D reconstruction models to self-evolve at test time without any 3D ground truth. Our key insight is that, when the model receives more views, it produces more reliable and view-consistent reconstructions. Leveraging this property, given a testing sequence, we mask a subset of frames to construct a self-supervised task. Free Geometry enforces cross-view feature consistency between representations from full and partial observations, while maintaining the pairwise relations implied by the held-out frames. This self-supervision allows for fast recalibration via lightweight LoRA updates, taking less than 2 minutes per dataset on a single GPU. Our approach consistently improves state-of-the-art foundation models, including Depth Anything 3 and VGGT, across 4 benchmark datasets, yielding an average improvement of 3.73% in camera pose accuracy and 2.88% in point map prediction. Code is available at https://github.com/hiteacherIamhumble/Free-Geometry .",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.14048v1",
+        "pdf": "https://arxiv.org/pdf/2604.14048v1"
+      },
+      "arxiv_id": "2604.14048v1",
+      "comment": "Code is available at https://github.com/hiteacherIamhumble/Free-Geometry",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.408474576271187,
+      "score_breakdown": {
+        "total_score": 4.41,
+        "field_match": {
+          "score": 1.27,
+          "matches": [
+            "self-supervised",
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -637,11 +321,339 @@
         }
       },
       "ai_summaries": {
-        "short": "Most reward models for visual generation reduce rich human judgments to a single unexplained score, discarding the reasoning that underlies preference. We show that teaching reward models to produce explicit, multi-dimensional critiques before scoring transforms them from passive evaluators into active optimization tools, improving generators in two complementary ways: at training time, structured...",
+        "short": "Feed-forward 3D reconstruction models are efficient but rigid: once trained, they perform inference in a zero-shot manner and cannot adapt to the test scene. As a result, visually plausible reconstructions often contain errors, particularly under occlusions, specularities, and ambiguous cues. To address this, we introduce Free Geometry, a framework that enables feed-forward 3D reconstruction model...",
         "key_contributions": [
-          "Most reward models for visual generation reduce rich human judgments to a single unexplained score, discarding the reasoning that underlies preference.",
-          "We show that teaching reward models to produce explicit, multi-dimensional critiques before scoring transforms them from passive evaluators into active optimization tools, improving generators in two complementary ways: at training time, structured rationales provide interpretable, fine-grained rewards for reinforcement learning; at test time, a Generate-Critique-Refine loop turns critiques into targeted prompt revisions that improve outputs without any parameter updates.",
-          "To train such a reward model without costly rationale annotations, we introduce Preference-Anchored Rationalization (PARROT), a principled framework that recovers high-quality rationales from readily available preference data through anchored generation, consistency filtering, and distillation."
+          "Feed-forward 3D reconstruction models are efficient but rigid: once trained, they perform inference in a zero-shot manner and cannot adapt to the test scene.",
+          "As a result, visually plausible reconstructions often contain errors, particularly under occlusions, specularities, and ambiguous cues.",
+          "To address this, we introduce Free Geometry, a framework that enables feed-forward 3D reconstruction models to self-evolve at test time without any 3D ground truth."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.14062v1",
+      "title": "OneHOI: Unifying Human-Object Interaction Generation and Editing",
+      "authors": [
+        "Jiun Tian Hoe",
+        "Weipeng Hu",
+        "Xudong Jiang",
+        "Yap-Peng Tan",
+        "Chee Seng Chan"
+      ],
+      "abstract": "Human-Object Interaction (HOI) modelling captures how humans act upon and relate to objects, typically expressed as <person, action, object> triplets. Existing approaches split into two disjoint families: HOI generation synthesises scenes from structured triplets and layout, but fails to integrate mixed conditions like HOI and object-only entities; and HOI editing modifies interactions via text, yet struggles to decouple pose from physical contact and scale to multiple interactions. We introduce OneHOI, a unified diffusion transformer framework that consolidates HOI generation and editing into a single conditional denoising process driven by shared structured interaction representations. At its core, the Relational Diffusion Transformer (R-DiT) models verb-mediated relations through role- and instance-aware HOI tokens, layout-based spatial Action Grounding, a Structured HOI Attention to enforce interaction topology, and HOI RoPE to disentangle multi-HOI scenes. Trained jointly with modality dropout on our HOI-Edit-44K, along with HOI and object-centric datasets, OneHOI supports layout-guided, layout-free, arbitrary-mask, and mixed-condition control, achieving state-of-the-art results across both HOI generation and editing. Code is available at https://jiuntian.github.io/OneHOI/.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.14062v1",
+        "pdf": "https://arxiv.org/pdf/2604.14062v1"
+      },
+      "arxiv_id": "2604.14062v1",
+      "comment": "Accepted at CVPR2026. This paper moves toward unifying HOI generation and editing within a single model",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.3999999999999995,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Human-Object Interaction (HOI) modelling captures how humans act upon and relate to objects, typically expressed as <person, action, object> triplets. Existing approaches split into two disjoint families: HOI generation synthesises scenes from structured triplets and layout, but fails to integrate mixed conditions like HOI and object-only entities; and HOI editing modifies interactions via text, y...",
+        "key_contributions": [
+          "Human-Object Interaction (HOI) modelling captures how humans act upon and relate to objects, typically expressed as <person, action, object> triplets.",
+          "Existing approaches split into two disjoint families: HOI generation synthesises scenes from structured triplets and layout, but fails to integrate mixed conditions like HOI and object-only entities; and HOI editing modifies interactions via text, yet struggles to decouple pose from physical contact and scale to multiple interactions.",
+          "We introduce OneHOI, a unified diffusion transformer framework that consolidates HOI generation and editing into a single conditional denoising process driven by shared structured interaction representations."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.13939v1",
+      "title": "A Multi-Stage Optimization Pipeline for Bethesda Cell Detection in Pap Smear Cytology",
+      "authors": [
+        "Martin Amster",
+        "Camila María Polotto"
+      ],
+      "abstract": "Computer vision techniques have advanced significantly in recent years, finding diverse and impactful applications within the medical field. In this paper, we introduce a new framework for the detection of Bethesda cells in Pap smear images, developed for Track B of the Riva Cytology Challenge held in association with the International Symposium on Biomedical Imaging (ISBI). This work focuses on enhancing computer vision models for cell detection, with performance evaluated using the mAP50-95 metric. We propose a solution based on an ensemble of YOLO and U-Net architectures, followed by a refinement stage utilizing overlap removal techniques and a binary classifier. Our framework achieved second place with a mAP50-95 score of 0.5909 in the competition. The implementation and source code are available at the following repository: github.com/martinamster/riva-trackb",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.13939v1",
+        "pdf": "https://arxiv.org/pdf/2604.13939v1"
+      },
+      "arxiv_id": "2604.13939v1",
+      "comment": "ISBI 2026 Accepted Paper & Second Place Solution for the RIVA Cervical Cytology Challenge Track B",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.27457627118644,
+      "score_breakdown": {
+        "total_score": 4.27,
+        "field_match": {
+          "score": 1.19,
+          "matches": [
+            "medical imaging",
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Computer vision techniques have advanced significantly in recent years, finding diverse and impactful applications within the medical field. In this paper, we introduce a new framework for the detection of Bethesda cells in Pap smear images, developed for Track B of the Riva Cytology Challenge held in association with the International Symposium on Biomedical Imaging (ISBI). This work focuses on e...",
+        "key_contributions": [
+          "Computer vision techniques have advanced significantly in recent years, finding diverse and impactful applications within the medical field.",
+          "In this paper, we introduce a new framework for the detection of Bethesda cells in Pap smear images, developed for Track B of the Riva Cytology Challenge held in association with the International Symposium on Biomedical Imaging (ISBI).",
+          "This work focuses on enhancing computer vision models for cell detection, with performance evaluated using the mAP50-95 metric."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.14125v1",
+      "title": "HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System",
+      "authors": [
+        "Tianshuo Yang",
+        "Guanyu Chen",
+        "Yutian Chen",
+        "Zhixuan Liang",
+        "Yitian Liu",
+        "Zanxin Chen",
+        "Chunpu Xu",
+        "Haotian Liang",
+        "Jiangmiao Pang",
+        "Yao Mu",
+        "Ping Luo"
+      ],
+      "abstract": "While end-to-end Vision-Language-Action (VLA) models offer a promising paradigm for robotic manipulation, fine-tuning them on narrow control data often compromises the profound reasoning capabilities inherited from their base Vision-Language Models (VLMs). To resolve this fundamental trade-off, we propose HiVLA, a visual-grounded-centric hierarchical framework that explicitly decouples high-level semantic planning from low-level motor control. In high-level part, a VLM planner first performs task decomposition and visual grounding to generate structured plans, comprising a subtask instruction and a precise target bounding box. Then, to translate this plan into physical actions, we introduce a flow-matching Diffusion Transformer (DiT) action expert in low-level part equipped with a novel cascaded cross-attention mechanism. This design sequentially fuses global context, high-resolution object-centric crops and skill semantics, enabling the DiT to focus purely on robust execution. Our decoupled architecture preserves the VLM's zero-shot reasoning while allowing independent improvement of both components. Extensive experiments in simulation and the real world demonstrate that HiVLA significantly outperforms state-of-the-art end-to-end baselines, particularly excelling in long-horizon skill composition and the fine-grained manipulation of small objects in cluttered scenes.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.14125v1",
+        "pdf": "https://arxiv.org/pdf/2604.14125v1"
+      },
+      "arxiv_id": "2604.14125v1",
+      "comment": "Project Page: https://tianshuoy.github.io/HiVLA-page/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "While end-to-end Vision-Language-Action (VLA) models offer a promising paradigm for robotic manipulation, fine-tuning them on narrow control data often compromises the profound reasoning capabilities inherited from their base Vision-Language Models (VLMs). To resolve this fundamental trade-off, we propose HiVLA, a visual-grounded-centric hierarchical framework that explicitly decouples high-level ...",
+        "key_contributions": [
+          "While end-to-end Vision-Language-Action (VLA) models offer a promising paradigm for robotic manipulation, fine-tuning them on narrow control data often compromises the profound reasoning capabilities inherited from their base Vision-Language Models (VLMs).",
+          "To resolve this fundamental trade-off, we propose HiVLA, a visual-grounded-centric hierarchical framework that explicitly decouples high-level semantic planning from low-level motor control.",
+          "In high-level part, a VLM planner first performs task decomposition and visual grounding to generate structured plans, comprising a subtask instruction and a precise target bounding box."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.14141v1",
+      "title": "Geometric Context Transformer for Streaming 3D Reconstruction",
+      "authors": [
+        "Lin-Zhuo Chen",
+        "Jian Gao",
+        "Yihang Chen",
+        "Ka Leong Cheng",
+        "Yipengjing Sun",
+        "Liangxiao Hu",
+        "Nan Xue",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Yao Yao",
+        "Yinghao Xu"
+      ],
+      "abstract": "Streaming 3D reconstruction aims to recover 3D information, such as camera poses and point clouds, from a video stream, which necessitates geometric accuracy, temporal\n  consistency, and computational efficiency. Motivated by the principles of Simultaneous Localization and Mapping (SLAM), we introduce LingBot-Map, a feed-forward 3D foundation\n  model for reconstructing scenes from streaming data, built upon a geometric context transformer (GCT) architecture. A defining aspect of LingBot-Map lies in its carefully\n  designed attention mechanism, which integrates an anchor context, a pose-reference window, and a trajectory memory to address coordinate grounding, dense geometric cues, and\n  long-range drift correction, respectively. This design keeps the streaming state compact while retaining rich geometric context, enabling stable efficient inference at around\n  20 FPS on 518 x 378 resolution inputs over long sequences exceeding 10,000 frames. Extensive evaluations across a variety of benchmarks demonstrate that our approach\n  achieves superior performance compared to both existing streaming and iterative optimization-based approaches.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.14141v1",
+        "pdf": "https://arxiv.org/pdf/2604.14141v1"
+      },
+      "arxiv_id": "2604.14141v1",
+      "comment": "Project page: https://technology.robbyant.com/lingbot-map Code: https://github.com/robbyant/lingbot-map",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.08728813559322,
+      "score_breakdown": {
+        "total_score": 4.09,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Streaming 3D reconstruction aims to recover 3D information, such as camera poses and point clouds, from a video stream, which necessitates geometric accuracy, temporal\n  consistency, and computational efficiency. Motivated by the principles of Simultaneous Localization and Mapping (SLAM), we introduce LingBot-Map, a feed-forward 3D foundation\n  model for reconstructing scenes from streaming data, ...",
+        "key_contributions": [
+          "Streaming 3D reconstruction aims to recover 3D information, such as camera poses and point clouds, from a video stream, which necessitates geometric accuracy, temporal\n  consistency, and computational efficiency.",
+          "Motivated by the principles of Simultaneous Localization and Mapping (SLAM), we introduce LingBot-Map, a feed-forward 3D foundation\n  model for reconstructing scenes from streaming data, built upon a geometric context transformer (GCT) architecture.",
+          "A defining aspect of LingBot-Map lies in its carefully\n  designed attention mechanism, which integrates an anchor context, a pose-reference window, and a trajectory memory to address coordinate grounding, dense geometric cues, and\n  long-range drift correction, respectively."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.14137v1",
+      "title": "From Feelings to Metrics: Understanding and Formalizing How Users Vibe-Test LLMs",
+      "authors": [
+        "Itay Itzhak",
+        "Eliya Habba",
+        "Gabriel Stanovsky",
+        "Yonatan Belinkov"
+      ],
+      "abstract": "Evaluating LLMs is challenging, as benchmark scores often fail to capture models' real-world usefulness. Instead, users often rely on ``vibe-testing'': informal experience-based evaluation, such as comparing models on coding tasks related to their own workflow. While prevalent, vibe-testing is often too ad hoc and unstructured to analyze or reproduce at scale. In this work, we study how vibe-testing works in practice and then formalize it to support systematic analysis. We first analyze two empirical resources: (1) a survey of user evaluation practices, and (2) a collection of in-the-wild model comparison reports from blogs and social media. Based on these resources, we formalize vibe-testing as a two-part process: users personalize both what they test and how they judge responses. We then introduce a proof-of-concept evaluation pipeline that follows this formulation by generating personalized prompts and comparing model outputs using user-aware subjective criteria. In experiments on coding benchmarks, we find that combining personalized prompts and user-aware evaluation can change which model is preferred, reflecting the role of vibe-testing in practice. These findings suggest that formalized vibe-testing can serve as a useful approach for bridging benchmark scores and real-world experience.",
+      "published": "2026-04-15",
+      "updated": "2026-04-15",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.14137v1",
+        "pdf": "https://arxiv.org/pdf/2604.14137v1"
+      },
+      "arxiv_id": "2604.14137v1",
+      "comment": "TLDR: Under review. 42 pages, 18 figures. Code and data at https://itay1itzhak.github.io/vibe-testing-llms Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Evaluating LLMs is challenging, as benchmark scores often fail to capture models' real-world usefulness. Instead, users often rely on ``vibe-testing'': informal experience-based evaluation, such as comparing models on coding tasks related to their own workflow. While prevalent, vibe-testing is often too ad hoc and unstructured to analyze or reproduce at scale. In this work, we study how vibe-testi...",
+        "key_contributions": [
+          "Evaluating LLMs is challenging, as benchmark scores often fail to capture models' real-world usefulness.",
+          "Instead, users often rely on ``vibe-testing'': informal experience-based evaluation, such as comparing models on coding tasks related to their own workflow.",
+          "While prevalent, vibe-testing is often too ad hoc and unstructured to analyze or reproduce at scale."
         ],
         "provider": "gemini"
       }

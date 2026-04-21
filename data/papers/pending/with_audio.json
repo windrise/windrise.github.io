@@ -3,173 +3,35 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.15096v1",
-      "title": "Beyond Independent Frames: Latent Attention Masked Autoencoders for Multi-View Echocardiography",
+      "id": "2604.16177v1",
+      "title": "Winner of CVPR2026 NTIRE Challenge on Image Shadow Removal: Semantic and Geometric Guidance for Shadow Removal via Cascaded Refinement",
       "authors": [
-        "Simon Böhi",
-        "Irene Cannistraci",
-        "Sergio Muñoz Gonzalez",
-        "Moritz Vandenhirtz",
-        "Sonia Laguna",
-        "Samuel Ruiperez-Campillo",
-        "Max Krähenmann",
-        "Andrea Agostini",
-        "Ece Ozkan",
-        "Thomas M. Sutter",
-        "Julia E. Vogt"
+        "Lorenzo Beltrame",
+        "Jules Salzinger",
+        "Filip Svoboda",
+        "Jasmin Lampert",
+        "Phillipp Fanta-Jende",
+        "Radu Timofte",
+        "Marco Koerner"
       ],
-      "abstract": "Echocardiography is a widely used modality for cardiac assessment due to its non-invasive and cost-effective nature, but the sparse and heterogeneous spatiotemporal views of the heart pose distinct challenges. Existing masked autoencoder (MAE) approaches typically process images or short clips independently, failing to capture the inherent multi-view structure required for coherent cardiac representation. We introduce Latent Attention Masked Autoencoder (LAMAE), a foundation model architecture tailored to the multi-view nature of medical imaging. LAMAE augments the standard MAE with a latent attention module that enables information exchange across frames and views directly in latent space. This allows the model to aggregate variable-length sequences and distinct views, reconstructing a holistic representation of cardiac function from partial observations. We pretrain LAMAE on MIMIC-IV-ECHO, a large-scale, uncurated dataset reflecting real-world clinical variability. To the best of our knowledge, we present the first results for predicting ICD-10 codes from MIMIC-IV-ECHO videos. Furthermore, we empirically demonstrate that representations learned from adult data transfer effectively to pediatric cohorts despite substantial anatomical differences. These results provide evidence that incorporating structural priors, such as multi-view attention, yields significantly more robust and transferable representations.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.15096v1",
-        "pdf": "https://arxiv.org/pdf/2604.15096v1"
-      },
-      "arxiv_id": "2604.15096v1",
-      "comment": "Accepted as a workshop paper at the ICLR 2026 Workshop on Foundation Models for Science",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.38135593220339,
-      "score_breakdown": {
-        "total_score": 5.38,
-        "field_match": {
-          "score": 2.2,
-          "matches": [
-            "medical imaging",
-            "cardiac",
-            "heart"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Echocardiography is a widely used modality for cardiac assessment due to its non-invasive and cost-effective nature, but the sparse and heterogeneous spatiotemporal views of the heart pose distinct challenges. Existing masked autoencoder (MAE) approaches typically process images or short clips independently, failing to capture the inherent multi-view structure required for coherent cardiac represe...",
-        "key_contributions": [
-          "Echocardiography is a widely used modality for cardiac assessment due to its non-invasive and cost-effective nature, but the sparse and heterogeneous spatiotemporal views of the heart pose distinct challenges.",
-          "Existing masked autoencoder (MAE) approaches typically process images or short clips independently, failing to capture the inherent multi-view structure required for coherent cardiac representation.",
-          "We introduce Latent Attention Masked Autoencoder (LAMAE), a foundation model architecture tailored to the multi-view nature of medical imaging."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.15096v1.mp3"
-      }
-    },
-    {
-      "id": "2604.15312v1",
-      "title": "Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo",
-      "authors": [
-        "Ninghui Xu",
-        "Fabio Tosi",
-        "Lihui Wang",
-        "Jiawei Han",
-        "Luca Bartolomei",
-        "Zhiting Yao",
-        "Matteo Poggi",
-        "Stefano Mattoccia"
-      ],
-      "abstract": "Conventional frame-based cameras capture rich contextual information but suffer from limited temporal resolution and motion blur in dynamic scenes. Event cameras offer an alternative visual representation with higher dynamic range free from such limitations. The complementary characteristics of the two modalities make event-frame asymmetric stereo promising for reliable 3D perception under fast motion and challenging illumination. However, the modality gap often leads to marginalization of domain-specific cues essential for cross-modal stereo matching. In this paper, we introduce Bi-CMPStereo, a novel bidirectional cross-modal prompting framework that fully exploits semantic and structural features from both domains for robust matching. Our approach learns finely aligned stereo representations within a target canonical space and integrates complementary representations by projecting each modality into both event and frame domains. Extensive experiments demonstrate that our approach significantly outperforms state-of-the-art methods in accuracy and generalization.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "We present a three-stage progressive shadow-removal pipeline for the CVPR2026 NTIRE WSRD+ challenge. Built on OmniSR, our method treats deshadowing as iterative direct refinement, where later stages correct residual artefacts left by earlier predictions. The model combines RGB appearance with frozen DINOv2 semantic guidance and geometric cues from monocular depth and surface normals, reused across all stages. To stabilise multi-stage optimisation, we introduce a contraction-constrained objective that encourages non-increasing reconstruction error across the cascade. A staged training pipeline transfers from earlier WSRD pretraining to WSRD+ supervision and final WSRD+ 2026 adaptation with cosine-annealed checkpoint ensembling. On the official WSRD+ 2026 hidden test set, our final ensemble achieved 26.680 PSNR, 0.8740 SSIM, 0.0578 LPIPS, and 26.135 FID, ranked first overall, and won the NTIRE 2026 Image Shadow Removal Challenge. The strong performance of the proposed model is further validated on the ISTD+ and UAV-SC+ datasets.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.15312v1",
-        "pdf": "https://arxiv.org/pdf/2604.15312v1"
+        "paper": "http://arxiv.org/abs/2604.16177v1",
+        "pdf": "https://arxiv.org/pdf/2604.16177v1"
       },
-      "arxiv_id": "2604.15312v1",
-      "comment": "CVPR 2026. Code URL: https://github.com/xnh97/Bi-CMPStereo",
+      "arxiv_id": "2604.16177v1",
+      "comment": "10 pages, 4 figures, 5 tables, accepted at the CVPR 2026 Workshops (NTIRE 2026 Image Shadow Removal Challenge). Code and materials are available at https://github.com/AIT-Assistive-Autonomous-Systems/SGCR-SR",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.2,
+      "relevance_score": 5.1,
       "score_breakdown": {
-        "total_score": 5.2,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Conventional frame-based cameras capture rich contextual information but suffer from limited temporal resolution and motion blur in dynamic scenes. Event cameras offer an alternative visual representation with higher dynamic range free from such limitations. The complementary characteristics of the two modalities make event-frame asymmetric stereo promising for reliable 3D perception under fast mo...",
-        "key_contributions": [
-          "Conventional frame-based cameras capture rich contextual information but suffer from limited temporal resolution and motion blur in dynamic scenes.",
-          "Event cameras offer an alternative visual representation with higher dynamic range free from such limitations.",
-          "The complementary characteristics of the two modalities make event-frame asymmetric stereo promising for reliable 3D perception under fast motion and challenging illumination."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.15312v1.mp3"
-      }
-    },
-    {
-      "id": "2604.15311v1",
-      "title": "LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories",
-      "authors": [
-        "Zhanhao Liang",
-        "Tao Yang",
-        "Jie Wu",
-        "Chengjian Feng",
-        "Liang Zheng"
-      ],
-      "abstract": "This paper focuses on the alignment of flow matching models with human preferences. A promising way is fine-tuning by directly backpropagating reward gradients through the differentiable generation process of flow matching. However, backpropagating through long trajectories results in prohibitive memory costs and gradient explosion. Therefore, direct-gradient methods struggle to update early generation steps, which are crucial for determining the global structure of the final image. To address this issue, we introduce LeapAlign, a fine-tuning method that reduces computational cost and enables direct gradient propagation from reward to early generation steps. Specifically, we shorten the long trajectory into only two steps by designing two consecutive leaps, each skipping multiple ODE sampling steps and predicting future latents in a single step. By randomizing the start and end timesteps of the leaps, LeapAlign leads to efficient and stable model updates at any generation step. To better use such shortened trajectories, we assign higher training weights to those that are more consistent with the long generation path. To further enhance gradient stability, we reduce the weights of gradient terms with large magnitude, instead of completely removing them as done in previous works. When fine-tuning the Flux model, LeapAlign consistently outperforms state-of-the-art GRPO-based and direct-gradient methods across various metrics, achieving superior image quality and image-text alignment.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.15311v1",
-        "pdf": "https://arxiv.org/pdf/2604.15311v1"
-      },
-      "arxiv_id": "2604.15311v1",
-      "comment": "Accepted by CVPR 2026. Project page: https://rockeycoss.github.io/leapalign/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.05,
-      "score_breakdown": {
-        "total_score": 5.05,
+        "total_score": 5.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -190,111 +52,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "This paper focuses on the alignment of flow matching models with human preferences. A promising way is fine-tuning by directly backpropagating reward gradients through the differentiable generation process of flow matching. However, backpropagating through long trajectories results in prohibitive memory costs and gradient explosion. Therefore, direct-gradient methods struggle to update early gener...",
+        "short": "We present a three-stage progressive shadow-removal pipeline for the CVPR2026 NTIRE WSRD+ challenge. Built on OmniSR, our method treats deshadowing as iterative direct refinement, where later stages correct residual artefacts left by earlier predictions. The model combines RGB appearance with frozen DINOv2 semantic guidance and geometric cues from monocular depth and surface normals, reused across...",
         "key_contributions": [
-          "This paper focuses on the alignment of flow matching models with human preferences.",
-          "A promising way is fine-tuning by directly backpropagating reward gradients through the differentiable generation process of flow matching.",
-          "However, backpropagating through long trajectories results in prohibitive memory costs and gradient explosion."
+          "We present a three-stage progressive shadow-removal pipeline for the CVPR2026 NTIRE WSRD+ challenge.",
+          "Built on OmniSR, our method treats deshadowing as iterative direct refinement, where later stages correct residual artefacts left by earlier predictions.",
+          "The model combines RGB appearance with frozen DINOv2 semantic guidance and geometric cues from monocular depth and surface normals, reused across all stages."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.15311v1.mp3"
+        "audio_url": "/audio/2604.16177v1.mp3"
       }
     },
     {
-      "id": "2604.14969v1",
-      "title": "Discovering Novel LLM Experts via Task-Capability Coevolution",
+      "id": "2604.16284v1",
+      "title": "Enhancing Hazy Wildlife Imagery: AnimalHaze3k and IncepDehazeGan",
       "authors": [
-        "Andrew Dai",
-        "Boris Meinardus",
-        "Ciaran Regan",
-        "Yingtao Tian",
-        "Yujin Tang"
+        "Shivarth Rai",
+        "Tejeswar Pokuri"
       ],
-      "abstract": "Frontier model developers aim to train models continually to possess emergent, diverse capabilities. To extend capabilities, the current pre-training and post-training paradigm requires manually starting training runs with static datasets or reward functions every time. Addressing this limitation, our work pursues the insight that open-endedness (via the coevolution of models and tasks) can discover models with increasingly novel skills in a single run. We introduce a new model development framework that extends coevolution to large language model (LLM) discovery, open-ended \\textit{Assessment Coevolving with Diverse Capabilities} (AC/DC). AC/DC evolves both LLMs via model merging and natural language tasks via synthetic data generation. AC/DC discovers growing archives of LLMs that surpass the capabilities of larger LLMs while taking up less GPU memory. In particular, our LLM populations achieve a broader Coverage of expertise than other curated models or baselines on downstream benchmarks, without \\textit{any} explicit benchmark optimization. Furthermore, AC/DC improves Coverage over time, continually innovates on tasks and models, and improves performance in multi-agent best-of-N selection. Our findings highlight the potential of coevolution as a means of discovering broader sets of capabilities from base LLMs. Overall, AC/DC brings us one step closer to a profoundly new paradigm of LLM development, where continual improvements to the diversity of model capabilities can be accelerated by leveraging existing models as stepping stones to increasingly powerful models.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.14969v1",
-        "pdf": "https://arxiv.org/pdf/2604.14969v1"
-      },
-      "arxiv_id": "2604.14969v1",
-      "comment": "ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.75,
-      "score_breakdown": {
-        "total_score": 4.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Frontier model developers aim to train models continually to possess emergent, diverse capabilities. To extend capabilities, the current pre-training and post-training paradigm requires manually starting training runs with static datasets or reward functions every time. Addressing this limitation, our work pursues the insight that open-endedness (via the coevolution of models and tasks) can discov...",
-        "key_contributions": [
-          "Frontier model developers aim to train models continually to possess emergent, diverse capabilities.",
-          "To extend capabilities, the current pre-training and post-training paradigm requires manually starting training runs with static datasets or reward functions every time.",
-          "Addressing this limitation, our work pursues the insight that open-endedness (via the coevolution of models and tasks) can discover models with increasingly novel skills in a single run."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2604.14969v1.mp3"
-      }
-    },
-    {
-      "id": "2604.15170v1",
-      "title": "OmniLight: One Model to Rule All Lighting Conditions",
-      "authors": [
-        "Youngjin Oh",
-        "Junyoung Park",
-        "Junhyeong Kwon",
-        "Nam Ik Cho"
-      ],
-      "abstract": "Adverse lighting conditions, such as cast shadows and irregular illumination, pose significant challenges to computer vision systems by degrading visibility and color fidelity. Consequently, effective shadow removal and ALN are critical for restoring underlying image content, improving perceptual quality, and facilitating robust performance in downstream tasks. However, while achieving state-of-the-art results on specific benchmarks is a primary goal in image restoration challenges, real-world applications often demand robust models capable of handling diverse domains. To address this, we present a comprehensive study on lighting-related image restoration by exploring two contrasting strategies. We leverage a robust framework for ALN, DINOLight, as a specialized baseline to exploit the characteristics of each individual dataset, and extend it to OmniLight, a generalized alternative incorporating our proposed Wavelet Domain Mixture-of-Experts (WD-MoE) that is trained across all provided datasets. Through a comparative analysis of these two methods, we discuss the impact of data distribution on the performance of specialized and unified architectures in lighting-related image restoration. Notably, both approaches secured top-tier rankings across all three lighting-related tracks in the NTIRE 2026 Challenge, demonstrating their outstanding perceptual quality and generalization capabilities. Our codes are available at https://github.com/OBAKSA/Lighting-Restoration.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "Atmospheric haze significantly degrades wildlife imagery, impeding computer vision applications critical for conservation, such as animal detection, tracking, and behavior analysis. To address this challenge, we introduce AnimalHaze3k a synthetic dataset comprising of 3,477 hazy images generated from 1,159 clear wildlife photographs through a physics-based pipeline. Our novel IncepDehazeGan architecture combines inception blocks with residual skip connections in a GAN framework, achieving state-of-the-art performance (SSIM: 0.8914, PSNR: 20.54, and LPIPS: 0.1104), delivering 6.27% higher SSIM and 10.2% better PSNR than competing approaches. When applied to downstream detection tasks, dehazed images improved YOLOv11 detection mAP by 112% and IoU by 67%. These advances can provide ecologists with reliable tools for population monitoring and surveillance in challenging environmental conditions, demonstrating significant potential for enhancing wildlife conservation efforts through robust visual analytics.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.15170v1",
-        "pdf": "https://arxiv.org/pdf/2604.15170v1"
+        "paper": "http://arxiv.org/abs/2604.16284v1",
+        "pdf": "https://arxiv.org/pdf/2604.16284v1"
       },
-      "arxiv_id": "2604.15170v1",
-      "comment": "CVPRW 2026; NTIRE 2026 Image Shadow Removal & Ambient Lighting Normalization Challenges (1st Perceptual Rank for White Lighting, 2nd Fidelity Rank & 4th Perceptual Rank for Color Lighting)",
+      "arxiv_id": "2604.16284v1",
+      "comment": "Accepted at CV4Animals Workshop, CVPR 2025",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.719491525423729,
+      "relevance_score": 4.619491525423729,
       "score_breakdown": {
-        "total_score": 4.72,
+        "total_score": 4.62,
         "field_match": {
           "score": 0.42,
           "matches": [
@@ -317,48 +114,49 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Adverse lighting conditions, such as cast shadows and irregular illumination, pose significant challenges to computer vision systems by degrading visibility and color fidelity. Consequently, effective shadow removal and ALN are critical for restoring underlying image content, improving perceptual quality, and facilitating robust performance in downstream tasks. However, while achieving state-of-th...",
+        "short": "Atmospheric haze significantly degrades wildlife imagery, impeding computer vision applications critical for conservation, such as animal detection, tracking, and behavior analysis. To address this challenge, we introduce AnimalHaze3k a synthetic dataset comprising of 3,477 hazy images generated from 1,159 clear wildlife photographs through a physics-based pipeline. Our novel IncepDehazeGan archit...",
         "key_contributions": [
-          "Adverse lighting conditions, such as cast shadows and irregular illumination, pose significant challenges to computer vision systems by degrading visibility and color fidelity.",
-          "Consequently, effective shadow removal and ALN are critical for restoring underlying image content, improving perceptual quality, and facilitating robust performance in downstream tasks.",
-          "However, while achieving state-of-the-art results on specific benchmarks is a primary goal in image restoration challenges, real-world applications often demand robust models capable of handling diverse domains."
+          "Atmospheric haze significantly degrades wildlife imagery, impeding computer vision applications critical for conservation, such as animal detection, tracking, and behavior analysis.",
+          "To address this challenge, we introduce AnimalHaze3k a synthetic dataset comprising of 3,477 hazy images generated from 1,159 clear wildlife photographs through a physics-based pipeline.",
+          "Our novel IncepDehazeGan architecture combines inception blocks with residual skip connections in a GAN framework, achieving state-of-the-art performance (SSIM: 0."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.15170v1.mp3"
+        "audio_url": "/audio/2604.16284v1.mp3"
       }
     },
     {
-      "id": "2604.15027v1",
-      "title": "Quality-Aware Calibration for AI-Generated Image Detection in the Wild",
+      "id": "2604.15979v1",
+      "title": "MMGait: Towards Multi-Modal Gait Recognition",
       "authors": [
-        "Fabrizio Guillaro",
-        "Vincenzo De Rosa",
-        "Davide Cozzolino",
-        "Luisa Verdoliva"
+        "Chenye Wang",
+        "Qingyuan Cai",
+        "Saihui Hou",
+        "Aoqi Li",
+        "Yongzhen Huang"
       ],
-      "abstract": "Significant progress has been made in detecting synthetic images, however most existing approaches operate on a single image instance and overlook a key characteristic of real-world dissemination: as viral images circulate on the web, multiple near-duplicate versions appear and lose quality due to repeated operations like recompression, resizing and cropping. As a consequence, the same image may yield inconsistent forensic predictions based on which version has been analyzed. In this work, to address this issue we propose QuAD (Quality-Aware calibration with near-Duplicates) a novel framework that makes decisions based on all available near-duplicates of the same image. Given a query, we retrieve its online near-duplicates and feed them to a detector: the resulting scores are then aggregated based on the estimated quality of the corresponding instance. By doing so, we take advantage of all pieces of information while accounting for the reduced reliability of images impaired by multiple processing steps. To support large-scale evaluation, we introduce two datasets: AncesTree, an in-lab dataset of 136k images organized in stochastic degradation trees that simulate online reposting dynamics, and ReWIND, a real-world dataset of nearly 10k near-duplicate images collected from viral web content. Experiments on several state-of-the-art detectors show that our quality-aware fusion improves their performance consistently, with an average gain of around 8% in terms of balanced accuracy compared to plain average. Our results highlight the importance of jointly processing all the images available online to achieve reliable detection of AI-generated content in real-world applications. Code and data are publicly available at https://grip-unina.github.io/QuAD/",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "Gait recognition has emerged as a powerful biometric technique for identifying individuals at a distance without requiring user cooperation. Most existing methods focus primarily on RGB-derived modalities, which fall short in real-world scenarios requiring multi-modal collaboration and cross-modal retrieval. To overcome these challenges, we present MMGait, a comprehensive multi-modal gait benchmark integrating data from five heterogeneous sensors, including an RGB camera, a depth camera, an infrared camera, a LiDAR scanner, and a 4D Radar system. MMGait contains twelve modalities and 334,060 sequences from 725 subjects, enabling systematic exploration across geometric, photometric, and motion domains. Based on MMGait, we conduct extensive evaluations on single-modal, cross-modal, and multi-modal paradigms to analyze modality robustness and complementarity. Furthermore, we introduce a new task, Omni Multi-Modal Gait Recognition, which aims to unify the above three gait recognition paradigms within a single model. We also propose a simple yet powerful baseline, OmniGait, which learns a shared embedding space across diverse modalities and achieves promising recognition performance. The MMGait benchmark, codebase, and pretrained checkpoints are publicly available at https://github.com/BNU-IVC/MMGait.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.15027v1",
-        "pdf": "https://arxiv.org/pdf/2604.15027v1"
+        "paper": "http://arxiv.org/abs/2604.15979v1",
+        "pdf": "https://arxiv.org/pdf/2604.15979v1"
       },
-      "arxiv_id": "2604.15027v1",
-      "comment": "Accepted at the APAI Workshop at CVPR 2026",
+      "arxiv_id": "2604.15979v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.65,
+      "relevance_score": 4.6,
       "score_breakdown": {
-        "total_score": 4.65,
+        "total_score": 4.6,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -379,47 +177,48 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Significant progress has been made in detecting synthetic images, however most existing approaches operate on a single image instance and overlook a key characteristic of real-world dissemination: as viral images circulate on the web, multiple near-duplicate versions appear and lose quality due to repeated operations like recompression, resizing and cropping. As a consequence, the same image may y...",
+        "short": "Gait recognition has emerged as a powerful biometric technique for identifying individuals at a distance without requiring user cooperation. Most existing methods focus primarily on RGB-derived modalities, which fall short in real-world scenarios requiring multi-modal collaboration and cross-modal retrieval. To overcome these challenges, we present MMGait, a comprehensive multi-modal gait benchmar...",
         "key_contributions": [
-          "Significant progress has been made in detecting synthetic images, however most existing approaches operate on a single image instance and overlook a key characteristic of real-world dissemination: as viral images circulate on the web, multiple near-duplicate versions appear and lose quality due to repeated operations like recompression, resizing and cropping.",
-          "As a consequence, the same image may yield inconsistent forensic predictions based on which version has been analyzed.",
-          "In this work, to address this issue we propose QuAD (Quality-Aware calibration with near-Duplicates) a novel framework that makes decisions based on all available near-duplicates of the same image."
+          "Gait recognition has emerged as a powerful biometric technique for identifying individuals at a distance without requiring user cooperation.",
+          "Most existing methods focus primarily on RGB-derived modalities, which fall short in real-world scenarios requiring multi-modal collaboration and cross-modal retrieval.",
+          "To overcome these challenges, we present MMGait, a comprehensive multi-modal gait benchmark integrating data from five heterogeneous sensors, including an RGB camera, a depth camera, an infrared camera, a LiDAR scanner, and a 4D Radar system."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.15027v1.mp3"
+        "audio_url": "/audio/2604.15979v1.mp3"
       }
     },
     {
-      "id": "2604.15174v1",
-      "title": "MambaSL: Exploring Single-Layer Mamba for Time Series Classification",
+      "id": "2604.16248v1",
+      "title": "Where Do Vision-Language Models Fail? World Scale Analysis for Image Geolocalization",
       "authors": [
-        "Yoo-Min Jung",
-        "Leekyung Kim"
+        "Siddhant Bharadwaj",
+        "Ashish Vashist",
+        "Fahimul Aleem",
+        "Shruti Vyas"
       ],
-      "abstract": "Despite recent advances in state space models (SSMs) such as Mamba across various sequence domains, research on their standalone capacity for time series classification (TSC) has remained limited. We propose MambaSL, a framework that minimally redesigns the selective SSM and projection layers of a single-layer Mamba, guided by four TSC-specific hypotheses. To address benchmarking limitations -- restricted configurations, partial University of East Anglia (UEA) dataset coverage, and insufficiently reproducible setups -- we re-evaluate 20 strong baselines across all 30 UEA datasets under a unified protocol. As a result, MambaSL achieves state-of-the-art performance with statistically significant average improvements, while ensuring reproducibility via public checkpoints for all evaluated models. Together with visualizations, these results demonstrate the potential of Mamba-based architectures as a TSC backbone.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "Image geolocalization has traditionally been addressed through retrieval-based place recognition or geometry-based visual localization pipelines. Recent advances in Vision-Language Models (VLMs) have demonstrated strong zero-shot reasoning capabilities across multimodal tasks, yet their performance in geographic inference remains underexplored. In this work, we present a systematic evaluation of multiple state-of-the-art VLMs for country-level image geolocalization using ground-view imagery only. Instead of relying on image matching, GPS metadata, or task-specific training, we evaluate prompt-based country prediction in a zero-shot setting. The selected models are tested on three geographically diverse datasets to assess their robustness and generalization ability. Our results reveal substantial variation across models, highlighting the potential of semantic reasoning for coarse geolocalization and the limitations of current VLMs in capturing fine-grained geographic cues. This study provides the first focused comparison of modern VLMs for country-level geolocalization and establishes a foundation for future research at the intersection of multimodal reasoning and geographic understanding.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.15174v1",
-        "pdf": "https://arxiv.org/pdf/2604.15174v1"
+        "paper": "http://arxiv.org/abs/2604.16248v1",
+        "pdf": "https://arxiv.org/pdf/2604.16248v1"
       },
-      "arxiv_id": "2604.15174v1",
-      "comment": "accepted at ICLR 2026",
+      "arxiv_id": "2604.16248v1",
+      "comment": "Accepted to the CVPR EarthVision 2026 Workshop",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.55,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -427,11 +226,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -440,48 +239,112 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Despite recent advances in state space models (SSMs) such as Mamba across various sequence domains, research on their standalone capacity for time series classification (TSC) has remained limited. We propose MambaSL, a framework that minimally redesigns the selective SSM and projection layers of a single-layer Mamba, guided by four TSC-specific hypotheses. To address benchmarking limitations -- re...",
+        "short": "Image geolocalization has traditionally been addressed through retrieval-based place recognition or geometry-based visual localization pipelines. Recent advances in Vision-Language Models (VLMs) have demonstrated strong zero-shot reasoning capabilities across multimodal tasks, yet their performance in geographic inference remains underexplored. In this work, we present a systematic evaluation of m...",
         "key_contributions": [
-          "Despite recent advances in state space models (SSMs) such as Mamba across various sequence domains, research on their standalone capacity for time series classification (TSC) has remained limited.",
-          "We propose MambaSL, a framework that minimally redesigns the selective SSM and projection layers of a single-layer Mamba, guided by four TSC-specific hypotheses.",
-          "To address benchmarking limitations -- restricted configurations, partial University of East Anglia (UEA) dataset coverage, and insufficiently reproducible setups -- we re-evaluate 20 strong baselines across all 30 UEA datasets under a unified protocol."
+          "Image geolocalization has traditionally been addressed through retrieval-based place recognition or geometry-based visual localization pipelines.",
+          "Recent advances in Vision-Language Models (VLMs) have demonstrated strong zero-shot reasoning capabilities across multimodal tasks, yet their performance in geographic inference remains underexplored.",
+          "In this work, we present a systematic evaluation of multiple state-of-the-art VLMs for country-level image geolocalization using ground-view imagery only."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.15174v1.mp3"
+        "audio_url": "/audio/2604.16248v1.mp3"
       }
     },
     {
-      "id": "2604.15310v1",
-      "title": "TokenLight: Precise Lighting Control in Images using Attribute Tokens",
+      "id": "2604.16010v1",
+      "title": "IA-CLAHE: Image-Adaptive Clip Limit Estimation for CLAHE",
       "authors": [
-        "Sumit Chaturvedi",
-        "Yannick Hold-Geoffroy",
-        "Mengwei Ren",
-        "Jingyuan Liu",
-        "He Zhang",
-        "Yiqun Mei",
-        "Julie Dorsey",
-        "Zhixin Shu"
+        "Rikuto Otsuka",
+        "Yuho Shoji",
+        "Yuka Ogino",
+        "Takahiro Toizumi",
+        "Atsushi Ito"
       ],
-      "abstract": "This paper presents a method for image relighting that enables precise and continuous control over multiple illumination attributes in a photograph. We formulate relighting as a conditional image generation task and introduce attribute tokens to encode distinct lighting factors such as intensity, color, ambient illumination, diffuse level, and 3D light positions. The model is trained on a large-scale synthetic dataset with ground-truth lighting annotations, supplemented by a small set of real captures to enhance realism and generalization. We validate our approach across a variety of relighting tasks, including controlling in-scene lighting fixtures and editing environment illumination using virtual light sources, on synthetic and real images. Our method achieves state-of-the-art quantitative and qualitative performance compared to prior work. Remarkably, without explicit inverse rendering supervision, the model exhibits an inherent understanding of how light interacts with scene geometry, occlusion, and materials, yielding convincing lighting effects even in traditionally challenging scenarios such as placing lights within objects or relighting transparent materials plausibly. Project page: vrroom.github.io/tokenlight/",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "This paper proposes image-adaptive contrast limited adaptive histogram equalization (IA-CLAHE). Conventional CLAHE is widely used to boost the performance of various computer vision tasks and to improve visual quality for human perception in practical industrial applications. CLAHE applies contrast limited histogram equalization to each local region to enhance local contrast. However, CLAHE often leads to over-enhancement, because the contrast-limiting parameter clip limit is fixed regardless of the histogram distribution of each local region. Our IA-CLAHE addresses this limitation by adaptively estimating tile-wise clip limits from the input image. To achieve this, we train a lightweight clip limits estimator with a differentiable extension of CLAHE, enabling end-to-end optimization. Unlike prior learning-based CLAHE methods, IA-CLAHE does not require pre-searched ground-truth clip limits or task-specific datasets, because it learns to map input image histograms toward a domain-invariant uniform distribution, enabling zero-shot generalization across diverse conditions. Experimental results show that IA-CLAHE consistently improves recognition performance, while simultaneously enhancing visual quality for human perception, without requiring any task-specific training data.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
-        "cs.CV",
-        "cs.GR"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.15310v1",
-        "pdf": "https://arxiv.org/pdf/2604.15310v1"
+        "paper": "http://arxiv.org/abs/2604.16010v1",
+        "pdf": "https://arxiv.org/pdf/2604.16010v1"
       },
-      "arxiv_id": "2604.15310v1",
-      "comment": "32 pages, CVPR 2026",
+      "arxiv_id": "2604.16010v1",
+      "comment": "Accepted to NTIRE 2026 Workshop at CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.519491525423729,
+      "score_breakdown": {
+        "total_score": 4.52,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "This paper proposes image-adaptive contrast limited adaptive histogram equalization (IA-CLAHE). Conventional CLAHE is widely used to boost the performance of various computer vision tasks and to improve visual quality for human perception in practical industrial applications. CLAHE applies contrast limited histogram equalization to each local region to enhance local contrast. However, CLAHE often ...",
+        "key_contributions": [
+          "This paper proposes image-adaptive contrast limited adaptive histogram equalization (IA-CLAHE).",
+          "Conventional CLAHE is widely used to boost the performance of various computer vision tasks and to improve visual quality for human perception in practical industrial applications.",
+          "CLAHE applies contrast limited histogram equalization to each local region to enhance local contrast."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.16010v1.mp3"
+      }
+    },
+    {
+      "id": "2604.16298v1",
+      "title": "FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation",
+      "authors": [
+        "Dian Shao",
+        "Zhengzheng Xu",
+        "Peiyang Wang",
+        "Like Liu",
+        "Yule Wang",
+        "Jieqi Shi",
+        "Jing Huo"
+      ],
+      "abstract": "UAV vision-language navigation (VLN) requires an agent to navigate complex 3D environments from an egocentric perspective while following ambiguous multi-step instructions over long horizons. Existing zero-shot methods remain limited, as they often rely on large base models, generic prompts, and loosely coordinated modules. In this work, we propose FineCog-Nav, a top-down framework inspired by human cognition that organizes navigation into fine-grained modules for language processing, perception, attention, memory, imagination, reasoning, and decision-making. Each module is driven by a moderate-sized foundation model with role-specific prompts and structured input-output protocols, enabling effective collaboration and improved interpretability. To support fine-grained evaluation, we construct AerialVLN-Fine, a curated benchmark of 300 trajectories derived from AerialVLN, with sentence-level instruction-trajectory alignment and refined instructions containing explicit visual endpoints and landmark references. Experiments show that FineCog-Nav consistently outperforms zero-shot baselines in instruction adherence, long-horizon planning, and generalization to unseen environments. These results suggest the effectiveness of fine-grained cognitive modularization for zero-shot aerial navigation. Project page: https://smartdianlab.github.io/projects-FineCogNav.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.16298v1",
+        "pdf": "https://arxiv.org/pdf/2604.16298v1"
+      },
+      "arxiv_id": "2604.16298v1",
+      "comment": "Accepted by CVPR 2026 Findings",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.3999999999999995,
@@ -512,39 +375,168 @@
         }
       },
       "ai_summaries": {
-        "short": "This paper presents a method for image relighting that enables precise and continuous control over multiple illumination attributes in a photograph. We formulate relighting as a conditional image generation task and introduce attribute tokens to encode distinct lighting factors such as intensity, color, ambient illumination, diffuse level, and 3D light positions. The model is trained on a large-sc...",
+        "short": "UAV vision-language navigation (VLN) requires an agent to navigate complex 3D environments from an egocentric perspective while following ambiguous multi-step instructions over long horizons. Existing zero-shot methods remain limited, as they often rely on large base models, generic prompts, and loosely coordinated modules. In this work, we propose FineCog-Nav, a top-down framework inspired by hum...",
         "key_contributions": [
-          "This paper presents a method for image relighting that enables precise and continuous control over multiple illumination attributes in a photograph.",
-          "We formulate relighting as a conditional image generation task and introduce attribute tokens to encode distinct lighting factors such as intensity, color, ambient illumination, diffuse level, and 3D light positions.",
-          "The model is trained on a large-scale synthetic dataset with ground-truth lighting annotations, supplemented by a small set of real captures to enhance realism and generalization."
+          "UAV vision-language navigation (VLN) requires an agent to navigate complex 3D environments from an egocentric perspective while following ambiguous multi-step instructions over long horizons.",
+          "Existing zero-shot methods remain limited, as they often rely on large base models, generic prompts, and loosely coordinated modules.",
+          "In this work, we propose FineCog-Nav, a top-down framework inspired by human cognition that organizes navigation into fine-grained modules for language processing, perception, attention, memory, imagination, reasoning, and decision-making."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.15310v1.mp3"
+        "audio_url": "/audio/2604.16298v1.mp3"
       }
     },
     {
-      "id": "2604.14973v1",
-      "title": "Robustness of Vision Foundation Models to Common Perturbations",
+      "id": "2604.16087v1",
+      "title": "The Harder Path: Last Iterate Convergence for Uncoupled Learning in Zero-Sum Games with Bandit Feedback",
       "authors": [
-        "Hongbin Liu",
-        "Zhengyuan Jiang",
-        "Cheng Hong",
-        "Neil Zhenqiang Gong"
+        "Côme Fiegel",
+        "Pierre Ménard",
+        "Tadashi Kozuno",
+        "Michal Valko",
+        "Vianney Perchet"
       ],
-      "abstract": "A vision foundation model outputs an embedding vector for an image, which can be affected by common editing operations (e.g., JPEG compression, brightness, contrast adjustments). These common perturbations alter embedding vectors and may impact the performance of downstream tasks using these embeddings. In this work, we present the first systematic study on foundation models' robustness to such perturbations. We propose three robustness metrics and formulate five desired mathematical properties for these metrics, analyzing which properties they satisfy or violate. Using these metrics, we evaluate six industry-scale foundation models (OpenAI, Meta) across nine common perturbation categories, finding them generally non-robust. We also show that common perturbations degrade downstream application performance (e.g., classification accuracy) and that robustness values can predict performance impacts. Finally, we propose a fine-tuning approach to improve robustness without sacrificing utility.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "We study the problem of learning in zero-sum matrix games with repeated play and bandit feedback. Specifically, we focus on developing uncoupled algorithms that guarantee, without communication between players, the convergence of the last-iterate to a Nash equilibrium. Although the non-bandit case has been studied extensively, this setting has only been explored recently, with a bound of $\\mathcal{O}(T^{-1/8})$ on the exploitability gap. We show that, for uncoupled algorithms, guaranteeing convergence of the policy profiles to a Nash equilibrium is detrimental to the performance, with the best attainable rate being $Ω(T^{-1/4})$ in contrast to the usual $Ω(T^{-1/2})$ rate for convergence of the average iterates. We then propose two algorithms that achieve this optimal rate up to constant and logarithmic factors. The first algorithm leverages a straightforward trade-off between exploration and exploitation, while the second employs a regularization technique based on a two-step mirror descent approach.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
-        "cs.CR",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.16087v1",
+        "pdf": "https://arxiv.org/pdf/2604.16087v1"
+      },
+      "arxiv_id": "2604.16087v1",
+      "comment": "Accepted at the 42nd International Conference on Machine Learning (ICML 2025)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We study the problem of learning in zero-sum matrix games with repeated play and bandit feedback. Specifically, we focus on developing uncoupled algorithms that guarantee, without communication between players, the convergence of the last-iterate to a Nash equilibrium. Although the non-bandit case has been studied extensively, this setting has only been explored recently, with a bound of $\\mathcal...",
+        "key_contributions": [
+          "We study the problem of learning in zero-sum matrix games with repeated play and bandit feedback.",
+          "Specifically, we focus on developing uncoupled algorithms that guarantee, without communication between players, the convergence of the last-iterate to a Nash equilibrium.",
+          "Although the non-bandit case has been studied extensively, this setting has only been explored recently, with a bound of $\\mathcal{O}(T^{-1/8})$ on the exploitability gap."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.16087v1.mp3"
+      }
+    },
+    {
+      "id": "2604.16034v1",
+      "title": "Ranking XAI Methods for Head and Neck Cancer Outcome Prediction",
+      "authors": [
+        "Baoqiang Ma",
+        "Djennifer K. Madzia-Madzou",
+        "Rosa C. J. Kraaijveld",
+        "Jin Ouyang"
+      ],
+      "abstract": "For head and neck cancer (HNC) patients, prognostic outcome prediction can support personalized treatment strategy selection. Improving prediction performance of HNC outcomes has been extensively explored by using advanced artificial intelligence (AI) techniques on PET/CT data. However, the interpretability of AI remains a critical obstacle for its clinical adoption. Unlike previous HNC studies that empirically selected explainable AI (XAI) techniques, we are the first to comprehensively evaluate and rank 13 XAI methods across 24 metrics, covering faithfulness, robustness, complexity and plausibility. Experimental results on the multi-center HECKTOR challenge dataset show large variations across evaluation aspects among different XAI methods, with Integrated Gradients (IG) and DeepLIFT (DL) consistently obtained high rankings for faithfulness, complexity and plausibility. This work highlights the importance of comprehensive XAI method evaluation and can be extended to other medical imaging tasks.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
+      "categories": [
+        "cs.CV",
+        "physics.data-an"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.16034v1",
+        "pdf": "https://arxiv.org/pdf/2604.16034v1"
+      },
+      "arxiv_id": "2604.16034v1",
+      "comment": "4-page conference paper, accepted at IEEE ISBI 2026 (International Symposium on Biomedical Imaging)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.255084745762712,
+      "score_breakdown": {
+        "total_score": 4.26,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "medical imaging"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "For head and neck cancer (HNC) patients, prognostic outcome prediction can support personalized treatment strategy selection. Improving prediction performance of HNC outcomes has been extensively explored by using advanced artificial intelligence (AI) techniques on PET/CT data. However, the interpretability of AI remains a critical obstacle for its clinical adoption. Unlike previous HNC studies th...",
+        "key_contributions": [
+          "For head and neck cancer (HNC) patients, prognostic outcome prediction can support personalized treatment strategy selection.",
+          "Improving prediction performance of HNC outcomes has been extensively explored by using advanced artificial intelligence (AI) techniques on PET/CT data.",
+          "However, the interpretability of AI remains a critical obstacle for its clinical adoption."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2604.16034v1.mp3"
+      }
+    },
+    {
+      "id": "2604.16044v1",
+      "title": "Elucidating the SNR-t Bias of Diffusion Probabilistic Models",
+      "authors": [
+        "Meng Yu",
+        "Lei Sun",
+        "Jianhao Zeng",
+        "Xiangxiang Chu",
+        "Kun Zhan"
+      ],
+      "abstract": "Diffusion Probabilistic Models have demonstrated remarkable performance across a wide range of generative tasks. However, we have observed that these models often suffer from a Signal-to-Noise Ratio-timestep (SNR-t) bias. This bias refers to the misalignment between the SNR of the denoising sample and its corresponding timestep during the inference phase. Specifically, during training, the SNR of a sample is strictly coupled with its timestep. However, this correspondence is disrupted during inference, leading to error accumulation and impairing the generation quality. We provide comprehensive empirical evidence and theoretical analysis to substantiate this phenomenon and propose a simple yet effective differential correction method to mitigate the SNR-t bias. Recognizing that diffusion models typically reconstruct low-frequency components before focusing on high-frequency details during the reverse denoising process, we decompose samples into various frequency components and apply differential correction to each component individually. Extensive experiments show that our approach significantly improves the generation quality of various diffusion models (IDDPM, ADM, DDIM, A-DPM, EA-DPM, EDM, PFGM++, and FLUX) on datasets of various resolutions with negligible computational overhead. The code is at https://github.com/AMAP-ML/DCW.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
+      "categories": [
         "cs.CV"
       ],
-      "primary_category": "cs.CR",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.14973v1",
-        "pdf": "https://arxiv.org/pdf/2604.14973v1"
+        "paper": "http://arxiv.org/abs/2604.16044v1",
+        "pdf": "https://arxiv.org/pdf/2604.16044v1"
       },
-      "arxiv_id": "2604.14973v1",
-      "comment": "Accepted by CVPR 2026 Workshop",
+      "arxiv_id": "2604.16044v1",
+      "comment": "Accepted to CVPR 2026, 19pages, with appendix",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.25,
@@ -575,53 +567,53 @@
         }
       },
       "ai_summaries": {
-        "short": "A vision foundation model outputs an embedding vector for an image, which can be affected by common editing operations (e.g., JPEG compression, brightness, contrast adjustments). These common perturbations alter embedding vectors and may impact the performance of downstream tasks using these embeddings. In this work, we present the first systematic study on foundation models' robustness to such pe...",
+        "short": "Diffusion Probabilistic Models have demonstrated remarkable performance across a wide range of generative tasks. However, we have observed that these models often suffer from a Signal-to-Noise Ratio-timestep (SNR-t) bias. This bias refers to the misalignment between the SNR of the denoising sample and its corresponding timestep during the inference phase. Specifically, during training, the SNR of ...",
         "key_contributions": [
-          "A vision foundation model outputs an embedding vector for an image, which can be affected by common editing operations (e.",
-          "g.",
-          ", JPEG compression, brightness, contrast adjustments)."
+          "Diffusion Probabilistic Models have demonstrated remarkable performance across a wide range of generative tasks.",
+          "However, we have observed that these models often suffer from a Signal-to-Noise Ratio-timestep (SNR-t) bias.",
+          "This bias refers to the misalignment between the SNR of the denoising sample and its corresponding timestep during the inference phase."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.14973v1.mp3"
+        "audio_url": "/audio/2604.16044v1.mp3"
       }
     },
     {
-      "id": "2604.15299v1",
-      "title": "AnimationBench: Are Video Models Good at Character-Centric Animation?",
+      "id": "2604.16108v1",
+      "title": "Polyglot: Multilingual Style Preserving Speech-Driven Facial Animation",
       "authors": [
-        "Leyi Wu",
-        "Pengjun Fang",
-        "Kai Sun",
-        "Yazhou Xing",
-        "Yinwei Wu",
-        "Songsong Wang",
-        "Ziqi Huang",
-        "Dan Zhou",
-        "Yingqing He",
-        "Ying-Cong Chen",
-        "Qifeng Chen"
+        "Federico Nocentini",
+        "Kwanggyoon Seo",
+        "Qingju Liu",
+        "Claudio Ferrari",
+        "Stefano Berretti",
+        "David Ferman",
+        "Hyeongwoo Kim",
+        "Pablo Garrido",
+        "Akin Caliskan"
       ],
-      "abstract": "Video generation has advanced rapidly, with recent methods producing increasingly convincing animated results. However, existing benchmarks-largely designed for realistic videos-struggle to evaluate animation-style generation with its stylized appearance, exaggerated motion, and character-centric consistency. Moreover, they also rely on fixed prompt sets and rigid pipelines, offering limited flexibility for open-domain content and custom evaluation needs. To address this gap, we introduce AnimationBench, the first systematic benchmark for evaluating animation image-to-video generation. AnimationBench operationalizes the Twelve Basic Principles of Animation and IP Preservation into measurable evaluation dimensions, together with Broader Quality Dimensions including semantic consistency, motion rationality, and camera motion consistency. The benchmark supports both a standardized close-set evaluation for reproducible comparison and a flexible open-set evaluation for diagnostic analysis, and leverages visual-language models for scalable assessment. Extensive experiments show that AnimationBench aligns well with human judgment and exposes animation-specific quality differences overlooked by realism-oriented benchmarks, leading to more informative and discriminative evaluation of state-of-the-art I2V models.",
-      "published": "2026-04-16",
-      "updated": "2026-04-16",
+      "abstract": "Speech-Driven Facial Animation (SDFA) has gained significant attention due to its applications in movies, video games, and virtual reality. However, most existing models are trained on single-language data, limiting their effectiveness in real-world multilingual scenarios. In this work, we address multilingual SDFA, which is essential for realistic generation since language influences phonetics, rhythm, intonation, and facial expressions. Speaking style is also shaped by individual differences, not only by language. Existing methods typically rely on either language-specific or speaker-specific conditioning, but not both, limiting their ability to model their interaction. We introduce Polyglot, a unified diffusion-based architecture for personalized multilingual SDFA. Our method uses transcript embeddings to encode language information and style embeddings extracted from reference facial sequences to capture individual speaking characteristics. Polyglot does not require predefined language or speaker labels, enabling generalization across languages and speakers through self-supervised learning. By jointly conditioning on language and style, it captures expressive traits such as rhythm, articulation, and habitual facial movements, producing temporally coherent and realistic animations. Experiments show improved performance in both monolingual and multilingual settings, providing a unified framework for modeling language and personal style in SDFA.",
+      "published": "2026-04-17",
+      "updated": "2026-04-17",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.15299v1",
-        "pdf": "https://arxiv.org/pdf/2604.15299v1"
+        "paper": "http://arxiv.org/abs/2604.16108v1",
+        "pdf": "https://arxiv.org/pdf/2604.16108v1"
       },
-      "arxiv_id": "2604.15299v1",
-      "comment": "Project Page: https://animationbench.github.io Code: https://github.com/VideoVerses/AnimationBench",
+      "arxiv_id": "2604.16108v1",
+      "comment": "The project website is available at https://fedenoce.github.io/polyglot/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1499999999999995,
+      "relevance_score": 4.021186440677965,
       "score_breakdown": {
-        "total_score": 4.15,
+        "total_score": 4.02,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -630,7 +622,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -639,19 +631,19 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Video generation has advanced rapidly, with recent methods producing increasingly convincing animated results. However, existing benchmarks-largely designed for realistic videos-struggle to evaluate animation-style generation with its stylized appearance, exaggerated motion, and character-centric consistency. Moreover, they also rely on fixed prompt sets and rigid pipelines, offering limited flexi...",
+        "short": "Speech-Driven Facial Animation (SDFA) has gained significant attention due to its applications in movies, video games, and virtual reality. However, most existing models are trained on single-language data, limiting their effectiveness in real-world multilingual scenarios. In this work, we address multilingual SDFA, which is essential for realistic generation since language influences phonetics, r...",
         "key_contributions": [
-          "Video generation has advanced rapidly, with recent methods producing increasingly convincing animated results.",
-          "However, existing benchmarks-largely designed for realistic videos-struggle to evaluate animation-style generation with its stylized appearance, exaggerated motion, and character-centric consistency.",
-          "Moreover, they also rely on fixed prompt sets and rigid pipelines, offering limited flexibility for open-domain content and custom evaluation needs."
+          "Speech-Driven Facial Animation (SDFA) has gained significant attention due to its applications in movies, video games, and virtual reality.",
+          "However, most existing models are trained on single-language data, limiting their effectiveness in real-world multilingual scenarios.",
+          "In this work, we address multilingual SDFA, which is essential for realistic generation since language influences phonetics, rhythm, intonation, and facial expressions."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2604.15299v1.mp3"
+        "audio_url": "/audio/2604.16108v1.mp3"
       }
     }
   ]

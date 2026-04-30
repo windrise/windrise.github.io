@@ -3,45 +3,40 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.24625v1",
-      "title": "Meta-CoT: Enhancing Granularity and Generalization in Image Editing",
+      "id": "2604.25530v1",
+      "title": "The Surprising Effectiveness of Canonical Knowledge Distillation for Semantic Segmentation",
       "authors": [
-        "Shiyi Zhang",
-        "Yiji Cheng",
-        "Tiankai Hang",
-        "Zijin Yin",
-        "Runze He",
-        "Yu Xu",
-        "Wenxun Dai",
-        "Yunlong Lin",
-        "Chunyu Wang",
-        "Qinglin Lu",
-        "Yansong Tang"
+        "Muhammad Ali",
+        "Kevin Alexander Laube",
+        "Madan Ravi Ganesh",
+        "Lukas Schott",
+        "Niclas Popp",
+        "Thomas Brox"
       ],
-      "abstract": "Unified multi-modal understanding/generative models have shown improved image editing performance by incorporating fine-grained understanding into their Chain-of-Thought (CoT) process. However, a critical question remains underexplored: what forms of CoT and training strategy can jointly enhance both the understanding granularity and generalization? To address this, we propose Meta-CoT, a paradigm that performs a two-level decomposition of any single-image editing operation with two key properties: (1) Decomposability. We observe that any editing intention can be represented as a triplet - (task, target, required understanding ability). Inspired by this, Meta-CoT decomposes both the editing task and the target, generating task-specific CoT and traversing editing operations on all targets. This decomposition enhances the model's understanding granularity of editing operations and guides it to learn each element of the triplet during training, substantially improving the editing capability. (2) Generalizability. In the second decomposition level, we further break down editing tasks into five fundamental meta-tasks. We find that training on these five meta-tasks, together with the other two elements of the triplet, is sufficient to achieve strong generalization across diverse, unseen editing tasks. To further align the model's editing behavior with its CoT reasoning, we introduce the CoT-Editing Consistency Reward, which encourages more accurate and effective utilization of CoT information during editing. Experiments demonstrate that our method achieves an overall 15.8% improvement across 21 editing tasks, and generalizes effectively to unseen editing tasks when trained on only a small set of meta-tasks. Our code, benchmark, and model are released at https://shiyi-zh0408.github.io/projectpages/Meta-CoT/",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
+      "abstract": "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules. These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets. It is therefore unclear whether reported gains reflect stronger distillation signals or simply greater compute. We show that iteration-based comparisons are misleading: when wall-clock compute is matched, \\textit{canonical} logit- and feature-based KD outperform recent segmentation-specific methods. Under extended training, feature-based distillation achieves state-of-the-art ResNet-18 performance on Cityscapes and ADE20K. A PSPNet ResNet-18 student closely approaches its ResNet-101 teacher despite using only one quarter of the parameters, reaching 99\\% of the teacher's mIoU on Cityscapes (79.0 vs.\\ 79.8) and 92\\% on ADE20K. Our results challenge the prevailing assumption that KD for segmentation requires task-specific mechanisms and suggest that scaling, rather than complex hand-crafted objectives, should guide future method design.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "cs.MM"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.24625v1",
-        "pdf": "https://arxiv.org/pdf/2604.24625v1"
+        "paper": "http://arxiv.org/abs/2604.25530v1",
+        "pdf": "https://arxiv.org/pdf/2604.25530v1"
       },
-      "arxiv_id": "2604.24625v1",
-      "comment": "Accepted by CVPR2026, Project Page: https://shiyi-zh0408.github.io/projectpages/Meta-CoT/",
+      "arxiv_id": "2604.25530v1",
+      "comment": "Presented at Efficient Computer Vision (ECV) Workshop, CVPR 2026 (non-archival). 5 pages, 3 figures",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.1,
+      "has_code": false,
+      "relevance_score": 4.553389830508475,
       "score_breakdown": {
-        "total_score": 5.1,
+        "total_score": 4.55,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -54,242 +49,49 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Unified multi-modal understanding/generative models have shown improved image editing performance by incorporating fine-grained understanding into their Chain-of-Thought (CoT) process. However, a critical question remains underexplored: what forms of CoT and training strategy can jointly enhance both the understanding granularity and generalization? To address this, we propose Meta-CoT, a paradigm...",
+        "short": "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules. These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets. It is therefore unclear whether reported gains reflect stronger distillation s...",
         "key_contributions": [
-          "Unified multi-modal understanding/generative models have shown improved image editing performance by incorporating fine-grained understanding into their Chain-of-Thought (CoT) process.",
-          "However, a critical question remains underexplored: what forms of CoT and training strategy can jointly enhance both the understanding granularity and generalization? To address this, we propose Meta-CoT, a paradigm that performs a two-level decomposition of any single-image editing operation with two key properties: (1) Decomposability.",
-          "We observe that any editing intention can be represented as a triplet - (task, target, required understanding ability)."
+          "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules.",
+          "These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets.",
+          "It is therefore unclear whether reported gains reflect stronger distillation signals or simply greater compute."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.24419v1",
-      "title": "BMD-45: A Large-Scale CCTV Vehicle Detection Dataset for Urban Traffic in Developing Cities",
+      "id": "2604.25642v1",
+      "title": "Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models",
       "authors": [
-        "Akash Sharma",
-        "Chinmay Mhatre",
-        "Sankalp Gawali",
-        "Ruthvik Bokkasam",
-        "Brij Sharma",
-        "Vishwajeet Pattanaik",
-        "Punit Rathore",
-        "Raghu Krishnapuram",
-        "Vijay Gopal Kovvali",
-        "Anirban Chakraborty",
-        "Yogesh Simmhan"
+        "Chengsheng Zhang",
+        "Chenghao Sun",
+        "Xinyan Jiang",
+        "Wei Li",
+        "Xinmei Tian"
       ],
-      "abstract": "Robust vehicle detection from fixed CCTV cameras is critical for Intelligent Transportation Systems. Yet existing benchmarks predominantly feature relatively homogeneous, highly organized traffic patterns captured from ego-centric driving perspectives or controlled aerial views. This regional and sensor view bias creates a significant gap. Models trained on datasets such as UA-DETRAC and COCO struggle to generalize to the dense, heterogeneous, disorganized traffic conditions observed in rapidly developing urban centers in emerging economies. To address this limitation, we introduce BMD-45, a large-scale dataset comprising 480K bounding boxes annotated over 45K images captured from over 3.6K operational Safe City CCTV cameras. BMD-45 contains 14 fine-grained vehicle categories, including region-specific modes such as auto-rickshaws and tempo travellers, which are not present in existing benchmarks. The dataset captures real-world deployment challenges, including extreme viewpoint variation, occlusion, and vehicle density . We establish comprehensive baselines using state-of-the-art detectors and reveal a striking domain gap: models fine-tuned on UA-DETRAC achieve only 33.6% mAP@0.50:0.95, compared to 83.8% when trained in-domain on BMD-45, representing a 2.5x improvement that persists even when accounting for novel vehicle classes. This performance gap underscores the critical need for geographically diverse traffic benchmarks and establishes BMD-45 as a baseline for developing robust perception systems in underrepresented urban environments worldwide. The dataset is available at: https://huggingface.co/datasets/iisc-aim/BMD-45.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
+      "abstract": "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.e., the generation of factually incorrect or inconsistent responses. While recent studies using steering vectors demonstrated promise in reducing hallucinations, a notable challenge remains: they inadvertently amplify the severity of residual hallucinations. We attribute this to their exclusive focus on the decoding stage, where errors accumulate autoregressively and progressively worsen subsequent hallucinatory outputs. To address this, we propose Prefill-Time Intervention (PTI), a novel steering paradigm that intervenes only once during the prefill stage, enhancing the initial Key-Value (KV) cache before error accumulation occurs. Specifically, PTI is modality-aware, deriving distinct directions for visual and textual representations. This intervention is decoupled to steer keys toward visually-grounded objects and values to filter background noise, correcting hallucination-prone representations at their source. Extensive experiments demonstrate PTI's significant performance in mitigating hallucinations and its generalizability across diverse decoding strategies, LVLMs, and benchmarks. Moreover, PTI is orthogonal to existing decoding-stage methods, enabling plug-and-play integration and further boosting performance. Code is available at: https://github.com/huaiyi66/PTI.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.24419v1",
-        "pdf": "https://arxiv.org/pdf/2604.24419v1"
+        "paper": "http://arxiv.org/abs/2604.25642v1",
+        "pdf": "https://arxiv.org/pdf/2604.25642v1"
       },
-      "arxiv_id": "2604.24419v1",
-      "comment": "Accepted at CVPR 2026 Findings Track. To appear in the IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.8,
-      "score_breakdown": {
-        "total_score": 4.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Robust vehicle detection from fixed CCTV cameras is critical for Intelligent Transportation Systems. Yet existing benchmarks predominantly feature relatively homogeneous, highly organized traffic patterns captured from ego-centric driving perspectives or controlled aerial views. This regional and sensor view bias creates a significant gap. Models trained on datasets such as UA-DETRAC and COCO stru...",
-        "key_contributions": [
-          "Robust vehicle detection from fixed CCTV cameras is critical for Intelligent Transportation Systems.",
-          "Yet existing benchmarks predominantly feature relatively homogeneous, highly organized traffic patterns captured from ego-centric driving perspectives or controlled aerial views.",
-          "This regional and sensor view bias creates a significant gap."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.24542v1",
-      "title": "Layerwise Convergence Fingerprints for Runtime Misbehavior Detection in Large Language Models",
-      "authors": [
-        "Nay Myat Min",
-        "Long H. Pham",
-        "Jun Sun"
-      ],
-      "abstract": "Large language models deployed at runtime can misbehave in ways that clean-data validation cannot anticipate: training-time backdoors lie dormant until triggered, jailbreaks subvert safety alignment, and prompt injections override the deployer's instructions. Existing runtime defenses address these threats one at a time and often assume a clean reference model, trigger knowledge, or editable weights, assumptions that rarely hold for opaque third-party artifacts. We introduce Layerwise Convergence Fingerprinting (LCF), a tuning-free runtime monitor that treats the inter-layer hidden-state trajectory as a health signal: LCF computes a diagonal Mahalanobis distance on every inter-layer difference, aggregates via Ledoit-Wolf shrinkage, and thresholds via leave-one-out calibration on 200 clean examples, with no reference model, trigger knowledge, or retraining. Evaluated on four architectures (Llama-3-8B, Qwen2.5-7B, Gemma-2-9B, Qwen2.5-14B) across backdoors, jailbreaks, and prompt injection (56 backdoor combinations, 3 jailbreak techniques, and BIPIA email + code-QA), LCF reduces mean backdoor attack success rate (ASR) below 1% on Qwen2.5-7B and Gemma-2 and to 1.3% on Qwen2.5-14B, detects 92-100% of DAN jailbreaks (62-100% for GCG and softer role-play), and flags 100% of text-payload injections across all eight (model, domain) cells, at 12-16% backdoor FPR and <0.1% inference overhead. A single aggregation score covers all three threat families without threat-specific tuning, positioning LCF as a general-purpose runtime safety layer for cloud-served and on-device LLMs.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.CR",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "primary_category": "cs.CR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.24542v1",
-        "pdf": "https://arxiv.org/pdf/2604.24542v1"
-      },
-      "arxiv_id": "2604.24542v1",
-      "comment": "34 pages, 5 figures. Code: https://github.com/NayMyatMin/LCF-LLM",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.75,
-      "score_breakdown": {
-        "total_score": 4.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "TMI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Large language models deployed at runtime can misbehave in ways that clean-data validation cannot anticipate: training-time backdoors lie dormant until triggered, jailbreaks subvert safety alignment, and prompt injections override the deployer's instructions. Existing runtime defenses address these threats one at a time and often assume a clean reference model, trigger knowledge, or editable weigh...",
-        "key_contributions": [
-          "Large language models deployed at runtime can misbehave in ways that clean-data validation cannot anticipate: training-time backdoors lie dormant until triggered, jailbreaks subvert safety alignment, and prompt injections override the deployer's instructions.",
-          "Existing runtime defenses address these threats one at a time and often assume a clean reference model, trigger knowledge, or editable weights, assumptions that rarely hold for opaque third-party artifacts.",
-          "We introduce Layerwise Convergence Fingerprinting (LCF), a tuning-free runtime monitor that treats the inter-layer hidden-state trajectory as a health signal: LCF computes a diagonal Mahalanobis distance on every inter-layer difference, aggregates via Ledoit-Wolf shrinkage, and thresholds via leave-one-out calibration on 200 clean examples, with no reference model, trigger knowledge, or retraining."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.24532v1",
-      "title": "A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning",
-      "authors": [
-        "Ying-Tu Chen",
-        "Wei Hung",
-        "Bing-Shu Wu",
-        "Zhang-Wei Hong",
-        "Ping-Chun Hsieh"
-      ],
-      "abstract": "Many sequential decision-making tasks involve optimizing multiple conflicting objectives, requiring policies that adapt to different user preferences. In multi-objective reinforcement learning (MORL), one widely studied approach} addresses this by training a single policy network conditioned on preference-weighted rewards. In this paper, we explore a novel algorithmic perspective: leveraging reward-free reinforcement learning (RFRL) for MORL. While RFRL has historically been studied independently of MORL, it learns optimal policies for any possible reward function, making it a natural fit for MORL's challenge of handling unknown user preferences. We propose using the RFRL's training objective as an auxiliary task to enhance MORL, enabling more effective knowledge sharing beyond the multi-objective reward function given at training time. To this end, we adapt a state-of-the-art RFRL algorithm to the MORL setting and introduce a preference-guided exploration strategy that focuses learning on relevant parts of the environment. Through extensive experiments and ablation studies, we demonstrate that our approach significantly outperforms the state-of-the-art MORL methods across diverse MO-Gymnasium tasks, achieving superior performance and data efficiency. This work provides the first systematic adaptation of RFRL to MORL, demonstrating its potential as a scalable and empirically effective solution to multi-objective policy learning.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.24532v1",
-        "pdf": "https://arxiv.org/pdf/2604.24532v1"
-      },
-      "arxiv_id": "2604.24532v1",
-      "comment": "ICLR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6499999999999995,
-      "score_breakdown": {
-        "total_score": 4.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Many sequential decision-making tasks involve optimizing multiple conflicting objectives, requiring policies that adapt to different user preferences. In multi-objective reinforcement learning (MORL), one widely studied approach} addresses this by training a single policy network conditioned on preference-weighted rewards. In this paper, we explore a novel algorithmic perspective: leveraging rewar...",
-        "key_contributions": [
-          "Many sequential decision-making tasks involve optimizing multiple conflicting objectives, requiring policies that adapt to different user preferences.",
-          "In multi-objective reinforcement learning (MORL), one widely studied approach} addresses this by training a single policy network conditioned on preference-weighted rewards.",
-          "In this paper, we explore a novel algorithmic perspective: leveraging reward-free reinforcement learning (RFRL) for MORL."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.24668v1",
-      "title": "The Price of Agreement: Measuring LLM Sycophancy in Agentic Financial Applications",
-      "authors": [
-        "Zhenyu Zhao",
-        "Aparna Balagopalan",
-        "Adi Agrawal",
-        "Dilshoda Yergasheva",
-        "Waseem Alshikh",
-        "Daniel M. Bikel"
-      ],
-      "abstract": "Given the increased use of LLMs in financial systems today, it becomes important to evaluate the safety and robustness of such systems. One failure mode that LLMs frequently display in general domain settings is that of sycophancy. That is, models prioritize agreement with expressed user beliefs over correctness, leading to decreased accuracy and trust. In this work, we focus on evaluating sycophancy that LLMs display in agentic financial tasks. Our findings are three-fold: first, we find the models show only low to modest drops in performance in the face of user rebuttals or contradictions to the reference answer, which distinguishes sycophancy that models display in financial agentic settings from findings in prior work. Second, we introduce a suite of tasks to test for sycophancy by user preference information that contradicts the reference answer and find that most models fail in the presence of such inputs. Lastly, we benchmark different modes of recovery such as input filtering with a pretrained LLM.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.24668v1",
-        "pdf": "https://arxiv.org/pdf/2604.24668v1"
-      },
-      "arxiv_id": "2604.24668v1",
-      "comment": "Accepted to ICLR 2026 FinAI Workshop",
+      "arxiv_id": "2604.25642v1",
+      "comment": "Accepted by CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.55,
@@ -302,7 +104,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -320,99 +122,36 @@
         }
       },
       "ai_summaries": {
-        "short": "Given the increased use of LLMs in financial systems today, it becomes important to evaluate the safety and robustness of such systems. One failure mode that LLMs frequently display in general domain settings is that of sycophancy. That is, models prioritize agreement with expressed user beliefs over correctness, leading to decreased accuracy and trust. In this work, we focus on evaluating sycopha...",
+        "short": "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.e., the generation of factually incorrect or inconsistent responses. While recent studies using steering vectors demonstrated promise in reducing hallucinations, a notable challenge remains: they inadvertently amplify the severi...",
         "key_contributions": [
-          "Given the increased use of LLMs in financial systems today, it becomes important to evaluate the safety and robustness of such systems.",
-          "One failure mode that LLMs frequently display in general domain settings is that of sycophancy.",
-          "That is, models prioritize agreement with expressed user beliefs over correctness, leading to decreased accuracy and trust."
+          "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.",
+          "e.",
+          ", the generation of factually incorrect or inconsistent responses."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.24443v1",
-      "title": "PhysNote: Self-Knowledge Notes for Evolvable Physical Reasoning in Vision-Language Model",
+      "id": "2604.25779v1",
+      "title": "Sustained Gradient Alignment Mediates Subliminal Learning in a Multi-Step Setting: Evidence from MNIST Auxiliary Logit Distillation Experiment",
       "authors": [
-        "Sinin Zhang",
-        "Yunfei Xie",
-        "Yuxuan Cheng",
-        "Haoyu Zhang",
-        "Tong Zhang"
+        "Chayanon Kitkana",
+        "Shivam Arora"
       ],
-      "abstract": "Vision-Language Models (VLMs) have demonstrated strong performance on textbook-style physics problems, yet they frequently fail when confronted with dynamic real-world scenarios that require temporal consistency and causal reasoning across frames. We identify two fundamental challenges underlying these failures: (1) spatio-temporal identity drift, where objects lose their physical identity across successive frames and break causal chains, and (2) volatility of inference-time insights, where a model may occasionally produce correct physical reasoning but never consolidates it for future reuse. To address these challenges, we propose PhysNote, an agentic framework that enables VLMs to externalize and refine physical knowledge through self-generated \"Knowledge Notes.\" PhysNote stabilizes dynamic perception through spatio-temporal canonicalization, organizes self-generated insights into a hierarchical knowledge repository, and drives an iterative reasoning loop that grounds hypotheses in visual evidence before consolidating verified knowledge. Experiments on PhysBench demonstrate that PhysNote achieves 56.68% overall accuracy, a 4.96% improvement over the best multi-agent baseline, with consistent gains across all four physical reasoning domains.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.24443v1",
-        "pdf": "https://arxiv.org/pdf/2604.24443v1"
-      },
-      "arxiv_id": "2604.24443v1",
-      "comment": "11 pages. Accepted by ICLR 2026 Workshop ES-Reasoning",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Vision-Language Models (VLMs) have demonstrated strong performance on textbook-style physics problems, yet they frequently fail when confronted with dynamic real-world scenarios that require temporal consistency and causal reasoning across frames. We identify two fundamental challenges underlying these failures: (1) spatio-temporal identity drift, where objects lose their physical identity across ...",
-        "key_contributions": [
-          "Vision-Language Models (VLMs) have demonstrated strong performance on textbook-style physics problems, yet they frequently fail when confronted with dynamic real-world scenarios that require temporal consistency and causal reasoning across frames.",
-          "We identify two fundamental challenges underlying these failures: (1) spatio-temporal identity drift, where objects lose their physical identity across successive frames and break causal chains, and (2) volatility of inference-time insights, where a model may occasionally produce correct physical reasoning but never consolidates it for future reuse.",
-          "To address these challenges, we propose PhysNote, an agentic framework that enables VLMs to externalize and refine physical knowledge through self-generated \"Knowledge Notes."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.24537v1",
-      "title": "Stochastic simultaneous optimistic optimization",
-      "authors": [
-        "Michal Valko",
-        "Alexandra Carpentier",
-        "Rémi Munos"
-      ],
-      "abstract": "We study the problem of global maximization of a function f given a finite number of evaluations perturbed by noise. We consider a very weak assumption on the function, namely that it is locally smooth (in some precise sense) with respect to some semi-metric, around one of its global maxima. Compared to previous works on bandits in general spaces (Kleinberg et al., 2008; Bubeck et al., 2011a) our algorithm does not require the knowledge of this semi-metric. Our algorithm, StoSOO, follows an optimistic strategy to iteratively construct upper confidence bounds over the hierarchical partitions of the function domain to decide which point to sample next. A finite-time analysis of StoSOO shows that it performs almost as well as the best specifically-tuned algorithms even though the local smoothness of the function is not known.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
+      "abstract": "In the MNIST auxiliary logit distillation experiment, a student can acquire an unintended teacher trait despite distilling only on no-class logits through a phenomenon called subliminal learning. Under a single-step gradient descent assumption, subliminal learning theory attributes this effect to alignment between the trait and distillation gradients, but does not guarantee that this alignment persists in a multi-step setting. We empirically show that gradient alignment remains weakly but consistently positive throughout training and causally contributes to trait acquisition. We show that a mitigation method called liminal training works by attenuating the alignment and fails to stop trait acquisition in this setup. These results suggest that mitigation methods that operate in this regime may not reliably suppress trait acquisition when the first-order drive dominates.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
       "categories": [
         "cs.LG",
-        "stat.ML"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.24537v1",
-        "pdf": "https://arxiv.org/pdf/2604.24537v1"
+        "paper": "http://arxiv.org/abs/2604.25779v1",
+        "pdf": "https://arxiv.org/pdf/2604.25779v1"
       },
-      "arxiv_id": "2604.24537v1",
-      "comment": "Published in International Conference on Machine Learning (ICML 2013)",
+      "arxiv_id": "2604.25779v1",
+      "comment": "Published in ICLR 2026 Sci4DL Workshop",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.2,
@@ -425,7 +164,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -443,185 +182,52 @@
         }
       },
       "ai_summaries": {
-        "short": "We study the problem of global maximization of a function f given a finite number of evaluations perturbed by noise. We consider a very weak assumption on the function, namely that it is locally smooth (in some precise sense) with respect to some semi-metric, around one of its global maxima. Compared to previous works on bandits in general spaces (Kleinberg et al., 2008; Bubeck et al., 2011a) our ...",
+        "short": "In the MNIST auxiliary logit distillation experiment, a student can acquire an unintended teacher trait despite distilling only on no-class logits through a phenomenon called subliminal learning. Under a single-step gradient descent assumption, subliminal learning theory attributes this effect to alignment between the trait and distillation gradients, but does not guarantee that this alignment per...",
         "key_contributions": [
-          "We study the problem of global maximization of a function f given a finite number of evaluations perturbed by noise.",
-          "We consider a very weak assumption on the function, namely that it is locally smooth (in some precise sense) with respect to some semi-metric, around one of its global maxima.",
-          "Compared to previous works on bandits in general spaces (Kleinberg et al."
+          "In the MNIST auxiliary logit distillation experiment, a student can acquire an unintended teacher trait despite distilling only on no-class logits through a phenomenon called subliminal learning.",
+          "Under a single-step gradient descent assumption, subliminal learning theory attributes this effect to alignment between the trait and distillation gradients, but does not guarantee that this alignment persists in a multi-step setting.",
+          "We empirically show that gradient alignment remains weakly but consistently positive throughout training and causally contributes to trait acquisition."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.24642v1",
-      "title": "Probing CLIP's Comprehension of 360-Degree Textual and Visual Semantics",
+      "id": "2604.25646v1",
+      "title": "SAMe: A Semantic Anatomy Mapping Engine for Robotic Ultrasound",
       "authors": [
-        "Hai Wang",
-        "Xiaochen Yang",
-        "Mingzhi Dong",
-        "Jing-Hao Xue"
+        "Jing Zhang",
+        "Duojie Chen",
+        "Wentao Jiang",
+        "Zihan Lou",
+        "Jianxin Liu",
+        "Xinwu Cui",
+        "Qinghong Zhao",
+        "Bo Du",
+        "Christoph F. Dietrich",
+        "Dacheng Tao"
       ],
-      "abstract": "The dream of instantly creating rich 360-degree panoramic worlds from text is rapidly becoming a reality, yet a crucial gap exists in our ability to reliably evaluate their semantic alignment. Contrastive Language-Image Pre-training (CLIP) models, standard AI evaluators, predominantly trained on perspective image-text pairs, face an open question regarding their understanding of the unique characteristics of 360-degree panoramic image-text pairs. This paper addresses this gap by first introducing two concepts: \\emph{360-degree textual semantics}, semantic information conveyed by explicit format identifiers, and \\emph{360-degree visual semantics}, invariant semantics under horizontal circular shifts. To probe CLIP's comprehension of these semantics, we then propose novel evaluation methodologies using keyword manipulation and horizontal circular shifts of varying magnitudes. Rigorous statistical analyses across popular CLIP configurations reveal that: (1) CLIP models effectively leverage explicit textual identifiers, demonstrating an understanding of 360-degree textual semantics; and (2) CLIP models fail to robustly preserve semantic alignment under horizontal circular shifts, indicating limited comprehension of 360-degree visual semantics. To address this limitation, we propose a LoRA-based fine-tuning framework that explicitly instills invariance to circular shifts. Our fine-tuned models exhibit improved comprehension of 360-degree visual semantics, though with a slight degradation in original semantic evaluation performance, highlighting a fundamental trade-off in adapting CLIP to 360-degree panoramic images. Code is available at https://github.com/littlewhitesea/360Semantics.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
+      "abstract": "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy. These gaps make systems still reliant on expert intervention to initiate scanning. Here we present SAMe, a semantic anatomy mapping engine that provides robotic ultrasound with an explicit anatomical prior layer. SAMe addresses scan initiation as a target-to-anatomy-to-action process: it grounds under-specified clinical complaints into structured target organs, instantiates a patient-specific anatomical representation for the grounded targets from a single external body image, and translates this representation into control-facing 6-DoF probe initialization states without any additional registration using preoperative CT or MRI. The anatomical representation maintained by SAMe is explicit, lightweight (single-organ inference in 0.08s), and compatible with downstream control by design. Across semantic grounding, anatomical instantiation, and real-robot evaluation, SAMe shows strong performance across the full initialization pipeline. In real-robot experiments, SAMe achieved overall organ-hit rates of 97.3% for liver initialization and 81.7% for kidney initialization across the evaluated target sets. Even when restricted to the centroid target, SAMe outperformed the surface-heuristic baseline for both liver and kidney initialization. These results establish an explicit anatomical prior layer that addresses scan initialization and is designed to support broader downstream autonomous scanning pipelines, providing the anatomical foundation for complaint-driven, anatomically informed robotic ultrasonography.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.24642v1",
-        "pdf": "https://arxiv.org/pdf/2604.24642v1"
+        "paper": "http://arxiv.org/abs/2604.25646v1",
+        "pdf": "https://arxiv.org/pdf/2604.25646v1"
       },
-      "arxiv_id": "2604.24642v1",
-      "comment": "Project Page: https://littlewhitesea.github.io/360Semantics.github.io/",
+      "arxiv_id": "2604.25646v1",
+      "comment": "Supplementary information included. Code will be released at https://github.com/MiliLab/Echo-SAMe",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.95,
+      "relevance_score": 4.053389830508475,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.05,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The dream of instantly creating rich 360-degree panoramic worlds from text is rapidly becoming a reality, yet a crucial gap exists in our ability to reliably evaluate their semantic alignment. Contrastive Language-Image Pre-training (CLIP) models, standard AI evaluators, predominantly trained on perspective image-text pairs, face an open question regarding their understanding of the unique charact...",
-        "key_contributions": [
-          "The dream of instantly creating rich 360-degree panoramic worlds from text is rapidly becoming a reality, yet a crucial gap exists in our ability to reliably evaluate their semantic alignment.",
-          "Contrastive Language-Image Pre-training (CLIP) models, standard AI evaluators, predominantly trained on perspective image-text pairs, face an open question regarding their understanding of the unique characteristics of 360-degree panoramic image-text pairs.",
-          "This paper addresses this gap by first introducing two concepts: \\emph{360-degree textual semantics}, semantic information conveyed by explicit format identifiers, and \\emph{360-degree visual semantics}, invariant semantics under horizontal circular shifts."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.24697v1",
-      "title": "Can Current Agents Close the Discovery-to-Application Gap? A Case Study in Minecraft",
-      "authors": [
-        "Zhou Ziheng",
-        "Huacong Tang",
-        "Jinyuan Zhang",
-        "Haowei Lin",
-        "Bangcheng Yang",
-        "Qian Long",
-        "Fang Sun",
-        "Yizhou Sun",
-        "Yitao Liang",
-        "Ying Nian Wu",
-        "Demetri Terzopoulos",
-        "Xiaofeng Gao"
-      ],
-      "abstract": "Discovering causal regularities and applying them to build functional systems--the discovery-to-application loop--is a hallmark of general intelligence, yet evaluating this capacity has been hindered by the vast complexity gap between scientific discovery and real-world engineering. We introduce SciCrafter, a Minecraft-based benchmark that operationalizes this loop through parameterized redstone circuit tasks. Agents must ignite lamps in specified patterns (e.g., simultaneously or in timed sequences); scaling target parameters substantially increases construction complexity and required knowledge, forcing genuine discovery rather than reliance on memorized solutions. Evaluating frontier models including GPT-5.2, Gemini-3-Pro, and Claude-Opus-4.5 under a general-purpose code agent scaffold, we find that all plateau at approximately 26% success rate. To diagnose these failures, we decompose the loop into four capacities--knowledge gap identification, experimental discovery, knowledge consolidation, and knowledge application--and design targeted interventions whose marginal contributions serve as proxies for corresponding gaps. Our analysis reveals that although the general knowledge application capability still remains as the biggest gap across all models, for frontier models the knowledge gap identification starts to become a major hurdle--indicating the bottleneck is shifting from solving problems right to raising the right problems for current AI. We release SciCrafter as a diagnostic probe for future research on AI systems that navigate the full discovery-to-application loop.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.24697v1",
-        "pdf": "https://arxiv.org/pdf/2604.24697v1"
-      },
-      "arxiv_id": "2604.24697v1",
-      "comment": "Preprint, under review. 41 pages. Project page: https://scicrafter-bench.github.io/. Code: https://github.com/scicrafter-bench/scicraft-bench",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9499999999999997,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Discovering causal regularities and applying them to build functional systems--the discovery-to-application loop--is a hallmark of general intelligence, yet evaluating this capacity has been hindered by the vast complexity gap between scientific discovery and real-world engineering. We introduce SciCrafter, a Minecraft-based benchmark that operationalizes this loop through parameterized redstone c...",
-        "key_contributions": [
-          "Discovering causal regularities and applying them to build functional systems--the discovery-to-application loop--is a hallmark of general intelligence, yet evaluating this capacity has been hindered by the vast complexity gap between scientific discovery and real-world engineering.",
-          "We introduce SciCrafter, a Minecraft-based benchmark that operationalizes this loop through parameterized redstone circuit tasks.",
-          "Agents must ignite lamps in specified patterns (e."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.24524v1",
-      "title": "Point Cloud Registration for Fusion between SPECT MPI and CTA Images",
-      "authors": [
-        "Ni Yao",
-        "Xiangyu Liu",
-        "Shaojie Tang",
-        "Danyang Sun",
-        "Chuang Han",
-        "Yanting Li",
-        "Jiaofen Nan",
-        "Chengyang Li",
-        "Fubao Zhu",
-        "Chen Zhao",
-        "Zhihui Xu",
-        "Weihua Zhou"
-      ],
-      "abstract": "Clinical fusion of Single Photon Emission Computed Tomography Myocardial Perfusion Imaging (SPECT MPI) and Computed Tomography Angiography (CTA) remains limited by cross-modality misregistration and reliance on manual landmarks, which can hinder accurate ischemia localization and lesion-level functional assessment. To address this issue, we propose a registration and fusion framework for SPECT MPI and CTA that integrates functional and structural information for comprehensive cardiac evaluation. The proposed pipeline performs U-Net-based segmentation on both modalities. On SPECT MPI, only the left ventricle (LV) is extracted, and anatomical landmarks are automatically derived from characteristic LV structures. On CTA, both ventricles are segmented, and their spatial relationship is used to automatically define landmarks at the interventricular septal junction. Scale-space consistency preprocessing and landmark-driven coarse registration are applied to mitigate initial misalignment. Based on this initialization, multiple fine registration methods are evaluated on LV epicardial surface point clouds, including ICP, SICP, CPD, CluReg, FFD, and BCPD-plus-plus. The resulting transformations are then propagated to voxel-level resampling for high-precision SPECT-CTA fusion. In a retrospective cohort of 60 patients, the proposed framework preserved sub-millimeter coronary detail from CTA while accurately overlaying quantitative SPECT perfusion. Among the evaluated methods, BCPD-plus-plus achieved the highest accuracy with a mean point cloud distance of 1.7 mm. By combining robust initialization, comparative fine registration, and voxel-level fusion, the proposed approach provides a practical solution for myocardial ischemia localization and functional evaluation of coronary lesions, while remaining independent of any specific fine registration algorithm.",
-      "published": "2026-04-27",
-      "updated": "2026-04-27",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.24524v1",
-        "pdf": "https://arxiv.org/pdf/2604.24524v1"
-      },
-      "arxiv_id": "2604.24524v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9118644067796606,
-      "score_breakdown": {
-        "total_score": 3.91,
-        "field_match": {
-          "score": 1.78,
+          "score": 0.51,
           "matches": [
-            "cardiac",
-            "segmentation",
             "registration"
           ],
           "weight": 0.4
@@ -636,6 +242,420 @@
           "weight": 0.15
         },
         "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy. These gaps make systems still reliant on expert intervention to initiate scanning. Here we present SAMe, a semantic anatomy mapping engine that p...",
+        "key_contributions": [
+          "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy.",
+          "These gaps make systems still reliant on expert intervention to initiate scanning.",
+          "Here we present SAMe, a semantic anatomy mapping engine that provides robotic ultrasound with an explicit anatomical prior layer."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.25872v1",
+      "title": "When Errors Can Be Beneficial: A Categorization of Imperfect Rewards for Policy Gradient",
+      "authors": [
+        "Shuning Shang",
+        "Hubert Strauss",
+        "Stanley Wei",
+        "Sanjeev Arora",
+        "Noam Razin"
+      ],
+      "abstract": "Training language models via reinforcement learning often relies on imperfect proxy rewards, since ground truth rewards that precisely define the intended behavior are rarely available. Standard metrics for assessing the quality of proxy rewards, such as ranking accuracy, treat incorrect rewards as strictly harmful. In this work, however, we highlight that not all deviations from the ground truth are equal. By theoretically analyzing which outputs attract probability during policy gradient optimization, we categorize reward errors according to their effect on the increase in ground truth reward. The analysis establishes that reward errors, though conventionally viewed as harmful, can also be benign or even beneficial by preventing the policy from stalling around outputs with mediocre ground truth reward. We then present two practical implications of our theory. First, for reinforcement learning from human feedback (RLHF), we develop reward model evaluation metrics that account for the harmfulness of reward errors. Compared to standard ranking accuracy, these metrics typically correlate better with the performance of a language model after RLHF, yet gaps remain in robustly evaluating reward models. Second, we provide insights for reward design in settings with verifiable rewards. A key theme underlying our results is that the effectiveness of a proxy reward function depends heavily on its interaction with the initial policy and learning algorithm.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.25872v1",
+        "pdf": "https://arxiv.org/pdf/2604.25872v1"
+      },
+      "arxiv_id": "2604.25872v1",
+      "comment": "Code available at https://github.com/princeton-pli/imperfect-rewards",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.050000000000001,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Training language models via reinforcement learning often relies on imperfect proxy rewards, since ground truth rewards that precisely define the intended behavior are rarely available. Standard metrics for assessing the quality of proxy rewards, such as ranking accuracy, treat incorrect rewards as strictly harmful. In this work, however, we highlight that not all deviations from the ground truth ...",
+        "key_contributions": [
+          "Training language models via reinforcement learning often relies on imperfect proxy rewards, since ground truth rewards that precisely define the intended behavior are rarely available.",
+          "Standard metrics for assessing the quality of proxy rewards, such as ranking accuracy, treat incorrect rewards as strictly harmful.",
+          "In this work, however, we highlight that not all deviations from the ground truth are equal."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.25917v1",
+      "title": "Recursive Multi-Agent Systems",
+      "authors": [
+        "Xiyuan Yang",
+        "Jiaru Zou",
+        "Rui Pan",
+        "Ruizhong Qiu",
+        "Pan Lu",
+        "Shizhe Diao",
+        "Jindong Jiang",
+        "Hanghang Tong",
+        "Tong Zhang",
+        "Markus J. Buehler",
+        "Jingrui He",
+        "James Zou"
+      ],
+      "abstract": "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning. We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that casts the entire system as a unified latent-space recursive computation. RecursiveMAS connects heterogeneous agents as a collaboration loop through the lightweight RecursiveLink module, enabling in-distribution latent thoughts generation and cross-agent latent state transfer. To optimize our framework, we develop an inner-outer loop learning algorithm for iterative whole-system co-optimization through shared gradient-based credit assignment across recursion rounds. Theoretical analyses of runtime complexity and learning dynamics establish that RecursiveMAS is more efficient than standard text-based MAS and maintains stable gradients during recursive training. Empirically, we instantiate RecursiveMAS under 4 representative agent collaboration patterns and evaluate across 9 benchmarks spanning mathematics, science, medicine, search, and code generation. In comparison with advanced single/multi-agent and recursive computation baselines, RecursiveMAS consistently delivers an average accuracy improvement of 8.3%, together with 1.2$\\times$-2.4$\\times$ end-to-end inference speedup, and 34.6%-75.6% token usage reduction. Code and Data are provided in https://recursivemas.github.io.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.25917v1",
+        "pdf": "https://arxiv.org/pdf/2604.25917v1"
+      },
+      "arxiv_id": "2604.25917v1",
+      "comment": "36 Pages. Project Website: https://recursivemas.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning. We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that cast...",
+        "key_contributions": [
+          "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning.",
+          "We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that casts the entire system as a unified latent-space recursive computation.",
+          "RecursiveMAS connects heterogeneous agents as a collaboration loop through the lightweight RecursiveLink module, enabling in-distribution latent thoughts generation and cross-agent latent state transfer."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.25781v1",
+      "title": "Sketch2Arti: Sketch-based Articulation Modeling of CAD Objects",
+      "authors": [
+        "Yi Yang",
+        "Hao Pan",
+        "Yijing Cui",
+        "Alla Sheffer",
+        "Changjian Li"
+      ],
+      "abstract": "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects. Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e.g., arrows and strokes) that indicate how parts should move, yet translating such sketches into articulated 3D models remains largely manual. Sketch2Arti bridges this gap by enabling users to specify articulation through simple 2D sketches drawn from a chosen viewpoint. Given a CAD model and user sketches, our approach automatically discovers the corresponding movable parts and predicts their motion parameters, allowing iterative modeling of multiple articulations on complex objects with fine-grained control. Importantly, Sketch2Arti is trained in a category-agnostic manner without requiring object category information, leading to strong generalization to diverse objects beyond existing articulation datasets. Moreover, for shell models lacking interior structures, Sketch2Arti supports controllable internal completion guided by user sketches, generating plausible internal components consistent with the existing geometry and predicted motion constraints. Comprehensive experiments and user evaluations demonstrate the effectiveness, controllability, and generalization of Sketch2Arti. The code, dataset, and the prototype system are at https://arlo-yang.github.io/Sketch2Arti.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.25781v1",
+        "pdf": "https://arxiv.org/pdf/2604.25781v1"
+      },
+      "arxiv_id": "2604.25781v1",
+      "comment": "Project page: https://arlo-yang.github.io/Sketch2Arti",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects. Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e.g., arrows and strokes...",
+        "key_contributions": [
+          "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing.",
+          "In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects.",
+          "Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.25605v1",
+      "title": "Health System Scale Semantic Search Across Unstructured Clinical Notes",
+      "authors": [
+        "Faith Wavinya Mutinda",
+        "Spandana Makeneni",
+        "Anna Lin",
+        "Shivaji Dutta",
+        "Irit R. Rasooly",
+        "Patrick Dibussolo",
+        "Shivani Kamath Belman",
+        "Hessam Shahriari",
+        "Kevin Murphy",
+        "Alex B. Ruan",
+        "Barbara H. Chaiyachati",
+        "Sanjay Chainani",
+        "Robert W. Grundmeier",
+        "Scott M. Haag",
+        "Jeffrey M. Miller",
+        "Heather M. Griffis",
+        "Ian M. Campbell"
+      ],
+      "abstract": "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information. However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption. Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million vectors) from 1.68 million patients. The system uses instruction-tuned qwen3-embedding-0.6B embeddings, stores vectors in a managed database with storage-optimized indexing, maintains full-text metadata in a low-latency key-value store, and operates within a HIPAA-compliant governance framework. We evaluated the system through three experiments: optimization of embedding model and chunking strategy using a physician-authored benchmark dataset, characterization of full-scale performance (cost, latency, retrieval quality), and clinical utility assessment via comparison of chart abstraction efficiency across three tasks. Results: The system delivers sub-second query latency (median 237 ms single-user, 451 ms 20-user concurrency) with monthly costs of approximately USD 4,000. Qwen3 embeddings with 300-token chunk size achieved 94.6% accuracy on a clinical question-answering benchmark. In clinical utility evaluation across three abstraction tasks, semantic search reduced time-to-completion by 24 to 89% compared to clinician-performed chart review while maintaining comparable inter-rater agreement. Conclusion: Health-system-scale semantic search is both technically and operationally feasible. The system provides infrastructure supporting interactive search, cohort generation, and downstream LLM-powered clinical applications without requiring specialized informatics expertise.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "primary_category": "cs.IR",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.25605v1",
+        "pdf": "https://arxiv.org/pdf/2604.25605v1"
+      },
+      "arxiv_id": "2604.25605v1",
+      "comment": "for associated code, see https://github.com/Ian-Campbell-Lab/clinical-semantic-search",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information. However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption. Me...",
+        "key_contributions": [
+          "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information.",
+          "However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption.",
+          "Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million vectors) from 1."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.25636v1",
+      "title": "Refinement via Regeneration: Enlarging Modification Space Boosts Image Refinement in Unified Multimodal Models",
+      "authors": [
+        "Jiayi Guo",
+        "Linqing Wang",
+        "Jiangshan Wang",
+        "Yang Yue",
+        "Zeyu Liu",
+        "Zhiyuan Zhao",
+        "Qinglin Lu",
+        "Gao Huang",
+        "Chunyu Wang"
+      ],
+      "abstract": "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework. For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound. Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing instructions to modify misaligned regions while preserving aligned content. However, editing instructions often describe prompt-image misalignment only coarsely, leading to incomplete refinement. Moreover, pixel-level preservation, though necessary for editing, unnecessarily restricts the effective modification space for refinement. To address these limitations, we propose Refinement via Regeneration (RvR), a novel framework that reformulates refinement as conditional image regeneration rather than editing. Instead of relying on editing instructions and enforcing strict content preservation, RvR regenerates images conditioned on the target prompt and the semantic tokens of the initial image, enabling more complete semantic alignment with a larger modification space. Extensive experiments demonstrate the effectiveness of RvR, improving Geneval from 0.78 to 0.91, DPGBench from 84.02 to 87.21, and UniGenBench++ from 61.53 to 77.41.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.25636v1",
+        "pdf": "https://arxiv.org/pdf/2604.25636v1"
+      },
+      "arxiv_id": "2604.25636v1",
+      "comment": "GitHub: https://github.com/LeapLabTHU/RvR",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework. For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound. Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing inst...",
+        "key_contributions": [
+          "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework.",
+          "For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound.",
+          "Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing instructions to modify misaligned regions while preserving aligned content."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.25545v1",
+      "title": "TopoMamba: Topology-Aware Scanning and Fusion for Segmenting Heterogeneous Medical Visual Media",
+      "authors": [
+        "Fuchen Zheng",
+        "Chengpei Xu",
+        "Long Ma",
+        "Weixuan Li",
+        "Junhua Zhou",
+        "Xuhang Chen",
+        "Weihuang Liu",
+        "Haolun Li",
+        "Quanjun Li",
+        "Zhenxi Zhang",
+        "Lei Zhao",
+        "Chi-Man Pun",
+        "Shoujun Zhou"
+      ],
+      "abstract": "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses. We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous medical visual media. The method combines a diagonal/anti-diagonal TopoA-Scan branch with the standard Cross-Scan branch to provide complementary structural priors, and introduces ScanCache, a device-aware caching mechanism that amortizes explicit scan-index construction across recurring resolutions. To fuse heterogeneous scan features efficiently, we further propose a lightweight HSIC Gate that regulates branch interaction using a dependence-aware scalar gating rule. We also instantiate a volumetric TopoMamba-3D for practical 3D clinical segmentation. Experiments on Synapse CT, ISIC 2017 dermoscopy, and CVC-ClinicDB endoscopy show that TopoMamba consistently improves segmentation quality over strong CNN, Transformer, and SSM baselines, with particularly clear gains on thin or curved targets such as the pancreas and gallbladder, while maintaining favorable deployment efficiency under dynamic input resolutions. These results suggest that topology-aware scan ordering and lightweight dependence-aware fusion form an effective and practical design for medical multimedia segmentation. The code will be made publicly available.",
+      "published": "2026-04-28",
+      "updated": "2026-04-28",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.25545v1",
+        "pdf": "https://arxiv.org/pdf/2604.25545v1"
+      },
+      "arxiv_id": "2604.25545v1",
+      "comment": "15 pages, 9 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.795762711864407,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 1.86,
+          "matches": [
+            "medical image",
+            "volumetric",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
           "score": 3.0,
           "has_code": false,
           "weight": 0.1
@@ -646,11 +666,11 @@
         }
       },
       "ai_summaries": {
-        "short": "Clinical fusion of Single Photon Emission Computed Tomography Myocardial Perfusion Imaging (SPECT MPI) and Computed Tomography Angiography (CTA) remains limited by cross-modality misregistration and reliance on manual landmarks, which can hinder accurate ischemia localization and lesion-level functional assessment. To address this issue, we propose a registration and fusion framework for SPECT MPI...",
+        "short": "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses. We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous ...",
         "key_contributions": [
-          "Clinical fusion of Single Photon Emission Computed Tomography Myocardial Perfusion Imaging (SPECT MPI) and Computed Tomography Angiography (CTA) remains limited by cross-modality misregistration and reliance on manual landmarks, which can hinder accurate ischemia localization and lesion-level functional assessment.",
-          "To address this issue, we propose a registration and fusion framework for SPECT MPI and CTA that integrates functional and structural information for comprehensive cardiac evaluation.",
-          "The proposed pipeline performs U-Net-based segmentation on both modalities."
+          "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses.",
+          "We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous medical visual media.",
+          "The method combines a diagonal/anti-diagonal TopoA-Scan branch with the standard Cross-Scan branch to provide complementary structural priors, and introduces ScanCache, a device-aware caching mechanism that amortizes explicit scan-index construction across recurring resolutions."
         ],
         "provider": "gemini"
       }

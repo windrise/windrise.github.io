@@ -3,39 +3,98 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.25530v1",
-      "title": "The Surprising Effectiveness of Canonical Knowledge Distillation for Semantic Segmentation",
+      "id": "2604.26917v1",
+      "title": "AnimateAnyMesh++: A Flexible 4D Foundation Model for High-Fidelity Text-Driven Mesh Animation",
       "authors": [
-        "Muhammad Ali",
-        "Kevin Alexander Laube",
-        "Madan Ravi Ganesh",
-        "Lukas Schott",
-        "Niclas Popp",
-        "Thomas Brox"
+        "Zijie Wu",
+        "Chaohui Yu",
+        "Fan Wang",
+        "Xiang Bai"
       ],
-      "abstract": "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules. These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets. It is therefore unclear whether reported gains reflect stronger distillation signals or simply greater compute. We show that iteration-based comparisons are misleading: when wall-clock compute is matched, \\textit{canonical} logit- and feature-based KD outperform recent segmentation-specific methods. Under extended training, feature-based distillation achieves state-of-the-art ResNet-18 performance on Cityscapes and ADE20K. A PSPNet ResNet-18 student closely approaches its ResNet-101 teacher despite using only one quarter of the parameters, reaching 99\\% of the teacher's mIoU on Cityscapes (79.0 vs.\\ 79.8) and 92\\% on ADE20K. Our results challenge the prevailing assumption that KD for segmentation requires task-specific mechanisms and suggest that scaling, rather than complex hand-crafted objectives, should guide future method design.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
+      "abstract": "Recent advances in 4D content generation have attracted increasing attention, yet creating high-quality animated 3D models remains challenging due to the complexity of modeling spatio-temporal distributions and the scarcity of 4D training data. We present AnimateAnyMesh++, a feed-forward framework for text-driven animation of arbitrary 3D meshes with substantial upgrades in data, architecture, and generative capability. First, we expand the DyMesh-XL dataset by mining dynamic content from Objaverse-XL, increasing the number of unique identities from 60K to 300K and substantially broadening category and motion diversity. Second, we redesign DyMeshVAE-Flex with power-law topology-aware attention and vertex-normal enhanced features, which significantly improves trajectory reconstruction, local geometry preservation, and mitigates trajectory-sticking artifacts. Third, we introduce architectural changes to both DyMeshVAE-Flex and the rectified-flow (RF) generator to support variable-length sequence training and generation, enabling longer animations while preserving reconstruction fidelity. Extensive experiments demonstrate that AnimateAnyMesh++ generates semantically accurate and temporally coherent mesh animations within seconds, surpassing prior approaches in quality and efficiency. The enlarged DyMesh-XL, the upgraded DyMeshVAE-Flex, and variable-length RF together deliver consistent gains across benchmarks and in-the-wild meshes. We will release code, models, and the expanded DyMesh-XL upon acceptance of this manuscript to facilitate research in 4D content creation.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.25530v1",
-        "pdf": "https://arxiv.org/pdf/2604.25530v1"
+        "paper": "http://arxiv.org/abs/2604.26917v1",
+        "pdf": "https://arxiv.org/pdf/2604.26917v1"
       },
-      "arxiv_id": "2604.25530v1",
-      "comment": "Presented at Efficient Computer Vision (ECV) Workshop, CVPR 2026 (non-archival). 5 pages, 3 figures",
+      "arxiv_id": "2604.26917v1",
+      "comment": "14 pages, TPAMI submission, code url: https://github.com/JarrentWu1031/AnimateAnyMesh-pp",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.15,
+      "score_breakdown": {
+        "total_score": 5.15,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "PAMI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advances in 4D content generation have attracted increasing attention, yet creating high-quality animated 3D models remains challenging due to the complexity of modeling spatio-temporal distributions and the scarcity of 4D training data. We present AnimateAnyMesh++, a feed-forward framework for text-driven animation of arbitrary 3D meshes with substantial upgrades in data, architecture, and...",
+        "key_contributions": [
+          "Recent advances in 4D content generation have attracted increasing attention, yet creating high-quality animated 3D models remains challenging due to the complexity of modeling spatio-temporal distributions and the scarcity of 4D training data.",
+          "We present AnimateAnyMesh++, a feed-forward framework for text-driven animation of arbitrary 3D meshes with substantial upgrades in data, architecture, and generative capability.",
+          "First, we expand the DyMesh-XL dataset by mining dynamic content from Objaverse-XL, increasing the number of unique identities from 60K to 300K and substantially broadening category and motion diversity."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.26920v1",
+      "title": "Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction",
+      "authors": [
+        "David Novikov",
+        "Eilon Vaknin",
+        "Narek Tumanyan",
+        "Mark Sheinin"
+      ],
+      "abstract": "The task of capturing and rendering 3D dynamic scenes from 2D images has become increasingly popular in recent years. However, most conventional cameras are bandwidth-limited to 30-60 FPS, restricting these methods to static or slowly evolving scenes. While overcoming bandwidth limitations is difficult for general scenes, recent years have seen a flurry of computational imaging methods that yield high-speed videos using conventional cameras for specific applications (e.g., motion capture and particle image velocimetry). However, most of these methods require modifications to a camera's optics or the addition of mechanically moving components, limiting them to a single-view high-speed capture. Consequently, these methods cannot be readily used to capture a 3D representation of rapid scene motion. In this paper, we propose a novel method to capture and reconstruct a volumetric representation of a high-speed scene using only unaugmented low-speed cameras. Instead of modifying the hardware or optics of each individual camera, we encode high-speed scene dynamics by illuminating the scene with a rapid, sequential color-coded sequence. This results in simultaneous multi-view capture of the scene, where high-speed temporal information is encoded in the spatial intensity and color variations of the captured images. To construct a high-speed volumetric representation of the dynamic scene, we develop a novel dynamic Gaussian Splatting-based approach that decodes the temporal information from the images. We evaluate our approach on simulated scenes and real-world experiments using a multi-camera imaging setup, showing first-of-a-kind high-speed volumetric scene reconstructions.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.26920v1",
+        "pdf": "https://arxiv.org/pdf/2604.26920v1"
+      },
+      "arxiv_id": "2604.26920v1",
+      "comment": "accepted to IEEE CVPR 2026 as a highlight",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.553389830508475,
+      "relevance_score": 5.0262711864406775,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 5.03,
         "field_match": {
-          "score": 0.51,
+          "score": 1.44,
           "matches": [
-            "segmentation"
+            "gaussian splatting",
+            "volumetric"
           ],
           "weight": 0.4
         },
@@ -54,44 +113,178 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules. These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets. It is therefore unclear whether reported gains reflect stronger distillation s...",
+        "short": "The task of capturing and rendering 3D dynamic scenes from 2D images has become increasingly popular in recent years. However, most conventional cameras are bandwidth-limited to 30-60 FPS, restricting these methods to static or slowly evolving scenes. While overcoming bandwidth limitations is difficult for general scenes, recent years have seen a flurry of computational imaging methods that yield ...",
         "key_contributions": [
-          "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules.",
-          "These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets.",
-          "It is therefore unclear whether reported gains reflect stronger distillation signals or simply greater compute."
+          "The task of capturing and rendering 3D dynamic scenes from 2D images has become increasingly popular in recent years.",
+          "However, most conventional cameras are bandwidth-limited to 30-60 FPS, restricting these methods to static or slowly evolving scenes.",
+          "While overcoming bandwidth limitations is difficult for general scenes, recent years have seen a flurry of computational imaging methods that yield high-speed videos using conventional cameras for specific applications (e."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.25642v1",
-      "title": "Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models",
+      "id": "2604.26820v1",
+      "title": "Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization",
       "authors": [
-        "Chengsheng Zhang",
-        "Chenghao Sun",
-        "Xinyan Jiang",
-        "Wei Li",
-        "Xinmei Tian"
+        "Mingbo Hong",
+        "Feng Liu",
+        "Caroline Gevaert",
+        "George Vosselman",
+        "Hao Cheng"
       ],
-      "abstract": "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.e., the generation of factually incorrect or inconsistent responses. While recent studies using steering vectors demonstrated promise in reducing hallucinations, a notable challenge remains: they inadvertently amplify the severity of residual hallucinations. We attribute this to their exclusive focus on the decoding stage, where errors accumulate autoregressively and progressively worsen subsequent hallucinatory outputs. To address this, we propose Prefill-Time Intervention (PTI), a novel steering paradigm that intervenes only once during the prefill stage, enhancing the initial Key-Value (KV) cache before error accumulation occurs. Specifically, PTI is modality-aware, deriving distinct directions for visual and textual representations. This intervention is decoupled to steer keys toward visually-grounded objects and values to filter background noise, correcting hallucination-prone representations at their source. Extensive experiments demonstrate PTI's significant performance in mitigating hallucinations and its generalizability across diverse decoding strategies, LVLMs, and benchmarks. Moreover, PTI is orthogonal to existing decoding-stage methods, enabling plug-and-play integration and further boosting performance. Code is available at: https://github.com/huaiyi66/PTI.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
+      "abstract": "Detectors often suffer from degraded performance, primarily due to the distributional gap between the source and target domains. This issue is especially evident in single-source domains with limited data, as models tend to rely on confounders (e.g., illumination, co-occurrence, and style) from the source domain, leading to spurious correlations that hinder generalization. To this end, this paper proposes a novel Basis-driven framework for domain generalization, namely \\textbf{\\textit{Bridge}}, that incorporates causal inference into object detection. By learning the low-rank bases for front-door adjustment, \\textbf{\\textit{Bridge}} blocks confounders' effects to mitigate spurious correlations, while simultaneously refining representations by filtering redundant and task-irrelevant components. \\textbf{\\textit{Bridge}} can be seamlessly integrated with both discriminative (e.g., DINOv2/3, SAM) and generative (e.g., Stable Diffusion) Vision Foundation Models (VFMs). Extensive experiments across multiple domain generalization object detection datasets, i.e., Cross-Camera, Adverse Weather, Real-to-Artistic, Diverse Weather Datasets, and Diverse Weather DroneVehicle (our newly augmented real-world UAV-based benchmark), underscore the superiority of our proposed method over previous state-of-the-art approaches. The project page is available at: https://mingbohong.github.io/Bridge/.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.25642v1",
-        "pdf": "https://arxiv.org/pdf/2604.25642v1"
+        "paper": "http://arxiv.org/abs/2604.26820v1",
+        "pdf": "https://arxiv.org/pdf/2604.26820v1"
       },
-      "arxiv_id": "2604.25642v1",
+      "arxiv_id": "2604.26820v1",
       "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.95,
+      "score_breakdown": {
+        "total_score": 4.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Detectors often suffer from degraded performance, primarily due to the distributional gap between the source and target domains. This issue is especially evident in single-source domains with limited data, as models tend to rely on confounders (e.g., illumination, co-occurrence, and style) from the source domain, leading to spurious correlations that hinder generalization. To this end, this paper ...",
+        "key_contributions": [
+          "Detectors often suffer from degraded performance, primarily due to the distributional gap between the source and target domains.",
+          "This issue is especially evident in single-source domains with limited data, as models tend to rely on confounders (e.",
+          "g."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.26799v1",
+      "title": "MesonGS++: Post-training Compression of 3D Gaussian Splatting with Hyperparameter Searching",
+      "authors": [
+        "Shuzhao Xie",
+        "Junchen Ge",
+        "Weixiang Zhang",
+        "Jiahang Liu",
+        "Chen Tang",
+        "Yunpeng Bai",
+        "Shijia Ge",
+        "Jingyan Jiang",
+        "Yuzhi Huang",
+        "Fengnian Yang",
+        "Cong Zhang",
+        "Xiaoyi Fan",
+        "Zhi Wang"
+      ],
+      "abstract": "3D Gaussian Splatting (3DGS) achieves high-quality novel view synthesis with real-time rendering, but its storage cost remains prohibitive for practical deployment. Existing post-training compression methods still rely on many coupled hyperparameters across pruning, transformation, quantization, and entropy coding, making it difficult to control the final compressed size and fully exploit the rate-distortion trade-off. We propose MesonGS++, a size-aware post-training codec for 3D Gaussian compression. On the codec side, MesonGS++ combines joint importance-based pruning, octree geometry coding, attribute transformation, selective vector quantization for higher-degree spherical harmonics, and group-wise mixed-precision quantization with entropy coding. On the configuration side, it treats the reserve ratio and bit-width allocation as the dominant rate-distortion knobs and jointly optimizes them under a target storage budget via discrete sampling and 0--1 integer linear programming. We further propose a linear size estimator and a CUDA parallel quantization operator to accelerate the hyperparameter searching process. Extensive experiments show that MesonGS++ achieves over 34$\\times$ compression while preserving rendering fidelity, outperforming state-of-the-art post-training methods and accurately meeting target size budgets. Remarkably, without any training, MesonGS++ can even surpass the PSNR of vanilla 3DGS at a 20$\\times$ compression rate on the Stump scene. Our code is available at https://github.com/mmlab-sigs/mesongs_plus",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.26799v1",
+        "pdf": "https://arxiv.org/pdf/2604.26799v1"
+      },
+      "arxiv_id": "2604.26799v1",
+      "comment": "https://github.com/mmlab-sigs/mesongs_plus",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.677966101694915,
+      "score_breakdown": {
+        "total_score": 4.68,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "3D Gaussian Splatting (3DGS) achieves high-quality novel view synthesis with real-time rendering, but its storage cost remains prohibitive for practical deployment. Existing post-training compression methods still rely on many coupled hyperparameters across pruning, transformation, quantization, and entropy coding, making it difficult to control the final compressed size and fully exploit the rate...",
+        "key_contributions": [
+          "3D Gaussian Splatting (3DGS) achieves high-quality novel view synthesis with real-time rendering, but its storage cost remains prohibitive for practical deployment.",
+          "Existing post-training compression methods still rely on many coupled hyperparameters across pruning, transformation, quantization, and entropy coding, making it difficult to control the final compressed size and fully exploit the rate-distortion trade-off.",
+          "We propose MesonGS++, a size-aware post-training codec for 3D Gaussian compression."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.26772v1",
+      "title": "TAP into the Patch Tokens: Leveraging Vision Foundation Model Features for AI-Generated Image Detection",
+      "authors": [
+        "Ahmed Abdullah",
+        "Nikolas Ebert",
+        "Oliver Wasenmüller"
+      ],
+      "abstract": "Recent methods demonstrate that large-scale pretrained models, such as CLIP vision transformers, effectively detect AI-generated images (AIGIs) from unseen generative models when used as feature extractors. Many state-of-the-art methods for AI-generated image detection build upon the original CLIP-ViT to enhance this generalization. Since CLIP's release, numerous vision foundation models (VFMs) have emerged, incorporating architectural improvements and different training paradigms. Despite these advances, their potential for AIGI detection and AI image forensics remains largely unexplored. In this work, we present a comprehensive benchmark across multiple VFM families, covering diverse pretraining objectives, input resolutions, and model scales. We systematically evaluate their out-of-the-box performance for detecting fully-generated AI-images and AI-inpainted images, and discover that the best model outperforms the original CLIP by more than 12% in accuracy, beating established approaches in the process. To fully leverage the features of a modern VFM, we propose a simple redesign of the classifier head by utilizing tunable attention pooling (TAP), which aggregates output tokens into a refined global representation. Integrating TAP with the latest VFMs yields substantial performance gains across several AIGI detection benchmarks, establishing a new state-of-the-art on two challenging benchmarks for in-the-wild detection of AI-generated and -inpainted images.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.26772v1",
+        "pdf": "https://arxiv.org/pdf/2604.26772v1"
+      },
+      "arxiv_id": "2604.26772v1",
+      "comment": "This paper has been accepted at IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.55,
@@ -122,41 +315,112 @@
         }
       },
       "ai_summaries": {
-        "short": "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.e., the generation of factually incorrect or inconsistent responses. While recent studies using steering vectors demonstrated promise in reducing hallucinations, a notable challenge remains: they inadvertently amplify the severi...",
+        "short": "Recent methods demonstrate that large-scale pretrained models, such as CLIP vision transformers, effectively detect AI-generated images (AIGIs) from unseen generative models when used as feature extractors. Many state-of-the-art methods for AI-generated image detection build upon the original CLIP-ViT to enhance this generalization. Since CLIP's release, numerous vision foundation models (VFMs) ha...",
         "key_contributions": [
-          "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.",
-          "e.",
-          ", the generation of factually incorrect or inconsistent responses."
+          "Recent methods demonstrate that large-scale pretrained models, such as CLIP vision transformers, effectively detect AI-generated images (AIGIs) from unseen generative models when used as feature extractors.",
+          "Many state-of-the-art methods for AI-generated image detection build upon the original CLIP-ViT to enhance this generalization.",
+          "Since CLIP's release, numerous vision foundation models (VFMs) have emerged, incorporating architectural improvements and different training paradigms."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.25779v1",
-      "title": "Sustained Gradient Alignment Mediates Subliminal Learning in a Multi-Step Setting: Evidence from MNIST Auxiliary Logit Distillation Experiment",
+      "id": "2604.26694v1",
+      "title": "Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising",
       "authors": [
-        "Chayanon Kitkana",
-        "Shivam Arora"
+        "Jun Guo",
+        "Qiwei Li",
+        "Peiyan Li",
+        "Zilong Chen",
+        "Nan Sun",
+        "Yifei Su",
+        "Heyun Wang",
+        "Yuan Zhang",
+        "Xinghang Li",
+        "Huaping Liu"
       ],
-      "abstract": "In the MNIST auxiliary logit distillation experiment, a student can acquire an unintended teacher trait despite distilling only on no-class logits through a phenomenon called subliminal learning. Under a single-step gradient descent assumption, subliminal learning theory attributes this effect to alignment between the trait and distillation gradients, but does not guarantee that this alignment persists in a multi-step setting. We empirically show that gradient alignment remains weakly but consistently positive throughout training and causally contributes to trait acquisition. We show that a mitigation method called liminal training works by attenuating the alignment and fails to stop trait acquisition in this setup. These results suggest that mitigation methods that operate in this regime may not reliably suppress trait acquisition when the first-order drive dominates.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
+      "abstract": "We propose X-WAM, a Unified 4D World Model that unifies real-time robotic action execution and high-fidelity 4D world synthesis (video + 3D reconstruction) in a single framework, addressing the critical limitations of prior unified world models (e.g., UWM) that only model 2D pixel-space and fail to balance action efficiency and world modeling quality. To leverage the strong visual priors of pretrained video diffusion models, X-WAM imagines the future world by predicting multi-view RGB-D videos, and obtains spatial information efficiently through a lightweight structural adaptation: replicating the final few blocks of the pretrained Diffusion Transformer into a dedicated depth prediction branch for the reconstruction of future spatial information. Moreover, we propose Asynchronous Noise Sampling (ANS) to jointly optimize generation quality and action decoding efficiency. ANS applies a specialized asynchronous denoising schedule during inference, which rapidly decodes actions with fewer steps to enable efficient real-time execution, while dedicating the full sequence of steps to generate high-fidelity video. Rather than entirely decoupling the timesteps during training, ANS samples from their joint distribution to align with the inference distribution. Pretrained on over 5,800 hours of robotic data, X-WAM achieves 79.2% and 90.7% average success rate on RoboCasa and RoboTwin 2.0 benchmarks, while producing high-fidelity 4D reconstruction and generation surpassing existing methods in both visual and geometric metrics.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.26694v1",
+        "pdf": "https://arxiv.org/pdf/2604.26694v1"
+      },
+      "arxiv_id": "2604.26694v1",
+      "comment": "Project website: https://sharinka0715.github.io/X-WAM/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.08728813559322,
+      "score_breakdown": {
+        "total_score": 4.09,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We propose X-WAM, a Unified 4D World Model that unifies real-time robotic action execution and high-fidelity 4D world synthesis (video + 3D reconstruction) in a single framework, addressing the critical limitations of prior unified world models (e.g., UWM) that only model 2D pixel-space and fail to balance action efficiency and world modeling quality. To leverage the strong visual priors of pretra...",
+        "key_contributions": [
+          "We propose X-WAM, a Unified 4D World Model that unifies real-time robotic action execution and high-fidelity 4D world synthesis (video + 3D reconstruction) in a single framework, addressing the critical limitations of prior unified world models (e.",
+          "g.",
+          ", UWM) that only model 2D pixel-space and fail to balance action efficiency and world modeling quality."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.26550v1",
+      "title": "Large-scale semi-supervised learning with online spectral graph sparsification",
+      "authors": [
+        "Daniele Calandriello",
+        "Alessandro Lazaric",
+        "Michal Valko"
+      ],
+      "abstract": "We introduce Sparse-HFS, a scalable algorithm that can compute solutions to SSL problems using only O(n polylog(n)) space and O(m polylog(n)) time.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
+      "categories": [
+        "cs.LG"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.25779v1",
-        "pdf": "https://arxiv.org/pdf/2604.25779v1"
+        "paper": "http://arxiv.org/abs/2604.26550v1",
+        "pdf": "https://arxiv.org/pdf/2604.26550v1"
       },
-      "arxiv_id": "2604.25779v1",
-      "comment": "Published in ICLR 2026 Sci4DL Workshop",
+      "arxiv_id": "2604.26550v1",
+      "comment": "Workshop on Resource-Efficient Machine Learning (REML), ICML 2015",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.2,
+      "relevance_score": 4.05,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -164,11 +428,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -182,115 +446,103 @@
         }
       },
       "ai_summaries": {
-        "short": "In the MNIST auxiliary logit distillation experiment, a student can acquire an unintended teacher trait despite distilling only on no-class logits through a phenomenon called subliminal learning. Under a single-step gradient descent assumption, subliminal learning theory attributes this effect to alignment between the trait and distillation gradients, but does not guarantee that this alignment per...",
+        "short": "We introduce Sparse-HFS, a scalable algorithm that can compute solutions to SSL problems using only O(n polylog(n)) space and O(m polylog(n)) time.",
         "key_contributions": [
-          "In the MNIST auxiliary logit distillation experiment, a student can acquire an unintended teacher trait despite distilling only on no-class logits through a phenomenon called subliminal learning.",
-          "Under a single-step gradient descent assumption, subliminal learning theory attributes this effect to alignment between the trait and distillation gradients, but does not guarantee that this alignment persists in a multi-step setting.",
-          "We empirically show that gradient alignment remains weakly but consistently positive throughout training and causally contributes to trait acquisition."
+          "We introduce Sparse-HFS, a scalable algorithm that can compute solutions to SSL problems using only O(n polylog(n)) space and O(m polylog(n)) time."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.25646v1",
-      "title": "SAMe: A Semantic Anatomy Mapping Engine for Robotic Ultrasound",
+      "id": "2604.26951v1",
+      "title": "Turning the TIDE: Cross-Architecture Distillation for Diffusion Large Language Models",
       "authors": [
-        "Jing Zhang",
-        "Duojie Chen",
-        "Wentao Jiang",
-        "Zihan Lou",
-        "Jianxin Liu",
-        "Xinwu Cui",
-        "Qinghong Zhao",
-        "Bo Du",
-        "Christoph F. Dietrich",
-        "Dacheng Tao"
+        "Gongbo Zhang",
+        "Wen Wang",
+        "Ye Tian",
+        "Li Yuan"
       ],
-      "abstract": "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy. These gaps make systems still reliant on expert intervention to initiate scanning. Here we present SAMe, a semantic anatomy mapping engine that provides robotic ultrasound with an explicit anatomical prior layer. SAMe addresses scan initiation as a target-to-anatomy-to-action process: it grounds under-specified clinical complaints into structured target organs, instantiates a patient-specific anatomical representation for the grounded targets from a single external body image, and translates this representation into control-facing 6-DoF probe initialization states without any additional registration using preoperative CT or MRI. The anatomical representation maintained by SAMe is explicit, lightweight (single-organ inference in 0.08s), and compatible with downstream control by design. Across semantic grounding, anatomical instantiation, and real-robot evaluation, SAMe shows strong performance across the full initialization pipeline. In real-robot experiments, SAMe achieved overall organ-hit rates of 97.3% for liver initialization and 81.7% for kidney initialization across the evaluated target sets. Even when restricted to the centroid target, SAMe outperformed the surface-heuristic baseline for both liver and kidney initialization. These results establish an explicit anatomical prior layer that addresses scan initialization and is designed to support broader downstream autonomous scanning pipelines, providing the anatomical foundation for complaint-driven, anatomically informed robotic ultrasonography.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
+      "abstract": "Diffusion large language models (dLLMs) offer parallel decoding and bidirectional context, but state-of-the-art dLLMs require billions of parameters for competitive performance. While existing distillation methods for dLLMs reduce inference steps within a single architecture, none address cross-architecture knowledge transfer, in which the teacher and student differ in architecture, attention mechanism, and tokenizer. We present TIDE, the first framework for cross-architecture dLLM distillation, comprising three modular components: (1) TIDAL, which jointly modulates distillation strength across training progress and diffusion timestep to account for the teacher's noise-dependent reliability; (2) CompDemo, which enriches the teacher's context via complementary mask splitting to improve predictions under heavy masking; and (3) Reverse CALM, a cross-tokenizer objective that inverts chunk-level likelihood matching, yielding bounded gradients and dual-end noise filtering. Distilling 8B dense and 16B MoE teachers into a 0.6B student via two heterogeneous pipelines outperforms the baseline by an average of 1.53 points across eight benchmarks, yielding notable gains in code generation, where HumanEval scores reach 48.78 compared to 32.3 for the AR baseline.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.26951v1",
+        "pdf": "https://arxiv.org/pdf/2604.26951v1"
+      },
+      "arxiv_id": "2604.26951v1",
+      "comment": "15 pages, 3 figures. Code: https://github.com/PKU-YuanGroup/TIDE",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Diffusion large language models (dLLMs) offer parallel decoding and bidirectional context, but state-of-the-art dLLMs require billions of parameters for competitive performance. While existing distillation methods for dLLMs reduce inference steps within a single architecture, none address cross-architecture knowledge transfer, in which the teacher and student differ in architecture, attention mech...",
+        "key_contributions": [
+          "Diffusion large language models (dLLMs) offer parallel decoding and bidirectional context, but state-of-the-art dLLMs require billions of parameters for competitive performance.",
+          "While existing distillation methods for dLLMs reduce inference steps within a single architecture, none address cross-architecture knowledge transfer, in which the teacher and student differ in architecture, attention mechanism, and tokenizer.",
+          "We present TIDE, the first framework for cross-architecture dLLM distillation, comprising three modular components: (1) TIDAL, which jointly modulates distillation strength across training progress and diffusion timestep to account for the teacher's noise-dependent reliability; (2) CompDemo, which enriches the teacher's context via complementary mask splitting to improve predictions under heavy masking; and (3) Reverse CALM, a cross-tokenizer objective that inverts chunk-level likelihood matching, yielding bounded gradients and dual-end noise filtering."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2604.26946v1",
+      "title": "Three-Step Nav: A Hierarchical Global-Local Planner for Zero-Shot Vision-and-Language Navigation",
+      "authors": [
+        "Wanrong Zheng",
+        "Yunhao Ge",
+        "Laurent Itti"
+      ],
+      "abstract": "Breakthrough progress in vision-based navigation through unknown environments has been achieved by using multimodal large language models (MLLMs). These models can plan a sequence of motions by evaluating the current view at each time step against the task and goal given to the agent. However, current zero-shot Vision-and-Language Navigation (VLN) agents powered by MLLMs still tend to drift off course, halt prematurely, and achieve low overall success rates. We propose Three-Step Nav to counteract these failures with a three-view protocol: First, \"look forward\" to extract global landmarks and sketch a coarse plan. Then, \"look now\" to align the current visual observation with the next sub-goal for fine-grained guidance. Finally, \"look backward\" audits the entire trajectory to correct accumulated drift before stopping. Requiring no gradient updates or task-specific fine-tuning, our planner drops into existing VLN pipelines with minimal overhead. Three-Step Nav achieves state-of-the-art zero-shot performance on the R2R-CE and RxR-CE dataset. Our code is available at https://github.com/ZoeyZheng0/3-step-Nav.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
       "categories": [
         "cs.CV",
         "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.25646v1",
-        "pdf": "https://arxiv.org/pdf/2604.25646v1"
+        "paper": "http://arxiv.org/abs/2604.26946v1",
+        "pdf": "https://arxiv.org/pdf/2604.26946v1"
       },
-      "arxiv_id": "2604.25646v1",
-      "comment": "Supplementary information included. Code will be released at https://github.com/MiliLab/Echo-SAMe",
-      "journal_ref": "",
+      "arxiv_id": "2604.26946v1",
+      "comment": "Accepted to AISTATS 2026. Code: https://github.com/ZoeyZheng0/3-step-Nav",
+      "journal_ref": "Proceedings of the 29th International Conference on Artificial Intelligence and Statistics (AISTATS), 2026",
       "has_code": true,
-      "relevance_score": 4.053389830508475,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "registration"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy. These gaps make systems still reliant on expert intervention to initiate scanning. Here we present SAMe, a semantic anatomy mapping engine that p...",
-        "key_contributions": [
-          "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy.",
-          "These gaps make systems still reliant on expert intervention to initiate scanning.",
-          "Here we present SAMe, a semantic anatomy mapping engine that provides robotic ultrasound with an explicit anatomical prior layer."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.25872v1",
-      "title": "When Errors Can Be Beneficial: A Categorization of Imperfect Rewards for Policy Gradient",
-      "authors": [
-        "Shuning Shang",
-        "Hubert Strauss",
-        "Stanley Wei",
-        "Sanjeev Arora",
-        "Noam Razin"
-      ],
-      "abstract": "Training language models via reinforcement learning often relies on imperfect proxy rewards, since ground truth rewards that precisely define the intended behavior are rarely available. Standard metrics for assessing the quality of proxy rewards, such as ranking accuracy, treat incorrect rewards as strictly harmful. In this work, however, we highlight that not all deviations from the ground truth are equal. By theoretically analyzing which outputs attract probability during policy gradient optimization, we categorize reward errors according to their effect on the increase in ground truth reward. The analysis establishes that reward errors, though conventionally viewed as harmful, can also be benign or even beneficial by preventing the policy from stalling around outputs with mediocre ground truth reward. We then present two practical implications of our theory. First, for reinforcement learning from human feedback (RLHF), we develop reward model evaluation metrics that account for the harmfulness of reward errors. Compared to standard ranking accuracy, these metrics typically correlate better with the performance of a language model after RLHF, yet gaps remain in robustly evaluating reward models. Second, we provide insights for reward design in settings with verifiable rewards. A key theme underlying our results is that the effectiveness of a proxy reward function depends heavily on its interaction with the initial policy and learning algorithm.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.ML"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.25872v1",
-        "pdf": "https://arxiv.org/pdf/2604.25872v1"
-      },
-      "arxiv_id": "2604.25872v1",
-      "comment": "Code available at https://github.com/princeton-pli/imperfect-rewards",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -311,191 +563,41 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Training language models via reinforcement learning often relies on imperfect proxy rewards, since ground truth rewards that precisely define the intended behavior are rarely available. Standard metrics for assessing the quality of proxy rewards, such as ranking accuracy, treat incorrect rewards as strictly harmful. In this work, however, we highlight that not all deviations from the ground truth ...",
+        "short": "Breakthrough progress in vision-based navigation through unknown environments has been achieved by using multimodal large language models (MLLMs). These models can plan a sequence of motions by evaluating the current view at each time step against the task and goal given to the agent. However, current zero-shot Vision-and-Language Navigation (VLN) agents powered by MLLMs still tend to drift off co...",
         "key_contributions": [
-          "Training language models via reinforcement learning often relies on imperfect proxy rewards, since ground truth rewards that precisely define the intended behavior are rarely available.",
-          "Standard metrics for assessing the quality of proxy rewards, such as ranking accuracy, treat incorrect rewards as strictly harmful.",
-          "In this work, however, we highlight that not all deviations from the ground truth are equal."
+          "Breakthrough progress in vision-based navigation through unknown environments has been achieved by using multimodal large language models (MLLMs).",
+          "These models can plan a sequence of motions by evaluating the current view at each time step against the task and goal given to the agent.",
+          "However, current zero-shot Vision-and-Language Navigation (VLN) agents powered by MLLMs still tend to drift off course, halt prematurely, and achieve low overall success rates."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.25917v1",
-      "title": "Recursive Multi-Agent Systems",
+      "id": "2604.26673v1",
+      "title": "Laplace Approximation for Bayesian Tensor Network Kernel Machines",
       "authors": [
-        "Xiyuan Yang",
-        "Jiaru Zou",
-        "Rui Pan",
-        "Ruizhong Qiu",
-        "Pan Lu",
-        "Shizhe Diao",
-        "Jindong Jiang",
-        "Hanghang Tong",
-        "Tong Zhang",
-        "Markus J. Buehler",
-        "Jingrui He",
-        "James Zou"
+        "Albert Saiapin",
+        "Kim Batselier"
       ],
-      "abstract": "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning. We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that casts the entire system as a unified latent-space recursive computation. RecursiveMAS connects heterogeneous agents as a collaboration loop through the lightweight RecursiveLink module, enabling in-distribution latent thoughts generation and cross-agent latent state transfer. To optimize our framework, we develop an inner-outer loop learning algorithm for iterative whole-system co-optimization through shared gradient-based credit assignment across recursion rounds. Theoretical analyses of runtime complexity and learning dynamics establish that RecursiveMAS is more efficient than standard text-based MAS and maintains stable gradients during recursive training. Empirically, we instantiate RecursiveMAS under 4 representative agent collaboration patterns and evaluate across 9 benchmarks spanning mathematics, science, medicine, search, and code generation. In comparison with advanced single/multi-agent and recursive computation baselines, RecursiveMAS consistently delivers an average accuracy improvement of 8.3%, together with 1.2$\\times$-2.4$\\times$ end-to-end inference speedup, and 34.6%-75.6% token usage reduction. Code and Data are provided in https://recursivemas.github.io.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
+      "abstract": "Uncertainty estimation is essential for robust decision-making in the presence of ambiguous or out-of-distribution inputs. Gaussian Processes (GPs) are classical kernel-based models that offer principled uncertainty quantification and perform well on small- to medium-scale datasets. Alternatively, formulating the weight space learning problem under tensor network assumptions yields scalable tensor network kernel machines. However, these assumptions break Gaussianity, complicating standard probabilistic inference. This raises a fundamental question: how can tensor network kernel machines provide principled uncertainty estimates? We propose a novel Bayesian Tensor Network Kernel Machine (LA-TNKM) that employs a (linearized) Laplace approximation for Bayesian inference. A comprehensive set of numerical experiments shows that the proposed method consistently matches or surpasses Gaussian Processes and Bayesian Neural Networks (BNNs) across diverse UCI regression benchmarks, highlighting both its effectiveness and practical relevance.",
+      "published": "2026-04-29",
+      "updated": "2026-04-29",
       "categories": [
-        "cs.AI",
-        "cs.CL",
+        "stat.ML",
         "cs.LG"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "stat.ML",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.25917v1",
-        "pdf": "https://arxiv.org/pdf/2604.25917v1"
+        "paper": "http://arxiv.org/abs/2604.26673v1",
+        "pdf": "https://arxiv.org/pdf/2604.26673v1"
       },
-      "arxiv_id": "2604.25917v1",
-      "comment": "36 Pages. Project Website: https://recursivemas.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning. We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that cast...",
-        "key_contributions": [
-          "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning.",
-          "We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that casts the entire system as a unified latent-space recursive computation.",
-          "RecursiveMAS connects heterogeneous agents as a collaboration loop through the lightweight RecursiveLink module, enabling in-distribution latent thoughts generation and cross-agent latent state transfer."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.25781v1",
-      "title": "Sketch2Arti: Sketch-based Articulation Modeling of CAD Objects",
-      "authors": [
-        "Yi Yang",
-        "Hao Pan",
-        "Yijing Cui",
-        "Alla Sheffer",
-        "Changjian Li"
-      ],
-      "abstract": "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects. Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e.g., arrows and strokes) that indicate how parts should move, yet translating such sketches into articulated 3D models remains largely manual. Sketch2Arti bridges this gap by enabling users to specify articulation through simple 2D sketches drawn from a chosen viewpoint. Given a CAD model and user sketches, our approach automatically discovers the corresponding movable parts and predicts their motion parameters, allowing iterative modeling of multiple articulations on complex objects with fine-grained control. Importantly, Sketch2Arti is trained in a category-agnostic manner without requiring object category information, leading to strong generalization to diverse objects beyond existing articulation datasets. Moreover, for shell models lacking interior structures, Sketch2Arti supports controllable internal completion guided by user sketches, generating plausible internal components consistent with the existing geometry and predicted motion constraints. Comprehensive experiments and user evaluations demonstrate the effectiveness, controllability, and generalization of Sketch2Arti. The code, dataset, and the prototype system are at https://arlo-yang.github.io/Sketch2Arti.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
-      "categories": [
-        "cs.CV",
-        "cs.GR"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.25781v1",
-        "pdf": "https://arxiv.org/pdf/2604.25781v1"
-      },
-      "arxiv_id": "2604.25781v1",
-      "comment": "Project page: https://arlo-yang.github.io/Sketch2Arti",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects. Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e.g., arrows and strokes...",
-        "key_contributions": [
-          "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing.",
-          "In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects.",
-          "Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.25605v1",
-      "title": "Health System Scale Semantic Search Across Unstructured Clinical Notes",
-      "authors": [
-        "Faith Wavinya Mutinda",
-        "Spandana Makeneni",
-        "Anna Lin",
-        "Shivaji Dutta",
-        "Irit R. Rasooly",
-        "Patrick Dibussolo",
-        "Shivani Kamath Belman",
-        "Hessam Shahriari",
-        "Kevin Murphy",
-        "Alex B. Ruan",
-        "Barbara H. Chaiyachati",
-        "Sanjay Chainani",
-        "Robert W. Grundmeier",
-        "Scott M. Haag",
-        "Jeffrey M. Miller",
-        "Heather M. Griffis",
-        "Ian M. Campbell"
-      ],
-      "abstract": "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information. However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption. Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million vectors) from 1.68 million patients. The system uses instruction-tuned qwen3-embedding-0.6B embeddings, stores vectors in a managed database with storage-optimized indexing, maintains full-text metadata in a low-latency key-value store, and operates within a HIPAA-compliant governance framework. We evaluated the system through three experiments: optimization of embedding model and chunking strategy using a physician-authored benchmark dataset, characterization of full-scale performance (cost, latency, retrieval quality), and clinical utility assessment via comparison of chart abstraction efficiency across three tasks. Results: The system delivers sub-second query latency (median 237 ms single-user, 451 ms 20-user concurrency) with monthly costs of approximately USD 4,000. Qwen3 embeddings with 300-token chunk size achieved 94.6% accuracy on a clinical question-answering benchmark. In clinical utility evaluation across three abstraction tasks, semantic search reduced time-to-completion by 24 to 89% compared to clinician-performed chart review while maintaining comparable inter-rater agreement. Conclusion: Health-system-scale semantic search is both technically and operationally feasible. The system provides infrastructure supporting interactive search, cohort generation, and downstream LLM-powered clinical applications without requiring specialized informatics expertise.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
-      "categories": [
-        "cs.IR",
-        "cs.AI",
-        "cs.DB"
-      ],
-      "primary_category": "cs.IR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.25605v1",
-        "pdf": "https://arxiv.org/pdf/2604.25605v1"
-      },
-      "arxiv_id": "2604.25605v1",
-      "comment": "for associated code, see https://github.com/Ian-Campbell-Lab/clinical-semantic-search",
+      "arxiv_id": "2604.26673v1",
+      "comment": "19 pages, 3 figures, 6 tables. Code available at: https://github.com/AlbMLpy/laplace-tnkm",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
@@ -526,151 +628,11 @@
         }
       },
       "ai_summaries": {
-        "short": "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information. However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption. Me...",
+        "short": "Uncertainty estimation is essential for robust decision-making in the presence of ambiguous or out-of-distribution inputs. Gaussian Processes (GPs) are classical kernel-based models that offer principled uncertainty quantification and perform well on small- to medium-scale datasets. Alternatively, formulating the weight space learning problem under tensor network assumptions yields scalable tensor...",
         "key_contributions": [
-          "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information.",
-          "However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption.",
-          "Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million vectors) from 1."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.25636v1",
-      "title": "Refinement via Regeneration: Enlarging Modification Space Boosts Image Refinement in Unified Multimodal Models",
-      "authors": [
-        "Jiayi Guo",
-        "Linqing Wang",
-        "Jiangshan Wang",
-        "Yang Yue",
-        "Zeyu Liu",
-        "Zhiyuan Zhao",
-        "Qinglin Lu",
-        "Gao Huang",
-        "Chunyu Wang"
-      ],
-      "abstract": "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework. For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound. Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing instructions to modify misaligned regions while preserving aligned content. However, editing instructions often describe prompt-image misalignment only coarsely, leading to incomplete refinement. Moreover, pixel-level preservation, though necessary for editing, unnecessarily restricts the effective modification space for refinement. To address these limitations, we propose Refinement via Regeneration (RvR), a novel framework that reformulates refinement as conditional image regeneration rather than editing. Instead of relying on editing instructions and enforcing strict content preservation, RvR regenerates images conditioned on the target prompt and the semantic tokens of the initial image, enabling more complete semantic alignment with a larger modification space. Extensive experiments demonstrate the effectiveness of RvR, improving Geneval from 0.78 to 0.91, DPGBench from 84.02 to 87.21, and UniGenBench++ from 61.53 to 77.41.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.25636v1",
-        "pdf": "https://arxiv.org/pdf/2604.25636v1"
-      },
-      "arxiv_id": "2604.25636v1",
-      "comment": "GitHub: https://github.com/LeapLabTHU/RvR",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework. For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound. Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing inst...",
-        "key_contributions": [
-          "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework.",
-          "For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound.",
-          "Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing instructions to modify misaligned regions while preserving aligned content."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.25545v1",
-      "title": "TopoMamba: Topology-Aware Scanning and Fusion for Segmenting Heterogeneous Medical Visual Media",
-      "authors": [
-        "Fuchen Zheng",
-        "Chengpei Xu",
-        "Long Ma",
-        "Weixuan Li",
-        "Junhua Zhou",
-        "Xuhang Chen",
-        "Weihuang Liu",
-        "Haolun Li",
-        "Quanjun Li",
-        "Zhenxi Zhang",
-        "Lei Zhao",
-        "Chi-Man Pun",
-        "Shoujun Zhou"
-      ],
-      "abstract": "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses. We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous medical visual media. The method combines a diagonal/anti-diagonal TopoA-Scan branch with the standard Cross-Scan branch to provide complementary structural priors, and introduces ScanCache, a device-aware caching mechanism that amortizes explicit scan-index construction across recurring resolutions. To fuse heterogeneous scan features efficiently, we further propose a lightweight HSIC Gate that regulates branch interaction using a dependence-aware scalar gating rule. We also instantiate a volumetric TopoMamba-3D for practical 3D clinical segmentation. Experiments on Synapse CT, ISIC 2017 dermoscopy, and CVC-ClinicDB endoscopy show that TopoMamba consistently improves segmentation quality over strong CNN, Transformer, and SSM baselines, with particularly clear gains on thin or curved targets such as the pancreas and gallbladder, while maintaining favorable deployment efficiency under dynamic input resolutions. These results suggest that topology-aware scan ordering and lightweight dependence-aware fusion form an effective and practical design for medical multimedia segmentation. The code will be made publicly available.",
-      "published": "2026-04-28",
-      "updated": "2026-04-28",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.25545v1",
-        "pdf": "https://arxiv.org/pdf/2604.25545v1"
-      },
-      "arxiv_id": "2604.25545v1",
-      "comment": "15 pages, 9 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.795762711864407,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 1.86,
-          "matches": [
-            "medical image",
-            "volumetric",
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses. We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous ...",
-        "key_contributions": [
-          "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses.",
-          "We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous medical visual media.",
-          "The method combines a diagonal/anti-diagonal TopoA-Scan branch with the standard Cross-Scan branch to provide complementary structural priors, and introduces ScanCache, a device-aware caching mechanism that amortizes explicit scan-index construction across recurring resolutions."
+          "Uncertainty estimation is essential for robust decision-making in the presence of ambiguous or out-of-distribution inputs.",
+          "Gaussian Processes (GPs) are classical kernel-based models that offer principled uncertainty quantification and perform well on small- to medium-scale datasets.",
+          "Alternatively, formulating the weight space learning problem under tensor network assumptions yields scalable tensor network kernel machines."
         ],
         "provider": "gemini"
       }

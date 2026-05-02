@@ -3,27 +3,141 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.26917v1",
-      "title": "AnimateAnyMesh++: A Flexible 4D Foundation Model for High-Fidelity Text-Driven Mesh Animation",
+      "id": "2604.28196v1",
+      "title": "HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation",
       "authors": [
-        "Zijie Wu",
-        "Chaohui Yu",
-        "Fan Wang",
+        "Xin Zhou",
+        "Dingkang Liang",
+        "Xiwu Chen",
+        "Feiyang Tan",
+        "Dingyuan Zhang",
+        "Hengshuang Zhao",
         "Xiang Bai"
       ],
-      "abstract": "Recent advances in 4D content generation have attracted increasing attention, yet creating high-quality animated 3D models remains challenging due to the complexity of modeling spatio-temporal distributions and the scarcity of 4D training data. We present AnimateAnyMesh++, a feed-forward framework for text-driven animation of arbitrary 3D meshes with substantial upgrades in data, architecture, and generative capability. First, we expand the DyMesh-XL dataset by mining dynamic content from Objaverse-XL, increasing the number of unique identities from 60K to 300K and substantially broadening category and motion diversity. Second, we redesign DyMeshVAE-Flex with power-law topology-aware attention and vertex-normal enhanced features, which significantly improves trajectory reconstruction, local geometry preservation, and mitigates trajectory-sticking artifacts. Third, we introduce architectural changes to both DyMeshVAE-Flex and the rectified-flow (RF) generator to support variable-length sequence training and generation, enabling longer animations while preserving reconstruction fidelity. Extensive experiments demonstrate that AnimateAnyMesh++ generates semantically accurate and temporally coherent mesh animations within seconds, surpassing prior approaches in quality and efficiency. The enlarged DyMesh-XL, the upgraded DyMeshVAE-Flex, and variable-length RF together deliver consistent gains across benchmarks and in-the-wild meshes. We will release code, models, and the expanded DyMesh-XL upon acceptance of this manuscript to facilitate research in 4D content creation.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
+      "abstract": "Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics. However, existing approaches predominantly focus on future scene generation, often overlooking comprehensive 3D scene understanding. Conversely, while Large Language Models (LLMs) demonstrate impressive reasoning capabilities, they lack the capacity to predict future geometric evolution, creating a significant disparity between semantic interpretation and physical simulation. To bridge this gap, we propose HERMES++, a unified driving world model that integrates 3D scene understanding and future geometry prediction within a single framework. Our approach addresses the distinct requirements of these tasks through synergistic designs. First, a BEV representation consolidates multi-view spatial information into a structure compatible with LLMs. Second, we introduce LLM-enhanced world queries to facilitate knowledge transfer from the understanding branch. Third, a Current-to-Future Link is designed to bridge the temporal gap, conditioning geometric evolution on semantic context. Finally, to enforce structural integrity, we employ a Joint Geometric Optimization strategy that integrates explicit geometric constraints with implicit latent regularization to align internal representations with geometry-aware priors. Extensive evaluations on multiple benchmarks validate the effectiveness of our method. HERMES++ achieves strong performance, outperforming specialist approaches in both future point cloud prediction and 3D scene understanding tasks. The model and code will be publicly released at https://github.com/H-EmbodVis/HERMESV2.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.26917v1",
-        "pdf": "https://arxiv.org/pdf/2604.26917v1"
+        "paper": "http://arxiv.org/abs/2604.28196v1",
+        "pdf": "https://arxiv.org/pdf/2604.28196v1"
       },
-      "arxiv_id": "2604.26917v1",
-      "comment": "14 pages, TPAMI submission, code url: https://github.com/JarrentWu1031/AnimateAnyMesh-pp",
+      "arxiv_id": "2604.28196v1",
+      "comment": "Extended version of ICCV 25 paper HERMES, Code: https://github.com/H-EmbodVis/HERMESV2, Project page: https://h-embodvis.github.io/HERMESV2/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.25,
+      "score_breakdown": {
+        "total_score": 5.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.28016v1",
+      "title": "Faster 3D Gaussian Splatting Convergence via Structure-Aware Densification",
+      "authors": [
+        "Linjie Lyu",
+        "Ayush Tewari",
+        "Jianchun Chen",
+        "Thomas Leimkühler",
+        "Christian Theobalt"
+      ],
+      "abstract": "3D Gaussian Splatting has emerged as a powerful scene representation for real-time novel-view synthesis. However, its standard adaptive density control relies on screen-space positional gradients, which do not distinguish between geometric misplacement and frequency aliasing, often leading to either over-blurred high-frequency textures or inefficient over-densification. We present a structure-aware densification framework. Our key insight is that the decision to subdivide a Gaussian should be driven by an explicit comparison between its projected screen-space extent and the local structure of the texture it seeks to represent. We introduce a multi-scale frequency analysis combining structure tensors with Laplacian scale space analysis to estimate the dominant frequency at each pixel, enabling robust supervision across varying texture scales. Based on this analysis, we define $η$, a per-Gaussian, per-axis frequency violation metric that indicates when a primitive may be under-resolving local texture details. Unlike methods that perform isotropic splitting (e.g., splitting each Gaussian into two smaller ones with uniform shape), our approach performs anisotropic splitting. For each axis with high $η$, we compute a split factor to better resolve the local frequency content. We further introduce a multiview consistency criterion that aggregates $η$ observations across multiple views. By performing densification early and faster, we skip the lengthy iterative densification phases required by baseline methods and achieve significantly faster convergence. Experiments on standard benchmarks demonstrate that our method also achieves superior reconstruction quality, particularly in high-frequency regions.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.28016v1",
+        "pdf": "https://arxiv.org/pdf/2604.28016v1"
+      },
+      "arxiv_id": "2604.28016v1",
+      "comment": "Siggraph 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.227966101694915,
+      "score_breakdown": {
+        "total_score": 5.23,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.28025v1",
+      "title": "ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss",
+      "authors": [
+        "Jiaying Ying",
+        "Heming Du",
+        "Kaihao Zhang",
+        "Sean M. Tweedy",
+        "Xin Yu"
+      ],
+      "abstract": "Single-image human mesh recovery provides a compact 3D, person-centric representation that supports analysis, animation, AR and VR, rehabilitation, and human-computer interaction. However, prevailing systems impose an intact-limb prior and degrade on people with limb loss, because fixed-topology models cannot represent residual limbs. In this work, we present ResiHMR, a residual-limb aware framework for single-image 3D human modeling. ResiHMR adopts residual-limb keypoints and introduces two components: (i) a topology-adaptive Residual Anchor-Factor Optimization module that constrains estimation to the observed kinematic subgraph of anatomically valid structures, and (ii) a geometry-based Residual-Limb Reconstruction module that estimates residual-limb boundaries and convex limb-termination geometry. These components introduce topology-aware optimization and explicit termination geometry as tools for human mesh recovery under non-standard limb anatomy. Unlike joint-removal methods in a fixed topology, ResiHMR explicitly reconstructs residual-limb surfaces and aligns optimization with limb-loss topology, which better matches prosthetic biomechanics and real-world use. To the best of our knowledge, this is the first single-image HMR system that explicitly reconstructs residual-limb surfaces and performs topology-adaptive optimization for individuals with limb loss. On a curated dataset of real-world images with limb loss, ResiHMR improves reconstruction quality under both SMPLify-X and HSMR backbones, reducing intact-joint 2D MPJPE from 41.32 to 37.40 with SMPLify-X and residual-limb 2D MPJPE from 73.61 to 23.19 with HSMR.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.28025v1",
+        "pdf": "https://arxiv.org/pdf/2604.28025v1"
+      },
+      "arxiv_id": "2604.28025v1",
+      "comment": "Highlight in CVPR 2026. Project at https://akitaraphael.github.io/ResiHMR/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 5.15,
@@ -36,7 +150,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "PAMI",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -55,156 +169,93 @@
       }
     },
     {
-      "id": "2604.26920v1",
-      "title": "Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction",
+      "id": "2604.28169v1",
+      "title": "PhyCo: Learning Controllable Physical Priors for Generative Motion",
       "authors": [
-        "David Novikov",
-        "Eilon Vaknin",
-        "Narek Tumanyan",
-        "Mark Sheinin"
+        "Sriram Narayanan",
+        "Ziyu Jiang",
+        "Srinivasa Narasimhan",
+        "Manmohan Chandraker"
       ],
-      "abstract": "The task of capturing and rendering 3D dynamic scenes from 2D images has become increasingly popular in recent years. However, most conventional cameras are bandwidth-limited to 30-60 FPS, restricting these methods to static or slowly evolving scenes. While overcoming bandwidth limitations is difficult for general scenes, recent years have seen a flurry of computational imaging methods that yield high-speed videos using conventional cameras for specific applications (e.g., motion capture and particle image velocimetry). However, most of these methods require modifications to a camera's optics or the addition of mechanically moving components, limiting them to a single-view high-speed capture. Consequently, these methods cannot be readily used to capture a 3D representation of rapid scene motion. In this paper, we propose a novel method to capture and reconstruct a volumetric representation of a high-speed scene using only unaugmented low-speed cameras. Instead of modifying the hardware or optics of each individual camera, we encode high-speed scene dynamics by illuminating the scene with a rapid, sequential color-coded sequence. This results in simultaneous multi-view capture of the scene, where high-speed temporal information is encoded in the spatial intensity and color variations of the captured images. To construct a high-speed volumetric representation of the dynamic scene, we develop a novel dynamic Gaussian Splatting-based approach that decodes the temporal information from the images. We evaluate our approach on simulated scenes and real-world experiments using a multi-camera imaging setup, showing first-of-a-kind high-speed volumetric scene reconstructions.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.26920v1",
-        "pdf": "https://arxiv.org/pdf/2604.26920v1"
-      },
-      "arxiv_id": "2604.26920v1",
-      "comment": "accepted to IEEE CVPR 2026 as a highlight",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.0262711864406775,
-      "score_breakdown": {
-        "total_score": 5.03,
-        "field_match": {
-          "score": 1.44,
-          "matches": [
-            "gaussian splatting",
-            "volumetric"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.26820v1",
-      "title": "Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization",
-      "authors": [
-        "Mingbo Hong",
-        "Feng Liu",
-        "Caroline Gevaert",
-        "George Vosselman",
-        "Hao Cheng"
-      ],
-      "abstract": "Detectors often suffer from degraded performance, primarily due to the distributional gap between the source and target domains. This issue is especially evident in single-source domains with limited data, as models tend to rely on confounders (e.g., illumination, co-occurrence, and style) from the source domain, leading to spurious correlations that hinder generalization. To this end, this paper proposes a novel Basis-driven framework for domain generalization, namely \\textbf{\\textit{Bridge}}, that incorporates causal inference into object detection. By learning the low-rank bases for front-door adjustment, \\textbf{\\textit{Bridge}} blocks confounders' effects to mitigate spurious correlations, while simultaneously refining representations by filtering redundant and task-irrelevant components. \\textbf{\\textit{Bridge}} can be seamlessly integrated with both discriminative (e.g., DINOv2/3, SAM) and generative (e.g., Stable Diffusion) Vision Foundation Models (VFMs). Extensive experiments across multiple domain generalization object detection datasets, i.e., Cross-Camera, Adverse Weather, Real-to-Artistic, Diverse Weather Datasets, and Diverse Weather DroneVehicle (our newly augmented real-world UAV-based benchmark), underscore the superiority of our proposed method over previous state-of-the-art approaches. The project page is available at: https://mingbohong.github.io/Bridge/.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.26820v1",
-        "pdf": "https://arxiv.org/pdf/2604.26820v1"
-      },
-      "arxiv_id": "2604.26820v1",
-      "comment": "Accepted by CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.95,
-      "score_breakdown": {
-        "total_score": 4.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.26799v1",
-      "title": "MesonGS++: Post-training Compression of 3D Gaussian Splatting with Hyperparameter Searching",
-      "authors": [
-        "Shuzhao Xie",
-        "Junchen Ge",
-        "Weixiang Zhang",
-        "Jiahang Liu",
-        "Chen Tang",
-        "Yunpeng Bai",
-        "Shijia Ge",
-        "Jingyan Jiang",
-        "Yuzhi Huang",
-        "Fengnian Yang",
-        "Cong Zhang",
-        "Xiaoyi Fan",
-        "Zhi Wang"
-      ],
-      "abstract": "3D Gaussian Splatting (3DGS) achieves high-quality novel view synthesis with real-time rendering, but its storage cost remains prohibitive for practical deployment. Existing post-training compression methods still rely on many coupled hyperparameters across pruning, transformation, quantization, and entropy coding, making it difficult to control the final compressed size and fully exploit the rate-distortion trade-off. We propose MesonGS++, a size-aware post-training codec for 3D Gaussian compression. On the codec side, MesonGS++ combines joint importance-based pruning, octree geometry coding, attribute transformation, selective vector quantization for higher-degree spherical harmonics, and group-wise mixed-precision quantization with entropy coding. On the configuration side, it treats the reserve ratio and bit-width allocation as the dominant rate-distortion knobs and jointly optimizes them under a target storage budget via discrete sampling and 0--1 integer linear programming. We further propose a linear size estimator and a CUDA parallel quantization operator to accelerate the hyperparameter searching process. Extensive experiments show that MesonGS++ achieves over 34$\\times$ compression while preserving rendering fidelity, outperforming state-of-the-art post-training methods and accurately meeting target size budgets. Remarkably, without any training, MesonGS++ can even surpass the PSNR of vanilla 3DGS at a 20$\\times$ compression rate on the Stump scene. Our code is available at https://github.com/mmlab-sigs/mesongs_plus",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
+      "abstract": "Modern video diffusion models excel at appearance synthesis but still struggle with physical consistency: objects drift, collisions lack realistic rebound, and material responses seldom match their underlying properties. We present PhyCo, a framework that introduces continuous, interpretable, and physically grounded control into video generation. Our approach integrates three key components: (i) a large-scale dataset of over 100K photorealistic simulation videos where friction, restitution, deformation, and force are systematically varied across diverse scenarios; (ii) physics-supervised fine-tuning of a pretrained diffusion model using a ControlNet conditioned on pixel-aligned physical property maps; and (iii) VLM-guided reward optimization, where a fine-tuned vision-language model evaluates generated videos with targeted physics queries and provides differentiable feedback. This combination enables a generative model to produce physically consistent and controllable outputs through variations in physical attributes-without any simulator or geometry reconstruction at inference. On the Physics-IQ benchmark, PhyCo significantly improves physical realism over strong baselines, and human studies confirm clearer and more faithful control over physical attributes. Our results demonstrate a scalable path toward physically consistent, controllable generative video models that generalize beyond synthetic training environments.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
       "categories": [
         "cs.CV",
-        "cs.GR",
-        "cs.MM"
+        "cs.AI",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.26799v1",
-        "pdf": "https://arxiv.org/pdf/2604.26799v1"
+        "paper": "http://arxiv.org/abs/2604.28169v1",
+        "pdf": "https://arxiv.org/pdf/2604.28169v1"
       },
-      "arxiv_id": "2604.26799v1",
-      "comment": "https://github.com/mmlab-sigs/mesongs_plus",
+      "arxiv_id": "2604.28169v1",
+      "comment": "CVPR 2026. Project Page: https://phyco-video.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.677966101694915,
+      "relevance_score": 5.0,
       "score_breakdown": {
-        "total_score": 4.68,
+        "total_score": 5.0,
         "field_match": {
-          "score": 1.69,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.28193v1",
+      "title": "Generalizable Sparse-View 3D Reconstruction from Unconstrained Images",
+      "authors": [
+        "Vinayak Gupta",
+        "Chih-Hao Lin",
+        "Shenlong Wang",
+        "Anand Bhattad",
+        "Jia-Bin Huang"
+      ],
+      "abstract": "Reconstructing 3D scenes from sparse, unposed images remains challenging under real-world conditions with varying illumination and transient occlusions. Existing methods rely on scene-specific optimization using appearance embeddings or dynamic masks, which requires extensive per-scene training and fails under sparse views. Moreover, evaluations on limited scenes raise questions about generalization. We present GenWildSplat, a feed-forward framework for sparse-view outdoor reconstruction that requires no per-scene optimization. Given unposed internet images, GenWildSplat predicts depth, camera parameters, and 3D Gaussians in a canonical space using learned geometric priors. An appearance adapter modulates appearance for target lighting conditions, while semantic segmentation handles transient objects. Through curriculum learning on synthetic and real data, GenWildSplat generalizes across diverse illumination and occlusion patterns. Evaluations on PhotoTourism and MegaScenes benchmark demonstrate state-of-the-art feed-forward rendering quality, achieving real-time inference without test-time optimization",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.28193v1",
+        "pdf": "https://arxiv.org/pdf/2604.28193v1"
+      },
+      "arxiv_id": "2604.28193v1",
+      "comment": "Project Page: https://genwildsplat.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.829661016949153,
+      "score_breakdown": {
+        "total_score": 4.83,
+        "field_match": {
+          "score": 1.95,
           "matches": [
             "3d gaussian",
-            "gaussian splatting"
+            "3d reconstruction",
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -223,40 +274,45 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2604.26772v1",
-      "title": "TAP into the Patch Tokens: Leveraging Vision Foundation Model Features for AI-Generated Image Detection",
+      "id": "2604.28173v1",
+      "title": "Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements",
       "authors": [
-        "Ahmed Abdullah",
-        "Nikolas Ebert",
-        "Oliver Wasenmüller"
+        "Genki Kinoshita",
+        "Shu Nakamura",
+        "Ryo Kawahara",
+        "Shohei Nobuhara",
+        "Yasutomo Kawanishi",
+        "Ko Nishino"
       ],
-      "abstract": "Recent methods demonstrate that large-scale pretrained models, such as CLIP vision transformers, effectively detect AI-generated images (AIGIs) from unseen generative models when used as feature extractors. Many state-of-the-art methods for AI-generated image detection build upon the original CLIP-ViT to enhance this generalization. Since CLIP's release, numerous vision foundation models (VFMs) have emerged, incorporating architectural improvements and different training paradigms. Despite these advances, their potential for AIGI detection and AI image forensics remains largely unexplored. In this work, we present a comprehensive benchmark across multiple VFM families, covering diverse pretraining objectives, input resolutions, and model scales. We systematically evaluate their out-of-the-box performance for detecting fully-generated AI-images and AI-inpainted images, and discover that the best model outperforms the original CLIP by more than 12% in accuracy, beating established approaches in the process. To fully leverage the features of a modern VFM, we propose a simple redesign of the classifier head by utilizing tunable attention pooling (TAP), which aggregates output tokens into a refined global representation. Integrating TAP with the latest VFMs yields substantial performance gains across several AIGI detection benchmarks, establishing a new state-of-the-art on two challenging benchmarks for in-the-wild detection of AI-generated and -inpainted images.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
+      "abstract": "Effective human behavior modeling requires a representation of the human body movement that capitalizes on its compositionality. We propose a hierarchical representation consisting of Action Atoms that capture the atomic joint movements and Action Motifs that are formed by their temporal compositions and encode similar body movements found across different overall human actions. We derive A4Mer, a nested latent Transformer to learn this hierarchical representation from human pose data in a fully self-supervised manner. A4Mer splits a 3D pose sequence into variable-length segments and represents each segment as a single latent token (Action Atoms). Through bottom-up representation learning, temporal patterns composed of these Action Atoms, which capture meaningful temporal spans of reusable, semantic segments of body movements, naturally emerge (Action Motifs). A4Mer achieves this with a unified pretext task of masked token prediction in their respective latent spaces. We also introduce Action Motif Dataset (AMD), a large-scale dataset of multi-view human behavior videos with full SMPL annotations. We introduce a novel use of cameras by mounting them on the feet to achieve their frame-wise annotations despite frequent and heavy body occlusions. Experimental results demonstrate the effectiveness of A4Mer for extracting meaningful Action Motifs, which significantly benefit human behavior modeling tasks including action recognition, motion prediction, and motion interpolation.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.26772v1",
-        "pdf": "https://arxiv.org/pdf/2604.26772v1"
+        "paper": "http://arxiv.org/abs/2604.28173v1",
+        "pdf": "https://arxiv.org/pdf/2604.28173v1"
       },
-      "arxiv_id": "2604.26772v1",
-      "comment": "This paper has been accepted at IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2026",
+      "arxiv_id": "2604.28173v1",
+      "comment": "to be published in CVPR 2026 (Highlight)",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.55,
+      "relevance_score": 4.671186440677966,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 4.67,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -265,7 +321,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -280,93 +336,39 @@
       }
     },
     {
-      "id": "2604.26694v1",
-      "title": "Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising",
+      "id": "2604.28024v1",
+      "title": "FedHarmony: Harmonizing Heterogeneous Label Correlations in Federated Multi-Label Learning",
       "authors": [
-        "Jun Guo",
-        "Qiwei Li",
-        "Peiyan Li",
-        "Zilong Chen",
-        "Nan Sun",
-        "Yifei Su",
-        "Heyun Wang",
-        "Yuan Zhang",
-        "Xinghang Li",
-        "Huaping Liu"
+        "Zhiqiang Kou",
+        "Junxiang Wu",
+        "Wenke Huang",
+        "Wenwen He",
+        "Ming-Kun Xie",
+        "Changwei Wang",
+        "Yuheng Jia",
+        "Di Jiang",
+        "Yang Liu",
+        "Xin Geng",
+        "Qiang Yang"
       ],
-      "abstract": "We propose X-WAM, a Unified 4D World Model that unifies real-time robotic action execution and high-fidelity 4D world synthesis (video + 3D reconstruction) in a single framework, addressing the critical limitations of prior unified world models (e.g., UWM) that only model 2D pixel-space and fail to balance action efficiency and world modeling quality. To leverage the strong visual priors of pretrained video diffusion models, X-WAM imagines the future world by predicting multi-view RGB-D videos, and obtains spatial information efficiently through a lightweight structural adaptation: replicating the final few blocks of the pretrained Diffusion Transformer into a dedicated depth prediction branch for the reconstruction of future spatial information. Moreover, we propose Asynchronous Noise Sampling (ANS) to jointly optimize generation quality and action decoding efficiency. ANS applies a specialized asynchronous denoising schedule during inference, which rapidly decodes actions with fewer steps to enable efficient real-time execution, while dedicating the full sequence of steps to generate high-fidelity video. Rather than entirely decoupling the timesteps during training, ANS samples from their joint distribution to align with the inference distribution. Pretrained on over 5,800 hours of robotic data, X-WAM achieves 79.2% and 90.7% average success rate on RoboCasa and RoboTwin 2.0 benchmarks, while producing high-fidelity 4D reconstruction and generation surpassing existing methods in both visual and geometric metrics.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.26694v1",
-        "pdf": "https://arxiv.org/pdf/2604.26694v1"
-      },
-      "arxiv_id": "2604.26694v1",
-      "comment": "Project website: https://sharinka0715.github.io/X-WAM/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.08728813559322,
-      "score_breakdown": {
-        "total_score": 4.09,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.26550v1",
-      "title": "Large-scale semi-supervised learning with online spectral graph sparsification",
-      "authors": [
-        "Daniele Calandriello",
-        "Alessandro Lazaric",
-        "Michal Valko"
-      ],
-      "abstract": "We introduce Sparse-HFS, a scalable algorithm that can compute solutions to SSL problems using only O(n polylog(n)) space and O(m polylog(n)) time.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
+      "abstract": "Federated Multi-Label Learning is a distributed paradigm where multiple clients possess heterogeneous multi-label data and perform collaborative learning under privacy constraints without sharing raw data. However, modeling label correlations under heterogeneous distributions remains challenging. Due to client-specific label spaces and varying co-occurrence patterns, correlations learned by individual clients inevitably deviate from the global structure, a phenomenon we term label correlation drift. To address this, we propose FedHarmony, a framework that harmonizes heterogeneous label correlations across clients. It introduces consensus correlation, capturing agreement among other clients and serving as a global teacher to correct biased local estimates. During aggregation, FedHarmony evaluates each client by both data size and correlation quality, assigning weights accordingly. Moreover, we develop an accelerated optimization algorithm for FedHarmony and theoretically establish faster convergence without sacrificing accuracy. Experiments on real-world federated multi-label datasets show that FedHarmony consistently outperforms state-of-the-art methods.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
       "categories": [
         "cs.LG"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.26550v1",
-        "pdf": "https://arxiv.org/pdf/2604.26550v1"
+        "paper": "http://arxiv.org/abs/2604.28024v1",
+        "pdf": "https://arxiv.org/pdf/2604.28024v1"
       },
-      "arxiv_id": "2604.26550v1",
-      "comment": "Workshop on Resource-Efficient Machine Learning (REML), ICML 2015",
+      "arxiv_id": "2604.28024v1",
+      "comment": "Accepted by CVPR 2026. 11 pages, 6 figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.05,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -374,11 +376,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -387,88 +389,35 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2604.26951v1",
-      "title": "Turning the TIDE: Cross-Architecture Distillation for Diffusion Large Language Models",
+      "id": "2604.28190v1",
+      "title": "Representation Fréchet Loss for Visual Generation",
       "authors": [
-        "Gongbo Zhang",
-        "Wen Wang",
-        "Ye Tian",
-        "Li Yuan"
+        "Jiawei Yang",
+        "Zhengyang Geng",
+        "Xuan Ju",
+        "Yonglong Tian",
+        "Yue Wang"
       ],
-      "abstract": "Diffusion large language models (dLLMs) offer parallel decoding and bidirectional context, but state-of-the-art dLLMs require billions of parameters for competitive performance. While existing distillation methods for dLLMs reduce inference steps within a single architecture, none address cross-architecture knowledge transfer, in which the teacher and student differ in architecture, attention mechanism, and tokenizer. We present TIDE, the first framework for cross-architecture dLLM distillation, comprising three modular components: (1) TIDAL, which jointly modulates distillation strength across training progress and diffusion timestep to account for the teacher's noise-dependent reliability; (2) CompDemo, which enriches the teacher's context via complementary mask splitting to improve predictions under heavy masking; and (3) Reverse CALM, a cross-tokenizer objective that inverts chunk-level likelihood matching, yielding bounded gradients and dual-end noise filtering. Distilling 8B dense and 16B MoE teachers into a 0.6B student via two heterogeneous pipelines outperforms the baseline by an average of 1.53 points across eight benchmarks, yielding notable gains in code generation, where HumanEval scores reach 48.78 compared to 32.3 for the AR baseline.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
+      "abstract": "We show that Fréchet Distance (FD), long considered impractical as a training objective, can in fact be effectively optimized in the representation space. Our idea is simple: decouple the population size for FD estimation (e.g., 50k) from the batch size for gradient computation (e.g., 1024). We term this approach FD-loss. Optimizing FD-loss reveals several surprising findings. First, post-training a base generator with FD-loss in different representation spaces consistently improves visual quality. Under the Inception feature space, a one-step generator achieves0.72 FID on ImageNet 256x256. Second, the same FD-loss repurposes multi-step generators into strong one-step generators without teacher distillation, adversarial training or per-sample targets. Third, FID can misrank visual quality: modern representations can yield better samples despite worse Inception FID. This motivates FDr$^k$, a multi-representation metric. We hope this work will encourage further exploration of distributional distances in diverse representation spaces as both training objectives and evaluation metrics for generative models.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
       "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.26951v1",
-        "pdf": "https://arxiv.org/pdf/2604.26951v1"
-      },
-      "arxiv_id": "2604.26951v1",
-      "comment": "15 pages, 3 figures. Code: https://github.com/PKU-YuanGroup/TIDE",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2604.26946v1",
-      "title": "Three-Step Nav: A Hierarchical Global-Local Planner for Zero-Shot Vision-and-Language Navigation",
-      "authors": [
-        "Wanrong Zheng",
-        "Yunhao Ge",
-        "Laurent Itti"
-      ],
-      "abstract": "Breakthrough progress in vision-based navigation through unknown environments has been achieved by using multimodal large language models (MLLMs). These models can plan a sequence of motions by evaluating the current view at each time step against the task and goal given to the agent. However, current zero-shot Vision-and-Language Navigation (VLN) agents powered by MLLMs still tend to drift off course, halt prematurely, and achieve low overall success rates. We propose Three-Step Nav to counteract these failures with a three-view protocol: First, \"look forward\" to extract global landmarks and sketch a coarse plan. Then, \"look now\" to align the current visual observation with the next sub-goal for fine-grained guidance. Finally, \"look backward\" audits the entire trajectory to correct accumulated drift before stopping. Requiring no gradient updates or task-specific fine-tuning, our planner drops into existing VLN pipelines with minimal overhead. Three-Step Nav achieves state-of-the-art zero-shot performance on the R2R-CE and RxR-CE dataset. Our code is available at https://github.com/ZoeyZheng0/3-step-Nav.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.26946v1",
-        "pdf": "https://arxiv.org/pdf/2604.26946v1"
+        "paper": "http://arxiv.org/abs/2604.28190v1",
+        "pdf": "https://arxiv.org/pdf/2604.28190v1"
       },
-      "arxiv_id": "2604.26946v1",
-      "comment": "Accepted to AISTATS 2026. Code: https://github.com/ZoeyZheng0/3-step-Nav",
-      "journal_ref": "Proceedings of the 29th International Conference on Artificial Intelligence and Statistics (AISTATS), 2026",
+      "arxiv_id": "2604.28190v1",
+      "comment": "Code and checkpoints are available at https://github.com/Jiawei-Yang/FD-loss",
+      "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
       "score_breakdown": {
@@ -499,31 +448,115 @@
       }
     },
     {
-      "id": "2604.26673v1",
-      "title": "Laplace Approximation for Bayesian Tensor Network Kernel Machines",
+      "id": "2604.28185v1",
+      "title": "Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling",
       "authors": [
-        "Albert Saiapin",
-        "Kim Batselier"
+        "Keming Wu",
+        "Zuhao Yang",
+        "Kaichen Zhang",
+        "Shizun Wang",
+        "Haowei Zhu",
+        "Sicong Leng",
+        "Zhongyu Yang",
+        "Qijie Wang",
+        "Sudong Wang",
+        "Ziting Wang",
+        "Zili Wang",
+        "Hui Zhang",
+        "Haonan Wang",
+        "Hang Zhou",
+        "Yifan Pu",
+        "Xingxuan Li",
+        "Fangneng Zhan",
+        "Bo Li",
+        "Lidong Bing",
+        "Yuxin Song",
+        "Ziwei Liu",
+        "Wenhu Chen",
+        "Jingdong Wang",
+        "Xinchao Wang",
+        "Xiaojuan Qi",
+        "Shijian Lu",
+        "Bin Wang"
       ],
-      "abstract": "Uncertainty estimation is essential for robust decision-making in the presence of ambiguous or out-of-distribution inputs. Gaussian Processes (GPs) are classical kernel-based models that offer principled uncertainty quantification and perform well on small- to medium-scale datasets. Alternatively, formulating the weight space learning problem under tensor network assumptions yields scalable tensor network kernel machines. However, these assumptions break Gaussianity, complicating standard probabilistic inference. This raises a fundamental question: how can tensor network kernel machines provide principled uncertainty estimates? We propose a novel Bayesian Tensor Network Kernel Machine (LA-TNKM) that employs a (linearized) Laplace approximation for Bayesian inference. A comprehensive set of numerical experiments shows that the proposed method consistently matches or surpasses Gaussian Processes and Bayesian Neural Networks (BNNs) across diverse UCI regression benchmarks, highlighting both its effectiveness and practical relevance.",
-      "published": "2026-04-29",
-      "updated": "2026-04-29",
+      "abstract": "Recent visual generation models have made major progress in photorealism, typography, instruction following, and interactive editing, yet they still struggle with spatial reasoning, persistent state, long-horizon consistency, and causal understanding. We argue that the field should move beyond appearance synthesis toward intelligent visual generation: plausible visuals grounded in structure, dynamics, domain knowledge, and causal relations. To frame this shift, we introduce a five-level taxonomy: Atomic Generation, Conditional Generation, In-Context Generation, Agentic Generation, and World-Modeling Generation, progressing from passive renderers to interactive, agentic, world-aware generators. We analyze key technical drivers, including flow matching, unified understanding-and-generation models, improved visual representations, post-training, reward modeling, data curation, synthetic data distillation, and sampling acceleration. We further show that current evaluations often overestimate progress by emphasizing perceptual quality while missing structural, temporal, and causal failures. By combining benchmark review, in-the-wild stress tests, and expert-constrained case studies, this roadmap offers a capability-centered lens for understanding, evaluating, and advancing the next generation of intelligent visual generation systems.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
       "categories": [
-        "stat.ML",
-        "cs.LG"
+        "cs.CV"
       ],
-      "primary_category": "stat.ML",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.26673v1",
-        "pdf": "https://arxiv.org/pdf/2604.26673v1"
+        "paper": "http://arxiv.org/abs/2604.28185v1",
+        "pdf": "https://arxiv.org/pdf/2604.28185v1"
       },
-      "arxiv_id": "2604.26673v1",
-      "comment": "19 pages, 3 figures, 6 tables. Code available at: https://github.com/AlbMLpy/laplace-tnkm",
+      "arxiv_id": "2604.28185v1",
+      "comment": "Project Page: https://github.com/EvolvingLMMs-Lab/Evolving-Visual-Generation",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.0,
       "score_breakdown": {
         "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2604.28139v1",
+      "title": "Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows",
+      "authors": [
+        "Chenxin Li",
+        "Zhengyang Tang",
+        "Huangxin Lin",
+        "Yunlong Lin",
+        "Shijue Huang",
+        "Shengyuan Liu",
+        "Bowen Ye",
+        "Rang Li",
+        "Lei Li",
+        "Benyou Wang",
+        "Yixuan Yuan"
+      ],
+      "abstract": "LLM agents are expected to complete end-to-end units of work across software tools, business services, and local workspaces. Yet many agent benchmarks freeze a curated task set at release time and grade mainly the final response, making it difficult to evaluate agents against evolving workflow demand or verify whether a task was executed. We introduce Claw-Eval-Live, a live benchmark for workflow agents that separates a refreshable signal layer, updated across releases from public workflow-demand signals, from a reproducible, time-stamped release snapshot. Each release is constructed from public workflow-demand signals, with ClawHub Top-500 skills used in the current release, and materialized as controlled tasks with fixed fixtures, services, workspaces, and graders. For grading, Claw-Eval-Live records execution traces, audit logs, service state, and post-run workspace artifacts, using deterministic checks when evidence is sufficient and structured LLM judging only for semantic dimensions. The release contains 105 tasks spanning controlled business services and local workspace repair, and evaluates 13 frontier models under a shared public pass rule. Experiments reveal that reliable workflow automation remains far from solved: the leading model passes only 66.7% of tasks and no model reaches 70%. Failures are structured by task family and execution surface, with HR, management, and multi-system business workflows as persistent bottlenecks and local workspace repair comparatively easier but unsaturated. Leaderboard rank alone is insufficient because models with similar pass rates can diverge in overall completion, and task-level discrimination concentrates in a middle band of tasks. Claw-Eval-Live suggests that workflow-agent evaluation should be grounded twice, in fresh external demand and in verifiable agent action.",
+      "published": "2026-04-30",
+      "updated": "2026-04-30",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "primary_category": "cs.SE",
+      "links": {
+        "paper": "http://arxiv.org/abs/2604.28139v1",
+        "pdf": "https://arxiv.org/pdf/2604.28139v1"
+      },
+      "arxiv_id": "2604.28139v1",
+      "comment": "Project page: https://claw-eval-live.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -544,7 +577,7 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }

@@ -3,35 +3,39 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2604.28196v1",
-      "title": "HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation",
+      "id": "2605.00658v1",
+      "title": "UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors",
       "authors": [
-        "Xin Zhou",
-        "Dingkang Liang",
-        "Xiwu Chen",
-        "Feiyang Tan",
-        "Dingyuan Zhang",
-        "Hengshuang Zhao",
-        "Xiang Bai"
+        "Houyuan Chen",
+        "Hong Li",
+        "Xianghao Kong",
+        "Tianrui Zhu",
+        "Shaocong Xu",
+        "Weiqing Xiao",
+        "Yuwei Guo",
+        "Chongjie Ye",
+        "Lvmin Zhang",
+        "Hao Zhao",
+        "Anyi Rao"
       ],
-      "abstract": "Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics. However, existing approaches predominantly focus on future scene generation, often overlooking comprehensive 3D scene understanding. Conversely, while Large Language Models (LLMs) demonstrate impressive reasoning capabilities, they lack the capacity to predict future geometric evolution, creating a significant disparity between semantic interpretation and physical simulation. To bridge this gap, we propose HERMES++, a unified driving world model that integrates 3D scene understanding and future geometry prediction within a single framework. Our approach addresses the distinct requirements of these tasks through synergistic designs. First, a BEV representation consolidates multi-view spatial information into a structure compatible with LLMs. Second, we introduce LLM-enhanced world queries to facilitate knowledge transfer from the understanding branch. Third, a Current-to-Future Link is designed to bridge the temporal gap, conditioning geometric evolution on semantic context. Finally, to enforce structural integrity, we employ a Joint Geometric Optimization strategy that integrates explicit geometric constraints with implicit latent regularization to align internal representations with geometry-aware priors. Extensive evaluations on multiple benchmarks validate the effectiveness of our method. HERMES++ achieves strong performance, outperforming specialist approaches in both future point cloud prediction and 3D scene understanding tasks. The model and code will be publicly released at https://github.com/H-EmbodVis/HERMESV2.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
+      "abstract": "Recent progress has shown that video diffusion models (VDMs) can be repurposed for diverse multimodal graphics tasks. However, existing methods often train separate models for each problem setting, which fixes the input-output mapping and limits the modeling of correlations across modalities. We present UniVidX, a unified multimodal framework that leverages VDM priors for versatile video generation. UniVidX formulates pixel-aligned tasks as conditional generation in a shared multimodal space, adapts to modality-specific distributions while preserving the backbone's native priors, and promotes cross-modal consistency during synthesis. It is built on three key designs. Stochastic Condition Masking (SCM) randomly partitions modalities into clean conditions and noisy targets during training, enabling omni-directional conditional generation instead of fixed mappings. Decoupled Gated LoRA (DGL) introduces per-modality LoRAs that are activated when a modality serves as the generation target, preserving the strong priors of the VDM. Cross-Modal Self-Attention (CMSA) shares keys and values across modalities while keeping modality-specific queries, facilitating information exchange and inter-modal alignment. We instantiate UniVidX in two domains: UniVid-Intrinsic, for RGB videos and intrinsic maps including albedo, irradiance, and normal; and UniVid-Alpha, for blended RGB videos and their constituent RGBA layers. Experiments show that both models achieve performance competitive with state-of-the-art methods across distinct tasks and generalize robustly to in-the-wild scenarios, even when trained on fewer than 1,000 videos. Project page: https://houyuanchen111.github.io/UniVidX.github.io/",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.28196v1",
-        "pdf": "https://arxiv.org/pdf/2604.28196v1"
+        "paper": "http://arxiv.org/abs/2605.00658v1",
+        "pdf": "https://arxiv.org/pdf/2605.00658v1"
       },
-      "arxiv_id": "2604.28196v1",
-      "comment": "Extended version of ICCV 25 paper HERMES, Code: https://github.com/H-EmbodVis/HERMESV2, Project page: https://h-embodvis.github.io/HERMESV2/",
-      "journal_ref": "",
+      "arxiv_id": "2605.00658v1",
+      "comment": "Project page: https://houyuanchen111.github.io/UniVidX.github.io/ Accepted to ACM Transactions on Graphics (Proceedings of SIGGRAPH 2026)",
+      "journal_ref": "ACM Trans. Graph. 45, 4, Article 51 (July 2026)",
       "has_code": true,
-      "relevance_score": 5.25,
+      "relevance_score": 5.05,
       "score_breakdown": {
-        "total_score": 5.25,
+        "total_score": 5.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -39,11 +43,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICCV",
+          "venue": "SIGGRAPH",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -52,61 +56,181 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics. However, existing approaches predominantly focus on future scene generation, often overlooking comprehensive 3D scene understanding. Conversely, while Large Language Models (LLMs) demonstrate impressive reasoning capabilities, they lack the capacity to predict future geometric evolution,...",
+        "short": "Recent progress has shown that video diffusion models (VDMs) can be repurposed for diverse multimodal graphics tasks. However, existing methods often train separate models for each problem setting, which fixes the input-output mapping and limits the modeling of correlations across modalities. We present UniVidX, a unified multimodal framework that leverages VDM priors for versatile video generatio...",
         "key_contributions": [
-          "Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics.",
-          "However, existing approaches predominantly focus on future scene generation, often overlooking comprehensive 3D scene understanding.",
-          "Conversely, while Large Language Models (LLMs) demonstrate impressive reasoning capabilities, they lack the capacity to predict future geometric evolution, creating a significant disparity between semantic interpretation and physical simulation."
+          "Recent progress has shown that video diffusion models (VDMs) can be repurposed for diverse multimodal graphics tasks.",
+          "However, existing methods often train separate models for each problem setting, which fixes the input-output mapping and limits the modeling of correlations across modalities.",
+          "We present UniVidX, a unified multimodal framework that leverages VDM priors for versatile video generation."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.28016v1",
-      "title": "Faster 3D Gaussian Splatting Convergence via Structure-Aware Densification",
+      "id": "2605.00548v1",
+      "title": "Colorful-Noise: Training-Free Low-Frequency Noise Manipulation for Color-Based Conditional Image Generation",
       "authors": [
-        "Linjie Lyu",
-        "Ayush Tewari",
-        "Jianchun Chen",
-        "Thomas Leimkühler",
-        "Christian Theobalt"
+        "Nadav Z. Cohen",
+        "Ofir Abramovich",
+        "Ariel Shamir"
       ],
-      "abstract": "3D Gaussian Splatting has emerged as a powerful scene representation for real-time novel-view synthesis. However, its standard adaptive density control relies on screen-space positional gradients, which do not distinguish between geometric misplacement and frequency aliasing, often leading to either over-blurred high-frequency textures or inefficient over-densification. We present a structure-aware densification framework. Our key insight is that the decision to subdivide a Gaussian should be driven by an explicit comparison between its projected screen-space extent and the local structure of the texture it seeks to represent. We introduce a multi-scale frequency analysis combining structure tensors with Laplacian scale space analysis to estimate the dominant frequency at each pixel, enabling robust supervision across varying texture scales. Based on this analysis, we define $η$, a per-Gaussian, per-axis frequency violation metric that indicates when a primitive may be under-resolving local texture details. Unlike methods that perform isotropic splitting (e.g., splitting each Gaussian into two smaller ones with uniform shape), our approach performs anisotropic splitting. For each axis with high $η$, we compute a split factor to better resolve the local frequency content. We further introduce a multiview consistency criterion that aggregates $η$ observations across multiple views. By performing densification early and faster, we skip the lengthy iterative densification phases required by baseline methods and achieve significantly faster convergence. Experiments on standard benchmarks demonstrate that our method also achieves superior reconstruction quality, particularly in high-frequency regions.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
+      "abstract": "Text-to-image diffusion models generate images by gradually converting white Gaussian noise into a natural image. White Gaussian noise is well suited for producing diverse outputs from a single text prompt due to its absence of structure. However, this very property limits control over, and predictability of, specific visual attributes, as the noise is not human-interpretable. In this work, we investigate the characteristics of the input noise in diffusion models. We show that, although all frequencies in white Gaussian noise have comparable statistical energy, low-frequency components primarily determine the images global structure and color composition, while high-frequency components control finer details. Building on this observation, we demonstrate that simple manipulations of the low-frequency noise using low-frequency image priors can effectively condition the generation process to reconstruct these low-frequency visual cues. This allows us to define a simple, training-free method with minimal overhead that steers overall image structure and color, while letting high-frequency components freely emerge as fine details, enabling variability across generated outputs.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
       "categories": [
         "cs.CV",
-        "cs.GR",
-        "cs.LG"
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.28016v1",
-        "pdf": "https://arxiv.org/pdf/2604.28016v1"
+        "paper": "http://arxiv.org/abs/2605.00548v1",
+        "pdf": "https://arxiv.org/pdf/2605.00548v1"
       },
-      "arxiv_id": "2604.28016v1",
-      "comment": "Siggraph 2026",
+      "arxiv_id": "2605.00548v1",
+      "comment": "SIGGRAPH 2026 Conference Paper. Project Page at: https://nadavc220.github.io/colorful-noise/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.227966101694915,
+      "has_code": true,
+      "relevance_score": 4.75,
       "score_breakdown": {
-        "total_score": 5.23,
+        "total_score": 4.75,
         "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
           "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Text-to-image diffusion models generate images by gradually converting white Gaussian noise into a natural image. White Gaussian noise is well suited for producing diverse outputs from a single text prompt due to its absence of structure. However, this very property limits control over, and predictability of, specific visual attributes, as the noise is not human-interpretable. In this work, we inv...",
+        "key_contributions": [
+          "Text-to-image diffusion models generate images by gradually converting white Gaussian noise into a natural image.",
+          "White Gaussian noise is well suited for producing diverse outputs from a single text prompt due to its absence of structure.",
+          "However, this very property limits control over, and predictability of, specific visual attributes, as the noise is not human-interpretable."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.00600v1",
+      "title": "Possibilistic Predictive Uncertainty for Deep Learning",
+      "authors": [
+        "Yao Ni",
+        "Jeremie Houssineau",
+        "Yew Soon Ong",
+        "Piotr Koniusz"
+      ],
+      "abstract": "Deep neural networks achieve impressive results across diverse applications, yet their overconfidence on unseen inputs necessitates reliable epistemic uncertainty modelling. Existing methods for uncertainty modelling face a fundamental dilemma: Bayesian approaches provide principled estimates but remain computationally prohibitive, while efficient second-order predictors lack rigorous derivations connecting their specific objectives to epistemic uncertainty quantification. To resolve this dilemma, we introduce Dirichlet-approximated possibilistic posterior predictions (DAPPr), a principled framework leveraging possibility theory. We define a possibilistic posterior over parameters, projects this posterior to the prediction space via supremum operators, and approximates the projected posterior using learnable Dirichlet possibility functions. This projection-and-approximation strategy yields a simple training objective with closed-form solutions. Extensive experiments across diverse benchmarks demonstrate that our approach achieves competitive or superior uncertainty quantification performance compared to state-of-the-art evidential deep learning methods while maintaining both principled derivation and computational efficiency. Code will be available at https://github.com/MaxwellYaoNi/DAPPr.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.00600v1",
+        "pdf": "https://arxiv.org/pdf/2605.00600v1"
+      },
+      "arxiv_id": "2605.00600v1",
+      "comment": "Accepted by ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.619491525423729,
+      "score_breakdown": {
+        "total_score": 4.62,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Deep neural networks achieve impressive results across diverse applications, yet their overconfidence on unseen inputs necessitates reliable epistemic uncertainty modelling. Existing methods for uncertainty modelling face a fundamental dilemma: Bayesian approaches provide principled estimates but remain computationally prohibitive, while efficient second-order predictors lack rigorous derivations ...",
+        "key_contributions": [
+          "Deep neural networks achieve impressive results across diverse applications, yet their overconfidence on unseen inputs necessitates reliable epistemic uncertainty modelling.",
+          "Existing methods for uncertainty modelling face a fundamental dilemma: Bayesian approaches provide principled estimates but remain computationally prohibitive, while efficient second-order predictors lack rigorous derivations connecting their specific objectives to epistemic uncertainty quantification.",
+          "To resolve this dilemma, we introduce Dirichlet-approximated possibilistic posterior predictions (DAPPr), a principled framework leveraging possibility theory."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.00529v1",
+      "title": "Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation",
+      "authors": [
+        "Ziwen Zhao",
+        "Menglin Yang"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) enhances large language models with external knowledge, and tree-based RAG organizes documents into hierarchical indexes to support queries at multiple granularities. However, existing Tree-RAG methods designed for single-document retrieval face critical challenges in scaling to cross-document multi-hop questions: (1) poor distribution adaptability, where $k$-means clustering introduces noise due to rigid distribution assumptions; (2) structural isolation, as tree indexes lack explicit cross-document connections; and (3) coarse abstraction, which obscures fine-grained details. To address these limitations, we propose $Ψ$-RAG, a tree-RAG framework with two key components. First, a hierarchical abstract tree index built through an iterative \"merging and collapse\" process that adapts to data distributions without a priori assumption. Second, a multi-granular retrieval agent that intelligently interacts with the knowledge base with reorganized queries and an agent-powered hybrid retriever. $Ψ$-RAG supports diverse tasks from token-level question answering to document-level summarization. On cross-document multi-hop QA benchmarks, it outperforms RAPTOR by 25.9% and HippoRAG 2 by 7.4% in average F1 score. Code is available at https://github.com/Newiz430/Psi-RAG.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.00529v1",
+        "pdf": "https://arxiv.org/pdf/2605.00529v1"
+      },
+      "arxiv_id": "2605.00529v1",
+      "comment": "ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
@@ -124,43 +248,42 @@
         }
       },
       "ai_summaries": {
-        "short": "3D Gaussian Splatting has emerged as a powerful scene representation for real-time novel-view synthesis. However, its standard adaptive density control relies on screen-space positional gradients, which do not distinguish between geometric misplacement and frequency aliasing, often leading to either over-blurred high-frequency textures or inefficient over-densification. We present a structure-awar...",
+        "short": "Retrieval-augmented generation (RAG) enhances large language models with external knowledge, and tree-based RAG organizes documents into hierarchical indexes to support queries at multiple granularities. However, existing Tree-RAG methods designed for single-document retrieval face critical challenges in scaling to cross-document multi-hop questions: (1) poor distribution adaptability, where $k$-m...",
         "key_contributions": [
-          "3D Gaussian Splatting has emerged as a powerful scene representation for real-time novel-view synthesis.",
-          "However, its standard adaptive density control relies on screen-space positional gradients, which do not distinguish between geometric misplacement and frequency aliasing, often leading to either over-blurred high-frequency textures or inefficient over-densification.",
-          "We present a structure-aware densification framework."
+          "Retrieval-augmented generation (RAG) enhances large language models with external knowledge, and tree-based RAG organizes documents into hierarchical indexes to support queries at multiple granularities.",
+          "However, existing Tree-RAG methods designed for single-document retrieval face critical challenges in scaling to cross-document multi-hop questions: (1) poor distribution adaptability, where $k$-means clustering introduces noise due to rigid distribution assumptions; (2) structural isolation, as tree indexes lack explicit cross-document connections; and (3) coarse abstraction, which obscures fine-grained details.",
+          "To address these limitations, we propose $Ψ$-RAG, a tree-RAG framework with two key components."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.28025v1",
-      "title": "ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss",
+      "id": "2605.00578v1",
+      "title": "Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration",
       "authors": [
-        "Jiaying Ying",
-        "Heming Du",
-        "Kaihao Zhang",
-        "Sean M. Tweedy",
-        "Xin Yu"
+        "Luru Jing",
+        "Cong Cong",
+        "Yanyuan Chen",
+        "Yongzhi Cao"
       ],
-      "abstract": "Single-image human mesh recovery provides a compact 3D, person-centric representation that supports analysis, animation, AR and VR, rehabilitation, and human-computer interaction. However, prevailing systems impose an intact-limb prior and degrade on people with limb loss, because fixed-topology models cannot represent residual limbs. In this work, we present ResiHMR, a residual-limb aware framework for single-image 3D human modeling. ResiHMR adopts residual-limb keypoints and introduces two components: (i) a topology-adaptive Residual Anchor-Factor Optimization module that constrains estimation to the observed kinematic subgraph of anatomically valid structures, and (ii) a geometry-based Residual-Limb Reconstruction module that estimates residual-limb boundaries and convex limb-termination geometry. These components introduce topology-aware optimization and explicit termination geometry as tools for human mesh recovery under non-standard limb anatomy. Unlike joint-removal methods in a fixed topology, ResiHMR explicitly reconstructs residual-limb surfaces and aligns optimization with limb-loss topology, which better matches prosthetic biomechanics and real-world use. To the best of our knowledge, this is the first single-image HMR system that explicitly reconstructs residual-limb surfaces and performs topology-adaptive optimization for individuals with limb loss. On a curated dataset of real-world images with limb loss, ResiHMR improves reconstruction quality under both SMPLify-X and HSMR backbones, reducing intact-joint 2D MPJPE from 41.32 to 37.40 with SMPLify-X and residual-limb 2D MPJPE from 73.61 to 23.19 with HSMR.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
+      "abstract": "Federated learning (FL) offers a promising framework for collaborative digital pathology by enabling model training across institutions. However, real-world deployments face heterogeneity arising from diverse multiple instance learning (MIL) architectures and heterogeneous feature extractors across institutions. We propose FedHD, a novel FL framework that performs local Gaussian-mixture feature alignment tailored for WSI analysis. Instead of exchanging model parameters, each client independently distills semantically rich synthetic feature representations aligned with the distribution of real WSIs. To preserve diagnostic diversity, FedHD adopts a one-to-one distillation strategy, generating a synthetic counterpart for each real slide to avoid over-compression. During federation, a curriculum-based integration strategy progressively incorporates cross-site synthetic features into local training once performance plateaus. Furthermore, an optional interpretation module reconstructs pseudo-patches from synthetic embeddings, enhancing transparency. FedHD is architecture-agnostic, privacy-preserving, and supports personalized yet collaborative training across diverse institutions. Experiments on TCGA-IDH, CAMELYON16, and CAMELYON17 show that FedHD consistently outperforms state-of-the-art federated and distillation baselines.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.28025v1",
-        "pdf": "https://arxiv.org/pdf/2604.28025v1"
+        "paper": "http://arxiv.org/abs/2605.00578v1",
+        "pdf": "https://arxiv.org/pdf/2605.00578v1"
       },
-      "arxiv_id": "2604.28025v1",
-      "comment": "Highlight in CVPR 2026. Project at https://akitaraphael.github.io/ResiHMR/",
+      "arxiv_id": "2605.00578v1",
+      "comment": "Accepted by ICML 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.15,
+      "has_code": false,
+      "relevance_score": 4.3999999999999995,
       "score_breakdown": {
-        "total_score": 5.15,
+        "total_score": 4.4,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -168,7 +291,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
@@ -176,37 +299,38 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Single-image human mesh recovery provides a compact 3D, person-centric representation that supports analysis, animation, AR and VR, rehabilitation, and human-computer interaction. However, prevailing systems impose an intact-limb prior and degrade on people with limb loss, because fixed-topology models cannot represent residual limbs. In this work, we present ResiHMR, a residual-limb aware framewo...",
+        "short": "Federated learning (FL) offers a promising framework for collaborative digital pathology by enabling model training across institutions. However, real-world deployments face heterogeneity arising from diverse multiple instance learning (MIL) architectures and heterogeneous feature extractors across institutions. We propose FedHD, a novel FL framework that performs local Gaussian-mixture feature al...",
         "key_contributions": [
-          "Single-image human mesh recovery provides a compact 3D, person-centric representation that supports analysis, animation, AR and VR, rehabilitation, and human-computer interaction.",
-          "However, prevailing systems impose an intact-limb prior and degrade on people with limb loss, because fixed-topology models cannot represent residual limbs.",
-          "In this work, we present ResiHMR, a residual-limb aware framework for single-image 3D human modeling."
+          "Federated learning (FL) offers a promising framework for collaborative digital pathology by enabling model training across institutions.",
+          "However, real-world deployments face heterogeneity arising from diverse multiple instance learning (MIL) architectures and heterogeneous feature extractors across institutions.",
+          "We propose FedHD, a novel FL framework that performs local Gaussian-mixture feature alignment tailored for WSI analysis."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.28169v1",
-      "title": "PhyCo: Learning Controllable Physical Priors for Generative Motion",
+      "id": "2605.00583v1",
+      "title": "Jailbreaking Vision-Language Models Through the Visual Modality",
       "authors": [
-        "Sriram Narayanan",
-        "Ziyu Jiang",
-        "Srinivasa Narasimhan",
-        "Manmohan Chandraker"
+        "Aharon Azulay",
+        "Jan Dubiński",
+        "Zhuoyun Li",
+        "Atharv Mittal",
+        "Yossi Gandelsman"
       ],
-      "abstract": "Modern video diffusion models excel at appearance synthesis but still struggle with physical consistency: objects drift, collisions lack realistic rebound, and material responses seldom match their underlying properties. We present PhyCo, a framework that introduces continuous, interpretable, and physically grounded control into video generation. Our approach integrates three key components: (i) a large-scale dataset of over 100K photorealistic simulation videos where friction, restitution, deformation, and force are systematically varied across diverse scenarios; (ii) physics-supervised fine-tuning of a pretrained diffusion model using a ControlNet conditioned on pixel-aligned physical property maps; and (iii) VLM-guided reward optimization, where a fine-tuned vision-language model evaluates generated videos with targeted physics queries and provides differentiable feedback. This combination enables a generative model to produce physically consistent and controllable outputs through variations in physical attributes-without any simulator or geometry reconstruction at inference. On the Physics-IQ benchmark, PhyCo significantly improves physical realism over strong baselines, and human studies confirm clearer and more faithful control over physical attributes. Our results demonstrate a scalable path toward physically consistent, controllable generative video models that generalize beyond synthetic training environments.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
+      "abstract": "The visual modality of vision-language models (VLMs) is an underexplored attack surface for bypassing safety alignment. We introduce four jailbreak attacks exploiting the vision component: (1) encoding harmful instructions as visual symbol sequences with a decoding legend, (2) replacing harmful objects with benign substitutes (e.g., bomb -> banana) then prompting for harmful actions using the substitute term, (3) replacing harmful text in images (e.g., on book covers) with benign words while visual context preserves the original meaning, and (4) visual analogy puzzles whose solution requires inferring a prohibited concept. Evaluating across six frontier VLMs, our visual attacks bypass safety alignment and expose a cross-modality alignment gap: text-based safety training does not automatically generalize to harmful intent conveyed visually. For example, our visual cipher achieves 40.9% attack success on Claude-Haiku-4.5 versus 10.7% for an equivalent textual cipher. To further our insight into the attack mechanism, we present preliminary interpretability and mitigation results. These findings highlight that robust VLM alignment requires treating vision as a first-class target for safety post-training.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
       "categories": [
         "cs.CV",
         "cs.AI",
@@ -214,16 +338,16 @@
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.28169v1",
-        "pdf": "https://arxiv.org/pdf/2604.28169v1"
+        "paper": "http://arxiv.org/abs/2605.00583v1",
+        "pdf": "https://arxiv.org/pdf/2605.00583v1"
       },
-      "arxiv_id": "2604.28169v1",
-      "comment": "CVPR 2026. Project Page: https://phyco-video.github.io/",
+      "arxiv_id": "2605.00583v1",
+      "comment": "Accepted to ICML 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.0,
+      "has_code": false,
+      "relevance_score": 4.35,
       "score_breakdown": {
-        "total_score": 5.0,
+        "total_score": 4.35,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -231,66 +355,134 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Modern video diffusion models excel at appearance synthesis but still struggle with physical consistency: objects drift, collisions lack realistic rebound, and material responses seldom match their underlying properties. We present PhyCo, a framework that introduces continuous, interpretable, and physically grounded control into video generation. Our approach integrates three key components: (i) a...",
+        "short": "The visual modality of vision-language models (VLMs) is an underexplored attack surface for bypassing safety alignment. We introduce four jailbreak attacks exploiting the vision component: (1) encoding harmful instructions as visual symbol sequences with a decoding legend, (2) replacing harmful objects with benign substitutes (e.g., bomb -> banana) then prompting for harmful actions using the subs...",
         "key_contributions": [
-          "Modern video diffusion models excel at appearance synthesis but still struggle with physical consistency: objects drift, collisions lack realistic rebound, and material responses seldom match their underlying properties.",
-          "We present PhyCo, a framework that introduces continuous, interpretable, and physically grounded control into video generation.",
-          "Our approach integrates three key components: (i) a large-scale dataset of over 100K photorealistic simulation videos where friction, restitution, deformation, and force are systematically varied across diverse scenarios; (ii) physics-supervised fine-tuning of a pretrained diffusion model using a ControlNet conditioned on pixel-aligned physical property maps; and (iii) VLM-guided reward optimization, where a fine-tuned vision-language model evaluates generated videos with targeted physics queries and provides differentiable feedback."
+          "The visual modality of vision-language models (VLMs) is an underexplored attack surface for bypassing safety alignment.",
+          "We introduce four jailbreak attacks exploiting the vision component: (1) encoding harmful instructions as visual symbol sequences with a decoding legend, (2) replacing harmful objects with benign substitutes (e.",
+          "g."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.28193v1",
-      "title": "Generalizable Sparse-View 3D Reconstruction from Unconstrained Images",
+      "id": "2605.00503v1",
+      "title": "End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer",
       "authors": [
-        "Vinayak Gupta",
-        "Chih-Hao Lin",
-        "Shenlong Wang",
-        "Anand Bhattad",
-        "Jia-Bin Huang"
+        "Wenda Chu",
+        "Bingliang Zhang",
+        "Jiaqi Han",
+        "Yizhuo Li",
+        "Linjie Yang",
+        "Yisong Yue",
+        "Qiushan Guo"
       ],
-      "abstract": "Reconstructing 3D scenes from sparse, unposed images remains challenging under real-world conditions with varying illumination and transient occlusions. Existing methods rely on scene-specific optimization using appearance embeddings or dynamic masks, which requires extensive per-scene training and fails under sparse views. Moreover, evaluations on limited scenes raise questions about generalization. We present GenWildSplat, a feed-forward framework for sparse-view outdoor reconstruction that requires no per-scene optimization. Given unposed internet images, GenWildSplat predicts depth, camera parameters, and 3D Gaussians in a canonical space using learned geometric priors. An appearance adapter modulates appearance for target lighting conditions, while semantic segmentation handles transient objects. Through curriculum learning on synthetic and real data, GenWildSplat generalizes across diverse illumination and occlusion patterns. Evaluations on PhotoTourism and MegaScenes benchmark demonstrate state-of-the-art feed-forward rendering quality, achieving real-time inference without test-time optimization",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
+      "abstract": "Autoregressive image modeling relies on visual tokenizers to compress images into compact latent representations. We design an end-to-end training pipeline that jointly optimizes reconstruction and generation, enabling direct supervision from generation results to the tokenizer. This contrasts with prior two-stage approaches that train tokenizers and generative models separately. We further investigate leveraging vision foundation models to improve 1D tokenizers for autoregressive modeling. Our autoregressive generative model achieves strong empirical results, including a state-of-the-art FID score of 1.48 without guidance on ImageNet 256x256 generation.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.28193v1",
-        "pdf": "https://arxiv.org/pdf/2604.28193v1"
+        "paper": "http://arxiv.org/abs/2605.00503v1",
+        "pdf": "https://arxiv.org/pdf/2605.00503v1"
       },
-      "arxiv_id": "2604.28193v1",
-      "comment": "Project Page: https://genwildsplat.github.io/",
+      "arxiv_id": "2605.00503v1",
+      "comment": "In ICML 2026 (Spotlight)",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.829661016949153,
+      "has_code": false,
+      "relevance_score": 4.35,
       "score_breakdown": {
-        "total_score": 4.83,
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Autoregressive image modeling relies on visual tokenizers to compress images into compact latent representations. We design an end-to-end training pipeline that jointly optimizes reconstruction and generation, enabling direct supervision from generation results to the tokenizer. This contrasts with prior two-stage approaches that train tokenizers and generative models separately. We further invest...",
+        "key_contributions": [
+          "Autoregressive image modeling relies on visual tokenizers to compress images into compact latent representations.",
+          "We design an end-to-end training pipeline that jointly optimizes reconstruction and generation, enabling direct supervision from generation results to the tokenizer.",
+          "This contrasts with prior two-stage approaches that train tokenizers and generative models separately."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.00538v1",
+      "title": "Vesselpose: Vessel Graph Reconstruction from Learned Voxel-wise Direction Vectors in 3D Vascular Images",
+      "authors": [
+        "Rajalakshmi Palaniappan",
+        "Christoph Karg",
+        "Nemesio Navarro-Arambula",
+        "Peter Hirsch",
+        "Kristin Kraeker",
+        "Lisa Mais",
+        "Dagmar Kainmueller"
+      ],
+      "abstract": "Blood vessel segmentation and -tracing are essential tasks in many medical imaging applications. Although numerous methods exist, the prevailing segment-then-fix paradigm is fundamentally limited regarding its suitability for modeling the task of complete and topologically accurate vascular network reconstruction. Here, we propose an approach to extract topologically more accurate vascular graphs from 3D image data, building upon highly successful ideas from the related biomedical tasks of cell segmentation and -tracking. Our approach first predicts voxel-wise vessel direction vectors joint with standard vessel segmentation masks. Second, to extract the vascular graph from these predictions, we introduce a direction-vector-guided extension of the TEASAR algorithm. Our approach achieves state-of-the-art performance on three benchmark datasets, spanning both synthetic and real imagery. We further demonstrate the applicability of our approach to challenging 3D micro-CT scans of rat heart vasculature. Finally, we propose meaningful and interpretable measures of topological error, namely false splits and false merges for graphs. Overall, our approach substantially improves the topological accuracy of reconstructed vascular graphs, being able to separate closely apposed vessel segments and handle multiple vascular trees within a single volume.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.00538v1",
+        "pdf": "https://arxiv.org/pdf/2605.00538v1"
+      },
+      "arxiv_id": "2605.00538v1",
+      "comment": "33 pages, 10 figures, 11 tables",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.329661016949153,
+      "score_breakdown": {
+        "total_score": 4.33,
         "field_match": {
           "score": 1.95,
           "matches": [
-            "3d gaussian",
-            "3d reconstruction",
+            "medical imaging",
+            "heart",
             "segmentation"
           ],
           "weight": 0.4
@@ -301,72 +493,163 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reconstructing 3D scenes from sparse, unposed images remains challenging under real-world conditions with varying illumination and transient occlusions. Existing methods rely on scene-specific optimization using appearance embeddings or dynamic masks, which requires extensive per-scene training and fails under sparse views. Moreover, evaluations on limited scenes raise questions about generalizati...",
+        "short": "Blood vessel segmentation and -tracing are essential tasks in many medical imaging applications. Although numerous methods exist, the prevailing segment-then-fix paradigm is fundamentally limited regarding its suitability for modeling the task of complete and topologically accurate vascular network reconstruction. Here, we propose an approach to extract topologically more accurate vascular graphs ...",
         "key_contributions": [
-          "Reconstructing 3D scenes from sparse, unposed images remains challenging under real-world conditions with varying illumination and transient occlusions.",
-          "Existing methods rely on scene-specific optimization using appearance embeddings or dynamic masks, which requires extensive per-scene training and fails under sparse views.",
-          "Moreover, evaluations on limited scenes raise questions about generalization."
+          "Blood vessel segmentation and -tracing are essential tasks in many medical imaging applications.",
+          "Although numerous methods exist, the prevailing segment-then-fix paradigm is fundamentally limited regarding its suitability for modeling the task of complete and topologically accurate vascular network reconstruction.",
+          "Here, we propose an approach to extract topologically more accurate vascular graphs from 3D image data, building upon highly successful ideas from the related biomedical tasks of cell segmentation and -tracking."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2604.28173v1",
-      "title": "Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements",
+      "id": "2605.00742v1",
+      "title": "Position: agentic AI orchestration should be Bayes-consistent",
       "authors": [
-        "Genki Kinoshita",
-        "Shu Nakamura",
-        "Ryo Kawahara",
-        "Shohei Nobuhara",
-        "Yasutomo Kawanishi",
-        "Ko Nishino"
+        "Theodore Papamarkou",
+        "Pierre Alquier",
+        "Matthias Bauer",
+        "Wray Buntine",
+        "Andrew Davison",
+        "Gintare Karolina Dziugaite",
+        "Maurizio Filippone",
+        "Andrew Y. K. Foong",
+        "Vincent Fortuin",
+        "Dimitris Fouskakis",
+        "Jes Frellsen",
+        "Eyke Hüllermeier",
+        "Theofanis Karaletsos",
+        "Mohammad Emtiyaz Khan",
+        "Nikita Kotelevskii",
+        "Salem Lahlou",
+        "Yingzhen Li",
+        "Fang Liu",
+        "Clare Lyle",
+        "Thomas Möllenhoff",
+        "Konstantina Palla",
+        "Maxim Panov",
+        "Yusuf Sale",
+        "Kajetan Schweighofer",
+        "Artem Shelmanov",
+        "Siddharth Swaroop",
+        "Martin Trapp",
+        "Willem Waegeman",
+        "Andrew Gordon Wilson",
+        "Alexey Zaytsev"
       ],
-      "abstract": "Effective human behavior modeling requires a representation of the human body movement that capitalizes on its compositionality. We propose a hierarchical representation consisting of Action Atoms that capture the atomic joint movements and Action Motifs that are formed by their temporal compositions and encode similar body movements found across different overall human actions. We derive A4Mer, a nested latent Transformer to learn this hierarchical representation from human pose data in a fully self-supervised manner. A4Mer splits a 3D pose sequence into variable-length segments and represents each segment as a single latent token (Action Atoms). Through bottom-up representation learning, temporal patterns composed of these Action Atoms, which capture meaningful temporal spans of reusable, semantic segments of body movements, naturally emerge (Action Motifs). A4Mer achieves this with a unified pretext task of masked token prediction in their respective latent spaces. We also introduce Action Motif Dataset (AMD), a large-scale dataset of multi-view human behavior videos with full SMPL annotations. We introduce a novel use of cameras by mounting them on the feet to achieve their frame-wise annotations despite frequent and heavy body occlusions. Experimental results demonstrate the effectiveness of A4Mer for extracting meaningful Action Motifs, which significantly benefit human behavior modeling tasks including action recognition, motion prediction, and motion interpolation.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
+      "abstract": "LLMs excel at predictive tasks and complex reasoning tasks, but many high-value deployments rely on decisions under uncertainty, for example, which tool to call, which expert to consult, or how many resources to invest. While the usefulness and feasibility of Bayesian approaches remain unclear for LLM inference, this position paper argues that the control layer of an agentic AI system (that orchestrates LLMs and tools) is a clear case where Bayesian principles should shine. Bayesian decision theory provides a framework for agentic systems that can help to maintain beliefs over task-relevant latent quantities, to update these beliefs from observed agentic and human-AI interactions, and to choose actions. Making LLMs themselves explicitly Bayesian belief-updating engines remains computationally intensive and conceptually nontrivial as a general modeling target. In contrast, this paper argues that coherent decision-making requires Bayesian principles at the orchestration level of the agentic system, not necessarily the LLM agent parameters. This paper articulates practical properties for Bayesian control that fit modern agentic AI systems and human-AI collaboration, and provides concrete examples and design patterns to illustrate how calibrated beliefs and utility-aware policies can improve agentic AI orchestration.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
       "categories": [
-        "cs.CV"
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.00742v1",
+        "pdf": "https://arxiv.org/pdf/2605.00742v1"
+      },
+      "arxiv_id": "2605.00742v1",
+      "comment": "Accepted for publication at ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "LLMs excel at predictive tasks and complex reasoning tasks, but many high-value deployments rely on decisions under uncertainty, for example, which tool to call, which expert to consult, or how many resources to invest. While the usefulness and feasibility of Bayesian approaches remain unclear for LLM inference, this position paper argues that the control layer of an agentic AI system (that orches...",
+        "key_contributions": [
+          "LLMs excel at predictive tasks and complex reasoning tasks, but many high-value deployments rely on decisions under uncertainty, for example, which tool to call, which expert to consult, or how many resources to invest.",
+          "While the usefulness and feasibility of Bayesian approaches remain unclear for LLM inference, this position paper argues that the control layer of an agentic AI system (that orchestrates LLMs and tools) is a clear case where Bayesian principles should shine.",
+          "Bayesian decision theory provides a framework for agentic systems that can help to maintain beliefs over task-relevant latent quantities, to update these beliefs from observed agentic and human-AI interactions, and to choose actions."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.00569v1",
+      "title": "2D-SuGaR: Surface-Aware Gaussian Splatting for Geometrically Accurate Mesh Reconstruction",
+      "authors": [
+        "Prajwal Gupta C. R.",
+        "Divyam Sheth",
+        "Jinjoo Ha",
+        "Mirela Ostrek",
+        "Justus Thies"
+      ],
+      "abstract": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for generating photorealistic renderings of a scene in real-time. However, the volumetric nature of 3DGS limits its ability to accurately capture surface geometry. To address this, 2D Gaussian Splatting (2DGS) was proposed to enable view-consistent and geometrically accurate surface reconstruction from multi-view images. However, 2DGS can be sensitive to the initialization of the Gaussian primitives. Reliance on Structure-from-Motion (SfM) initializations, which can produce poor estimates on challenging image sets, may lead to subpar results. In this work, we enhance 2DGS by incorporating monocular depth and normal priors to improve both geometric accuracy and robustness. We propose a depth-guided initialization strategy for Gaussians and introduce a clustering-based technique for pruning degenerate Gaussians. We evaluate our method on the DTU dataset, where it achieves state-of-the-art results in mesh reconstruction while preserving high-quality novel view synthesis.",
+      "published": "2026-05-01",
+      "updated": "2026-05-01",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2604.28173v1",
-        "pdf": "https://arxiv.org/pdf/2604.28173v1"
+        "paper": "http://arxiv.org/abs/2605.00569v1",
+        "pdf": "https://arxiv.org/pdf/2605.00569v1"
       },
-      "arxiv_id": "2604.28173v1",
-      "comment": "to be published in CVPR 2026 (Highlight)",
+      "arxiv_id": "2605.00569v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.671186440677966,
+      "relevance_score": 4.215254237288136,
       "score_breakdown": {
-        "total_score": 4.67,
+        "total_score": 4.22,
         "field_match": {
-          "score": 0.68,
+          "score": 2.29,
           "matches": [
-            "self-supervised"
+            "3d gaussian",
+            "gaussian splatting",
+            "volumetric"
           ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -380,294 +663,11 @@
         }
       },
       "ai_summaries": {
-        "short": "Effective human behavior modeling requires a representation of the human body movement that capitalizes on its compositionality. We propose a hierarchical representation consisting of Action Atoms that capture the atomic joint movements and Action Motifs that are formed by their temporal compositions and encode similar body movements found across different overall human actions. We derive A4Mer, a...",
+        "short": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for generating photorealistic renderings of a scene in real-time. However, the volumetric nature of 3DGS limits its ability to accurately capture surface geometry. To address this, 2D Gaussian Splatting (2DGS) was proposed to enable view-consistent and geometrically accurate surface reconstruction from multi-view images. However, 2DG...",
         "key_contributions": [
-          "Effective human behavior modeling requires a representation of the human body movement that capitalizes on its compositionality.",
-          "We propose a hierarchical representation consisting of Action Atoms that capture the atomic joint movements and Action Motifs that are formed by their temporal compositions and encode similar body movements found across different overall human actions.",
-          "We derive A4Mer, a nested latent Transformer to learn this hierarchical representation from human pose data in a fully self-supervised manner."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.28024v1",
-      "title": "FedHarmony: Harmonizing Heterogeneous Label Correlations in Federated Multi-Label Learning",
-      "authors": [
-        "Zhiqiang Kou",
-        "Junxiang Wu",
-        "Wenke Huang",
-        "Wenwen He",
-        "Ming-Kun Xie",
-        "Changwei Wang",
-        "Yuheng Jia",
-        "Di Jiang",
-        "Yang Liu",
-        "Xin Geng",
-        "Qiang Yang"
-      ],
-      "abstract": "Federated Multi-Label Learning is a distributed paradigm where multiple clients possess heterogeneous multi-label data and perform collaborative learning under privacy constraints without sharing raw data. However, modeling label correlations under heterogeneous distributions remains challenging. Due to client-specific label spaces and varying co-occurrence patterns, correlations learned by individual clients inevitably deviate from the global structure, a phenomenon we term label correlation drift. To address this, we propose FedHarmony, a framework that harmonizes heterogeneous label correlations across clients. It introduces consensus correlation, capturing agreement among other clients and serving as a global teacher to correct biased local estimates. During aggregation, FedHarmony evaluates each client by both data size and correlation quality, assigning weights accordingly. Moreover, we develop an accelerated optimization algorithm for FedHarmony and theoretically establish faster convergence without sacrificing accuracy. Experiments on real-world federated multi-label datasets show that FedHarmony consistently outperforms state-of-the-art methods.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.28024v1",
-        "pdf": "https://arxiv.org/pdf/2604.28024v1"
-      },
-      "arxiv_id": "2604.28024v1",
-      "comment": "Accepted by CVPR 2026. 11 pages, 6 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.449999999999999,
-      "score_breakdown": {
-        "total_score": 4.45,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Federated Multi-Label Learning is a distributed paradigm where multiple clients possess heterogeneous multi-label data and perform collaborative learning under privacy constraints without sharing raw data. However, modeling label correlations under heterogeneous distributions remains challenging. Due to client-specific label spaces and varying co-occurrence patterns, correlations learned by indivi...",
-        "key_contributions": [
-          "Federated Multi-Label Learning is a distributed paradigm where multiple clients possess heterogeneous multi-label data and perform collaborative learning under privacy constraints without sharing raw data.",
-          "However, modeling label correlations under heterogeneous distributions remains challenging.",
-          "Due to client-specific label spaces and varying co-occurrence patterns, correlations learned by individual clients inevitably deviate from the global structure, a phenomenon we term label correlation drift."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.28190v1",
-      "title": "Representation Fréchet Loss for Visual Generation",
-      "authors": [
-        "Jiawei Yang",
-        "Zhengyang Geng",
-        "Xuan Ju",
-        "Yonglong Tian",
-        "Yue Wang"
-      ],
-      "abstract": "We show that Fréchet Distance (FD), long considered impractical as a training objective, can in fact be effectively optimized in the representation space. Our idea is simple: decouple the population size for FD estimation (e.g., 50k) from the batch size for gradient computation (e.g., 1024). We term this approach FD-loss. Optimizing FD-loss reveals several surprising findings. First, post-training a base generator with FD-loss in different representation spaces consistently improves visual quality. Under the Inception feature space, a one-step generator achieves0.72 FID on ImageNet 256x256. Second, the same FD-loss repurposes multi-step generators into strong one-step generators without teacher distillation, adversarial training or per-sample targets. Third, FID can misrank visual quality: modern representations can yield better samples despite worse Inception FID. This motivates FDr$^k$, a multi-representation metric. We hope this work will encourage further exploration of distributional distances in diverse representation spaces as both training objectives and evaluation metrics for generative models.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.28190v1",
-        "pdf": "https://arxiv.org/pdf/2604.28190v1"
-      },
-      "arxiv_id": "2604.28190v1",
-      "comment": "Code and checkpoints are available at https://github.com/Jiawei-Yang/FD-loss",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We show that Fréchet Distance (FD), long considered impractical as a training objective, can in fact be effectively optimized in the representation space. Our idea is simple: decouple the population size for FD estimation (e.g., 50k) from the batch size for gradient computation (e.g., 1024). We term this approach FD-loss. Optimizing FD-loss reveals several surprising findings. First, post-training...",
-        "key_contributions": [
-          "We show that Fréchet Distance (FD), long considered impractical as a training objective, can in fact be effectively optimized in the representation space.",
-          "Our idea is simple: decouple the population size for FD estimation (e.",
-          "g."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.28185v1",
-      "title": "Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling",
-      "authors": [
-        "Keming Wu",
-        "Zuhao Yang",
-        "Kaichen Zhang",
-        "Shizun Wang",
-        "Haowei Zhu",
-        "Sicong Leng",
-        "Zhongyu Yang",
-        "Qijie Wang",
-        "Sudong Wang",
-        "Ziting Wang",
-        "Zili Wang",
-        "Hui Zhang",
-        "Haonan Wang",
-        "Hang Zhou",
-        "Yifan Pu",
-        "Xingxuan Li",
-        "Fangneng Zhan",
-        "Bo Li",
-        "Lidong Bing",
-        "Yuxin Song",
-        "Ziwei Liu",
-        "Wenhu Chen",
-        "Jingdong Wang",
-        "Xinchao Wang",
-        "Xiaojuan Qi",
-        "Shijian Lu",
-        "Bin Wang"
-      ],
-      "abstract": "Recent visual generation models have made major progress in photorealism, typography, instruction following, and interactive editing, yet they still struggle with spatial reasoning, persistent state, long-horizon consistency, and causal understanding. We argue that the field should move beyond appearance synthesis toward intelligent visual generation: plausible visuals grounded in structure, dynamics, domain knowledge, and causal relations. To frame this shift, we introduce a five-level taxonomy: Atomic Generation, Conditional Generation, In-Context Generation, Agentic Generation, and World-Modeling Generation, progressing from passive renderers to interactive, agentic, world-aware generators. We analyze key technical drivers, including flow matching, unified understanding-and-generation models, improved visual representations, post-training, reward modeling, data curation, synthetic data distillation, and sampling acceleration. We further show that current evaluations often overestimate progress by emphasizing perceptual quality while missing structural, temporal, and causal failures. By combining benchmark review, in-the-wild stress tests, and expert-constrained case studies, this roadmap offers a capability-centered lens for understanding, evaluating, and advancing the next generation of intelligent visual generation systems.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.28185v1",
-        "pdf": "https://arxiv.org/pdf/2604.28185v1"
-      },
-      "arxiv_id": "2604.28185v1",
-      "comment": "Project Page: https://github.com/EvolvingLMMs-Lab/Evolving-Visual-Generation",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent visual generation models have made major progress in photorealism, typography, instruction following, and interactive editing, yet they still struggle with spatial reasoning, persistent state, long-horizon consistency, and causal understanding. We argue that the field should move beyond appearance synthesis toward intelligent visual generation: plausible visuals grounded in structure, dynam...",
-        "key_contributions": [
-          "Recent visual generation models have made major progress in photorealism, typography, instruction following, and interactive editing, yet they still struggle with spatial reasoning, persistent state, long-horizon consistency, and causal understanding.",
-          "We argue that the field should move beyond appearance synthesis toward intelligent visual generation: plausible visuals grounded in structure, dynamics, domain knowledge, and causal relations.",
-          "To frame this shift, we introduce a five-level taxonomy: Atomic Generation, Conditional Generation, In-Context Generation, Agentic Generation, and World-Modeling Generation, progressing from passive renderers to interactive, agentic, world-aware generators."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2604.28139v1",
-      "title": "Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows",
-      "authors": [
-        "Chenxin Li",
-        "Zhengyang Tang",
-        "Huangxin Lin",
-        "Yunlong Lin",
-        "Shijue Huang",
-        "Shengyuan Liu",
-        "Bowen Ye",
-        "Rang Li",
-        "Lei Li",
-        "Benyou Wang",
-        "Yixuan Yuan"
-      ],
-      "abstract": "LLM agents are expected to complete end-to-end units of work across software tools, business services, and local workspaces. Yet many agent benchmarks freeze a curated task set at release time and grade mainly the final response, making it difficult to evaluate agents against evolving workflow demand or verify whether a task was executed. We introduce Claw-Eval-Live, a live benchmark for workflow agents that separates a refreshable signal layer, updated across releases from public workflow-demand signals, from a reproducible, time-stamped release snapshot. Each release is constructed from public workflow-demand signals, with ClawHub Top-500 skills used in the current release, and materialized as controlled tasks with fixed fixtures, services, workspaces, and graders. For grading, Claw-Eval-Live records execution traces, audit logs, service state, and post-run workspace artifacts, using deterministic checks when evidence is sufficient and structured LLM judging only for semantic dimensions. The release contains 105 tasks spanning controlled business services and local workspace repair, and evaluates 13 frontier models under a shared public pass rule. Experiments reveal that reliable workflow automation remains far from solved: the leading model passes only 66.7% of tasks and no model reaches 70%. Failures are structured by task family and execution surface, with HR, management, and multi-system business workflows as persistent bottlenecks and local workspace repair comparatively easier but unsaturated. Leaderboard rank alone is insufficient because models with similar pass rates can diverge in overall completion, and task-level discrimination concentrates in a middle band of tasks. Claw-Eval-Live suggests that workflow-agent evaluation should be grounded twice, in fresh external demand and in verifiable agent action.",
-      "published": "2026-04-30",
-      "updated": "2026-04-30",
-      "categories": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "primary_category": "cs.SE",
-      "links": {
-        "paper": "http://arxiv.org/abs/2604.28139v1",
-        "pdf": "https://arxiv.org/pdf/2604.28139v1"
-      },
-      "arxiv_id": "2604.28139v1",
-      "comment": "Project page: https://claw-eval-live.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "LLM agents are expected to complete end-to-end units of work across software tools, business services, and local workspaces. Yet many agent benchmarks freeze a curated task set at release time and grade mainly the final response, making it difficult to evaluate agents against evolving workflow demand or verify whether a task was executed. We introduce Claw-Eval-Live, a live benchmark for workflow ...",
-        "key_contributions": [
-          "LLM agents are expected to complete end-to-end units of work across software tools, business services, and local workspaces.",
-          "Yet many agent benchmarks freeze a curated task set at release time and grade mainly the final response, making it difficult to evaluate agents against evolving workflow demand or verify whether a task was executed.",
-          "We introduce Claw-Eval-Live, a live benchmark for workflow agents that separates a refreshable signal layer, updated across releases from public workflow-demand signals, from a reproducible, time-stamped release snapshot."
+          "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for generating photorealistic renderings of a scene in real-time.",
+          "However, the volumetric nature of 3DGS limits its ability to accurately capture surface geometry.",
+          "To address this, 2D Gaussian Splatting (2DGS) was proposed to enable view-consistent and geometrically accurate surface reconstruction from multi-view images."
         ],
         "provider": "gemini"
       }

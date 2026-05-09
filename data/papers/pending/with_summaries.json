@@ -3,107 +3,41 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.05163v1",
-      "title": "PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World",
+      "id": "2605.06658v1",
+      "title": "Relit-LiVE: Relight Video by Jointly Learning Environment Video",
       "authors": [
-        "Yunhan Yang",
-        "Chunshi Wang",
-        "Junliang Ye",
-        "Yang Li",
-        "Zanxin Chen",
-        "Zehuan Huang",
-        "Yao Mu",
-        "Zhuo Chen",
-        "Chunchao Guo",
-        "Xihui Liu"
+        "Weiqing Xiao",
+        "Hong Li",
+        "Xiuyu Yang",
+        "Houyuan Chen",
+        "Wenyi Li",
+        "Tianqi Liu",
+        "Shaocong Xu",
+        "Chongjie Ye",
+        "Hao Zhao",
+        "Beibei Wang"
       ],
-      "abstract": "Synthesizing physics-grounded 3D assets is a critical bottleneck for interactive virtual worlds and embodied AI. Existing methods predominantly focus on static geometry, overlooking the functional properties essential for interaction. We propose that interactive asset generation must be rooted in functional logic and hierarchical physics. To bridge this gap, we introduce PhysForge, a decoupled two-stage framework supported by PhysDB, a large-scale dataset of 150,000 assets with four-tier physical annotations. First, a VLM acts as a \"physical architect\" to plan a \"Hierarchical Physical Blueprint\" defining material, functional, and kinematic constraints. Second, a physics-grounded diffusion model realizes this blueprint by synthesizing high-fidelity geometry alongside precise kinematic parameters via a novel KineVoxel Injection (KVI) mechanism. Experiments demonstrate that PhysForge produces functionally plausible, simulation-ready assets, providing a robust data engine for interactive 3D content and embodied agents.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
+      "abstract": "Recent advances have shown that large-scale video diffusion models can be repurposed as neural renderers by first decomposing videos into intrinsic scene representations and then performing forward rendering under novel illumination. While promising, this paradigm fundamentally relies on accurate intrinsic decomposition, which remains highly unreliable for real-world videos and often leads to distorted appearances, broken materials, and accumulated temporal artifacts during relighting. In this work, we present Relit-LiVE, a novel video relighting framework that produces physically consistent, temporally stable results without requiring prior knowledge of camera pose. Our key insight is to explicitly introduce raw reference images into the rendering process, enabling the model to recover critical scene cues that are inevitably lost or corrupted in intrinsic representations. Furthermore, we propose a novel environment video prediction formulation that simultaneously generates relit videos and per-frame environment maps aligned with each camera viewpoint in a single diffusion process. This joint prediction enforces strong geometric-illumination alignment and naturally supports dynamic lighting and camera motion, significantly improving physical consistency in video relighting while easing the requirement of known per-frame camera pose. Extensive experiments demonstrate that Relit-LiVE consistently outperforms state-of-the-art video relighting and neural rendering methods across synthetic and real-world benchmarks. Beyond relighting, our framework naturally supports a wide range of downstream applications, including scene-level rendering, material editing, object insertion, and streaming video relighting. The Project is available at https://github.com/zhuxing0/Relit-LiVE.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.05163v1",
-        "pdf": "https://arxiv.org/pdf/2605.05163v1"
+        "paper": "http://arxiv.org/abs/2605.06658v1",
+        "pdf": "https://arxiv.org/pdf/2605.06658v1"
       },
-      "arxiv_id": "2605.05163v1",
-      "comment": "Accepted by ICML 2026. Project Page: https://hku-mmlab.github.io/PhysForge/",
+      "arxiv_id": "2605.06658v1",
+      "comment": "Accepted at SIGGRAPH 2026. Project site: https://github.com/zhuxing0/Relit-LiVE",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.25,
+      "relevance_score": 5.65,
       "score_breakdown": {
-        "total_score": 5.25,
+        "total_score": 5.65,
         "field_match": {
           "score": 0.0,
           "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Synthesizing physics-grounded 3D assets is a critical bottleneck for interactive virtual worlds and embodied AI. Existing methods predominantly focus on static geometry, overlooking the functional properties essential for interaction. We propose that interactive asset generation must be rooted in functional logic and hierarchical physics. To bridge this gap, we introduce PhysForge, a decoupled two...",
-        "key_contributions": [
-          "Synthesizing physics-grounded 3D assets is a critical bottleneck for interactive virtual worlds and embodied AI.",
-          "Existing methods predominantly focus on static geometry, overlooking the functional properties essential for interaction.",
-          "We propose that interactive asset generation must be rooted in functional logic and hierarchical physics."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05095v1",
-      "title": "A Bayesian Approach for Task-Specific Next-Best-View Selection with Uncertain Geometry",
-      "authors": [
-        "Jingsen Zhu",
-        "Silvia Sellán",
-        "Alexander Terenin"
-      ],
-      "abstract": "We develop a framework for task-specific active next-best-view selection in 3D reconstruction from point clouds, by casting the problem in the language of Bayesian decision theory. Our framework works by (a) placing a prior distribution over the space of implicit surfaces, (b) using recently-developed stochastic surface reconstruction methods to calculate the resulting posterior distribution, then (c) using the posterior distribution to carefully reason about which view to scan next. This enables us to perform camera selection in a manner that is directly optimized for the intended use of the reconstructed data - meaning, we reduce uncertainty only in those regions that make a difference in the task at hand, as opposed to prior approaches that reduce it uniformly across space. We evaluate our method across three distinct downstream tasks: semantic classification, segmentation, and PDE-guided physics simulation. Experimental results demonstrate that our framework achieves superior task performance with fewer views compared to commonly used baselines and prior general uncertainty-reduction techniques.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.GR",
-        "cs.CV",
-        "cs.LG",
-        "stat.ML"
-      ],
-      "primary_category": "cs.GR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05095v1",
-        "pdf": "https://arxiv.org/pdf/2605.05095v1"
-      },
-      "arxiv_id": "2605.05095v1",
-      "comment": "Code for this paper is available at https://github.com/jingsenzhu/BayesianNBV",
-      "journal_ref": "ACM SIGGRAPH 2026",
-      "has_code": true,
-      "relevance_score": 5.1906779661016955,
-      "score_breakdown": {
-        "total_score": 5.19,
-        "field_match": {
-          "score": 1.1,
-          "matches": [
-            "3d reconstruction",
-            "segmentation"
-          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -112,7 +46,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 5.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -121,376 +55,51 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We develop a framework for task-specific active next-best-view selection in 3D reconstruction from point clouds, by casting the problem in the language of Bayesian decision theory. Our framework works by (a) placing a prior distribution over the space of implicit surfaces, (b) using recently-developed stochastic surface reconstruction methods to calculate the resulting posterior distribution, then...",
+        "short": "Recent advances have shown that large-scale video diffusion models can be repurposed as neural renderers by first decomposing videos into intrinsic scene representations and then performing forward rendering under novel illumination. While promising, this paradigm fundamentally relies on accurate intrinsic decomposition, which remains highly unreliable for real-world videos and often leads to dist...",
         "key_contributions": [
-          "We develop a framework for task-specific active next-best-view selection in 3D reconstruction from point clouds, by casting the problem in the language of Bayesian decision theory.",
-          "Our framework works by (a) placing a prior distribution over the space of implicit surfaces, (b) using recently-developed stochastic surface reconstruction methods to calculate the resulting posterior distribution, then (c) using the posterior distribution to carefully reason about which view to scan next.",
-          "This enables us to perform camera selection in a manner that is directly optimized for the intended use of the reconstructed data - meaning, we reduce uncertainty only in those regions that make a difference in the task at hand, as opposed to prior approaches that reduce it uniformly across space."
+          "Recent advances have shown that large-scale video diffusion models can be repurposed as neural renderers by first decomposing videos into intrinsic scene representations and then performing forward rendering under novel illumination.",
+          "While promising, this paradigm fundamentally relies on accurate intrinsic decomposition, which remains highly unreliable for real-world videos and often leads to distorted appearances, broken materials, and accumulated temporal artifacts during relighting.",
+          "In this work, we present Relit-LiVE, a novel video relighting framework that produces physically consistent, temporally stable results without requiring prior knowledge of camera pose."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.05014v1",
-      "title": "CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography",
+      "id": "2605.06623v1",
+      "title": "MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems",
       "authors": [
-        "Gasser Elazab",
-        "Frank Neuhaus",
-        "Tilman Koß",
-        "Malte Splietker",
-        "Aditya Date",
-        "Michael Unterreiner",
-        "Maximilian Jansen",
-        "Olaf Hellwich"
+        "Zhexuan Wang",
+        "Xuebo Liu",
+        "Li Wang",
+        "Zifei Shan",
+        "Yutong Wang",
+        "Zhenxi Song",
+        "Min Zhang"
       ],
-      "abstract": "Autonomous driving must operate across diverse surfaces to enable safe mobility. However, most driving datasets are captured on well-paved flat roads. Moreover, recent driving datasets primarily provide sparse LiDAR ground truth for images, which is insufficient for assessing fine-grained geometry in depth estimation and completion. To address these gaps, we introduce CARD, a multi-modal driving dataset that delivers quasi-dense 3D ground truth across continuous sequences rich in speed bumps, potholes, irregular surfaces and off-road segments. Our sensor suite includes synchronized global-shutter stereo cameras, front and rear LiDARs, 6-DoF poses from LiDAR-inertial odometry, per-wheel motion traces, and full calibration. Notably, our multi-LiDAR fusion yields ~500K valid depth pixels per frame, about 6.5x more than KITTI Depth Completion and 10x more on average than other public driving datasets. The dataset spans ~110 km and 4.7 hours across Germany and Italy. In addition, CARD provides 2D bounding boxes targeting road-topography irregularities, enabling accurate benchmarking for both geometry and perception tasks. Furthermore, we establish a standardized evaluation protocol for road surface irregularities on CARD and benchmark state-of-the-art depth estimation models to provide strong baselines. The CARD dataset is hosted on https://huggingface.co/CARD-Data.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05014v1",
-        "pdf": "https://arxiv.org/pdf/2605.05014v1"
-      },
-      "arxiv_id": "2605.05014v1",
-      "comment": "Accepted at CVPR 2026 (Highlight). Project page: https://card.content.cariad.digital",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.837288135593219,
-      "score_breakdown": {
-        "total_score": 4.84,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Autonomous driving must operate across diverse surfaces to enable safe mobility. However, most driving datasets are captured on well-paved flat roads. Moreover, recent driving datasets primarily provide sparse LiDAR ground truth for images, which is insufficient for assessing fine-grained geometry in depth estimation and completion. To address these gaps, we introduce CARD, a multi-modal driving d...",
-        "key_contributions": [
-          "Autonomous driving must operate across diverse surfaces to enable safe mobility.",
-          "However, most driving datasets are captured on well-paved flat roads.",
-          "Moreover, recent driving datasets primarily provide sparse LiDAR ground truth for images, which is insufficient for assessing fine-grained geometry in depth estimation and completion."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05133v1",
-      "title": "Transformed Latent Variable Multi-Output Gaussian Processes",
-      "authors": [
-        "Xiaoyu Jiang",
-        "Xinxing Shi",
-        "Sokratia Georgaka",
-        "Magnus Rattray",
-        "Mauricio A Álvarez"
-      ],
-      "abstract": "Multi-Output Gaussian Processes (MOGPs) provide a principled probabilistic framework for modelling correlated outputs but face scalability bottlenecks when applied to datasets with high-dimensional output spaces. To maintain tractability, existing methods typically resort to restrictive assumptions, such as employing low-rank or sum-of-separable kernels, which can limit expressiveness. We propose the Transformed Latent Variable MOGP (T-LVMOGP), a novel framework that scales MOGPs to a massive number of outputs while preserving the capacity to capture meaningful inter-output dependencies. T-LVMOGP constructs a flexible multi-output deep kernel by mapping inputs and output-specific latent variables into an embedding space using a Lipschitz-regularised neural network. Combined with stochastic variational inference, our model effectively scales to high-dimensional output settings. Across diverse benchmarks, including climate modelling with over 10,000 outputs and zero-inflated spatial transcriptomics data, T-LVMOGP outperforms baselines in both predictive accuracy and computational efficiency.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05133v1",
-        "pdf": "https://arxiv.org/pdf/2605.05133v1"
-      },
-      "arxiv_id": "2605.05133v1",
-      "comment": "ICML 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Multi-Output Gaussian Processes (MOGPs) provide a principled probabilistic framework for modelling correlated outputs but face scalability bottlenecks when applied to datasets with high-dimensional output spaces. To maintain tractability, existing methods typically resort to restrictive assumptions, such as employing low-rank or sum-of-separable kernels, which can limit expressiveness. We propose ...",
-        "key_contributions": [
-          "Multi-Output Gaussian Processes (MOGPs) provide a principled probabilistic framework for modelling correlated outputs but face scalability bottlenecks when applied to datasets with high-dimensional output spaces.",
-          "To maintain tractability, existing methods typically resort to restrictive assumptions, such as employing low-rank or sum-of-separable kernels, which can limit expressiveness.",
-          "We propose the Transformed Latent Variable MOGP (T-LVMOGP), a novel framework that scales MOGPs to a massive number of outputs while preserving the capacity to capture meaningful inter-output dependencies."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05161v1",
-      "title": "Wasserstein-Aligned Localisation for VLM-Based Distributional OOD Detection in Medical Imaging",
-      "authors": [
-        "Bernhard Kainz",
-        "Johanna P Mueller",
-        "Matthew Baugh",
-        "Cosmin Bercea"
-      ],
-      "abstract": "Zero-shot anomaly localisation via vision-language models (VLMs) offers a compelling approach for rare pathology detection, yet its performance is fundamentally limited by the absence of healthy anatomical context. We reformulate zero-shot localisation as a comparative inference problem in which anomalies are identified through structured comparison against reference distributions of normal anatomy. We introduce WALDO, a training-free framework grounded in optimal transport theory that enables comparative reasoning through: (i) entropy-weighted Sliced Wasserstein distances for anatomically-aware reference selection from DINOv2 patch distributions, (ii) Goldilocks zone sampling exploiting the non-monotonic relationship between reference similarity and localisation accuracy, and (iii) self-consistency aggregation via weighted non-maximum suppression. We theoretically analyse the Goldilocks effect through distributional divergence, and show that references with moderate similarity minimize a bias-variance trade-off in comparative visual reasoning. On the NOVA brain MRI benchmark, WALDO with Qwen2.5-VL-72B achieves $43.5_{\\pm1.6}\\%$ mAP@30 (95\\% CI: [40.4, 46.7]), representing a 19\\% relative improvement over zero-shot baselines. Cross-model evaluation shows consistent gains: GPT-4o achieves $32.0_{\\pm6.5}\\%$ and Qwen3-VL-32B achieves $32.0_{\\pm6.6}\\%$ mAP@30. Paired McNemar tests confirm statistical significance ($p<0.01$). Source code is available at https://github.com/bkainz/WALDO_MICCAI26_demo .",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05161v1",
-        "pdf": "https://arxiv.org/pdf/2605.05161v1"
-      },
-      "arxiv_id": "2605.05161v1",
-      "comment": "submitted to MICCAI 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.555084745762712,
-      "score_breakdown": {
-        "total_score": 4.56,
-        "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical imaging"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "MICCAI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Zero-shot anomaly localisation via vision-language models (VLMs) offers a compelling approach for rare pathology detection, yet its performance is fundamentally limited by the absence of healthy anatomical context. We reformulate zero-shot localisation as a comparative inference problem in which anomalies are identified through structured comparison against reference distributions of normal anatom...",
-        "key_contributions": [
-          "Zero-shot anomaly localisation via vision-language models (VLMs) offers a compelling approach for rare pathology detection, yet its performance is fundamentally limited by the absence of healthy anatomical context.",
-          "We reformulate zero-shot localisation as a comparative inference problem in which anomalies are identified through structured comparison against reference distributions of normal anatomy.",
-          "We introduce WALDO, a training-free framework grounded in optimal transport theory that enables comparative reasoning through: (i) entropy-weighted Sliced Wasserstein distances for anatomically-aware reference selection from DINOv2 patch distributions, (ii) Goldilocks zone sampling exploiting the non-monotonic relationship between reference similarity and localisation accuracy, and (iii) self-consistency aggregation via weighted non-maximum suppression."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05027v1",
-      "title": "Prompt-Anchored Vision-Text Distillation for Lifelong Person Re-identification",
-      "authors": [
-        "Wen Wen",
-        "Hao Chen",
-        "Shiliang Zhang"
-      ],
-      "abstract": "Lifelong person re-identification (LReID) aims to train a generalizable model with sequentially collected data. However, such models often suffer from semantic drift, limited adaptability, and catastrophic forgetting as new domains emerge. Existing exemplar-free approaches largely rely on visual-only distillation or parameter regularization, while overlooking the potential of auxiliary modalities, such as text, to preserve semantic stability and enable incremental plasticity. We observe that the frozen text encoder in pretrained vision-language models can serve as a stable semantic anchor across domains. To decouple the roles of vision and text, we propose Prompt-Anchored vision-text Distillation (PAD), an asymmetric vision-text framework for semantic alignment and cross-domain generalization. On the textual side, we distill prompts to preserve vision-text alignment under a fixed semantic space, acting as a global semantic reference rather than a dominant learning signal. On the visual side, an EMA-based teacher with an adaptive prompt pool enables domain-wise adaptation by allocating new slots while freezing past ones. Extensive experiments show that PAD substantially outperforms state-of-the-art methods across seen and unseen domains, achieving a strong balance between stability and plasticity. Project page is available at https://github.com/zu-zi/PAD.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05027v1",
-        "pdf": "https://arxiv.org/pdf/2605.05027v1"
-      },
-      "arxiv_id": "2605.05027v1",
-      "comment": "Accepted to CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.35,
-      "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Lifelong person re-identification (LReID) aims to train a generalizable model with sequentially collected data. However, such models often suffer from semantic drift, limited adaptability, and catastrophic forgetting as new domains emerge. Existing exemplar-free approaches largely rely on visual-only distillation or parameter regularization, while overlooking the potential of auxiliary modalities,...",
-        "key_contributions": [
-          "Lifelong person re-identification (LReID) aims to train a generalizable model with sequentially collected data.",
-          "However, such models often suffer from semantic drift, limited adaptability, and catastrophic forgetting as new domains emerge.",
-          "Existing exemplar-free approaches largely rely on visual-only distillation or parameter regularization, while overlooking the potential of auxiliary modalities, such as text, to preserve semantic stability and enable incremental plasticity."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05207v1",
-      "title": "Syn4D: A Multiview Synthetic 4D Dataset",
-      "authors": [
-        "Zeren Jiang",
-        "Yushi Lan",
-        "Yihang Luo",
-        "Yufan Deng",
-        "Zihang Lai",
-        "Edgar Sucar",
-        "Christian Rupprecht",
-        "Iro Laina",
-        "Diane Larlus",
-        "Chuanxia Zheng",
-        "Andrea Vedaldi"
-      ],
-      "abstract": "Dense 3D reconstruction and tracking of dynamic scenes from monocular video remains an important open challenge in computer vision. Progress in this area has been constrained by the scarcity of high-quality datasets with dense, complete, and accurate geometric annotations. To address this limitation, we introduce Syn4D, a multiview synthetic dataset of dynamic scenes that includes ground-truth camera motion, depth maps, dense tracking, and parametric human pose annotations. A key feature of Syn4D is the ability to unproject any pixel into 3D to any time and to any camera. We conduct extensive evaluations across multiple downstream tasks to demonstrate the utility and effectiveness of the proposed dataset, including 4D scene reconstruction, 3D point tracking, geometry-aware camera retargeting, and human pose estimation. The experimental results highlight Syn4D's potential to facilitate research in dynamic scene understanding and spatiotemporal modeling.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05207v1",
-        "pdf": "https://arxiv.org/pdf/2605.05207v1"
-      },
-      "arxiv_id": "2605.05207v1",
-      "comment": "30 pages, 10 figures, project page: https://jzr99.github.io/Syn4D/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.2567796610169495,
-      "score_breakdown": {
-        "total_score": 4.26,
-        "field_match": {
-          "score": 1.02,
-          "matches": [
-            "3d reconstruction",
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Dense 3D reconstruction and tracking of dynamic scenes from monocular video remains an important open challenge in computer vision. Progress in this area has been constrained by the scarcity of high-quality datasets with dense, complete, and accurate geometric annotations. To address this limitation, we introduce Syn4D, a multiview synthetic dataset of dynamic scenes that includes ground-truth cam...",
-        "key_contributions": [
-          "Dense 3D reconstruction and tracking of dynamic scenes from monocular video remains an important open challenge in computer vision.",
-          "Progress in this area has been constrained by the scarcity of high-quality datasets with dense, complete, and accurate geometric annotations.",
-          "To address this limitation, we introduce Syn4D, a multiview synthetic dataset of dynamic scenes that includes ground-truth camera motion, depth maps, dense tracking, and parametric human pose annotations."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05017v1",
-      "title": "Position: Embodied AI Requires a Privacy-Utility Trade-off",
-      "authors": [
-        "Xiaoliang Fan",
-        "Jiarui Chen",
-        "Zhuodong Liu",
-        "Ziqi Yang",
-        "Peixuan Xu",
-        "Ruimin Shen",
-        "Junhui Liu",
-        "Jianzhong Qi",
-        "Cheng Wang"
-      ],
-      "abstract": "Embodied AI (EAI) systems are rapidly transitioning from simulations into real-world domestic and other sensitive environments. However, recent EAI solutions have largely demonstrated advancements within isolated stages such as instruction, perception, planning and interaction, without considering their coupled privacy implications in high-frequency deployments where privacy leakage is often irreversible. This position paper argues that optimizing these components independently creates a systemic privacy crisis when deployed in sensitive settings, thereby advancing the position that privacy in EAI is a life cycle-level architectural constraint rather than a stage-local feature. To address these challenges, we propose Secure Privacy Integration in Next-generation Embodied AI (SPINE), a unified privacy-aware framework that treats privacy as a dynamic control signal governing cross-stage coupling throughout the entire EAI life cycle. SPINE decomposes the EAI pipeline into various stages and establishes a multi-criterion privacy classification matrix to orchestrate contextual sensitivity across stage boundaries. We conduct preliminary simulation and real-world case studies to conceptually validate how privacy constraints propagate downstream to reshape system behavior, illustrating the insufficiency of fragmented privacy patches and motivating future research directions into secure yet functional embodied AI systems. We detail the SPINE framework and case studies at https://github.com/rminshen03/EAI_Privacy_Position.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
+      "abstract": "Large language model (LLM)-based Multi-agent systems (MAS) have shown promise in tackling complex collaborative tasks, where agents are typically orchestrated via role-specific prompts. While the quality of these prompts is pivotal, jointly optimizing them across interacting agents remains a non-trivial challenge, primarily due to the misalignment between local agent objectives and holistic system goals. To address this, we introduce MASPO, a novel framework designed to automatically and iteratively refine prompts across the entire system. A core innovation of MASPO is its joint evaluation mechanism, which assesses prompts not merely by their local validity, but by their capacity to facilitate downstream success for successor agents. This effectively bridges the gap between local interactions and global outcomes without relying on ground-truth labels. Furthermore, MASPO employs a data-driven evolutionary beam search to efficiently navigate the high-dimensional prompt space. Extensive empirical evaluations across 6 diverse tasks demonstrate that MASPO consistently outperforms state-of-the-art prompt optimization methods, achieving an average accuracy improvement of 2.9. We release our code at https://github.com/wangzx1219/MASPO.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
       "categories": [
         "cs.AI",
-        "cs.RO"
+        "cs.CL"
       ],
       "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.05017v1",
-        "pdf": "https://arxiv.org/pdf/2605.05017v1"
+        "paper": "http://arxiv.org/abs/2605.06623v1",
+        "pdf": "https://arxiv.org/pdf/2605.06623v1"
       },
-      "arxiv_id": "2605.05017v1",
-      "comment": "Accepted at ICML 2026. 10 pages, 3 figures",
+      "arxiv_id": "2605.06623v1",
+      "comment": "Accepted at ICML 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.25,
+      "relevance_score": 4.6499999999999995,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 4.65,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -499,75 +108,6 @@
         "venue_quality": {
           "score": 10,
           "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Embodied AI (EAI) systems are rapidly transitioning from simulations into real-world domestic and other sensitive environments. However, recent EAI solutions have largely demonstrated advancements within isolated stages such as instruction, perception, planning and interaction, without considering their coupled privacy implications in high-frequency deployments where privacy leakage is often irrev...",
-        "key_contributions": [
-          "Embodied AI (EAI) systems are rapidly transitioning from simulations into real-world domestic and other sensitive environments.",
-          "However, recent EAI solutions have largely demonstrated advancements within isolated stages such as instruction, perception, planning and interaction, without considering their coupled privacy implications in high-frequency deployments where privacy leakage is often irreversible.",
-          "This position paper argues that optimizing these components independently creates a systemic privacy crisis when deployed in sensitive settings, thereby advancing the position that privacy in EAI is a life cycle-level architectural constraint rather than a stage-local feature."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.05155v1",
-      "title": "Aes3D: Aesthetic Assessment in 3D Gaussian Splatting",
-      "authors": [
-        "Chuanzhi Xu",
-        "Boyu Wei",
-        "Haoxian Zhou",
-        "Xuanhua Yin",
-        "Zihan Deng",
-        "Haodong Chen",
-        "Qiang Qu",
-        "Weidong Cai"
-      ],
-      "abstract": "As 3D Gaussian Splatting (3DGS) gains attention in immersive media and digital content creation, assessing the aesthetics of 3D scenes becomes important in helping creators build more visually compelling 3D content. However, existing evaluation methods for 3D scenes primarily emphasize reconstruction fidelity and perceptual realism, largely overlooking higher-level aesthetic attributes such as composition, harmony, and visual appeal. This limitation comes from two key challenges: (1) the absence of general 3DGS datasets with aesthetic annotations, and (2) the intrinsic nature of 3DGS as a low-level primitive representation, which makes it difficult to capture high-level aesthetic features. To address these challenges, we propose Aes3D, the first systematic framework for assessing the aesthetics of 3D neural rendering scenes. Aes3D includes Aesthetic3D, the first dataset dedicated to 3D scene aesthetic assessment, built on our proposed annotation strategy for 3D scene aesthetics. In addition, we present Aes3DGSNet, a lightweight model that directly predicts scene-level aesthetic scores from 3DGS representations. Notably, our model operates solely on 3D Gaussian primitives, eliminating the need for rendering multi-view images and thus reducing computational cost and hardware requirements. Through aesthetics-supervised learning on multi-view 3DGS scene representations, Aes3DGSNet effectively captures high-level aesthetic cues and accurately regresses aesthetic scores. Experimental results demonstrate that our approach achieves strong performance while maintaining a lightweight design, establishing a new benchmark for 3D scene aesthetic assessment. Code and datasets will be made available in a future version.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.05155v1",
-        "pdf": "https://arxiv.org/pdf/2605.05155v1"
-      },
-      "arxiv_id": "2605.05155v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.177966101694915,
-      "score_breakdown": {
-        "total_score": 4.18,
-        "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -580,53 +120,435 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "As 3D Gaussian Splatting (3DGS) gains attention in immersive media and digital content creation, assessing the aesthetics of 3D scenes becomes important in helping creators build more visually compelling 3D content. However, existing evaluation methods for 3D scenes primarily emphasize reconstruction fidelity and perceptual realism, largely overlooking higher-level aesthetic attributes such as com...",
+        "short": "Large language model (LLM)-based Multi-agent systems (MAS) have shown promise in tackling complex collaborative tasks, where agents are typically orchestrated via role-specific prompts. While the quality of these prompts is pivotal, jointly optimizing them across interacting agents remains a non-trivial challenge, primarily due to the misalignment between local agent objectives and holistic system...",
         "key_contributions": [
-          "As 3D Gaussian Splatting (3DGS) gains attention in immersive media and digital content creation, assessing the aesthetics of 3D scenes becomes important in helping creators build more visually compelling 3D content.",
-          "However, existing evaluation methods for 3D scenes primarily emphasize reconstruction fidelity and perceptual realism, largely overlooking higher-level aesthetic attributes such as composition, harmony, and visual appeal.",
-          "This limitation comes from two key challenges: (1) the absence of general 3DGS datasets with aesthetic annotations, and (2) the intrinsic nature of 3DGS as a low-level primitive representation, which makes it difficult to capture high-level aesthetic features."
+          "Large language model (LLM)-based Multi-agent systems (MAS) have shown promise in tackling complex collaborative tasks, where agents are typically orchestrated via role-specific prompts.",
+          "While the quality of these prompts is pivotal, jointly optimizing them across interacting agents remains a non-trivial challenge, primarily due to the misalignment between local agent objectives and holistic system goals.",
+          "To address this, we introduce MASPO, a novel framework designed to automatically and iteratively refine prompts across the entire system."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.05204v1",
-      "title": "D-OPSD: On-Policy Self-Distillation for Continuously Tuning Step-Distilled Diffusion Models",
+      "id": "2605.06667v1",
+      "title": "ActCam: Zero-Shot Joint Camera and 3D Motion Control for Video Generation",
       "authors": [
-        "Dengyang Jiang",
-        "Xin Jin",
-        "Dongyang Liu",
-        "Zanyi Wang",
-        "Mingzhe Zheng",
-        "Ruoyi Du",
-        "Xiangpeng Yang",
-        "Qilong Wu",
-        "Zhen Li",
-        "Peng Gao",
-        "Harry Yang",
-        "Steven Hoi"
+        "Omar El Khalifi",
+        "Thomas Rossi",
+        "Oscar Fossey",
+        "Thibault Fouque",
+        "Ulysse Mizrahi",
+        "Philip Torr",
+        "Ivan Laptev",
+        "Fabio Pizzati",
+        "Baptiste Bellot-Gurlet"
       ],
-      "abstract": "The landscape of high-performance image generation models is currently shifting from the inefficient multi-step ones to the efficient few-step counterparts (e.g, Z-Image-Turbo and FLUX.2-klein). However, these models present significant challenges for directly continuous supervised fine-tuning. For example, applying the commonly used fine-tuning technique would compromises their inherent few-step inference capability. To address this, we propose D-OPSD, a novel training paradigm for step-distilled diffusion models that enables on-policy learning during supervised fine-tuning. We first find that the modern diffusion model where the LLM/VLM serves as the encoder can inherit its encoder's in-context capabilities. This enables us to make the training as an on-policy self-distillation process. Specifically, during training, we make the model acts as both the teacher and the student with different contexts, where the student is conditioned only on the text feature, while the teacher is conditioned on the multimodal feature of both the text prompt and the target image. Training minimizes the two predicted distributions over the student's own roll-outs. By optimized on the model's own trajectory and under it's own supervision, D-OPSD enables the model to learn new concept, style, etc. without sacrificing the original few-step capacity.",
-      "published": "2026-05-06",
-      "updated": "2026-05-06",
+      "abstract": "For artistic applications, video generation requires fine-grained control over both performance and cinematography, i.e., the actor's motion and the camera trajectory. We present ActCam, a zero-shot method for video generation that jointly transfers character motion from a driving video into a new scene and enables per-frame control of intrinsic and extrinsic camera parameters. ActCam builds on any pretrained image-to-video diffusion model that accepts conditioning in terms of scene depth and character pose. Given a source video with a moving character and a target camera motion, ActCam generates pose and depth conditions that remain geometrically consistent across frames. We then run a single sampling process with a two-phase conditioning schedule: early denoising steps condition on both pose and sparse depth to enforce scene structure, after which depth is dropped and pose-only guidance refines high-frequency details without over-constraining the generation. We evaluate ActCam on multiple benchmarks spanning diverse character motions and challenging viewpoint changes. We find that, compared to pose-only control and other pose and camera methods, ActCam improves camera adherence and motion fidelity, and is preferred in human evaluations, especially under large viewpoint changes. Our results highlight that careful camera-consistent conditioning and staged guidance can enable strong joint camera and motion control without training. Project page: https://elkhomar.github.io/actcam/.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.05204v1",
-        "pdf": "https://arxiv.org/pdf/2605.05204v1"
+        "paper": "http://arxiv.org/abs/2605.06667v1",
+        "pdf": "https://arxiv.org/pdf/2605.06667v1"
       },
-      "arxiv_id": "2605.05204v1",
-      "comment": "Project Page: https://vvvvvjdy.github.io/d-opsd/",
+      "arxiv_id": "2605.06667v1",
+      "comment": "SIGGRAPH 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.6,
+      "score_breakdown": {
+        "total_score": 4.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "For artistic applications, video generation requires fine-grained control over both performance and cinematography, i.e., the actor's motion and the camera trajectory. We present ActCam, a zero-shot method for video generation that jointly transfers character motion from a driving video into a new scene and enables per-frame control of intrinsic and extrinsic camera parameters. ActCam builds on an...",
+        "key_contributions": [
+          "For artistic applications, video generation requires fine-grained control over both performance and cinematography, i.",
+          "e.",
+          ", the actor's motion and the camera trajectory."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06510v1",
+      "title": "Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models",
+      "authors": [
+        "Amir Rezaei Balef",
+        "Mykhailo Koshil",
+        "Katharina Eggensperger"
+      ],
+      "abstract": "Transformer-based tabular foundation models (TFMs) dominate small to medium tabular predictive benchmark tasks, yet their inference mechanisms remain largely unexplored. We present the first large-scale mechanistic study of layerwise dynamics in 6 state-of-the-art tabular in-context learning models. We explore how predictions emerge across depth, identify distinct stages of inference and reveal latent-space dynamics that differ from those of language models. Our findings indicate substantial depthwise redundancy across multiple models, suggesting iterative refinement with overlapping computations during inference stages. Guided by these insights, we design a proof-of-concept, looped single-layer model that uses only 20% of the original model's parameters while achieving comparable performance. The code is available at https://github.com/amirbalef/is_one_layer_enough.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06510v1",
+        "pdf": "https://arxiv.org/pdf/2605.06510v1"
+      },
+      "arxiv_id": "2605.06510v1",
+      "comment": "Accepted at the 43rd International Conference on Machine Learning (ICML 2026)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Transformer-based tabular foundation models (TFMs) dominate small to medium tabular predictive benchmark tasks, yet their inference mechanisms remain largely unexplored. We present the first large-scale mechanistic study of layerwise dynamics in 6 state-of-the-art tabular in-context learning models. We explore how predictions emerge across depth, identify distinct stages of inference and reveal la...",
+        "key_contributions": [
+          "Transformer-based tabular foundation models (TFMs) dominate small to medium tabular predictive benchmark tasks, yet their inference mechanisms remain largely unexplored.",
+          "We present the first large-scale mechanistic study of layerwise dynamics in 6 state-of-the-art tabular in-context learning models.",
+          "We explore how predictions emerge across depth, identify distinct stages of inference and reveal latent-space dynamics that differ from those of language models."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06664v1",
+      "title": "BAMI: Training-Free Bias Mitigation in GUI Grounding",
+      "authors": [
+        "Borui Zhang",
+        "Bo Zhang",
+        "Bo Wang",
+        "Wenzhao Zheng",
+        "Yuhao Cheng",
+        "Liang Tang",
+        "Yiqiang Yan",
+        "Jie Zhou",
+        "Jiwen Lu"
+      ],
+      "abstract": "GUI grounding is a critical capability for enabling GUI agents to execute tasks such as clicking and dragging. However, in complex scenarios like the ScreenSpot-Pro benchmark, existing models often suffer from suboptimal performance. Utilizing the proposed \\textbf{Masked Prediction Distribution (MPD)} attribution method, we identify that the primary sources of errors are twofold: high image resolution (leading to precision bias) and intricate interface elements (resulting in ambiguity bias). To address these challenges, we introduce \\textbf{Bias-Aware Manipulation Inference (BAMI)}, which incorporates two key manipulations, coarse-to-fine focus and candidate selection, to effectively mitigate these biases. Our extensive experimental results demonstrate that BAMI significantly enhances the accuracy of various GUI grounding models in a training-free setting. For instance, applying our method to the TianXi-Action-7B model boosts its accuracy on the ScreenSpot-Pro benchmark from 51.9\\% to 57.8\\%. Furthermore, ablation studies confirm the robustness of the BAMI approach across diverse parameter configurations, highlighting its stability and effectiveness. Code is available at https://github.com/Neur-IO/BAMI.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06664v1",
+        "pdf": "https://arxiv.org/pdf/2605.06664v1"
+      },
+      "arxiv_id": "2605.06664v1",
+      "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.3999999999999995,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "GUI grounding is a critical capability for enabling GUI agents to execute tasks such as clicking and dragging. However, in complex scenarios like the ScreenSpot-Pro benchmark, existing models often suffer from suboptimal performance. Utilizing the proposed \\textbf{Masked Prediction Distribution (MPD)} attribution method, we identify that the primary sources of errors are twofold: high image resolu...",
+        "key_contributions": [
+          "GUI grounding is a critical capability for enabling GUI agents to execute tasks such as clicking and dragging.",
+          "However, in complex scenarios like the ScreenSpot-Pro benchmark, existing models often suffer from suboptimal performance.",
+          "Utilizing the proposed \\textbf{Masked Prediction Distribution (MPD)} attribution method, we identify that the primary sources of errors are twofold: high image resolution (leading to precision bias) and intricate interface elements (resulting in ambiguity bias)."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06572v1",
+      "title": "Solving Minimal Problems Without Matrix Inversion Using FFT-Based Interpolation",
+      "authors": [
+        "Haidong Wu",
+        "Snehal Bhayani",
+        "Janne Heikkilä"
+      ],
+      "abstract": "Estimating camera geometry typically involves solving minimal problems formulated as systems of multivariate polynomial equations, which often pose computational challenges when using existing Gröbner-basis or resultant-based methods due to matrix inversion needed in the online solver. Here we propose a sampling-based, matrix inversion-free method that constructs the solvers using sparse hidden-variable resultants. The determinant polynomial in the hidden variable is efficiently reconstructed via inverse fast Fourier transform interpolation from sampled evaluations, avoiding symbolic expansion. Solving this polynomial yields the hidden variable, and the remaining unknowns are recovered by identifying rank-1 deficient submatrices and applying Cramer's rule. A greatest common divisor-based criterion ensures robust submatrix identification under noise. Experiments on diverse minimal problems demonstrate that the proposed solver achieves strong numerical stability and competitive runtime, particularly for small-scale problems, providing a practical alternative to traditional Gröbner-basis and resultant-based solvers.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV",
+        "math.NA"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06572v1",
+        "pdf": "https://arxiv.org/pdf/2605.06572v1"
+      },
+      "arxiv_id": "2605.06572v1",
+      "comment": "Accepted to CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Estimating camera geometry typically involves solving minimal problems formulated as systems of multivariate polynomial equations, which often pose computational challenges when using existing Gröbner-basis or resultant-based methods due to matrix inversion needed in the online solver. Here we propose a sampling-based, matrix inversion-free method that constructs the solvers using sparse hidden-va...",
+        "key_contributions": [
+          "Estimating camera geometry typically involves solving minimal problems formulated as systems of multivariate polynomial equations, which often pose computational challenges when using existing Gröbner-basis or resultant-based methods due to matrix inversion needed in the online solver.",
+          "Here we propose a sampling-based, matrix inversion-free method that constructs the solvers using sparse hidden-variable resultants.",
+          "The determinant polynomial in the hidden variable is efficiently reconstructed via inverse fast Fourier transform interpolation from sampled evaluations, avoiding symbolic expansion."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06611v1",
+      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "authors": [
+        "Siquan Li",
+        "Kaiqi Jiang",
+        "Jiacheng Sun",
+        "Tianyang Hu"
+      ],
+      "abstract": "Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive. This work provides a \\textit{mechanistic explanation} for this phenomenon. First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discrepancy. We further demonstrate that this discrepancy is drastically amplified by the activation of super neurons within Feed-Forward Network (FFN) layers. Specifically, the channel-sparse down-projections trigger a dimension disparity of the first-token representation, necessitating the formation of attention sinks as a structural anchor. Then, we validate this causal chain through two controlled interventions: (i) isolating the aggregation effect via attention mask modifications and (ii) amplifying the variance of targeted token representations. Both interventions can replicate attention sinks at arbitrary positions. Our mechanistic understanding offers a foundation for the systematic control of sink formation. Finally, as a proof of concept, we propose \\textit{head-wise RMSNorm}, an architectural modification that stabilizes value aggregation outputs during pre-training. Our experiments demonstrate that restoring statistical parity across positions significantly accelerates convergence.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06611v1",
+        "pdf": "https://arxiv.org/pdf/2605.06611v1"
+      },
+      "arxiv_id": "2605.06611v1",
+      "comment": "Accepted to ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive. This work provides a \\textit{mechanistic explanation} for this phenomenon. First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discre...",
+        "key_contributions": [
+          "Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive.",
+          "This work provides a \\textit{mechanistic explanation} for this phenomenon.",
+          "First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discrepancy."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06593v1",
+      "title": "ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting",
+      "authors": [
+        "David Müller",
+        "Agon Serifi",
+        "Sammy Christen",
+        "Ruben Grandia",
+        "Espen Knoop",
+        "Moritz Bächer"
+      ],
+      "abstract": "Retargeting human kinematic reference motion onto a robot's morphology remains a formidable challenge. Existing methods often produce physical inconsistencies, such as foot sliding, self-collisions, or dynamically infeasible motions, which hinder downstream imitation learning. We propose a bilevel optimization framework that jointly adapts reference motions to a robot's morphology while training a tracking policy using reinforcement learning. To make the optimization tractable, we derive an approximate gradient for the upper-level loss. Our framework requires only a sparse set of semantic rigid-body correspondences and eliminates the need for manual tuning by identifying optimal values for a parameterization expressive enough to preserve characteristic motion across different embodiments. Moreover, by integrating retargeting directly with physics simulation, we produce physically plausible motions that facilitate robust imitation learning. We validate our method in simulation and on hardware, demonstrating challenging motions for morphologies that differ significantly from a human, including retargeting onto a quadruped.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.RO",
+        "cs.GR",
+        "cs.LG"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06593v1",
+        "pdf": "https://arxiv.org/pdf/2605.06593v1"
+      },
+      "arxiv_id": "2605.06593v1",
+      "comment": "SIGGRAPH 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Retargeting human kinematic reference motion onto a robot's morphology remains a formidable challenge. Existing methods often produce physical inconsistencies, such as foot sliding, self-collisions, or dynamically infeasible motions, which hinder downstream imitation learning. We propose a bilevel optimization framework that jointly adapts reference motions to a robot's morphology while training a...",
+        "key_contributions": [
+          "Retargeting human kinematic reference motion onto a robot's morphology remains a formidable challenge.",
+          "Existing methods often produce physical inconsistencies, such as foot sliding, self-collisions, or dynamically infeasible motions, which hinder downstream imitation learning.",
+          "We propose a bilevel optimization framework that jointly adapts reference motions to a robot's morphology while training a tracking policy using reinforcement learning."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06643v1",
+      "title": "Are We Making Progress in Multimodal Domain Generalization? A Comprehensive Benchmark Study",
+      "authors": [
+        "Hao Dong",
+        "Hongzhao Li",
+        "Shupan Li",
+        "Muhammad Haris Khan",
+        "Eleni Chatzi",
+        "Olga Fink"
+      ],
+      "abstract": "Despite the growing popularity of Multimodal Domain Generalization (MMDG) for enhancing model robustness, it remains unclear whether reported performance gains reflect genuine algorithmic progress or are artifacts of inconsistent evaluation protocols. Current research is fragmented, with studies varying significantly across datasets, modality configurations, and experimental settings. Furthermore, existing benchmarks focus predominantly on action recognition, often neglecting critical real-world challenges such as input corruptions, missing modalities, and model trustworthiness. This lack of standardization obscures a reliable assessment of the field's advancement. To address this issue, we introduce MMDG-Bench, the first unified and comprehensive benchmark for MMDG, which standardizes evaluation across six datasets spanning three diverse tasks: action recognition, mechanical fault diagnosis, and sentiment analysis. MMDG-Bench encompasses six modality combinations, nine representative methods, and multiple evaluation settings. Beyond standard accuracy, it systematically assesses corruption robustness, missing-modality generalization, misclassification detection, and out-of-distribution detection. With 7, 402 neural networks trained in total across 95 unique cross-domain tasks, MMDG-Bench yields five key findings: (1) under fair comparisons, recent specialized MMDG methods offer only marginal improvements over ERM baseline; (2) no single method consistently outperforms others across datasets or modality combinations; (3) a substantial gap to upper-bound performance persists, indicating that MMDG remains far from solved; (4) trimodal fusion does not consistently outperform the strongest bimodal configurations; and (5) all evaluated methods exhibit significant degradation under corruption and missing-modality scenarios, with some methods further compromising model trustworthiness.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06643v1",
+        "pdf": "https://arxiv.org/pdf/2605.06643v1"
+      },
+      "arxiv_id": "2605.06643v1",
+      "comment": "Code: https://github.com/lihongzhao99/MMDG_Benchmark",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1,
+      "relevance_score": 4.1000000000000005,
       "score_breakdown": {
         "total_score": 4.1,
         "field_match": {
@@ -640,7 +562,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -649,16 +571,78 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The landscape of high-performance image generation models is currently shifting from the inefficient multi-step ones to the efficient few-step counterparts (e.g, Z-Image-Turbo and FLUX.2-klein). However, these models present significant challenges for directly continuous supervised fine-tuning. For example, applying the commonly used fine-tuning technique would compromises their inherent few-step ...",
+        "short": "Despite the growing popularity of Multimodal Domain Generalization (MMDG) for enhancing model robustness, it remains unclear whether reported performance gains reflect genuine algorithmic progress or are artifacts of inconsistent evaluation protocols. Current research is fragmented, with studies varying significantly across datasets, modality configurations, and experimental settings. Furthermore,...",
         "key_contributions": [
-          "The landscape of high-performance image generation models is currently shifting from the inefficient multi-step ones to the efficient few-step counterparts (e.",
-          "g, Z-Image-Turbo and FLUX.",
-          "2-klein)."
+          "Despite the growing popularity of Multimodal Domain Generalization (MMDG) for enhancing model robustness, it remains unclear whether reported performance gains reflect genuine algorithmic progress or are artifacts of inconsistent evaluation protocols.",
+          "Current research is fragmented, with studies varying significantly across datasets, modality configurations, and experimental settings.",
+          "Furthermore, existing benchmarks focus predominantly on action recognition, often neglecting critical real-world challenges such as input corruptions, missing modalities, and model trustworthiness."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.06535v1",
+      "title": "Sparkle: Realizing Lively Instruction-Guided Video Background Replacement via Decoupled Guidance",
+      "authors": [
+        "Ziyun Zeng",
+        "Yiqi Lin",
+        "Guoqiang Liang",
+        "Mike Zheng Shou"
+      ],
+      "abstract": "In recent years, open-source efforts like Senorita-2M have propelled video editing toward natural language instruction. However, current publicly available datasets predominantly focus on local editing or style transfer, which largely preserve the original scene structure and are easier to scale. In contrast, Background Replacement, a task central to creative applications such as film production and advertising, requires synthesizing entirely new, temporally consistent scenes while maintaining accurate foreground-background interactions, making large-scale data generation significantly more challenging. Consequently, this complex task remains largely underexplored due to a scarcity of high-quality training data. This gap is evident in poorly performing state-of-the-art models, e.g., Kiwi-Edit, because the primary open-source dataset that contains this task, i.e., OpenVE-3M, frequently produces static, unnatural backgrounds. In this paper, we trace this quality degradation to a lack of precise background guidance during data synthesis. Accordingly, we design a scalable pipeline that generates foreground and background guidance in a decoupled manner with strict quality filtering. Building on this pipeline, we introduce Sparkle, a dataset of ~140K video pairs spanning five common background-change themes, alongside Sparkle-Bench, the largest evaluation benchmark tailored for background replacement to date. Experiments demonstrate that our dataset and the model trained on it achieve substantially better performance than all existing baselines on both OpenVE-Bench and Sparkle-Bench. Our proposed dataset, benchmark, and model are fully open-sourced at https://showlab.github.io/Sparkle/.",
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.06535v1",
+        "pdf": "https://arxiv.org/pdf/2605.06535v1"
+      },
+      "arxiv_id": "2605.06535v1",
+      "comment": "Tech Report. Project Page: https://showlab.github.io/Sparkle/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1000000000000005,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "In recent years, open-source efforts like Senorita-2M have propelled video editing toward natural language instruction. However, current publicly available datasets predominantly focus on local editing or style transfer, which largely preserve the original scene structure and are easier to scale. In contrast, Background Replacement, a task central to creative applications such as film production a...",
+        "key_contributions": [
+          "In recent years, open-source efforts like Senorita-2M have propelled video editing toward natural language instruction.",
+          "However, current publicly available datasets predominantly focus on local editing or style transfer, which largely preserve the original scene structure and are easier to scale.",
+          "In contrast, Background Replacement, a task central to creative applications such as film production and advertising, requires synthesizing entirely new, temporally consistent scenes while maintaining accurate foreground-background interactions, making large-scale data generation significantly more challenging."
         ],
         "provider": "gemini"
       }

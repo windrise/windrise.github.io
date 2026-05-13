@@ -3,38 +3,46 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.07905v1",
-      "title": "CoCoReviewBench: A Completeness- and Correctness-Oriented Benchmark for AI Reviewers",
+      "id": "2605.10859v1",
+      "title": "Masked Generative Transformer Is What You Need for Image Editing",
       "authors": [
-        "Hexuan Deng",
-        "Xiaopeng Ke",
-        "Yichen Li",
-        "Ruina Hu",
-        "Dehao Huang",
-        "Derek F. Wong",
-        "Yue Wang",
-        "Xuebo Liu",
-        "Min Zhang"
+        "Wei Chow",
+        "Linfeng Li",
+        "Xian Sun",
+        "Lingdong Kong",
+        "Zefeng Li",
+        "Qi Xu",
+        "Hang Song",
+        "Tian Ye",
+        "Xian Wang",
+        "Jinbin Bai",
+        "Shilin Xu",
+        "Xiangtai Li",
+        "Junting Pan",
+        "Shaoteng Liu",
+        "Ran Zhou",
+        "Tianshu Yang",
+        "Songhua Liu"
       ],
-      "abstract": "Despite the rapid development of AI reviewers, evaluating such systems remains challenging: metrics favor overlap with human reviews over correctness. However, since human reviews often cover only a subset of salient issues and sometimes contain mistakes, they are unreliable as gold references. To address this, we build category-specific benchmark subsets and skip evaluation when the corresponding human reviews are missing to strengthen Completeness. We also leverage reviewer--author--meta-review discussions as expert annotations and filter unreliable reviews accordingly to strengthen Correctness. Finally, we introduce CoCoReviewBench, which curates 3,900 papers from ICLR and NeurIPS to enable reliable and fine-grained evaluation of AI reviewers. Analysis shows that AI reviewers remain limited in correctness and are prone to hallucinations, and highlights reasoning models as more effective reviewers, motivating further directions for improving AI reviewers. Benchmarks and models are available at https://github.com/hexuandeng/CoCoReviewBench.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
+      "abstract": "Diffusion models dominate image editing, yet their global denoising mechanism entangles edited regions with surrounding context, causing modifications to propagate into areas that should remain intact. We propose a fundamentally different approach by leveraging Masked Generative Transformers (MGTs), whose localized token-prediction paradigm naturally confines changes to intended regions. We present EditMGT, an MGT-based editing framework that is the first of its kind. Our approach employs multi-layer attention consolidation to aggregate cross-attention maps into precise edit localization signals, and region-hold sampling to explicitly prevent token flipping in non-target areas. To support training, we construct CrispEdit-2M, a 2M-sample high-resolution (>1024) editing dataset spanning seven categories. With only 960M parameters, EditMGT achieves state-of-the-art image similarity on multiple benchmarks while delivering 6x faster editing, demonstrating that MGTs offer a compelling alternative to diffusion-based editing.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
       "categories": [
-        "cs.CL",
-        "cs.AI"
+        "cs.CV",
+        "cs.LG"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.07905v1",
-        "pdf": "https://arxiv.org/pdf/2605.07905v1"
+        "paper": "http://arxiv.org/abs/2605.10859v1",
+        "pdf": "https://arxiv.org/pdf/2605.10859v1"
       },
-      "arxiv_id": "2605.07905v1",
-      "comment": "Accepted by ICML 2026",
+      "arxiv_id": "2605.10859v1",
+      "comment": "CVPR 2026 HiGen Workshop; Project Page at https://weichow23.github.io/EditMGT/ GitHub at https://github.com/weichow23/EditMGT",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.699999999999999,
+      "has_code": true,
+      "relevance_score": 5.449999999999999,
       "score_breakdown": {
-        "total_score": 4.7,
+        "total_score": 5.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -42,462 +50,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
           "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite the rapid development of AI reviewers, evaluating such systems remains challenging: metrics favor overlap with human reviews over correctness. However, since human reviews often cover only a subset of salient issues and sometimes contain mistakes, they are unreliable as gold references. To address this, we build category-specific benchmark subsets and skip evaluation when the corresponding...",
-        "key_contributions": [
-          "Despite the rapid development of AI reviewers, evaluating such systems remains challenging: metrics favor overlap with human reviews over correctness.",
-          "However, since human reviews often cover only a subset of salient issues and sometimes contain mistakes, they are unreliable as gold references.",
-          "To address this, we build category-specific benchmark subsets and skip evaluation when the corresponding human reviews are missing to strengthen Completeness."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.07905v1.mp3"
-      }
-    },
-    {
-      "id": "2605.08064v1",
-      "title": "Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment",
-      "authors": [
-        "Jerry Jiang",
-        "Haowen Sun",
-        "Denis Gudovskiy",
-        "Yohei Nakata",
-        "Tomoyuki Okuno",
-        "Kurt Keutzer",
-        "Wenzhao Zheng"
-      ],
-      "abstract": "Spatial intelligence in vision-language models (VLMs) attracts research interest with the practical demand to reason in the 3D world.Despite promising results, most existing methods follow the conventional 2D pipeline in VLMs and use pixel-aligned representations for the vision modality. However, correspondence-based models with implicit 3D scene understanding often fail to achieve spatial consistency, and representation-based models with 3D geometric priors lack efficiency in vision sequence serialization. To address this, we propose a Proxy3D method with compact yet comprehensive 3D proxy representations for the vision modality. Given only video frames as input, we employ semantic and geometric encoders to extract scene features and then perform their semantic-aware clustering to obtain a set of proxies in the 3D space. For representation alignment, we further curate the SpaceSpan dataset and apply multi-stage training to adopt the proposed 3D proxy representations with the VLM. When using shorter sequences for vision information, our method achieves competitive or state-of-the-art performance in 3D visual question answering, visual grounding and general spatial intelligence benchmarks.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.08064v1",
-        "pdf": "https://arxiv.org/pdf/2605.08064v1"
-      },
-      "arxiv_id": "2605.08064v1",
-      "comment": "Accepted by CVPR 2026. Project page: https://wzzheng.net/Proxy3D",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.65,
-      "score_breakdown": {
-        "total_score": 4.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Spatial intelligence in vision-language models (VLMs) attracts research interest with the practical demand to reason in the 3D world.Despite promising results, most existing methods follow the conventional 2D pipeline in VLMs and use pixel-aligned representations for the vision modality. However, correspondence-based models with implicit 3D scene understanding often fail to achieve spatial consist...",
-        "key_contributions": [
-          "Spatial intelligence in vision-language models (VLMs) attracts research interest with the practical demand to reason in the 3D world.",
-          "Despite promising results, most existing methods follow the conventional 2D pipeline in VLMs and use pixel-aligned representations for the vision modality.",
-          "However, correspondence-based models with implicit 3D scene understanding often fail to achieve spatial consistency, and representation-based models with 3D geometric priors lack efficiency in vision sequence serialization."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.08064v1.mp3"
-      }
-    },
-    {
-      "id": "2605.08000v1",
-      "title": "Rethinking Dense Optical Flow without Test-Time Scaling",
-      "authors": [
-        "Praroop Chanda",
-        "Suryansh Kumar"
-      ],
-      "abstract": "Recent progress in dense optical flow has been driven by increasingly complex architectures and multi-step refinement for test-time scaling. While these approaches achieve strong benchmark performance, they also require substantial computation during inference. This raises a fundamental question: Is scaling test-time computation the only way to improve dense optical flow accuracy? We argue that it is not. Instead, powerful visual semantic and geometric priors encoded in modern foundation models can reduce, if not overcome, the need for computationally expensive iterative refinement at test-time. In this paper, we present a framework that estimates dense optical flow in a single forward pass, leveraging pretrained foundation representations, while avoiding iterative refinement and additional inference-time computation, thus offering an alternative to test-time scaling. Our method extracts visual semantic features from a frozen DINO-v2 backbone and combines them with geometric cues from a monocular depth foundation model. We fuse these complementary priors into a unified representation and apply a global matching formulation to estimate dense correspondences without recurrent updates or test-time optimization. Despite avoiding iterative refinement, our approach achieves strong cross-dataset generalization across challenging benchmarks. On Sintel Final, we obtain 2.81 EPE without refinement, significantly improving over state-of-the-art (SOTA) SEA-RAFT under comparable training conditions and outperforming RAFT, GMFlow (without refinement), and recent FlowSeek in the same setting. These results suggest that strong foundation priors can substitute for test-time scaling, offering a computationally efficient alternative to refinement-heavy pipelines.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.08000v1",
-        "pdf": "https://arxiv.org/pdf/2605.08000v1"
-      },
-      "arxiv_id": "2605.08000v1",
-      "comment": "Accepted for publication at CVPR 2026; ViSCALE Workshop. Draft info: 10 pages, 2 figures, 4 tables",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent progress in dense optical flow has been driven by increasingly complex architectures and multi-step refinement for test-time scaling. While these approaches achieve strong benchmark performance, they also require substantial computation during inference. This raises a fundamental question: Is scaling test-time computation the only way to improve dense optical flow accuracy? We argue that it...",
-        "key_contributions": [
-          "Recent progress in dense optical flow has been driven by increasingly complex architectures and multi-step refinement for test-time scaling.",
-          "While these approaches achieve strong benchmark performance, they also require substantial computation during inference.",
-          "This raises a fundamental question: Is scaling test-time computation the only way to improve dense optical flow accuracy? We argue that it is not."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.08000v1.mp3"
-      }
-    },
-    {
-      "id": "2605.08054v1",
-      "title": "Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization",
-      "authors": [
-        "Hanchao Liu",
-        "Fang-Lue Zhang",
-        "Shining Zhang",
-        "Tai-Jiang Mu",
-        "Shi-Min Hu"
-      ],
-      "abstract": "Generating human motion that satisfies customized zero-shot goal functions, enabling applications such as controllable character animation and behavior synthesis for virtual agents, is a critical capability. While current approaches handle many unseen constraints, they fail on tasks with very challenging spatiotemporal restrictions, such as severe spatial obstacles or specified numbers of walking steps. To equip motion generators for these highly constrained tasks, we present a retrieval-guided method built on the training-free diffusion noise optimization framework. The key idea is to search within large motion datasets for guidance that can potentially satisfy difficult constraints. We introduce relational task parsing to group target constraints and identify the difficult ones to be handled by retrieved reference. A better initialization for diffusion noise is then obtained via a reward-guided mask that combines random noise with retrieved noise. By optimizing diffusion noise from this improved initialization, we successfully solve highly constrained generation tasks. By leveraging LLM for relational task parsing, the whole framework is further enabled to automatically reason for what to retrieve, improving the intelligence of moving agents under a training-free optimization scheme.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.08054v1",
-        "pdf": "https://arxiv.org/pdf/2605.08054v1"
-      },
-      "arxiv_id": "2605.08054v1",
-      "comment": "Accepted to CVPR2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.300000000000001,
-      "score_breakdown": {
-        "total_score": 4.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Generating human motion that satisfies customized zero-shot goal functions, enabling applications such as controllable character animation and behavior synthesis for virtual agents, is a critical capability. While current approaches handle many unseen constraints, they fail on tasks with very challenging spatiotemporal restrictions, such as severe spatial obstacles or specified numbers of walking ...",
-        "key_contributions": [
-          "Generating human motion that satisfies customized zero-shot goal functions, enabling applications such as controllable character animation and behavior synthesis for virtual agents, is a critical capability.",
-          "While current approaches handle many unseen constraints, they fail on tasks with very challenging spatiotemporal restrictions, such as severe spatial obstacles or specified numbers of walking steps.",
-          "To equip motion generators for these highly constrained tasks, we present a retrieval-guided method built on the training-free diffusion noise optimization framework."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.08054v1.mp3"
-      }
-    },
-    {
-      "id": "2605.07930v1",
-      "title": "INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy",
-      "authors": [
-        "Xiao Tian",
-        "Jue Fan",
-        "Rachael Hwee Ling Sim",
-        "Bryan Kian Hsiang Low"
-      ],
-      "abstract": "Differential privacy (DP) is widely employed in machine learning to protect confidential or sensitive training data from being revealed. As data owners gain greater control over their data due to personal data ownership, they are more likely to set their own privacy requirements, necessitating individualized DP (IDP) to fulfil such requests. In particular, owners of data from more sensitive subsets, such as positive cases of stigmatized diseases, likely set stronger privacy requirements, as leakage of such data could incur more serious societal impact. However, existing IDP algorithms induce a critical utility imbalance problem: Data from owners with stronger privacy requirements may be severely underrepresented in the trained model, resulting in poorer performance on similar data from subsequent users during deployment. In this paper, we analyze this problem and propose the INO-SGD algorithm, which strategically down-weights data within each batch to improve performance on the more private data across all iterations. Notably, our algorithm is specially designed to satisfy IDP, while existing techniques addressing utility imbalance neither satisfy IDP nor can be easily adapted to do so. Lastly, we demonstrate the empirical feasibility of our approach.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.07930v1",
-        "pdf": "https://arxiv.org/pdf/2605.07930v1"
-      },
-      "arxiv_id": "2605.07930v1",
-      "comment": "Accepted to the 14th International Conference on Learning Representations (ICLR-26)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.05,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICLR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Differential privacy (DP) is widely employed in machine learning to protect confidential or sensitive training data from being revealed. As data owners gain greater control over their data due to personal data ownership, they are more likely to set their own privacy requirements, necessitating individualized DP (IDP) to fulfil such requests. In particular, owners of data from more sensitive subset...",
-        "key_contributions": [
-          "Differential privacy (DP) is widely employed in machine learning to protect confidential or sensitive training data from being revealed.",
-          "As data owners gain greater control over their data due to personal data ownership, they are more likely to set their own privacy requirements, necessitating individualized DP (IDP) to fulfil such requests.",
-          "In particular, owners of data from more sensitive subsets, such as positive cases of stigmatized diseases, likely set stronger privacy requirements, as leakage of such data could incur more serious societal impact."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.07930v1.mp3"
-      }
-    },
-    {
-      "id": "2605.07955v1",
-      "title": "TimeLesSeg: Unified Contrast-Agnostic Cross-Sectional and Longitudinal MS Lesion Segmentation via a Stochastic Generative Model",
-      "authors": [
-        "Vicent Caselles-Ballester",
-        "Eloy Martínez-Heras",
-        "Giuseppe Pontillo",
-        "Zoe Mendelsohn",
-        "Elena M. Marrón",
-        "Juan Luis García Fernández",
-        "Laia Subirats",
-        "Jon Stutters",
-        "Jeremy Chataway",
-        "Frederik Barkhof",
-        "Sara Llufriu",
-        "Ferran Prados"
-      ],
-      "abstract": "Multiple sclerosis (MS) expresses substantial clinical and radiological heterogeneity, which poses significant challenges for automatic lesion segmentation. The current deep learning-based SOTA is highly susceptible to changes in both distribution, e.g., changes in scanner; as well as the structure of inputs, evident in the current divide between cross-sectional and longitudinal approaches. We introduce TimeLesSeg, a unified contrast-agnostic framework designed to segment MS lesions regardless of the presence of a temporal dimension in its inputs, with a single convolutional neural network. Our approach models pathological priors through lesion masks, which are processed together with the current scan. Cross-sectional processing is enabled by exposing the model to training cases where no prior information is available, which are modeled with an empty mask, allowing it to operate seamlessly in both scenarios. To overcome the scarcity and inconsistency of longitudinal datasets, we propose a novel generative pipeline in which patterns of lesion evolution are simulated by stochastically deforming each individual lesion with morphological operations, producing realistic prior timepoints. In parallel, we achieve contrast agnosticism through Gaussian mixture model-based domain randomization, enabling the network to experience a wide spectrum of intensity profiles. Results on three publicly available and two in-house datasets show that TimeLesSeg outperforms the contrast-agnostic state of the art on single-modality inputs across overlap- and distance-based metrics. In longitudinal processing, our method outperforms SAMSEG, and captures lesion load dynamics more accurately than both the former and LST-AI. All source code related to the development of TimeLesSeg is available at https://github.com/NeuroADaS-Lab/TimeLesSeg.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.07955v1",
-        "pdf": "https://arxiv.org/pdf/2605.07955v1"
-      },
-      "arxiv_id": "2605.07955v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.7228813559322034,
-      "score_breakdown": {
-        "total_score": 3.72,
-        "field_match": {
-          "score": 0.93,
-          "matches": [
-            "segmentation",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Multiple sclerosis (MS) expresses substantial clinical and radiological heterogeneity, which poses significant challenges for automatic lesion segmentation. The current deep learning-based SOTA is highly susceptible to changes in both distribution, e.g., changes in scanner; as well as the structure of inputs, evident in the current divide between cross-sectional and longitudinal approaches. We int...",
-        "key_contributions": [
-          "Multiple sclerosis (MS) expresses substantial clinical and radiological heterogeneity, which poses significant challenges for automatic lesion segmentation.",
-          "The current deep learning-based SOTA is highly susceptible to changes in both distribution, e.",
-          "g."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.07955v1.mp3"
-      }
-    },
-    {
-      "id": "2605.07861v1",
-      "title": "From Synthetic to Real: Toward Identity-Consistent Makeup Transfer with Synthetic and Real Data",
-      "authors": [
-        "Yue Yu",
-        "Jiayu Wang",
-        "Jiajia Shi",
-        "Jingjing Chen",
-        "Yu-Gang Jiang"
-      ],
-      "abstract": "Makeup transfer aims to apply the makeup style of a reference portrait to a source portrait while preserving identity and background. Early methods formulate this task as unsupervised image-to-image translation, relying on surrogate objectives and often yielding limited performance. Recent diffusion- and flow-based approaches instead exploit synthetic data for supervised training, leading to significant improvements. However, these methods still face two critical challenges: synthetic supervision frequently fails to faithfully preserve identity, and the domain gap between synthetic and real data limits generalization, resulting in degraded performance in complex real-world scenarios. To address these issues, this paper first proposes ConsistentBeauty, a novel data curation pipeline that ensures makeup fidelity and strict identity consistency within the synthesized data. Second, we propose RealBeauty, a synthetic-to-real post-training framework. Beyond supervised learning on curated synthetic data, we further adapt the model to real-world scenarios through reinforcement learning and design novel verifiable rewards tailored to the makeup transfer task. It allows the model to further benefit from real makeup patterns beyond synthetic supervision. In addition, we establish a new diverse benchmark for makeup transfer, covering a wide range of skin tones, ages, genders, poses, and makeup styles, thereby enabling a more comprehensive evaluation of model performance under diverse real-world conditions. Extensive experiments show that our method achieves state-of-the-art performance on multiple benchmarks and demonstrates clear advantages in identity preservation and performance on complex real-world cases.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.07861v1",
-        "pdf": "https://arxiv.org/pdf/2605.07861v1"
-      },
-      "arxiv_id": "2605.07861v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.65,
-      "score_breakdown": {
-        "total_score": 3.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Makeup transfer aims to apply the makeup style of a reference portrait to a source portrait while preserving identity and background. Early methods formulate this task as unsupervised image-to-image translation, relying on surrogate objectives and often yielding limited performance. Recent diffusion- and flow-based approaches instead exploit synthetic data for supervised training, leading to signi...",
-        "key_contributions": [
-          "Makeup transfer aims to apply the makeup style of a reference portrait to a source portrait while preserving identity and background.",
-          "Early methods formulate this task as unsupervised image-to-image translation, relying on surrogate objectives and often yielding limited performance.",
-          "Recent diffusion- and flow-based approaches instead exploit synthetic data for supervised training, leading to significant improvements."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2605.07861v1.mp3"
-      }
-    },
-    {
-      "id": "2605.08059v1",
-      "title": "6D Pose Estimation via Keypoint Heatmap Regression with RGB-D Residual Neural Networks",
-      "authors": [
-        "Ismail Aljosevic",
-        "Amir Masoud Almasi",
-        "Ana Parovic",
-        "Ashkan Shafiei"
-      ],
-      "abstract": "In this paper, we propose a modular framework for 6D pose estimation based on keypoint heatmap regression. Our approach combines YOLOv10m for object detection with a ResNet18-based network that predicts 2D heatmaps from RGB images. Keypoints extracted from these heatmaps are used to estimate the 6D object pose via the PnP RANSAC algorithm. We compare different keypoint selection strategies to assess their impact on pose accuracy. Additionally, we extend the baseline by incorporating depth data using a cross-fusion architecture, which enables interaction between RGB and depth features at multiple stages. We further explore general training improvements, such as experimenting with activation functions and learning rate scheduling strategies to improve model performance. Our best RGB-only model achieved a mean ADD-based accuracy of 84.50%, while the RGB-D fusion model reached 92.41% on the LINEMOD dataset. The code is available at https://github.com/ameermasood/HeatNet.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.08059v1",
-        "pdf": "https://arxiv.org/pdf/2605.08059v1"
-      },
-      "arxiv_id": "2605.08059v1",
-      "comment": "Source code available at: https://github.com/ameermasood/HeatNet",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.6,
-      "score_breakdown": {
-        "total_score": 3.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -511,59 +68,270 @@
         }
       },
       "ai_summaries": {
-        "short": "In this paper, we propose a modular framework for 6D pose estimation based on keypoint heatmap regression. Our approach combines YOLOv10m for object detection with a ResNet18-based network that predicts 2D heatmaps from RGB images. Keypoints extracted from these heatmaps are used to estimate the 6D object pose via the PnP RANSAC algorithm. We compare different keypoint selection strategies to asse...",
+        "short": "Diffusion models dominate image editing, yet their global denoising mechanism entangles edited regions with surrounding context, causing modifications to propagate into areas that should remain intact. We propose a fundamentally different approach by leveraging Masked Generative Transformers (MGTs), whose localized token-prediction paradigm naturally confines changes to intended regions. We presen...",
         "key_contributions": [
-          "In this paper, we propose a modular framework for 6D pose estimation based on keypoint heatmap regression.",
-          "Our approach combines YOLOv10m for object detection with a ResNet18-based network that predicts 2D heatmaps from RGB images.",
-          "Keypoints extracted from these heatmaps are used to estimate the 6D object pose via the PnP RANSAC algorithm."
+          "Diffusion models dominate image editing, yet their global denoising mechanism entangles edited regions with surrounding context, causing modifications to propagate into areas that should remain intact.",
+          "We propose a fundamentally different approach by leveraging Masked Generative Transformers (MGTs), whose localized token-prediction paradigm naturally confines changes to intended regions.",
+          "We present EditMGT, an MGT-based editing framework that is the first of its kind."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2605.08059v1.mp3"
+        "audio_url": "/audio/2605.10859v1.mp3"
       }
     },
     {
-      "id": "2605.08003v1",
-      "title": "SphereVAD: Training-Free Video Anomaly Detection via Geodesic Inference on the Unit Hypersphere",
+      "id": "2605.10922v1",
+      "title": "Pixal3D: Pixel-Aligned 3D Generation from Images",
       "authors": [
-        "Chao Huang",
-        "Penfei Wei",
-        "Wei Wang",
-        "Jie Wen",
-        "Zhihua Wang",
-        "Li Shen",
-        "Wenqi Ren",
-        "Xiaochun Cao"
+        "Dong-Yang Li",
+        "Wang Zhao",
+        "Yuxin Chen",
+        "Wenbo Hu",
+        "Meng-Hao Guo",
+        "Fang-Lue Zhang",
+        "Ying Shan",
+        "Shi-Min Hu"
       ],
-      "abstract": "Video anomaly detection (VAD) aims to automatically identify events that deviate from normal patterns in untrimmed surveillance videos. Existing methods universally depend on large-scale annotations or task-specific training procedures, severely limiting their rapid deployment to novel scenes. We observe that intermediate-layer features of pre-trained multimodal large language models (MLLMs) already encode rich anomaly semantics, yet existing approaches rely on the language output pathway and fail to exploit the geometric discriminability latent in these representations. Based on this finding, we propose SphereVAD, a fully training-free, zero-shot VAD framework that recasts anomaly discrimination as von Mises-Fisher (vMF) likelihood-ratio geodesic inference on the unit hypersphere, unleashing latent discriminability through principled geometric reasoning rather than learning new representations. Specifically, SphereVAD first applies Frechet mean centering to unfold feature distributions and eliminate domain biases, then employs Holistic Scene Attention (HSA) to reinforce feature consistency using cross-video priors, and finally performs vMF-guided Spherical Geodesic Pulling (SGP) to align ambiguous segments with directional prototypes on the spherical manifold. This training-free pipeline requires only minimal synthetic images for calibration. SphereVAD establishes new state-of-the-art results among training-free approaches on three major benchmarks and remains competitive with fully supervised baselines. Code will be available upon acceptance.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
+      "abstract": "Recent advances in 3D generative models have rapidly improved image-to-3D synthesis quality, enabling higher-resolution geometry and more realistic appearance. Yet fidelity, which measures pixel-level faithfulness of the generated 3D asset to the input image, still remains a central bottleneck. We argue this stems from an implicit 2D-3D correspondence issue: most 3D-native generators synthesize shape in canonical space and inject image cues via attention, leaving pixel-to-3D associations ambiguous. To tackle this issue, we draw inspiration from 3D reconstruction and propose Pixal3D, a pixel-aligned 3D generation paradigm for high-fidelity 3D asset creation from images. Instead of generating in a canonical pose, Pixal3D directly generates 3D in a pixel-aligned way, consistent with the input view. To enable this, we introduce a pixel back-projection conditioning scheme that explicitly lifts multi-scale image features into a 3D feature volume, establishing direct pixel-to-3D correspondence without ambiguity. We show that Pixal3D is not only scalable and capable of producing high-quality 3D assets, but also substantially improves fidelity, approaching the fidelity level of reconstruction. Furthermore, Pixal3D naturally extends to multi-view generation by aggregating back-projected feature volumes across views. Finally, we show pixel-aligned generation benefits scene synthesis, and present a modular pipeline that produces high-fidelity, object-separated 3D scenes from images. Pixal3D for the first time demonstrates 3D-native pixel-aligned generation at scale, and provides a new inspiring way towards high-fidelity 3D generation of object or scene from single or multi-view images. Project page: https://ldyang694.github.io/projects/pixal3d/",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.08003v1",
-        "pdf": "https://arxiv.org/pdf/2605.08003v1"
+        "paper": "http://arxiv.org/abs/2605.10922v1",
+        "pdf": "https://arxiv.org/pdf/2605.10922v1"
       },
-      "arxiv_id": "2605.08003v1",
-      "comment": "48 pages, 25 figures",
+      "arxiv_id": "2605.10922v1",
+      "comment": "SIGGRAPH 2026. Project page: https://ldyang694.github.io/projects/pixal3d/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.5999999999999996,
+      "has_code": true,
+      "relevance_score": 5.43728813559322,
       "score_breakdown": {
-        "total_score": 3.6,
+        "total_score": 5.44,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "SIGGRAPH",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advances in 3D generative models have rapidly improved image-to-3D synthesis quality, enabling higher-resolution geometry and more realistic appearance. Yet fidelity, which measures pixel-level faithfulness of the generated 3D asset to the input image, still remains a central bottleneck. We argue this stems from an implicit 2D-3D correspondence issue: most 3D-native generators synthesize sh...",
+        "key_contributions": [
+          "Recent advances in 3D generative models have rapidly improved image-to-3D synthesis quality, enabling higher-resolution geometry and more realistic appearance.",
+          "Yet fidelity, which measures pixel-level faithfulness of the generated 3D asset to the input image, still remains a central bottleneck.",
+          "We argue this stems from an implicit 2D-3D correspondence issue: most 3D-native generators synthesize shape in canonical space and inject image cues via attention, leaving pixel-to-3D associations ambiguous."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10922v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10858v1",
+      "title": "Is Your Driving World Model an All-Around Player?",
+      "authors": [
+        "Lingdong Kong",
+        "Ao Liang",
+        "Tianyi Yan",
+        "Hongsi Liu",
+        "Wesley Yang",
+        "Ziqi Huang",
+        "Xian Sun",
+        "Wei Yin",
+        "Jialong Zuo",
+        "Yixuan Hu",
+        "Dekai Zhu",
+        "Dongyue Lu",
+        "Youquan Liu",
+        "Guangfeng Jiang",
+        "Linfeng Li",
+        "Xiangtai Li",
+        "Long Zhuo",
+        "Lai Xing Ng",
+        "Benoit R. Cottereau",
+        "Changxin Gao",
+        "Liang Pan",
+        "Wei Tsang Ooi",
+        "Ziwei Liu"
+      ],
+      "abstract": "Today's driving world models can generate remarkably realistic dash-cam videos, yet no single model excels universally. Some generate photorealistic textures but violate basic physics; others maintain geometric consistency but fail when subjected to closed-loop planning. This disconnect exposes a critical gap: the field evaluates how real generated worlds appear, but rarely whether they behave realistically. We introduce WorldLens, a unified benchmark that measures world-model fidelity across the full spectrum, from pixel quality and 4D geometry to closed-loop driving and human perceptual alignment, through five complementary aspects and 24 standardized dimensions. Our evaluation of six representative models reveals that no existing approach dominates across all axes: texture-rich models violate geometry, geometry-aware models lack behavioral fidelity, and even the strongest performers achieve only 2-3 out of 10 on human realism ratings. To bridge algorithmic metrics with human perception, we further contribute WorldLens-26K, a 26,808-entry human-annotated preference dataset pairing numerical scores with textual rationales, and WorldLens-Agent, a vision-language evaluator distilled from these judgments that enables scalable, explainable auto-assessment. Together, the benchmark, dataset, and agent form a unified ecosystem for assessing generated worlds not merely by visual appeal, but by physical and behavioral fidelity.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10858v1",
+        "pdf": "https://arxiv.org/pdf/2605.10858v1"
+      },
+      "arxiv_id": "2605.10858v1",
+      "comment": "CVPR 2026 VideoWorldModel Workshop; Project Page at https://worldbench.github.io/worldlens GitHub at https://github.com/worldbench/WorldLens",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.15,
+      "score_breakdown": {
+        "total_score": 5.15,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "score": 10,
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
           "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Today's driving world models can generate remarkably realistic dash-cam videos, yet no single model excels universally. Some generate photorealistic textures but violate basic physics; others maintain geometric consistency but fail when subjected to closed-loop planning. This disconnect exposes a critical gap: the field evaluates how real generated worlds appear, but rarely whether they behave rea...",
+        "key_contributions": [
+          "Today's driving world models can generate remarkably realistic dash-cam videos, yet no single model excels universally.",
+          "Some generate photorealistic textures but violate basic physics; others maintain geometric consistency but fail when subjected to closed-loop planning.",
+          "This disconnect exposes a critical gap: the field evaluates how real generated worlds appear, but rarely whether they behave realistically."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10858v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10875v1",
+      "title": "Compute Where it Counts: Self Optimizing Language Models",
+      "authors": [
+        "Yash Akhauri",
+        "Mohamed S. Abdelfattah"
+      ],
+      "abstract": "Efficient LLM inference research has largely focused on reducing the cost of each decoding step (e.g., using quantization, pruning, or sparse attention), typically applying a uniform computation budget to every generated token. In practice, token difficulty varies widely, so static compression can over-compute on easy steps and under-compute on hard ones. We study dynamic budget allocation for autoregressive decoding: learning how much computation to spend per token from within a single model.\n  Self-Optimizing Language Models (SOL) pair a frozen LLM with a lightweight policy network that reads the LLM hidden state and selects a discrete efficiency action at each decode step. Actions can jointly control (i) token-level attention sparsity, (ii) structured activation pruning in the MLP, and (iii) activation quantization bit-width, while leaving the base model weights unchanged. We train the policy with group-relative policy optimization on teacher-forced episodes: the token sequence is fixed, while we sample multiple compute schedules (i.e., \"counterfactual\" schedules that vary only the efficiency actions for the same token path) and compare their likelihoods under the same supervision. Our reward trades off language-model quality against soft penalties that encourage episode-average budget usage to match a requested target. Across model variants and compute regimes, SOL improves quality at matched budget over static allocation and strong random schedule search, offering a complementary axis for inference-efficiency optimization. SOL discovers a better quality-efficiency pareto-front across all our experiments and improves MMLU accuracy by up to 7.3% over uniform budget allocation strategies.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10875v1",
+        "pdf": "https://arxiv.org/pdf/2605.10875v1"
+      },
+      "arxiv_id": "2605.10875v1",
+      "comment": "Accepted at ICML'26 Code: https://github.com/akhauriyash/SOL",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.75,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Efficient LLM inference research has largely focused on reducing the cost of each decoding step (e.g., using quantization, pruning, or sparse attention), typically applying a uniform computation budget to every generated token. In practice, token difficulty varies widely, so static compression can over-compute on easy steps and under-compute on hard ones. We study dynamic budget allocation for aut...",
+        "key_contributions": [
+          "Efficient LLM inference research has largely focused on reducing the cost of each decoding step (e.",
+          "g.",
+          ", using quantization, pruning, or sparse attention), typically applying a uniform computation budget to every generated token."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10875v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10769v1",
+      "title": "MPerS: Dynamic MLLM MixExperts Perception-Guided Remote Sensing Scene Segmentation",
+      "authors": [
+        "Ziyi Wang",
+        "Xianping Ma",
+        "Ziyao Wang",
+        "Hongyang Zhang",
+        "Man On Pun"
+      ],
+      "abstract": "The multimodal fusion of images and scene captions has been extensively explored and applied in various fields. However, when dealing with complex remote sensing (RS) scenes, existing studies have predominantly concentrated on architectural optimizations for integrating textual semantic information with visual features, while largely neglecting the generation of high-quality RS captions and the investigation of their effectiveness in multimodal semantic fusion.In this context, we propose the Dynamic MLLM Mixture-of-Experts Perception-Guided Remote Sensing Scene Segmentation, referred to as MPerS.We design multiple prompts for MLLMs to generate high-quality RS captions, enabling MLLMs to perceive RS scenes from diverse expert perspectives. DINOv3 is employed to extract dense visual representations of land-covers.We design a Dynamic MixExperts module that adaptively integrates the most effective textual semantics. Linguistic Query Guided Attention is constructed to utilize textual semantic information to guide visual features for precise segmentation. The MLLMs include LLaVA, ChatGPT, and Qwen. Our method achieves superior performance on three public semantic segmentation RS datasets.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10769v1",
+        "pdf": "https://arxiv.org/pdf/2605.10769v1"
+      },
+      "arxiv_id": "2605.10769v1",
+      "comment": "Accepted to CVPR 2026 Findings. 11 pages, 6 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.453389830508474,
+      "score_breakdown": {
+        "total_score": 4.45,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -577,47 +345,303 @@
         }
       },
       "ai_summaries": {
-        "short": "Video anomaly detection (VAD) aims to automatically identify events that deviate from normal patterns in untrimmed surveillance videos. Existing methods universally depend on large-scale annotations or task-specific training procedures, severely limiting their rapid deployment to novel scenes. We observe that intermediate-layer features of pre-trained multimodal large language models (MLLMs) alrea...",
+        "short": "The multimodal fusion of images and scene captions has been extensively explored and applied in various fields. However, when dealing with complex remote sensing (RS) scenes, existing studies have predominantly concentrated on architectural optimizations for integrating textual semantic information with visual features, while largely neglecting the generation of high-quality RS captions and the in...",
         "key_contributions": [
-          "Video anomaly detection (VAD) aims to automatically identify events that deviate from normal patterns in untrimmed surveillance videos.",
-          "Existing methods universally depend on large-scale annotations or task-specific training procedures, severely limiting their rapid deployment to novel scenes.",
-          "We observe that intermediate-layer features of pre-trained multimodal large language models (MLLMs) already encode rich anomaly semantics, yet existing approaches rely on the language output pathway and fail to exploit the geometric discriminability latent in these representations."
+          "The multimodal fusion of images and scene captions has been extensively explored and applied in various fields.",
+          "However, when dealing with complex remote sensing (RS) scenes, existing studies have predominantly concentrated on architectural optimizations for integrating textual semantic information with visual features, while largely neglecting the generation of high-quality RS captions and the investigation of their effectiveness in multimodal semantic fusion.",
+          "In this context, we propose the Dynamic MLLM Mixture-of-Experts Perception-Guided Remote Sensing Scene Segmentation, referred to as MPerS."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2605.08003v1.mp3"
+        "audio_url": "/audio/2605.10769v1.mp3"
       }
     },
     {
-      "id": "2605.07945v1",
-      "title": "Rebalancing gradient to improve self-supervised co-training of depth, odometry and optical flow predictions",
+      "id": "2605.10847v1",
+      "title": "Conditional anomaly detection methods for patient-management alert systems",
       "authors": [
-        "Marwane Hariat",
-        "Antoine Manzanera",
-        "David Filliat"
+        "Michal Valko",
+        "Gregory Cooper",
+        "Amy Seybert",
+        "Shyam Visweswaran",
+        "Melissa Saul",
+        "Miloš Hauskrecht"
       ],
-      "abstract": "We present CoopNet, an approach that improves the cooperation of co-trained networks by dynamically adapting the apportionment of gradient, to ensure equitable learning progress. It is applied to motion-aware self-supervised prediction of depth maps, by introducing a new hybrid loss, based on a distribution model of photo-metric reconstruction errors made by, on the one hand the depth + odometry paired networks, and on the other hand the optical flow network. This model essentially assumes that the pixels from moving objects (that must be discarded for training depth and odometry), correspond to those where the two reconstructions strongly disagree. We justify this model by theoretical considerations and experimental evidences. A comparative evaluation on KITTI and CityScapes datasets shows that CoopNet improves or is comparable to the state-of-the-art in depth, odometry and optical flow predictions.",
-      "published": "2026-05-08",
-      "updated": "2026-05-08",
+      "abstract": "Anomaly detection methods can be very useful in identifying unusual or interesting patterns in data. A recently proposed conditional anomaly detection framework extends anomaly detection to the problem of identifying anomalous patterns on a subset of attributes in the data. The anomaly always depends (is conditioned) on the value of remaining attributes. The work presented in this paper focuses on instance-based methods for detecting conditional anomalies. The methods rely on the distance metric to identify examples in the dataset that are most critical for detecting the anomaly. We investigate various metrics and metric learning methods to optimize the performance of the instance-based anomaly detection methods. We show the benefits of the instance-based methods on two real-world detection problems: detection of unusual admission decisions for patients with the community-acquired pneumonia and detection of unusual orders of an HPF4 test that is used to confirm Heparin induced thrombocytopenia - a life-threatening condition caused by the Heparin therapy.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
       "categories": [
-        "cs.CV"
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.07945v1",
-        "pdf": "https://arxiv.org/pdf/2605.07945v1"
+        "paper": "http://arxiv.org/abs/2605.10847v1",
+        "pdf": "https://arxiv.org/pdf/2605.10847v1"
       },
-      "arxiv_id": "2605.07945v1",
-      "comment": "",
+      "arxiv_id": "2605.10847v1",
+      "comment": "Published at Workshop on Machine Learning in Health Care Applications ICML-2008 - MLHealth",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.571186440677966,
+      "relevance_score": 4.3500000000000005,
       "score_breakdown": {
-        "total_score": 3.57,
+        "total_score": 4.35,
         "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Anomaly detection methods can be very useful in identifying unusual or interesting patterns in data. A recently proposed conditional anomaly detection framework extends anomaly detection to the problem of identifying anomalous patterns on a subset of attributes in the data. The anomaly always depends (is conditioned) on the value of remaining attributes. The work presented in this paper focuses on...",
+        "key_contributions": [
+          "Anomaly detection methods can be very useful in identifying unusual or interesting patterns in data.",
+          "A recently proposed conditional anomaly detection framework extends anomaly detection to the problem of identifying anomalous patterns on a subset of attributes in the data.",
+          "The anomaly always depends (is conditioned) on the value of remaining attributes."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10847v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10815v1",
+      "title": "Probing Cross-modal Information Hubs in Audio-Visual LLMs",
+      "authors": [
+        "Jihoo Jung",
+        "Chaeyoung Jung",
+        "Ji-Hoon Kim",
+        "Joon Son Chung"
+      ],
+      "abstract": "Audio-visual large language models (AVLLMs) have recently emerged as a powerful architecture capable of jointly reasoning over audio, visual, and textual modalities. In AVLLMs, the bidirectional interaction between audio and video modalities introduces intricate processing dynamics, necessitating a deeper understanding of their internal mechanisms. However, unlike extensively studied text-only or large vision language models, the internal workings of AVLLMs remain largely unexplored. In this paper, we focus on cross-modal information flow between audio and visual modalities in AVLLMs, investigating where information derived from one modality is encoded within the token representations of the other modality. Through an analysis of multiple recent AVLLMs, we uncover two common findings. First, AVLLMs primarily encode integrated audio-visual information in sink tokens. Second, sink tokens do not uniformly hold cross-modal information. Instead, a distinct subset of sink tokens, which we term cross-modal sink tokens, specializes in storing such information. Based on these findings, we further propose a simple training-free hallucination mitigation method by encouraging reliance on integrated cross-modal information within cross-modal sink tokens. Our code is available at https://github.com/kaistmm/crossmodal-hub.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.AI",
+        "eess.AS"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10815v1",
+        "pdf": "https://arxiv.org/pdf/2605.10815v1"
+      },
+      "arxiv_id": "2605.10815v1",
+      "comment": "Accepted by ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Audio-visual large language models (AVLLMs) have recently emerged as a powerful architecture capable of jointly reasoning over audio, visual, and textual modalities. In AVLLMs, the bidirectional interaction between audio and video modalities introduces intricate processing dynamics, necessitating a deeper understanding of their internal mechanisms. However, unlike extensively studied text-only or ...",
+        "key_contributions": [
+          "Audio-visual large language models (AVLLMs) have recently emerged as a powerful architecture capable of jointly reasoning over audio, visual, and textual modalities.",
+          "In AVLLMs, the bidirectional interaction between audio and video modalities introduces intricate processing dynamics, necessitating a deeper understanding of their internal mechanisms.",
+          "However, unlike extensively studied text-only or large vision language models, the internal workings of AVLLMs remain largely unexplored."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10815v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10805v1",
+      "title": "Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge",
+      "authors": [
+        "Wenbo Zhang",
+        "Lijinghua Zhang",
+        "Liner Xiang",
+        "Hengrui Cai"
+      ],
+      "abstract": "Reasoning-capable large language models (LLMs) have recently been adopted as automated judges, but their benefits and costs in LLM-as-a-Judge settings remain unclear. Through controlled comparisons between reasoning and non-reasoning judges, we show that explicit reasoning substantially improves judgment accuracy on tasks requiring structured verification (e.g., math and coding), while offering limited or even negative gains on simpler evaluations and incurring significantly higher computational cost. These findings motivate that reasoning should be used selectively rather than universally, with awareness of possible distribution shift. We propose a Robust Adaptive Cost-Efficient Routing (RACER), which dynamically selects between reasoning and non-reasoning judges under a fixed budget by formulating routing as a constrained distributionally robust optimization problem. RACER explicitly accounts for distribution shift via a KL-divergence uncertainty set, admits an efficient primal--dual algorithm, and enjoys theoretical guarantees including uniqueness of the optimal policy and linear convergence. Extensive experiments show that RACER achieves superior accuracy--cost trade-offs under distribution shift.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10805v1",
+        "pdf": "https://arxiv.org/pdf/2605.10805v1"
+      },
+      "arxiv_id": "2605.10805v1",
+      "comment": "Accepted at ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.2,
+      "score_breakdown": {
+        "total_score": 4.2,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Reasoning-capable large language models (LLMs) have recently been adopted as automated judges, but their benefits and costs in LLM-as-a-Judge settings remain unclear. Through controlled comparisons between reasoning and non-reasoning judges, we show that explicit reasoning substantially improves judgment accuracy on tasks requiring structured verification (e.g., math and coding), while offering li...",
+        "key_contributions": [
+          "Reasoning-capable large language models (LLMs) have recently been adopted as automated judges, but their benefits and costs in LLM-as-a-Judge settings remain unclear.",
+          "Through controlled comparisons between reasoning and non-reasoning judges, we show that explicit reasoning substantially improves judgment accuracy on tasks requiring structured verification (e.",
+          "g."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10805v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10917v1",
+      "title": "Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges",
+      "authors": [
+        "Usman A. Khan",
+        "Joseph W. Durham"
+      ],
+      "abstract": "We consider anonymous multi-agent path finding (MAPF) where a set of robots is tasked to travel to a set of targets on a finite, connected graph. We show that MAPF can be cast as a special class of multi-marginal optimal transport (MMOT) problems with an underlying Markovian structure, under which the exponentially large MMOT collapses to a linear program (LP) polynomial in size. Focusing on the anonymous setting, we establish conditions under which the corresponding LP is feasible, totally unimodular, and consequently, yields min-cost, integral $(\\{0,1\\})$ transports that do not overlap in both space and time. To adapt the approach to large-scale problems, we cast the MAPF-MMOT in a probabilistic framework via Schrödinger bridges. Under standard assumptions, we show that the Schrödinger bridge formulation reduces to an entropic regularization of the corresponding MMOT that admits an iterative Sinkhorn-type solution. The Schrödinger bridge, being a probabilistic framework, provides a shadow (fractional) transport that we use as a template to solve a reduced LP and demonstrate that it results in near-optimal, integral transports at a significant reduction in complexity. Extensive experiments highlight the optimality and scalability of the proposed approaches.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.LG",
+        "cs.MA",
+        "cs.RO"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10917v1",
+        "pdf": "https://arxiv.org/pdf/2605.10917v1"
+      },
+      "arxiv_id": "2605.10917v1",
+      "comment": "Accepted in ICML 2026 as a spotlight paper",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.05,
+      "score_breakdown": {
+        "total_score": 4.05,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We consider anonymous multi-agent path finding (MAPF) where a set of robots is tasked to travel to a set of targets on a finite, connected graph. We show that MAPF can be cast as a special class of multi-marginal optimal transport (MMOT) problems with an underlying Markovian structure, under which the exponentially large MMOT collapses to a linear program (LP) polynomial in size. Focusing on the a...",
+        "key_contributions": [
+          "We consider anonymous multi-agent path finding (MAPF) where a set of robots is tasked to travel to a set of targets on a finite, connected graph.",
+          "We show that MAPF can be cast as a special class of multi-marginal optimal transport (MMOT) problems with an underlying Markovian structure, under which the exponentially large MMOT collapses to a linear program (LP) polynomial in size.",
+          "Focusing on the anonymous setting, we establish conditions under which the corresponding LP is feasible, totally unimodular, and consequently, yields min-cost, integral $(\\{0,1\\})$ transports that do not overlap in both space and time."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2605.10917v1.mp3"
+      }
+    },
+    {
+      "id": "2605.10820v1",
+      "title": "MaD Physics: Evaluating information seeking under constraints in physical environments",
+      "authors": [
+        "Moksh Jain",
+        "Mehdi Bennani",
+        "Johannes Bausch",
+        "Yuri Chervonyi",
+        "Bogdan Georgiev",
+        "Simon Osindero",
+        "Nenad Tomašev"
+      ],
+      "abstract": "Scientific discovery is fundamentally a resource-constrained process that requires navigating complex trade-offs between the quality and quantity of measurements due to physical and cost constraints. Measurements drive the scientific process by revealing novel phenomena to improve our understanding. Existing benchmarks for evaluating agents for scientific discovery focus on either static knowledge-based reasoning or unconstrained experimental design tasks, and do not capture the ability to make measurements and plan under constraints. To bridge this gap, we propose Measuring and Discovering Physics (MaD Physics), a benchmark to evaluate the ability of agents to make informative measurements and conclusions subject to constraints on the quality and quantity of measurements. The benchmark consists of three environments, each based on a distinct physical law. To mitigate contamination from existing knowledge, MaD Physics includes altered physical laws. In each trial, the agent makes measurements of the system until it exhausts an allotted budget and then the agent has to infer the underlying physical law to make predictions about the state of the system in the future. MaD Physics evaluates two fundamental capabilities of scientific agents: inferring models from data and planning under constraints. We also demonstrate how MaD Physics can be used to evaluate other capabilities such as multimodality and in-context learning. We benchmark agents on MaD Physics using four Gemini models (2.5 Flash Lite, 2.5 Flash, 2.5 Pro, and 3 Flash), identifying shortcomings in their structured exploration and data collection capabilities and highlighting directions to improve their scientific reasoning.",
+      "published": "2026-05-11",
+      "updated": "2026-05-11",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.10820v1",
+        "pdf": "https://arxiv.org/pdf/2605.10820v1"
+      },
+      "arxiv_id": "2605.10820v1",
+      "comment": "64 pages, 10 figures. Project page: https://mad-physics.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.0,
+      "score_breakdown": {
+        "total_score": 4.0,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -630,8 +654,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -640,14 +664,14 @@
         }
       },
       "ai_summaries": {
-        "short": "We present CoopNet, an approach that improves the cooperation of co-trained networks by dynamically adapting the apportionment of gradient, to ensure equitable learning progress. It is applied to motion-aware self-supervised prediction of depth maps, by introducing a new hybrid loss, based on a distribution model of photo-metric reconstruction errors made by, on the one hand the depth + odometry p...",
+        "short": "Scientific discovery is fundamentally a resource-constrained process that requires navigating complex trade-offs between the quality and quantity of measurements due to physical and cost constraints. Measurements drive the scientific process by revealing novel phenomena to improve our understanding. Existing benchmarks for evaluating agents for scientific discovery focus on either static knowledge...",
         "key_contributions": [
-          "We present CoopNet, an approach that improves the cooperation of co-trained networks by dynamically adapting the apportionment of gradient, to ensure equitable learning progress.",
-          "It is applied to motion-aware self-supervised prediction of depth maps, by introducing a new hybrid loss, based on a distribution model of photo-metric reconstruction errors made by, on the one hand the depth + odometry paired networks, and on the other hand the optical flow network.",
-          "This model essentially assumes that the pixels from moving objects (that must be discarded for training depth and odometry), correspond to those where the two reconstructions strongly disagree."
+          "Scientific discovery is fundamentally a resource-constrained process that requires navigating complex trade-offs between the quality and quantity of measurements due to physical and cost constraints.",
+          "Measurements drive the scientific process by revealing novel phenomena to improve our understanding.",
+          "Existing benchmarks for evaluating agents for scientific discovery focus on either static knowledge-based reasoning or unconstrained experimental design tasks, and do not capture the ability to make measurements and plan under constraints."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2605.07945v1.mp3"
+        "audio_url": "/audio/2605.10820v1.mp3"
       }
     }
   ]

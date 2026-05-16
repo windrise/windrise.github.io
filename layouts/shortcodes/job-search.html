@@ -1,0 +1,249 @@
+<link rel="stylesheet" href="/css/job-search.css">
+
+<div class="job-search-app">
+
+  <!-- Tab Navigation -->
+  <div class="js-tabs" role="tablist">
+    <button class="js-tab active" data-tab="resume" role="tab">
+      <span class="js-tab-icon">📄</span>
+      <span class="js-tab-label">简历信息 / Resume</span>
+    </button>
+    <button class="js-tab" data-tab="search" role="tab">
+      <span class="js-tab-icon">🔍</span>
+      <span class="js-tab-label">岗位搜索 / Search Jobs</span>
+    </button>
+    <button class="js-tab" data-tab="autofill" role="tab">
+      <span class="js-tab-icon">⚡</span>
+      <span class="js-tab-label">自动填表 / Auto-fill</span>
+    </button>
+  </div>
+
+  <!-- ============ TAB 1: RESUME ============ -->
+  <section class="js-panel active" id="js-panel-resume" role="tabpanel">
+
+    <!-- Step 1: Upload -->
+    <div class="js-card" id="js-step-upload">
+      <div class="js-card-header">
+        <h3>📤 第一步：上传简历 / Step 1: Upload Resume</h3>
+        <p>支持 PDF 格式，文件不会离开你的浏览器 / PDF supported, processed locally in your browser</p>
+      </div>
+      <div class="js-dropzone" id="js-dropzone">
+        <input type="file" id="js-file-input" accept="application/pdf,.pdf" hidden>
+        <div class="js-dropzone-inner">
+          <div class="js-dropzone-icon">📁</div>
+          <p class="js-dropzone-text">拖拽 PDF 到这里 或 点击选择文件</p>
+          <p class="js-dropzone-hint">Drag & drop a PDF or click to browse</p>
+          <button type="button" class="js-btn js-btn-primary" id="js-pick-file">选择文件 / Choose File</button>
+        </div>
+      </div>
+      <div class="js-progress" id="js-progress" style="display: none;">
+        <div class="js-progress-bar"><div class="js-progress-fill" id="js-progress-fill"></div></div>
+        <div class="js-progress-text" id="js-progress-text">解析中...</div>
+      </div>
+    </div>
+
+    <!-- Step 2: Review and Edit -->
+    <div class="js-card" id="js-step-review" style="display: none;">
+      <div class="js-card-header">
+        <h3>✏️ 第二步：人工修整 / Step 2: Review & Edit</h3>
+        <p>自动识别的内容可能有误，请核对并修改 / Auto-detected fields may need adjustment</p>
+      </div>
+
+      <div class="js-form-grid">
+        <!-- Basic Info -->
+        <fieldset class="js-fieldset">
+          <legend>基本信息 / Basic Info</legend>
+          <div class="js-field"><label>姓名 / Name</label><input type="text" data-field="name" placeholder="张三 / Zhang San"></div>
+          <div class="js-field"><label>英文名 / English Name</label><input type="text" data-field="englishName"></div>
+          <div class="js-field"><label>邮箱 / Email</label><input type="email" data-field="email"></div>
+          <div class="js-field"><label>手机 / Phone</label><input type="tel" data-field="phone"></div>
+          <div class="js-field"><label>性别 / Gender</label>
+            <select data-field="gender">
+              <option value="">--</option>
+              <option value="男">男 / Male</option>
+              <option value="女">女 / Female</option>
+              <option value="其他">其他 / Other</option>
+            </select>
+          </div>
+          <div class="js-field"><label>出生日期 / DOB</label><input type="date" data-field="birthday"></div>
+          <div class="js-field"><label>国籍 / Nationality</label><input type="text" data-field="nationality"></div>
+          <div class="js-field"><label>当前所在地 / Location</label><input type="text" data-field="location"></div>
+          <div class="js-field js-field-full"><label>家庭地址 / Address</label><input type="text" data-field="address"></div>
+        </fieldset>
+
+        <!-- Online Profiles -->
+        <fieldset class="js-fieldset">
+          <legend>在线主页 / Online Profiles</legend>
+          <div class="js-field"><label>LinkedIn</label><input type="url" data-field="linkedin" placeholder="https://linkedin.com/in/..."></div>
+          <div class="js-field"><label>GitHub</label><input type="url" data-field="github" placeholder="https://github.com/..."></div>
+          <div class="js-field"><label>个人网站 / Website</label><input type="url" data-field="website"></div>
+          <div class="js-field"><label>Google Scholar</label><input type="url" data-field="scholar"></div>
+        </fieldset>
+
+        <!-- Education -->
+        <fieldset class="js-fieldset js-fieldset-full">
+          <legend>教育背景 / Education
+            <button type="button" class="js-btn-small js-add-btn" data-target="education">+ 添加 / Add</button>
+          </legend>
+          <div class="js-list" id="js-education-list"></div>
+        </fieldset>
+
+        <!-- Experience -->
+        <fieldset class="js-fieldset js-fieldset-full">
+          <legend>工作/实习经历 / Experience
+            <button type="button" class="js-btn-small js-add-btn" data-target="experience">+ 添加 / Add</button>
+          </legend>
+          <div class="js-list" id="js-experience-list"></div>
+        </fieldset>
+
+        <!-- Projects -->
+        <fieldset class="js-fieldset js-fieldset-full">
+          <legend>项目经历 / Projects
+            <button type="button" class="js-btn-small js-add-btn" data-target="projects">+ 添加 / Add</button>
+          </legend>
+          <div class="js-list" id="js-projects-list"></div>
+        </fieldset>
+
+        <!-- Skills & Others -->
+        <fieldset class="js-fieldset">
+          <legend>技能 / Skills</legend>
+          <div class="js-field js-field-full"><label>技术技能 / Tech Skills</label><textarea data-field="skills" rows="3" placeholder="Python, PyTorch, ..."></textarea></div>
+          <div class="js-field js-field-full"><label>语言 / Languages</label><textarea data-field="languages" rows="2" placeholder="中文 (母语), English (Fluent), ..."></textarea></div>
+          <div class="js-field js-field-full"><label>证书 / Certifications</label><textarea data-field="certifications" rows="2"></textarea></div>
+        </fieldset>
+
+        <fieldset class="js-fieldset">
+          <legend>求职偏好 / Job Preferences</legend>
+          <div class="js-field"><label>意向职位 / Target Position</label><input type="text" data-field="targetPosition" placeholder="算法工程师 / ML Engineer"></div>
+          <div class="js-field"><label>期望城市 / Target City</label><input type="text" data-field="targetCity"></div>
+          <div class="js-field"><label>期望薪资 / Expected Salary</label><input type="text" data-field="expectedSalary"></div>
+          <div class="js-field"><label>到岗时间 / Available From</label><input type="text" data-field="availableFrom"></div>
+          <div class="js-field js-field-full"><label>自我评价 / Summary</label><textarea data-field="summary" rows="4"></textarea></div>
+        </fieldset>
+      </div>
+
+      <details class="js-raw-text">
+        <summary>查看解析的原始文本 / View raw extracted text</summary>
+        <pre id="js-raw-text-content"></pre>
+      </details>
+
+      <div class="js-actions">
+        <button type="button" class="js-btn js-btn-primary" id="js-save-resume">💾 保存 / Save</button>
+        <button type="button" class="js-btn" id="js-export-resume">⬇️ 导出 JSON / Export</button>
+        <button type="button" class="js-btn" id="js-import-resume">⬆️ 导入 JSON / Import</button>
+        <button type="button" class="js-btn js-btn-danger" id="js-clear-resume">🗑️ 清除 / Clear</button>
+        <input type="file" id="js-import-input" accept="application/json,.json" hidden>
+      </div>
+      <div class="js-status" id="js-save-status"></div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 2: JOB SEARCH ============ -->
+  <section class="js-panel" id="js-panel-search" role="tabpanel">
+    <div class="js-card">
+      <div class="js-card-header">
+        <h3>🔎 跨平台搜索 / Cross-platform Search</h3>
+        <p>输入关键词，一键打开多家招聘网站 / Search across major job platforms at once</p>
+      </div>
+
+      <div class="js-search-row">
+        <input type="text" class="js-search-input" id="js-search-keyword" placeholder="搜索关键词，如：算法工程师 / Keyword, e.g. Software Engineer">
+        <input type="text" class="js-search-input js-search-city" id="js-search-city" placeholder="城市 / City (可选)">
+      </div>
+
+      <div class="js-platforms">
+        <h4>选择平台 / Pick platforms:</h4>
+        <div class="js-platform-grid" id="js-platform-grid"></div>
+      </div>
+
+      <div class="js-actions">
+        <button type="button" class="js-btn js-btn-primary" id="js-search-go">🚀 在选中平台搜索 / Search on Selected</button>
+        <button type="button" class="js-btn" id="js-search-all">🌐 全部打开 / Open All</button>
+        <button type="button" class="js-btn" id="js-search-select-all">✓ 全选 / Select All</button>
+        <button type="button" class="js-btn" id="js-search-deselect">✗ 取消 / Deselect</button>
+      </div>
+    </div>
+
+    <div class="js-card">
+      <div class="js-card-header">
+        <h3>🔗 直接打开链接 / Open by URL</h3>
+        <p>已有公司招聘页面？粘贴链接直接打开 / Have a specific job page? Paste the URL</p>
+      </div>
+      <div class="js-search-row">
+        <input type="url" class="js-search-input" id="js-custom-url" placeholder="https://careers.company.com/jobs/...">
+        <button type="button" class="js-btn js-btn-primary" id="js-custom-url-go">前往 / Go</button>
+        <button type="button" class="js-btn" id="js-custom-url-save">⭐ 收藏 / Save</button>
+      </div>
+      <div class="js-bookmarks" id="js-bookmarks">
+        <h4>收藏的链接 / Saved Links:</h4>
+        <ul class="js-bookmarks-list" id="js-bookmarks-list"></ul>
+      </div>
+    </div>
+
+    <div class="js-card">
+      <div class="js-card-header">
+        <h3>🏢 热门公司直达 / Popular Company Careers</h3>
+        <p>点击进入公司官方招聘页 / Direct links to official careers pages</p>
+      </div>
+      <div class="js-companies" id="js-companies-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 3: AUTO-FILL ============ -->
+  <section class="js-panel" id="js-panel-autofill" role="tabpanel">
+    <div class="js-card">
+      <div class="js-card-header">
+        <h3>⚡ 自动填表书签 / Auto-fill Bookmarklet</h3>
+        <p>把书签拖到浏览器收藏栏。在任何招聘网站申请页面点击它，自动填入你的简历信息 / Drag the bookmarklet to your bookmarks bar. Click it on any application page to auto-fill fields.</p>
+      </div>
+
+      <div class="js-bookmarklet-area" id="js-bookmarklet-area">
+        <div class="js-bookmarklet-status" id="js-bookmarklet-status">请先在「简历信息」中填写并保存简历 / Please save your resume info first</div>
+        <a href="#" class="js-bookmarklet-link" id="js-bookmarklet-link" draggable="true" style="display: none;">📌 拖我到收藏栏 / Drag me to bookmarks bar</a>
+      </div>
+
+      <h4>📖 使用步骤 / How to Use:</h4>
+      <ol class="js-howto">
+        <li>在「简历信息」标签页填写并保存你的简历信息 / Fill in and save your resume info under the Resume tab</li>
+        <li>把上方蓝色按钮 <strong>拖动</strong> 到浏览器的 <strong>收藏栏</strong>（书签栏）/ <strong>Drag</strong> the blue button above to your browser's <strong>bookmarks bar</strong></li>
+        <li>打开任何招聘网站的申请页面（如 LinkedIn Easy Apply、BOSS 直聘表单）/ Open any job application page</li>
+        <li>点击收藏栏中刚才保存的书签 / Click the bookmarklet from your bookmarks</li>
+        <li>书签会自动尝试匹配并填充表单中的字段 / The script will attempt to match and fill the form fields</li>
+      </ol>
+
+      <div class="js-notice">
+        <strong>⚠️ 提示 / Note:</strong>
+        <ul>
+          <li>书签代码包含你的简历数据，请勿分享给他人 / The bookmarklet contains your data — don't share it</li>
+          <li>不是所有网站都能完美识别，请提交前再次检查 / Not every site fills perfectly — review before submitting</li>
+          <li>每次更新简历信息后，需要重新拖动书签以刷新数据 / Drag again after updating resume to refresh the data</li>
+          <li>有些网站使用复杂的 React 表单可能识别不到，可使用下方「快速复制」 / Complex React forms may fail; use the Quick Copy tool below</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="js-card">
+      <div class="js-card-header">
+        <h3>📋 快速复制 / Quick Copy</h3>
+        <p>遇到无法识别的字段？点击对应按钮复制单个字段到剪贴板 / Can't auto-fill? Click any field to copy to clipboard</p>
+      </div>
+      <div class="js-quick-copy" id="js-quick-copy"></div>
+    </div>
+
+    <div class="js-card">
+      <div class="js-card-header">
+        <h3>⚙️ 字段匹配规则 / Field Matching Rules</h3>
+        <p>书签会按这些关键词匹配表单字段（不区分大小写）/ Bookmarklet matches form fields by these keywords</p>
+      </div>
+      <details>
+        <summary>展开查看 / Click to expand</summary>
+        <div class="js-rules" id="js-rules-table"></div>
+      </details>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>window.PDFJS_WORKER_SRC = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+<script src="/js/job-search.js"></script>

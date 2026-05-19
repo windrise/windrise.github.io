@@ -3,38 +3,165 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.14984v1",
-      "title": "Sat3DGen: Comprehensive Street-Level 3D Scene Generation from Single Satellite Image",
+      "id": "2605.15997v1",
+      "title": "Segmentation, Detection and Explanation: A Unified Framework for CT Appearance Reasoning",
       "authors": [
-        "Ming Qian",
-        "Zimin Xia",
-        "Changkun Liu",
-        "Shuailei Ma",
-        "Wen Wang",
-        "Zeran Ke",
-        "Bin Tan",
-        "Hang Zhang",
-        "Gui-Song Xia"
+        "Yuyuan Liu",
+        "Can Peng",
+        "Yingyu Yang",
+        "Qianye Yang",
+        "Cheng Ouyang",
+        "J. Alison Noble"
       ],
-      "abstract": "Generating a street-level 3D scene from a single satellite image is a crucial yet challenging task. Current methods present a stark trade-off: geometry-colorization models achieve high geometric fidelity but are typically building-focused and lack semantic diversity. In contrast, proxy-based models use feed-forward image-to-3D frameworks to generate holistic scenes by jointly learning geometry and texture, a process that yields rich content but coarse and unstable geometry. We attribute these geometric failures to the extreme viewpoint gap and sparse, inconsistent supervision inherent in satellite-to-street data. We introduce Sat3DGen to address these fundamental challenges, which embodies a geometry-first methodology. This methodology enhances the feed-forward paradigm by integrating novel geometric constraints with a perspective-view training strategy, explicitly countering the primary sources of geometric error. This geometry-centric strategy yields a dramatic leap in both 3D accuracy and photorealism. For validation, we first constructed a new benchmark by pairing the VIGOR-OOD test set with high-resolution DSM data. On this benchmark, our method improves geometric RMSE from 6.76m to 5.20m. Crucially, this geometric leap also boosts photorealism, reducing the Fréchet Inception Distance (FID) from $\\sim$40 to 19 against the leading method, Sat2Density++, despite using no extra tailored image-quality modules. We demonstrate the versatility of our high-quality 3D assets through diverse downstream applications, including semantic-map-to-3D synthesis, multi-camera video generation, large-scale meshing, and unsupervised single-image Digital Surface Model (DSM) estimation. The code has been released on https://github.com/qianmingduowan/Sat3DGen.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
+      "abstract": "Recent progress in deep learning has significantly advanced CT image analysis, particularly for segmentation tasks. However, these advances are largely confined to image-level pattern recognition, with most methods lacking explicit anatomical or contextual reasoning. Large vision-language models introduce linguistic context into image analysis, yet most approaches typically focus on a single task, which is insufficient for clinical workflow analysis that requires multiple fine-grained types of analysis, such as anatomy detection and segmentation. In this paper, we propose a unified autoregressive framework that integrates language-guided visual reasoning into CT interpretation. Our method introduces task-routing tokens that trigger detection and segmentation heads conditioned on the hidden states of a large vision-language model, enabling coherent generation of visual outputs (e.g., masks and bounding boxes) and textual reasonings. To progressively enhance localisation accuracy and semantic clarity, we further design a \"closer-look\" mechanism that allows the model to perform progressive coarse-to-fine visits to regions of interest under refined fields of view. To support model training and evaluation, we curated a new multimodal CT dataset containing pixel-wise masks, bounding boxes, spatial prompts, and structured descriptions for visual objects constructed through an AI-assisted annotation process with human verification. Experiments on public benchmarks demonstrate consistent improvements over the SoTA, achieving up to 1.0% Dice on BTCV and 1.7% Dice on MosMed+, while additionally providing appearance reasoning outputs. The code and dataset will be available.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.14984v1",
-        "pdf": "https://arxiv.org/pdf/2605.14984v1"
+        "paper": "http://arxiv.org/abs/2605.15997v1",
+        "pdf": "https://arxiv.org/pdf/2605.15997v1"
       },
-      "arxiv_id": "2605.14984v1",
-      "comment": "ICLR 2026; code: https://github.com/qianmingduowan/Sat3DGen demo: https://huggingface.co/spaces/qian43/Sat3DGen project page: https://qianmingduowan.github.io/Sat3DGen_project_page/",
+      "arxiv_id": "2605.15997v1",
+      "comment": "8 pages, 4 figures, submitted to IEEE Transactions on Medical Imaging (TMI)",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.6,
+      "has_code": false,
+      "relevance_score": 5.342372881355932,
       "score_breakdown": {
-        "total_score": 5.6,
+        "total_score": 5.34,
+        "field_match": {
+          "score": 1.36,
+          "matches": [
+            "segmentation",
+            "deep learning",
+            "image analysis"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "TMI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent progress in deep learning has significantly advanced CT image analysis, particularly for segmentation tasks. However, these advances are largely confined to image-level pattern recognition, with most methods lacking explicit anatomical or contextual reasoning. Large vision-language models introduce linguistic context into image analysis, yet most approaches typically focus on a single task,...",
+        "key_contributions": [
+          "Recent progress in deep learning has significantly advanced CT image analysis, particularly for segmentation tasks.",
+          "However, these advances are largely confined to image-level pattern recognition, with most methods lacking explicit anatomical or contextual reasoning.",
+          "Large vision-language models introduce linguistic context into image analysis, yet most approaches typically focus on a single task, which is insufficient for clinical workflow analysis that requires multiple fine-grained types of analysis, such as anatomy detection and segmentation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.16022v1",
+      "title": "EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting",
+      "authors": [
+        "Changjing Liu",
+        "Yiming Huang",
+        "Long Bai",
+        "Beilei Cui",
+        "Hongliang Ren"
+      ],
+      "abstract": "In robot-assisted minimally invasive surgery, high-fidelity dynamic endoscopic scene reconstruction and simulation are crucial to enhancing downstream tasks and advancing surgical outcomes. However, existing methods primarily focus on visual reconstruction, lacking physics-based descriptions of the scene required for realistic simulation. We propose a unified framework that achieves physics-aware reconstruction and physical simulation of endoscopic scenes through Multi-modal Large Language Models (MLLMs)-guided Gaussian Splatting. Our approach utilizes 4D Gaussian Splatting (4DGS) integrated with pre-trained segmentation and depth estimation to represent deformable tissues and tools. To achieve automatic inference of physical properties, we introduce an object-wise material field that initializes material parameters via MLLM and refines them through a differentiable Material Point Method (MPM) under joint supervision from rendered images and optical flow. Validated on both open-source and in-house datasets, our framework achieves superior simulation fidelity and physical accuracy compared to state-of-the-art methods, underscoring its potential to advance robot-assisted surgical applications.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.16022v1",
+        "pdf": "https://arxiv.org/pdf/2605.16022v1"
+      },
+      "arxiv_id": "2605.16022v1",
+      "comment": "Early Accepted by MICCAI 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.992372881355932,
+      "score_breakdown": {
+        "total_score": 4.99,
+        "field_match": {
+          "score": 1.36,
+          "matches": [
+            "gaussian splatting",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "In robot-assisted minimally invasive surgery, high-fidelity dynamic endoscopic scene reconstruction and simulation are crucial to enhancing downstream tasks and advancing surgical outcomes. However, existing methods primarily focus on visual reconstruction, lacking physics-based descriptions of the scene required for realistic simulation. We propose a unified framework that achieves physics-aware ...",
+        "key_contributions": [
+          "In robot-assisted minimally invasive surgery, high-fidelity dynamic endoscopic scene reconstruction and simulation are crucial to enhancing downstream tasks and advancing surgical outcomes.",
+          "However, existing methods primarily focus on visual reconstruction, lacking physics-based descriptions of the scene required for realistic simulation.",
+          "We propose a unified framework that achieves physics-aware reconstruction and physical simulation of endoscopic scenes through Multi-modal Large Language Models (MLLMs)-guided Gaussian Splatting."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.16080v1",
+      "title": "ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation",
+      "authors": [
+        "Qing Huang",
+        "Zhipei Xu",
+        "Xuanyu Zhang",
+        "Xiangyu Yu",
+        "Jian Zhang"
+      ],
+      "abstract": "The rise of AI-generated images (AIGIs) poses growing challenges for digital authenticity, prompting the need for efficient, generalizable image forgery detection systems. Existing methods, whether non-LLM-based or LLM-based, exhibit distinct advantages and limitations. While non-LLM-based models offer efficient low-level artifact detection, they often lack semantic understanding. Conversely, LLM-based methods provide strong semantic reasoning and explainability but are computationally intensive and less sensitive to subtle visual artifacts. Moreover, the true contribution of explanatory reasoning texts to forgery detection performance remains unclear. In this work, we investigate the intrinsic value and potential of LLM-generated reasoning texts, considering it a source of generalization and semantic-error sensitivity. Based on these findings, we propose ReAlign, a novel framework that distills high-quality reasoning texts generated by a GRPO-optimized LLM into a lightweight AIGI detector via contrastive learning. ReAlign effectively inherits the generalization ability and semantic sensitivity capability of reasoning textual representations, while remaining efficient and lightweight for deployment. Moreover, ReAlign adopts a tailored joint optimization strategy that integrates contrastive loss for image-text alignment and classification loss for accurate forgery discrimination. Experimental results on AIGCDetectBenchmark, AIGI-Holmes, and our newly constructed UltraSynth-10k demonstrate that ReAlign consistently outperforms existing state-of-the-art detectors in both accuracy and generalization, particularly when facing complex, high-fidelity forgeries from modern generative models.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.16080v1",
+        "pdf": "https://arxiv.org/pdf/2605.16080v1"
+      },
+      "arxiv_id": "2605.16080v1",
+      "comment": "Accepted by CVPR 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.85,
+      "score_breakdown": {
+        "total_score": 4.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -42,7 +169,132 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICLR",
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The rise of AI-generated images (AIGIs) poses growing challenges for digital authenticity, prompting the need for efficient, generalizable image forgery detection systems. Existing methods, whether non-LLM-based or LLM-based, exhibit distinct advantages and limitations. While non-LLM-based models offer efficient low-level artifact detection, they often lack semantic understanding. Conversely, LLM-...",
+        "key_contributions": [
+          "The rise of AI-generated images (AIGIs) poses growing challenges for digital authenticity, prompting the need for efficient, generalizable image forgery detection systems.",
+          "Existing methods, whether non-LLM-based or LLM-based, exhibit distinct advantages and limitations.",
+          "While non-LLM-based models offer efficient low-level artifact detection, they often lack semantic understanding."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.16081v1",
+      "title": "MIND: Decoupling Model-Induced Label Noise via Latent Manifold Disentanglement",
+      "authors": [
+        "Dayong Ren"
+      ],
+      "abstract": "The paradigm of learning from automatic annotations driven by pre-trained experts and Foundation Models dominates data-hungry applications. However, it introduces a critical challenge: model-induced label noise. Unlike stochastic noise in classical robust learning, this noise stems from annotator inductive biases, manifesting as systematic errors tightly coupled with local feature manifolds. Existing methods relying on global transition matrices underfit these structural patterns, while learning instance-specific matrices remains mathematically intractable. We propose Model-Induced Noise Decoupling (MIND), a theoretically grounded framework addressing this dilemma. We demonstrate that the high-dimensional noise manifold can be decoupled into tractable, subspace-dependent components via Latent Manifold Disentanglement. Specifically, our Latent Decoupling Estimator (LDE) dynamically projects samples into latent structural clusters with consistent error modes, facilitating noise identifiability without ground-truth anchor points. To rigorously evaluate robustness, we adopt a hierarchical protocol: moving from controlled noise on CIFAR-100 to a structural stress test on large-scale real-world 3D datasets (S3DIS, ScanNet), where error patterns explicitly couple with geometric manifolds. Empirically, MIND significantly outperforms state-of-the-art methods on these complex benchmarks and effectively corrects zero-shot hallucinations from Vision-Language Models (e.g., OpenSeg), highlighting its potential as a robust distillation framework for Foundation Models.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.16081v1",
+        "pdf": "https://arxiv.org/pdf/2605.16081v1"
+      },
+      "arxiv_id": "2605.16081v1",
+      "comment": "Accepted, to appear in ICML2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The paradigm of learning from automatic annotations driven by pre-trained experts and Foundation Models dominates data-hungry applications. However, it introduces a critical challenge: model-induced label noise. Unlike stochastic noise in classical robust learning, this noise stems from annotator inductive biases, manifesting as systematic errors tightly coupled with local feature manifolds. Exist...",
+        "key_contributions": [
+          "The paradigm of learning from automatic annotations driven by pre-trained experts and Foundation Models dominates data-hungry applications.",
+          "However, it introduces a critical challenge: model-induced label noise.",
+          "Unlike stochastic noise in classical robust learning, this noise stems from annotator inductive biases, manifesting as systematic errors tightly coupled with local feature manifolds."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.16215v1",
+      "title": "Fully Open Meditron: An Auditable Pipeline for Clinical LLMs",
+      "authors": [
+        "Xavier Theimer-Lienhard",
+        "Mushtaha El-Amin",
+        "Fay Elhassan",
+        "Sahaj Vaidya",
+        "Victor Cartier-Negadi",
+        "David Sasu",
+        "Lars Klein",
+        "Mary-Anne Hartley"
+      ],
+      "abstract": "Clinical decision support systems (CDSS) require scrutable, auditable pipelines that enable rigorous, reproducible validation. Yet current LLM-based CDSS remain largely opaque. Most \"open\" models are open-weight only, releasing parameters while withholding the data provenance, curation procedures, and generation pipelines that determine model behavior. Fully Open (FO) models, which expose the complete training stack end-to-end, do not currently exist in medicine. We introduce Fully Open Meditron, the first fully open pipeline for building LLM-CDSS, comprising a clinician-audited training corpus, a reproducible data construction and training framework, and a use-aligned evaluation protocol. The corpus unifies eight public medical QA datasets into a normalized conversational format and expands coverage with three clinician-vetted synthetic extensions: exam-style QA, guideline-grounded QA derived from 46,469 clinical practice guidelines, and clinical vignettes. The pipeline enforces system-wide decontamination, gold-label resampling of teacher generations, and end-to-end validation by a four-physician panel. We evaluate using an LLM-as-a-judge protocol over expert-written clinical vignettes, calibrated against 204 human raters. We apply the recipe to five FO base models (Apertus-70B/8B-Instruct, OLMo-2-32B-SFT, EuroLLM-22B/9B-Instruct). All MeditronFO variants are preferred over their bases. Apertus-70B-MeditronFO improves +6.6 points over its base (47.2% to 53.8%) on aggregate medical benchmarks, establishing a new FO SoTA. Gemma-3-27B-MeditronFO is preferred over MedGemma in 58.6% of LLM-as-a-judge comparisons and outperforms it on HealthBench (58% vs 55.9%). These results show that fully open pipelines can achieve state-of-the-art domain-specific performance without sacrificing auditability or reproducibility.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.16215v1",
+        "pdf": "https://arxiv.org/pdf/2605.16215v1"
+      },
+      "arxiv_id": "2605.16215v1",
+      "comment": "Preprint. 31 pages, 10 figures. Code, models, and data: https://github.com/EPFLiGHT/FullyOpenMeditron",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.4,
+      "score_breakdown": {
+        "total_score": 4.4,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -55,63 +307,61 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Generating a street-level 3D scene from a single satellite image is a crucial yet challenging task. Current methods present a stark trade-off: geometry-colorization models achieve high geometric fidelity but are typically building-focused and lack semantic diversity. In contrast, proxy-based models use feed-forward image-to-3D frameworks to generate holistic scenes by jointly learning geometry and...",
+        "short": "Clinical decision support systems (CDSS) require scrutable, auditable pipelines that enable rigorous, reproducible validation. Yet current LLM-based CDSS remain largely opaque. Most \"open\" models are open-weight only, releasing parameters while withholding the data provenance, curation procedures, and generation pipelines that determine model behavior. Fully Open (FO) models, which expose the comp...",
         "key_contributions": [
-          "Generating a street-level 3D scene from a single satellite image is a crucial yet challenging task.",
-          "Current methods present a stark trade-off: geometry-colorization models achieve high geometric fidelity but are typically building-focused and lack semantic diversity.",
-          "In contrast, proxy-based models use feed-forward image-to-3D frameworks to generate holistic scenes by jointly learning geometry and texture, a process that yields rich content but coarse and unstable geometry."
+          "Clinical decision support systems (CDSS) require scrutable, auditable pipelines that enable rigorous, reproducible validation.",
+          "Yet current LLM-based CDSS remain largely opaque.",
+          "Most \"open\" models are open-weight only, releasing parameters while withholding the data provenance, curation procedures, and generation pipelines that determine model behavior."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.15195v1",
-      "title": "VGGT-$Ω$",
+      "id": "2605.16054v1",
+      "title": "Ada-Diffuser: Latent-Aware Adaptive Diffusion for Decision-Making",
       "authors": [
-        "Jianyuan Wang",
-        "Minghao Chen",
-        "Shangzhan Zhang",
-        "Nikita Karaev",
-        "Johannes Schönberger",
-        "Patrick Labatut",
-        "Piotr Bojanowski",
-        "David Novotny",
-        "Andrea Vedaldi",
-        "Christian Rupprecht"
+        "Fan Feng",
+        "Selena Ge",
+        "Minghao Fu",
+        "Zijian Li",
+        "Yujia Zheng",
+        "Zeyu Tang",
+        "Yingyao Hu",
+        "Biwei Huang",
+        "Kun Zhang"
       ],
-      "abstract": "Recent feed-forward reconstruction models, such as VGGT, have proven competitive with traditional optimization-based reconstructors while also providing geometry-aware features useful for other tasks. Here, we show that the quality of these models scales predictably with model and data size. We do so by introducing VGGT-$Ω$, which substantially improves reconstruction accuracy, efficiency, and capabilities for both static and dynamic scenes. To enable training this model at an unprecedented scale, we introduce architectural changes that improve training efficiency, a high-quality data annotation pipeline that supports dynamic scenes, and a self-supervised learning protocol. We simplify VGGT's architecture by using a single dense prediction head with multi-task supervision and removing the expensive high-resolution convolutional layers. We also use registers to aggregate scene information into a compact representation and introduce register attention, which restricts inter-frame information exchange to these registers, in part replacing global attention. In this way, during training, VGGT-$Ω$ uses only about 30% of the GPU memory of its predecessor, allowing us to train with 15x more supervised data than prior work and to leverage vast amounts of unlabeled video data. VGGT-$Ω$ achieves strong results for reconstruction of static and dynamic scenes across multiple benchmarks, for example, improving over the previous best camera estimation accuracy on Sintel by 77%. We also show that the learned registers can improve vision-language-action models and support alignment with language, suggesting that reconstruction can be a powerful and scalable proxy task for spatial understanding. Project Page: http://vggt-omega.github.io/",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
+      "abstract": "Recent work has framed decision-making as a sequence modeling problem using generative models such as diffusion models. Although promising, these approaches often overlook latent factors that exhibit evolving dynamics, elements that are fundamental to environment transitions, reward structures, and high-level agent behavior. Explicitly modeling these hidden processes is essential for both precise dynamics modeling and effective decision-making. In this paper, we propose a unified framework that explicitly incorporates latent dynamic inference into generative decision-making from minimal yet sufficient observations. We theoretically show that under mild conditions, the latent process can be identified from small temporal blocks of observations. Building on this insight, we introduce Ada-Diffuser, a causal diffusion model that learns the temporal structure of observed interactions and the underlying latent dynamics simultaneously, and furthermore, leverages them for planning and control. With a modular design, Ada-Diffuser supports both planning and policy learning tasks, enabling adaptation to latent variations in dynamics, rewards, and latent actions. Experiments on simulated control and robotic benchmarks demonstrate its effectiveness in accurate latent inference and adaptive policy learning.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.AI"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.15195v1",
-        "pdf": "https://arxiv.org/pdf/2605.15195v1"
+        "paper": "http://arxiv.org/abs/2605.16054v1",
+        "pdf": "https://arxiv.org/pdf/2605.16054v1"
       },
-      "arxiv_id": "2605.15195v1",
-      "comment": "CVPR 2026 (Oral)",
+      "arxiv_id": "2605.16054v1",
+      "comment": "ICLR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.671186440677966,
+      "relevance_score": 4.3999999999999995,
       "score_breakdown": {
-        "total_score": 4.67,
+        "total_score": 4.4,
         "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "ICLR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -129,108 +379,47 @@
         }
       },
       "ai_summaries": {
-        "short": "Recent feed-forward reconstruction models, such as VGGT, have proven competitive with traditional optimization-based reconstructors while also providing geometry-aware features useful for other tasks. Here, we show that the quality of these models scales predictably with model and data size. We do so by introducing VGGT-$Ω$, which substantially improves reconstruction accuracy, efficiency, and cap...",
+        "short": "Recent work has framed decision-making as a sequence modeling problem using generative models such as diffusion models. Although promising, these approaches often overlook latent factors that exhibit evolving dynamics, elements that are fundamental to environment transitions, reward structures, and high-level agent behavior. Explicitly modeling these hidden processes is essential for both precise ...",
         "key_contributions": [
-          "Recent feed-forward reconstruction models, such as VGGT, have proven competitive with traditional optimization-based reconstructors while also providing geometry-aware features useful for other tasks.",
-          "Here, we show that the quality of these models scales predictably with model and data size.",
-          "We do so by introducing VGGT-$Ω$, which substantially improves reconstruction accuracy, efficiency, and capabilities for both static and dynamic scenes."
+          "Recent work has framed decision-making as a sequence modeling problem using generative models such as diffusion models.",
+          "Although promising, these approaches often overlook latent factors that exhibit evolving dynamics, elements that are fundamental to environment transitions, reward structures, and high-level agent behavior.",
+          "Explicitly modeling these hidden processes is essential for both precise dynamics modeling and effective decision-making."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.15171v1",
-      "title": "Evidential Reasoning Advances Interpretable Real-World Disease Screening",
+      "id": "2605.16137v1",
+      "title": "STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics-Physics Dual System",
       "authors": [
-        "Chenyu Lian",
-        "Hong-Yu Zhou",
-        "Jing Qin"
+        "Zhen Luo",
+        "Yixuan Yang",
+        "Xudong Xu",
+        "Jinkun Hao",
+        "Zhaoyang Lyu",
+        "Feng Zheng",
+        "Jiangmiao Pang",
+        "Yanwei Fu"
       ],
-      "abstract": "Disease screening is critical for early detection and timely intervention in clinical practice. However, most current screening models for medical images suffer from limited interpretability and suboptimal performance. They often lack effective mechanisms to reference historical cases or provide transparent reasoning pathways. To address these challenges, we introduce EviScreen, an evidential reasoning framework for disease screening that leverages region-level evidence from historical cases. The proposed EviScreen offers retrospection interpretability through regional evidence retrieved from dual knowledge banks. Using this evidential mechanism, the subsequent evidence-aware reasoning module makes predictions using both the current case and evidence from historical cases, thereby enhancing disease screening performance. Furthermore, rather than relying on post-hoc saliency maps, EviScreen enhances localization interpretability by leveraging abnormality maps derived from contrastive retrieval. Our method achieves superior performance on our carefully established benchmarks for real-world disease screening, yielding notably higher specificity at clinical-level recall. Code is publicly available at https://github.com/DopamineLcy/EviScreen.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
+      "abstract": "Generating simulation-ready tabletop scenes from task instructions is an intriguing and promising research direction in the field of Embodied AI. However, existing task-to-scene generation methods rely exclusively on large language models (LLMs) to predict scene layouts, inevitably yielding object collisions or floating due to LLMs' inherent limitations in 3D spatial reasoning. In this paper, we present STABLE, a semantics-physics dual-system tailored for simulation-ready tabletop scene generation. STABLE consists of two complementary modules: (i) a Semantic Reasoner, a fine-tuned LLM trained on a structured tabletop scene dataset to generate coarse layouts from input task instructions, and (ii) a Physics Corrector, a physics-aware flow-based denoising model that outputs pose updates to refine layouts, which ensures the physical plausibility of scenes while preserves semantic alignment with task instructions. STABLE adopts a progressive generation paradigm: by alternating between the Semantic Reasoner and Physics Corrector, it incrementally expands the scene from task-critical objects to background objects. Experiments demonstrate that STABLE successfully generates simulation-ready tabletop scenes that strictly conform to task instructions and significantly enhances the physical validity of scenes over prior art.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.LG"
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.15171v1",
-        "pdf": "https://arxiv.org/pdf/2605.15171v1"
+        "paper": "http://arxiv.org/abs/2605.16137v1",
+        "pdf": "https://arxiv.org/pdf/2605.16137v1"
       },
-      "arxiv_id": "2605.15171v1",
+      "arxiv_id": "2605.16137v1",
       "comment": "ICML 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.6550847457627125,
+      "relevance_score": 4.25,
       "score_breakdown": {
-        "total_score": 4.66,
-        "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical image"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Disease screening is critical for early detection and timely intervention in clinical practice. However, most current screening models for medical images suffer from limited interpretability and suboptimal performance. They often lack effective mechanisms to reference historical cases or provide transparent reasoning pathways. To address these challenges, we introduce EviScreen, an evidential reas...",
-        "key_contributions": [
-          "Disease screening is critical for early detection and timely intervention in clinical practice.",
-          "However, most current screening models for medical images suffer from limited interpretability and suboptimal performance.",
-          "They often lack effective mechanisms to reference historical cases or provide transparent reasoning pathways."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.15081v1",
-      "title": "ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World",
-      "authors": [
-        "Ziyin Zhang",
-        "Zihan Liao",
-        "Hang Yu",
-        "Peng Di",
-        "Rui Wang"
-      ],
-      "abstract": "The development of high-quality text embeddings is increasingly drifting toward an exclusionary future, defined by three critical barriers: prohibitive computational costs, a narrow linguistic focus that neglects most of the world's languages, and a lack of transparency from closed-source or open-weight models that stifles research. To dismantle these barriers, we introduce ML-Embed, a suite of inclusive and efficient models built upon a new framework: 3-Dimensional Matryoshka Learning (3D-ML). Our framework addresses the computational challenge with comprehensive efficiency across the entire model lifecycle. Beyond the storage benefits of Matryoshka Representation Learning (MRL) and flexible inference-time depth provided by Matryoshka Layer Learning (MLL), we introduce Matryoshka Embedding Learning (MEL) for enhanced parameter efficiency. To address the linguistic challenge, we curate a massively multilingual dataset and train a suite of models ranging from 140M to 8B parameters. In a direct commitment to transparency, we release all models, data, and code. Extensive evaluation on 430 tasks demonstrates that our models set new records on 9 of 17 evaluated MTEB benchmarks, with particularly strong results in low-resource languages, providing a reproducible blueprint for building globally equitable and computationally efficient AI systems.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.15081v1",
-        "pdf": "https://arxiv.org/pdf/2605.15081v1"
-      },
-      "arxiv_id": "2605.15081v1",
-      "comment": "Accepted by ICML 2026. The data has been released earlier in the preprint arXiv:2603.19223",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -242,7 +431,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -251,114 +440,54 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The development of high-quality text embeddings is increasingly drifting toward an exclusionary future, defined by three critical barriers: prohibitive computational costs, a narrow linguistic focus that neglects most of the world's languages, and a lack of transparency from closed-source or open-weight models that stifles research. To dismantle these barriers, we introduce ML-Embed, a suite of in...",
-        "key_contributions": [
-          "The development of high-quality text embeddings is increasingly drifting toward an exclusionary future, defined by three critical barriers: prohibitive computational costs, a narrow linguistic focus that neglects most of the world's languages, and a lack of transparency from closed-source or open-weight models that stifles research.",
-          "To dismantle these barriers, we introduce ML-Embed, a suite of inclusive and efficient models built upon a new framework: 3-Dimensional Matryoshka Learning (3D-ML).",
-          "Our framework addresses the computational challenge with comprehensive efficiency across the entire model lifecycle."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.15185v1",
-      "title": "Quantitative Video World Model Evaluation for Geometric-Consistency",
-      "authors": [
-        "Jiaxin Wu",
-        "Yihao Pi",
-        "Yinling Zhang",
-        "Yuheng Li",
-        "Xueyan Zou"
-      ],
-      "abstract": "Generative video models are increasingly studied as implicit world models, yet evaluating whether they produce physically plausible 3D structure and motion remains challenging. Most existing video evaluation pipelines rely heavily on human judgment or learned graders, which can be subjective and weakly diagnostic for geometric failures. We introduce PDI-Bench (Perspective Distortion Index), a quantitative framework for auditing geometric coherence in generated videos. Given a generated clip, we obtain object-centric observations via segmentation and point tracking (e.g., SAM 2, MegaSaM, and CoTracker3), lift them to 3D world-space coordinates via monocular reconstruction, and compute a set of projective-geometry residuals capturing three failure dimensions: scale-depth alignment, 3D motion consistency, and 3D structural rigidity. To support systematic evaluation, we build PDI-Dataset, covering diverse scenarios designed to stress these geometric constraints. Across state-of-the-art video generators, PDI reveals consistent geometry-specific failure modes that are not captured by common perceptual metrics, and provides a diagnostic signal for progress toward physically grounded video generation and physical world model. Our code and dataset can be found at https://pdi-bench.github.io/.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.15185v1",
-        "pdf": "https://arxiv.org/pdf/2605.15185v1"
-      },
-      "arxiv_id": "2605.15185v1",
-      "comment": "12 pages, 5 figures. Project page : https://pdi-bench.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.203389830508474,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Generative video models are increasingly studied as implicit world models, yet evaluating whether they produce physically plausible 3D structure and motion remains challenging. Most existing video evaluation pipelines rely heavily on human judgment or learned graders, which can be subjective and weakly diagnostic for geometric failures. We introduce PDI-Bench (Perspective Distortion Index), a quan...",
+        "short": "Generating simulation-ready tabletop scenes from task instructions is an intriguing and promising research direction in the field of Embodied AI. However, existing task-to-scene generation methods rely exclusively on large language models (LLMs) to predict scene layouts, inevitably yielding object collisions or floating due to LLMs' inherent limitations in 3D spatial reasoning. In this paper, we p...",
         "key_contributions": [
-          "Generative video models are increasingly studied as implicit world models, yet evaluating whether they produce physically plausible 3D structure and motion remains challenging.",
-          "Most existing video evaluation pipelines rely heavily on human judgment or learned graders, which can be subjective and weakly diagnostic for geometric failures.",
-          "We introduce PDI-Bench (Perspective Distortion Index), a quantitative framework for auditing geometric coherence in generated videos."
+          "Generating simulation-ready tabletop scenes from task instructions is an intriguing and promising research direction in the field of Embodied AI.",
+          "However, existing task-to-scene generation methods rely exclusively on large language models (LLMs) to predict scene layouts, inevitably yielding object collisions or floating due to LLMs' inherent limitations in 3D spatial reasoning.",
+          "In this paper, we present STABLE, a semantics-physics dual-system tailored for simulation-ready tabletop scene generation."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.15187v1",
-      "title": "Articraft: An Agentic System for Scalable Articulated 3D Asset Generation",
+      "id": "2605.16079v1",
+      "title": "VideoSeeker: Incentivizing Instance-level Video Understanding via Native Agentic Tool Invocation",
       "authors": [
-        "Matt Zhou",
-        "Ruining Li",
-        "Xiaoyang Lyu",
-        "Zhaomou Song",
-        "Zhening Huang",
-        "Chuanxia Zheng",
-        "Christian Rupprecht",
-        "Andrea Vedaldi",
-        "Shangzhe Wu"
+        "Yiming Zhao",
+        "Yu Zeng",
+        "Wenxuan Huang",
+        "Zhen Fang",
+        "Qing Miao",
+        "Qisheng Su",
+        "Jiawei Zhao",
+        "Jiayin Cai",
+        "Lin Chen",
+        "Zehui Chen",
+        "Yukun Qi",
+        "Yao Hu",
+        "Xiaolong Jiang",
+        "Feng Zhao"
       ],
-      "abstract": "A bottleneck in learning to understand articulated 3D objects is the lack of large and diverse datasets. In this paper, we propose to leverage large language models (LLMs) to close this gap and generate articulated assets at scale. We reduce the problem of generating an articulated 3D asset to that of writing a program that builds it. We then introduce a new agentic system, Articraft, that writes such programs automatically. We design a programmatic interface and harness to help the LLM do so effectively. The LLM writes code against a domain-specific SDK for defining parts, composing geometry, specifying joints, and writing tests to validate the resulting assets. The harness exposes a restricted workspace and interface to the LLM, validates the resulting assets, and returns structured feedback. In this way, the LLM is not distracted by details such as authoring a URDF file or managing a complex software environment. We show that this produces higher-quality assets than both state-of-the-art articulated-asset generators and general-purpose coding agents. Using Articraft, we build Articraft-10K, a curated dataset of over 10K articulated assets spanning 245 categories, and show its utility both for training models of articulated assets and in downstream applications such as robotics simulation and virtual reality.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
+      "abstract": "Large Vision-Language Models (LVLMs) have shown significant progress in video understanding, yet they face substantial challenges in tasks requiring precise spatiotemporal localization at the instance level. Existing methods primarily rely on text prompts for human-model interaction, but these prompts struggle to provide precise spatial and temporal references, resulting in poor user experience. Furthermore, current approaches typically decouple visual perception from language reasoning, centering reasoning around language rather than visual content, which limits the model's ability to proactively perceive fine-grained visual evidence. To address these challenges, we propose VideoSeeker, a novel paradigm for instance-level video understanding through visual prompts. VideoSeeker seamlessly integrates agentic reasoning with instance-level video understanding tasks, enabling the model to proactively perceive and retrieve relevant video segments on demand. We construct a four-stage fully automated data synthesis pipeline to efficiently generate large-scale, high-quality instance-level video data. We internalize tool-calling and proactive perception capabilities into the model via cold-start supervision and RL training, building a powerful video understanding model. Experiments demonstrate that our model achieves an average improvement of +13.7% over baselines on instance-level video understanding tasks, surpassing powerful closed-source models such as GPT-4o and Gemini-2.5-Pro, while also showing effective transferability on general video understanding benchmarks. The relevant datasets and code will be released publicly.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
       "categories": [
         "cs.CV",
-        "cs.GR",
-        "cs.RO"
+        "cs.AI",
+        "cs.HC"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.15187v1",
-        "pdf": "https://arxiv.org/pdf/2605.15187v1"
+        "paper": "http://arxiv.org/abs/2605.16079v1",
+        "pdf": "https://arxiv.org/pdf/2605.16079v1"
       },
-      "arxiv_id": "2605.15187v1",
-      "comment": "Project page: https://articraft3d.github.io/",
+      "arxiv_id": "2605.16079v1",
+      "comment": "Project Page: https://gaotiexinqu.github.io/VideoSeeker/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.050000000000001,
@@ -389,241 +518,47 @@
         }
       },
       "ai_summaries": {
-        "short": "A bottleneck in learning to understand articulated 3D objects is the lack of large and diverse datasets. In this paper, we propose to leverage large language models (LLMs) to close this gap and generate articulated assets at scale. We reduce the problem of generating an articulated 3D asset to that of writing a program that builds it. We then introduce a new agentic system, Articraft, that writes ...",
+        "short": "Large Vision-Language Models (LVLMs) have shown significant progress in video understanding, yet they face substantial challenges in tasks requiring precise spatiotemporal localization at the instance level. Existing methods primarily rely on text prompts for human-model interaction, but these prompts struggle to provide precise spatial and temporal references, resulting in poor user experience. F...",
         "key_contributions": [
-          "A bottleneck in learning to understand articulated 3D objects is the lack of large and diverse datasets.",
-          "In this paper, we propose to leverage large language models (LLMs) to close this gap and generate articulated assets at scale.",
-          "We reduce the problem of generating an articulated 3D asset to that of writing a program that builds it."
+          "Large Vision-Language Models (LVLMs) have shown significant progress in video understanding, yet they face substantial challenges in tasks requiring precise spatiotemporal localization at the instance level.",
+          "Existing methods primarily rely on text prompts for human-model interaction, but these prompts struggle to provide precise spatial and temporal references, resulting in poor user experience.",
+          "Furthermore, current approaches typically decouple visual perception from language reasoning, centering reasoning around language rather than visual content, which limits the model's ability to proactively perceive fine-grained visual evidence."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.15167v1",
-      "title": "Does Synthetic Layered Design Data Benefit Layered Design Decomposition?",
+      "id": "2605.16065v1",
+      "title": "Robust Prior-Guided Segmentation for Editable 3D Gaussian Splatting",
       "authors": [
-        "Kam Man Wu",
-        "Haolin Yang",
-        "Qingyu Chen",
-        "Yihu Tang",
-        "Jingye Chen",
-        "Qifeng Chen"
+        "Raushan Joshi",
+        "Jean-Yves Guillemaut"
       ],
-      "abstract": "Recent advances in image generation have made it easy to produce high-quality images. However, these outputs are inherently flattened, entangling foreground elements, background, and text within a fixed canvas. As a result, flexible post-generation editing remains challenging, revealing a clear last-mile gap toward practical usability. Existing approaches either rely on scarce proprietary layered assets or construct partially synthetic data from limited structural priors. However, both strategies face fundamental challenges in scalability. In this work, we investigate whether pure synthetic layered data can improve graphic design decomposition. We make the assumption that, in graphic design, effective decomposition does not require modeling inter-layer dependencies as precisely as in natural-image composition, since design elements are often intentionally arranged as modular and semantically separable components. Concretely, we conduct a data-centric study based on CLD baseline, which is a state-of-the-art layer decomposition framework. Based on the baseline, we construct our own synthetic dataset, SynLayers, generate textual supervision using vision language models, and automate inference inputs with VLM-predicted bounding boxes. Our study reveals three key findings: (1) even training with purely synthetic data can outperform non-scalable alternatives such as the widely used PrismLayersPro dataset, demonstrating its viability as a scalable and effective substitute; (2) performance consistently improves with increased training data scale, while gains begin to saturate at around 50K samples; and (3) synthetic data enables balanced control over layer-count distributions, avoiding the layer-count imbalance commonly observed in real-world datasets. We hope this data-centric study encourages broader adoption of synthetic data as a practical foundation for layered design editing systems.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.15167v1",
-        "pdf": "https://arxiv.org/pdf/2605.15167v1"
-      },
-      "arxiv_id": "2605.15167v1",
-      "comment": "22 pages, 10 figures. Code is available at https://github.com/YangHaolin0526/SynLayers",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9499999999999997,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in image generation have made it easy to produce high-quality images. However, these outputs are inherently flattened, entangling foreground elements, background, and text within a fixed canvas. As a result, flexible post-generation editing remains challenging, revealing a clear last-mile gap toward practical usability. Existing approaches either rely on scarce proprietary layered ...",
-        "key_contributions": [
-          "Recent advances in image generation have made it easy to produce high-quality images.",
-          "However, these outputs are inherently flattened, entangling foreground elements, background, and text within a fixed canvas.",
-          "As a result, flexible post-generation editing remains challenging, revealing a clear last-mile gap toward practical usability."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.15030v1",
-      "title": "WARD: Adversarially Robust Defense of Web Agents Against Prompt Injections",
-      "authors": [
-        "Tri Cao",
-        "Yulin Chen",
-        "Hieu Cao",
-        "Yibo Li",
-        "Khoi Le",
-        "Thong Nguyen",
-        "Yuexin Li",
-        "Yufei He",
-        "Yue Liu",
-        "Shuicheng Yan",
-        "Bryan Hooi"
-      ],
-      "abstract": "Web agents can autonomously complete online tasks by interacting with websites, but their exposure to open web environments makes them vulnerable to prompt injection attacks embedded in HTML content or visual interfaces. Existing guard models still suffer from limited generalization to unseen domains and attack patterns, high false positive rates on benign content, reduced deployment efficiency due to added latency at each step, and vulnerability to adversarial attacks that evolve over time or directly target the guard itself. To address these limitations, we propose WARD (Web Agent Robust Defense against Prompt Injection), a practical guard model for secure and efficient web agents. WARD is built on WARD-Base, a large-scale dataset with around 177K samples collected from 719 high-traffic URLs and platforms, and WARD-PIG, a dedicated dataset designed for prompt injection attacks targeting the guard model. We further introduce A3T, an adaptive adversarial attack training framework that iteratively strengthens WARD through a memory-based attacker and guard co-evolution process. Extensive experiments show that WARD achieves nearly perfect recall on out-of-distribution benchmarks, maintains low false positive rates to preserve agent utility, remains robust against guard-targeted and adaptive attacks under substantial distribution shifts, and runs efficiently in parallel with the agent without introducing additional latency.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
-      "categories": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.15030v1",
-        "pdf": "https://arxiv.org/pdf/2605.15030v1"
-      },
-      "arxiv_id": "2605.15030v1",
-      "comment": "Code and models: https://github.com/caothientri2001vn/WARD-WebAgent",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9499999999999997,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Web agents can autonomously complete online tasks by interacting with websites, but their exposure to open web environments makes them vulnerable to prompt injection attacks embedded in HTML content or visual interfaces. Existing guard models still suffer from limited generalization to unseen domains and attack patterns, high false positive rates on benign content, reduced deployment efficiency du...",
-        "key_contributions": [
-          "Web agents can autonomously complete online tasks by interacting with websites, but their exposure to open web environments makes them vulnerable to prompt injection attacks embedded in HTML content or visual interfaces.",
-          "Existing guard models still suffer from limited generalization to unseen domains and attack patterns, high false positive rates on benign content, reduced deployment efficiency due to added latency at each step, and vulnerability to adversarial attacks that evolve over time or directly target the guard itself.",
-          "To address these limitations, we propose WARD (Web Agent Robust Defense against Prompt Injection), a practical guard model for secure and efficient web agents."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.15071v1",
-      "title": "On the Cultural Anachronism and Temporal Reasoning in Vision Language Models",
-      "authors": [
-        "Mukul Ranjan",
-        "Prince Jha",
-        "Khushboo Kumari",
-        "Zhiqiang Shen"
-      ],
-      "abstract": "Vision-Language Models (VLMs) are increasingly applied to cultural heritage materials, from digital archives to educational platforms. This work identifies a fundamental issue in how these models interpret historical artifacts. We define this phenomenon as cultural anachronism, the tendency to misinterpret historical objects using temporally inappropriate concepts, materials, or cultural frameworks. To quantify this phenomenon, we introduce the Temporal Anachronism Benchmark for Vision-Language Models (TAB-VLM), a dataset of 600 questions across six categories, designed to evaluate temporal reasoning on 1,600 Indian cultural artifacts spanning prehistoric to modern periods. Systematic evaluations of ten state-of-the-art models reveal significant deficiencies on our benchmark, and even the best model (GPT-5.2) achieves only 58.7% overall accuracy. The performance gap persists across varying architectures and scales, suggesting that cultural anachronism represents a significant limitation in visual AI systems, regardless of model size. These findings highlight the disparity between current VLM capabilities and the requirements for accurately interpreting cultural heritage materials, particularly for non-Western visual cultures underrepresented in training data. Our benchmark provides a foundation for enhancing temporal cognition in multimodal AI systems that interact with historical artifacts. The dataset and code are available in our project page.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
+      "abstract": "3D Gaussian Splatting (3D-GS) enables real-time 3D scene reconstruction but lacks robust segmentation for editing tasks such as object removal, extraction, and recoloring. Existing approaches that lift 2D segmentations to the 3D domain suffer from view inconsistencies and coarse masks. In this paper, we propose a novel framework that leverages the Segment Anything Model High Quality (SAM-HQ) to generate accurate 2D masks, addressing the limitations of the standard SAM in boundary fidelity and fine-structure preservation. To achieve robust 3D segmentation of any target object in a given scene, we introduce a prior-guided label reassignment method that assigns labels to 3D Gaussians by enforcing multiview consistency with learned priors. Our approach achieves state-of-the-art segmentation accuracy and enables interactive, real-time object editing while maintaining high visual fidelity. Qualitative results demonstrate superior boundary preservation and practical utility in Virtual Reality (VR) and robotics, advancing 3D scene editing.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.CL"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.15071v1",
-        "pdf": "https://arxiv.org/pdf/2605.15071v1"
+        "paper": "http://arxiv.org/abs/2605.16065v1",
+        "pdf": "https://arxiv.org/pdf/2605.16065v1"
       },
-      "arxiv_id": "2605.15071v1",
-      "comment": "Project Page: https://khushboo0012.github.io/tab-vlm-webpage/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Vision-Language Models (VLMs) are increasingly applied to cultural heritage materials, from digital archives to educational platforms. This work identifies a fundamental issue in how these models interpret historical artifacts. We define this phenomenon as cultural anachronism, the tendency to misinterpret historical objects using temporally inappropriate concepts, materials, or cultural framework...",
-        "key_contributions": [
-          "Vision-Language Models (VLMs) are increasingly applied to cultural heritage materials, from digital archives to educational platforms.",
-          "This work identifies a fundamental issue in how these models interpret historical artifacts.",
-          "We define this phenomenon as cultural anachronism, the tendency to misinterpret historical objects using temporally inappropriate concepts, materials, or cultural frameworks."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.15010v1",
-      "title": "3D Skew-Normal Splatting",
-      "authors": [
-        "Xiangru Wu",
-        "Ke Fan",
-        "Yanwei Fu"
-      ],
-      "abstract": "3D Gaussian Splatting (3DGS) has emerged as a leading representation for real-time novel view synthesis and been widely adopted in various downstream applications. The core strength of 3DGS lies in its efficient kernel-based scene representation, where Gaussian primitives provide favorable mathematical and computational properties. However, under a finite primitive budget, the symmetric shape of each primitive directly affects representation compactness, especially near asymmetric structures such as object boundaries and one-sided surfaces. Recent works have explored more complex kernel distributions, yet they either remain within the elliptical family or rely on hard truncation, which limits continuous shape control and introduces distributional discontinuities. In this paper, we propose Skew-Normal Splatting (SNS), which adopts the Azzalini Skew-Normal distribution as the fundamental primitive. By introducing a learnable and bounded skewness parameter, SNS can continuously interpolate between symmetric Gaussians and Half-Gaussian-like shapes, enabling flexible modeling of both sharp boundaries and interior regions. Moremover, SNS preserves analytical tractability under affine transformations and marginalization. This property allows seamless integration into existing Gaussian Splatting rasterization pipelines.Furthermore, to address the strong coupling between scale, rotation, and skewness parameters, we introduce a decoupled parameterization and a block-wise optimization strategy to enhance training stability and accuracy. Extensive experiments on standard novel-view synthesis benchmarks show that SNS consistently improves reconstruction quality over Gaussian and recent non-Gaussian kernels, with clearer benefits on sharp boundaries and thin or one-sided structures.",
-      "published": "2026-05-14",
-      "updated": "2026-05-14",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.15010v1",
-        "pdf": "https://arxiv.org/pdf/2605.15010v1"
-      },
-      "arxiv_id": "2605.15010v1",
-      "comment": "",
+      "arxiv_id": "2605.16065v1",
+      "comment": "Accepted at IEEE International Conference on Image Processing 2026, 6 pages",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.877966101694915,
+      "relevance_score": 4.03135593220339,
       "score_breakdown": {
-        "total_score": 3.88,
+        "total_score": 4.03,
         "field_match": {
-          "score": 1.69,
+          "score": 2.2,
           "matches": [
             "3d gaussian",
-            "gaussian splatting"
+            "gaussian splatting",
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -642,16 +577,84 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "3D Gaussian Splatting (3DGS) has emerged as a leading representation for real-time novel view synthesis and been widely adopted in various downstream applications. The core strength of 3DGS lies in its efficient kernel-based scene representation, where Gaussian primitives provide favorable mathematical and computational properties. However, under a finite primitive budget, the symmetric shape of e...",
+        "short": "3D Gaussian Splatting (3D-GS) enables real-time 3D scene reconstruction but lacks robust segmentation for editing tasks such as object removal, extraction, and recoloring. Existing approaches that lift 2D segmentations to the 3D domain suffer from view inconsistencies and coarse masks. In this paper, we propose a novel framework that leverages the Segment Anything Model High Quality (SAM-HQ) to ge...",
         "key_contributions": [
-          "3D Gaussian Splatting (3DGS) has emerged as a leading representation for real-time novel view synthesis and been widely adopted in various downstream applications.",
-          "The core strength of 3DGS lies in its efficient kernel-based scene representation, where Gaussian primitives provide favorable mathematical and computational properties.",
-          "However, under a finite primitive budget, the symmetric shape of each primitive directly affects representation compactness, especially near asymmetric structures such as object boundaries and one-sided surfaces."
+          "3D Gaussian Splatting (3D-GS) enables real-time 3D scene reconstruction but lacks robust segmentation for editing tasks such as object removal, extraction, and recoloring.",
+          "Existing approaches that lift 2D segmentations to the 3D domain suffer from view inconsistencies and coarse masks.",
+          "In this paper, we propose a novel framework that leverages the Segment Anything Model High Quality (SAM-HQ) to generate accurate 2D masks, addressing the limitations of the standard SAM in boundary fidelity and fine-structure preservation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.16258v1",
+      "title": "IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation",
+      "authors": [
+        "Yuqi Wu",
+        "Tianyu Hu",
+        "Wenzhao Zheng",
+        "Yuanhui Huang",
+        "Haowen Sun",
+        "Jie Zhou",
+        "Jiwen Lu"
+      ],
+      "abstract": "Reconstructing coherent 3D geometry and appearance from unposed multi-view images is a fundamental yet challenging problem in computer vision. Most existing visual geometry foundation models predict explicit geometry by regressing pixel-aligned pointmaps, often suffering from redundancy and limited geometric continuity. We propose IVGT, an Implicit Visual Geometry Transformer that implicitly models continuous and coherent geometry from pose-free multi-view images. This formulation learns a continuous neural scene representation in a canonical coordinate system and supports continuous spatial queries at any 3D positions, retrieving local features to predict signed distance (SDF) values and colors using lightweight decoders. It allows direct extraction of continuous and coherent surface geometry, enabling rendering of RGB images, depth maps, and surface normal maps from arbitrary viewpoints. We train IVGT via multi-dataset joint optimization with 2D supervision and 3D geometric regularization. IVGT demonstrates generalization across scenes and achieves strong performance on various tasks, including mesh and point cloud reconstruction, novel view synthesis, depth and surface normal estimation, and camera pose estimation.",
+      "published": "2026-05-15",
+      "updated": "2026-05-15",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.16258v1",
+        "pdf": "https://arxiv.org/pdf/2605.16258v1"
+      },
+      "arxiv_id": "2605.16258v1",
+      "comment": "Code: https://github.com/wzzheng/IVGT/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.019491525423729,
+      "score_breakdown": {
+        "total_score": 4.02,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Reconstructing coherent 3D geometry and appearance from unposed multi-view images is a fundamental yet challenging problem in computer vision. Most existing visual geometry foundation models predict explicit geometry by regressing pixel-aligned pointmaps, often suffering from redundancy and limited geometric continuity. We propose IVGT, an Implicit Visual Geometry Transformer that implicitly model...",
+        "key_contributions": [
+          "Reconstructing coherent 3D geometry and appearance from unposed multi-view images is a fundamental yet challenging problem in computer vision.",
+          "Most existing visual geometry foundation models predict explicit geometry by regressing pixel-aligned pointmaps, often suffering from redundancy and limited geometric continuity.",
+          "We propose IVGT, an Implicit Visual Geometry Transformer that implicitly models continuous and coherent geometry from pose-free multi-view images."
         ],
         "provider": "gemini"
       }

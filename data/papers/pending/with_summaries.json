@@ -3,34 +3,102 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.22818v1",
-      "title": "MotiMotion: Motion-Controlled Video Generation with Visual Reasoning",
+      "id": "2605.23602v1",
+      "title": "GlowGS: Generative Semantic Feature Learning for 3D Gaussian Splatting in Nighttime Glow Scenes",
       "authors": [
-        "Lee Hsin-Ying",
-        "Hanwen Jiang",
-        "Yiqun Mei",
-        "Jing Shi",
-        "Ming-Hsuan Yang",
-        "Zhixin Shu"
+        "Beibei Lin",
+        "Xiao Cao",
+        "Jingyuan Guo",
+        "Robby T. Tan"
       ],
-      "abstract": "Current motion-controlled image-to-video generation models rigidly follow user-provided trajectories that are often sparse, imprecise, and causally incomplete. Such reliance often yields unnatural or implausible outcomes, especially by missing secondary causal consequences. To address this, we introduce MotiMotion, a novel framework that reformulates motion control as a reasoning-then-generation problem. To encourage causally grounded and commonsense-consistent interactions, we leverage a training-free vision-language reasoner to refine image-space coordinates of primary trajectories and to hallucinate plausible secondary motions. To further improve motion naturalness, we propose a confidence-aware control scheme that modulates guidance strength, enabling the model to closely follow high-confidence plans while correcting artifacts under low-confidence inputs with its internal generative priors. To support systematic evaluation, we curate a new image-to-video benchmark, MotiBench, consisting of interaction-centric scenes where new events are triggered by motion. Both VLM-based evaluation and a human study on MotiBench demonstrate that MotiMotion produces videos with more plausible object behaviors and interaction, and is preferred over existing approaches.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
+      "abstract": "Existing 3DGS methods effectively render high-quality novel views in clear-day scenes. However, they struggle with night scenes, particularly in glow regions, due to the lack of structural features such as textures and edges, which are key cues for splatting-based reconstruction. To address this problem, we leverage a diffusion model and a Vision Foundation Model (VFM) to compensate for missing structural cues. Our method consists of two key novel ideas: semantic feature generation and novel-view semantic learning. First, semantic feature generation produces high-quality semantic features as implicit structural cues for novel views. Specifically, a diffusion model synthesizes novel views with unknown camera poses from training views, while a VFM evaluates their quality. Once high-quality novel views are identified, the VFM extracts robust features to construct the semantic feature bank. Second, novel-view semantic learning enables 3DGS to optimize rendered novel views without requiring ground truth. It achieves this by extracting semantic features from a rendered novel view, searching the feature bank for the most similar features, and minimizing their distance. This process enforces implicit structural constraints, ensuring semantically coherent, artifact-free rendered views. Extensive experiments demonstrate the effectiveness of our GlowGS in generating semantically accurate 3D views, showing significant improvements over existing methods.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.22818v1",
-        "pdf": "https://arxiv.org/pdf/2605.22818v1"
+        "paper": "http://arxiv.org/abs/2605.23602v1",
+        "pdf": "https://arxiv.org/pdf/2605.23602v1"
       },
-      "arxiv_id": "2605.22818v1",
-      "comment": "ICML 2026. Project page: https://motimotion.github.io/",
+      "arxiv_id": "2605.23602v1",
+      "comment": "Accepted by CVPR Findings 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.3999999999999995,
+      "has_code": false,
+      "relevance_score": 5.027966101694915,
       "score_breakdown": {
-        "total_score": 5.4,
+        "total_score": 5.03,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Existing 3DGS methods effectively render high-quality novel views in clear-day scenes. However, they struggle with night scenes, particularly in glow regions, due to the lack of structural features such as textures and edges, which are key cues for splatting-based reconstruction. To address this problem, we leverage a diffusion model and a Vision Foundation Model (VFM) to compensate for missing st...",
+        "key_contributions": [
+          "Existing 3DGS methods effectively render high-quality novel views in clear-day scenes.",
+          "However, they struggle with night scenes, particularly in glow regions, due to the lack of structural features such as textures and edges, which are key cues for splatting-based reconstruction.",
+          "To address this problem, we leverage a diffusion model and a Vision Foundation Model (VFM) to compensate for missing structural cues."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.23655v1",
+      "title": "CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception",
+      "authors": [
+        "Liupeng Li",
+        "Haoqian Kang",
+        "Zhenyu Lu",
+        "Jinpeng Wang",
+        "Bin Chen",
+        "Ke Chen",
+        "Yaowei Wang"
+      ],
+      "abstract": "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs). While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency. Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational redundancy and semantic fragmentation. To address this dilemma, we introduce CVSearch, a training-free adaptive framework that dynamically schedules search strategies via an Assess-then-Search workflow. Specifically, CVSearch first invokes expert-assisted search when global information is insufficient, and only triggers a novel semantic-aware scanning mechanism upon failure. Distinct from rigid grid partitioning, this efficient scanning paradigm incorporates Semantic Guided Adaptive Patching to decompose images into semantically consistent regions, effectively mitigating object fragmentation. Furthermore, we devise a Dynamic Bottom-Up Search strategy driven by a Visual Complexity prior to enable efficient and precise iterative exploration of local details. Extensive experiments on HR benchmarks demonstrate that CVSearch achieves state-of-the-art accuracy while substantially improving search efficiency. Code is released at https://github.com/liliupeng28/ICML26-CVSearch.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.23655v1",
+        "pdf": "https://arxiv.org/pdf/2605.23655v1"
+      },
+      "arxiv_id": "2605.23655v1",
+      "comment": "Accepted by ICML 2026. 22 pages, 12 figures, 7 tables",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.85,
+      "score_breakdown": {
+        "total_score": 4.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -42,12 +110,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -56,57 +124,55 @@
         }
       },
       "ai_summaries": {
-        "short": "Current motion-controlled image-to-video generation models rigidly follow user-provided trajectories that are often sparse, imprecise, and causally incomplete. Such reliance often yields unnatural or implausible outcomes, especially by missing secondary causal consequences. To address this, we introduce MotiMotion, a novel framework that reformulates motion control as a reasoning-then-generation p...",
+        "short": "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs). While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency. Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational...",
         "key_contributions": [
-          "Current motion-controlled image-to-video generation models rigidly follow user-provided trajectories that are often sparse, imprecise, and causally incomplete.",
-          "Such reliance often yields unnatural or implausible outcomes, especially by missing secondary causal consequences.",
-          "To address this, we introduce MotiMotion, a novel framework that reformulates motion control as a reasoning-then-generation problem."
+          "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs).",
+          "While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency.",
+          "Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational redundancy and semantic fragmentation."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.22816v1",
-      "title": "AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation",
+      "id": "2605.23840v1",
+      "title": "MuellerPT: Decomposition Driven Pretraining for Dense Learning in Mueller Polarimetry",
       "authors": [
-        "Wenxuan Guo",
-        "Xiuwei Xu",
-        "Yichen Liu",
-        "Xiangyu Li",
-        "Hang Yin",
-        "Huangxing Chen",
-        "Wenzhao Zheng",
-        "Jianjiang Feng",
-        "Jie Zhou",
-        "Jiwen Lu"
+        "Adam Tlemsani",
+        "Yingdian Li",
+        "Maxime Giot",
+        "Naim Slim",
+        "Christopher J. Peters",
+        "Abhijeet Ghosh",
+        "Daniel S. Elson"
       ],
-      "abstract": "Vision-and-Language Navigation (VLN) requires an agent to ground language instructions to its own movement within a visual environment. While state-of-the-art methods leverage the reasoning capabilities of Vision-Language Models (VLMs) for end-to-end action prediction, they often lack an explicit and explainable understanding of the relationships between the agent, the instruction, and the scene. Conversely, explicitly building a scene map for heuristic planning is intuitively appealing but relies on additional 3D sensors and hinders large-scale vision-language pre-training. To bridge this gap, we propose AwareVLN, a novel framework that equips the navigation model with a self-aware reasoning mechanism, enabling it to understand the agent's state and task progress in a fully end-to-end and data-driven manner. Our approach features two key innovations: (1) a structural reasoning module that fosters spatial and task-oriented self-awareness, and (2) an automatic data engine with progress division for effective training. Extensive experiments on various datasets in Habitat simulator show our AwareVLN significantly outperforms previous state-of-the-art vision-language navigation methods. Project page: https://gwxuan.github.io/AwareVLN/.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
+      "abstract": "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings. We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixel 4x4 Mueller matrices. To scale pre-training, we collected a new large Multispectral Animal Polarimetric Organ dataset (MAP-Org). The pre-trained encoder is adapted with a segmentation head for grey vs. white matter segmentation in lamb brain. A classification head is used for colorectal cancer vs. non-cancer classification. Both segmentation and classification are evaluated across few-shot learning scenarios. In segmentation, MuellerPT improves label efficiency and cross specimen transfer compared to models without pre-training, achieving an absolute DICE gain of over 20% compared to the baseline trained from scratch when using 5% of the training data. In classification, MuellerPT also enhances label efficiency, improving overall accuracy by 8% compared to the baseline when using 1% of the training data. We demonstrate MuellerPT's robustness to domain shift with a qualitative evaluation of its predicted Lu-Chipman maps on an ex vivo human oesophagus sample. These results suggest that predicting Lu-Chipman decomposition is an effective and practical pretext task for robust biomedical inference from Mueller polarimetry and can pave the way for future work on label efficient Mueller imaging.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
       "categories": [
-        "cs.RO",
         "cs.CV"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.22816v1",
-        "pdf": "https://arxiv.org/pdf/2605.22816v1"
+        "paper": "http://arxiv.org/abs/2605.23840v1",
+        "pdf": "https://arxiv.org/pdf/2605.23840v1"
       },
-      "arxiv_id": "2605.22816v1",
-      "comment": "Accepted to CVPR 2026. Project page: https://gwxuan.github.io/AwareVLN/",
+      "arxiv_id": "2605.23840v1",
+      "comment": "Accepted to 29th International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI 2026)",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.25,
+      "has_code": false,
+      "relevance_score": 4.803389830508474,
       "score_breakdown": {
-        "total_score": 5.25,
+        "total_score": 4.8,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "CVPR",
+          "venue": "MICCAI",
           "weight": 0.25
         },
         "citation_potential": {
@@ -114,63 +180,51 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Vision-and-Language Navigation (VLN) requires an agent to ground language instructions to its own movement within a visual environment. While state-of-the-art methods leverage the reasoning capabilities of Vision-Language Models (VLMs) for end-to-end action prediction, they often lack an explicit and explainable understanding of the relationships between the agent, the instruction, and the scene. ...",
+        "short": "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings. We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixe...",
         "key_contributions": [
-          "Vision-and-Language Navigation (VLN) requires an agent to ground language instructions to its own movement within a visual environment.",
-          "While state-of-the-art methods leverage the reasoning capabilities of Vision-Language Models (VLMs) for end-to-end action prediction, they often lack an explicit and explainable understanding of the relationships between the agent, the instruction, and the scene.",
-          "Conversely, explicitly building a scene map for heuristic planning is intuitively appealing but relies on additional 3D sensors and hinders large-scale vision-language pre-training."
+          "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings.",
+          "We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixel 4x4 Mueller matrices.",
+          "To scale pre-training, we collected a new large Multispectral Animal Polarimetric Organ dataset (MAP-Org)."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.22809v1",
-      "title": "Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving",
+      "id": "2605.23845v1",
+      "title": "Learning a Particle Dynamics Model with Real-world Videos",
       "authors": [
-        "Jiahao Wang",
-        "Bo Sun",
-        "Yijing Bai",
-        "Vincent Casser",
-        "Songyou Peng",
-        "Zehao Zhu",
-        "Meng-Li Shih",
-        "Xander Masotto",
-        "Shih-Yang Su",
-        "Kanaad V Parvate",
-        "Tiancheng Ge",
-        "Linn Bieske",
-        "Dragomir Anguelov",
-        "Mingxing Tan",
-        "Chiyu Max Jiang"
+        "Chanho Kim",
+        "Suhas V. Sumukh",
+        "Li Fuxin"
       ],
-      "abstract": "Robust training and validation of Autonomous Driving Systems (ADS) require massive, diverse datasets. Proprietary data collected by Autonomous Vehicle (AV) fleets, while high-fidelity, are limited in scale, diversity of sensor configurations, as well as geographic and long-tail-behavioral coverage. In contrast, in-the-wild data from sources like dashcams offers immense scale and diversity, capturing critical long-tail scenarios and novel environments. However, this unstructured, in-the-wild video data is incompatible with ADS expecting structured, multi-modal sensor inputs for validation and training. To bridge this data gap, we propose Sensor2Sensor, a novel generative modeling paradigm that translates in-the-wild monocular dashcam videos into a high-fidelity, multi-modal sensor suite (AV logs) comprising multi-view camera images and LiDAR point clouds. A core challenge is the lack of paired training data. We address this by converting real AV logs into dashcam-style videos via 4D Gaussian Splatting (4DGS) reconstruction and novel-view rendering. Sensor2Sensor then utilizes a diffusion architecture to perform the generative conversion. We perform comprehensive quantitative evaluations on the fidelity and realism of the generated sensor data. We demonstrate Sensor2Sensor's practical utility by converting challenging in-the-wild internet and dashcam footage into realistic, multi-modal data formats, further unlocking vast external data sources for AV development.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
+      "abstract": "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature. Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies. However, these models are typically trained in simulated environments because obtaining perfect state information such as complete scene point clouds and point correspondences over time is challenging in real-world settings. This reliance on synthetic data can limit their applicability when the sim-to-real gap is large. In this work, we aim to overcome these limitations by introducing a novel framework for training neural object dynamics models directly from unlabeled real-world videos. Specifically, we propose to learn a particle-based dynamics model compatible with a Gaussian splatting framework, which operates on dense particles derived from Gaussians (i.e., particles with scales and rotations) and predicts their position and rotation changes over time. The model is trained via rendering supervision, enabling learning from real-world videos without requiring particle-level labeled states. Our model operates directly on dense Gaussians without relying on heuristic subsampling anchor points. To enable this study, we also present a real-world dataset consisting of about 500 videos capturing diverse object interactions.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.22809v1",
-        "pdf": "https://arxiv.org/pdf/2605.22809v1"
+        "paper": "http://arxiv.org/abs/2605.23845v1",
+        "pdf": "https://arxiv.org/pdf/2605.23845v1"
       },
-      "arxiv_id": "2605.22809v1",
-      "comment": "Accepted by CVPR 2026",
+      "arxiv_id": "2605.23845v1",
+      "comment": "CVPR 2026 Findings",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.938983050847458,
+      "relevance_score": 4.638983050847457,
       "score_breakdown": {
-        "total_score": 4.94,
+        "total_score": 4.64,
         "field_match": {
           "score": 0.85,
           "matches": [
@@ -184,207 +238,6 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Robust training and validation of Autonomous Driving Systems (ADS) require massive, diverse datasets. Proprietary data collected by Autonomous Vehicle (AV) fleets, while high-fidelity, are limited in scale, diversity of sensor configurations, as well as geographic and long-tail-behavioral coverage. In contrast, in-the-wild data from sources like dashcams offers immense scale and diversity, capturi...",
-        "key_contributions": [
-          "Robust training and validation of Autonomous Driving Systems (ADS) require massive, diverse datasets.",
-          "Proprietary data collected by Autonomous Vehicle (AV) fleets, while high-fidelity, are limited in scale, diversity of sensor configurations, as well as geographic and long-tail-behavioral coverage.",
-          "In contrast, in-the-wild data from sources like dashcams offers immense scale and diversity, capturing critical long-tail scenarios and novel environments."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.22658v1",
-      "title": "SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation",
-      "authors": [
-        "Zhenyu Lu",
-        "Liupeng Li",
-        "Jinpeng Wang",
-        "Haoqian Kang",
-        "Yan Feng",
-        "Ke Chen",
-        "Yaowei Wang"
-      ],
-      "abstract": "While large language models provide strong compositional reasoning, existing reasoning segmentation pipelines fail to transparently connect this reasoning to visual perception. Current methods, such as latent query alignment, are end-to-end yet opaque \"black boxes\". Conversely, textual localization readout is merely readable, not truly interpretable, often functioning as an unconstrained post-hoc step. To bridge this interpretability gap, we propose SegCompass, an end-to-end model that leverages a Sparse Autoencoder (SAE) to forge an explicit, interpretable, and differentiable alignment pathway. Given an image-instruction pair, SegCompass first generates a chain-of-thought (CoT) trace. The core of our method is an SAE that maps both the CoT and visual tokens into a shared, high-dimensional sparse concept space. A query codebook selects salient concepts from this space, which are then spatially grounded by a slot mapper into a multi-slot heatmap that guides the final mask decoder. The entire model is trained jointly, unifying reinforcement learning for the reasoning path with standard segmentation supervision. This SAE-driven interface provides a \"white-box\" connection that is significantly more traceable than latent queries and more coherent than textual readouts. Extensive experiments on five challenging benchmarks demonstrate that SegCompass matches or surpasses state-of-the-art performance. Crucially, our visual and quantitative analyses show a strong correlation between the quality of the learned sparse concepts and final mask accuracy, confirming that SegCompass achieves superior results through its enhanced and inspectable alignment. Code is available at https://github.com/ZhenyuLU-Heliodore/SegCompass.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
-      "categories": [
-        "cs.CV",
-        "cs.LG",
-        "cs.MM",
-        "eess.IV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.22658v1",
-        "pdf": "https://arxiv.org/pdf/2605.22658v1"
-      },
-      "arxiv_id": "2605.22658v1",
-      "comment": "Accepted by CVPR 2026. 15 pages, 9 figures, 6 tables",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.903389830508474,
-      "score_breakdown": {
-        "total_score": 4.9,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "While large language models provide strong compositional reasoning, existing reasoning segmentation pipelines fail to transparently connect this reasoning to visual perception. Current methods, such as latent query alignment, are end-to-end yet opaque \"black boxes\". Conversely, textual localization readout is merely readable, not truly interpretable, often functioning as an unconstrained post-hoc ...",
-        "key_contributions": [
-          "While large language models provide strong compositional reasoning, existing reasoning segmentation pipelines fail to transparently connect this reasoning to visual perception.",
-          "Current methods, such as latent query alignment, are end-to-end yet opaque \"black boxes\".",
-          "Conversely, textual localization readout is merely readable, not truly interpretable, often functioning as an unconstrained post-hoc step."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.22645v1",
-      "title": "AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters",
-      "authors": [
-        "Hanjun Luo",
-        "Zhimu Huang",
-        "Sylvia Chung",
-        "Yiran Wang",
-        "Yingbin Jin",
-        "Jialin Li",
-        "Jiang Li",
-        "Xinfeng Li",
-        "Hanan Salam"
-      ],
-      "abstract": "Text-to-image (T2I) systems increasingly rely on upstream prompters, either humans or multimodal large language models (MLLMs), to translate user intent into detailed prompts. Yet current benchmarks fix the prompt and only evaluate T2I models, leaving the prompting proficiency of this upstream component entirely unmeasured. We introduce AtelierEval, the first unified benchmark that quantifies prompting proficiency across 360 expert-crafted tasks. Grounded in a cognitive view, it spans three task categories and instantiates tasks using a taxonomy of real-world challenges, with a dual interface for both humans and MLLMs. To enable scalable and reliable evaluation, we propose AtelierJudge, a skill-based, memory-augmented agentic evaluator. It produces subjective and objective scores for prompt-image pairs, achieving a Spearman correlation of 0.79 with human experts, approaching human performance. Extensive experiments benchmark 8 MLLMs against 48 human users across 4 T2I backends, validate AtelierEval as a robust diagnostic tool, and reveal the superiority of mimicry over planning, advocating for an image-augmented direction for future prompters. Our work is released to support future research.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.22645v1",
-        "pdf": "https://arxiv.org/pdf/2605.22645v1"
-      },
-      "arxiv_id": "2605.22645v1",
-      "comment": "Accepted by ICML 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
-      "score_breakdown": {
-        "total_score": 4.6,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Text-to-image (T2I) systems increasingly rely on upstream prompters, either humans or multimodal large language models (MLLMs), to translate user intent into detailed prompts. Yet current benchmarks fix the prompt and only evaluate T2I models, leaving the prompting proficiency of this upstream component entirely unmeasured. We introduce AtelierEval, the first unified benchmark that quantifies prom...",
-        "key_contributions": [
-          "Text-to-image (T2I) systems increasingly rely on upstream prompters, either humans or multimodal large language models (MLLMs), to translate user intent into detailed prompts.",
-          "Yet current benchmarks fix the prompt and only evaluate T2I models, leaving the prompting proficiency of this upstream component entirely unmeasured.",
-          "We introduce AtelierEval, the first unified benchmark that quantifies prompting proficiency across 360 expert-crafted tasks."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.22767v1",
-      "title": "Synthetic Data Alone is Enough? Rethinking Data Scarcity in Pediatric Rare Disease Recognition",
-      "authors": [
-        "Ganlin Feng",
-        "Yuxi Long",
-        "Erin Lou",
-        "Lianghong Chen",
-        "Zihao Jing",
-        "Pingzhao Hu",
-        "Wei Xu"
-      ],
-      "abstract": "Children with rare genetic diseases often exhibit distinctive facial phenotypes, yet developing computer vision systems for early diagnosis remains challenging due to extreme data scarcity, privacy constraints, and limited data sharing in pediatric settings. These challenges not only hinder automated diagnosis but also restrict the availability of visual resources for clinical genetic counseling. While prior work has shown that synthetic data can augment real datasets and preserve phenotype-level semantics, it remains unclear whether synthetic data alone is sufficient for learning in ultra-low-resource pediatric settings. In this work, we study the synthetic-only regime for pediatric rare disease recognition. Under a controlled experimental setup, models are trained exclusively on phenotype-aware synthetic facial images at increasing scales. We find that synthetic-only training achieves performance comparable to real-data-only baselines at sufficient scale across multiple backbones, suggesting that high-fidelity synthetic data can approximate clinically meaningful distributions. These findings together further enable the use of synthetic pediatric facial images as privacy-preserving resources for genetic education and counseling, supporting clinician training and patient communication. Our results highlight the potential of computer vision to improve data efficiency and expand accessible visual tools in children's healthcare.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.22767v1",
-        "pdf": "https://arxiv.org/pdf/2605.22767v1"
-      },
-      "arxiv_id": "2605.22767v1",
-      "comment": "CVPR 2026 CV4CHL workshop",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.469491525423729,
-      "score_breakdown": {
-        "total_score": 4.47,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
           "score": 6.0,
           "weight": 0.15
         },
@@ -399,45 +252,44 @@
         }
       },
       "ai_summaries": {
-        "short": "Children with rare genetic diseases often exhibit distinctive facial phenotypes, yet developing computer vision systems for early diagnosis remains challenging due to extreme data scarcity, privacy constraints, and limited data sharing in pediatric settings. These challenges not only hinder automated diagnosis but also restrict the availability of visual resources for clinical genetic counseling. ...",
+        "short": "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature. Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies. However, these models are typically...",
         "key_contributions": [
-          "Children with rare genetic diseases often exhibit distinctive facial phenotypes, yet developing computer vision systems for early diagnosis remains challenging due to extreme data scarcity, privacy constraints, and limited data sharing in pediatric settings.",
-          "These challenges not only hinder automated diagnosis but also restrict the availability of visual resources for clinical genetic counseling.",
-          "While prior work has shown that synthetic data can augment real datasets and preserve phenotype-level semantics, it remains unclear whether synthetic data alone is sufficient for learning in ultra-low-resource pediatric settings."
+          "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature.",
+          "Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies.",
+          "However, these models are typically trained in simulated environments because obtaining perfect state information such as complete scene point clouds and point correspondences over time is challenging in real-world settings."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.22671v1",
-      "title": "From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model",
+      "id": "2605.23673v1",
+      "title": "Relevant Walk Search for Explaining Graph Neural Networks",
       "authors": [
-        "Bing Hu",
-        "Zaijing Li",
-        "Rui Shao",
-        "Junda Chen",
-        "April Hua Liu",
-        "Wei-Shi Zheng",
-        "Liqiang Nie"
+        "Ping Xiong",
+        "Thomas Schnake",
+        "Michael Gastegger",
+        "Grégoire Montavon",
+        "Klaus-Robert Müller",
+        "Shinichi Nakajima"
       ],
-      "abstract": "Vision-Language-Action (VLA) models often suffer from performance degradation under distribution shifts, as they struggle to learn generalized behavior representations across varying environments. While existing approaches attempt to construct behavior representations through action-centric latent variables, they are often limited by short-horizon temporal fragmentation and static execution-alignment, leading to inconsistent behaviors in complex scenarios. To address these limitations, we propose \\textbf{BehaviorVLA}, a framework that facilitates robust manipulation through the learning of a temporally coherent behavioral representations. Our approach features two symmetric components: (1) the \\textbf{Visuomotor Behavior Encoder (VBE)}, which utilizes a causal Mamba-based architecture to aggregate long-horizon trajectory information into a unified behavior representation; and (2) the \\textbf{Phase-conditioned Behavior Decoder (PBD)}, which decodes this representation into precise actions by dynamically aligning task-level priors with real-time execution progress. Experiments on RoboTwin 2.0, LIBERO, and CALVIN demonstrate state-of-the-art success rates of 58\\%, 98\\%, and 4.36 (Avg.Len), respectively. Notably, in real-world sim-to-real transfer, BehaviorVLA matches the performance of OpenVLA-OFT using only 50\\% of the demonstration data, showcasing its superior data efficiency and generalization.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
+      "abstract": "Graph Neural Networks (GNNs) have become important machine learning tools for graph analysis, and its explainability is crucial for safety, fairness, and robustness. Layer-wise relevance propagation for GNNs (GNN-LRP) evaluates the relevance of \\emph{walks} to reveal important information flows in the network, and provides higher-order explanations, which have been shown to be superior to the lower-order, i.e., node-/edge-level, explanations. However, identifying relevant walks by GNN-LRP requires {\\em exponential} computational complexity with respect to the network depth, which we will remedy in this paper. Specifically, we propose {\\em polynomial-time} algorithms for finding top-$K$ relevant walks, which drastically reduces the computation and thus increases the applicability of GNN-LRP to large-scale problems. Our proposed algorithms are based on the \\emph{max-product} algorithm -- a common tool for finding the maximum likelihood configurations in probabilistic graphical models -- and can find the most relevant walks exactly at the neuron level and approximately at the node level. Our experiments demonstrate the performance of our algorithms at scale and their utility across application domains, i.e., on epidemiology, molecular, and natural language benchmarks. We provide our codes under \\href{https://github.com/xiong-ping/rel_walk_gnnlrp}{github.com/xiong-ping/rel\\_walk\\_gnnlrp}.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
       "categories": [
-        "cs.CV"
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.22671v1",
-        "pdf": "https://arxiv.org/pdf/2605.22671v1"
+        "paper": "http://arxiv.org/abs/2605.23673v1",
+        "pdf": "https://arxiv.org/pdf/2605.23673v1"
       },
-      "arxiv_id": "2605.22671v1",
-      "comment": "",
-      "journal_ref": "ICML2026 Spotlight",
+      "arxiv_id": "2605.23673v1",
+      "comment": "Published in ICML 2023",
+      "journal_ref": "Proceedings of the 40th International Conference on Machine Learning, PMLR 202:38301-38324, 2023",
       "has_code": false,
-      "relevance_score": 4.3999999999999995,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.4,
+        "total_score": 4.45,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -458,178 +310,51 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Vision-Language-Action (VLA) models often suffer from performance degradation under distribution shifts, as they struggle to learn generalized behavior representations across varying environments. While existing approaches attempt to construct behavior representations through action-centric latent variables, they are often limited by short-horizon temporal fragmentation and static execution-alignm...",
+        "short": "Graph Neural Networks (GNNs) have become important machine learning tools for graph analysis, and its explainability is crucial for safety, fairness, and robustness. Layer-wise relevance propagation for GNNs (GNN-LRP) evaluates the relevance of \\emph{walks} to reveal important information flows in the network, and provides higher-order explanations, which have been shown to be superior to the lowe...",
         "key_contributions": [
-          "Vision-Language-Action (VLA) models often suffer from performance degradation under distribution shifts, as they struggle to learn generalized behavior representations across varying environments.",
-          "While existing approaches attempt to construct behavior representations through action-centric latent variables, they are often limited by short-horizon temporal fragmentation and static execution-alignment, leading to inconsistent behaviors in complex scenarios.",
-          "To address these limitations, we propose \\textbf{BehaviorVLA}, a framework that facilitates robust manipulation through the learning of a temporally coherent behavioral representations."
+          "Graph Neural Networks (GNNs) have become important machine learning tools for graph analysis, and its explainability is crucial for safety, fairness, and robustness.",
+          "Layer-wise relevance propagation for GNNs (GNN-LRP) evaluates the relevance of \\emph{walks} to reveal important information flows in the network, and provides higher-order explanations, which have been shown to be superior to the lower-order, i.",
+          "e."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.22695v1",
-      "title": "Improving Viewpoint-Invariance and Temporal Consistency for Action Detection",
+      "id": "2605.23901v1",
+      "title": "LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws",
       "authors": [
-        "Yannick Porto",
-        "Renato Martins",
-        "Thomas Chalumeau",
-        "Cedric Demonceaux"
+        "Xu Ouyang",
+        "Deyi Liu",
+        "Yuhang Cai",
+        "Jing Liu",
+        "Yuan Yang",
+        "Chen Zheng",
+        "Thomas Hartvigsen",
+        "Yiyuan Ma"
       ],
-      "abstract": "Viewpoint change invariance and action temporal consistency are critical aspects for the effective deployment of human action detection of untrimmed videos. Existing appearance-based video detection methods often struggle with limited viewpoint diversity during training, while motion-based detection approaches frequently fail to model fine-grained temporal relationships across consecutive motion windows. This paper introduces a novel two-stage action detection approach designed to improve both view-invariance and global temporal coherence properties. In the first stage, we extract motion features from augmented virtual viewpoints, solely used at training. Then, the second stage introduces a new view-invariant, multi-scale temporal encoder based on selective state-space sequence modelling to aggregate information across viewpoints and time scales. Experiments on PKU-MMD and BABEL benchmarks demonstrate that this approach significantly outperforms state-of-the-art methods in all considered splits. Code and trained models are available at: https://icb-vision-ai.github.io/HydraView-TAD",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
+      "abstract": "Existing scaling laws for Large Language Models (LLMs), predominantly monotonic power laws, fail to explain emerging non-monotonic phenomena such as catastrophic overtraining and quantization-induced degradation, where performance deteriorates despite increased compute.\n  We propose the Shannon Scaling Law, a unified theoretical framework that models LLM training as information transmission over a noisy channel, grounded in the Shannon-Hartley theorem. By mapping model parameters to channel bandwidth and training tokens to signal power, our formulation explicitly captures the interaction between learning signal and intrinsic noise. This perspective reveals a fundamental Shannon capacity for LLMs: scaling model size or data without preserving a sufficient signal-to-noise ratio (SNR) inevitably amplifies noise, inducing a transition from monotonic improvement to U-shaped performance degradation.\n  We validate our theory through experiments on Pythia and OLMo2 under perturbations, including Gaussian noise, quantization and supervised fine-tuning on math, QA and code tasks. The Shannon Scaling Law consistently outperforms classical scaling laws and recent perturbation-aware laws, achieving strong $R^2$ scores and accurately capturing loss basins missed by prior approaches. It also extrapolates: fitted on $\\leq$6.9B Pythia models with $\\leq$180B tokens, it predicts the unseen 12B model up to 307B tokens at pooled $R^2{=}0.847$, while monotonic baselines collapse.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.AI",
+        "cs.IT"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.22695v1",
-        "pdf": "https://arxiv.org/pdf/2605.22695v1"
+        "paper": "http://arxiv.org/abs/2605.23901v1",
+        "pdf": "https://arxiv.org/pdf/2605.23901v1"
       },
-      "arxiv_id": "2605.22695v1",
-      "comment": "Accepted at ICIP 2026. Code and trained models are available at: https://icb-vision-ai.github.io/HydraView-TAD",
+      "arxiv_id": "2605.23901v1",
+      "comment": "Accepted by ICML 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.3,
-      "score_breakdown": {
-        "total_score": 4.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Viewpoint change invariance and action temporal consistency are critical aspects for the effective deployment of human action detection of untrimmed videos. Existing appearance-based video detection methods often struggle with limited viewpoint diversity during training, while motion-based detection approaches frequently fail to model fine-grained temporal relationships across consecutive motion w...",
-        "key_contributions": [
-          "Viewpoint change invariance and action temporal consistency are critical aspects for the effective deployment of human action detection of untrimmed videos.",
-          "Existing appearance-based video detection methods often struggle with limited viewpoint diversity during training, while motion-based detection approaches frequently fail to model fine-grained temporal relationships across consecutive motion windows.",
-          "This paper introduces a novel two-stage action detection approach designed to improve both view-invariance and global temporal coherence properties."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.22697v1",
-      "title": "Cross-Domain Human Action Recognition from Multiview Motion and Textual Descriptions",
-      "authors": [
-        "Yannick Porto",
-        "Renato Martins",
-        "Thomas Chalumeau",
-        "Cedric Demonceaux"
-      ],
-      "abstract": "Robustness to domain changes is a key capability for effective deployment of human action recognition systems in real-world scenarios, where action categories at inference can present important domain shifts or even unseen actions from training. In this context, improving the recognition capabilities of Zero-Shot Action Recognition models (ZSAR), without requiring strong annotation efforts, remains a central challenge. Most ZSAR approaches assume that actions are observed under geometric conditions similar to those seen during training. In practice, variations in human body orientation and camera viewpoint add a significant domain gap in ZSAR, substantially limiting generalization to novel action-motion combinations. In this context, this paper presents a novel orientation-aware action recognition approach with improved cross-domain capabilities. Our approach combines motion cues of multiple camera viewpoints and text descriptions of human actions in the training phase. We present a new orientation-aware motion encoding network to learn different motion features, and adapt a specific orientation-aware text prompt to match the corresponding features at inference. Extensive experiments demonstrate that the proposed method consistently improves ZSAR performance across different recognition benchmarks, outperforming recent state-of-the-art zero-shot approaches on NTU-RGB+D, BABEL, NW-UCLA, and on two surveillance datasets. In addition, the learned representations exhibit strong transfer learning capabilities, yielding competitive performance on both cross-domain and same-domain recognition of seen actions. Code and trained models are available at: https://icb-vision-ai.github.io/OrientationAware-HAR",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.22697v1",
-        "pdf": "https://arxiv.org/pdf/2605.22697v1"
-      },
-      "arxiv_id": "2605.22697v1",
-      "comment": "Accepted to ICPR 2026. Code and trained models available at: https://icb-vision-ai.github.io/OrientationAware-HAR",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Robustness to domain changes is a key capability for effective deployment of human action recognition systems in real-world scenarios, where action categories at inference can present important domain shifts or even unseen actions from training. In this context, improving the recognition capabilities of Zero-Shot Action Recognition models (ZSAR), without requiring strong annotation efforts, remain...",
-        "key_contributions": [
-          "Robustness to domain changes is a key capability for effective deployment of human action recognition systems in real-world scenarios, where action categories at inference can present important domain shifts or even unseen actions from training.",
-          "In this context, improving the recognition capabilities of Zero-Shot Action Recognition models (ZSAR), without requiring strong annotation efforts, remains a central challenge.",
-          "Most ZSAR approaches assume that actions are observed under geometric conditions similar to those seen during training."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.22662v1",
-      "title": "Claw AI Lab: An Autonomous Multi-Agent Research Team",
-      "authors": [
-        "Fan Wu",
-        "Cheng Chen",
-        "Zhenshan Tan",
-        "Taiyu Zhang",
-        "Xinzhen Xu",
-        "Yanyu Qian",
-        "Dingcheng Gao",
-        "Lanyun Zhu",
-        "Qi Zhu",
-        "Yi Tan",
-        "Deyi Ji",
-        "Guosheng Lin",
-        "Tianrun Chen",
-        "Deheng Ye",
-        "Fayao Liu"
-      ],
-      "abstract": "We present Claw AI Lab, a lab-native autonomous research platform that advances automated research from a hidden prompt-to-paper pipeline into an interactive AI laboratory. Rather than centering the system around a single agent or a fixed serial workflow, we allow users to instantiate a full research team from one prompt, with customizable roles, collaborative workflows, real-time monitoring, artifact inspection, and rollback/resume control through a unified dashboard. The platform also supports distinct research modes for exploration, multi-agent discussion, and reproduction, making autonomous research substantially more steerable and laboratory-like in practice. A key practical contribution of Claw AI Lab lies in its Claw-Code Harness, which connects local codebases, datasets, and checkpoints to runnable experiments and feeds execution artifacts back into the research loop. As a result, the harness improves not only execution integration, but also experimental completion and result integrity: experiments are easier to inspect, iterate on, and faithfully transfer into final papers, reducing common failure modes such as partial runs and malformed result reporting. In our internal evaluation on five AI research case studies, using AutoResearchClaw as the baseline, Claw AI Lab is consistently preferred by AI expert judges on idea novelty, experiment completeness, and paper presentation quality. We view Claw AI Lab as an early step toward a new paradigm: autonomous research as usable, interactive, and reliability-aware scientific infrastructure.",
-      "published": "2026-05-21",
-      "updated": "2026-05-21",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.22662v1",
-        "pdf": "https://arxiv.org/pdf/2605.22662v1"
-      },
-      "arxiv_id": "2605.22662v1",
-      "comment": "Project page and code are available at https://github.com/Claw-AI-Lab/Claw-AI-Lab",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.199999999999999,
+      "has_code": false,
+      "relevance_score": 4.2,
       "score_breakdown": {
         "total_score": 4.2,
         "field_match": {
@@ -638,6 +363,200 @@
           "weight": 0.4
         },
         "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Existing scaling laws for Large Language Models (LLMs), predominantly monotonic power laws, fail to explain emerging non-monotonic phenomena such as catastrophic overtraining and quantization-induced degradation, where performance deteriorates despite increased compute.\n  We propose the Shannon Scaling Law, a unified theoretical framework that models LLM training as information transmission over a...",
+        "key_contributions": [
+          "Existing scaling laws for Large Language Models (LLMs), predominantly monotonic power laws, fail to explain emerging non-monotonic phenomena such as catastrophic overtraining and quantization-induced degradation, where performance deteriorates despite increased compute.",
+          "We propose the Shannon Scaling Law, a unified theoretical framework that models LLM training as information transmission over a noisy channel, grounded in the Shannon-Hartley theorem.",
+          "By mapping model parameters to channel bandwidth and training tokens to signal power, our formulation explicitly captures the interaction between learning signal and intrinsic noise."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.23892v1",
+      "title": "Good Token Hunting: A Hitchhiker's Guide to Token Selection for Visual Geometry Transformers",
+      "authors": [
+        "Shuhong Zheng",
+        "Michael Oechsle",
+        "Erik Sandström",
+        "Marie-Julie Rakotosaona",
+        "Federico Tombari",
+        "Igor Gilitschenski"
+      ],
+      "abstract": "Visual geometry transformers have become powerful architectures for multi-view 3D reconstruction, enabling joint prediction of multiple 3D attributes in a feed-forward manner. However, their computational cost grows quadratically with the input sequence length due to the global attention layers inside these models. This limits both their scalability and efficiency. In this work, we address this challenge with a simple yet general strategy: restricting the number of key/value tokens that each query interacts with during global attention. To achieve effective token selection, we introduce a two-stage framework. First, an inter-frame selection step operates at the frame level to identify frames that should be preserved. Second, an intra-frame selection step further discards more redundant tokens within the selected frames. Our analysis highlights the advantage of a diversity-based strategy for inter-frame selection, which ensures broad coverage of the scene. For intra-frame selection, we show that layer-aware sparsification is necessary, with the selection process guided by the entropy of the global attention pattern. Our approach offers a superior speed-accuracy trade-off compared to existing solutions. Extensive experiments show that it accelerates visual geometry transformers by over 85% for scenes with 500 images while maintaining, or even improving, baseline performance, which hints that how our token selection strategy can play a crucial role in future applications of visual geometry transformers. Our project website is available at https://zsh2000.github.io/good-token-hunting.github.io.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.23892v1",
+        "pdf": "https://arxiv.org/pdf/2605.23892v1"
+      },
+      "arxiv_id": "2605.23892v1",
+      "comment": "Project Page: https://zsh2000.github.io/good-token-hunting.github.io, Code: https://github.com/zsh2000/gotohunt",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.08728813559322,
+      "score_breakdown": {
+        "total_score": 4.09,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Visual geometry transformers have become powerful architectures for multi-view 3D reconstruction, enabling joint prediction of multiple 3D attributes in a feed-forward manner. However, their computational cost grows quadratically with the input sequence length due to the global attention layers inside these models. This limits both their scalability and efficiency. In this work, we address this ch...",
+        "key_contributions": [
+          "Visual geometry transformers have become powerful architectures for multi-view 3D reconstruction, enabling joint prediction of multiple 3D attributes in a feed-forward manner.",
+          "However, their computational cost grows quadratically with the input sequence length due to the global attention layers inside these models.",
+          "This limits both their scalability and efficiency."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.23888v1",
+      "title": "GenRecon: Bridging Generative Priors for Multi-View 3D Scene Reconstruction",
+      "authors": [
+        "Katharina Schmid",
+        "Nicolas von Lützow",
+        "Jozef Hladký",
+        "Angela Dai",
+        "Matthias Nießner"
+      ],
+      "abstract": "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior. We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents. Crucially, we inherit the fidelity and completeness of state-of-the-art generative shape models -- we use Trellis.2 as an example -- which we generalize to the scene level. To this end, we propose a projection-based conditioning mechanism that lifts posed multi-view image features into a coherent 3D representation aligned with the generative model, independent of view ordering and spatially anchored to the scene, yielding high-fidelity, multi-view consistent generated geometry. This enables lifting the strong object-level prior of Trellis.2 to multi-view, scene-scale generation, producing faithful, editable PBR mesh reconstructions of indoor environments. As a result, we obtain high-fidelity results that outperform cutting-edge reconstruction methods by 16%.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.23888v1",
+        "pdf": "https://arxiv.org/pdf/2605.23888v1"
+      },
+      "arxiv_id": "2605.23888v1",
+      "comment": "Project page: https://kasothaphie.github.io/GenRecon/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.95,
+      "score_breakdown": {
+        "total_score": 3.95,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior. We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents. Crucially, we inherit the fidelity and completen...",
+        "key_contributions": [
+          "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior.",
+          "We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents.",
+          "Crucially, we inherit the fidelity and completeness of state-of-the-art generative shape models -- we use Trellis."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.23790v1",
+      "title": "Exploring deep learning for Event-Based Saliency Prediction with a Transformer-based model",
+      "authors": [
+        "Romaric Mazna",
+        "Jean Martinet",
+        "Sai Deepesh Pokala"
+      ],
+      "abstract": "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention. In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras. Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the lack of a strong baseline. In this paper, we introduce SEST (Swin Event-based Saliency Transformer), a transformer-based model for saliency prediction from event data, bridging the data scarcity barrier through event-native pretraining and synthetic supervision. SEST leverages a self-supervised pretrained event-based Swin Transformer backbone combined with a lightweight CNN decoder to produce dynamic saliency maps. To address the scarcity of annotated event-based saliency data, we introduce two new benchmark datasets, N-DHF1K and N-UCF Sports, generated from large-scale RGB saliency benchmarks. Experimental results show that SEST clearly outperforms existing event-based saliency methods and narrows the performance gap with state-of-the-art RGB models. Zero-shot evaluation on a real event camera dataset further demonstrates that our model trained on synthetic data remains transferable on real event streams. To the best of our knowledge, this work is the first to apply deep learning to event-based saliency prediction, opening a new research direction at the intersection of event-based vision and neuromorphic visual attention.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.23790v1",
+        "pdf": "https://arxiv.org/pdf/2605.23790v1"
+      },
+      "arxiv_id": "2605.23790v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.940677966101695,
+      "score_breakdown": {
+        "total_score": 3.94,
+        "field_match": {
+          "score": 1.1,
+          "matches": [
+            "self-supervised",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
           "score": 5.0,
           "venue": null,
           "weight": 0.25
@@ -647,8 +566,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
+          "score": 3.0,
+          "has_code": false,
           "weight": 0.1
         },
         "practicality": {
@@ -657,11 +576,75 @@
         }
       },
       "ai_summaries": {
-        "short": "We present Claw AI Lab, a lab-native autonomous research platform that advances automated research from a hidden prompt-to-paper pipeline into an interactive AI laboratory. Rather than centering the system around a single agent or a fixed serial workflow, we allow users to instantiate a full research team from one prompt, with customizable roles, collaborative workflows, real-time monitoring, arti...",
+        "short": "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention. In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras. Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the ...",
         "key_contributions": [
-          "We present Claw AI Lab, a lab-native autonomous research platform that advances automated research from a hidden prompt-to-paper pipeline into an interactive AI laboratory.",
-          "Rather than centering the system around a single agent or a fixed serial workflow, we allow users to instantiate a full research team from one prompt, with customizable roles, collaborative workflows, real-time monitoring, artifact inspection, and rollback/resume control through a unified dashboard.",
-          "The platform also supports distinct research modes for exploration, multi-agent discussion, and reproduction, making autonomous research substantially more steerable and laboratory-like in practice."
+          "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention.",
+          "In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras.",
+          "Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the lack of a strong baseline."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.23747v1",
+      "title": "Revitalizing Dense Material Segmentation: Stabilized Vision Transformers and the Generalization Paradox",
+      "authors": [
+        "Allan Kazakov",
+        "Duygu Cakir",
+        "Hilal Kurt İrfanoğlu",
+        "Yavuz İrfanoğlu"
+      ],
+      "abstract": "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing. Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-biased foundation models. In this paper, we revive the Apple-DMS benchmark to establish a modern Vision Transformer baseline. We conduct an exhaustive evaluation of SegFormer and Mask2Former architectures, revealing that standard training paradigms fail on amorphous texture fields due to high-variance gradients. To address this, we introduce a stabilized training recipe featuring High-Fidelity Logit Projection, Query Entropy Regularization, and a domain-specific, physics-compliant augmentation pipeline. Our optimized SegFormer-B5 achieves a new State-of-the-Art (SOTA) of 0.4572 mIoU on the original dataset split, significantly surpassing the prior convolutional baseline. Furthermore, we identify a critical \"Generalization Paradox\": while re-partitioning the dataset into a data-rich 80/10/10 split inflates the metric to 0.5276 mIoU, expert qualitative analysis reveals this induces distributional homogenization, severely degrading real-world, out-of-distribution performance. By releasing our recovered dataset index and robust training framework, we demonstrate that material perception is far from solved and urge the community to leverage the rigorous original split to drive genuine progress in physically grounded artificial intelligence.",
+      "published": "2026-05-22",
+      "updated": "2026-05-22",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.23747v1",
+        "pdf": "https://arxiv.org/pdf/2605.23747v1"
+      },
+      "arxiv_id": "2605.23747v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.9228813559322027,
+      "score_breakdown": {
+        "total_score": 3.92,
+        "field_match": {
+          "score": 0.93,
+          "matches": [
+            "segmentation",
+            "computer vision"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing. Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-b...",
+        "key_contributions": [
+          "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing.",
+          "Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-biased foundation models.",
+          "In this paper, we revive the Apple-DMS benchmark to establish a modern Vision Transformer baseline."
         ],
         "provider": "gemini"
       }

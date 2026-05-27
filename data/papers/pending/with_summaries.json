@@ -3,166 +3,36 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.23602v1",
-      "title": "GlowGS: Generative Semantic Feature Learning for 3D Gaussian Splatting in Nighttime Glow Scenes",
+      "id": "2605.25944v1",
+      "title": "EchoPilot: Training-Free Ultrasound Video Segmentation via Scale-Space Semantic Prompting and Reliability-Gated Memory",
       "authors": [
-        "Beibei Lin",
-        "Xiao Cao",
-        "Jingyuan Guo",
-        "Robby T. Tan"
+        "Ruiqiang Xiao",
+        "Zhaohu Xing",
+        "Yijun Yang",
+        "Zhenyan Han",
+        "Weiming Wang",
+        "Kaishun Wu",
+        "Lei Zhu"
       ],
-      "abstract": "Existing 3DGS methods effectively render high-quality novel views in clear-day scenes. However, they struggle with night scenes, particularly in glow regions, due to the lack of structural features such as textures and edges, which are key cues for splatting-based reconstruction. To address this problem, we leverage a diffusion model and a Vision Foundation Model (VFM) to compensate for missing structural cues. Our method consists of two key novel ideas: semantic feature generation and novel-view semantic learning. First, semantic feature generation produces high-quality semantic features as implicit structural cues for novel views. Specifically, a diffusion model synthesizes novel views with unknown camera poses from training views, while a VFM evaluates their quality. Once high-quality novel views are identified, the VFM extracts robust features to construct the semantic feature bank. Second, novel-view semantic learning enables 3DGS to optimize rendered novel views without requiring ground truth. It achieves this by extracting semantic features from a rendered novel view, searching the feature bank for the most similar features, and minimizing their distance. This process enforces implicit structural constraints, ensuring semantically coherent, artifact-free rendered views. Extensive experiments demonstrate the effectiveness of our GlowGS in generating semantically accurate 3D views, showing significant improvements over existing methods.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.23602v1",
-        "pdf": "https://arxiv.org/pdf/2605.23602v1"
-      },
-      "arxiv_id": "2605.23602v1",
-      "comment": "Accepted by CVPR Findings 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 5.027966101694915,
-      "score_breakdown": {
-        "total_score": 5.03,
-        "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Existing 3DGS methods effectively render high-quality novel views in clear-day scenes. However, they struggle with night scenes, particularly in glow regions, due to the lack of structural features such as textures and edges, which are key cues for splatting-based reconstruction. To address this problem, we leverage a diffusion model and a Vision Foundation Model (VFM) to compensate for missing st...",
-        "key_contributions": [
-          "Existing 3DGS methods effectively render high-quality novel views in clear-day scenes.",
-          "However, they struggle with night scenes, particularly in glow regions, due to the lack of structural features such as textures and edges, which are key cues for splatting-based reconstruction.",
-          "To address this problem, we leverage a diffusion model and a Vision Foundation Model (VFM) to compensate for missing structural cues."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.23655v1",
-      "title": "CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception",
-      "authors": [
-        "Liupeng Li",
-        "Haoqian Kang",
-        "Zhenyu Lu",
-        "Jinpeng Wang",
-        "Bin Chen",
-        "Ke Chen",
-        "Yaowei Wang"
-      ],
-      "abstract": "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs). While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency. Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational redundancy and semantic fragmentation. To address this dilemma, we introduce CVSearch, a training-free adaptive framework that dynamically schedules search strategies via an Assess-then-Search workflow. Specifically, CVSearch first invokes expert-assisted search when global information is insufficient, and only triggers a novel semantic-aware scanning mechanism upon failure. Distinct from rigid grid partitioning, this efficient scanning paradigm incorporates Semantic Guided Adaptive Patching to decompose images into semantically consistent regions, effectively mitigating object fragmentation. Furthermore, we devise a Dynamic Bottom-Up Search strategy driven by a Visual Complexity prior to enable efficient and precise iterative exploration of local details. Extensive experiments on HR benchmarks demonstrate that CVSearch achieves state-of-the-art accuracy while substantially improving search efficiency. Code is released at https://github.com/liliupeng28/ICML26-CVSearch.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
+      "abstract": "Ultrasound video segmentation is clinically valuable yet difficult due to speckle noise, weak boundaries, and rapid anatomical deformation. Recent promptable foundation models enable point-guided segmentation, but their direct deployment in ultrasound remains unreliable: a single point provides insufficient spatial context to resolve scale ambiguity, and greedy memory updates amplify early errors into severe temporal drift. We present EchoPilot, a training-free framework for ultrasound video segmentation under sparse first-frame interaction, requiring only a single point click and an anatomical category name. EchoPilot orchestrates a frozen medical vision-language model (VLM) for semantic localization, a vision foundation model (VFM) for dense geometric feature extraction, and a promptable video segmentor for mask prediction and propagation. To resolve initialization ambiguity, we propose Scale-Space Semantic Prompting, which first selects an optimal contextual view via a parameter-free S.E.E.D. (Semantic Energy-Entropy Density) criterion, and then synthesizes geometrically precise auxiliary point prompts from dense foundation features without additional user interaction. To reduce propagation drift, a Reliability-Gated Memory update is further introduced to selectively freeze the segmentor's memory bank under uncertain predictions, preventing error accumulation. We also contribute the first dynamic fetal placenta ultrasound video segmentation dataset with 671 annotated frames. Across three ultrasound video datasets, EchoPilot achieves state-of-the-art performance under the sparse-interactive setting, consistently outperforming training-free baselines and finetuned specialists.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.LG",
-        "cs.MM"
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.23655v1",
-        "pdf": "https://arxiv.org/pdf/2605.23655v1"
+        "paper": "http://arxiv.org/abs/2605.25944v1",
+        "pdf": "https://arxiv.org/pdf/2605.25944v1"
       },
-      "arxiv_id": "2605.23655v1",
-      "comment": "Accepted by ICML 2026. 22 pages, 12 figures, 7 tables",
+      "arxiv_id": "2605.25944v1",
+      "comment": "Early accepted to MICCAI 2026. Project page: https://keeplearning-again.github.io/EchoPilot/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.85,
+      "has_code": true,
+      "relevance_score": 5.503389830508475,
       "score_breakdown": {
-        "total_score": 4.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs). While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency. Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational...",
-        "key_contributions": [
-          "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs).",
-          "While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency.",
-          "Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational redundancy and semantic fragmentation."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.23840v1",
-      "title": "MuellerPT: Decomposition Driven Pretraining for Dense Learning in Mueller Polarimetry",
-      "authors": [
-        "Adam Tlemsani",
-        "Yingdian Li",
-        "Maxime Giot",
-        "Naim Slim",
-        "Christopher J. Peters",
-        "Abhijeet Ghosh",
-        "Daniel S. Elson"
-      ],
-      "abstract": "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings. We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixel 4x4 Mueller matrices. To scale pre-training, we collected a new large Multispectral Animal Polarimetric Organ dataset (MAP-Org). The pre-trained encoder is adapted with a segmentation head for grey vs. white matter segmentation in lamb brain. A classification head is used for colorectal cancer vs. non-cancer classification. Both segmentation and classification are evaluated across few-shot learning scenarios. In segmentation, MuellerPT improves label efficiency and cross specimen transfer compared to models without pre-training, achieving an absolute DICE gain of over 20% compared to the baseline trained from scratch when using 5% of the training data. In classification, MuellerPT also enhances label efficiency, improving overall accuracy by 8% compared to the baseline when using 1% of the training data. We demonstrate MuellerPT's robustness to domain shift with a qualitative evaluation of its predicted Lu-Chipman maps on an ex vivo human oesophagus sample. These results suggest that predicting Lu-Chipman decomposition is an effective and practical pretext task for robust biomedical inference from Mueller polarimetry and can pave the way for future work on label efficient Mueller imaging.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.23840v1",
-        "pdf": "https://arxiv.org/pdf/2605.23840v1"
-      },
-      "arxiv_id": "2605.23840v1",
-      "comment": "Accepted to 29th International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI 2026)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.803389830508474,
-      "score_breakdown": {
-        "total_score": 4.8,
+        "total_score": 5.5,
         "field_match": {
           "score": 0.51,
           "matches": [
@@ -180,8 +50,8 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -190,45 +60,46 @@
         }
       },
       "ai_summaries": {
-        "short": "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings. We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixe...",
+        "short": "Ultrasound video segmentation is clinically valuable yet difficult due to speckle noise, weak boundaries, and rapid anatomical deformation. Recent promptable foundation models enable point-guided segmentation, but their direct deployment in ultrasound remains unreliable: a single point provides insufficient spatial context to resolve scale ambiguity, and greedy memory updates amplify early errors ...",
         "key_contributions": [
-          "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings.",
-          "We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixel 4x4 Mueller matrices.",
-          "To scale pre-training, we collected a new large Multispectral Animal Polarimetric Organ dataset (MAP-Org)."
+          "Ultrasound video segmentation is clinically valuable yet difficult due to speckle noise, weak boundaries, and rapid anatomical deformation.",
+          "Recent promptable foundation models enable point-guided segmentation, but their direct deployment in ultrasound remains unreliable: a single point provides insufficient spatial context to resolve scale ambiguity, and greedy memory updates amplify early errors into severe temporal drift.",
+          "We present EchoPilot, a training-free framework for ultrasound video segmentation under sparse first-frame interaction, requiring only a single point click and an anatomical category name."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.23845v1",
-      "title": "Learning a Particle Dynamics Model with Real-world Videos",
+      "id": "2605.26103v1",
+      "title": "Global Structure-from-Motion Meets Feedforward Reconstruction",
       "authors": [
-        "Chanho Kim",
-        "Suhas V. Sumukh",
-        "Li Fuxin"
+        "Linfei Pan",
+        "Johannes Schönberge",
+        "Marc Pollefeys"
       ],
-      "abstract": "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature. Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies. However, these models are typically trained in simulated environments because obtaining perfect state information such as complete scene point clouds and point correspondences over time is challenging in real-world settings. This reliance on synthetic data can limit their applicability when the sim-to-real gap is large. In this work, we aim to overcome these limitations by introducing a novel framework for training neural object dynamics models directly from unlabeled real-world videos. Specifically, we propose to learn a particle-based dynamics model compatible with a Gaussian splatting framework, which operates on dense particles derived from Gaussians (i.e., particles with scales and rotations) and predicts their position and rotation changes over time. The model is trained via rendering supervision, enabling learning from real-world videos without requiring particle-level labeled states. Our model operates directly on dense Gaussians without relying on heuristic subsampling anchor points. To enable this study, we also present a real-world dataset consisting of about 500 videos capturing diverse object interactions.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
+      "abstract": "Structure-from-Motion -- the process of simultaneously estimating camera poses and 3D scene structure from a collection of images -- remains a central challenge in computer vision, with many open problems yet to be solved. Recent advances in feedforward 3D reconstruction have made significant strides in overcoming persistent failure cases of classical SfM methods, particularly in scenarios characterized by low texture, limited overlap, and symmetries. However, while feedforward approaches excel in these challenging conditions, they often face limitations regarding scalability, accuracy, or robustness, and typically fall short of classical methods in standard reconstruction settings. In this work, we systematically analyze these limitations and propose a new Structure-from-Motion pipeline by combining the respective strengths of classical and feedforward methods. Extensive experiments across multiple datasets show the benefits of our approach, achieving state-of-the-art results across a wide range of scenarios. We share our system as an open-source implementation at https://github.com/colmap/gluemap.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.23845v1",
-        "pdf": "https://arxiv.org/pdf/2605.23845v1"
+        "paper": "http://arxiv.org/abs/2605.26103v1",
+        "pdf": "https://arxiv.org/pdf/2605.26103v1"
       },
-      "arxiv_id": "2605.23845v1",
-      "comment": "CVPR 2026 Findings",
+      "arxiv_id": "2605.26103v1",
+      "comment": "CVPR 2026, Highlight",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.638983050847457,
+      "relevance_score": 4.856779661016949,
       "score_breakdown": {
-        "total_score": 4.64,
+        "total_score": 4.86,
         "field_match": {
-          "score": 0.85,
+          "score": 1.02,
           "matches": [
-            "gaussian splatting"
+            "3d reconstruction",
+            "computer vision"
           ],
           "weight": 0.4
         },
@@ -238,7 +109,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -252,44 +123,43 @@
         }
       },
       "ai_summaries": {
-        "short": "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature. Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies. However, these models are typically...",
+        "short": "Structure-from-Motion -- the process of simultaneously estimating camera poses and 3D scene structure from a collection of images -- remains a central challenge in computer vision, with many open problems yet to be solved. Recent advances in feedforward 3D reconstruction have made significant strides in overcoming persistent failure cases of classical SfM methods, particularly in scenarios charact...",
         "key_contributions": [
-          "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature.",
-          "Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies.",
-          "However, these models are typically trained in simulated environments because obtaining perfect state information such as complete scene point clouds and point correspondences over time is challenging in real-world settings."
+          "Structure-from-Motion -- the process of simultaneously estimating camera poses and 3D scene structure from a collection of images -- remains a central challenge in computer vision, with many open problems yet to be solved.",
+          "Recent advances in feedforward 3D reconstruction have made significant strides in overcoming persistent failure cases of classical SfM methods, particularly in scenarios characterized by low texture, limited overlap, and symmetries.",
+          "However, while feedforward approaches excel in these challenging conditions, they often face limitations regarding scalability, accuracy, or robustness, and typically fall short of classical methods in standard reconstruction settings."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.23673v1",
-      "title": "Relevant Walk Search for Explaining Graph Neural Networks",
+      "id": "2605.25967v1",
+      "title": "Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio",
       "authors": [
-        "Ping Xiong",
-        "Thomas Schnake",
-        "Michael Gastegger",
-        "Grégoire Montavon",
-        "Klaus-Robert Müller",
-        "Shinichi Nakajima"
+        "Georgios Milis",
+        "Yubin Qin",
+        "Yihan Wu",
+        "Heng Huang"
       ],
-      "abstract": "Graph Neural Networks (GNNs) have become important machine learning tools for graph analysis, and its explainability is crucial for safety, fairness, and robustness. Layer-wise relevance propagation for GNNs (GNN-LRP) evaluates the relevance of \\emph{walks} to reveal important information flows in the network, and provides higher-order explanations, which have been shown to be superior to the lower-order, i.e., node-/edge-level, explanations. However, identifying relevant walks by GNN-LRP requires {\\em exponential} computational complexity with respect to the network depth, which we will remedy in this paper. Specifically, we propose {\\em polynomial-time} algorithms for finding top-$K$ relevant walks, which drastically reduces the computation and thus increases the applicability of GNN-LRP to large-scale problems. Our proposed algorithms are based on the \\emph{max-product} algorithm -- a common tool for finding the maximum likelihood configurations in probabilistic graphical models -- and can find the most relevant walks exactly at the neuron level and approximately at the node level. Our experiments demonstrate the performance of our algorithms at scale and their utility across application domains, i.e., on epidemiology, molecular, and natural language benchmarks. We provide our codes under \\href{https://github.com/xiong-ping/rel_walk_gnnlrp}{github.com/xiong-ping/rel\\_walk\\_gnnlrp}.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
+      "abstract": "As policy catches up with the capabilities of generative AI, watermarking is central to content provenance efforts. Inference-time watermarks for autoregressive models are unfit for continuous modalities due to discretization inconsistencies. Existing methods overcome this by finetuning the modality tokenizers, nullifying the watermark's training-free advantage. In this work, motivated by the vocabulary redundancy of discretization, we propose an elegant solution for powerful and robust watermarking of synthetic audio. We theoretically analyze the impact of token errors on watermark detection, and effectively mitigate them using a reduced vocabulary obtained via community detection. Thorough experiments showcase that our gradient-free method can boost detectability by several orders of magnitude, while also achieving built-in robustness to audio modifications. Broadly, we discover a new state-of-the-art for token-level watermarks in multimedia, which simply arises from the nature of discrete representation learning.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
       "categories": [
-        "cs.LG"
+        "cs.LG",
+        "cs.SD"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.23673v1",
-        "pdf": "https://arxiv.org/pdf/2605.23673v1"
+        "paper": "http://arxiv.org/abs/2605.25967v1",
+        "pdf": "https://arxiv.org/pdf/2605.25967v1"
       },
-      "arxiv_id": "2605.23673v1",
-      "comment": "Published in ICML 2023",
-      "journal_ref": "Proceedings of the 40th International Conference on Machine Learning, PMLR 202:38301-38324, 2023",
+      "arxiv_id": "2605.25967v1",
+      "comment": "Accepted to ICML 2026",
+      "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.449999999999999,
+      "relevance_score": 4.35,
       "score_breakdown": {
-        "total_score": 4.45,
+        "total_score": 4.35,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -310,53 +180,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Graph Neural Networks (GNNs) have become important machine learning tools for graph analysis, and its explainability is crucial for safety, fairness, and robustness. Layer-wise relevance propagation for GNNs (GNN-LRP) evaluates the relevance of \\emph{walks} to reveal important information flows in the network, and provides higher-order explanations, which have been shown to be superior to the lowe...",
+        "short": "As policy catches up with the capabilities of generative AI, watermarking is central to content provenance efforts. Inference-time watermarks for autoregressive models are unfit for continuous modalities due to discretization inconsistencies. Existing methods overcome this by finetuning the modality tokenizers, nullifying the watermark's training-free advantage. In this work, motivated by the voca...",
         "key_contributions": [
-          "Graph Neural Networks (GNNs) have become important machine learning tools for graph analysis, and its explainability is crucial for safety, fairness, and robustness.",
-          "Layer-wise relevance propagation for GNNs (GNN-LRP) evaluates the relevance of \\emph{walks} to reveal important information flows in the network, and provides higher-order explanations, which have been shown to be superior to the lower-order, i.",
-          "e."
+          "As policy catches up with the capabilities of generative AI, watermarking is central to content provenance efforts.",
+          "Inference-time watermarks for autoregressive models are unfit for continuous modalities due to discretization inconsistencies.",
+          "Existing methods overcome this by finetuning the modality tokenizers, nullifying the watermark's training-free advantage."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.23901v1",
-      "title": "LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws",
+      "id": "2605.26067v1",
+      "title": "Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding",
       "authors": [
-        "Xu Ouyang",
-        "Deyi Liu",
-        "Yuhang Cai",
-        "Jing Liu",
-        "Yuan Yang",
-        "Chen Zheng",
-        "Thomas Hartvigsen",
-        "Yiyuan Ma"
+        "Rustem Takhanov",
+        "Zhenisbek Assylbekov"
       ],
-      "abstract": "Existing scaling laws for Large Language Models (LLMs), predominantly monotonic power laws, fail to explain emerging non-monotonic phenomena such as catastrophic overtraining and quantization-induced degradation, where performance deteriorates despite increased compute.\n  We propose the Shannon Scaling Law, a unified theoretical framework that models LLM training as information transmission over a noisy channel, grounded in the Shannon-Hartley theorem. By mapping model parameters to channel bandwidth and training tokens to signal power, our formulation explicitly captures the interaction between learning signal and intrinsic noise. This perspective reveals a fundamental Shannon capacity for LLMs: scaling model size or data without preserving a sufficient signal-to-noise ratio (SNR) inevitably amplifies noise, inducing a transition from monotonic improvement to U-shaped performance degradation.\n  We validate our theory through experiments on Pythia and OLMo2 under perturbations, including Gaussian noise, quantization and supervised fine-tuning on math, QA and code tasks. The Shannon Scaling Law consistently outperforms classical scaling laws and recent perturbation-aware laws, achieving strong $R^2$ scores and accurately capturing loss basins missed by prior approaches. It also extrapolates: fitted on $\\leq$6.9B Pythia models with $\\leq$180B tokens, it predicts the unseen 12B model up to 307B tokens at pooled $R^2{=}0.847$, while monotonic baselines collapse.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
+      "abstract": "Conditionally positive definite (CPD) kernels are defined with respect to a function class $\\mathcal{F}$. It is well known that such a kernel $K$ is associated with its native space (defined analogously to an RKHS), which in turn gives rise to a learning method -- called conditional kernel ridge regression (conditional KRR) due to its analogy with KRR -- where the estimated regression function is penalized by the square of its native space norm. This method is of interest because it can be viewed as classical linear regression, with features specified by $\\mathcal{F}$, followed by the application of standard KRR to the residual (unexplained) component of the target variable. Methods of this type have recently attracted increasing attention.\n  We study the statistical properties of this method by reducing its behavior to that of KRR with another fixed kernel, called the residual kernel. Our main theoretical result shows that such a reduction is indeed possible, at the cost of an additional term in the expected test risk, bounded by $\\mathcal{O}(1/\\sqrt{N})$, where $N$ is the sample size and the hidden constant depends on the class $\\mathcal{F}$ and the input distribution.\n  This reduction enables us to analyze conditional KRR in the case where $K$ is positive definite and $\\mathcal{F}$ is given by the first $k$ principal eigenfunctions in the Mercer decomposition of $K$. We also consider the setting where $\\mathcal{F}$ consists of $k$ random features from a random feature representation of $K$. It turns out that these two settings are closely related. Both our theoretical analysis and experiments confirm that conditional KRR outperforms standard KRR in these cases whenever the $\\mathcal{F}$-component of the regression function is more pronounced than the residual part.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
       "categories": [
         "cs.LG",
-        "cs.AI",
-        "cs.IT"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.23901v1",
-        "pdf": "https://arxiv.org/pdf/2605.23901v1"
+        "paper": "http://arxiv.org/abs/2605.26067v1",
+        "pdf": "https://arxiv.org/pdf/2605.26067v1"
       },
-      "arxiv_id": "2605.23901v1",
-      "comment": "Accepted by ICML 2026",
+      "arxiv_id": "2605.26067v1",
+      "comment": "Accepted to ICML 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.2,
+      "relevance_score": 4.25,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -377,48 +240,175 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Existing scaling laws for Large Language Models (LLMs), predominantly monotonic power laws, fail to explain emerging non-monotonic phenomena such as catastrophic overtraining and quantization-induced degradation, where performance deteriorates despite increased compute.\n  We propose the Shannon Scaling Law, a unified theoretical framework that models LLM training as information transmission over a...",
+        "short": "Conditionally positive definite (CPD) kernels are defined with respect to a function class $\\mathcal{F}$. It is well known that such a kernel $K$ is associated with its native space (defined analogously to an RKHS), which in turn gives rise to a learning method -- called conditional kernel ridge regression (conditional KRR) due to its analogy with KRR -- where the estimated regression function is ...",
         "key_contributions": [
-          "Existing scaling laws for Large Language Models (LLMs), predominantly monotonic power laws, fail to explain emerging non-monotonic phenomena such as catastrophic overtraining and quantization-induced degradation, where performance deteriorates despite increased compute.",
-          "We propose the Shannon Scaling Law, a unified theoretical framework that models LLM training as information transmission over a noisy channel, grounded in the Shannon-Hartley theorem.",
-          "By mapping model parameters to channel bandwidth and training tokens to signal power, our formulation explicitly captures the interaction between learning signal and intrinsic noise."
+          "Conditionally positive definite (CPD) kernels are defined with respect to a function class $\\mathcal{F}$.",
+          "It is well known that such a kernel $K$ is associated with its native space (defined analogously to an RKHS), which in turn gives rise to a learning method -- called conditional kernel ridge regression (conditional KRR) due to its analogy with KRR -- where the estimated regression function is penalized by the square of its native space norm.",
+          "This method is of interest because it can be viewed as classical linear regression, with features specified by $\\mathcal{F}$, followed by the application of standard KRR to the residual (unexplained) component of the target variable."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.23892v1",
-      "title": "Good Token Hunting: A Hitchhiker's Guide to Token Selection for Visual Geometry Transformers",
+      "id": "2605.26003v1",
+      "title": "Towards 3D heart mesh generation using contactless radar imaging and physics-informed neural network",
       "authors": [
-        "Shuhong Zheng",
-        "Michael Oechsle",
-        "Erik Sandström",
-        "Marie-Julie Rakotosaona",
-        "Federico Tombari",
-        "Igor Gilitschenski"
+        "Jinye Li",
+        "Chenxi Fu",
+        "Minghang Zheng",
+        "Yang Liu",
+        "Xiahai Zhuang",
+        "Qingchao Chen"
       ],
-      "abstract": "Visual geometry transformers have become powerful architectures for multi-view 3D reconstruction, enabling joint prediction of multiple 3D attributes in a feed-forward manner. However, their computational cost grows quadratically with the input sequence length due to the global attention layers inside these models. This limits both their scalability and efficiency. In this work, we address this challenge with a simple yet general strategy: restricting the number of key/value tokens that each query interacts with during global attention. To achieve effective token selection, we introduce a two-stage framework. First, an inter-frame selection step operates at the frame level to identify frames that should be preserved. Second, an intra-frame selection step further discards more redundant tokens within the selected frames. Our analysis highlights the advantage of a diversity-based strategy for inter-frame selection, which ensures broad coverage of the scene. For intra-frame selection, we show that layer-aware sparsification is necessary, with the selection process guided by the entropy of the global attention pattern. Our approach offers a superior speed-accuracy trade-off compared to existing solutions. Extensive experiments show that it accelerates visual geometry transformers by over 85% for scenes with 500 images while maintaining, or even improving, baseline performance, which hints that how our token selection strategy can play a crucial role in future applications of visual geometry transformers. Our project website is available at https://zsh2000.github.io/good-token-hunting.github.io.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
+      "abstract": "Cardiac function evaluation necessitates continuous, non-invasive monitoring, a capability limited in MRI. Millimeter-wave (mmWave) radar and its Synthetic Aperture Radar (SAR) mode offer a privacy-preserving and portable point-of-care clinical applications. However, reconstructing high-fidelity 3D cardiac geometry from SAR remains an open challenge. Traditional radar methods generate sparse point clouds that lack continuous surface topology. Meanwhile, direct application of optical reconstruction networks performs poorly due to the severe speckle noise and ambiguous boundaries inherent in SAR images. To bridge this gap, we propose SAR2Mesh, a novel framework that reformulates the task as a coarse-to-fine mesh deformation process. By initializing with a topological template, our approach explicitly preserves anatomical connectivity through progressive mesh deformation.We introduce a geometry-aware feature projection module to extract multi-view features via 3D-to-2D sampling, and a physics-informed radar loss to enforce consistency between the predicted geometry and raw radar echoes. Furthermore, we present Cardiac Mesh-SAR, the first large-scale paired SAR-mesh dataset. Extensive experiments demonstrate that SAR2Mesh significantly outperforms existing image-based baselines, achieving accurate and physically consistent cardiac reconstructions.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.GR",
-        "cs.LG",
-        "cs.RO"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.23892v1",
-        "pdf": "https://arxiv.org/pdf/2605.23892v1"
+        "paper": "http://arxiv.org/abs/2605.26003v1",
+        "pdf": "https://arxiv.org/pdf/2605.26003v1"
       },
-      "arxiv_id": "2605.23892v1",
-      "comment": "Project Page: https://zsh2000.github.io/good-token-hunting.github.io, Code: https://github.com/zsh2000/gotohunt",
+      "arxiv_id": "2605.26003v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.126271186440678,
+      "score_breakdown": {
+        "total_score": 4.13,
+        "field_match": {
+          "score": 1.44,
+          "matches": [
+            "cardiac",
+            "heart"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Cardiac function evaluation necessitates continuous, non-invasive monitoring, a capability limited in MRI. Millimeter-wave (mmWave) radar and its Synthetic Aperture Radar (SAR) mode offer a privacy-preserving and portable point-of-care clinical applications. However, reconstructing high-fidelity 3D cardiac geometry from SAR remains an open challenge. Traditional radar methods generate sparse point...",
+        "key_contributions": [
+          "Cardiac function evaluation necessitates continuous, non-invasive monitoring, a capability limited in MRI.",
+          "Millimeter-wave (mmWave) radar and its Synthetic Aperture Radar (SAR) mode offer a privacy-preserving and portable point-of-care clinical applications.",
+          "However, reconstructing high-fidelity 3D cardiac geometry from SAR remains an open challenge."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.26108v1",
+      "title": "Reinforcing Few-step Generators via Reward-Tilted Distribution Matching",
+      "authors": [
+        "Yushi Huang",
+        "Xiangxin Zhou",
+        "Ruoyu Wang",
+        "Chi Zhang",
+        "Jun Zhang",
+        "Tianyu Pang"
+      ],
+      "abstract": "Recent advances in few-step diffusion distillation have enabled efficient image generation, yet aligning these models with human preferences remains challenging. We propose Reward-Tilted Distribution Matching Distillation (RTDMD), a two-stage framework that unifies distribution matching distillation with reward-guided reinforcement learning for few-step flow generators. We show that minimizing the KL divergence to a reward-tilted teacher distribution naturally decomposes into a distribution matching term and a reward maximization term. In the first stage, we introduce Ambient-Consistent Distribution Matching Distillation (AC-DMD), which performs subinterval-wise distribution matching and augments the fake score objective with a consistency regularizer to help the fake score model track the shifting generator distribution under limited updates. In the second stage, we jointly optimize both terms: for the reward maximization term, we derive a hybrid policy gradient that combines a GRPO-style estimator for the stochastic intermediate transitions with direct reward backpropagation through the deterministic final step, and further introduce step-subset GRPO (SubGRPO) to reduce variance. Experiments on SD3, SD3.5, and FLUX.2 demonstrate that RTDMD establishes new state-of-the-art results across preference, aesthetic, and compositional metrics with only 4 inference steps, outperforming previous few-step text-to-image generation methods. Code and models are available at https://github.com/Harahan/RTDMD.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.26108v1",
+        "pdf": "https://arxiv.org/pdf/2605.26108v1"
+      },
+      "arxiv_id": "2605.26108v1",
+      "comment": "Code and models are available at https://github.com/Harahan/RTDMD",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Recent advances in few-step diffusion distillation have enabled efficient image generation, yet aligning these models with human preferences remains challenging. We propose Reward-Tilted Distribution Matching Distillation (RTDMD), a two-stage framework that unifies distribution matching distillation with reward-guided reinforcement learning for few-step flow generators. We show that minimizing the...",
+        "key_contributions": [
+          "Recent advances in few-step diffusion distillation have enabled efficient image generation, yet aligning these models with human preferences remains challenging.",
+          "We propose Reward-Tilted Distribution Matching Distillation (RTDMD), a two-stage framework that unifies distribution matching distillation with reward-guided reinforcement learning for few-step flow generators.",
+          "We show that minimizing the KL divergence to a reward-tilted teacher distribution naturally decomposes into a distribution matching term and a reward maximization term."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.26115v1",
+      "title": "TriSplat: Simulation-Ready Feed-Forward 3D Scene Reconstruction",
+      "authors": [
+        "Weijie Wang",
+        "Zimu Li",
+        "Jinchuan Shi",
+        "Zeyu Zhang",
+        "Botao Ye",
+        "Marc Pollefeys",
+        "Donny Y. Chen",
+        "Bohan Zhuang"
+      ],
+      "abstract": "Sparse-view 3D reconstruction is increasingly addressed with feed-forward splatting networks that predict explicit primitives directly from images. Yet most existing methods remain centered on Gaussian primitives and expose surfaces only indirectly: extracting a usable mesh for downstream simulation, physics reasoning, or embodied interaction still requires expensive post-hoc steps that break the feed-forward promise. This limitation is especially pronounced in pose-free settings, where scene structure and camera parameters must be estimated jointly from sparse observations. We present TriSplat, a feed-forward reconstruction network that represents scenes with oriented triangle primitives and directly exports simulation-ready mesh scenes from a single forward pass. Given input images, the network predicts local 3D point maps, triangle attributes, camera poses, and optional intrinsics. Rather than regressing triangle orientation as an unconstrained latent variable, our approach constructs geometry normals from the predicted point maps, refines them with an image-conditioned normal head, and converts them into stable local frames for triangle parameterization. A mono-normal bootstrap schedule further stabilizes early training, while opacity and blur scheduling progressively sharpens the learned surface representation for direct mesh extraction. Experiments on RealEstate10K and DL3DV show that this representation produces more geometry-faithful reconstructions than Gaussian feed-forward baselines while maintaining competitive novel-view rendering quality. Because the rendering primitives are themselves surface triangles, the output can be directly ingested by physics engines, collision detectors, and standard rendering pipelines without any conversion, making it a practical simulation-ready solution for feed-forward 3D scene reconstruction.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.26115v1",
+        "pdf": "https://arxiv.org/pdf/2605.26115v1"
+      },
+      "arxiv_id": "2605.26115v1",
+      "comment": "Project Page: https://lhmd.top/trisplat, Code: https://github.com/ziplab/TriSplat",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.08728813559322,
@@ -451,46 +441,179 @@
         }
       },
       "ai_summaries": {
-        "short": "Visual geometry transformers have become powerful architectures for multi-view 3D reconstruction, enabling joint prediction of multiple 3D attributes in a feed-forward manner. However, their computational cost grows quadratically with the input sequence length due to the global attention layers inside these models. This limits both their scalability and efficiency. In this work, we address this ch...",
+        "short": "Sparse-view 3D reconstruction is increasingly addressed with feed-forward splatting networks that predict explicit primitives directly from images. Yet most existing methods remain centered on Gaussian primitives and expose surfaces only indirectly: extracting a usable mesh for downstream simulation, physics reasoning, or embodied interaction still requires expensive post-hoc steps that break the ...",
         "key_contributions": [
-          "Visual geometry transformers have become powerful architectures for multi-view 3D reconstruction, enabling joint prediction of multiple 3D attributes in a feed-forward manner.",
-          "However, their computational cost grows quadratically with the input sequence length due to the global attention layers inside these models.",
-          "This limits both their scalability and efficiency."
+          "Sparse-view 3D reconstruction is increasingly addressed with feed-forward splatting networks that predict explicit primitives directly from images.",
+          "Yet most existing methods remain centered on Gaussian primitives and expose surfaces only indirectly: extracting a usable mesh for downstream simulation, physics reasoning, or embodied interaction still requires expensive post-hoc steps that break the feed-forward promise.",
+          "This limitation is especially pronounced in pose-free settings, where scene structure and camera parameters must be estimated jointly from sparse observations."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2605.23888v1",
-      "title": "GenRecon: Bridging Generative Priors for Multi-View 3D Scene Reconstruction",
+      "id": "2605.26113v1",
+      "title": "AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond",
       "authors": [
-        "Katharina Schmid",
-        "Nicolas von Lützow",
-        "Jozef Hladký",
-        "Angela Dai",
-        "Matthias Nießner"
+        "Haiming Zhang",
+        "Junfei Zhou",
+        "Feng Jiang",
+        "Jingzhong Li",
+        "Zhenglong Guo",
+        "Penglin Dai",
+        "Jifeng Dai",
+        "Yan Xie",
+        "Benjin Zhu"
       ],
-      "abstract": "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior. We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents. Crucially, we inherit the fidelity and completeness of state-of-the-art generative shape models -- we use Trellis.2 as an example -- which we generalize to the scene level. To this end, we propose a projection-based conditioning mechanism that lifts posed multi-view image features into a coherent 3D representation aligned with the generative model, independent of view ordering and spatially anchored to the scene, yielding high-fidelity, multi-view consistent generated geometry. This enables lifting the strong object-level prior of Trellis.2 to multi-view, scene-scale generation, producing faithful, editable PBR mesh reconstructions of indoor environments. As a result, we obtain high-fidelity results that outperform cutting-edge reconstruction methods by 16%.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
+      "abstract": "Generating high-fidelity and controllable synthetic data is critical for advancing end-to-end autonomous driving, particularly for addressing the long tail of rare safety-critical scenarios. Existing occupancy-guided methods typically rely on shallow conditioning mechanisms and reference-frame-dependent video synthesis, which limits fine-grained controllability from arbitrary BEV layouts and restricts their applicability for scalable simulation. In this paper, we propose AnyScene, a unified occupancy-centric framework for driving scene generation. AnyScene generates semantic occupancy sequences from BEV layouts through a Spatial-Temporal Occupancy Diffusion Transformer that jointly tokenizes BEV and occupancy features in an autoregressive manner. This design enables precise controllability from cross-dataset and user-defined BEV inputs while naturally supporting long-horizon generation. Building upon the generated occupancy, a Geometry-Grounded View Expansion module treats occupancy as the canonical spatial representation and synthesizes temporally consistent multi-view driving videos in a reference-free and autoregressive fashion, supporting flexible camera configurations at inference time. Extensive experiments demonstrate that AnyScene achieves state-of-the-art performance in both occupancy and video generation. It exhibits strong generalization to unseen and customized layouts, and provides measurable benefits for downstream tasks such as sparse-view 3D reconstruction.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.26113v1",
+        "pdf": "https://arxiv.org/pdf/2605.26113v1"
+      },
+      "arxiv_id": "2605.26113v1",
+      "comment": "Work in progress. Project page: https://mind-omni.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.08728813559322,
+      "score_breakdown": {
+        "total_score": 4.09,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Generating high-fidelity and controllable synthetic data is critical for advancing end-to-end autonomous driving, particularly for addressing the long tail of rare safety-critical scenarios. Existing occupancy-guided methods typically rely on shallow conditioning mechanisms and reference-frame-dependent video synthesis, which limits fine-grained controllability from arbitrary BEV layouts and restr...",
+        "key_contributions": [
+          "Generating high-fidelity and controllable synthetic data is critical for advancing end-to-end autonomous driving, particularly for addressing the long tail of rare safety-critical scenarios.",
+          "Existing occupancy-guided methods typically rely on shallow conditioning mechanisms and reference-frame-dependent video synthesis, which limits fine-grained controllability from arbitrary BEV layouts and restricts their applicability for scalable simulation.",
+          "In this paper, we propose AnyScene, a unified occupancy-centric framework for driving scene generation."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.25941v1",
+      "title": "Where Concept Erasure Should Occur: Concept-Layer Alignment in Text-to-Video Diffusion Models",
+      "authors": [
+        "Yiwei Xie",
+        "Ping Liu",
+        "Zheng Zhang"
+      ],
+      "abstract": "Text-to-video diffusion transformers encode semantic information unevenly across model depth, which constrains effective concept erasure. We identify a representational bottleneck, termed concept-layer topological alignment, under which target concepts exhibit higher separability at certain representational depths. Outside these depths, concept and non-target signals remain strongly entangled, limiting the effectiveness of depth-specific erasure. This observation reframes concept erasure as the problem of identifying representational depths where concept-non-target separation naturally emerges. Motivated by this structural constraint, we introduce CLEAR, a separability-driven optimization framework for concept erasure that explicitly enforces concept-layer alignment. CLEAR operationalizes this principle by formulating layer selection as an optimization problem over concept-non-target separability, rather than relying on layer-agnostic or heuristic choices. To enable this, we introduce a separability-aware objective that favors layers exhibiting stronger concept-non-target separation. Experiments on large-scale text-to-video diffusion models demonstrate that enforcing concept--layer alignment leads to more precise concept suppression while preserving overall generative quality.",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.23888v1",
-        "pdf": "https://arxiv.org/pdf/2605.23888v1"
+        "paper": "http://arxiv.org/abs/2605.25941v1",
+        "pdf": "https://arxiv.org/pdf/2605.25941v1"
       },
-      "arxiv_id": "2605.23888v1",
-      "comment": "Project page: https://kasothaphie.github.io/GenRecon/",
+      "arxiv_id": "2605.25941v1",
+      "comment": "Accepted by ICML 2026",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
+      "has_code": false,
+      "relevance_score": 4.05,
       "score_breakdown": {
-        "total_score": 3.95,
+        "total_score": 4.05,
         "field_match": {
           "score": 0.0,
           "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Text-to-video diffusion transformers encode semantic information unevenly across model depth, which constrains effective concept erasure. We identify a representational bottleneck, termed concept-layer topological alignment, under which target concepts exhibit higher separability at certain representational depths. Outside these depths, concept and non-target signals remain strongly entangled, lim...",
+        "key_contributions": [
+          "Text-to-video diffusion transformers encode semantic information unevenly across model depth, which constrains effective concept erasure.",
+          "We identify a representational bottleneck, termed concept-layer topological alignment, under which target concepts exhibit higher separability at certain representational depths.",
+          "Outside these depths, concept and non-target signals remain strongly entangled, limiting the effectiveness of depth-specific erasure."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2605.25975v1",
+      "title": "F-RNG: Feed-Forward Relightable Neural Gaussians",
+      "authors": [
+        "Guangming Fu",
+        "Jiahui Fan",
+        "Jian Yang",
+        "Miloš Hašan",
+        "Beibei Wang"
+      ],
+      "abstract": "Capturing relightable 3D assets from real-world objects is a widely researched problem. Several per-scene optimization-based methods, based on 3D Gaussian splatting (3DGS), support relighting; however, they usually require dense input views, and their overfitting nature makes it difficult to generalize across scenes. Unlike per-scene optimization methods, generalized feed-forward models can directly reconstruct Gaussians from sparse input views. However, the resulting assets have baked-in illumination and cannot be easily used for relighting. In this paper, we present F-RNG, a feed-forward framework that directly generates relightable 3DGS assets from sparse-view inputs. Training such a model from scratch can require massive data and computing resources, and it is especially challenging to generate relightable assets in a feed-forward manner with acceptable cost. We develop F-RNG upon an existing large reconstruction model (LRM) to extract relightable representations, while also utilizing priors from an intrinsic decomposition model (IDM). Specifically, we first introduce a latent-interpolated fine-grained geometry synthesis to enhance the LRM's geometry representation. Second, we propose a prior-guided relightable appearance distillation to extract relightable neural representations by incorporating IDM priors. Finally, a universal neural renderer enables flexible and high-fidelity relighting. F-RNG requires neither re-training nor fine-tuning of the underlying LRMs, thus can automatically benefit from better LRMs and IDMs in the future. With only small networks that can be trained with affordable data and computational resources, F-RNG avoids the repetitive inference of large models under different light conditions. By comparison to the state-of-the-art LRM-based relighting method, F-RNG achieves ~25x faster relighting, as well as superior quality (~+2.0 dB).",
+      "published": "2026-05-25",
+      "updated": "2026-05-25",
+      "categories": [
+        "cs.GR",
+        "cs.CV"
+      ],
+      "primary_category": "cs.GR",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.25975v1",
+        "pdf": "https://arxiv.org/pdf/2605.25975v1"
+      },
+      "arxiv_id": "2605.25975v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.977966101694915,
+      "score_breakdown": {
+        "total_score": 3.98,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -503,148 +626,21 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior. We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents. Crucially, we inherit the fidelity and completen...",
-        "key_contributions": [
-          "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior.",
-          "We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents.",
-          "Crucially, we inherit the fidelity and completeness of state-of-the-art generative shape models -- we use Trellis."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.23790v1",
-      "title": "Exploring deep learning for Event-Based Saliency Prediction with a Transformer-based model",
-      "authors": [
-        "Romaric Mazna",
-        "Jean Martinet",
-        "Sai Deepesh Pokala"
-      ],
-      "abstract": "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention. In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras. Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the lack of a strong baseline. In this paper, we introduce SEST (Swin Event-based Saliency Transformer), a transformer-based model for saliency prediction from event data, bridging the data scarcity barrier through event-native pretraining and synthetic supervision. SEST leverages a self-supervised pretrained event-based Swin Transformer backbone combined with a lightweight CNN decoder to produce dynamic saliency maps. To address the scarcity of annotated event-based saliency data, we introduce two new benchmark datasets, N-DHF1K and N-UCF Sports, generated from large-scale RGB saliency benchmarks. Experimental results show that SEST clearly outperforms existing event-based saliency methods and narrows the performance gap with state-of-the-art RGB models. Zero-shot evaluation on a real event camera dataset further demonstrates that our model trained on synthetic data remains transferable on real event streams. To the best of our knowledge, this work is the first to apply deep learning to event-based saliency prediction, opening a new research direction at the intersection of event-based vision and neuromorphic visual attention.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.23790v1",
-        "pdf": "https://arxiv.org/pdf/2605.23790v1"
-      },
-      "arxiv_id": "2605.23790v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.940677966101695,
-      "score_breakdown": {
-        "total_score": 3.94,
-        "field_match": {
-          "score": 1.1,
-          "matches": [
-            "self-supervised",
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
           "score": 3.0,
           "has_code": false,
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention. In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras. Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the ...",
+        "short": "Capturing relightable 3D assets from real-world objects is a widely researched problem. Several per-scene optimization-based methods, based on 3D Gaussian splatting (3DGS), support relighting; however, they usually require dense input views, and their overfitting nature makes it difficult to generalize across scenes. Unlike per-scene optimization methods, generalized feed-forward models can direct...",
         "key_contributions": [
-          "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention.",
-          "In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras.",
-          "Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the lack of a strong baseline."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2605.23747v1",
-      "title": "Revitalizing Dense Material Segmentation: Stabilized Vision Transformers and the Generalization Paradox",
-      "authors": [
-        "Allan Kazakov",
-        "Duygu Cakir",
-        "Hilal Kurt İrfanoğlu",
-        "Yavuz İrfanoğlu"
-      ],
-      "abstract": "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing. Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-biased foundation models. In this paper, we revive the Apple-DMS benchmark to establish a modern Vision Transformer baseline. We conduct an exhaustive evaluation of SegFormer and Mask2Former architectures, revealing that standard training paradigms fail on amorphous texture fields due to high-variance gradients. To address this, we introduce a stabilized training recipe featuring High-Fidelity Logit Projection, Query Entropy Regularization, and a domain-specific, physics-compliant augmentation pipeline. Our optimized SegFormer-B5 achieves a new State-of-the-Art (SOTA) of 0.4572 mIoU on the original dataset split, significantly surpassing the prior convolutional baseline. Furthermore, we identify a critical \"Generalization Paradox\": while re-partitioning the dataset into a data-rich 80/10/10 split inflates the metric to 0.5276 mIoU, expert qualitative analysis reveals this induces distributional homogenization, severely degrading real-world, out-of-distribution performance. By releasing our recovered dataset index and robust training framework, we demonstrate that material perception is far from solved and urge the community to leverage the rigorous original split to drive genuine progress in physically grounded artificial intelligence.",
-      "published": "2026-05-22",
-      "updated": "2026-05-22",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.23747v1",
-        "pdf": "https://arxiv.org/pdf/2605.23747v1"
-      },
-      "arxiv_id": "2605.23747v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.9228813559322027,
-      "score_breakdown": {
-        "total_score": 3.92,
-        "field_match": {
-          "score": 0.93,
-          "matches": [
-            "segmentation",
-            "computer vision"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing. Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-b...",
-        "key_contributions": [
-          "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing.",
-          "Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-biased foundation models.",
-          "In this paper, we revive the Apple-DMS benchmark to establish a modern Vision Transformer baseline."
+          "Capturing relightable 3D assets from real-world objects is a widely researched problem.",
+          "Several per-scene optimization-based methods, based on 3D Gaussian splatting (3DGS), support relighting; however, they usually require dense input views, and their overfitting nature makes it difficult to generalize across scenes.",
+          "Unlike per-scene optimization methods, generalized feed-forward models can directly reconstruct Gaussians from sparse input views."
         ],
         "provider": "gemini"
       }

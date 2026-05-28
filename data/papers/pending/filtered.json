@@ -3,46 +3,48 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.25944v1",
-      "title": "EchoPilot: Training-Free Ultrasound Video Segmentation via Scale-Space Semantic Prompting and Reliability-Gated Memory",
+      "id": "2605.27178v1",
+      "title": "FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation",
       "authors": [
-        "Ruiqiang Xiao",
-        "Zhaohu Xing",
-        "Yijun Yang",
-        "Zhenyan Han",
-        "Weiming Wang",
-        "Kaishun Wu",
-        "Lei Zhu"
+        "Zihui Zhang",
+        "Zhixuan Sun",
+        "Yafei Yang",
+        "Jinxi Li",
+        "Jiahao Chen",
+        "Bo Yang"
       ],
-      "abstract": "Ultrasound video segmentation is clinically valuable yet difficult due to speckle noise, weak boundaries, and rapid anatomical deformation. Recent promptable foundation models enable point-guided segmentation, but their direct deployment in ultrasound remains unreliable: a single point provides insufficient spatial context to resolve scale ambiguity, and greedy memory updates amplify early errors into severe temporal drift. We present EchoPilot, a training-free framework for ultrasound video segmentation under sparse first-frame interaction, requiring only a single point click and an anatomical category name. EchoPilot orchestrates a frozen medical vision-language model (VLM) for semantic localization, a vision foundation model (VFM) for dense geometric feature extraction, and a promptable video segmentor for mask prediction and propagation. To resolve initialization ambiguity, we propose Scale-Space Semantic Prompting, which first selects an optimal contextual view via a parameter-free S.E.E.D. (Semantic Energy-Entropy Density) criterion, and then synthesizes geometrically precise auxiliary point prompts from dense foundation features without additional user interaction. To reduce propagation drift, a Reliability-Gated Memory update is further introduced to selectively freeze the segmentor's memory bank under uncertain predictions, preventing error accumulation. We also contribute the first dynamic fetal placenta ultrasound video segmentation dataset with 671 annotated frames. Across three ultrasound video datasets, EchoPilot achieves state-of-the-art performance under the sparse-interactive setting, consistently outperforming training-free baselines and finetuned specialists.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
+      "abstract": "We address the challenging task of 3D object segmentation in complex scene point clouds without relying on any scene-level human annotations during training. Existing methods are typically constrained to identifying simple objects, primarily due to insufficient object priors in the learning process. In this paper, we present FoundObj, a novel framework featuring a superpoint-based object discovery agent that incrementally merges suitable neighboring superpoints, guided by our innovative semantic and geometric reward modules. These modules synergistically leverage semantic and geometric priors from self-supervised 2D/3D foundation models, providing complementary feedback to the object discovery agent and enabling robust identification of multi-class objects through reinforcement learning. Extensive experiments on diverse benchmarks demonstrate that our approach consistently outperforms existing baselines. Notably, our method exhibits strong generalization in zero-shot and long-tail scenarios, underscoring its potential for scalable, label-free 3D object segmentation.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.25944v1",
-        "pdf": "https://arxiv.org/pdf/2605.25944v1"
+        "paper": "http://arxiv.org/abs/2605.27178v1",
+        "pdf": "https://arxiv.org/pdf/2605.27178v1"
       },
-      "arxiv_id": "2605.25944v1",
-      "comment": "Early accepted to MICCAI 2026. Project page: https://keeplearning-again.github.io/EchoPilot/",
+      "arxiv_id": "2605.27178v1",
+      "comment": "ICML 2026. Zihui and Zhixuan are co-first authors. Code and data are available at: https://github.com/vLAR-group/FoundObj",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.503389830508475,
+      "relevance_score": 5.72457627118644,
       "score_breakdown": {
-        "total_score": 5.5,
+        "total_score": 5.72,
         "field_match": {
-          "score": 0.51,
+          "score": 1.19,
           "matches": [
+            "self-supervised",
             "segmentation"
           ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "MICCAI",
+          "venue": "ICML",
           "weight": 0.25
         },
         "citation_potential": {
@@ -55,43 +57,46 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2605.26103v1",
-      "title": "Global Structure-from-Motion Meets Feedforward Reconstruction",
+      "id": "2605.27235v1",
+      "title": "MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale",
       "authors": [
-        "Linfei Pan",
-        "Johannes Schönberge",
-        "Marc Pollefeys"
+        "Zhicong Tang",
+        "Zhao Zhang",
+        "Jingye Chen",
+        "Mohan Zhou",
+        "Yifan Pu",
+        "Yuchi Liu",
+        "Yalong Bai",
+        "Ethan Smith",
+        "Yuhui Yuan"
       ],
-      "abstract": "Structure-from-Motion -- the process of simultaneously estimating camera poses and 3D scene structure from a collection of images -- remains a central challenge in computer vision, with many open problems yet to be solved. Recent advances in feedforward 3D reconstruction have made significant strides in overcoming persistent failure cases of classical SfM methods, particularly in scenarios characterized by low texture, limited overlap, and symmetries. However, while feedforward approaches excel in these challenging conditions, they often face limitations regarding scalability, accuracy, or robustness, and typically fall short of classical methods in standard reconstruction settings. In this work, we systematically analyze these limitations and propose a new Structure-from-Motion pipeline by combining the respective strengths of classical and feedforward methods. Extensive experiments across multiple datasets show the benefits of our approach, achieving state-of-the-art results across a wide range of scenarios. We share our system as an open-source implementation at https://github.com/colmap/gluemap.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
+      "abstract": "Layered image generation and editing is a fundamental capability that enables layer-wise reuse, editing, and composition of generated visual content, analogous to word-level editing in natural language. Despite its importance, this remains an underexplored area at scale. To address this gap, we present MRT, a 20B-parameter masked region diffusion model tailored for multi-layer transparent image generation and editing, trained on over 10M multilingual design samples spanning diverse aspect ratios and textual prompts. To fully leverage this scale, we make two key technical contributions. First, we unify three complementary tasks including text-to-layers, image-to-layers, and layers-to-layers within a shared masked region diffusion framework, where selective token masking enables flexible layer-wise generation and editing. Second, to enable overflow layer generation, we introduce an overflow-aware canvas layer that handles boundary inconsistencies and supports semi-transparent background synthesis, enabling complete editable layers extending beyond visible canvas boundaries. Additionally, we apply diffusion distillation to achieve 8-step, real-time multi-layer generation with minimal quality degradation. Extensive experiments demonstrate that our framework substantially outperforms prior state-of-the-art approaches, including various commercial systems, across all three tasks, establishing a new benchmark for multi-layer transparent image generation. Notably, our model significantly outperforms the concurrent Qwen-Image-Layered model in image-to-layers quality according to user-study results, while achieving 10-100\\times faster inference and reducing activation GPU memory consumption by 50-90\\% during image-to-layer inference.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.26103v1",
-        "pdf": "https://arxiv.org/pdf/2605.26103v1"
+        "paper": "http://arxiv.org/abs/2605.27235v1",
+        "pdf": "https://arxiv.org/pdf/2605.27235v1"
       },
-      "arxiv_id": "2605.26103v1",
-      "comment": "CVPR 2026, Highlight",
+      "arxiv_id": "2605.27235v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.856779661016949,
+      "relevance_score": 4.85,
       "score_breakdown": {
-        "total_score": 4.86,
+        "total_score": 4.85,
         "field_match": {
-          "score": 1.02,
-          "matches": [
-            "3d reconstruction",
-            "computer vision"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -100,7 +105,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 10.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -109,34 +114,247 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2605.25967v1",
-      "title": "Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio",
+      "id": "2605.27134v1",
+      "title": "Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation",
       "authors": [
-        "Georgios Milis",
-        "Yubin Qin",
-        "Yihan Wu",
-        "Heng Huang"
+        "Heng Qu",
+        "Yike Liu",
+        "Renren Jin",
+        "Wenzong Zhang",
+        "Pengzhi Gao",
+        "Wei Liu",
+        "Jian Luan"
       ],
-      "abstract": "As policy catches up with the capabilities of generative AI, watermarking is central to content provenance efforts. Inference-time watermarks for autoregressive models are unfit for continuous modalities due to discretization inconsistencies. Existing methods overcome this by finetuning the modality tokenizers, nullifying the watermark's training-free advantage. In this work, motivated by the vocabulary redundancy of discretization, we propose an elegant solution for powerful and robust watermarking of synthetic audio. We theoretically analyze the impact of token errors on watermark detection, and effectively mitigate them using a reduced vocabulary obtained via community detection. Thorough experiments showcase that our gradient-free method can boost detectability by several orders of magnitude, while also achieving built-in robustness to audio modifications. Broadly, we discover a new state-of-the-art for token-level watermarks in multimedia, which simply arises from the nature of discrete representation learning.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
+      "abstract": "Vision-Language Models (VLMs) have shown rapid progress in mobile GUI navigation. This paper presents a systematic study of data scaling, benchmarking, and reasoning for VLM-based agents in this domain. To facilitate rigorous evaluation, we introduce HyperTrack, a large-scale dataset with over 16000 real-world tasks across more than 650 Chinese mobile applications, along with GUIEvalKit, an open-source toolkit for unified benchmarking of VLMs on offline GUI navigation tasks. Using HyperTrack, we analyze the effects of training data scale on both supervised and reinforcement-based finetuning. Our results show that reinforcement-based finetuning consistently outperforms supervised finetuning, particularly in out-of-domain settings, highlighting the synergy between data scaling and reinforcement learning. Leveraging GUIEvalKit, we further benchmark state-of-the-art (SOTA) VLMs and analyze how interaction history and reasoning capabilities influence task completion. Together, HyperTrack and GUIEvalKit provide a comprehensive platform for developing and evaluating VLM agents in mobile GUI navigation tasks.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.27134v1",
+        "pdf": "https://arxiv.org/pdf/2605.27134v1"
+      },
+      "arxiv_id": "2605.27134v1",
+      "comment": "Accepted at ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.85,
+      "score_breakdown": {
+        "total_score": 4.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 7.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2605.27355v1",
+      "title": "Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases",
+      "authors": [
+        "Dongyoon Hahm",
+        "Dylan Hadfield-Menell",
+        "Kimin Lee"
+      ],
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) is the standard method to align Large Language Models (LLMs) with human preferences. In this work, we introduce alignment tampering, a potential vulnerability where the LLM undergoing alignment influences the preference dataset, causing RLHF to amplify undesired behaviors. This arises from core limitations of RLHF: (1) preference datasets are constructed from the LLM's own outputs, allowing it to influence them, and (2) pairwise comparisons only indicate which response is better, not why. These limitations can be exploited to cause alignment tampering. For example, if an LLM generates biased responses with higher quality, annotators will prefer them based on quality. However, preference labels do not distinguish quality from bias, and the reward model inherits this limitation. Optimizing such rewards through reinforcement learning or best-of-N sampling can amplify misaligned biases. Our experiments demonstrate amplification across diverse biases: from keyword bias to propaganda (e.g., sexism), brand promotion, and instrumental goal-seeking. Mitigation remains challenging, as existing techniques for robust RLHF fail to fully resolve alignment tampering without sacrificing response quality. These findings reveal structural vulnerabilities of current RLHF and emphasize the need to prevent this vulnerability. Project page: https://alignment-tampering.github.io/",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.27355v1",
+        "pdf": "https://arxiv.org/pdf/2605.27355v1"
+      },
+      "arxiv_id": "2605.27355v1",
+      "comment": "Accepted at ICML 2026, Source code: https://alignment-tampering.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.8,
+      "score_breakdown": {
+        "total_score": 4.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2605.27130v1",
+      "title": "DEI: Diversity in Evolutionary Inference for Quality-Diversity Search",
+      "authors": [
+        "John Donaghy",
+        "Shikhar Rastogi"
+      ],
+      "abstract": "We present DEI: Diversity in Evolutionary Inference, a distributed Quality-Diversity (QD) search framework that assigns heterogeneous large language models (LLMs) as mutation operators across peer nodes communicating with non-blocking collective operations. Unlike homogeneous parallel search, which replicates a single model's inductive biases across all workers, DEI treats each LLM's distinct creative prior as a complementary source of behavioral novelty. Extending the Digital Red Queen framework with DEI, nodes share local optimal solutions at the end of each round to seed the next round's population. This creates cross-model adversarial pressure that drives robustness beyond intra-model self-play. Evaluated on the Core War domain, a competitive programming benchmark in which Redcode warrior programs battle inside a simulated machine, a four-node heterogeneous ensemble (GPT-5.4-mini, Claude Sonnet 4.6, GPT-5.2, and Claude Haiku 4.5) achieves 124 percent higher merged-archive QD-Score (45.90 vs. 20.46) and 28 percent higher coverage (80.6 percent vs. 63.0 percent of cells) than a single-node baseline at equal total LLM-call budget. The heterogeneous ensemble also outperforms an equally-budgeted homogeneous ensemble on QD-Score, coverage, and held-out solution generality across all four model families. These results provide the first empirical evidence that model diversity, not merely parallelism, is the key driver of gain in distributed LLM-based QD search.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
       "categories": [
         "cs.LG",
-        "cs.SD"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.25967v1",
-        "pdf": "https://arxiv.org/pdf/2605.25967v1"
+        "paper": "http://arxiv.org/abs/2605.27130v1",
+        "pdf": "https://arxiv.org/pdf/2605.27130v1"
       },
-      "arxiv_id": "2605.25967v1",
-      "comment": "Accepted to ICML 2026",
+      "arxiv_id": "2605.27130v1",
+      "comment": "Accepted to ICML 2026 Workshop Scalable Learning and Optimization for Efficient Multimodal AI Agents (SCALE)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2605.27080v1",
+      "title": "Semi-Supervised Gaze Estimation via Disentangled Subspace Contrastive Learning",
+      "authors": [
+        "Qida Tan",
+        "Hongyu Yang",
+        "Wenchao Du"
+      ],
+      "abstract": "Appearance-based gaze estimation always suffers from poor generalization due to limited annotated samples and insufficient dataset diversity. Leading approaches adopt weakly supervised learning to generate large-scale pseudo-labeled data from unconstrained real-world scenarios, aiming to mitigate the domain shifts. In this work, we devise a simple yet effective semi-supervised learning architecture that leverages unlabeled data to enhance domain generalization, thereby reducing reliance on labor-intensive manual annotations. Our key insight is to impose Jacobian regularization to disentangle feature representations into discriminative subspaces dedicated to specific gaze components, such as pitch and yaw angles. We further exploit the intrinsic ordinal ranking within each subspace for contrastive learning, enabling the model to learn robust gaze representations from a small set of labeled samples and an abundance of unlabeled ones. This ultimately yields our Disentangled Subspace Contrastive Learning (DSCL) framework. Extensive experiments on multiple benchmarks verify that the proposed DSCL is plug-and-play, achieving competitive performance using only 20\\%, 10\\%, and even 5\\% of the annotated data under both in-domain and cross-domain evaluation settings. The public code is available at \\href{https://github.com/da60266/DSCL}{https://github.com/da60266/DSCL}.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.27080v1",
+        "pdf": "https://arxiv.org/pdf/2605.27080v1"
+      },
+      "arxiv_id": "2605.27080v1",
+      "comment": "ICML2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.3500000000000005,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2605.27081v1",
+      "title": "ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference",
+      "authors": [
+        "Xiongwei Zhu",
+        "Xiaojian Liao",
+        "Tianyang Jiang",
+        "Yusen Zhang",
+        "Liang Wang",
+        "Limin Xiao"
+      ],
+      "abstract": "Fine-grained Mixture-of-Experts (MoE) models sparsely activate only a subset of experts per token, reducing activated computation while maintaining high model capacity. However, in memory-constrained inference scenarios, only a small set of experts can be cached. Experts not in the cache must be fetched from slow external storage (e.g., UFS), leading to frequent evictions and substantial I/O overhead.\n  We propose ReMoE, a router fine-tuning framework designed to boost token-wise expert reuse. ReMoE biases the router toward recently selected experts, producing temporally stable routing that better matches cache locality constraints. By increasing short-horizon expert reuse, ReMoE reduces expert fetches from storage without adding inference-time computation.\n  Experiments on DeepSeek and Qwen models show that ReMoE improves expert reuse by 26% while maintaining downstream task performance. Real-system evaluations further confirm these benefits, improving output throughput by 8.4% under vLLM GPU-CPU expert offloading and reducing TPOT by 43.6-49.8% under llama.cpp on Jetson Orin NX, corresponding to a 1.77-1.99$\\times$ decode speedup across diverse workloads. Checkpoints and usage instructions are available at https://github.com/BUAA-OSCAR/ReMoE.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.DC"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.27081v1",
+        "pdf": "https://arxiv.org/pdf/2605.27081v1"
+      },
+      "arxiv_id": "2605.27081v1",
+      "comment": "Accepted at the 43rd International Conference on Machine Learning (ICML 2026)",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.35,
@@ -168,26 +386,29 @@
       }
     },
     {
-      "id": "2605.26067v1",
-      "title": "Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding",
+      "id": "2605.27304v1",
+      "title": "PlayClass: Automated Play Behaviour Classification in Poultry",
       "authors": [
-        "Rustem Takhanov",
-        "Zhenisbek Assylbekov"
+        "Prince Ravi Leow",
+        "Neil Scheidwasser",
+        "Rebecca Oscarsson",
+        "Per Jensen",
+        "Samir Bhatt",
+        "David Alejandro Duchêne"
       ],
-      "abstract": "Conditionally positive definite (CPD) kernels are defined with respect to a function class $\\mathcal{F}$. It is well known that such a kernel $K$ is associated with its native space (defined analogously to an RKHS), which in turn gives rise to a learning method -- called conditional kernel ridge regression (conditional KRR) due to its analogy with KRR -- where the estimated regression function is penalized by the square of its native space norm. This method is of interest because it can be viewed as classical linear regression, with features specified by $\\mathcal{F}$, followed by the application of standard KRR to the residual (unexplained) component of the target variable. Methods of this type have recently attracted increasing attention.\n  We study the statistical properties of this method by reducing its behavior to that of KRR with another fixed kernel, called the residual kernel. Our main theoretical result shows that such a reduction is indeed possible, at the cost of an additional term in the expected test risk, bounded by $\\mathcal{O}(1/\\sqrt{N})$, where $N$ is the sample size and the hidden constant depends on the class $\\mathcal{F}$ and the input distribution.\n  This reduction enables us to analyze conditional KRR in the case where $K$ is positive definite and $\\mathcal{F}$ is given by the first $k$ principal eigenfunctions in the Mercer decomposition of $K$. We also consider the setting where $\\mathcal{F}$ consists of $k$ random features from a random feature representation of $K$. It turns out that these two settings are closely related. Both our theoretical analysis and experiments confirm that conditional KRR outperforms standard KRR in these cases whenever the $\\mathcal{F}$-component of the regression function is more pronounced than the residual part.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
+      "abstract": "Automated monitoring of animal welfare has largely targeted negative indicators, leaving positive welfare behaviours such as play underexplored. To address this gap, we present PlayClass, a pipeline for play-behaviour classification in poultry from top-down pen video. The pipeline leverages long-duration tracking with SAM 3 via YOLO-guided chunk boundaries to minimise identity errors in point-based prompting, and frozen embeddings from image and video foundation models for play action classification. Although handcrafted motion features from tracked masks alone achieved competitive accuracy, V-JEPA 2.1 consistently outperformed all other backbones across model scales, reaching 77.0 macro-averaged F$_1$ when combined with handcrafted features. Despite this result, the dataset remains challenging due to play sub-types sharing similar kinematic profiles with non-play and inter-bird occlusion. Overall, our work provides encouraging evidence towards automated frameworks for play behaviour classification in poultry.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.CV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.26067v1",
-        "pdf": "https://arxiv.org/pdf/2605.26067v1"
+        "paper": "http://arxiv.org/abs/2605.27304v1",
+        "pdf": "https://arxiv.org/pdf/2605.27304v1"
       },
-      "arxiv_id": "2605.26067v1",
-      "comment": "Accepted to ICML 2026",
+      "arxiv_id": "2605.27304v1",
+      "comment": "Accepted at CV4Animals Workshop @ CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.25,
@@ -200,7 +421,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -219,91 +440,35 @@
       }
     },
     {
-      "id": "2605.26003v1",
-      "title": "Towards 3D heart mesh generation using contactless radar imaging and physics-informed neural network",
+      "id": "2605.27351v1",
+      "title": "Feedforward 3D Editing Learns from Semantic-Part Transformation",
       "authors": [
-        "Jinye Li",
-        "Chenxi Fu",
-        "Minghang Zheng",
-        "Yang Liu",
-        "Xiahai Zhuang",
-        "Qingchao Chen"
+        "Jiawei Weng",
+        "Saining Zhang",
+        "Zhenxin Diao",
+        "Peishuo Li",
+        "Henghaofan Zhang",
+        "Junhao Chen",
+        "Hao Zhao"
       ],
-      "abstract": "Cardiac function evaluation necessitates continuous, non-invasive monitoring, a capability limited in MRI. Millimeter-wave (mmWave) radar and its Synthetic Aperture Radar (SAR) mode offer a privacy-preserving and portable point-of-care clinical applications. However, reconstructing high-fidelity 3D cardiac geometry from SAR remains an open challenge. Traditional radar methods generate sparse point clouds that lack continuous surface topology. Meanwhile, direct application of optical reconstruction networks performs poorly due to the severe speckle noise and ambiguous boundaries inherent in SAR images. To bridge this gap, we propose SAR2Mesh, a novel framework that reformulates the task as a coarse-to-fine mesh deformation process. By initializing with a topological template, our approach explicitly preserves anatomical connectivity through progressive mesh deformation.We introduce a geometry-aware feature projection module to extract multi-view features via 3D-to-2D sampling, and a physics-informed radar loss to enforce consistency between the predicted geometry and raw radar echoes. Furthermore, we present Cardiac Mesh-SAR, the first large-scale paired SAR-mesh dataset. Extensive experiments demonstrate that SAR2Mesh significantly outperforms existing image-based baselines, achieving accurate and physically consistent cardiac reconstructions.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
+      "abstract": "3D editing is a fundamental capability for scalable 3D content creation. While image editing has rapidly evolved toward large-scale feedforward generative paradigms, 3D AI generation remains dominated by training-free editing pipelines. A central challenge of feedforward 3D editing lies in the lack of high-quality paired supervision. Editable 3D assets require simultaneous preservation of geometry, multi-view consistency, structural coherence, and localized edit controllability. Existing 3D editing datasets often rely on independently generated assets, image-mediated reconstruction or narrow edit taxonomies, leading to inaccurate localization, weak preservation, blurred edit boundaries, and limited semantic consistency. In this work, we introduce a new perspective: scalable feedforward 3D editing should be learned from semantic-part transformations. Based on this insight, we propose Pxform, a high-quality 3D editing dataset with over 100K consistent before/after editing pairs across seven edit types. Instead of treating objects as unstructured shapes, our pipeline grounds edits directly in semantic 3D parts. Built upon Pxform, we further propose PartFlow, a feedforward 3D editing network that injects source-aware latent control into pretrained 3D generative priors. PartFlow introduces mask-aware velocity preservation and render-space consistency supervision to jointly improve edit fidelity and source preservation, while requiring no 3D edit mask during inference. Extensive experiments demonstrate that high-quality semantic-part supervision substantially improves scalable 3D editing, enabling PartFlow to achieve state-of-the-art performance on both geometric and appearance editing benchmarks.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.26003v1",
-        "pdf": "https://arxiv.org/pdf/2605.26003v1"
+        "paper": "http://arxiv.org/abs/2605.27351v1",
+        "pdf": "https://arxiv.org/pdf/2605.27351v1"
       },
-      "arxiv_id": "2605.26003v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.126271186440678,
-      "score_breakdown": {
-        "total_score": 4.13,
-        "field_match": {
-          "score": 1.44,
-          "matches": [
-            "cardiac",
-            "heart"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2605.26108v1",
-      "title": "Reinforcing Few-step Generators via Reward-Tilted Distribution Matching",
-      "authors": [
-        "Yushi Huang",
-        "Xiangxin Zhou",
-        "Ruoyu Wang",
-        "Chi Zhang",
-        "Jun Zhang",
-        "Tianyu Pang"
-      ],
-      "abstract": "Recent advances in few-step diffusion distillation have enabled efficient image generation, yet aligning these models with human preferences remains challenging. We propose Reward-Tilted Distribution Matching Distillation (RTDMD), a two-stage framework that unifies distribution matching distillation with reward-guided reinforcement learning for few-step flow generators. We show that minimizing the KL divergence to a reward-tilted teacher distribution naturally decomposes into a distribution matching term and a reward maximization term. In the first stage, we introduce Ambient-Consistent Distribution Matching Distillation (AC-DMD), which performs subinterval-wise distribution matching and augments the fake score objective with a consistency regularizer to help the fake score model track the shifting generator distribution under limited updates. In the second stage, we jointly optimize both terms: for the reward maximization term, we derive a hybrid policy gradient that combines a GRPO-style estimator for the stochastic intermediate transitions with direct reward backpropagation through the deterministic final step, and further introduce step-subset GRPO (SubGRPO) to reduce variance. Experiments on SD3, SD3.5, and FLUX.2 demonstrate that RTDMD establishes new state-of-the-art results across preference, aesthetic, and compositional metrics with only 4 inference steps, outperforming previous few-step text-to-image generation methods. Code and models are available at https://github.com/Harahan/RTDMD.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.26108v1",
-        "pdf": "https://arxiv.org/pdf/2605.26108v1"
-      },
-      "arxiv_id": "2605.26108v1",
-      "comment": "Code and models are available at https://github.com/Harahan/RTDMD",
+      "arxiv_id": "2605.27351v1",
+      "comment": "30 pages, 22 figures. Project Page: https://dennis-jwweng.github.io/pxform/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1,
+      "relevance_score": 4.199999999999999,
       "score_breakdown": {
-        "total_score": 4.1,
+        "total_score": 4.2,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -324,214 +489,41 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2605.26115v1",
-      "title": "TriSplat: Simulation-Ready Feed-Forward 3D Scene Reconstruction",
+      "id": "2605.27146v1",
+      "title": "Chaos-SSL: An Attention-Based Self-Supervised Learning Framework with Chaotic Transformation for Medical Image Classification",
       "authors": [
-        "Weijie Wang",
-        "Zimu Li",
-        "Jinchuan Shi",
-        "Zeyu Zhang",
-        "Botao Ye",
-        "Marc Pollefeys",
-        "Donny Y. Chen",
-        "Bohan Zhuang"
+        "Joao Batista Florindo"
       ],
-      "abstract": "Sparse-view 3D reconstruction is increasingly addressed with feed-forward splatting networks that predict explicit primitives directly from images. Yet most existing methods remain centered on Gaussian primitives and expose surfaces only indirectly: extracting a usable mesh for downstream simulation, physics reasoning, or embodied interaction still requires expensive post-hoc steps that break the feed-forward promise. This limitation is especially pronounced in pose-free settings, where scene structure and camera parameters must be estimated jointly from sparse observations. We present TriSplat, a feed-forward reconstruction network that represents scenes with oriented triangle primitives and directly exports simulation-ready mesh scenes from a single forward pass. Given input images, the network predicts local 3D point maps, triangle attributes, camera poses, and optional intrinsics. Rather than regressing triangle orientation as an unconstrained latent variable, our approach constructs geometry normals from the predicted point maps, refines them with an image-conditioned normal head, and converts them into stable local frames for triangle parameterization. A mono-normal bootstrap schedule further stabilizes early training, while opacity and blur scheduling progressively sharpens the learned surface representation for direct mesh extraction. Experiments on RealEstate10K and DL3DV show that this representation produces more geometry-faithful reconstructions than Gaussian feed-forward baselines while maintaining competitive novel-view rendering quality. Because the rendering primitives are themselves surface triangles, the output can be directly ingested by physics engines, collision detectors, and standard rendering pipelines without any conversion, making it a practical simulation-ready solution for feed-forward 3D scene reconstruction.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
+      "abstract": "Self-Supervised Learning (SSL) has emerged as a powerful paradigm to mitigate the reliance on large, annotated datasets, a common bottleneck in medical image analysis. However, standard SSL methods, which rely on simple geometric and color augmentations, may fail to capture the fine-grained, complex textural details necessary for classifying subtle pathologies. This paper introduces Chaos-SSL, a novel two-stage framework for medical image classification. In the first stage, we propose a new self-supervised pre-training strategy that leverages 1D chaotic maps (Logistic, Tent, and Sine) as a complex, non-linear augmentation for contrastive learning. We hypothesize that these chaotic transformations create ``harder'' and more semantically-rich views, forcing a network to learn robust representations of fine-grained medical textures. In the second stage, we introduce an attention-based fusion model that dynamically combines the specialized features from our Chaos-SSL model with the general-purpose features of a larger, ImageNet-pre-trained model. We validate our method on two public datasets: ISIC 2018 (skin lesions) and APTOS 2019 (diabetic retinopathy). Our results demonstrate that the Chaos-SSL model pre-trained with a Tent map for 30 epochs, followed by attention fusion, achieves performance fully competitive with the state-of-the-art, yielding an accuracy of 0.9261 on ISIC 2018 and 0.8726 on APTOS 2019. This significantly outperforms existing SSL methods, including several recent approaches.",
+      "published": "2026-05-26",
+      "updated": "2026-05-26",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.26115v1",
-        "pdf": "https://arxiv.org/pdf/2605.26115v1"
+        "paper": "http://arxiv.org/abs/2605.27146v1",
+        "pdf": "https://arxiv.org/pdf/2605.27146v1"
       },
-      "arxiv_id": "2605.26115v1",
-      "comment": "Project Page: https://lhmd.top/trisplat, Code: https://github.com/ziplab/TriSplat",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.08728813559322,
-      "score_breakdown": {
-        "total_score": 4.09,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2605.26113v1",
-      "title": "AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond",
-      "authors": [
-        "Haiming Zhang",
-        "Junfei Zhou",
-        "Feng Jiang",
-        "Jingzhong Li",
-        "Zhenglong Guo",
-        "Penglin Dai",
-        "Jifeng Dai",
-        "Yan Xie",
-        "Benjin Zhu"
-      ],
-      "abstract": "Generating high-fidelity and controllable synthetic data is critical for advancing end-to-end autonomous driving, particularly for addressing the long tail of rare safety-critical scenarios. Existing occupancy-guided methods typically rely on shallow conditioning mechanisms and reference-frame-dependent video synthesis, which limits fine-grained controllability from arbitrary BEV layouts and restricts their applicability for scalable simulation. In this paper, we propose AnyScene, a unified occupancy-centric framework for driving scene generation. AnyScene generates semantic occupancy sequences from BEV layouts through a Spatial-Temporal Occupancy Diffusion Transformer that jointly tokenizes BEV and occupancy features in an autoregressive manner. This design enables precise controllability from cross-dataset and user-defined BEV inputs while naturally supporting long-horizon generation. Building upon the generated occupancy, a Geometry-Grounded View Expansion module treats occupancy as the canonical spatial representation and synthesizes temporally consistent multi-view driving videos in a reference-free and autoregressive fashion, supporting flexible camera configurations at inference time. Extensive experiments demonstrate that AnyScene achieves state-of-the-art performance in both occupancy and video generation. It exhibits strong generalization to unseen and customized layouts, and provides measurable benefits for downstream tasks such as sparse-view 3D reconstruction.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.26113v1",
-        "pdf": "https://arxiv.org/pdf/2605.26113v1"
-      },
-      "arxiv_id": "2605.26113v1",
-      "comment": "Work in progress. Project page: https://mind-omni.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.08728813559322,
-      "score_breakdown": {
-        "total_score": 4.09,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2605.25941v1",
-      "title": "Where Concept Erasure Should Occur: Concept-Layer Alignment in Text-to-Video Diffusion Models",
-      "authors": [
-        "Yiwei Xie",
-        "Ping Liu",
-        "Zheng Zhang"
-      ],
-      "abstract": "Text-to-video diffusion transformers encode semantic information unevenly across model depth, which constrains effective concept erasure. We identify a representational bottleneck, termed concept-layer topological alignment, under which target concepts exhibit higher separability at certain representational depths. Outside these depths, concept and non-target signals remain strongly entangled, limiting the effectiveness of depth-specific erasure. This observation reframes concept erasure as the problem of identifying representational depths where concept-non-target separation naturally emerges. Motivated by this structural constraint, we introduce CLEAR, a separability-driven optimization framework for concept erasure that explicitly enforces concept-layer alignment. CLEAR operationalizes this principle by formulating layer selection as an optimization problem over concept-non-target separability, rather than relying on layer-agnostic or heuristic choices. To enable this, we introduce a separability-aware objective that favors layers exhibiting stronger concept-non-target separation. Experiments on large-scale text-to-video diffusion models demonstrate that enforcing concept--layer alignment leads to more precise concept suppression while preserving overall generative quality.",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.25941v1",
-        "pdf": "https://arxiv.org/pdf/2605.25941v1"
-      },
-      "arxiv_id": "2605.25941v1",
-      "comment": "Accepted by ICML 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.05,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2605.25975v1",
-      "title": "F-RNG: Feed-Forward Relightable Neural Gaussians",
-      "authors": [
-        "Guangming Fu",
-        "Jiahui Fan",
-        "Jian Yang",
-        "Miloš Hašan",
-        "Beibei Wang"
-      ],
-      "abstract": "Capturing relightable 3D assets from real-world objects is a widely researched problem. Several per-scene optimization-based methods, based on 3D Gaussian splatting (3DGS), support relighting; however, they usually require dense input views, and their overfitting nature makes it difficult to generalize across scenes. Unlike per-scene optimization methods, generalized feed-forward models can directly reconstruct Gaussians from sparse input views. However, the resulting assets have baked-in illumination and cannot be easily used for relighting. In this paper, we present F-RNG, a feed-forward framework that directly generates relightable 3DGS assets from sparse-view inputs. Training such a model from scratch can require massive data and computing resources, and it is especially challenging to generate relightable assets in a feed-forward manner with acceptable cost. We develop F-RNG upon an existing large reconstruction model (LRM) to extract relightable representations, while also utilizing priors from an intrinsic decomposition model (IDM). Specifically, we first introduce a latent-interpolated fine-grained geometry synthesis to enhance the LRM's geometry representation. Second, we propose a prior-guided relightable appearance distillation to extract relightable neural representations by incorporating IDM priors. Finally, a universal neural renderer enables flexible and high-fidelity relighting. F-RNG requires neither re-training nor fine-tuning of the underlying LRMs, thus can automatically benefit from better LRMs and IDMs in the future. With only small networks that can be trained with affordable data and computational resources, F-RNG avoids the repetitive inference of large models under different light conditions. By comparison to the state-of-the-art LRM-based relighting method, F-RNG achieves ~25x faster relighting, as well as superior quality (~+2.0 dB).",
-      "published": "2026-05-25",
-      "updated": "2026-05-25",
-      "categories": [
-        "cs.GR",
-        "cs.CV"
-      ],
-      "primary_category": "cs.GR",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.25975v1",
-        "pdf": "https://arxiv.org/pdf/2605.25975v1"
-      },
-      "arxiv_id": "2605.25975v1",
+      "arxiv_id": "2605.27146v1",
       "comment": "",
-      "journal_ref": "",
+      "journal_ref": "In Proceedings of VISAPP 2026 - Volume 1, pages 574-581",
       "has_code": false,
-      "relevance_score": 3.977966101694915,
+      "relevance_score": 4.195762711864407,
       "score_breakdown": {
-        "total_score": 3.98,
+        "total_score": 4.2,
         "field_match": {
-          "score": 1.69,
+          "score": 1.86,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "medical image",
+            "self-supervised",
+            "image analysis"
           ],
           "weight": 0.4
         },
@@ -541,7 +533,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {

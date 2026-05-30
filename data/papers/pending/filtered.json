@@ -3,44 +3,52 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2605.28809v1",
-      "title": "AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning",
+      "id": "2605.30310v1",
+      "title": "City-Mesh3R: Simulation-Ready City-Scale 3D Mesh Reconstruction from Multi-View Images",
       "authors": [
-        "Zhen-Hao Xie",
-        "Yu-Cheng Shi",
-        "Da-Wei Zhou"
+        "Sayan Paul",
+        "Sourav Ghosh",
+        "Siddharth Katageri",
+        "Soumyadip Maity",
+        "Sanjana Sinha",
+        "Brojeshwar Bhowmick"
       ],
-      "abstract": "Class-Incremental Learning (CIL) is important in building real-world learning systems. In CLIP-based CIL, the model performs classification by comparing similarity between visual and textual embeddings obtained from template prompts, e.g., ``a photo of a [CLASS]''. This seemingly monolithic matching process can be decomposed into two conceptually distinct stages: attribute extraction and attribute aggregation. For example, a model may recognize cat using attributes such as fur texture and whiskers. When learning a new class like car, the model must extract additional attributes like wheels and adjust how they are aggregated in the shared representation space. However, since only data from the current task is available, incremental updates can bias both attribute extraction and aggregation toward new classes, leading to catastrophic forgetting. Therefore, we propose AREA for attribute extraction and aggregation in CLIP-based CIL. To stabilize extraction, we anchor class-level visual and textual attributes on the hyperspherical embedding space via principal geodesic analysis. To stabilize aggregation, we learn lightweight task-specific experts with scoring and residual refinement, regularized by a variational information bottleneck objective. During inference, we perform routing over task attribute manifolds via optimal transport for more concise prediction. Experiments show that AREA consistently outperforms SOTA methods. Code is available at https://github.com/LAMDA-CL/ICML2026-AREA.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "City-scale 3D surface reconstruction from multiview images for downstream 3D simulation, poses highly challenging problems due to the scale and complexity of urban scenes. Existing city-scale 3D reconstruction methods based on NeRF, Gaussian Splatting etc. often fail to recover 3D meshes ready for simulation due to incomplete/missing geometry and irregular, noisy surfaces. Scaling existing small-scale 3D reconstruction methods to arbitrarily large urban scenes is highly infeasible due to their computational complexity. We present City-Mesh3R, a scalable framework for reconstructing watertight surface meshes directly from large unordered image collections. Unlike recent methods which use global sparse SfM point-cloud initialization followed by a distributed 3D dense reconstruction of large-scale scenes, our method follows an end-to-end images-to-mesh 3D reconstruction approach using a divide-and-conquer strategy. The sparse city map is reconstructed via topological image clustering, cluster-wise independent sparse SfM and map merging, without need for exhaustive image feature matching. Then this map is partitioned spatially to perform geometry-aware camera selection, followed by dense surface reconstruction and surface refinement using curvature-aware adaptive vertex density remeshing. These partition meshes are then stitched together to produce the global mesh of the city. The proposed end-to-end framework is evaluated on city-scale reconstruction datasets. As demonstrated by our qualitative and quantitative results, our proposed method yields high-fidelity watertight 3D meshes with regular geometry, capturing fine surface details, and is suitable for scaling to arbitrarily large scenes owing to the end-to-end processing in a distributed setting.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
         "cs.CV",
-        "cs.LG"
+        "cs.AI",
+        "cs.GR"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28809v1",
-        "pdf": "https://arxiv.org/pdf/2605.28809v1"
+        "paper": "http://arxiv.org/abs/2605.30310v1",
+        "pdf": "https://arxiv.org/pdf/2605.30310v1"
       },
-      "arxiv_id": "2605.28809v1",
-      "comment": "Accepted to ICML 2026. Code is available at https://github.com/LAMDA-CL/ICML2026-AREA",
+      "arxiv_id": "2605.30310v1",
+      "comment": "Accepted to the USM3D Workshop Proceedings at the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026 as an Oral Presentation. Project page: https://citymesh3r.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.1,
+      "relevance_score": 5.763559322033898,
       "score_breakdown": {
-        "total_score": 5.1,
+        "total_score": 5.76,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 2.03,
+          "matches": [
+            "gaussian splatting",
+            "3d reconstruction",
+            "nerf"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -55,49 +63,46 @@
       }
     },
     {
-      "id": "2605.28805v1",
-      "title": "OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration",
+      "id": "2605.30342v1",
+      "title": "Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field",
       "authors": [
-        "Xinchen Zhang",
-        "Bowei Liu",
-        "Jiale Liu",
-        "Chufan Shi",
-        "Yizhen Zhang",
-        "Junhong Liu",
-        "Youliang Zhang",
-        "Zhiheng Li",
-        "Yujiu Yang",
-        "Ling Yang"
+        "Shangjie Xue",
+        "Jesse Dill",
+        "Dhruv Ahuja",
+        "Frank Dellaert",
+        "Panagiotis Tsiotras",
+        "Danfei Xu"
       ],
-      "abstract": "Visual outcomes are increasingly central to multimodal large language models, making reliable and fine-grained verification essential for scaling generalist foundation models. In this work, we investigate multimodal meta-verification, which leverages verifier-generated rationales rather than decision-only signals, and explore how to effectively incorporate meta-verification feedback into multimodal verifier training. We identify two key findings. First, symbolic verifier outputs (e.g., bounding boxes) outperform textual explanations as meta-verification rationales, enabling efficient rule-based reinforcement learning rewards while avoiding reliance on model-based rewards from auxiliary judge models. Second, decoupling reinforcement learning objectives for binary judgment and meta-verification substantially outperforms joint reward optimization, due to intrinsic differences in output structure and learning dynamics. Based on these insights, we train OmniVerifier-M1, a generalist visual verifier leveraging symbolic meta-verification and decoupled reinforcement learning. OmniVerifier-M1 provides robust verification and fine-grained error localization, and further enables M1-TTS, a verifier-driven agentic generation system achieving dynamic region-level self-correction. This approach paves the way for more reliable, interpretable, and fine-grained multimodal verification, supporting safer and more controllable foundation model deployment.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "We present Gaussian Splatting Anisotropic Visibility Field (GAVIS), a novel framework for uncertainty quantification and active mapping in 3DGS. Our key insight is that regions unseen from the training views yield unreliable predictions from the 3DGS. To address this, we introduce a principled and efficient method for quantifying the visibility field in 3DGS, defined as the anisotropic visibility of each particle with respect to the training views, and represented using spherical harmonics. The resulting visibility field is integrated into a Bayesian Network-based uncertainty-aware 3DGS rasterizer, enabling real-time (200 FPS) uncertainty quantification for synthesized views. Active mapping is further performed within a maximum information gain framework building on this formulation. Extensive experiments across diverse environments demonstrate that GAVIS consistently and significantly outperforms prior approaches in both accuracy and efficiency. Moreover, beyond standalone use, our method can be applied post-hoc to improve the performance of existing approaches.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
-        "cs.CL",
-        "cs.AI",
         "cs.CV",
-        "cs.LG"
+        "cs.RO"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28805v1",
-        "pdf": "https://arxiv.org/pdf/2605.28805v1"
+        "paper": "http://arxiv.org/abs/2605.30342v1",
+        "pdf": "https://arxiv.org/pdf/2605.30342v1"
       },
-      "arxiv_id": "2605.28805v1",
-      "comment": "ICML 2026. Project: https://github.com/Cominclip/OmniVerifier",
+      "arxiv_id": "2605.30342v1",
+      "comment": "Accepted to CVPR 2026. Project page https://gatech-rl2.github.io/GAVIS/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.05,
+      "relevance_score": 5.727966101694915,
       "score_breakdown": {
-        "total_score": 5.05,
+        "total_score": 5.73,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -116,40 +121,35 @@
       }
     },
     {
-      "id": "2605.28763v1",
-      "title": "CubePart: An Open-Vocabulary Part-Controllable 3D Generator",
+      "id": "2605.30231v1",
+      "title": "Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning",
       "authors": [
-        "Yiheng Zhu",
-        "Kangle Deng",
-        "Jean-Philippe Fauconnier",
-        "Inaki Navarro",
-        "Daiqing Li",
-        "Ava Pun",
-        "Yinan Zhang",
-        "Peiye Zhuang",
-        "Xiaoxia Sun",
-        "Maneesh Agrawala",
-        "Kiran Bhat",
-        "Tinghui Zhou"
+        "Chun-Hsiao Yeh",
+        "Shengyi Qian",
+        "Manchen Wang",
+        "Yi Ma",
+        "Joseph Tighe",
+        "Fanyi Xiao"
       ],
-      "abstract": "Interactive 3D assets used in games and simulation are typically decomposed into specific semantic parts to support animation, physics, and scripted behaviors, yet most generative 3D models produce either monolithic meshes or arbitrary part decompositions that cannot be aligned with application-specific requirements. We present CubePart, a generative framework for open-vocabulary, part-controllable 3D mesh generation that exposes part structure as an explicit inference-time control signal. Given a global text prompt and a user-defined parts schema expressed as an open-ended list of part names, our method generates a set of meshes - one per schema element - that assemble into a coherent object while respecting the specified semantic structure. To enable this capability, we introduce a scalable data pipeline to construct a large open-vocabulary, part-labeled 3D dataset, along with a two-stage generative architecture that separates global shape synthesis from part-level decoding. We demonstrate that the resulting assets can be directly integrated into game engines and driven by animation and behavior scripts without manual post-processing. Project Page: https://cubepart.github.io/",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "Vision-Language Models (VLMs) often struggle with robust 3D spatial reasoning. Prevailing methods that rely on fine-tuning with 3D visual question-answering (VQA) datasets may overfit dataset-specific biases, while integrating specialized 3D visual encoders is often inflexible and cumbersome. In this paper, we argue that genuine spatial understanding should emerge from learning fundamental geometric priors, not only from high-level VQA supervision. We propose GASP (Geometric-Aware Spatial Priors), a framework that injects these priors directly into the LLM's transformer layers. GASP employs a small correspondence head, applied as a deep supervision signal across all layers, and is trained with a dual objective leveraging ground-truth geometry from large-scale video scenes: a contrastive loss on ground-truth point correspondences enforces 2D view-invariance, while a depth consistency supervision resolves 3D geometric ambiguities. Our analysis first provides a diagnostic showing that standard VLMs' internal correspondence matching accuracy is very low (often below 5%). We then demonstrate that our training substantially improves this behavior, boosting peak layer-wise correspondence to over 70% and maintaining over 85% temporal robustness while baselines remain below 5%. These internal improvements translate to significant gains on downstream spatial benchmarks including +18.2% on All-Angles Bench and +29.0% on VSI-Bench, all without training on any 3D VQA data. Our findings indicate that learning from fundamental geometric priors is a promising and generalizable pathway towards VLMs with more reliable 3D spatial reasoning.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
+        "cs.CV",
         "cs.AI"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28763v1",
-        "pdf": "https://arxiv.org/pdf/2605.28763v1"
+        "paper": "http://arxiv.org/abs/2605.30231v1",
+        "pdf": "https://arxiv.org/pdf/2605.30231v1"
       },
-      "arxiv_id": "2605.28763v1",
-      "comment": "SIGGRAPH 2026. Project Page: https://cubepart.github.io/",
+      "arxiv_id": "2605.30231v1",
+      "comment": "CVPR 2026. Project page: https://danielchyeh.github.io/GASP/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.0,
+      "relevance_score": 5.300000000000001,
       "score_breakdown": {
-        "total_score": 5.0,
+        "total_score": 5.3,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -157,11 +157,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "SIGGRAPH",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -176,33 +176,41 @@
       }
     },
     {
-      "id": "2605.28741v1",
-      "title": "Self-Prophetic Decoding to Unlock Visual Search in LVLMs",
+      "id": "2605.30311v1",
+      "title": "Archon: A Unified Multimodal Model for Holistic Digital Human Generation",
       "authors": [
-        "Zhendong He",
-        "Qiyuan Dai",
-        "Guanbin Li",
-        "Liang Lin",
-        "Sibei Yang"
+        "Chong Bao",
+        "Shichen Liu",
+        "Lijun Yu",
+        "David Futschik",
+        "Stylianos Moschoglou",
+        "Shefali Srivastava",
+        "Ziqian Bai",
+        "Feitong Tan",
+        "Guofeng Zhang",
+        "Zhaopeng Cui",
+        "Sean Fanello",
+        "Yinda Zhang"
       ],
-      "abstract": "Large Vision-Language Models (LVLMs) are rapidly evolving toward true multimodal reasoning, with visual search representing a concrete instantiation of the thinking-with-images paradigm. However, LVLM visual search faces two key challenges: incompatibility among intrinsic capabilities after post-training, and interference in long multi-step reasoning contexts. To address these, we identify two novel insights. First, self-regulation between pre- and post-training LVLMs leverages the intrinsic single-step capabilities of the pre-training model to mitigate capability deterioration and long-context interference. Second, probability-based prophetic sampling, replacing naive prompting, provides a probabilistic interface where the pre-training model acts as a prophet and the post-training model selectively accepts prophetic tokens under its output distribution, preserving coherent multi-step reasoning. Building on these insights, we introduce SeProD, a self-prophetic decoding framework that leverages intrinsic single-step capabilities to enable coherent multi-step reasoning in a training-free, plug-and-play manner. Experiments show that SeProD consistently improves multiple visual-search LVLMs across all 12 splits of 4 visual search benchmarks, as well as across general VQA benchmarks, without added computational overhead, thanks to its parallel prophetic acceptance mechanism.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "Digital humans are fundamental to immersive interaction, yet creating a unified model for holistic modalities, including text, audio, motion, and visual content, remains an open challenge. In this paper, we present Archon, a fully pretrained, human-centric unified multimodal model for holistic avatar generation. Archon unifies seven modalities with modality-specific tokenizers, and a native autoregressive unified multimodal model pretrained on synchronized modalities and 72 diverse tasks to model holistic joint distributions. To address the token explosion challenge in high-fidelity talking videos, we introduce a memory-efficient semantic video reparameterization, achieving 4x token reduction while preserving fine-grained dynamics, coupled with a semantic-driven video diffusion decoder. We further propose a \"Thinking in Modality\" that decomposes ambiguous cross-modal tasks into stepwise thinking in an alternative chain of modality, progressively enhancing fidelity and controllability. Extensive experiments demonstrate that Archon achieves superior or comparable performance across diverse digital human generation tasks, validating the effectiveness of our unified framework. Project page: https://zju3dv.github.io/archon/.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28741v1",
-        "pdf": "https://arxiv.org/pdf/2605.28741v1"
+        "paper": "http://arxiv.org/abs/2605.30311v1",
+        "pdf": "https://arxiv.org/pdf/2605.30311v1"
       },
-      "arxiv_id": "2605.28741v1",
-      "comment": "Accepted at ICML 2026",
+      "arxiv_id": "2605.30311v1",
+      "comment": "Accepted to CVPR 2026. Project Page: https://zju3dv.github.io/archon/",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.699999999999999,
+      "has_code": true,
+      "relevance_score": 4.9,
       "score_breakdown": {
-        "total_score": 4.7,
+        "total_score": 4.9,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -210,54 +218,51 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2605.28722v1",
-      "title": "Multi-Adapter Representation Interventions via Energy Calibration",
+      "id": "2605.30353v1",
+      "title": "Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software",
       "authors": [
-        "Manjiang Yu",
-        "Hongji Li",
-        "Junwei Chen",
-        "Xue Li",
-        "Priyanka Singh",
-        "Yang Cao",
-        "Lijie Hu"
+        "Nhat-Minh Nguyen"
       ],
-      "abstract": "Representation intervention has emerged as a promising paradigm for aligning large language models toward desired behaviors without modifying model weights. Existing methods typically apply a fixed intervention uniformly across all inputs. However, we find that the appropriate intervention direction and strength vary substantially across samples, and such indiscriminate intervention leads to degradation of general capabilities on benign inputs. To address these challenges, we propose Multi-Adapter Representation Interventions via Energy Calibration (MARI). Specifically, we introduce a competitive multi-adapter mechanism in which specialized experts capture non-linear correction patterns and adaptively determine the appropriate intervention direction and strength for different samples. Furthermore, we design an energy-based gating module that leverages internal propagation dynamics to distinguish inputs that are applicable for intervention. Extensive experiments across diverse model families and parameter scales demonstrate that MARI achieves state-of-the-art alignment performance. Our method significantly improves performance on TruthfulQA, BBQ, and safety benchmarks, while maintaining and even improving general capabilities on tasks such as MMLU and ARC. Our code is available at https://github.com/V1centNevwake/MARI.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "Are AI agents tools, co-authors, or researchers? We present a quantified case study ($N=1$): a physicist supervising an AI coding agent (Claude Code, Sonnet and Opus models) over 12 work days and 57 sessions to build CLAX-PT, a differentiable one-loop perturbation theory module in JAX. We documented and classified 15 supervision events by intervention level.\n  The agent resolved ten autonomously by iterating against oracle tests. Two more by the physicist's domain knowledge. The three it could not -- all evaded oracle detection -- share a common property: the agent treated symptom reduction as root-cause resolution. It spent 33 of the 57 sessions adjusting coefficients within a code architecture that could not represent the target physics, and could not re-evaluate its CLASS-PT branch choice even when prompted to reconsider; only an injected physics concept (anisotropic BAO damping) triggered the redesign. Separately, the agent committed a calibrated correction that passed all oracle tests but corresponded to no quantity in the theory, predicting wrong values at any other cosmology.\n  The fudge factor was caught and replaced within the same session. Three supervision practices proved critical for catching what oracle tests missed: testing at diverse parameter points beyond the fiducial calibration; shared changelogs that surfaced stalled exploration across sessions; and an explicit rule against unphysical numerical patches. In this case, supervision design, not model capability, determined whether the agent's output was trustworthy. Closing the gap would require agents that propose architectural alternatives rather than optimize within a given structure, and distinguish predictive adequacy from explanatory correctness -- capabilities not exhibited here, not obviously addressed by scaling alone. [Abridged.]",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
-        "cs.AI"
+        "cs.AI",
+        "astro-ph.CO",
+        "cs.HC",
+        "cs.SE"
       ],
       "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28722v1",
-        "pdf": "https://arxiv.org/pdf/2605.28722v1"
+        "paper": "http://arxiv.org/abs/2605.30353v1",
+        "pdf": "https://arxiv.org/pdf/2605.30353v1"
       },
-      "arxiv_id": "2605.28722v1",
-      "comment": "Accepted by ICML 2026",
+      "arxiv_id": "2605.30353v1",
+      "comment": "10 pages, 2 figures, 2 tables, 1 physicist and a few AI agents. Accepted by ICML 2026 AI for Science Workshop. Code and development log are available at this repo: https://github.com/MinhMPA/clax-pt",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.55,
+      "has_code": true,
+      "relevance_score": 4.75,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 4.75,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -269,44 +274,50 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       }
     },
     {
-      "id": "2605.28631v1",
-      "title": "Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection",
+      "id": "2605.30339v1",
+      "title": "Benchmarking Single-Factor Physical Video-to-Audio Generation",
       "authors": [
-        "Jianghao Wu",
-        "Jianfei Cai",
-        "Weiqiang Wang",
-        "Jin Ye",
-        "Daniel F. Schmidt",
-        "Yasmeen George"
+        "Tingle Li",
+        "Siddharth Gururani",
+        "Kevin J. Shih",
+        "Gantavya Bhatt",
+        "Sang-gil Lee",
+        "Zhifeng Kong",
+        "Arushi Goel",
+        "Gopala Anumanchipalli",
+        "Ming-Yu Liu"
       ],
-      "abstract": "Reinforcement learning with verifiable rewards (RLVR) can yield large reasoning gains from very few training instances, yet its strong sensitivity to which instances are used makes data selection a central bottleneck. Most existing selection pipelines rely on training-time optimization signals and/or require access to verifiable rewards or ground-truth answers over large candidate pools, which is costly and often infeasible in specialized domains. We study RLVR data selection in a setting where selection must be performed before any RL training and without labels or reward evaluation on the full pool. We propose SHIFT, a one-shot, training-free selector based solely on inference-time hidden-state dynamics. For each candidate instance, SHIFT runs a single deterministic reasoning rollout and computes a reasoning-induced representation shift (RIRS) as the start-to-end hidden-state delta. SHIFT uses the RIRS magnitude as a lightweight proxy for instance utility and enforces coverage via a quality-weighted farthest-first CoreSet procedure in an RIRS-augmented feature space, producing compact subsets that scale to large unlabeled pools. Across mathematical reasoning and medical QA benchmarks under ultra-low budgets, SHIFT consistently outperforms training-free diversity and difficulty/uncertainty baselines, improving both in-domain accuracy and transfer to harder evaluation settings. Ablations show that RIRS-based coverage and quality-weighting contribute complementary gains, and analyses indicate that RIRS is not explained by simple input/output length statistics. Code is available at github.com/JianghaoWu/SHIFT.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "Generative video-to-audio (V2A) models produce highly plausible soundtracks, but it remains unclear whether they capture the underlying physical processes. Existing evaluations emphasize perceptual realism and overlook physical correctness under controlled interventions. In this paper, we introduce FlatSounds, a benchmark that audits the physical reasoning of V2A models through: 1) controlled counterfactual pairs in which a single physical factor is varied, and 2) single-video pattern tests that probe internal consistency and directional trends. These settings test whether the generated audio correctly reflects specific physical properties and timings. Our evaluation of state-of-the-art models reveals a consistent trade-off: models rely more on text captions than the visual stream to infer physics and semantics. Captions generally improve physical and semantic accuracy, but paradoxically degrade temporal alignment. Our results highlight the need to move beyond audio quality toward learning physical processes directly from pixels. Finally, we find that our physics-based metrics correlate strongly with human preference tests on our own data. Project webpage: https://research.nvidia.com/labs/cosmos-lab/flatsounds/",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
-        "cs.LG"
+        "cs.CV",
+        "cs.MM",
+        "cs.SD",
+        "eess.AS"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28631v1",
-        "pdf": "https://arxiv.org/pdf/2605.28631v1"
+        "paper": "http://arxiv.org/abs/2605.30339v1",
+        "pdf": "https://arxiv.org/pdf/2605.30339v1"
       },
-      "arxiv_id": "2605.28631v1",
-      "comment": "14 pages, 2 figures. Accepted by ICML 2026",
+      "arxiv_id": "2605.30339v1",
+      "comment": "CVPR 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.55,
@@ -319,7 +330,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -338,28 +349,38 @@
       }
     },
     {
-      "id": "2605.28811v1",
-      "title": "HarmoVid: Relightful Video Portrait Harmonization",
+      "id": "2605.30307v1",
+      "title": "Grounded 3D-Aware Spatial Vision-Language Modeling",
       "authors": [
-        "Jun Myeong Choi",
-        "Jae Shin Yoon",
-        "Luchao Qi",
-        "Roni Sengupta",
-        "Joon-Young Lee"
+        "An-Chieh Cheng",
+        "Yang Fu",
+        "Yatai Ji",
+        "Ligeng Zhu",
+        "Guanqi Zhan",
+        "Zhuoyang Zhang",
+        "Zhaojing Yang",
+        "Song Han",
+        "Yao Lu",
+        "Pavlo Molchanov",
+        "Vidya Nariyambut Murali",
+        "Jan Kautz",
+        "Xiaolong Wang",
+        "Hongxu Yin",
+        "Sifei Liu"
       ],
-      "abstract": "We present a method for harmonizing the lighting of a foreground video to match a target background scene, adjusting shadows, color tone, and illumination intensity (relightful harmonization). Unlike images, acquiring labeled data for videos, where identical motions are recorded under different lighting conditions, is practically infeasible and non-scalable. While one way to create such paired data is to apply existing image-based harmonization models frame by frame to a video, the resulting outputs often suffer from significant temporal jitters. We overcome this problem by introducing a novel lighting deflickering model that can stabilize the global and local lighting flickering artifacts. Our video diffusion model learns from these upgraded deflickered data with a volume of real and synthetic videos to generate high-quality video harmonization results. We further propose an asymmetric alpha mask conditioning technique to learn the clean boundaries from real videos. Experiments demonstrate that our model achieves strong temporal coherence, naturalness, cleaner boundaries, and physically meaningful lighting behavior, while maintaining strong relighting expressiveness compared to prior image-based and video-based harmonization methods.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "We present GR3D, a spatial vision language model equipped with three complementary grounding capabilities--explicit 2D grounding, implicit 2D grounding, and monocular 3D grounding--within a single framework. GR3D introduces an implicit grounding mechanism that identifies entity mentions during generation and inserts the corresponding region tokens into the text stream, allowing the model to reference visual evidence on the fly when producing spatial chain-of-thought responses. In parallel, a region-prompted monocular 3D grounding design predicts 3D bounding boxes in the camera view from grounded region queries, supported by intrinsic-aware normalization and dense geometric supervision. Together, these grounding capabilities enable GR3D to decompose complex spatial understanding problems into grounded 2D perception followed by 3D inference. GR3D achieves consistent improvements across grounded and non-grounded spatial benchmarks, demonstrating grounding as an effective inductive bias for strengthening spatial understanding in VLMs. These grounding capabilities collectively enhance general spatial understanding beyond the grounding task itself.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28811v1",
-        "pdf": "https://arxiv.org/pdf/2605.28811v1"
+        "paper": "http://arxiv.org/abs/2605.30307v1",
+        "pdf": "https://arxiv.org/pdf/2605.30307v1"
       },
-      "arxiv_id": "2605.28811v1",
-      "comment": "CVPR 2026",
+      "arxiv_id": "2605.30307v1",
+      "comment": "CVPR 2026 https://www.anjiecheng.me/gr3d",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.3999999999999995,
@@ -391,26 +412,32 @@
       }
     },
     {
-      "id": "2605.28705v1",
-      "title": "Understanding Generalization and Forgetting in In-Context Continual Learning",
+      "id": "2605.30179v1",
+      "title": "iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis",
       "authors": [
-        "Guangyu Li",
-        "Meng Ding",
-        "Lijie Hu"
+        "Yang Song",
+        "Yixuan Zhang",
+        "Lingfa Meng",
+        "Tongyuan Hu",
+        "Haizhou Shi",
+        "Hao Wang",
+        "Samir Bhatt",
+        "Hengguan Huang"
       ],
-      "abstract": "In-context learning (ICL) derives its power from enabling Large Language Models to adapt to new tasks via prompt-based reasoning alone, entirely bypassing the need for parameter updates. Existing theories primarily study ICL in single-task settings, while real-world prompts often contain sequences of heterogeneous tasks, leaving a gap in understanding whether Large Language Models implicitly perform continual learning during inference. To bridge this gap, we propose the first theoretical framework for in-context continual learning, modeling how a pretrained Transformer processes multiple sequential tasks within a single prompt through shared attention mechanisms. Focusing on linear and masked linear self-attention, we derive error expressions for model predictions under sequential task prompts and analyze their generalization and forgetting behavior. Our results reveal that standard attention mechanisms inevitably induce intertask interference by uniformly or causally aggregating historical contexts, leading to systematic bias. We further provide a bias-variance-interference decomposition of prediction error, characterizing when historical in-context information yields positive transfer or provable negative transfer. This analysis exposes fundamental limits of attention-based continual inference and offers theoretical explanations for order sensitivity and performance degradation in long prompts.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "Parameter-efficient adaptation has made LLMs practical for domain prediction, but standard LoRA still relies on a static low-rank update and does not expose the latent interactions that often drive scientific labels. We introduce iLoRA. To our knowledge, it is the first Bayesian graph-conditioned LoRA framework. It infers a latent interaction graph from the input and uses it to generate input-conditioned LoRA updates. As a result, iLoRA learns prediction and latent interaction structure jointly, rather than training a predictor and applying interaction analysis only post hoc. We instantiate this idea for microbiome diagnosis, where disease state can depend on both species-level abundance and microbe-microbe cross-talk, and evaluate it in two complementary settings: interactive QA with human-annotated graphs, which tests latent structure recovery, and multi-cohort IBD diagnosis, which tests biomedical utility. Across both settings, iLoRA improves over strong LoRA and Bayesian adaptation baselines, recovers graphs aligned with human annotations and cohort-level microbiome associations, and provides calibrated uncertainty with moderate graph-branch overhead.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
-        "cs.LG"
+        "cs.LG",
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28705v1",
-        "pdf": "https://arxiv.org/pdf/2605.28705v1"
+        "paper": "http://arxiv.org/abs/2605.30179v1",
+        "pdf": "https://arxiv.org/pdf/2605.30179v1"
       },
-      "arxiv_id": "2605.28705v1",
-      "comment": "accepted by ICML 2026",
+      "arxiv_id": "2605.30179v1",
+      "comment": "Accepted at ICML 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.3999999999999995,
@@ -442,80 +469,27 @@
       }
     },
     {
-      "id": "2605.28587v1",
-      "title": "Deformable Gaussian Occupancy: Decoupling Rigid and Nonrigid Motion with Factorized Distillation",
+      "id": "2605.30295v1",
+      "title": "MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings",
       "authors": [
-        "Yang Gao",
-        "Wuyang Li",
-        "Po-Chien Luan",
-        "Alexandre Alahi"
+        "Valentina Bui Muti",
+        "Eugénie Dulout",
+        "Ziquan Fu"
       ],
-      "abstract": "Understanding dynamic 3D environments is essential for safe autonomous driving, particularly when reasoning about human-centric, nonrigid agents. However, existing weakly supervised occupancy prediction frameworks predominantly assume rigid-body motion and rely on simple frame-to-frame offsets, limiting their ability to capture fine-grained deformations and maintain temporal coherence. To address this issue, we propose DeGO, a deformable Gaussian occupancy framework that unifies decoupled Gaussian deformation with factorized 4D foundation-model distillation. DeGO disentangles rigid and nonrigid motion, enabling each Gaussian primitive to evolve through both deformation and offset-based updates. In parallel, a factorized 4D distillation strategy transfers cross-camera and cross-frame knowledge from the VGGT foundation model, producing foundation-aligned features that enhance temporal consistency. Experiments on the Occ3D-NuScenes benchmark demonstrate that our method achieves state-of-the-art performance under weak supervision, delivering 13.5% gains on human-centric instances and 10.9% overall improvements. These results highlight the effectiveness of deformation-aware and foundation-guided occupancy modeling for dynamic scene understanding. The code is publicly available: https://github.com/vita-epfl/DeGO",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
+      "abstract": "Large language models (LLMs) show promise for clinical reasoning and decision support, but evaluation in realistic, electronic health record-congruent settings remains limited. Existing benchmarks often rely on static datasets or unstructured inputs that do not reflect the structured, interoperable data formats used in clinical systems. We introduce a pipeline for generating clinically realistic HL7 FHIR R4 bundles from unstructured text, enabling controllable evaluation of clinical decision support systems. The pipeline combines staged LLM generation with terminology-grounded validation and repair to reduce hallucinated codes and enforce structural and semantic consistency. Applying this approach to MedCaseReasoning, we construct MedCase-Structured, a synthetic dataset aligned with clinician-authored diagnostic cases, achieving valid FHIR generation for 82.5% of cases. Evaluation on MedCase-Structured reveals consistently lower diagnostic accuracy for LLMs on structured FHIR inputs than with plain text, highlighting the importance of deployment-aligned benchmarking.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
       "categories": [
-        "cs.CV"
+        "cs.CL",
+        "cs.AI"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.CL",
       "links": {
-        "paper": "http://arxiv.org/abs/2605.28587v1",
-        "pdf": "https://arxiv.org/pdf/2605.28587v1"
+        "paper": "http://arxiv.org/abs/2605.30295v1",
+        "pdf": "https://arxiv.org/pdf/2605.30295v1"
       },
-      "arxiv_id": "2605.28587v1",
-      "comment": "CVPR 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "CVPR",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      }
-    },
-    {
-      "id": "2605.28711v1",
-      "title": "Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models",
-      "authors": [
-        "Jiawei Zhang",
-        "Ziyuan Liu",
-        "Leon Yan",
-        "Zhenyu Xiao",
-        "Yuantao Gu"
-      ],
-      "abstract": "The distortion-perception (D-P) tradeoff is a fundamental phenomenon of Bayesian inverse problems, which characterizes the inherent tension between distortion performance and perceptual quality. Enabling flexible traversal of the D-P tradeoff at inference time is crucial for practical applications. Despite the recent success of diffusion models in zero-shot inverse problem solving, efficient and principled strategies for D-P traversal in diffusion-based inverse algorithms remain inadequately characterized. In this paper, we propose a stage-wise framework for realizing D-P traversal using a single diffusion model in zero-shot inverse problems. Our proposed method, termed MAP-RPS, starts with an MAP estimation stage that approximates the MMSE solution and provides a low-distortion initialization, followed by a re-noised posterior sampling stage that progressively improves perceptual quality. We provide theoretical analyses for both stages, establishing the validity and effectiveness of the proposed design. Furthermore, we extend MAP-RPS to the latent space, yielding LMAP-RPS, which enjoys broader applicability by leveraging large-scale pre-trained latent diffusion backbones. Extensive experiments demonstrate that MAP-RPS and LMAP-RPS enable more effective D-P traversal on various tasks, while also exhibiting strong performance as efficient solvers for real-world inverse problems.",
-      "published": "2026-05-27",
-      "updated": "2026-05-27",
-      "categories": [
-        "cs.LG"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2605.28711v1",
-        "pdf": "https://arxiv.org/pdf/2605.28711v1"
-      },
-      "arxiv_id": "2605.28711v1",
-      "comment": "Accepted by ICML 2026",
+      "arxiv_id": "2605.30295v1",
+      "comment": "Accepted to ICML 2026 Structured Data for Health Workshop",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.3500000000000005,
@@ -542,6 +516,62 @@
         },
         "practicality": {
           "score": 6.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2605.30233v1",
+      "title": "Do Language Models Track Entities Across State Changes?",
+      "authors": [
+        "Zilu Tang",
+        "Qiao Zhao",
+        "Gabriel Franco",
+        "Derry Wijaya",
+        "Aaron Mueller",
+        "Sebastian Schuster",
+        "Najoung Kim"
+      ],
+      "abstract": "Entity tracking (ET), the ability to keep track of states, is a fundamental skill that underlies complex reasoning. An increasing amount of work investigates how transformer language models (LMs) solve entity binding $\\textit{without}$ state changes. However, there is limited understanding of how non-toy LMs address ET problems of realistic difficulties expressed in natural language. To this end, we investigate the mechanisms underlying ET in more complex scenarios featuring multiple state-changing operations. We find that LMs do not incrementally track world states across tokens or query-relevant states across layers, but simply aggregate relevant information in parallel at the last token when the query becomes evident. We further investigate mechanisms of individual operations ($\\texttt{PUT}$, $\\texttt{REMOVE}$, $\\texttt{MOVE}$) to characterize this non-incremental ET mechanism. Surprisingly, LMs implement the $\\texttt{REMOVE}$ operation with a fragile global suppression tag; this global removal mechanism predicts various failure modes that we confirm behaviorally. We provide a mechanistic solution of nullifying this tag to partially address this issue. Overall, our findings reveal that LMs solve a fundamentally sequential task using a non-sequential strategy. More broadly, our work illustrates how behavioral and mechanistic analyses can fruitfully interact. Behavioral results inform mechanistic hypotheses, and insights from mechanistic analyses help build stronger behavioral evaluations by predicting failure modes missing from existing evaluations.",
+      "published": "2026-05-28",
+      "updated": "2026-05-28",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2605.30233v1",
+        "pdf": "https://arxiv.org/pdf/2605.30233v1"
+      },
+      "arxiv_id": "2605.30233v1",
+      "comment": "ICML main conference 2026, 9 pages",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
           "weight": 0.1
         }
       }

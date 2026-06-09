@@ -3,110 +3,43 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2606.06294v1",
-      "title": "Towards One-to-Many Temporal Grounding",
+      "id": "2606.07280v1",
+      "title": "Geometric-Aware Hypergraph Reasoning for Novel Class Discovery in Point Cloud Segmentation",
       "authors": [
-        "Qi Xu",
-        "Yue Tan",
-        "Shihao Chen",
-        "Jiahao Meng",
-        "Anna Wang",
-        "Shunping Ji",
-        "Hao Fei",
-        "Jason Li"
+        "Zihao Zhang",
+        "Aming Wu",
+        "Yang Li",
+        "Yahong Han",
+        "Jialie Shen"
       ],
-      "abstract": "Temporal Grounding (TG) aims to localize video segments corresponding to a textual query. Prior research predominantly focuses on single-segment retrieval. Real-world scenarios, however, often require localizing multiple disjoint segments for a single query -- a setting we term One-to-Many Temporal Grounding (OMTG). Previous state-of-the-art MLLMs, optimized for one-to-one settings, struggle in this context, often yielding near-zero scores due to a lack of event cardinality perception. To bridge this gap, we present a systematic solution with three key contributions. First, we establish the first comprehensive OMTG benchmark, introducing Count Accuracy (C-Acc) and Effective Temporal F1 (EtF1) as evaluation metrics. Second, we curate a high-quality OMTG dataset comprising 56k samples through a sophisticated construction pipeline. Third, we develop novel temporal and caption reward functions specifically designed for OMTG. In particular, the caption reward leverages Chain-of-Thought reasoning over dense video captions to explicitly guide policy optimization toward both preciseness and completeness. Extensive experiments show our model achieves a new state-of-the-art EtF1 of 43.65\\% on OMTG Bench, outperforming Gemini 2.5 Pro and Seed-1.8 by 15.85\\% and 15.61\\%, respectively.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "Novel class discovery in point cloud segmentation aims to transfer knowledge from known classes to automatically identify and segment unlabeled novel classes in point clouds. Existing methods mainly rely on pairwise associations for class assignment and novel class reasoning, which limits their ability to capture complex relationships among known and novel classes and may lead to inaccurate semantic segmentation. To address this issue, we introduce a hypergraph-based framework that models high-order associations among classes and enables collaborative reasoning from known classes to novel classes beyond traditional pairwise relations. Moreover, existing methods tend to focus on semantic feature extraction while paying insufficient attention to geometric information in point clouds. To better exploit spatial structure, we propose Geometric-Aware Prototypes to enhance the representation of class-level geometric cues. By propagating geometric information through hyperedges, the proposed method improves the understanding of spatial distributions across classes and leads to more accurate segmentation. Experiments on the SemanticKITTI and SemanticPOSS datasets demonstrate the effectiveness and superiority of our method.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06294v1",
-        "pdf": "https://arxiv.org/pdf/2606.06294v1"
+        "paper": "http://arxiv.org/abs/2606.07280v1",
+        "pdf": "https://arxiv.org/pdf/2606.07280v1"
       },
-      "arxiv_id": "2606.06294v1",
-      "comment": "Accepted to ICML'26",
+      "arxiv_id": "2606.07280v1",
+      "comment": "Accepted to the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.95,
+      "relevance_score": 4.603389830508474,
       "score_breakdown": {
-        "total_score": 4.95,
+        "total_score": 4.6,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Temporal Grounding (TG) aims to localize video segments corresponding to a textual query. Prior research predominantly focuses on single-segment retrieval. Real-world scenarios, however, often require localizing multiple disjoint segments for a single query -- a setting we term One-to-Many Temporal Grounding (OMTG). Previous state-of-the-art MLLMs, optimized for one-to-one settings, struggle in th...",
-        "key_contributions": [
-          "Temporal Grounding (TG) aims to localize video segments corresponding to a textual query.",
-          "Prior research predominantly focuses on single-segment retrieval.",
-          "Real-world scenarios, however, often require localizing multiple disjoint segments for a single query -- a setting we term One-to-Many Temporal Grounding (OMTG)."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2606.06294v1.mp3"
-      }
-    },
-    {
-      "id": "2606.06474v1",
-      "title": "Self-Augmenting Retrieval for Diffusion Language Models",
-      "authors": [
-        "Paul Jünger",
-        "Justin Lovelace",
-        "Linxi Zhao",
-        "Dongyoung Go",
-        "Kilian Q. Weinberger"
-      ],
-      "abstract": "Discrete diffusion language models generate text by iteratively denoising an entire response in parallel. At each step, they predict tentative tokens for every masked position, committing the confident predictions to the output and discarding the unconfident ones. We show that the discarded tokens are in fact a useful lookahead signal for retrieval-augmented generation: even low-confidence tokens often surface salient entities early in the denoising trajectory, enabling retrieval of stronger evidence before the output is finalized. We exploit this through Self-Augmenting Retrieval for Diffusion Language Models (SARDI), a dynamic RAG framework that uses these lookahead tokens to guide retrieval during denoising. SARDI is training-free, retriever-agnostic, and applicable to any reasoning-capable discrete diffusion language model. Across five multi-hop QA benchmarks, SARDI outperforms current training-free diffusion and autoregressive retrieval baselines at up to $8\\times$ higher throughput.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2606.06474v1",
-        "pdf": "https://arxiv.org/pdf/2606.06474v1"
-      },
-      "arxiv_id": "2606.06474v1",
-      "comment": "ICML 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
@@ -124,45 +57,46 @@
         }
       },
       "ai_summaries": {
-        "short": "Discrete diffusion language models generate text by iteratively denoising an entire response in parallel. At each step, they predict tentative tokens for every masked position, committing the confident predictions to the output and discarding the unconfident ones. We show that the discarded tokens are in fact a useful lookahead signal for retrieval-augmented generation: even low-confidence tokens ...",
+        "short": "Novel class discovery in point cloud segmentation aims to transfer knowledge from known classes to automatically identify and segment unlabeled novel classes in point clouds. Existing methods mainly rely on pairwise associations for class assignment and novel class reasoning, which limits their ability to capture complex relationships among known and novel classes and may lead to inaccurate semant...",
         "key_contributions": [
-          "Discrete diffusion language models generate text by iteratively denoising an entire response in parallel.",
-          "At each step, they predict tentative tokens for every masked position, committing the confident predictions to the output and discarding the unconfident ones.",
-          "We show that the discarded tokens are in fact a useful lookahead signal for retrieval-augmented generation: even low-confidence tokens often surface salient entities early in the denoising trajectory, enabling retrieval of stronger evidence before the output is finalized."
+          "Novel class discovery in point cloud segmentation aims to transfer knowledge from known classes to automatically identify and segment unlabeled novel classes in point clouds.",
+          "Existing methods mainly rely on pairwise associations for class assignment and novel class reasoning, which limits their ability to capture complex relationships among known and novel classes and may lead to inaccurate semantic segmentation.",
+          "To address this issue, we introduce a hypergraph-based framework that models high-order associations among classes and enables collaborative reasoning from known classes to novel classes beyond traditional pairwise relations."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06474v1.mp3"
+        "audio_url": "/audio/2606.07280v1.mp3"
       }
     },
     {
-      "id": "2606.06303v1",
-      "title": "Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction",
+      "id": "2606.07181v1",
+      "title": "RETROSPECT: RETROsynthesis via Sequential Prediction, and Chemically Transformed-ranking",
       "authors": [
-        "Hongkun Dou",
-        "Zike Chen",
-        "Fengji Li",
-        "Hongjue Li",
-        "Yue Deng"
+        "Raja Sekhar Pappala",
+        "Shreyas Vinaya Sathyanarayana",
+        "Ronit Kumar Choudhary",
+        "Arjun Verma",
+        "Deepak Warrier"
       ],
-      "abstract": "Controllable generation with discrete diffusion models is often hindered by high computational overhead or the need for retraining. In this paper, we present \\underline{\\textbf{G}}radient-\\underline{\\textbf{I}}nformed \\underline{\\textbf{L}}ogit \\underline{\\textbf{C}}orrection (\\textbf{GILC}), a plug-and-play framework that efficiently estimates guidance signals by repurposing the pretrained denoising network as a variational proxy. To circumvent the gradient instability inherent in high-dimensional discrete spaces, we introduce a Jacobian-free mechanism that directly corrects the clean prediction logits, facilitating stable and effective guidance. Our method accommodates both differentiable and non-differentiable reward functions. Extensive experiments across DNA, protein sequence, and molecular generation tasks demonstrate that GILC achieves state-of-the-art performance without additional training, frequently outperforming fine-tuning approaches.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "Single-step retrosynthesis needs both accurate first-ranked suggestions and candidate lists that are rich enough for downstream selection. We study this as a proposal-selection decomposition. Our system, RETROSPECT, combines a single Transformer proposal model, which we call the ChemAlign Transformer, with a LambdaMART reranker over structural, reaction-template, upstream-score, and optional DFT-derived descriptors. The generator is trained with hybrid root-aligned and random SMILES augmentation, Pre-LayerNorm, tied embeddings, exponential moving average weights, and a differentiable atom-balance auxiliary loss. On the full USPTO-50K test set of 5,007 reactions, the generator reaches 55.00% top-1 and 86.18% top-10 exact-match accuracy with 99.86% top-1 validity. On the merged candidate-pool benchmark used for reranking, which contains 5,007 test products and about 111 candidates per product, a LambdaMART model trained on the structural feature set reaches 59.4% top-1 with 0.7171 mean reciprocal rank. Feature ablations show that upstream proposal score and template-frequency statistics provide most of the reranking signal, while DFT and reaction-center DFT features provide smaller and less consistent gains. These results support a modular view of retrosynthesis: stronger single-model proposal and learned candidate selection are complementary, and the proposal model can serve as a drop-in component for ensemble systems such as RetroChimera (Maziarz et al., 2024)",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
         "cs.LG",
-        "cs.AI"
+        "cs.AI",
+        "q-bio.MN"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06303v1",
-        "pdf": "https://arxiv.org/pdf/2606.06303v1"
+        "paper": "http://arxiv.org/abs/2606.07181v1",
+        "pdf": "https://arxiv.org/pdf/2606.07181v1"
       },
-      "arxiv_id": "2606.06303v1",
-      "comment": "Accepted by ICML 2026",
+      "arxiv_id": "2606.07181v1",
+      "comment": "Accepted at the AI for Science workshop (ICML 2026)",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.55,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -174,7 +108,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -183,48 +117,51 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Controllable generation with discrete diffusion models is often hindered by high computational overhead or the need for retraining. In this paper, we present \\underline{\\textbf{G}}radient-\\underline{\\textbf{I}}nformed \\underline{\\textbf{L}}ogit \\underline{\\textbf{C}}orrection (\\textbf{GILC}), a plug-and-play framework that efficiently estimates guidance signals by repurposing the pretrained denois...",
+        "short": "Single-step retrosynthesis needs both accurate first-ranked suggestions and candidate lists that are rich enough for downstream selection. We study this as a proposal-selection decomposition. Our system, RETROSPECT, combines a single Transformer proposal model, which we call the ChemAlign Transformer, with a LambdaMART reranker over structural, reaction-template, upstream-score, and optional DFT-d...",
         "key_contributions": [
-          "Controllable generation with discrete diffusion models is often hindered by high computational overhead or the need for retraining.",
-          "In this paper, we present \\underline{\\textbf{G}}radient-\\underline{\\textbf{I}}nformed \\underline{\\textbf{L}}ogit \\underline{\\textbf{C}}orrection (\\textbf{GILC}), a plug-and-play framework that efficiently estimates guidance signals by repurposing the pretrained denoising network as a variational proxy.",
-          "To circumvent the gradient instability inherent in high-dimensional discrete spaces, we introduce a Jacobian-free mechanism that directly corrects the clean prediction logits, facilitating stable and effective guidance."
+          "Single-step retrosynthesis needs both accurate first-ranked suggestions and candidate lists that are rich enough for downstream selection.",
+          "We study this as a proposal-selection decomposition.",
+          "Our system, RETROSPECT, combines a single Transformer proposal model, which we call the ChemAlign Transformer, with a LambdaMART reranker over structural, reaction-template, upstream-score, and optional DFT-derived descriptors."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06303v1.mp3"
+        "audio_url": "/audio/2606.07181v1.mp3"
       }
     },
     {
-      "id": "2606.06375v1",
-      "title": "Rethinking Infrastructure Inspection as Image Difference Classification: A Traffic Sign Case Study",
+      "id": "2606.07288v1",
+      "title": "ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation",
       "authors": [
-        "Ching Yau Fergus Mok",
-        "Lavindra de Silva",
-        "Varun Kumar Reja",
-        "Ioannis Brilakis"
+        "Chuanjin Fan",
+        "Lifan Wu",
+        "Wenjie Chang",
+        "Hanzhi Chang",
+        "Wenfei Yang",
+        "Tianzhu Zhang"
       ],
-      "abstract": "Digital twins (DTs) allow the digitalization of road infrastructure inspection, though this is hindered by limited annotated data. This work exploits the relational nature of continuous asset condition monitoring to reformulate image-based defect detection as image difference classification (IDC) to reduce data reliance. This was evaluated in a case study on low-resource traffic sign inspection with different IDC classifiers using a newly-curated, high quality dataset. Results indicate that the instruction-based classifier outperforms encoder-based ones and gains from comparison with reference images. This shows that IDC can be an effective task modeling for tackling data constraints in infrastructure inspection and DT asset condition updating.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "Reconstructing surface meshes from multi-view images has remained a core challenge in recent years. Most existing methods, whether implicit or explicit, depend on intermediate representations and post-processing steps like Marching Cubes or TSDF fusion, often resulting in artifacts and fragmented geometry. Directly optimizing explicit meshes is a promising approach. However, it presents two critical challenges. The first is how to adaptively refine mesh topology to capture detail without introducing degenerate faces. The second is how to maintain consistent UV coordinates for high-fidelity texturing as the mesh structure evolves. To overcome these, we propose ExMesh, a novel framework that directly optimizes explicit meshes by integrating differentiable optimization with discrete topology updates. Specifically, we introduce an adaptive vertex splitting and merging strategy, along with real-time UV maintenance, to enable coarse-to-fine optimization while preserving geometric integrity. To our knowledge, ExMesh is the first framework to seamlessly integrate discrete topology operations into a continuous differentiable optimization pipeline. Extensive experiments demonstrate that ExMesh achieves a balance among accuracy, computational efficiency, and mesh conciseness.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
-        "cs.AI"
+        "cs.CV",
+        "cs.GR"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06375v1",
-        "pdf": "https://arxiv.org/pdf/2606.06375v1"
+        "paper": "http://arxiv.org/abs/2606.07288v1",
+        "pdf": "https://arxiv.org/pdf/2606.07288v1"
       },
-      "arxiv_id": "2606.06375v1",
-      "comment": "CVPR 2026 Computer Vision for the Built World Workshop (CV4AEC @ CVPR)",
+      "arxiv_id": "2606.07288v1",
+      "comment": "Accepted at the IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026 (CVPR 2026)",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.25,
+      "relevance_score": 4.5,
       "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 4.5,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -236,7 +173,202 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Reconstructing surface meshes from multi-view images has remained a core challenge in recent years. Most existing methods, whether implicit or explicit, depend on intermediate representations and post-processing steps like Marching Cubes or TSDF fusion, often resulting in artifacts and fragmented geometry. Directly optimizing explicit meshes is a promising approach. However, it presents two critic...",
+        "key_contributions": [
+          "Reconstructing surface meshes from multi-view images has remained a core challenge in recent years.",
+          "Most existing methods, whether implicit or explicit, depend on intermediate representations and post-processing steps like Marching Cubes or TSDF fusion, often resulting in artifacts and fragmented geometry.",
+          "Directly optimizing explicit meshes is a promising approach."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2606.07288v1.mp3"
+      }
+    },
+    {
+      "id": "2606.07179v1",
+      "title": "EvoGS: Constructing Continuous-Layered Gaussian Splatting with Evolution Tree for Scalable 3D Streaming",
+      "authors": [
+        "Yuang Shi",
+        "Simone Gasparini",
+        "Géraldine Morin",
+        "Wei Tsang Ooi"
+      ],
+      "abstract": "Streaming 3D Gaussian Splatting requires highly scalable, progressive representations. Existing progressive methods rely on \\textit{discrete layering}, accumulating separate splat sets for each level of detail. This structural independence between layers inherently leads to error accumulation, severe splat redundancy, and uncontrolled quality transitions. We propose EvoGS, the first \\textit{continuous-layering} representation. Organized as an Evolution Tree, EvoGS generates finer details via an explicit, wavelet-inspired parent-child refinement. This empowers child nodes to structurally correct ancestral errors, yield inherently sparse and highly compressible inter-layer signals. Extensive experiments show EvoGS eliminates splat redundancy from over 65\\% to under 25\\%. Compared to state-of-the-art baselines, it reduces transmission payload and GPU VRAM footprint by up to 2.4$\\times$ and 5.5$\\times$, respectively, and achieves smooth quality transitions optimal for real-time adaptive streaming. Project page: https://yuang-ian.github.io/evogs/",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
+      "categories": [
+        "cs.CV",
+        "cs.MM",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2606.07179v1",
+        "pdf": "https://arxiv.org/pdf/2606.07179v1"
+      },
+      "arxiv_id": "2606.07179v1",
+      "comment": "Project page: https://yuang-ian.github.io/evogs/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.477966101694915,
+      "score_breakdown": {
+        "total_score": 4.48,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Streaming 3D Gaussian Splatting requires highly scalable, progressive representations. Existing progressive methods rely on \\textit{discrete layering}, accumulating separate splat sets for each level of detail. This structural independence between layers inherently leads to error accumulation, severe splat redundancy, and uncontrolled quality transitions. We propose EvoGS, the first \\textit{contin...",
+        "key_contributions": [
+          "Streaming 3D Gaussian Splatting requires highly scalable, progressive representations.",
+          "Existing progressive methods rely on \\textit{discrete layering}, accumulating separate splat sets for each level of detail.",
+          "This structural independence between layers inherently leads to error accumulation, severe splat redundancy, and uncontrolled quality transitions."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2606.07179v1.mp3"
+      }
+    },
+    {
+      "id": "2606.07457v1",
+      "title": "Time series Foundation Models based on Physics-Informed Synthetic Histories for Cold-Start Photovoltaic Forecasting",
+      "authors": [
+        "Lorenzo Longarini",
+        "Alessandro Rongoni",
+        "Simone Silenzi",
+        "Emanuele Frontoni",
+        "Riccardo Rosati"
+      ],
+      "abstract": "At commissioning time, Photovoltaic (PV) operators must forecast production before target-site observations are available, limiting the direct use of standard supervised forecasters. This cold-start setting is addressed with a zero-shot pipeline that generates a synthetic production history from plant metadata and meteorological covariates, enabling time-series foundation models (TSFMs) to forecast through inference-time conditioning. Five TSFMs are benchmarked against classical baselines under strict Cold-Start Baseline, Real Feedback, and Self-Forecast Feedback strategies. The evaluation spans $440$ PV sites across four datasets and diverse climate regimes. Covariate-aware foundation models outperform baselines by approximately $1.7-2\\times$: TabPFN-TS achieves the lowest error under Real Feedback (MAE $0.514$, RMSE $0.721$ $kWh$ ${kWp}^{-1}$ ${d}^{-1}$), while Chronos-2 is most robust under Self-Forecast Feedback. Performance is largely insensitive to the synthetic-history source, indicating that accuracy is driven more by the availability of plausible temporal context than by the specific generator.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
+      "categories": [
+        "cs.LG",
+        "eess.SP",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2606.07457v1",
+        "pdf": "https://arxiv.org/pdf/2606.07457v1"
+      },
+      "arxiv_id": "2606.07457v1",
+      "comment": "To be published in the 2nd ICML Workshop on Foundation Models for Structured Data",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.449999999999999,
+      "score_breakdown": {
+        "total_score": 4.45,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "At commissioning time, Photovoltaic (PV) operators must forecast production before target-site observations are available, limiting the direct use of standard supervised forecasters. This cold-start setting is addressed with a zero-shot pipeline that generates a synthetic production history from plant metadata and meteorological covariates, enabling time-series foundation models (TSFMs) to forecas...",
+        "key_contributions": [
+          "At commissioning time, Photovoltaic (PV) operators must forecast production before target-site observations are available, limiting the direct use of standard supervised forecasters.",
+          "This cold-start setting is addressed with a zero-shot pipeline that generates a synthetic production history from plant metadata and meteorological covariates, enabling time-series foundation models (TSFMs) to forecast through inference-time conditioning.",
+          "Five TSFMs are benchmarked against classical baselines under strict Cold-Start Baseline, Real Feedback, and Self-Forecast Feedback strategies."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2606.07457v1.mp3"
+      }
+    },
+    {
+      "id": "2606.07400v1",
+      "title": "Generative Modeling of Discrete Latent Structures via Dynamic Policy Gradients",
+      "authors": [
+        "Stefan Ivanovic",
+        "Ge Liu",
+        "Mohammed El-Kebir"
+      ],
+      "abstract": "Many scientific problems require inferring unobserved mechanistic latent states from indirect observations. While classical approaches, including expectation maximization, do not scale to combinatorially large spaces, deep learning approaches such as variational autoencoders typically form artificial latent states rather than reconstructing the mechanistic ground-truth states. Here, we introduce GReinSS, a policy learning framework that uses dynamically rescaled rewards to learn latent state distributions that maximize the observed data likelihood. We show that GReinSS accurately reconstructs simulated latent sets and latent graphs, outperforming alternative policy learning and generative modeling baselines. Additionally, GReinSS reconstructs isoforms from real short-read RNA sequencing data that better match isoforms detected by orthogonal long-read sequencing than the standard RSEM algorithm. Overall, GReinSS is a principled and practically effective approach for generative modeling and inference of combinatorial latent states from indirect observations.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2606.07400v1",
+        "pdf": "https://arxiv.org/pdf/2606.07400v1"
+      },
+      "arxiv_id": "2606.07400v1",
+      "comment": "ICML 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.269491525423729,
+      "score_breakdown": {
+        "total_score": 4.27,
+        "field_match": {
+          "score": 0.42,
+          "matches": [
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -250,45 +382,41 @@
         }
       },
       "ai_summaries": {
-        "short": "Digital twins (DTs) allow the digitalization of road infrastructure inspection, though this is hindered by limited annotated data. This work exploits the relational nature of continuous asset condition monitoring to reformulate image-based defect detection as image difference classification (IDC) to reduce data reliance. This was evaluated in a case study on low-resource traffic sign inspection wi...",
+        "short": "Many scientific problems require inferring unobserved mechanistic latent states from indirect observations. While classical approaches, including expectation maximization, do not scale to combinatorially large spaces, deep learning approaches such as variational autoencoders typically form artificial latent states rather than reconstructing the mechanistic ground-truth states. Here, we introduce G...",
         "key_contributions": [
-          "Digital twins (DTs) allow the digitalization of road infrastructure inspection, though this is hindered by limited annotated data.",
-          "This work exploits the relational nature of continuous asset condition monitoring to reformulate image-based defect detection as image difference classification (IDC) to reduce data reliance.",
-          "This was evaluated in a case study on low-resource traffic sign inspection with different IDC classifiers using a newly-curated, high quality dataset."
+          "Many scientific problems require inferring unobserved mechanistic latent states from indirect observations.",
+          "While classical approaches, including expectation maximization, do not scale to combinatorially large spaces, deep learning approaches such as variational autoencoders typically form artificial latent states rather than reconstructing the mechanistic ground-truth states.",
+          "Here, we introduce GReinSS, a policy learning framework that uses dynamically rescaled rewards to learn latent state distributions that maximize the observed data likelihood."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06375v1.mp3"
+        "audio_url": "/audio/2606.07400v1.mp3"
       }
     },
     {
-      "id": "2606.06361v1",
-      "title": "Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them",
+      "id": "2606.07345v1",
+      "title": "TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention",
       "authors": [
-        "Woojung Han",
-        "Seil Kang",
-        "Youngjun Jun",
-        "Min-Hung Chen",
-        "Fu-En Yang",
-        "Seong Jae Hwang"
+        "Si-Yang Liu",
+        "Han-Jia Ye"
       ],
-      "abstract": "Image-to-Video diffusion models leverage input images to generate visually stunning content, yet frequently produce motion that violates physical laws. We reveal a surprising finding: a 2-step generation often exhibits better physical consistency than a 50-step output from the same model. Through spectral analysis, we trace this to phase erosion during denoising; the phase degrades significantly (dropping by $\\approx 18\\%$ from step 2 to step 50), whereas the magnitude remains relatively stable. Building on this insight, we propose PhaseLock, a training-free framework that preserves the valid motion priors from few-step inference throughout the denoising trajectory. Rather than relying on full-step inference for physical consistency, PhaseLock extracts a motion prior from just 2 steps and enforces it onto high-fidelity generation via Latent Delta Guidance. Our approach effectively mitigates phase degradation, improving physical consistency by an average of 6.2 points across diverse models while largely maintaining visual fidelity, with negligible overhead ($1.06\\times$ time, $1.02\\times$ memory) and reduced reliance on expensive external guidance methods ($\\sim5\\times$ time).",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "Tabular foundation models, exemplified by TabPFN, perform prediction via in-context learning, inferring test labels directly from labeled training examples. They have demonstrated competitive performance, particularly on small-to-medium datasets. However, recent tabular foundation models often improve accuracy with increasingly complex architectures, incurring higher inference cost and limiting practical deployment. In this work, we revisit the original TabPFN design and show that a lightweight row-wise attention-only backbone can remain highly competitive with two simple enhancements: a gated attention stabilization mechanism and a small set of learnable register tokens that provide global context and improve pretraining quality. The resulting model, TabSwift, supports both classification and regression, and is competitive with stronger tabular foundation models (e.g., TabPFN v2 and TabICL) while being more efficient at inference. For latency-sensitive serving, we further introduce an adaptive layer-wise early-exit mechanism that dynamically adjusts inference depth per sample. Overall, TabSwift enables efficient and anytime tabular in-context learning for practical deployments.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
-        "cs.CV"
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06361v1",
-        "pdf": "https://arxiv.org/pdf/2606.06361v1"
+        "paper": "http://arxiv.org/abs/2606.07345v1",
+        "pdf": "https://arxiv.org/pdf/2606.07345v1"
       },
-      "arxiv_id": "2606.06361v1",
-      "comment": "ICML 2026",
+      "arxiv_id": "2606.07345v1",
+      "comment": "Accepted to ICML 2026, spotlight",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.2,
+      "relevance_score": 4.15,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.15,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -300,7 +428,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -309,50 +437,47 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Image-to-Video diffusion models leverage input images to generate visually stunning content, yet frequently produce motion that violates physical laws. We reveal a surprising finding: a 2-step generation often exhibits better physical consistency than a 50-step output from the same model. Through spectral analysis, we trace this to phase erosion during denoising; the phase degrades significantly (...",
+        "short": "Tabular foundation models, exemplified by TabPFN, perform prediction via in-context learning, inferring test labels directly from labeled training examples. They have demonstrated competitive performance, particularly on small-to-medium datasets. However, recent tabular foundation models often improve accuracy with increasingly complex architectures, incurring higher inference cost and limiting pr...",
         "key_contributions": [
-          "Image-to-Video diffusion models leverage input images to generate visually stunning content, yet frequently produce motion that violates physical laws.",
-          "We reveal a surprising finding: a 2-step generation often exhibits better physical consistency than a 50-step output from the same model.",
-          "Through spectral analysis, we trace this to phase erosion during denoising; the phase degrades significantly (dropping by $\\approx 18\\%$ from step 2 to step 50), whereas the magnitude remains relatively stable."
+          "Tabular foundation models, exemplified by TabPFN, perform prediction via in-context learning, inferring test labels directly from labeled training examples.",
+          "They have demonstrated competitive performance, particularly on small-to-medium datasets.",
+          "However, recent tabular foundation models often improve accuracy with increasingly complex architectures, incurring higher inference cost and limiting practical deployment."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06361v1.mp3"
+        "audio_url": "/audio/2606.07345v1.mp3"
       }
     },
     {
-      "id": "2606.06278v1",
-      "title": "Geodesic Flow Matching on a Riemannian Degradation Manifold for Blind Image Restoration",
+      "id": "2606.07503v1",
+      "title": "Differences in Detection: Explainability Where it Matters",
       "authors": [
-        "Akshay Janardan Bankar",
-        "Ankita Chatterjee",
-        "Sayan Banerjee",
-        "Shreyas Pandith",
-        "Kalakonda Sai Shashank",
-        "Amit Satish Unde"
+        "Johannes Theodoridis",
+        "Johannes Maucher",
+        "Andreas Schilling"
       ],
-      "abstract": "Blind image restoration requires recovering clean images from observations corrupted by unknown and potentially mixed degradations. While recent deterministic flow-based methods model restoration as transport processes that map degraded images to clean ones, they typically rely on Euclidean interpolation, implicitly assuming linear degradation geometry. In this paper, we explicitly model degradations as points on a low-dimensional Riemannian manifold and formulate restoration as geodesic transport on the joint image-manifold space. Using a geodesic flow matching objective, we learn intrinsic transport dynamics that respect the curvature of degradation space. This framework generalizes linear flow matching, provides a principled treatment of mixed degradations as geodesic compositions, and yields a clean theoretical interpretation for generalization beyond observed degradations.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "We propose Differences in Detection (DnD), an intuitive method to compare two object detection models. Based on the same matching algorithm, it complements the standard metrics of mean Average Precision ($mAP$) and TIDE error analysis with the ability to compare two models directly. More specifically, we calculate the intersection of ground truth labels that are recognized by both models, followed by the corresponding difference sets and the complement set of ground truth labels that are missed by both models. The resulting comparison is more direct and intuitive than a comparison of independent summary statistics. It reveals individual and shared mistakes and becomes particularly interesting when combined with error types. In this case, the differences in detection errors can be analyzed naturally in a standard confusion matrix. While valuable in itself, we believe that one of the best applications of DnD is to guide explainability methods such as ODAM towards metric-relevant examples, grounded in structured subsets. The code for our method is available here: https://github.com/JohannesTheo/differences-in-detection",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06278v1",
-        "pdf": "https://arxiv.org/pdf/2606.06278v1"
+        "paper": "http://arxiv.org/abs/2606.07503v1",
+        "pdf": "https://arxiv.org/pdf/2606.07503v1"
       },
-      "arxiv_id": "2606.06278v1",
-      "comment": "Submitted to ECCV 2026",
+      "arxiv_id": "2606.07503v1",
+      "comment": "Accepted to IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops 2026 - How Do Vision Models Work? (HOW)",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.2,
+      "relevance_score": 4.1,
       "score_breakdown": {
-        "total_score": 4.2,
+        "total_score": 4.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -360,11 +485,11 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ECCV",
+          "venue": "CVPR",
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -373,42 +498,43 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Blind image restoration requires recovering clean images from observations corrupted by unknown and potentially mixed degradations. While recent deterministic flow-based methods model restoration as transport processes that map degraded images to clean ones, they typically rely on Euclidean interpolation, implicitly assuming linear degradation geometry. In this paper, we explicitly model degradati...",
+        "short": "We propose Differences in Detection (DnD), an intuitive method to compare two object detection models. Based on the same matching algorithm, it complements the standard metrics of mean Average Precision ($mAP$) and TIDE error analysis with the ability to compare two models directly. More specifically, we calculate the intersection of ground truth labels that are recognized by both models, followed...",
         "key_contributions": [
-          "Blind image restoration requires recovering clean images from observations corrupted by unknown and potentially mixed degradations.",
-          "While recent deterministic flow-based methods model restoration as transport processes that map degraded images to clean ones, they typically rely on Euclidean interpolation, implicitly assuming linear degradation geometry.",
-          "In this paper, we explicitly model degradations as points on a low-dimensional Riemannian manifold and formulate restoration as geodesic transport on the joint image-manifold space."
+          "We propose Differences in Detection (DnD), an intuitive method to compare two object detection models.",
+          "Based on the same matching algorithm, it complements the standard metrics of mean Average Precision ($mAP$) and TIDE error analysis with the ability to compare two models directly.",
+          "More specifically, we calculate the intersection of ground truth labels that are recognized by both models, followed by the corresponding difference sets and the complement set of ground truth labels that are missed by both models."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06278v1.mp3"
+        "audio_url": "/audio/2606.07503v1.mp3"
       }
     },
     {
-      "id": "2606.06315v1",
-      "title": "LLM Self-Recognition: Steering and Retrieving Activation Signatures",
+      "id": "2606.07367v1",
+      "title": "Self-evolving LLM agents with in-distribution Optimization",
       "authors": [
-        "Thibaud Ardoin",
-        "Jonas Schäfer",
-        "Gerhard Wunder"
+        "Yudi Zhang",
+        "Meng Fang",
+        "Zhenfang Chen",
+        "Mykola Pechenizkiy"
       ],
-      "abstract": "Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs. We demonstrate that this capability is reliable, even in low-entropy scenarios, and that it can be amplified through targeted intervention. By steering the internal residual stream during generation with a random sparse vector, we create a detectable fingerprint that enables attribution of a given text to a specific LLM. This signal is recoverable from the activations of an LLM used as a detector, achieving over 98% accuracy across multiple detection settings while preserving the quality of generated text. As AI-generated content proliferates, this approach offers a practical alternative to traditional detectors by leveraging the model's natural representation structure for attribution rather than embedding a signal externally. Our contributions include: (i) establishing reliable self-recognition capabilities in LLMs, (ii) a simple steering mechanism enabling multi-LLM identification with no quality degradation, (iii) demonstrating that activation spaces contain exploitable structure for encoding signals without semantic interference.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "Large Language Models (LLMs) have recently emerged as powerful controllers for interactive agents in complex environments, yet training them to perform reliable long-horizon decision making remains a fundamental challenge. A key difficulty lies in credit assignment: agents often receive delayed rewards only at the end of episodes. In this paper, we propose Q-Evolve, a self-evolving framework for LLM agents that unifies automatic process-reward labeling and policy learning within a principled in-distribution reinforcement learning paradigm. In each evolving iteration, our method learns an in-distribution critic from a hybrid off-policy dataset that combines expert demonstrations with agent-generated trajectories, stabilizing Bellman backups in sparse-reward settings via a weighted Implicit Q-Learning objective. The learned value function is then used to derive step-wise process rewards through advantage estimation, enabling dense and reliable supervision without environment backtracking or human annotation. Leveraging these signals, we perform behavior-proximal policy optimization that evolves the agent over the data used for process reward labeling, allowing iterative self-improvement without exacerbating distribution shift. We evaluate our method on AlfWorld, WebShop, and ScienceWorld, showing Q-Evolve outperforms strong baselines in sample efficiency, robustness, and overall task performance. Our results demonstrate that stable agent self-evolution is achievable through the co-evolution of process-level supervision and policy, both grounded within a shared in-distribution learning loop.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
-        "cs.AI"
+        "cs.LG"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06315v1",
-        "pdf": "https://arxiv.org/pdf/2606.06315v1"
+        "paper": "http://arxiv.org/abs/2606.07367v1",
+        "pdf": "https://arxiv.org/pdf/2606.07367v1"
       },
-      "arxiv_id": "2606.06315v1",
-      "comment": "To appear in Proceedings of the 43rd International Conference on Machine Learning (ICML 2026)",
+      "arxiv_id": "2606.07367v1",
+      "comment": "ICML 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.1,
@@ -439,105 +565,40 @@
         }
       },
       "ai_summaries": {
-        "short": "Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs. We demonstrate that this capability is reliable, even in low-entropy scenarios, and that it can be amplified through targeted intervention. By steering the internal residual stream during generation with a random sparse vecto...",
+        "short": "Large Language Models (LLMs) have recently emerged as powerful controllers for interactive agents in complex environments, yet training them to perform reliable long-horizon decision making remains a fundamental challenge. A key difficulty lies in credit assignment: agents often receive delayed rewards only at the end of episodes. In this paper, we propose Q-Evolve, a self-evolving framework for L...",
         "key_contributions": [
-          "Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs.",
-          "We demonstrate that this capability is reliable, even in low-entropy scenarios, and that it can be amplified through targeted intervention.",
-          "By steering the internal residual stream during generation with a random sparse vector, we create a detectable fingerprint that enables attribution of a given text to a specific LLM."
+          "Large Language Models (LLMs) have recently emerged as powerful controllers for interactive agents in complex environments, yet training them to perform reliable long-horizon decision making remains a fundamental challenge.",
+          "A key difficulty lies in credit assignment: agents often receive delayed rewards only at the end of episodes.",
+          "In this paper, we propose Q-Evolve, a self-evolving framework for LLM agents that unifies automatic process-reward labeling and policy learning within a principled in-distribution reinforcement learning paradigm."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06315v1.mp3"
+        "audio_url": "/audio/2606.07367v1.mp3"
       }
     },
     {
-      "id": "2606.06485v1",
-      "title": "PAR3D: A Unified 3D-MLLM with Part-Aware Representation for Scene Understanding",
+      "id": "2606.07271v1",
+      "title": "Where Rectified Flows Leak: Characterising Membership Signals Along the Interpolation Path",
       "authors": [
-        "Shaohui Dai",
-        "Yansong Qu",
-        "You Shen",
-        "Shengchuan Zhang",
-        "Liujuan Cao"
+        "Thomas Sesmat",
+        "Gabriel Meseguer-Brocal",
+        "Geoffroy Peeters"
       ],
-      "abstract": "Recent advances in 3D multimodal large language models (3D-MLLMs) have enabled unified solutions for 3D scene understanding tasks, including visual question answering, captioning, and referring segmentation. However, existing 3D-MLLMs remain largely object-centric, limiting their ability to model fine-grained part structures that are essential for embodied interaction with 3D environments. In this work, we present PAR3D, a unified part-aware 3D-MLLM framework that enables models to understand, reason about, and ground both objects and their parts in 3D scenes. To enable training and evaluation of part-aware 3D scene understanding, we introduce ScenePart, a synthetic 3D scene dataset with part-level annotations and language instructions. We further develop Part-Aware 3D Representation Learning to enrich 3D visual representations with fine-grained part-level semantics, and propose Hierarchical Segmentation Query Generation to ground part targets via hierarchical object-part queries. Extensive experiments show that our method substantially improves part-level question answering and referring segmentation, while also achieving strong performance across object-level vision-language tasks.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2606.06485v1",
-        "pdf": "https://arxiv.org/pdf/2606.06485v1"
-      },
-      "arxiv_id": "2606.06485v1",
-      "comment": "Project page: https://atrovast.github.io/PAR3D/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.053389830508475,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent advances in 3D multimodal large language models (3D-MLLMs) have enabled unified solutions for 3D scene understanding tasks, including visual question answering, captioning, and referring segmentation. However, existing 3D-MLLMs remain largely object-centric, limiting their ability to model fine-grained part structures that are essential for embodied interaction with 3D environments. In this...",
-        "key_contributions": [
-          "Recent advances in 3D multimodal large language models (3D-MLLMs) have enabled unified solutions for 3D scene understanding tasks, including visual question answering, captioning, and referring segmentation.",
-          "However, existing 3D-MLLMs remain largely object-centric, limiting their ability to model fine-grained part structures that are essential for embodied interaction with 3D environments.",
-          "In this work, we present PAR3D, a unified part-aware 3D-MLLM framework that enables models to understand, reason about, and ground both objects and their parts in 3D scenes."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2606.06485v1.mp3"
-      }
-    },
-    {
-      "id": "2606.06272v1",
-      "title": "Your GFlowNet Secretly Learns an Optimal Transport Plan",
-      "authors": [
-        "Ian Maksimov",
-        "Nikita Morozov",
-        "Denis Belomestny",
-        "Sergey Samsonov"
-      ],
-      "abstract": "Generative Flow Networks (GFlowNets) are a framework for sampling structured objects via stochastic trajectories in a directed graph. In this work, we establish a theoretical connection between non-acyclic GFlowNets and optimal transport (OT). We show that fixing the initial flow distribution in a minimum-flow GFlowNet reduces its objective to a Kantorovich OT problem with graph-induced shortest path costs. At the optimum, the learned GFlowNet policy therefore encodes an optimal transport plan from the source distribution to the target distribution: we show that sampling trajectories from the minimum-flow GFlowNet recovers the corresponding optimal coupling. Our formulation enables applying the GFlowNet learning framework to OT problems on large graphs via edge flows and neural parameterization. Experiments confirm agreement with exact OT solvers and demonstrate that GFlowNets can learn high-quality transport plans.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
+      "abstract": "Understanding what generative models retain from training data remains challenging, with implications for copyright and privacy. Beyond verbatim reproduction, models can encode subtler traces of their training data that never surface in their outputs yet remain exploitable. We study this regime for Rectified Flows, which are increasingly used in deployed generative systems. We analyse the interpolation path $X_λ= (1-λ)X_0 + λX_1$ that defines the Rectified Flow training. We show that a gap exists between the reconstruction of train and test data that follows a bell-shaped curve over $λ$, wich accumulates during training, while the validation metrics remain stable. The signal has a maximum whose location we derive in closed form under Gaussian assumptions. We validate these predictions on both audio and images and show that the bell-shaped structure is universal, while the peak prediction holds when our assumptions are satisfied. As a proof of concept, we exploit this specific $λ$-resolved structure to perform a Membership Inference Attack, distinguishing members of the training set from non-members.",
+      "published": "2026-06-05",
+      "updated": "2026-06-05",
       "categories": [
         "cs.LG",
-        "cs.AI"
+        "cs.AI",
+        "cs.SD"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.06272v1",
-        "pdf": "https://arxiv.org/pdf/2606.06272v1"
+        "paper": "http://arxiv.org/abs/2606.07271v1",
+        "pdf": "https://arxiv.org/pdf/2606.07271v1"
       },
-      "arxiv_id": "2606.06272v1",
-      "comment": "ICML 2026 SPIGM Workshop",
-      "journal_ref": "",
+      "arxiv_id": "2606.07271v1",
+      "comment": "ICML 2026 article, 9 main pages and 25 with annexes, 11 figures",
+      "journal_ref": "43rd International Conference on Machine Learning, Seoul, South Korea, 2026",
       "has_code": false,
       "relevance_score": 4.05,
       "score_breakdown": {
@@ -567,80 +628,14 @@
         }
       },
       "ai_summaries": {
-        "short": "Generative Flow Networks (GFlowNets) are a framework for sampling structured objects via stochastic trajectories in a directed graph. In this work, we establish a theoretical connection between non-acyclic GFlowNets and optimal transport (OT). We show that fixing the initial flow distribution in a minimum-flow GFlowNet reduces its objective to a Kantorovich OT problem with graph-induced shortest p...",
+        "short": "Understanding what generative models retain from training data remains challenging, with implications for copyright and privacy. Beyond verbatim reproduction, models can encode subtler traces of their training data that never surface in their outputs yet remain exploitable. We study this regime for Rectified Flows, which are increasingly used in deployed generative systems. We analyse the interpol...",
         "key_contributions": [
-          "Generative Flow Networks (GFlowNets) are a framework for sampling structured objects via stochastic trajectories in a directed graph.",
-          "In this work, we establish a theoretical connection between non-acyclic GFlowNets and optimal transport (OT).",
-          "We show that fixing the initial flow distribution in a minimum-flow GFlowNet reduces its objective to a Kantorovich OT problem with graph-induced shortest path costs."
+          "Understanding what generative models retain from training data remains challenging, with implications for copyright and privacy.",
+          "Beyond verbatim reproduction, models can encode subtler traces of their training data that never surface in their outputs yet remain exploitable.",
+          "We study this regime for Rectified Flows, which are increasingly used in deployed generative systems."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2606.06272v1.mp3"
-      }
-    },
-    {
-      "id": "2606.06462v1",
-      "title": "Benchmark Everything Everywhere All at Once",
-      "authors": [
-        "Shiyun Xiong",
-        "Dongming Wu",
-        "Peiwen Sun",
-        "Yuang Ai",
-        "Bokang Yang",
-        "Wencheng Han",
-        "Xiao-Hui Li",
-        "Xiangyu Yue"
-      ],
-      "abstract": "Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance. However, their construction is labor-intensive and hard to reuse, raising concerns about sustainability and scalability. Moreover, existing benchmarks often quickly reach performance saturation after their release, resulting in insufficient discrimination among state-of-the-art models. To address these challenges, we introduce Benchmark Agent, a fully autonomous agentic system designed for benchmark building. Our framework orchestrates the complete benchmark construction pipeline, from user query analysis and subtask design to data annotation and quality control. To assess Benchmark Agent, we implement it to produce 15 representative benchmarks, spanning diverse evaluation scenarios, including text understanding, multimodal understanding, and domain-specific reasoning. Extensive experiments, including human evaluation, LLM-as-a-judge assessment, and consistency checks, demonstrate Benchmark Agent can generate high-quality benchmark samples with minimal human involvement. More importantly, through continual evaluation, we observe several insightful findings, including that current models struggle with certain domain-specific reasoning tasks. We believe that rapidly evolving benchmarks can contribute significantly to the research community. The preview and code will be publicly available at the demo page and code repository.",
-      "published": "2026-06-04",
-      "updated": "2026-06-04",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2606.06462v1",
-        "pdf": "https://arxiv.org/pdf/2606.06462v1"
-      },
-      "arxiv_id": "2606.06462v1",
-      "comment": "Project page: https://benchmarkagent.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance. However, their construction is labor-intensive and hard to reuse, raising concerns about sustainability and scalability. Moreover, existing benchmarks often quickly reach performance saturation after their release, resulting in insufficient discrimination among sta...",
-        "key_contributions": [
-          "Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance.",
-          "However, their construction is labor-intensive and hard to reuse, raising concerns about sustainability and scalability.",
-          "Moreover, existing benchmarks often quickly reach performance saturation after their release, resulting in insufficient discrimination among state-of-the-art models."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2606.06462v1.mp3"
+        "audio_url": "/audio/2606.07271v1.mp3"
       }
     }
   ]

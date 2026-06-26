@@ -3,41 +3,98 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2606.24740v1",
-      "title": "BioMedVR: Confusion-Aware Mixture-of-Prompt Experts for Biomedical Visual Reprogramming",
+      "id": "2606.25915v1",
+      "title": "FunPiQ: A New Benchmark for Pixel-Level Quality Assessment in Fundus Images",
       "authors": [
-        "Jiaxiang Liu",
-        "Tianxiang Hu",
-        "Juwei Guan",
-        "Yujie Wu",
-        "Yusong Wang",
-        "Yao Mu",
-        "Zuozhu Liu",
-        "Mingkun Xu"
+        "Pengwei Wang",
+        "José Morano",
+        "Virginia Mares",
+        "Hrvoje Bogunović"
       ],
-      "abstract": "Recent advances in vision-language models (VLMs) such as CLIP have demonstrated strong generalization across natural-image domains. However, adapting these models to biomedical imaging is non-trivial: full-model fine-tuning is computationally expensive, while medical data are often scarce and exhibit subtle, fine-grained inter-class differences, making parameter-efficient adaptation particularly critical. Visual Reprogramming (VR) offers a parameter-efficient alternative by injecting learnable perturbations into the input space, but existing VR approaches for VLMs mainly focus on positive class prompts and overlook confusing negatives, leading to miscalibrated predictions in fine-grained medical scenarios. We present BioMedVR, the first VR-based framework for biomedical imaging, enabling few-shot adaptation of pretrained VLMs through compact learnable VR modules. To mitigate class confusion, we introduce a Confusion Minimization Mechanism that leverages LLM-generated confusion-aware attributes together with a Confusion-Suppression Loss to explicitly reduce false-positive alignment. Moreover, the designed Mixture-of-Prompt Experts combines a positive expert for main-class discrimination and a negative expert for confusion suppression, balanced via adaptive gating. Extensive experiments on 18 datasets, including 11 biomedical datasets and 7 natural image benchmarks, demonstrate that BioMedVR achieves superior accuracy and generalization, effectively bridging VR and VLMs in biomedical domains.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "Color fundus photography (CFP) is the most common ophthalmic imaging modality for large-scale screening. However, it is highly susceptible to degradations, making robust fundus image quality assessment (FIQA) crucial. The criteria for what constitutes high-quality at the image level vary across clinical tasks, making FIQA dependent on expert knowledge. This motivated the development of automated methods and datasets. While existing datasets aim to standardize image-level quality, their criteria often differ. Furthermore, image-level labels preclude the quantitative evaluation of localized degradations, which is essential for trustworthy FIQA. We argue that pixel-level FIQA based on anatomical visibility represents a more task-agnostic, explainable approach. In this work, we introduce FunPiQ, the first FIQA benchmark to provide pixel-level quality annotations. In addition, we propose EFIQA-CP, an explainable-by-design (EBD) method that uses quality pseudo-labels based on anatomical visibility to train a CNN via Non-Negative Positive-Unlabeled learning. Extensive evaluations of classification methods with post-hoc explanations, anomaly detection methods, and EBD methods demonstrate the superior performance of the last and, particularly, of EFIQA-CP.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24740v1",
-        "pdf": "https://arxiv.org/pdf/2606.24740v1"
+        "paper": "http://arxiv.org/abs/2606.25915v1",
+        "pdf": "https://arxiv.org/pdf/2606.25915v1"
       },
-      "arxiv_id": "2606.24740v1",
-      "comment": "Accepted at ECCV 2026. 19 pages, 6 figures. Project page: https://jxliu-ai.github.io/biomedvr-page/",
+      "arxiv_id": "2606.25915v1",
+      "comment": "Accepted at MICCAI 2026 main conference. Our code, weights, and dataset are available at https://github.com/penway/FunPiQ",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.605084745762712,
+      "relevance_score": 5.3500000000000005,
       "score_breakdown": {
-        "total_score": 5.61,
+        "total_score": 5.35,
         "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical imaging"
-          ],
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Color fundus photography (CFP) is the most common ophthalmic imaging modality for large-scale screening. However, it is highly susceptible to degradations, making robust fundus image quality assessment (FIQA) crucial. The criteria for what constitutes high-quality at the image level vary across clinical tasks, making FIQA dependent on expert knowledge. This motivated the development of automated m...",
+        "key_contributions": [
+          "Color fundus photography (CFP) is the most common ophthalmic imaging modality for large-scale screening.",
+          "However, it is highly susceptible to degradations, making robust fundus image quality assessment (FIQA) crucial.",
+          "The criteria for what constitutes high-quality at the image level vary across clinical tasks, making FIQA dependent on expert knowledge."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2606.25758v1",
+      "title": "Dual Distribution Estimation for Zero-shot Noisy Test-Time Adaptation with VLMs",
+      "authors": [
+        "Wenjie Zhu",
+        "Yabin Zhang",
+        "Liang Xu",
+        "Xin Jin",
+        "Wenjun Zeng",
+        "Lei Zhang"
+      ],
+      "abstract": "While test-time adaptation (TTA) empowers vision-language models to adapt without costly retraining, it remains highly vulnerable to out-of-distribution (OOD) outliers prevalent in real-world applications. This discrepancy motivates Noisy TTA (NTTA), an online task to filter noisy OOD samples on the fly while maximizing in-distribution (ID) classification accuracy. Existing zero-shot NTTA approaches typically rely on test-time discriminative training, leading to overconfident misclassifications and significantly degraded inference efficiency. To address these limitations, we propose a novel framework named Dual Distribution Estimation (DDE), shifting the zero-shot NTTA paradigm from instance-level learning to training-free Gaussian distribution modeling. DDE incorporates two novel modules: Positive Feature Distribution Estimation (PFDE) and Negative Label Distribution Estimation (NLDE). PFDE explicitly models class-wise inclusion and exclusion Gaussian distributions to formulate a calibrated contrastive score, robustly enhancing ID accuracy. In parallel, NLDE improves OOD identification by explicitly modeling the negative label distribution to mine highly discriminative labels, effectively mitigating spurious correlations. Extensive experiments show that on the large-scale ImageNet benchmark, DDE achieves an improvement of 3.70\\% in harmonic mean accuracy and reduces the FPR95 for OOD detection by 6.20\\%, while ensuring highly scalable and efficient online inference. Furthermore, DDE is zero-shot and training-free, demonstrating remarkable robustness in data-scarce scenarios. Codes are available at https://github.com/ZhuWenjie98/DDE.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2606.25758v1",
+        "pdf": "https://arxiv.org/pdf/2606.25758v1"
+      },
+      "arxiv_id": "2606.25758v1",
+      "comment": "Accepted by ECCV2026. Project Page:https://zhuwenjie98.github.io/DDE-project-page/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.3500000000000005,
+      "score_breakdown": {
+        "total_score": 5.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -55,53 +112,53 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent advances in vision-language models (VLMs) such as CLIP have demonstrated strong generalization across natural-image domains. However, adapting these models to biomedical imaging is non-trivial: full-model fine-tuning is computationally expensive, while medical data are often scarce and exhibit subtle, fine-grained inter-class differences, making parameter-efficient adaptation particularly c...",
+        "short": "While test-time adaptation (TTA) empowers vision-language models to adapt without costly retraining, it remains highly vulnerable to out-of-distribution (OOD) outliers prevalent in real-world applications. This discrepancy motivates Noisy TTA (NTTA), an online task to filter noisy OOD samples on the fly while maximizing in-distribution (ID) classification accuracy. Existing zero-shot NTTA approach...",
         "key_contributions": [
-          "Recent advances in vision-language models (VLMs) such as CLIP have demonstrated strong generalization across natural-image domains.",
-          "However, adapting these models to biomedical imaging is non-trivial: full-model fine-tuning is computationally expensive, while medical data are often scarce and exhibit subtle, fine-grained inter-class differences, making parameter-efficient adaptation particularly critical.",
-          "Visual Reprogramming (VR) offers a parameter-efficient alternative by injecting learnable perturbations into the input space, but existing VR approaches for VLMs mainly focus on positive class prompts and overlook confusing negatives, leading to miscalibrated predictions in fine-grained medical scenarios."
+          "While test-time adaptation (TTA) empowers vision-language models to adapt without costly retraining, it remains highly vulnerable to out-of-distribution (OOD) outliers prevalent in real-world applications.",
+          "This discrepancy motivates Noisy TTA (NTTA), an online task to filter noisy OOD samples on the fly while maximizing in-distribution (ID) classification accuracy.",
+          "Existing zero-shot NTTA approaches typically rely on test-time discriminative training, leading to overconfident misclassifications and significantly degraded inference efficiency."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2606.24649v1",
-      "title": "Agentic Collaborative Cognition for Zero-Shot 3D Understanding",
+      "id": "2606.25701v1",
+      "title": "Falcon: Functional Assembly and Language for Compositional Reasoning in X-ray",
       "authors": [
-        "Wenxin Wang",
-        "Bo Zhang",
-        "Feng Chen",
-        "Zixuan Wang",
-        "Wen Li",
-        "Changsheng Li",
-        "Yinjie Lei"
+        "Yonathan Michael",
+        "Mohamad Alansari",
+        "Natnael Takele",
+        "Andreas Henschel",
+        "Naoufel Werghi"
       ],
-      "abstract": "Recent advancements have explored agentic zero-shot 3D understanding by reformulating it as video keyframe understanding with Multimodal Large Language Models (MLLMs). However, existing methods face an intrinsic bottleneck due to the finite observation perspectives inherent in videos and the implicit perception of 3D scenes. In this paper, we propose a collaborative multi-agent framework that assigns a Planning Agent to handle high-level viewpoint planning and supplement novel perspectives, and a Perception Agent to explicitly summarize the 3D scene into a structured holistic cognitive map. Specifically, Planning Agent first analyzes this cognitive map to determine query-relevant viewpoints and supplements missing critical perspectives to ensure comprehensive observation. Subsequently, Perception Agent documents object-level attributes from these views by assigning consistent instance identifiers across viewpoints, thereby integrating fragmented observations into the holistic cognitive map. In parallel, it provides feedback to filter out mismatched candidate objects and guide subsequent viewpoint planning. Through this closed-loop iterative process, two agents collaboratively figure out candidates until Perception Agent determines that sufficient information has been captured to complete the task. Extensive experiments demonstrate that our method achieves state-of-the-art performance on 6 benchmarks, with improvements of 11.1\\% Acc@0.5 on ScanRefer, 14.6 BLEU-1 on 3D-assisted dialog, and 2.1 EM on SQA3D.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "Conventional vision-language models are largely object-centric, focusing on detecting and describing individual entities. In safety-critical X-ray baggage screening, however, threat often emerges not from a single object but from the functional compatibility of spatially dispersed components, such as batteries, detonators, and explosive charges. We formalize this setting as \\emph{compositional threat reasoning}, where risk is modeled as a relational property of grounded regions rather than an independent detection outcome. We introduce \\textbf{Falcon}, a multimodal framework that abstracts segmentation-aware region features into a structured safety state capturing component presence, pairwise functional compatibility, and scene-level risk. This structured representation is injected into the language model as an explicit intermediate interface, encouraging relationally consistent and safety-aware reasoning. To evaluate this problem, we present \\textbf{Falcon-X}, a benchmark that unifies dense grounding with structured supervision over component completeness and risk inference in cluttered X-ray imagery. Experiments show that while existing multimodal models adapt to appearance, they struggle with compositional safety reasoning. Falcon improves functional grounding and produces more coherent threat assessments, establishing compositional safety reasoning as a distinct evaluation paradigm for multimodal systems.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24649v1",
-        "pdf": "https://arxiv.org/pdf/2606.24649v1"
+        "paper": "http://arxiv.org/abs/2606.25701v1",
+        "pdf": "https://arxiv.org/pdf/2606.25701v1"
       },
-      "arxiv_id": "2606.24649v1",
-      "comment": "Accepted by ECCV 2026. Project page: https://zhangbo135.github.io/agentic-collaborative-cognition/",
+      "arxiv_id": "2606.25701v1",
+      "comment": "Accepted at ECCV2026; Project Page: https://yonathan-kiflom.github.io/FALCON/page/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 5.55,
+      "relevance_score": 5.303389830508475,
       "score_breakdown": {
-        "total_score": 5.55,
+        "total_score": 5.3,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -110,7 +167,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 10.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -124,44 +181,43 @@
         }
       },
       "ai_summaries": {
-        "short": "Recent advancements have explored agentic zero-shot 3D understanding by reformulating it as video keyframe understanding with Multimodal Large Language Models (MLLMs). However, existing methods face an intrinsic bottleneck due to the finite observation perspectives inherent in videos and the implicit perception of 3D scenes. In this paper, we propose a collaborative multi-agent framework that assi...",
+        "short": "Conventional vision-language models are largely object-centric, focusing on detecting and describing individual entities. In safety-critical X-ray baggage screening, however, threat often emerges not from a single object but from the functional compatibility of spatially dispersed components, such as batteries, detonators, and explosive charges. We formalize this setting as \\emph{compositional thr...",
         "key_contributions": [
-          "Recent advancements have explored agentic zero-shot 3D understanding by reformulating it as video keyframe understanding with Multimodal Large Language Models (MLLMs).",
-          "However, existing methods face an intrinsic bottleneck due to the finite observation perspectives inherent in videos and the implicit perception of 3D scenes.",
-          "In this paper, we propose a collaborative multi-agent framework that assigns a Planning Agent to handle high-level viewpoint planning and supplement novel perspectives, and a Perception Agent to explicitly summarize the 3D scene into a structured holistic cognitive map."
+          "Conventional vision-language models are largely object-centric, focusing on detecting and describing individual entities.",
+          "In safety-critical X-ray baggage screening, however, threat often emerges not from a single object but from the functional compatibility of spatially dispersed components, such as batteries, detonators, and explosive charges.",
+          "We formalize this setting as \\emph{compositional threat reasoning}, where risk is modeled as a relational property of grounded regions rather than an independent detection outcome."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2606.24602v1",
-      "title": "ViTexQA: A Multi-Frame Temporal Perception Dataset for Video Text Question Answering",
+      "id": "2606.25907v1",
+      "title": "In-context Region-based Drag: Drag Any Region to Any Shape",
       "authors": [
-        "Zhentao Guo",
-        "Chen Duan",
-        "Tongkun Guan",
-        "Zining Wang",
-        "Kai Zhou",
-        "Pengfei Yan"
+        "Jiacheng Sui",
+        "Tianyu Hao",
+        "Bingjie Gao",
+        "Li Niu",
+        "Guangtao Zhai"
       ],
-      "abstract": "Despite remarkable progress in multimodal understanding, current MLLMs still exhibit limitations in video text understanding, particularly when semantics emerge through the integration of temporally distributed textual cues across multiple frames. This perception challenge fundamentally differs from static image text understanding, yet existing datasets fail to capture: the vast majority of questions remain answerable from single frames, inadequately reflecting real-world video text comprehension demands. To address this, we present ViTexQA, a large-scale video-text QA dataset, and FrameThinker for robust multi-frame temporal reasoning. We build ViTexQA via a quality-controlled Chain-of-Thought (CoT) annotation pipeline boosted with temporal constraints; all its QA pairs demand cross-frame text fusion to solve, enforcing true temporal reliance. FrameThinker adopts two-stage training for explicit temporal modeling: CoT-Guided Supervised Fine-Tuning (SFT) generates frame-aware reasoning chains, followed by Temporally-grounded Reinforcement Learning (RL) optimized with multi-frame coherence rewards. Evaluations show our method outperforms SOTA baselines on ViTexQA, lifting ROUGE-L by 6.3%.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "Diffusion models have shown promise in drag-style editing. Previous works mainly focus on point-based drag, which is inherently ambiguous. This paper focuses on region-based drag and introduces a novel In-Context Region-based Drag (ICRDrag) method. Under the in-context learning framework, ICRDrag consumes a source image, a source region mask, and a target region mask, producing the target dragged image. Built upon the basic in-context learning model, we introduce two novel attention regularization: 1) image-mask attention consistency to ensure that a target region attends to similar source regions for image and mask modalities; 2) source-target attention correspondence to ensure the mutual correspondence between source and target regions. To facilitate region-based drag, we also construct Paired Region Dataset (PRD), a large-scale dataset with paired masks and images. Extensive experiments show that ICRDrag significantly outperforms existing methods in both quantitative metrics and user studies, achieving superior editing accuracy and visual fidelity. The dataset, code, and model are available at https://github.com/bcmi/ICRDrag-Region-Drag-Editing.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24602v1",
-        "pdf": "https://arxiv.org/pdf/2606.24602v1"
+        "paper": "http://arxiv.org/abs/2606.25907v1",
+        "pdf": "https://arxiv.org/pdf/2606.25907v1"
       },
-      "arxiv_id": "2606.24602v1",
-      "comment": "Accepted by ECCV2026",
+      "arxiv_id": "2606.25907v1",
+      "comment": "Accepted by ECCV 2026. Dataset, code, and model are available at https://github.com/bcmi/ICRDrag-Region-Drag-Editing",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.6,
+      "has_code": true,
+      "relevance_score": 5.1,
       "score_breakdown": {
-        "total_score": 4.6,
+        "total_score": 5.1,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -170,6 +226,77 @@
         "venue_quality": {
           "score": 10,
           "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Diffusion models have shown promise in drag-style editing. Previous works mainly focus on point-based drag, which is inherently ambiguous. This paper focuses on region-based drag and introduces a novel In-Context Region-based Drag (ICRDrag) method. Under the in-context learning framework, ICRDrag consumes a source image, a source region mask, and a target region mask, producing the target dragged ...",
+        "key_contributions": [
+          "Diffusion models have shown promise in drag-style editing.",
+          "Previous works mainly focus on point-based drag, which is inherently ambiguous.",
+          "This paper focuses on region-based drag and introduces a novel In-Context Region-based Drag (ICRDrag) method."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2606.25956v1",
+      "title": "Pulmonary Embolism Risk Stratification from CTPA and Medical Records: Vascular Graphs Are Not All You Need",
+      "authors": [
+        "Nathan Painchaud",
+        "Tristan Habémont",
+        "Morgane des Ligneris",
+        "Allan Serva",
+        "Pierre Croisille",
+        "Laurent Bertoletti",
+        "Thomas Lampert",
+        "Johannes F. Lutzeyer",
+        "Odyssée Merveille"
+      ],
+      "abstract": "Risk stratification for pulmonary embolism (PE) is critical for clinical decision-making. Stratification guidelines are based on patient medical records, parameters measured from computed tomography pulmonary angiography (CTPA), and blood tests. However, blood tests are often missing in routine practice. This work studies whether state-of-the-art models can accurately classify risk stratification from only medical records and biomarkers extracted from CTPA images. We benchmark different approaches to combine medical records and cardiac biomarkers with rich pulmonary vascular information; we add vascular biomarkers to tabular models and apply graph neural networks (GNNs) on the vascular tree's intrinsic graph representation. We use a private dataset (n=353) with uniquely complete data for PE risk stratification. Our results show that, among global features, medical records and cardiac biomarkers are the most significant predictors, while vascular biomarkers do not further improve stratification. Even more surprising, even GNNs on vascular graphs fail to outperform strong tabular baseline on global features. We consider hypotheses, on both models and data, that could explain this suboptimal performance. Our investigation suggests that, counter-intuitively, vascular graphs might hold no discriminative information for PE risk stratification. Code is available from https://github.com/creatis-myriad/GENESIS.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2606.25956v1",
+        "pdf": "https://arxiv.org/pdf/2606.25956v1"
+      },
+      "arxiv_id": "2606.25956v1",
+      "comment": "8 1/2 pages + 2 pages of references. Accepted for MICCAI 2026. This preprint has not undergone peer review or any post-submission improvements or corrections. The Version of Record of this contribution is published in, and available online at, the external reference provided below",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.955084745762712,
+      "score_breakdown": {
+        "total_score": 4.96,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "cardiac"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
           "weight": 0.25
         },
         "citation_potential": {
@@ -182,46 +309,104 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Despite remarkable progress in multimodal understanding, current MLLMs still exhibit limitations in video text understanding, particularly when semantics emerge through the integration of temporally distributed textual cues across multiple frames. This perception challenge fundamentally differs from static image text understanding, yet existing datasets fail to capture: the vast majority of questi...",
+        "short": "Risk stratification for pulmonary embolism (PE) is critical for clinical decision-making. Stratification guidelines are based on patient medical records, parameters measured from computed tomography pulmonary angiography (CTPA), and blood tests. However, blood tests are often missing in routine practice. This work studies whether state-of-the-art models can accurately classify risk stratification ...",
         "key_contributions": [
-          "Despite remarkable progress in multimodal understanding, current MLLMs still exhibit limitations in video text understanding, particularly when semantics emerge through the integration of temporally distributed textual cues across multiple frames.",
-          "This perception challenge fundamentally differs from static image text understanding, yet existing datasets fail to capture: the vast majority of questions remain answerable from single frames, inadequately reflecting real-world video text comprehension demands.",
-          "To address this, we present ViTexQA, a large-scale video-text QA dataset, and FrameThinker for robust multi-frame temporal reasoning."
+          "Risk stratification for pulmonary embolism (PE) is critical for clinical decision-making.",
+          "Stratification guidelines are based on patient medical records, parameters measured from computed tomography pulmonary angiography (CTPA), and blood tests.",
+          "However, blood tests are often missing in routine practice."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2606.24484v1",
-      "title": "Advancing WordArt-Oriented Scene Text Recognition: Datasets and Methods",
+      "id": "2606.26050v1",
+      "title": "Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining",
       "authors": [
-        "Xingsong Ye",
-        "Yongkun Du",
-        "Jiaxin Zhang",
-        "Haojie Zhang",
-        "Chong Sun",
-        "Chen Li",
-        "Jing Lyu",
-        "Zhineng Chen"
+        "Juliana Li",
+        "Diya Sreedhar"
       ],
-      "abstract": "WordArt (artistic text) features highly customized fonts, textures, and layouts, making WordArt-oriented scene TExt Recognition (WATER) substantially more challenging than general Scene Text Recognition (STR). Existing STR datasets and methods, typically built around regular scene text and fixed-template inputs, struggle to scale to WATER. Thus, we aim to advance this task from both data and model perspectives. On the data side, we construct a 2M synthetic dataset, WATER-S, with the scale improved by hundreds of times compared to existing artistic text data. WATER-S consists of two complementary subsets. One rendered by an upgraded rendering pipeline (SynthWordArt), which provides highly accurate and controllable synthetic WordArt data. The other is generated by combining Qwen3-VL for prompt mining and Z-Image for image synthesis, which improves the coverage of realistic and diverse data. On the model side, we propose WATERec. It adopts an visual encoder supporting arbitrary-shaped inputs and an autoregressive decoder to model complex layouts, structurally breaking the bottleneck of fixed-template STR on WordArt. Experiments show that this architecture outperforms prior STR methods, achieving state-of-the-art performance on irregular texts such as WordArt. Together with WATER-R, carefully reorganized from existing real STR data, our strong baseline with the new synthetic data and model design reaches 90.40% accuracy on WordArt-Bench, surpassing both general-purpose and OCR-specialized vision-language models by a large margin. Code and data are available at https://github.com/YesianRohn/WATER.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "Midway through an ordinary pretraining run, a small language model learns the pronoun-gender rule: cued with a girl's name (\"Sue cried because\"), it resolves the next pronoun to she, generalizing to held-out probes (0.94 by step 925). By step 3,500 the same model scores near zero on the same probes, although the rule's evidence is still in the training data. We call this within-run reversal natural ungrokking: the corpus decides, with no trace in the loss curve, which learned rules a model keeps.\n  Which rules survive is predictable from one corpus statistic: how often the training stream shows the rule winning. Across un-intervened runs (two corpora, three budgets, three seeds), support frequency decides a rule's fate; the data-to-parameter ratio only modulates how deeply a doomed rule falls. The same emerge-then-collapse dynamics appear in public Pythia checkpoints, collapse depth ordered by model scale as predicted. The forgetting is a displacement: a competing surface pattern out-competes the rule, and the log-probability margin between them crosses zero within 100 training steps of the behavioral collapse.\n  Control over this fate is asymmetric: the same edit that destroys a rule on demand cannot restore it. Flipping support to counter-evidence in place kills the rule with monotone dose-response in two unrelated rules; but injecting support back, even to 450 times the level that naturally sustains it, buys no recovery. Every confirmatory threshold and prediction was pre-registered before the data it governed was read.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
+      "categories": [
+        "cs.LG",
+        "cond-mat.dis-nn",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2606.26050v1",
+        "pdf": "https://arxiv.org/pdf/2606.26050v1"
+      },
+      "arxiv_id": "2606.26050v1",
+      "comment": "Foundations of Deep Generative Models (FoGen) Workshop at ICML 2026. 23 pages (5-page main text plus appendices), 5 figures. Code: https://github.com/lijuliana/Natural-Ungrokking",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.75,
+      "score_breakdown": {
+        "total_score": 4.75,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Midway through an ordinary pretraining run, a small language model learns the pronoun-gender rule: cued with a girl's name (\"Sue cried because\"), it resolves the next pronoun to she, generalizing to held-out probes (0.94 by step 925). By step 3,500 the same model scores near zero on the same probes, although the rule's evidence is still in the training data. We call this within-run reversal natura...",
+        "key_contributions": [
+          "Midway through an ordinary pretraining run, a small language model learns the pronoun-gender rule: cued with a girl's name (\"Sue cried because\"), it resolves the next pronoun to she, generalizing to held-out probes (0.",
+          "94 by step 925).",
+          "By step 3,500 the same model scores near zero on the same probes, although the rule's evidence is still in the training data."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2606.25784v1",
+      "title": "$S^{2}$-FracMix: Label-Preserving Self-Saliency Mixup Augmentation",
+      "authors": [
+        "Khawar Islam",
+        "Arif Mahmood",
+        "Xin Jin",
+        "Naveed Akhtar"
+      ],
+      "abstract": "Data augmentation is known to improve generalization of deep visual models. Recent methods favor mixup strategies that generate interpolated samples to improve model performance. However, these techniques not only incur significant computational overhead, they also lead to semantic disruption of augmentation data due to cross-sample mixing. We first propose Self-Saliency ($S^2$) Mixup, which constructs challenging yet label-consistent samples by extracting multi-scale salient patches and reinserting them into non-salient regions of the same image. This promotes scale-invariant feature learning while avoiding cross-sample interference. To further enhance model robustness, we introduce FracMix, a mixing scheme that injects self-similarity patterns into salient regions using adaptive ratios. Collectively, our unified framework, $S^{2}$-FracMix, enables simultaneous learning from fractal and non-fractal structures within a single image, yielding a targeted and structurally coherent augmentation strategy. We theoretically analyze the advantage of our technique, and empirically establish its superiority over the existing methods by achieving state-of-the-art performance in extensive evaluation with seven benchmarks across classification (coarse and fine-grained), robustness, calibration, object detection, and transfer learning tasks. Project page is available at \\href{https://fracmix-data-augmentation.github.io/}{fracmix-data-augmentation.github.io}",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24484v1",
-        "pdf": "https://arxiv.org/pdf/2606.24484v1"
+        "paper": "http://arxiv.org/abs/2606.25784v1",
+        "pdf": "https://arxiv.org/pdf/2606.25784v1"
       },
-      "arxiv_id": "2606.24484v1",
-      "comment": "Accepted by ECCV 2026",
+      "arxiv_id": "2606.25784v1",
+      "comment": "Accepted at ECCV 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.55,
@@ -252,46 +437,43 @@
         }
       },
       "ai_summaries": {
-        "short": "WordArt (artistic text) features highly customized fonts, textures, and layouts, making WordArt-oriented scene TExt Recognition (WATER) substantially more challenging than general Scene Text Recognition (STR). Existing STR datasets and methods, typically built around regular scene text and fixed-template inputs, struggle to scale to WATER. Thus, we aim to advance this task from both data and model...",
+        "short": "Data augmentation is known to improve generalization of deep visual models. Recent methods favor mixup strategies that generate interpolated samples to improve model performance. However, these techniques not only incur significant computational overhead, they also lead to semantic disruption of augmentation data due to cross-sample mixing. We first propose Self-Saliency ($S^2$) Mixup, which const...",
         "key_contributions": [
-          "WordArt (artistic text) features highly customized fonts, textures, and layouts, making WordArt-oriented scene TExt Recognition (WATER) substantially more challenging than general Scene Text Recognition (STR).",
-          "Existing STR datasets and methods, typically built around regular scene text and fixed-template inputs, struggle to scale to WATER.",
-          "Thus, we aim to advance this task from both data and model perspectives."
+          "Data augmentation is known to improve generalization of deep visual models.",
+          "Recent methods favor mixup strategies that generate interpolated samples to improve model performance.",
+          "However, these techniques not only incur significant computational overhead, they also lead to semantic disruption of augmentation data due to cross-sample mixing."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2606.24479v1",
-      "title": "MambaRaw: Selective State Space Modeling for Efficient 4K Raw Image Reconstruction",
+      "id": "2606.25736v1",
+      "title": "UniTeD: Unified Temporal Diffusion for Joint Perception and Planning in Autonomous Driving",
       "authors": [
-        "Peize Li",
-        "Fanhu Zeng",
-        "Tongda Xu",
-        "Xingguo Xu",
-        "Xinjie Zhang",
-        "Xingtong Ge",
-        "Haotian Zhang",
-        "Yan Wang"
+        "Bo Zhao",
+        "Xinting Zhao",
+        "Naifan Li",
+        "Erkang Cheng",
+        "Haibin Ling"
       ],
-      "abstract": "In-camera JPEG previews are ubiquitous in raw image formats and provide an sRGB reference at negligible storage cost. Although existing metadata-based reconstruction frameworks can exploit this side information when recovering raw images, their context models often become computationally expensive especially at high resolution, eg, 4K raw image, given that attention mechanisms scale quadratically with feature maps, hindering its practical application. To address these limitations, we propose MambaRaw, a JPEG-conditioned metadata-based raw image reconstruction framework that uses State Space Models (SSMs) to estimate entropy parameters efficiently. Our key contribution comprises a Spatial-Energy Coupled Context Modeling mechanism with two lightweight modules: (1) TileMambaBlock, which performs Mamba-style selective scanning only on information-dense tiles to improve the efficiency; and (2) Energy-Aware Refinement (EAR), an identity-initialized residual module that enhance feature representation to match the long-tail energy distribution of raw signals. Extensive experiments on three camera datasets (Sony, Olympus, Samsung) show consistent improvements over strong metadata-based baselines and set a new state of the art for JPEG-guided raw reconstruction with great efficiency. Notably, at low metadata bitrates, MambaRaw increases PSNR by 1.2--1.4 dB and reduces end-to-end coding latency by about 9%. Code is released at https://github.com/Peizeli1/MambaRaw.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "Diffusion models have shown strong potential for multi-modal planning in end-to-end autonomous driving. However, most existing methods confine diffusion to the planning module, conditioning on fixed outputs from separate discriminative perception networks. This decoupled design propagates perception errors to the planner, increasing optimization difficulty and reducing robustness. To overcome these limitations, we propose UniTeD, a Unified Temporal Diffusion framework that jointly models perception and planning through iterative denoising in a shared generative space. By enabling bidirectional information exchange, the framework facilitates mutual refinement between tasks and improves robustness via noise-conditioned multi-task training. We further extend this unified diffusion paradigm to a streaming setting by incorporating temporal context. A Temporal Transition Module (TTM) is introduced to resolve the noise-level mismatch between historical and current frames. In addition, we propose an Anchor Refresh Strategy (ARS) to alleviate the training-inference distribution shift commonly observed in sparse diffusion-based end-to-end driving frameworks. Without bells and whistles, UniTeD achieves state-of-the-art performance across multiple benchmarks, surpassing both recent discriminative end-to-end methods and diffusion-based planning approaches.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24479v1",
-        "pdf": "https://arxiv.org/pdf/2606.24479v1"
+        "paper": "http://arxiv.org/abs/2606.25736v1",
+        "pdf": "https://arxiv.org/pdf/2606.25736v1"
       },
-      "arxiv_id": "2606.24479v1",
-      "comment": "Accepted by ECCV 2026",
+      "arxiv_id": "2606.25736v1",
+      "comment": "Accept to ECCV 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.5,
+      "relevance_score": 4.55,
       "score_breakdown": {
-        "total_score": 4.5,
+        "total_score": 4.55,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -303,7 +485,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -312,44 +494,45 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "In-camera JPEG previews are ubiquitous in raw image formats and provide an sRGB reference at negligible storage cost. Although existing metadata-based reconstruction frameworks can exploit this side information when recovering raw images, their context models often become computationally expensive especially at high resolution, eg, 4K raw image, given that attention mechanisms scale quadratically ...",
+        "short": "Diffusion models have shown strong potential for multi-modal planning in end-to-end autonomous driving. However, most existing methods confine diffusion to the planning module, conditioning on fixed outputs from separate discriminative perception networks. This decoupled design propagates perception errors to the planner, increasing optimization difficulty and reducing robustness. To overcome thes...",
         "key_contributions": [
-          "In-camera JPEG previews are ubiquitous in raw image formats and provide an sRGB reference at negligible storage cost.",
-          "Although existing metadata-based reconstruction frameworks can exploit this side information when recovering raw images, their context models often become computationally expensive especially at high resolution, eg, 4K raw image, given that attention mechanisms scale quadratically with feature maps, hindering its practical application.",
-          "To address these limitations, we propose MambaRaw, a JPEG-conditioned metadata-based raw image reconstruction framework that uses State Space Models (SSMs) to estimate entropy parameters efficiently."
+          "Diffusion models have shown strong potential for multi-modal planning in end-to-end autonomous driving.",
+          "However, most existing methods confine diffusion to the planning module, conditioning on fixed outputs from separate discriminative perception networks.",
+          "This decoupled design propagates perception errors to the planner, increasing optimization difficulty and reducing robustness."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2606.24716v1",
-      "title": "Evaluating the Interpretability of Sparse Autoencoders with Concept Annotations",
+      "id": "2606.25770v1",
+      "title": "Re-mixing Embeddings for Patient Augmentation in Data Scarce Multiple Instance Learning",
       "authors": [
-        "Jonas Klotz",
-        "Cassio F. Dantas",
-        "Pallavi Jain",
-        "Diego Marcos",
-        "Begüm Demir"
+        "Muhammed Furkan Dasdelen",
+        "Fatih Ozlugedik",
+        "Anastasia Litinetskaya",
+        "Nassir Navab",
+        "Carsten Marr",
+        "Ario Sadafi"
       ],
-      "abstract": "Sparse autoencoders (SAEs) are increasingly used to extract interpretable concepts from vision and vision language models, yet existing evaluation methods largely rely on proxy metrics or qualitative inspection rather than measuring semantic correspondence. We present a human-grounded evaluation framework that quantifies alignment between SAE latents and human-annotated concepts, without requiring user studies, and validate this matching through targeted attribute perturbations. To enable this intervention-style evaluation in vision, we construct synCUB and synCOCO, synthetic benchmarks of paired images that differ in exactly one attribute. We introduce Fully-Binary Matching Pursuit (FBMP), a coalition-based matching procedure that supports many-to-one mappings between SAE latents and annotated concepts, and consistently outperforms one-to-one baselines. For functional validation, we propose a Targeted Attribute Perturbation Alignment Score (TAPAScore), which tests whether matched concepts respond selectively and in the expected direction under targeted image-level attribute perturbations. Under sanity checks, our matching and TAPAScore are the only evaluated metrics that reliably distinguish trained SAEs from untrained ones. Across SAEs trained on CLIP and DINOv2 embeddings, we find that increased overcompleteness can reduce perturbation alignment, indicating a reduction in interpretability. Our evaluation framework suggests that moderate dictionary sizes provide the best trade-off, yielding the most interpretable SAEs. Code and datasets are available at https://github.com/JonasKlotz/sae-concept-eval.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "Data scarcity is a major bottleneck in medical Multiple Instance Learning (MIL), especially for rare diseases or expensive modalities. We introduce a statistically grounded patient augmentation approach that generates realistic patients directly in embedding space. Using Gaussian Mixture Models as a probabilistic clustering approach on pooled instance embeddings from all patients, our method learns disease-specific \"recipes\"-statistical distributions of instances across unsupervised clusters. New patients are then generated by sampling embeddings from clusters based on learned recipes. Unlike existing methods that require examples from all categories, our method can generate patients offline by re-mixing pooled embeddings. Generated patients are further selected based on uncertainty quantification to improve MIL performance. We evaluate our method across three clinically relevant scarcity scenarios: (i) cross-dataset transfer, where an entirely missing \"healthy\" class is generated using statistics from an external cohort; (ii) low-data regimes, where class sizes are extremely limited; and (iii) small-cohort non-image tasks, including single-cell RNA-seq and flow cytometry. Across all experiments, our method improves performance over baseline, often outperforming other bag-mixing strategies. Notably, in the missing-class scenario, a performance comparable to full-dataset training is achieved, demonstrating its potential for rare disease diagnostic and privacy-preserving patient augmentation. The code is available at https://github.com/marrlab/RECIPE",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.LG",
+        "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24716v1",
-        "pdf": "https://arxiv.org/pdf/2606.24716v1"
+        "paper": "http://arxiv.org/abs/2606.25770v1",
+        "pdf": "https://arxiv.org/pdf/2606.25770v1"
       },
-      "arxiv_id": "2606.24716v1",
-      "comment": "Accepted at ECCV 2026",
+      "arxiv_id": "2606.25770v1",
+      "comment": "Accepted for publication at the 29th International Conference on Medical Image Computing and Computer Assisted Intervention - MICCAI 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.449999999999999,
@@ -362,7 +545,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ECCV",
+          "venue": "MICCAI",
           "weight": 0.25
         },
         "citation_potential": {
@@ -380,170 +563,36 @@
         }
       },
       "ai_summaries": {
-        "short": "Sparse autoencoders (SAEs) are increasingly used to extract interpretable concepts from vision and vision language models, yet existing evaluation methods largely rely on proxy metrics or qualitative inspection rather than measuring semantic correspondence. We present a human-grounded evaluation framework that quantifies alignment between SAE latents and human-annotated concepts, without requiring...",
+        "short": "Data scarcity is a major bottleneck in medical Multiple Instance Learning (MIL), especially for rare diseases or expensive modalities. We introduce a statistically grounded patient augmentation approach that generates realistic patients directly in embedding space. Using Gaussian Mixture Models as a probabilistic clustering approach on pooled instance embeddings from all patients, our method learn...",
         "key_contributions": [
-          "Sparse autoencoders (SAEs) are increasingly used to extract interpretable concepts from vision and vision language models, yet existing evaluation methods largely rely on proxy metrics or qualitative inspection rather than measuring semantic correspondence.",
-          "We present a human-grounded evaluation framework that quantifies alignment between SAE latents and human-annotated concepts, without requiring user studies, and validate this matching through targeted attribute perturbations.",
-          "To enable this intervention-style evaluation in vision, we construct synCUB and synCOCO, synthetic benchmarks of paired images that differ in exactly one attribute."
+          "Data scarcity is a major bottleneck in medical Multiple Instance Learning (MIL), especially for rare diseases or expensive modalities.",
+          "We introduce a statistically grounded patient augmentation approach that generates realistic patients directly in embedding space.",
+          "Using Gaussian Mixture Models as a probabilistic clustering approach on pooled instance embeddings from all patients, our method learns disease-specific \"recipes\"-statistical distributions of instances across unsupervised clusters."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2606.24626v1",
-      "title": "SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation",
+      "id": "2606.25761v1",
+      "title": "Bridging Spherical Black-Box Optimizers",
       "authors": [
-        "Chenyang Zhu",
-        "Jiayu Yao",
-        "Kushal Chawla",
-        "Youbing Yin",
-        "Nathan Wolfe",
-        "Pengshan Cai",
-        "Jingyu Wu",
-        "Spencer Hong",
-        "Sangwoo Cho",
-        "Shi-Xiong Zhang",
-        "Daben Liu",
-        "Sambit Sahu",
-        "Erin Babinsky"
+        "Johannes Ackermann",
+        "Stefano Peluchetti"
       ],
-      "abstract": "As autonomous agents tackle increasingly complex multi-step, multi-agent tasks, their execution trajectories have scaled beyond the constraints of even the largest context windows. Current methods for effectively diagnosing agent failures load the full trajectory into an LLM's context window, which suffers from attention dilution and fails when agentic traces inevitably exceed context limits. To address this, we introduce SAFARI (Scaling long-horizon Agentic Fault AttRibution via active Investigation), a framework that replaces linear context loading with a tool-augmented diagnostic loop. By equipping LLMs with a specialized toolbox to read and search trajectory segments alongside a persistent Short-Term Memory (STM) for cross-turn reasoning, SAFARI effectively decouples diagnostic accuracy from architectural context limits. Our experiments demonstrate that SAFARI outperforms state-of-the-art results by 20% on the Who&When dataset within a 1M token budget, and by 19% on TRAIL GAIA subset on a 25K token budget. Most significantly, SAFARI maintains a 0.58 precision even when the target fault resides 5x beyond the model's native context window, a scenario where traditional evaluators fail entirely.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2606.24626v1",
-        "pdf": "https://arxiv.org/pdf/2606.24626v1"
-      },
-      "arxiv_id": "2606.24626v1",
-      "comment": "Published at the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD) at ICML 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.3999999999999995,
-      "score_breakdown": {
-        "total_score": 4.4,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "As autonomous agents tackle increasingly complex multi-step, multi-agent tasks, their execution trajectories have scaled beyond the constraints of even the largest context windows. Current methods for effectively diagnosing agent failures load the full trajectory into an LLM's context window, which suffers from attention dilution and fails when agentic traces inevitably exceed context limits. To a...",
-        "key_contributions": [
-          "As autonomous agents tackle increasingly complex multi-step, multi-agent tasks, their execution trajectories have scaled beyond the constraints of even the largest context windows.",
-          "Current methods for effectively diagnosing agent failures load the full trajectory into an LLM's context window, which suffers from attention dilution and fails when agentic traces inevitably exceed context limits.",
-          "To address this, we introduce SAFARI (Scaling long-horizon Agentic Fault AttRibution via active Investigation), a framework that replaces linear context loading with a tool-augmented diagnostic loop."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2606.24790v1",
-      "title": "Grad Detect: Gradient-Based Hallucination Detection in LLMs",
-      "authors": [
-        "Anand Kamat",
-        "Daniel Blake",
-        "Brent M. Werness"
-      ],
-      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across diverse tasks, yet they remain prone to generating hallucinations. Detecting these hallucinations is critical for deploying LLMs reliably in high-stakes applications. We present Grad Detect, a gradient-based approach for predicting hallucinations by analyzing layer-wise gradient patterns from a single forward-backward pass during inference. Our method shows that the internal gradient structure of a model carries rich information about the correctness of its output. This information is not accessible through output-level signals alone. We evaluate Grad Detect on several Q&A benchmarks across both hallucination detection and model abstention prediction, where it consistently outperforms confidence-based and sampling-based baselines. Through comprehensive layer ablation studies across all eleven models from four architectural families, we find that the final five layers concentrate over 97% of the discriminative gradient signal, enabling efficient deployment with minimal performance loss. Grad Detect provides a unified framework for predicting multiple dimensions of LLM reliability, offering strong predictive performance alongside interpretable insights into where and how model failures originate.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
+      "abstract": "When gradient information is unavailable, black-box optimization (BBO) methods provide a practical alternative. While Evolution Strategies (ES), Consensus-Based Optimization (CBO), Optimization via Integration (OVI), and related methods have each been studied independently, their connections remain underexplored. We unify these approaches within a common theoretical framework, revealing that they differ primarily in two design choices: fitness aggregation (controlling sharpness preference) and consensus scope (controlling modality). Leveraging these insights, we introduce hybrid optimizers that interpolate between existing methods. Our ES-OVI hybrid allows explicit control over the preference for flat minima, enabling a trade-off between performance and robustness in continuous control tasks. Our CBO-OVI hybrids combine the higher-dimensional efficiency of parametric methods with the multimodal capabilities of particle-based approaches, achieving competitive results on language model merging under limited evaluation budgets. We validate our methods on standard BBO benchmarks and higher-dimensional locomotion tasks, demonstrating that the hybrid methods can outperform their constituent algorithms.",
+      "published": "2026-06-24",
+      "updated": "2026-06-24",
       "categories": [
         "cs.LG",
-        "cs.AI"
+        "math.OC"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2606.24790v1",
-        "pdf": "https://arxiv.org/pdf/2606.24790v1"
+        "paper": "http://arxiv.org/abs/2606.25761v1",
+        "pdf": "https://arxiv.org/pdf/2606.25761v1"
       },
-      "arxiv_id": "2606.24790v1",
-      "comment": "Accepted to the 2nd Workshop on Compositional Learning at ICML 2026, Seoul, South Korea. Copyright 2026 by the author(s)",
-      "journal_ref": "2nd Workshop on Compositional Learning: Safety, Interpretability, and Agents, ICML 2026",
-      "has_code": false,
-      "relevance_score": 4.300000000000001,
-      "score_breakdown": {
-        "total_score": 4.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Large Language Models (LLMs) have demonstrated remarkable capabilities across diverse tasks, yet they remain prone to generating hallucinations. Detecting these hallucinations is critical for deploying LLMs reliably in high-stakes applications. We present Grad Detect, a gradient-based approach for predicting hallucinations by analyzing layer-wise gradient patterns from a single forward-backward pa...",
-        "key_contributions": [
-          "Large Language Models (LLMs) have demonstrated remarkable capabilities across diverse tasks, yet they remain prone to generating hallucinations.",
-          "Detecting these hallucinations is critical for deploying LLMs reliably in high-stakes applications.",
-          "We present Grad Detect, a gradient-based approach for predicting hallucinations by analyzing layer-wise gradient patterns from a single forward-backward pass during inference."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2606.24509v1",
-      "title": "A Fair Evaluation of Graph Foundation Models for Node Property Prediction",
-      "authors": [
-        "Oleg Platonov",
-        "Gleb Bazhenov",
-        "Dmitry Eremeev",
-        "Liudmila Prokhorenkova"
-      ],
-      "abstract": "Due to the wide use of graph-structured data in different fields of industry and science, the development of Graph Foundation Models (GFMs) has recently attracted a lot of attention. While many different types of models are called GFMs, particular interest has been paid to GFMs designed for node property prediction tasks, which is one of the most popular settings in Graph ML with lots of real-world applications from fraud detection in financial and social networks to recommendation systems for e-commerce and user-generated content platforms. While a number of GFMs for this task have been recently proposed, the field has not converged to a unified evaluation setting, and different works evaluate their models in widely different ways, preventing reliable comparison of GFMs with each other and with other types of models. In this work, we conduct a fair and rigorous reevaluation of 9 recent GFMs for node property prediction, comparing them to strong Graph Neural Network (GNN) baselines. We find that, among these GFMs, only the most recent ones based on the Prior-data Fitted Networks paradigm outperform well-tuned GNNs in predictive performance, although at a higher inference cost.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.SI"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2606.24509v1",
-        "pdf": "https://arxiv.org/pdf/2606.24509v1"
-      },
-      "arxiv_id": "2606.24509v1",
-      "comment": "Accepted at The Workshop on Graph Foundation Models at ICML 2026",
+      "arxiv_id": "2606.25761v1",
+      "comment": "Accepted for publication at ICML 2026",
       "journal_ref": "",
       "has_code": false,
       "relevance_score": 4.300000000000001,
@@ -574,71 +623,11 @@
         }
       },
       "ai_summaries": {
-        "short": "Due to the wide use of graph-structured data in different fields of industry and science, the development of Graph Foundation Models (GFMs) has recently attracted a lot of attention. While many different types of models are called GFMs, particular interest has been paid to GFMs designed for node property prediction tasks, which is one of the most popular settings in Graph ML with lots of real-worl...",
+        "short": "When gradient information is unavailable, black-box optimization (BBO) methods provide a practical alternative. While Evolution Strategies (ES), Consensus-Based Optimization (CBO), Optimization via Integration (OVI), and related methods have each been studied independently, their connections remain underexplored. We unify these approaches within a common theoretical framework, revealing that they ...",
         "key_contributions": [
-          "Due to the wide use of graph-structured data in different fields of industry and science, the development of Graph Foundation Models (GFMs) has recently attracted a lot of attention.",
-          "While many different types of models are called GFMs, particular interest has been paid to GFMs designed for node property prediction tasks, which is one of the most popular settings in Graph ML with lots of real-world applications from fraud detection in financial and social networks to recommendation systems for e-commerce and user-generated content platforms.",
-          "While a number of GFMs for this task have been recently proposed, the field has not converged to a unified evaluation setting, and different works evaluate their models in widely different ways, preventing reliable comparison of GFMs with each other and with other types of models."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2606.24669v1",
-      "title": "LaGO: Latent Action Guidance for Online Reinforcement Learning",
-      "authors": [
-        "Kuan-Yen Liu",
-        "Ren-Jyun Huang",
-        "Ti-Rong Wu"
-      ],
-      "abstract": "Large language models (LLMs) have shown strong potential for planning and sequential decision-making, but prior work often relies on using them as direct controllers, which requires precise action generation and can be unreliable in practice. This paper proposes Latent Action Guidance for Online Reinforcement Learning (LaGO), a framework that uses a pretrained LLM as a latent action prior to softly guide online policy optimization, rather than treating the LLM as an explicit planner or controller. Experiments on both a discrete-control benchmark, CLEVR-Robot, and a continuous-control benchmark, Meta-World, demonstrate that LaGO consistently improves both reward and success rate over Vanilla PPO. In particular, LaGO increases the average success rate from 15.1% to 27.2% on CLEVR-Robot and from 2.7% to 15.2% on Meta-World. Our analysis further shows that stronger pretrained LLMs provide more effective guidance, suggesting that LLM knowledge can improve planning and online decision-making.",
-      "published": "2026-06-23",
-      "updated": "2026-06-23",
-      "categories": [
-        "cs.AI"
-      ],
-      "primary_category": "cs.AI",
-      "links": {
-        "paper": "http://arxiv.org/abs/2606.24669v1",
-        "pdf": "https://arxiv.org/pdf/2606.24669v1"
-      },
-      "arxiv_id": "2606.24669v1",
-      "comment": "9 pages, 2 figures. Accepted at the ICML 2026 Workshop on Large Language Models for Planning (LM4Plan)",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Large language models (LLMs) have shown strong potential for planning and sequential decision-making, but prior work often relies on using them as direct controllers, which requires precise action generation and can be unreliable in practice. This paper proposes Latent Action Guidance for Online Reinforcement Learning (LaGO), a framework that uses a pretrained LLM as a latent action prior to softl...",
-        "key_contributions": [
-          "Large language models (LLMs) have shown strong potential for planning and sequential decision-making, but prior work often relies on using them as direct controllers, which requires precise action generation and can be unreliable in practice.",
-          "This paper proposes Latent Action Guidance for Online Reinforcement Learning (LaGO), a framework that uses a pretrained LLM as a latent action prior to softly guide online policy optimization, rather than treating the LLM as an explicit planner or controller.",
-          "Experiments on both a discrete-control benchmark, CLEVR-Robot, and a continuous-control benchmark, Meta-World, demonstrate that LaGO consistently improves both reward and success rate over Vanilla PPO."
+          "When gradient information is unavailable, black-box optimization (BBO) methods provide a practical alternative.",
+          "While Evolution Strategies (ES), Consensus-Based Optimization (CBO), Optimization via Integration (OVI), and related methods have each been studied independently, their connections remain underexplored.",
+          "We unify these approaches within a common theoretical framework, revealing that they differ primarily in two design choices: fitness aggregation (controlling sharpness preference) and consensus scope (controlling modality)."
         ],
         "provider": "gemini"
       }

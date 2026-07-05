@@ -1,5 +1,558 @@
 {
   "filtered_at": "{\"timestamp\": \"now\"}",
-  "total_papers": 0,
-  "papers": []
+  "total_papers": 10,
+  "papers": [
+    {
+      "id": "2607.02515v1",
+      "title": "PointDiT: Pixel-Space Diffusion for Monocular Geometry Estimation",
+      "authors": [
+        "Haofei Xu",
+        "Rundi Wu",
+        "Philipp Henzler",
+        "Nikolai Kalischek",
+        "Michael Oechsle",
+        "Fabian Manhardt",
+        "Marc Pollefeys",
+        "Andreas Geiger",
+        "Federico Tombari",
+        "Michael Niemeyer"
+      ],
+      "abstract": "State-of-the-art single-image 3D reconstruction methods often rely on complex hybrid architectures and loss functions, or compress geometry into latent spaces in order to leverage pre-trained latent diffusion models. In this work, we show that such architectural overhead and intricate loss formulations are unnecessary. We introduce a minimalist pixel-space Diffusion Transformer, built on a plain ViT, that operates directly on raw 3D point map patches and is conditioned on image tokens from a pre-trained DINOv3. Unlike existing latent diffusion approaches, we train our diffusion backbone entirely from scratch, eliminating the need for point map tokenizers. Despite its simplicity, our approach surpasses complex latent-based diffusion models while remaining significantly simpler than hybrid alternatives. Notably, it produces sharper geometric structure and is more robust in highly ambiguous regions, such as transparent objects.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02515v1",
+        "pdf": "https://arxiv.org/pdf/2607.02515v1"
+      },
+      "arxiv_id": "2607.02515v1",
+      "comment": "ICML 2026. Project page: https://haofeixu.github.io/pointdit/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 5.28728813559322,
+      "score_breakdown": {
+        "total_score": 5.29,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02497v1",
+      "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+      "authors": [
+        "Song Tang",
+        "Shuming Hu",
+        "Xincheng Shuai",
+        "Henghui Ding",
+        "Yu-Gang Jiang"
+      ],
+      "abstract": "Existing referring segmentation models passively process static images captured from fixed perspectives, limiting their applicability in Embodied AI, where agents must perform active perception in the continuous 360$^\\circ$ environments. To bridge this gap, we introduce a novel task: Active Panoramic Referring Segmentation (APRS). In this setting, an agent is required to adjust its viewing direction ($Δθ, Δφ$) to explore the 360$^\\circ$ environment, seeking the object specified by a user instruction for segmentation. To tackle this challenging task, we propose PanoSeeker, a memory-augmented agent for efficient APRS. Rather than relying on heuristic scanning, PanoSeeker integrates a Vision-Language Model (VLM) with EgoSphere, an explicit spatial visual memory. By progressively integrating sequential local observations into a unified 360$^\\circ$ representation, EgoSphere enables the agent to plan efficient and non-redundant search trajectories. Once the target is found, the agent performs active viewpoint alignment and outputs the segmentation mask. Furthermore, we curate an expert-annotated search trajectory dataset with memory timelines for Supervised Fine-Tuning, followed by Reinforcement Learning post-training to explicitly optimize PanoSeeker's exploration efficiency. Extensive experiments on our newly established APRS benchmark demonstrate that PanoSeeker achieves superior search efficiency and segmentation accuracy, significantly outperforming adapted state-of-the-art baselines.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02497v1",
+        "pdf": "https://arxiv.org/pdf/2607.02497v1"
+      },
+      "arxiv_id": "2607.02497v1",
+      "comment": "ECCV 2026, Project Page: https://henghuiding.com/APRS/",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 5.103389830508474,
+      "score_breakdown": {
+        "total_score": 5.1,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02466v1",
+      "title": "Learning to Move Before Learning to Do: Task-Agnostic pretraining for VLAs",
+      "authors": [
+        "Junhao Shi",
+        "Siyin Wang",
+        "Xiaopeng Yu",
+        "Li Ji",
+        "Jingjing Gong",
+        "Xipeng Qiu"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models are fundamentally bottlenecked by the scarcity of expert demonstrations -- triplets of observations, instructions, and actions that are costly to collect at scale. We argue that this bottleneck stems from conflating two distinct learning objectives: acquiring physical competence (how to move) and acquiring semantic alignment (what to do). Crucially, only the latter requires language supervision. Building on this Decomposition Hypothesis, we propose Task-Agnostic Pretraining (TAP), a two-stage framework that first learns transferable motor priors from cheap, unlabeled interaction data -- including discarded off-task trajectories and autonomous robot play -- via a self-supervised Inverse Dynamics objective. A lightweight second stage then grounds these priors in language using minimal expert data. On the SIMPLER benchmark, TAP matches models trained on over 1M expert trajectories while using orders of magnitude less labeled data, yielding a 10% absolute gain over standard behavior cloning. On a real-world WidowX platform, TAP retains 25% success under camera perturbations where internet-scale baselines collapse to 0%, demonstrating that task-agnostic pretraining produces robust, transferable physical representations and offers a scalable path forward for Embodied AI.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02466v1",
+        "pdf": "https://arxiv.org/pdf/2607.02466v1"
+      },
+      "arxiv_id": "2607.02466v1",
+      "comment": "Accepted to ICML 2026, 21 pages,6 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.871186440677967,
+      "score_breakdown": {
+        "total_score": 4.87,
+        "field_match": {
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02494v1",
+      "title": "Towards Robustness against Typographic Attack with Training-free Concept Localization",
+      "authors": [
+        "Bohan Liu",
+        "Wenqian Ye",
+        "Guangzhi Xiong",
+        "Zhenghao He",
+        "Sanchit Sinha",
+        "Aidong Zhang"
+      ],
+      "abstract": "Models trained via Contrastive Language-Image Pretraining (CLIP) serve as the foundational vision encoders for most modern Large Vision Language Models (LVLMs). Despite their widespread adoption, CLIP models exhibit a critical yet underexplored failure mode: irrelevant text appearing within images confounds visual representations, biasing them toward lexical meaning rather than true visual semantics. This robustness issue, commonly described as a Typographic Attack (TA), exposes a vulnerability that poses a significant risk to safety-critical applications such as autonomous driving. To achieve interpretable and effective robustness against TA, we propose a novel, training-free mechanistic interpretability method. Our method provides sampling-based interpretations of hidden state representations and quantitatively attributes semantic versus lexical focus to individual attention heads. Through probabilistic analysis and circuit mining, we isolate specific Vision Transformer (ViT) components that disproportionately encode lexical information, thereby identifying the mechanistic source of TA. We further show that simple interventions applied directly to the identified circuits, without any additional training, can substantially improve robustness against Typographic Attacks in object classification. These interventions, such as selective adjustment of attention weights, also outperform both supervised and training-free defense methods. Our experiments demonstrate that applying the proposed intervention to the vision encoders of several state-of-the-art LVLMs yields substantial gains in Visual Question Answering accuracy under Typographic Attack interference on RIO-Bench. These results confirm both the efficacy and the generalizability of our mechanistic approach. Code is released at https://github.com/Liu-524/SamplingTAR.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02494v1",
+        "pdf": "https://arxiv.org/pdf/2607.02494v1"
+      },
+      "arxiv_id": "2607.02494v1",
+      "comment": "15 pages main text, provisionally accepted to ECCV 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02484v1",
+      "title": "Combating Textual Noise and Redundancy: Entropy-Aware Dense Visual Token Pruning",
+      "authors": [
+        "Xuehui Wang",
+        "Xuankun Yang",
+        "Wei Shen"
+      ],
+      "abstract": "Visual token pruning is a crucial strategy for accelerating VLMs by compressing redundant image patches, yet existing methods often fail to preserve critical cues under dense instructions and fine-grained queries. In this paper, we investigate this failure and identify two underlying bottlenecks: the widespread dispersion of textual noise that corrupts dense cross-modal scoring, and the feature fragmentation inherent to standard token selection. To address these issues, we propose Entropy-Aware Dense Pruning (EADP), a framework that reformulates pruning as a structured compression problem. EADP first leverages statistical entropy to quantify and filter out textual noise, yielding a robust, fine-grained instruction relevance score. Subsequently, instead of naive Top-K selection, EADP casts token selection as a submodular maximization problem with a spatial prior, explicitly ensuring a holistic and non-redundant visual representation. Extensive experiments demonstrate that EADP improves the accuracy-efficiency trade-off of VLMs, robustly preserving fine-grained visual cues under strict token budgets while achieving SoTA performance on challenging multimodal benchmarks.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02484v1",
+        "pdf": "https://arxiv.org/pdf/2607.02484v1"
+      },
+      "arxiv_id": "2607.02484v1",
+      "comment": "Accepted to ECCV 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02291v1",
+      "title": "Optimizing Visual Generative Models via Distribution-wise Rewards",
+      "authors": [
+        "Ruihang Li",
+        "Mengde Xu",
+        "Shuyang Gu",
+        "Leigang Qu",
+        "Fuli Feng",
+        "Han Hu",
+        "Wenjie Wang"
+      ],
+      "abstract": "Conventional reinforcement learning strategies for visual generation typically employ sample-wise reward functions, yet this practice frequently results in reward hacking that degrades image diversity and introduces visual anomalies. To address these limitations, we present a novel framework that finetunes generative models using distribution-wise rewards, ensuring better alignment with real-world data distributions. Unlike rewards that evaluate samples individually, distribution-wise reward accounts for the data distribution of the samples, mitigating the mode collapse problem that occurs when all samples optimize towards the same direction independently. To overcome the prohibitive computational cost of estimating these rewards, we introduce a subset-replace strategy that efficiently provides reward signals by updating only a small subset of a generated reference set. Additionally, we apply RL to optimize post-hoc model merging coefficients, potentially mitigating the train-inference inconsistency caused by introducing stochastic differential equation (SDE) in regular RL practices. Extensive experiments show our approach significantly improves FID-50K across various base models, from 8.30 to 5.77 for SiT and from 3.74 to 3.52 for EDM2. Qualitative evaluation also confirms that our method enhances perceptual quality while preserving sample diversity.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02291v1",
+        "pdf": "https://arxiv.org/pdf/2607.02291v1"
+      },
+      "arxiv_id": "2607.02291v1",
+      "comment": "ICML 2026 Main",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ICML",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02284v1",
+      "title": "FlowCIR: Semantic Transport via Flow Matching for Zero-Shot Composed Image Retrieval",
+      "authors": [
+        "Zhenqi He",
+        "Ziqi Jiang",
+        "Yuanpei Liu",
+        "Yanghao Wang",
+        "Teng Wang",
+        "Long Chen"
+      ],
+      "abstract": "Zero-shot composed image retrieval (ZS-CIR) aims to retrieve a target image by editing a reference image with a natural-language instruction, without relying on domain-specific annotated triplets. Most existing ZS-CIR methods rely on textual inversion to translate the reference image into pseudo-text tokens and then compose them with the instruction via simple concatenation in the text space, which can be lossy and brittle for fine-grained semantics. In this work, we propose a new paradigm, namely FlowCIR, that casts ZS-CIR as conditional semantic transport between reference and target embeddings. Leveraging \\emph{conditional flow matching}, our model learns a lightweight transport field that maps the instruction representation toward a target-aligned query embedding conditioned on the reference image. Since FlowCIR operates on pre-extracted VLM embeddings and trains only a small transport module without updating the image or text encoder, it offers a computationally efficient training protocol compared with prior textual-inversion-based approaches. The resulting framework is training-efficient, requiring roughly $10\\times$ fewer training resources than prior textual-inversion-based approaches. We further identify negation and removal as a major failure mode of VLM-based composition. To address this, we propose an inference-only Multi-Negative Steering strategy that steers a negation-containing relative instruction away from its negated semantics, mitigating the limited negation handling of VLMs and improving robustness on negation-heavy queries. Extensive experiments on standard CIR benchmarks demonstrate that FlowCIR achieves strong and competitive performance compared with recent ZS-CIR methods.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02284v1",
+        "pdf": "https://arxiv.org/pdf/2607.02284v1"
+      },
+      "arxiv_id": "2607.02284v1",
+      "comment": "Accept to ECCV2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02237v1",
+      "title": "When Token Compression Breaks: Structural Pruning vs. Token Reduction for Robust ViT Segmentation under High Compression",
+      "authors": [
+        "Tien-Phat Nguyen",
+        "Ngai-Man Cheung"
+      ],
+      "abstract": "Vision Transformers (ViTs) are strong backbones for semantic segmentation, but their computational cost limits deployment. Recent token compression methods for efficient transformer-based segmentation reduce this cost by decreasing the number of tokens. However, existing evaluations primarily focus on low-to-moderate compression, leaving their behavior under aggressive compression and corrupted inputs unclear. Meanwhile, structural pruning provides an orthogonal route to efficiency by removing redundant components in the ViT architecture, but is rarely compared to token compression under a unified protocol. To bridge this gap, we benchmark representative token compression and structural pruning methods for ViT-based semantic segmentation under matched FLOPs on ADE20K and Cityscapes, together with their common-corruption variants ADE20K-C and Cityscapes-C. Our results reveal a consistent trend on both clean and corrupted inputs: token compression is highly effective at mild reductions but degrades sharply when compression becomes severe, consistent with substantial information loss from overly aggressive token reduction. In contrast, structural pruning exhibits a smoother degradation curve and is more stable at high compression. Motivated by these findings, we study a prune-then-merge pipeline that applies moderate token compression on top of a moderately pruned backbone. At comparable FLOPs, this combined strategy consistently achieves a better accuracy-robustness trade-off at high compression, offering a practical recipe for deployment-oriented ViT segmentation. Code is available at https://github.com/phatnguyencs/vit-seg-compression.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02237v1",
+        "pdf": "https://arxiv.org/pdf/2607.02237v1"
+      },
+      "arxiv_id": "2607.02237v1",
+      "comment": "Accepted to ECCV 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.503389830508475,
+      "score_breakdown": {
+        "total_score": 4.5,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02372v1",
+      "title": "Learning Spectral and Polarimetric Clues for One-to-Multimodal Novel View Synthesis",
+      "authors": [
+        "Federico Lincetto",
+        "Gianluca Agresti",
+        "Mattia Rossi",
+        "Piergiorgio Sartor",
+        "Pietro Zanuttigh"
+      ],
+      "abstract": "Neural rendering techniques allow for accurate reconstruction of the geometry and color appearance of 3D scenes. Some methods have extended their use to additional imaging modalities, such as multispectral, infrared, or polarimetric data. However, all of these approaches require expensive sensors and calibrated setups to capture new multimodal frames for each new scene. We propose Spectral and Polarimetric Implicit Learned Representation (SPoILeR), a novel method to obtain multi-view consistent renderings of unconventional modalities for scenes where either only RGB frames or very few of the additional modalities are available. Thanks to a multimodal pre-training phase, the model learns the mutual correlation between different modalities. This step allows predicting accurate renderings of unconventional modalities during a fine-tuning phase supervised only by RGB images. Experimental results show that the approach can accurately render infrared, polarimetric, and multispectral frames for scenes where no input sample captured by these types of sensors is provided.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02372v1",
+        "pdf": "https://arxiv.org/pdf/2607.02372v1"
+      },
+      "arxiv_id": "2607.02372v1",
+      "comment": "Accepted at ECCV 2026. Project page: https://medialab.dei.unipd.it/paper_data/SPoILeR/",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.5,
+      "score_breakdown": {
+        "total_score": 4.5,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      }
+    },
+    {
+      "id": "2607.02471v1",
+      "title": "Interpretation-Oriented Cloud Removal via Observation-Anchored Residual Flow with Geo-Contextual Alignment",
+      "authors": [
+        "Ziyao Wang",
+        "Maonan Wang",
+        "Yucheng He",
+        "Xianping Ma",
+        "Ziyi Wang",
+        "Hongyang Zhang",
+        "Yirong Cheng",
+        "Man-on Pun"
+      ],
+      "abstract": "Cloud removal (CR) is essential for optical remote sensing, serving as a prerequisite for reliable downstream interpretation, such as semantic segmentation and change detection. However, existing CR approaches often prioritize visual realism while overlooking their impact on subsequent analytical tasks, leading to semantic drift and degraded downstream performance. To address this issue, we propose Geo-Anchored Cloud Removal (GACR), a unified framework that jointly ensures faithful reconstruction and robust interpretability. At its core, GACR incorporates Observation-Anchored Residual Flow (OAR-Flow), which reformulates CR as a physically grounded residual inversion process. By anchoring the generative trajectory to the cloudy observation rather than pure noise, OAR-Flow enables fast, stable, and faithful reconstruction. To further preserve semantic structures critical for downstream interpretation, GACR integrates Geo-Contextual Prior Alignment (GCPA) to constrain the reconstruction within a semantic manifold induced by a Vision Foundation Model (VFM). Consequently, GACR strictly maintains the spatial-semantic integrity of complex landscapes. Extensive experiments across six CR datasets and twelve downstream tasks demonstrate that GACR produces superior reconstruction quality while consistently improving downstream task accuracy. The code is available at https://github.com/wzy6055/GACR.",
+      "published": "2026-07-02",
+      "updated": "2026-07-02",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2607.02471v1",
+        "pdf": "https://arxiv.org/pdf/2607.02471v1"
+      },
+      "arxiv_id": "2607.02471v1",
+      "comment": "accepted by ECCV 2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.453389830508474,
+      "score_breakdown": {
+        "total_score": 4.45,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      }
+    }
+  ]
 }

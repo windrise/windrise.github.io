@@ -2,6 +2,10 @@
 title: Xueming Fu (付学明)
 role: PhD Candidate in Biomedical Engineering
 bio: My research focuses on 3D/4D medical image reconstruction using 3D Gaussian representations and deep learning.
+name_zh: 付学明
+advisors: Prof. S. Kevin Zhou · Prof. Gao-Jun Teng
+about_short: I am particularly interested in developing efficient and accurate methods for volumetric medical imaging tasks including cardiac motion tracking, coronary artery reconstruction, and self-supervised representation learning. My research introduces 3D Gaussian representations to medical imaging, achieving a 99% reduction in parameters while outperforming SOTA methods.
+coauthor_note: +6 co-authored · CVPR 2025 Highlight (co-author)
 
 interests:
   - 3D/4D Medical Image Reconstruction

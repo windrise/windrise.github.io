@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "en-us" }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $admin := site.GetPage "/authors/admin" -}}
+{{- $db := site.Data.papers.papers -}}
+{{- $papers := $db.papers -}}
+{{- $cats := $db.categories -}}
+{{- $meta := $db.metadata -}}
+{{- $pubs := (where site.RegularPages "Section" "publication").ByDate.Reverse -}}
+<title>{{ site.Title }} ({{ $admin.Params.name_zh | default "付学明" }}) — {{ $admin.Params.role }}</title>
+<meta name="description" content="{{ $admin.Params.bio }}">
+<meta property="og:title" content="{{ site.Title }} — {{ $admin.Params.role }}">
+<meta property="og:description" content="{{ $admin.Params.bio }}">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="{{ site.BaseURL }}">
+{{- $css := resources.Get "css/observatory.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{- $js := resources.Get "js/observatory.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+</head>
+<body class="obs">
+
+<header class="obs-nav">
+  <div class="obs-nav-in">
+    <a class="obs-brand" href="/">Xueming Fu <span class="obs-brand-zh">付学明</span></a>
+    <nav class="obs-nav-links" aria-label="Site">
+      <a href="#publications">Publications</a>
+      <a href="#papers">Paper Collection</a>
+      <a href="/project/">Projects</a>
+      <a href="https://github.com/windrise" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="obs-grid">
+
+  {{/* ---------------- hero ---------------- */}}
+  <section class="obs-card obs-hero obs-c7" aria-label="Profile">
+    <canvas class="obs-sky" width="1000" height="560" aria-hidden="true"></canvas>
+    <div class="obs-scrim" aria-hidden="true"></div>
+    <div class="obs-hero-in">
+      <div class="obs-idrow">
+        {{- with $admin.Resources.GetMatch "avatar*" }}
+        {{- $avatar := .Fill "144x144 q88" }}
+        <img class="obs-avatar" src="{{ $avatar.RelPermalink }}" alt="Portrait of Xueming Fu" width="72" height="72">
+        {{- end }}
+        <div>
+          <h1 class="obs-name">Xueming Fu<span class="obs-zh">{{ $admin.Params.name_zh | default "付学明" }}</span></h1>
+          <p class="obs-role">{{ $admin.Params.role }}</p>
+        </div>
+      </div>
+      <p class="obs-aff">{{ (index $admin.Params.organizations 0).name }} (USTC)</p>
+      {{- with $admin.Params.advisors }}
+      <p class="obs-adv"><span class="obs-advlab">Advisors</span>{{ . }}</p>
+      {{- end }}
+      <p class="obs-bio">{{ $admin.Params.bio }}</p>
+      {{- with $admin.Params.about_short }}
+      <p class="obs-about">{{ . }}</p>
+      {{- end }}
+      <div class="obs-links">
+        <a class="obs-btn" href="mailto:{{ $admin.Params.email }}">Email</a>
+        {{- range $admin.Params.social }}
+        {{- if eq .icon "graduation-cap" }}
+        <a class="obs-btn" href="{{ .link }}" target="_blank" rel="noopener">Google Scholar</a>
+        {{- else if eq .icon "github" }}
+        <a class="obs-btn" href="{{ .link }}" target="_blank" rel="noopener">GitHub</a>
+        {{- end }}
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ---------------- citation tracker ---------------- */}}
+  {{- $foundation := index (where $papers "type" "Foundation") 0 -}}
+  {{- $hist := slice -}}
+  {{- range $db.citation_history -}}
+    {{- $d := .date -}}
+    {{- with index .papers $foundation.id -}}
+      {{- $hist = $hist | append (dict "date" $d "count" .citation_count) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $hist = sort $hist "date" -}}
+  {{- $hFirst := index $hist 0 -}}
+  {{- $hLast := index $hist (sub (len $hist) 1) -}}
+  <section class="obs-card obs-cite obs-c5" aria-label="Citation tracker">
+    <p class="obs-kick">Citation tracker · foundation paper</p>
+    <h2 class="obs-cite-title">{{ $foundation.title }}</h2>
+    <div class="obs-cite-nums">
+      <div>
+        <p class="obs-big">{{ lang.FormatNumberCustom 0 $hLast.count }}</p>
+        <p class="obs-biglab">citations · Semantic Scholar</p>
+      </div>
+      <span class="obs-delta">+{{ lang.FormatNumberCustom 0 (sub $hLast.count $hFirst.count) }} since {{ dateFormat "Jan 2006" (time.AsTime $hFirst.date) }}</span>
+    </div>
+    <div class="obs-spark-wrap">
+      <div class="obs-tt" aria-hidden="true"></div>
+    </div>
+    <p class="obs-cite-note">{{ len $hist }} snapshots · citation_tracker.py · weekly-citation-update.yml</p>
+  </section>
+
+  {{/* ---------------- stat tiles ---------------- */}}
+  {{- $totalCites := 0 -}}
+  {{- range $papers }}{{ $totalCites = add $totalCites (int (default 0 .citation_count)) }}{{ end -}}
+  {{- $firstAuthor := 0 -}}
+  {{- range $pubs }}{{ if in (default (slice) .Params.authors) "admin" }}{{ $firstAuthor = add $firstAuthor 1 }}{{ end }}{{ end -}}
+  <section class="obs-card obs-stat obs-c3" aria-label="Papers tracked">
+    <p class="obs-stat-num">{{ len $papers }}</p>
+    <p class="obs-stat-lab">Papers tracked</p>
+    <p class="obs-stat-note">papers.yaml · automated pipeline</p>
+  </section>
+  <section class="obs-card obs-stat obs-c3" aria-label="Categories">
+    <p class="obs-stat-num">{{ len $cats }}</p>
+    <p class="obs-stat-lab">Categories</p>
+    <p class="obs-stat-note">collection taxonomy</p>
+  </section>
+  <section class="obs-card obs-stat obs-c3" aria-label="Total citations">
+    <p class="obs-stat-num">{{ lang.FormatNumberCustom 0 $totalCites }}</p>
+    <p class="obs-stat-lab">Total citations</p>
+    <p class="obs-stat-note">across tracked papers</p>
+  </section>
+  <section class="obs-card obs-stat obs-c3" aria-label="First-author publications">
+    <p class="obs-stat-num">{{ $firstAuthor }}</p>
+    <p class="obs-stat-lab">First-author publications</p>
+    <p class="obs-stat-note">{{ $admin.Params.coauthor_note | default "incl. equal contribution" }}</p>
+  </section>
+
+  {{/* ---------------- selected publications ---------------- */}}
+  <section class="obs-card obs-c8" id="publications" aria-label="Selected publications">
+    <p class="obs-kick">Selected publications</p>
+    <ul class="obs-pubs">
+      {{- range $pubs }}
+      {{- $ps := .Params.publication_short | default .Params.publication }}
+      {{- $venue := $ps }}{{ $status := "" }}
+      {{- if in $ps "(" }}
+        {{- $parts := split $ps " (" }}
+        {{- $venue = index $parts 0 }}
+        {{- $status = trim (index $parts 1) ")" }}
+      {{- end }}
+      <li{{ if .Params.featured }} class="feat"{{ end }}>
+        <span class="obs-pyear">{{ .Date.Year }}</span>
+        <div>
+          <h3 class="obs-ptitle"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <div class="obs-pchips">
+            <span class="obs-ven">{{ $venue }}</span>
+            {{- with $status }}
+            <span class="obs-st {{ if findRE `(?i)review|revision` . }}warn{{ else }}ok{{ end }}">{{ . }}</span>
+            {{- end }}
+          </div>
+          <p class="obs-tldr">{{ .Params.summary }}</p>
+        </div>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+
+  {{/* ---------------- interests + education ---------------- */}}
+  <section class="obs-card obs-c4" aria-label="Research interests and education">
+    <p class="obs-kick">Research interests</p>
+    <div class="obs-chips">
+      {{- range $admin.Params.interests }}
+      <span class="obs-ichip">{{ . }}</span>
+      {{- end }}
+    </div>
+    <p class="obs-kick">Education</p>
+    <ul class="obs-edu">
+      {{- range $admin.Params.education.courses }}
+      <li>
+        <p class="obs-edeg">{{ .course }}</p>
+        <p class="obs-esch">{{ .institution }}<span class="obs-eyrs">{{ .year }}</span></p>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+
+  {{/* ---------------- category distribution ---------------- */}}
+  {{- $countById := dict -}}
+  {{- range $cats -}}
+    {{- $c := . -}}
+    {{- $n := 0 -}}
+    {{- range $papers }}{{ if in (default (slice) .categories) $c.id }}{{ $n = add $n 1 }}{{ end }}{{ end -}}
+    {{- $countById = merge $countById (dict $c.id $n) -}}
+  {{- end -}}
+  {{- $catRows := slice -}}
+  {{- range $cats }}{{ $catRows = $catRows | append (dict "cat" . "n" (index $countById .id)) }}{{ end -}}
+  {{- $catRows = sort $catRows "n" "desc" -}}
+  {{- $maxN := (index $catRows 0).n -}}
+  <section class="obs-card obs-c7" aria-label="Category distribution">
+    <p class="obs-kick">Category distribution</p>
+    <div class="obs-cats">
+      {{- range $catRows }}
+      <div class="obs-catrow" title="{{ .cat.description }} — {{ .n }} {{ if eq .n 1 }}paper{{ else }}papers{{ end }}">
+        <span class="obs-catname"><span class="obs-catic">{{ .cat.icon }}</span><span>{{ .cat.name }}</span></span>
+        <div class="obs-track">
+          {{- if gt .n 0 }}
+          <div class="obs-bar" style="width:{{ div (mul .n 100.0) $maxN }}%;background:{{ .cat.color }}99;box-shadow:inset 0 0 0 1px {{ .cat.color }}E6"></div>
+          {{- end }}
+        </div>
+        <span class="obs-catn">{{ .n }}</span>
+      </div>
+      {{- end }}
+    </div>
+    <p class="obs-cat-note">computed from papers[].categories · {{ len $papers }} papers · sorted by count</p>
+  </section>
+
+  {{/* ---------------- news ---------------- */}}
+  <section class="obs-card obs-c5" aria-label="News">
+    <p class="obs-kick">News</p>
+    <ul class="obs-news">
+      {{- range site.Data.news }}
+      <li>
+        <span class="obs-ndate">{{ .date }}</span>
+        <span>{{ .text }}</span>
+        <span class="obs-tag">{{ .tag }}</span>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+
+  {{/* ---------------- paper browser ---------------- */}}
+  {{- $catById := dict -}}
+  {{- range $cats }}{{ $catById = merge $catById (dict .id .) }}{{ end -}}
+  <section class="obs-card obs-c12" id="papers" aria-label="Paper collection browser">
+    <div class="obs-bhead">
+      <div>
+        <p class="obs-kick" style="margin-bottom:4px">Paper collection</p>
+        <p class="obs-sub">data/papers/papers.yaml · updated {{ $meta.last_updated }} · <a href="/papers/">full browser →</a></p>
+      </div>
+      <div class="obs-search">
+        <input type="search" id="obs-q" placeholder="Search title or author…" aria-label="Search papers by title or author">
+        <span class="obs-count" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="obs-chiprow" role="group" aria-label="Filter papers by category">
+      <button type="button" class="obs-fchip on" data-cat="all" aria-pressed="true"><span>All</span><span class="n">{{ len $papers }}</span></button>
+      {{- range $cats }}
+      <button type="button" class="obs-fchip" data-cat="{{ .id }}" aria-pressed="false"><span>{{ .icon }} {{ .name }}</span><span class="n">{{ index $countById .id }}</span></button>
+      {{- end }}
+    </div>
+    <div class="obs-plist">
+      {{- range $papers }}
+      <article data-search="{{ printf "%s %s" .title (delimit .authors " ") | lower }}" data-cats="{{ delimit (default (slice) .categories) " " }}">
+        <span class="obs-star"{{ if .starred }} title="Starred"{{ end }}>{{ if .starred }}★{{ end }}</span>
+        <div>
+          <h3 class="obs-bt">{{ .title }}</h3>
+          <p class="obs-bauth">{{ delimit .authors ", " }}</p>
+          <p class="obs-bmeta">
+            <span>{{ .venue }} · {{ .year }}</span>
+            {{- if .links.paper }}
+            <a href="{{ .links.paper }}" target="_blank" rel="noopener">arXiv:{{ .arxiv_id }}</a>
+            {{- else }}
+            <span>arXiv:{{ .arxiv_id }}</span>
+            {{- end }}
+            {{- with .links.code }}<a href="{{ . }}" target="_blank" rel="noopener">code</a>{{ end }}
+            {{- with .links.project }}<a href="{{ . }}" target="_blank" rel="noopener">project</a>{{ end }}
+          </p>
+          {{- with .abstract }}
+          <details class="obs-abs">
+            <summary>Abstract</summary>
+            <p>{{ . }}</p>
+          </details>
+          {{- end }}
+        </div>
+        <div class="obs-bright">
+          <span class="obs-cchip" title="{{ lang.FormatNumberCustom 0 (int (default 0 .citation_count)) }} citations">{{ lang.FormatNumberCustom 0 (int (default 0 .citation_count)) }}</span>
+          <span class="obs-dots">
+            {{- range (default (slice) .categories) }}
+            {{- with index $catById . }}
+            <span class="obs-dotc" style="background:{{ .color }}" title="{{ .name }}"></span>
+            {{- end }}
+            {{- end }}
+          </span>
+        </div>
+      </article>
+      {{- end }}
+    </div>
+    <div class="obs-empty" hidden>
+      <p>No papers match the current filters.</p>
+      <button type="button" class="obs-clear">Clear filters</button>
+    </div>
+  </section>
+
+  <footer class="obs-foot">
+    <span>data snapshot · papers.yaml · updated {{ $meta.last_updated }}</span>
+    <span>built {{ now.Format "2006-01-02" }} · Hugo</span>
+    <a href="{{ site.BaseURL }}">windrise.github.io</a>
+  </footer>
+
+</main>
+
+{{/* data for sparkline + ambient canvas */}}
+{{- $catColors := slice -}}
+{{- range $cats }}{{ $catColors = $catColors | append .color }}{{ end -}}
+<script id="obs-data" type="application/json">{{ (dict "hist" $hist "accent" "#0E7C86" "catColors" $catColors) | jsonify | safeJS }}</script>
+
+</body>
+</html>

@@ -3,39 +3,37 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2608.28240v1",
-      "title": "WilLaGS: Latent-Conditional 3D Appearance Fields for Robust Gaussian Splatting In-the-Wild",
+      "id": "2608.31023v1",
+      "title": "SMG: Semantic Motion Graph for Monocular Dynamic Gaussian Splatting",
       "authors": [
-        "Yuhao Bai",
-        "Qianqiu Tan",
-        "Lilong Chen",
-        "Huanhuan Lv",
-        "Lijun Chen"
+        "Haozheng Yu",
+        "Xinyu Yang",
+        "Rundong Luo",
+        "Jennifer J. Sun",
+        "Bharath Hariharan"
       ],
-      "abstract": "3D Gaussian Splatting (3DGS) delivers real-time and high-fidelity rendering but remains challenged by unconstrained in-the-wild scenes, where drastic appearance variations and transient objects violate multi-view consistency. Existing methods are fundamentally limited by independent and discrete embeddings that struggle to capture continuous environmental changes or model spatially-varying local illumination. To address these limitations, we propose \\textbf{WilLaGS}, a unified framework for robust 3D scene reconstruction and generative appearance synthesis under unconstrained settings. Specifically, we introduce a generative appearance model where a $β$-VAE learns a structured and continuous manifold of global appearance. Conditioned on the latent code, we construct a 3D neural appearance field that generates dynamic Tri-Plane features to encode spatially-varying local illumination effects. Furthermore, to suppress transient artifacts, we present a self-supervised perceptual masking mechanism that leverages a Teacher-Student (EMA) architecture to derive a stable scene consensus, robustly identifying inconsistent regions via perceptual discrepancies. Extensive experiments on multiple datasets demonstrate that \\textbf{WilLaGS} achieves state-of-the-art performance in reconstruction quality and novel view appearance synthesis, while maintaining real-time rendering efficiency.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
+      "abstract": "We study dynamic Gaussian Splatting from monocular videos. While recent advancements in dynamic Gaussian splatting offer a promising foundation for modeling dynamic scenes, they often overfit to the training views and fail under occlusion or complex scene motion due to the lack of reliable regularization signals in under-constrained regions. We propose Semantic Motion Graph (SMG), a novel approach models the Gaussian motion as the low-rank semantic motion. Our key insight is that the real-world scene motion is often structured by semantic coherence: regions that are spatially close and semantically related tend to exhibit consistent dynamics. To leverage this prior, we construct SMG to model structured motion of the scene. The Gaussian motion is driven by the motion of SMG nodes. We further observe that the uncertainty of Gaussian motion arises from both unreliable off-the-shelf priors and weakly constrained regions during optimization. SMG addresses this by using reliable graph nodes to guide the motion of nearby unreliable nodes. To evaluate dynamic Gaussian splatting under challenging real-world scenarios, we introduce a new multiview dataset collected under an ego-exo setup. Extensive experiments demonstrate that SMG achieves state-of-the-art performance on monocular dynamic Gaussian splatting across challenging real-world benchmarks. Project page: https://smg-gaussian.github.io/.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2608.28240v1",
-        "pdf": "https://arxiv.org/pdf/2608.28240v1"
+        "paper": "http://arxiv.org/abs/2608.31023v1",
+        "pdf": "https://arxiv.org/pdf/2608.31023v1"
       },
-      "arxiv_id": "2608.28240v1",
-      "comment": "Accepted by ECCV2026",
+      "arxiv_id": "2608.31023v1",
+      "comment": "ECCV 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 5.499152542372881,
+      "relevance_score": 5.288983050847458,
       "score_breakdown": {
-        "total_score": 5.5,
+        "total_score": 5.29,
         "field_match": {
-          "score": 2.37,
+          "score": 0.85,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "self-supervised"
+            "gaussian splatting"
           ],
           "weight": 0.4
         },
@@ -45,7 +43,74 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We study dynamic Gaussian Splatting from monocular videos. While recent advancements in dynamic Gaussian splatting offer a promising foundation for modeling dynamic scenes, they often overfit to the training views and fail under occlusion or complex scene motion due to the lack of reliable regularization signals in under-constrained regions. We propose Semantic Motion Graph (SMG), a novel approach...",
+        "key_contributions": [
+          "We study dynamic Gaussian Splatting from monocular videos.",
+          "While recent advancements in dynamic Gaussian splatting offer a promising foundation for modeling dynamic scenes, they often overfit to the training views and fail under occlusion or complex scene motion due to the lack of reliable regularization signals in under-constrained regions.",
+          "We propose Semantic Motion Graph (SMG), a novel approach models the Gaussian motion as the low-rank semantic motion."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2608.31023v1.mp3"
+      }
+    },
+    {
+      "id": "2608.30975v1",
+      "title": "MR-JEPA: A General Purpose Video Foundation Model for Cardiac MRI",
+      "authors": [
+        "Athira J. Jacob",
+        "Puneet Sharma",
+        "Dorin Comaniciu",
+        "Daniel Rueckert"
+      ],
+      "abstract": "Cardiac magnetic resonance imaging (CMR) produces rich sequential data such as temporal cine videos and spatial LGE/mapping stacks, yet most deep learning approaches process individual 2D slices, discarding this context. We present MR-JEPA, a self-supervised video foundation model for CMR that extends LeJEPA to 3D spatiotemporal inputs through tubelet tokenization, spatiotemporal masking augmentation, and initialization from a 2D CMR foundation model. Unlike prior CMR video models limited to cine data, MR-JEPA is pretrained on multi-sequence data (cine, LGE, mapping) from 10,505 patients across two centers without annotations. We evaluate the frozen encoder on six downstream tasks using a unified multi-view gated attention architecture: LV ejection fraction, RV ejection fraction, three myocardial strains (GLS, GCS, GRS), and four-class disease detection. MR-JEPA outperforms other compared methods on all five regression tasks, including both a domain-specific CMR model pretrained on more data with text supervision and a natural-video foundation model, achieving an LV EF MAE of 4.79% (r =0.764) and a GLS MAE of 1.87 (r=0.805), with 21-27% MAE reductions over baselines on strain tasks. For disease detection, MR-JEPA achieved a macro AUG of 0.868, remaining competitive with the domain-specific baseline despite using a fully self-supervised pretraining objective. These results demonstrate the potential of a unified video encoder for robust, multi-view utilization of diverse CMR sequences in clinical cardiac quantification and diagnosis.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2608.30975v1",
+        "pdf": "https://arxiv.org/pdf/2608.30975v1"
+      },
+      "arxiv_id": "2608.30975v1",
+      "comment": "Accepted at STACOM 2026 (MICCAI 2026 peer-reviewed workshop)",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.845762711864406,
+      "score_breakdown": {
+        "total_score": 4.85,
+        "field_match": {
+          "score": 1.86,
+          "matches": [
+            "cardiac",
+            "self-supervised",
+            "deep learning"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "MICCAI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -59,56 +124,53 @@
         }
       },
       "ai_summaries": {
-        "short": "3D Gaussian Splatting (3DGS) delivers real-time and high-fidelity rendering but remains challenged by unconstrained in-the-wild scenes, where drastic appearance variations and transient objects violate multi-view consistency. Existing methods are fundamentally limited by independent and discrete embeddings that struggle to capture continuous environmental changes or model spatially-varying local i...",
+        "short": "Cardiac magnetic resonance imaging (CMR) produces rich sequential data such as temporal cine videos and spatial LGE/mapping stacks, yet most deep learning approaches process individual 2D slices, discarding this context. We present MR-JEPA, a self-supervised video foundation model for CMR that extends LeJEPA to 3D spatiotemporal inputs through tubelet tokenization, spatiotemporal masking augmentat...",
         "key_contributions": [
-          "3D Gaussian Splatting (3DGS) delivers real-time and high-fidelity rendering but remains challenged by unconstrained in-the-wild scenes, where drastic appearance variations and transient objects violate multi-view consistency.",
-          "Existing methods are fundamentally limited by independent and discrete embeddings that struggle to capture continuous environmental changes or model spatially-varying local illumination.",
-          "To address these limitations, we propose \\textbf{WilLaGS}, a unified framework for robust 3D scene reconstruction and generative appearance synthesis under unconstrained settings."
+          "Cardiac magnetic resonance imaging (CMR) produces rich sequential data such as temporal cine videos and spatial LGE/mapping stacks, yet most deep learning approaches process individual 2D slices, discarding this context.",
+          "We present MR-JEPA, a self-supervised video foundation model for CMR that extends LeJEPA to 3D spatiotemporal inputs through tubelet tokenization, spatiotemporal masking augmentation, and initialization from a 2D CMR foundation model.",
+          "Unlike prior CMR video models limited to cine data, MR-JEPA is pretrained on multi-sequence data (cine, LGE, mapping) from 10,505 patients across two centers without annotations."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2608.28240v1.mp3"
+        "audio_url": "/audio/2608.30975v1.mp3"
       }
     },
     {
-      "id": "2608.28341v1",
-      "title": "Cross-Spectral Dense Correspondence for Multimodal Spectral Medical Imaging",
+      "id": "2608.31013v1",
+      "title": "TSPFN: A Temporal Tabular Foundation Model for Physiological Time Series Classification",
       "authors": [
-        "Eric L. Wisotzky",
-        "Jost Triller",
-        "Simon W. Härtl",
-        "Oliver T. Bruns",
-        "Peter Eisert",
-        "Anna Hilsmann"
+        "Jérémie Stym-Popper",
+        "Clément Rambour",
+        "Federica Granese",
+        "Nicolas Thome",
+        "Olivier Bernard"
       ],
-      "abstract": "Precise dense correspondence is a fundamental prerequisite for multimodal spectral imaging systems that fuse disparate wavelength ranges for subsequent analysis in medical and scientific imaging. Corresponding image points are often observed with non-overlapping spectral sensitivities, leading to wavelength-dependent contrast changes, intensity inversions, and appearance shifts for which dense ground truth is difficult to obtain and conventional RGB-based training data provides only limited supervision. We address this data gap by introducing a sensor-agnostic cross-spectral modulation protocol on established correspondence benchmarks with intensity input projection, and by proposing a synthetic cross-spectral correspondence benchmark simulating physically plausible radiometric differences. Evaluation on several modern dense correspondence backbones trained with our unified cross-spectral protocol showed substantial improvements under severe spectral mismatch while maintaining performance on standard RGB benchmarks. Ablation experiments show that view-dependent channel selection and nonlinear radiometric transformations provide complementary robustness, indicating that the primary limitation of existing models is not their structural matching capacity but the mismatch between training distribution and spectral characteristics of the target image pair. Qualitative evaluations on heterogeneous medical spectral acquisition systems demonstrate the practical relevance of the proposed training data augmentation protocol as an enabler for spatially coherent spectral fusion in HSI workflows.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
+      "abstract": "Designing models that generalize effectively in low- to medium-data regimes remains a primary challenge in medical machine learning, particularly for physiological time-series classification. While tabular foundation models such as TabPFN offer an attractive alternative to conventional fine-tuning through in-context learning, they are not designed to capture the temporal dependencies inherent to physiological signals. ~In this paper, we introduce TSPFN, a foundation model that redesigns TabPFN's architecture for time series data. TSPFN integrates structured temporal representations and positional embeddings to capture intra-sample temporal and channel dependencies. To fully leverage its spatio-temporal design, the model is pretrained on 140,000 real-world physiological time series across multiple medical domains. This yields a unified, generalizable framework capable of learning the specificities of medical time series. Experiments across diverse physiological benchmarks demonstrate that TSPFN consistently outperforms standard tabular baselines and TabPFN, and achieves superior cross-domain generalization compared to specialized deep time-series models. All our experiments, ablation studies, and pre-processing scheme are publicly available at https://github.com/Jeremstym/TSPFN",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.LG",
+        "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2608.28341v1",
-        "pdf": "https://arxiv.org/pdf/2608.28341v1"
+        "paper": "http://arxiv.org/abs/2608.31013v1",
+        "pdf": "https://arxiv.org/pdf/2608.31013v1"
       },
-      "arxiv_id": "2608.28341v1",
-      "comment": "Accepted at 2nd Data Curation & Augmentation in Medical Imaging Workshop at ECCV 2026",
+      "arxiv_id": "2608.31013v1",
+      "comment": "Accepted at STACOM 2026 (MICCAI Workshop). 10 pages, 3 figures",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.755084745762712,
+      "relevance_score": 4.449999999999999,
       "score_breakdown": {
-        "total_score": 4.76,
+        "total_score": 4.45,
         "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical imaging"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ECCV",
+          "venue": "MICCAI",
           "weight": 0.25
         },
         "citation_potential": {
@@ -126,47 +188,45 @@
         }
       },
       "ai_summaries": {
-        "short": "Precise dense correspondence is a fundamental prerequisite for multimodal spectral imaging systems that fuse disparate wavelength ranges for subsequent analysis in medical and scientific imaging. Corresponding image points are often observed with non-overlapping spectral sensitivities, leading to wavelength-dependent contrast changes, intensity inversions, and appearance shifts for which dense gro...",
+        "short": "Designing models that generalize effectively in low- to medium-data regimes remains a primary challenge in medical machine learning, particularly for physiological time-series classification. While tabular foundation models such as TabPFN offer an attractive alternative to conventional fine-tuning through in-context learning, they are not designed to capture the temporal dependencies inherent to p...",
         "key_contributions": [
-          "Precise dense correspondence is a fundamental prerequisite for multimodal spectral imaging systems that fuse disparate wavelength ranges for subsequent analysis in medical and scientific imaging.",
-          "Corresponding image points are often observed with non-overlapping spectral sensitivities, leading to wavelength-dependent contrast changes, intensity inversions, and appearance shifts for which dense ground truth is difficult to obtain and conventional RGB-based training data provides only limited supervision.",
-          "We address this data gap by introducing a sensor-agnostic cross-spectral modulation protocol on established correspondence benchmarks with intensity input projection, and by proposing a synthetic cross-spectral correspondence benchmark simulating physically plausible radiometric differences."
+          "Designing models that generalize effectively in low- to medium-data regimes remains a primary challenge in medical machine learning, particularly for physiological time-series classification.",
+          "While tabular foundation models such as TabPFN offer an attractive alternative to conventional fine-tuning through in-context learning, they are not designed to capture the temporal dependencies inherent to physiological signals.",
+          "~In this paper, we introduce TSPFN, a foundation model that redesigns TabPFN's architecture for time series data."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2608.28341v1.mp3"
+        "audio_url": "/audio/2608.31013v1.mp3"
       }
     },
     {
-      "id": "2608.28404v1",
-      "title": "How Far Can 5,500 Hours of Driving Take You? A Scaling Law Analysis of Video Diffusion Models",
+      "id": "2608.30839v1",
+      "title": "Physical Adversarial Examples for Person Detectors in Thermal Images Based on 3D Modeling",
       "authors": [
-        "Victor Besnier",
-        "Anh-Quan Cao",
-        "Elias Ramzi",
-        "Spyros Gidaris",
-        "Tuan-Hung Vu",
-        "Andrei Bursuc",
-        "Eloi Zablocki",
-        "Matthieu Cord"
+        "Xiaopei Zhu",
+        "Siyuan Huang",
+        "Zhanhao Hu",
+        "Jianmin Li",
+        "Jun Zhu",
+        "Xiaolin Hu"
       ],
-      "abstract": "Video generation for autonomous driving cannot follow the web-scale route: driving data is expensive to collect, bound by privacy requirements, and cannot be scraped at will, so models must make the most of a fixed corpus. We present a systematic scaling-law study of video diffusion models trained from scratch on driving data: a family of models from 1M to 9B parameters, trained at different exposures on up to 5,500 hours of driving. Validation loss follows consistent power laws in both model size and training exposure, answering the questions that shape a training budget: whether compute is better spent on longer training or on a larger model, and whether more data is needed. Loss improves much faster with training exposure than with model size, making longer training the most effective way to improve a fixed model under limited compute. However, larger models continue to achieve lower asymptotic loss, so compute-optimal scaling still favors increasing model size when sufficient compute and data are available. Guided by these laws, we train a 9B-parameter model, to our knowledge the largest video diffusion model trained from scratch on driving data: it sets a new open-source state of the art for driving video generation, as measured on nuScenes. Our code and pretrained models are available at https://github.com/valeoai/VATIX. NATIX is separately releasing the underlying driving data in stages.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
+      "abstract": "Thermal Infrared detection is widely used in autonomous driving, medical AI, etc., but its security has only attracted attention recently. We propose infrared adversarial clothing designed to evade thermal person detectors in real-world scenarios. The design of the adversarial clothing is based on 3D modeling, which makes it easier to simulate multiangle scenes near the real world compared to 2D modeling. We optimized the black patch layout pattern of 3D clothing based on the adversarial example technique and made physical adversarial clothing using the aerogel. The idea is to paste a set of square aerogel patches, which display black squares in thermal images, in the inner side of clothing at specific locations with specific orientations. To enhance realism, we propose a method to build infrared 3D models with real infrared photos and develop texture maps for 3D models to simulate varied infrared characteristics over time and location. In physical attacks, we achieved an attack success rate of 80.11\\% indoors and 76.85\\% outdoors against YOLOv9. In contrast, randomly placed patches yielded much lower success rates (26.53\\% indoors and 23.03\\% outdoors). The adversarial clothing also showed good transferability to unknown detectors with an ensemble attack method, demonstrating the effectiveness of our approach.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2608.28404v1",
-        "pdf": "https://arxiv.org/pdf/2608.28404v1"
+        "paper": "http://arxiv.org/abs/2608.30839v1",
+        "pdf": "https://arxiv.org/pdf/2608.30839v1"
       },
-      "arxiv_id": "2608.28404v1",
-      "comment": "",
-      "journal_ref": "[Archival Track] ECCV 2026 DriveX - 6th Workshop on Foundation Models for Autonomous Driving",
+      "arxiv_id": "2608.30839v1",
+      "comment": "Accepted by TPAMI 2025",
+      "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.35,
+      "relevance_score": 4.25,
       "score_breakdown": {
-        "total_score": 4.35,
+        "total_score": 4.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -174,7 +234,76 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ECCV",
+          "venue": "PAMI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Thermal Infrared detection is widely used in autonomous driving, medical AI, etc., but its security has only attracted attention recently. We propose infrared adversarial clothing designed to evade thermal person detectors in real-world scenarios. The design of the adversarial clothing is based on 3D modeling, which makes it easier to simulate multiangle scenes near the real world compared to 2D m...",
+        "key_contributions": [
+          "Thermal Infrared detection is widely used in autonomous driving, medical AI, etc.",
+          ", but its security has only attracted attention recently.",
+          "We propose infrared adversarial clothing designed to evade thermal person detectors in real-world scenarios."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2608.30839v1.mp3"
+      }
+    },
+    {
+      "id": "2608.30870v1",
+      "title": "VCAR: Training-Free 3DGS Segmentation via View Completeness and Axis-Aware Boundary Refinement",
+      "authors": [
+        "Kun Cao",
+        "Di Wang",
+        "Haibin Zhu",
+        "Haozhi Huang",
+        "Xu Wang",
+        "Zheng Shi",
+        "Guanghua Yang"
+      ],
+      "abstract": "Semantic segmentation in 3D Gaussian Splatting (3DGS) is crucial for advancing 3D scene understanding. Existing methods predominantly rely on feature distillation, which incurs substantial per-scene training overhead and often yields blurred segmentation boundaries. We identify that these boundary artifacts are driven in part by insufficient viewpoint coverage and boundary overflow of anisotropic Gaussian primitives. To address these challenges, we propose VCAR, a training-free coarse-to-fine segmentation strategy based on View Completeness and Axis-aware Boundary Refinement. In the coarse stage, a visibility-based weighted multi-view voting scheme rapidly localizes the target. In the fine stage, an object-centric sphere derived from the coarse result generates supplementary viewpoints via Spherical Spiral Sampling (SSS), allowing multi-view voting on the augmented views to precisely refine object boundaries and suppress irrelevant 3D Gaussians. Moreover, we introduce Axis-aware Boundary Refinement (ABR) to mitigate artifacts from anisotropic primitives. By decomposing the projected 2D covariance into per-axis contributions, ABR identifies the dominant axis responsible for boundary leakage and applies targeted anisotropic compression exclusively along that axis. Extensive experiments on NVOS and LERF demonstrate that VCAR achieves state-of-the-art segmentation accuracy and efficiency without training. Our code is available at https://github.com/DDKK0526/VCAR.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2608.30870v1",
+        "pdf": "https://arxiv.org/pdf/2608.30870v1"
+      },
+      "arxiv_id": "2608.30870v1",
+      "comment": "Accepted to the 34th ACM International Conference on Multimedia (MM '26). 16 pages, 11 figures, including supplementary material",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.98135593220339,
+      "score_breakdown": {
+        "total_score": 3.98,
+        "field_match": {
+          "score": 2.2,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -192,105 +321,45 @@
         }
       },
       "ai_summaries": {
-        "short": "Video generation for autonomous driving cannot follow the web-scale route: driving data is expensive to collect, bound by privacy requirements, and cannot be scraped at will, so models must make the most of a fixed corpus. We present a systematic scaling-law study of video diffusion models trained from scratch on driving data: a family of models from 1M to 9B parameters, trained at different expos...",
+        "short": "Semantic segmentation in 3D Gaussian Splatting (3DGS) is crucial for advancing 3D scene understanding. Existing methods predominantly rely on feature distillation, which incurs substantial per-scene training overhead and often yields blurred segmentation boundaries. We identify that these boundary artifacts are driven in part by insufficient viewpoint coverage and boundary overflow of anisotropic ...",
         "key_contributions": [
-          "Video generation for autonomous driving cannot follow the web-scale route: driving data is expensive to collect, bound by privacy requirements, and cannot be scraped at will, so models must make the most of a fixed corpus.",
-          "We present a systematic scaling-law study of video diffusion models trained from scratch on driving data: a family of models from 1M to 9B parameters, trained at different exposures on up to 5,500 hours of driving.",
-          "Validation loss follows consistent power laws in both model size and training exposure, answering the questions that shape a training budget: whether compute is better spent on longer training or on a larger model, and whether more data is needed."
+          "Semantic segmentation in 3D Gaussian Splatting (3DGS) is crucial for advancing 3D scene understanding.",
+          "Existing methods predominantly rely on feature distillation, which incurs substantial per-scene training overhead and often yields blurred segmentation boundaries.",
+          "We identify that these boundary artifacts are driven in part by insufficient viewpoint coverage and boundary overflow of anisotropic Gaussian primitives."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2608.28404v1.mp3"
+        "audio_url": "/audio/2608.30870v1.mp3"
       }
     },
     {
-      "id": "2608.28455v1",
-      "title": "ARC-CT: Anatomy-Routed Contrastive Vision-Language Learning for 3D Chest CT",
+      "id": "2608.31159v1",
+      "title": "BRF-GS: Hyperspectral Bidirectional Reflectance Factor Modeling and Image Generation Based on 3D Gaussian Splatting",
       "authors": [
-        "Huseyin Umut Isik",
-        "Mehmet Alp Ozaydin",
-        "Sila Kurugol",
-        "Şeyda Ertekin"
+        "Yiling Yao",
+        "Wenjuan Zhang",
+        "Bowen Wang",
+        "Bocheng Li",
+        "Wentao Song",
+        "Bing Zhang"
       ],
-      "abstract": "Contrastive vision-language learning uses paired chest CT volumes and radiology reports to learn abnormality classifiers without manually annotated labels. However, two characteristics of chest CT challenge conventional global contrastive learning. First, many critical abnormalities are small or anatomically localized, and pooling an en- tire volume into a single embedding may dilute their visual evidence. Second, the standard contrastive objective treats every other scan in a batch as a negative. Because many chest CTs share abnormalities, this objective incorrectly pushes co-positive pairs apart. We propose Anatomy-Routed Contrastive Learning for 3D Chest CT (ARC-CT), a region-aware framework that addresses these limitations using only la- bels extracted from reports by an LLM, with no manual annotations or bounding boxes. ARC-CT combines three components: (1) an Anato- myQFormer localizing evidence via queries constrained by automatically generated organ masks; (2) a label-Jaccard soft InfoNCE objective in- tegrating the standard one-hot target with the label-set overlap of each pair, which reduces false-negative penalties between studies that share clinical findings; and (3) an organ-level alignment loss connecting mask- pooled visual features to organ-specific report text extracted offline with a large language model. ARC-CT achieves a 0.86 mask-free macro AUC across 18 abnormalities using a compact 3D ResNet-18 backbone. Over- all, ARC-CT outperforms both comparable efficient baselines and sev- eral larger transformer models. Our code and weights are available at https://github.com/arc-ct/arc-ct.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2608.28455v1",
-        "pdf": "https://arxiv.org/pdf/2608.28455v1"
-      },
-      "arxiv_id": "2608.28455v1",
-      "comment": "Accepted to the Thoracic Image Analysis (TIA) Workshop at MICCAI 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "MICCAI",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Contrastive vision-language learning uses paired chest CT volumes and radiology reports to learn abnormality classifiers without manually annotated labels. However, two characteristics of chest CT challenge conventional global contrastive learning. First, many critical abnormalities are small or anatomically localized, and pooling an en- tire volume into a single embedding may dilute their visual ...",
-        "key_contributions": [
-          "Contrastive vision-language learning uses paired chest CT volumes and radiology reports to learn abnormality classifiers without manually annotated labels.",
-          "However, two characteristics of chest CT challenge conventional global contrastive learning.",
-          "First, many critical abnormalities are small or anatomically localized, and pooling an en- tire volume into a single embedding may dilute their visual evidence."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2608.28455v1.mp3"
-      }
-    },
-    {
-      "id": "2608.28272v1",
-      "title": "Non-Uniform Quantisation for 3DGS Compression",
-      "authors": [
-        "Bert Van hauwermeiren",
-        "Patrice Rondao Alface",
-        "Adrian Munteanu"
-      ],
-      "abstract": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for novel view synthesis, yet its high bitrate requirements pose significant challenges for storage and transmission. To enable practical applications and ensure interoperability within the 3DGS ecosystem, standardised compression formats are essential. In this paper, we propose a novel non-uniform quantisation scheme specifically tailored for 3DGS models. Our approach adapts to the underlying data distribution by applying importance-weighted quantisation and eliminating post-voxelisation redundancy through importance weighted merging. Extensive evaluations on benchmark datasets demonstrate that our method achieves state-of-the-art compression performance. Furthermore, the proposed scheme is compatible with any point-cloud-based representation and is intended as a formal contribution to the upcoming MPEG 3DGS compression standardisation activities.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
+      "abstract": "The bidirectional reflectance factor (BRF) characterizes the directional radiative properties of terrestrial surfaces. However, existing three-dimensional (3D) radiative transfer models require complex scene construction and computationally intensive radiative transfer solvers, limiting efficient generation of multi-angle hyperspectral reflectance imagery. 3D Gaussian Splatting (3DGS) offers an efficient framework for neural scene representation and novel view synthesis, but its low-order spherical harmonics representation is insufficient for complex directional reflectance, while the high dimensionality and inter-band quality differences of hyperspectral data introduce additional challenges. To address these challenges, we propose BRF-GS, a 3DGS-based framework for BRF modeling and hyperspectral reflectance image generation. BRF-GS introduces a hybrid BRDF-driven kernel to represent complex directional reflectance, selects geometry-reliable spectral bands for robust 3D scene initialization, and adopts a two-stage training strategy that decouples geometry optimization from spectral modeling. We further construct the AIR-BRF dataset, a multi-angle hyperspectral directional reflectance dataset comprising three scenes with diverse natural and artificial targets. Experiments demonstrate that BRF-GS achieves superior spatial and spectral fidelity and accurately reproduces characteristic view-dependent BRF responses. The proposed framework provides an efficient data-driven approach for BRF modeling and multi-angle hyperspectral reflectance image generation in remote sensing scenes.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2608.28272v1",
-        "pdf": "https://arxiv.org/pdf/2608.28272v1"
+        "paper": "http://arxiv.org/abs/2608.31159v1",
+        "pdf": "https://arxiv.org/pdf/2608.31159v1"
       },
-      "arxiv_id": "2608.28272v1",
-      "comment": "",
+      "arxiv_id": "2608.31159v1",
+      "comment": "58 pages, 10 figures, 4 tables",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.127966101694915,
+      "relevance_score": 3.8279661016949147,
       "score_breakdown": {
-        "total_score": 4.13,
+        "total_score": 3.83,
         "field_match": {
           "score": 1.69,
           "matches": [
@@ -305,204 +374,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 7.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for novel view synthesis, yet its high bitrate requirements pose significant challenges for storage and transmission. To enable practical applications and ensure interoperability within the 3DGS ecosystem, standardised compression formats are essential. In this paper, we propose a novel non-uniform quantisation scheme specifically ta...",
-        "key_contributions": [
-          "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for novel view synthesis, yet its high bitrate requirements pose significant challenges for storage and transmission.",
-          "To enable practical applications and ensure interoperability within the 3DGS ecosystem, standardised compression formats are essential.",
-          "In this paper, we propose a novel non-uniform quantisation scheme specifically tailored for 3DGS models."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2608.28272v1.mp3"
-      }
-    },
-    {
-      "id": "2608.28549v1",
-      "title": "Video Generative Models as Geometry Learner",
-      "authors": [
-        "Haosen Yang",
-        "Jifei Song",
-        "Zhensong Zhang",
-        "Xiatian Zhu",
-        "Jiankang Deng"
-      ],
-      "abstract": "Recent generative approaches to geometry estimation adapt pretrained image diffusion models and treat the task as image-conditioned generation. Leveraging off-the-shelf image diffusion models, they either (i) train task-specific geometry models (for depth and surface normal estimation) independently, losing the opportunity of exploring the intrinsic correlation of these geometric targets, or (ii) jointly fine-tune modified image diffusion backbones (e.g., altered self-attention), which typically demands substantial labeled data. To overcome these limitations in a principled fashion, we repurpose pretrained video generative models as a unified and data-efficient framework for geometry estimation, formulated innovatively as a next-frames prediction task. Our method, GeoNeXt, inherits naturally structured knowledge and richer priors from the video model, while further adapting them for joint modeling of images and geometry targets (image <-> geometry), enabling more data efficient and effective learning of geometry. Extensive experiments validate our method for zero-shot monocular depth and surface normal estimation across diverse datasets, outperforming both previous task-specific and unified generative competitors while using substantially less training data. Notably, our method rivals discriminative state-of-the-art approaches trained on over 100x more data and even standouts on several benchmarks.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2608.28549v1",
-        "pdf": "https://arxiv.org/pdf/2608.28549v1"
-      },
-      "arxiv_id": "2608.28549v1",
-      "comment": "19 pages, 4 figures, 5 tables. Project page: https://happy-hsy.github.io/projects/GeoNeXt/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Recent generative approaches to geometry estimation adapt pretrained image diffusion models and treat the task as image-conditioned generation. Leveraging off-the-shelf image diffusion models, they either (i) train task-specific geometry models (for depth and surface normal estimation) independently, losing the opportunity of exploring the intrinsic correlation of these geometric targets, or (ii) ...",
-        "key_contributions": [
-          "Recent generative approaches to geometry estimation adapt pretrained image diffusion models and treat the task as image-conditioned generation.",
-          "Leveraging off-the-shelf image diffusion models, they either (i) train task-specific geometry models (for depth and surface normal estimation) independently, losing the opportunity of exploring the intrinsic correlation of these geometric targets, or (ii) jointly fine-tune modified image diffusion backbones (e.",
-          "g."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2608.28549v1.mp3"
-      }
-    },
-    {
-      "id": "2608.28247v1",
-      "title": "A comprehensive and trustworthy benchmark of AI methods for change detection in Earth observation",
-      "authors": [
-        "Tadej Tomanič",
-        "Alice Baudhuin",
-        "Jan Sotošek",
-        "Jure Brence",
-        "Panče Panov",
-        "Nikola Simidjievski",
-        "Dragi Kocev"
-      ],
-      "abstract": "Change detection in Earth observation (EO) is critical for monitoring land surface transformations, yet recent research in the field is constrained by inconsistent evaluation protocols and a narrow focus on predictive accuracy without regard for computational efficiency. To address this, we present a standardized, open-source benchmark for evaluating state-of-the-art (SOTA) deep learning methods for Earth observation change detection. We conduct a comprehensive analysis of ten representative model architectures, ranging from convolutional networks (CNNs) to vision transformers (ViTs), across ten heterogeneous change detection datasets. We rigorously evaluate these models with identical experimental protocols, comparing models trained from scratch against those utilizing pre-trained weights. Furthermore, we evaluate predictive performance alongside computational efficiency, including parameter counts and inference latency. Our findings reveal that well-optimized classical architectures, such as Siamese U-Nets, frequently outperform more complex contemporary models when computational efficiency is factored in, and that pre-training consistently provides a significant performance boost with no additional inference cost. To ensure complete transparency and reproducibility, all experimental resources, including standardized data splits, training scripts, training logs, and model checkpoints are publicly available and adhere to FAIR principles (Findable, Accessible, Interoperable, and Reusable).",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2608.28247v1",
-        "pdf": "https://arxiv.org/pdf/2608.28247v1"
-      },
-      "arxiv_id": "2608.28247v1",
-      "comment": "",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.669491525423729,
-      "score_breakdown": {
-        "total_score": 3.67,
-        "field_match": {
-          "score": 0.42,
-          "matches": [
-            "deep learning"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Change detection in Earth observation (EO) is critical for monitoring land surface transformations, yet recent research in the field is constrained by inconsistent evaluation protocols and a narrow focus on predictive accuracy without regard for computational efficiency. To address this, we present a standardized, open-source benchmark for evaluating state-of-the-art (SOTA) deep learning methods f...",
-        "key_contributions": [
-          "Change detection in Earth observation (EO) is critical for monitoring land surface transformations, yet recent research in the field is constrained by inconsistent evaluation protocols and a narrow focus on predictive accuracy without regard for computational efficiency.",
-          "To address this, we present a standardized, open-source benchmark for evaluating state-of-the-art (SOTA) deep learning methods for Earth observation change detection.",
-          "We conduct a comprehensive analysis of ten representative model architectures, ranging from convolutional networks (CNNs) to vision transformers (ViTs), across ten heterogeneous change detection datasets."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2608.28247v1.mp3"
-      }
-    },
-    {
-      "id": "2608.28524v1",
-      "title": "Texture Image Classification Using DWT AlexNet Feature Fusion and Deep Neural Networks",
-      "authors": [
-        "Arun D. Kulkarni"
-      ],
-      "abstract": "Texture image classification plays a significant role in computer vision applications, including industrial inspection, medical image analysis, remote sensing, and object recognition. Handcrafted features can capture local texture characteristics but may have limited capability to represent complex visual patterns. In contrast, deep learning models automatically learn discriminative representations but may not fully exploit the multiscale spatial-frequency information inherent in texture images. This paper proposes a hybrid feature fusion framework, termed DWT_AlexNet_DNN, which combines Discrete Wavelet Transform (DWT) features with deep features extracted using AlexNet for texture image classification.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2608.28524v1",
-        "pdf": "https://arxiv.org/pdf/2608.28524v1"
-      },
-      "arxiv_id": "2608.28524v1",
-      "comment": "15 pages, 15 figures",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.6635593220338984,
-      "score_breakdown": {
-        "total_score": 3.66,
-        "field_match": {
-          "score": 2.03,
-          "matches": [
-            "medical image",
-            "deep learning",
-            "computer vision",
-            "image analysis"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -516,104 +388,236 @@
         }
       },
       "ai_summaries": {
-        "short": "Texture image classification plays a significant role in computer vision applications, including industrial inspection, medical image analysis, remote sensing, and object recognition. Handcrafted features can capture local texture characteristics but may have limited capability to represent complex visual patterns. In contrast, deep learning models automatically learn discriminative representation...",
+        "short": "The bidirectional reflectance factor (BRF) characterizes the directional radiative properties of terrestrial surfaces. However, existing three-dimensional (3D) radiative transfer models require complex scene construction and computationally intensive radiative transfer solvers, limiting efficient generation of multi-angle hyperspectral reflectance imagery. 3D Gaussian Splatting (3DGS) offers an ef...",
         "key_contributions": [
-          "Texture image classification plays a significant role in computer vision applications, including industrial inspection, medical image analysis, remote sensing, and object recognition.",
-          "Handcrafted features can capture local texture characteristics but may have limited capability to represent complex visual patterns.",
-          "In contrast, deep learning models automatically learn discriminative representations but may not fully exploit the multiscale spatial-frequency information inherent in texture images."
+          "The bidirectional reflectance factor (BRF) characterizes the directional radiative properties of terrestrial surfaces.",
+          "However, existing three-dimensional (3D) radiative transfer models require complex scene construction and computationally intensive radiative transfer solvers, limiting efficient generation of multi-angle hyperspectral reflectance imagery.",
+          "3D Gaussian Splatting (3DGS) offers an efficient framework for neural scene representation and novel view synthesis, but its low-order spherical harmonics representation is insufficient for complex directional reflectance, while the high dimensionality and inter-band quality differences of hyperspectral data introduce additional challenges."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2608.28524v1.mp3"
+        "audio_url": "/audio/2608.31159v1.mp3"
       }
     },
     {
-      "id": "2608.28578v1",
-      "title": "Aero Hand Open: A Simulation-Ready Tendon-Driven Hand for Dexterous Manipulation Learning",
+      "id": "2608.31016v1",
+      "title": "LLM Judges Verify Presence, Not Absence: Omission Blindness in AI Clinical Notes and What Recovers It",
       "authors": [
-        "Nan Wang",
-        "Mohit Yadav",
-        "Jonathan Wulff",
-        "Aidan Rosenbaum",
-        "Kezhou Chen",
-        "Yuvan Sharma",
-        "Xu Dong",
-        "Yiwei Tao"
+        "Sebastian Fox",
+        "Luke Markham",
+        "Ryan Lail",
+        "Michael Karotsieris"
       ],
-      "abstract": "Tendon-driven hands are anthropomorphic, and moving the actuators off the joints is what makes a hand of this capability affordable to build. Two effects produce that saving. Routing force through a cable removes the requirement that a motor fit inside the joint it drives, so smaller and cheaper motors suffice, and one motor can drive several joints through a single cable, so fewer motors are needed. They are also harder to learn on than a direct-drive hand. The underactuated transmission that produces the saving is itself difficult to represent in a simulator, and the joints one cable drives are not independently commandable. We present Aero Hand Open, a tendon-driven anthropomorphic hand that is released simulation-ready. Three things ship with it. A simulation model reproduces the cable transmission itself. An identified actuation map connects that model to the motor commands in both directions, including the three-way coupling of the thumb. A reinforcement learning package trains policies for the hand. Together they let a policy be trained entirely in simulation and run on the hand with no fine-tuning and no state estimation. We release the mechanical design, the simulation model, the identified mapping, the training environment and the deployment stack.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
+      "abstract": "Ambient AI scribes draft clinical notes, and published audits find their dominant error is omission: information the encounter established that the note fails to record. The standard check is an LLM judge: a second model reads the note against the transcript and flags problems. We ask whether judges detect omissions. Public corpora cannot supply the answer key: their clinician reference notes and transcripts are materially discrepant. Our benchmark has 500 single-error note pairs from audited fact sheets, 298 with a named fact certainly absent and 202 added-or-altered controls. Across eight judge designs, paired discrimination (the flawed note below its clean twin, 0.5 a coin flip) reads 0.79-0.94 on added or altered content and 0.50-0.63 on omissions. On single notes, no design flags omissions reliably more often than perfect notes. Wording changes, voting and GEPA prompt optimisation move the operating point without creating usable detection. Restructuring the task recovers it: list the facts the transcript establishes, then check the note for each. Two methods reach it independently and trade off: a per-fact pipeline, and a GEPA-evolved prompt doing the same in one call. The pipeline's flags name the missing fact and its severity at 2.7% false alarms. The single call detects more (36.9% against 24.6%, p=0.002) at 6.2% false alarms and a tenth of the cost per note. A physician author validated 70 items and, where the two routes disagree, sided with the pipeline on 10 of 10 (p=0.002). A second clinician, not an author, graded the severity rubric blind and agrees to within a grade. On real vendor notes from a companion census no benchmark threshold transfers, but the re-calibrated single call detects more than the best of the eight at half its false-alarm rate. Omissions whose fact is restated elsewhere defeat both routes. We release the benchmark, prompts and judgements.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
       "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2608.28578v1",
-        "pdf": "https://arxiv.org/pdf/2608.28578v1"
-      },
-      "arxiv_id": "2608.28578v1",
-      "comment": "20 pages, 9 figures. Project page: https://tetheria.github.io/aero-hand-open/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.65,
-      "score_breakdown": {
-        "total_score": 3.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Tendon-driven hands are anthropomorphic, and moving the actuators off the joints is what makes a hand of this capability affordable to build. Two effects produce that saving. Routing force through a cable removes the requirement that a motor fit inside the joint it drives, so smaller and cheaper motors suffice, and one motor can drive several joints through a single cable, so fewer motors are need...",
-        "key_contributions": [
-          "Tendon-driven hands are anthropomorphic, and moving the actuators off the joints is what makes a hand of this capability affordable to build.",
-          "Two effects produce that saving.",
-          "Routing force through a cable removes the requirement that a motor fit inside the joint it drives, so smaller and cheaper motors suffice, and one motor can drive several joints through a single cable, so fewer motors are needed."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2608.28578v1.mp3"
-      }
-    },
-    {
-      "id": "2608.28541v1",
-      "title": "An Enclosed Mode Is a Gauge Choice: Topology Relative to Reach in Certified Code World Models",
-      "authors": [
-        "Javier Aguilar Martín"
-      ],
-      "abstract": "A code world model accepted by a sampling gate can be exactly right on everything the gate can see and arbitrarily wrong beyond it. We characterize what a certified model can know, and what its errors can cost, when the omission is an annular freeze mode enclosing an unreachable interior. The gate quotient makes the question precise: acceptance-with-certainty determines the model exactly on the reachable query set; beyond reach is gauge. On a minimal ring instrument we prove the extreme case (a wrong-topology filled-disc artifact unfalsifiable by any sampling gate and bitwise harmless at play) and measure, with LLM synthesis across three model families, how one knob (a channel of width gamma) walks the same artifact through three regimes: unfalsifiable-and-harmless, falsifiable-and-costly, and instantly falsified. Three principles organize the empirics. First, danger is topology relative to reach: a channel the planner can use collapses the blind model's exploitation (play cost 1.09 to ~0 over a knee at gamma ~ 0.1), while a hidden channel with the same first Betti number keeps it at full strength (1.12). Second, repair is parameter-bound and sensor-bound: no family recovers the region from outside evidence; from inside, models pose the right topology but cannot pin its parameters, and the posed topology tracks the guiding persistent-homology summary's wrong beta_1 (a sensor with a measured geometric resolution limit), not the truth. Third, mitigation must match the error's dimension and direction: point fences fail against the one-dimensional boundary, a dimension-matched persisted fence collapses exploitation to a two-lesson transient (0.999 to 0.058), and the dual freedom certificate collapses the invented-mode failure symmetrically (1.769 to 0.029). In n dimensions the shell makes misidentification near-certain while the danger stays fully exploitable: the two axes are independent.",
-      "published": "2026-08-28",
-      "updated": "2026-08-28",
-      "categories": [
-        "cs.LG",
+        "cs.CL",
         "cs.AI"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CL",
       "links": {
-        "paper": "http://arxiv.org/abs/2608.28541v1",
-        "pdf": "https://arxiv.org/pdf/2608.28541v1"
+        "paper": "http://arxiv.org/abs/2608.31016v1",
+        "pdf": "https://arxiv.org/pdf/2608.31016v1"
       },
-      "arxiv_id": "2608.28541v1",
-      "comment": "33 pages, 2 figures. Paper 3 of a series (companion papers: arXiv:2607.14169, arXiv:2608.17956). Code, data, and Lean formalization: https://github.com/JaviMaligno/code-world-models",
+      "arxiv_id": "2608.31016v1",
+      "comment": "97 pages, 8 figures. Dataset: https://huggingface.co/datasets/ComposoAI/OmissionBench . Code: https://github.com/composo-ai/omission-bench . Companion paper: \"One note in three: a verified census of three deployed AI scribes, and the instrument that counted it\"",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Ambient AI scribes draft clinical notes, and published audits find their dominant error is omission: information the encounter established that the note fails to record. The standard check is an LLM judge: a second model reads the note against the transcript and flags problems. We ask whether judges detect omissions. Public corpora cannot supply the answer key: their clinician reference notes and ...",
+        "key_contributions": [
+          "Ambient AI scribes draft clinical notes, and published audits find their dominant error is omission: information the encounter established that the note fails to record.",
+          "The standard check is an LLM judge: a second model reads the note against the transcript and flags problems.",
+          "We ask whether judges detect omissions."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2608.31016v1.mp3"
+      }
+    },
+    {
+      "id": "2608.31073v1",
+      "title": "LISynSeg: Data-Centric Label-to-Image Synthesis for Cross-Modality Whole-Heart Segmentation",
+      "authors": [
+        "Jiacheng Wang",
+        "Ivana Isgum",
+        "Ipek Oguz"
+      ],
+      "abstract": "Whole-heart segmentation (WHS) in computed tomography (CT) and magnetic resonance imaging (MRI) is affected by acquisition shifts and heterogeneous cardiac annotations. Existing WHS systems combine architectural design, transfer learning, and generic spatial or intensity augmentation. We investigate whether changes to data augmentation and training supervision can improve cross-modality WHS while the segmentation architecture is held constant. We present LISynSeg, a data-centric approach that augments real-image nnU-Net training with label-to-image synthesis. Synthetic volumes are generated from cardiac label maps using contrast and acquisition perturbations calibrated to the training cohort, then mixed with real images to retain thoracic context absent from the labels (and thus the synthesized images). We model cardiac label variation through controlled changes in myocardial wall thickness and partial supervision of uncertain vessel endpoints. On the CARE Whole-Heart benchmark, synthetic-only training performs worse than the real-image nnU-Net baseline, whereas calibrated real-synthetic training improves cross-modality segmentation without changing the architecture; the improvement is larger for MRI than for CT. The results show that modifying the training data strategy can benefit model development for heterogeneous cardiac data. Code and trained weights will be released at https://github.com/MedICL-VU/Care26_LISynSeg.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2608.31073v1",
+        "pdf": "https://arxiv.org/pdf/2608.31073v1"
+      },
+      "arxiv_id": "2608.31073v1",
+      "comment": "12 pages, 4 figures",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.7796610169491522,
+      "score_breakdown": {
+        "total_score": 3.78,
+        "field_match": {
+          "score": 1.95,
+          "matches": [
+            "cardiac",
+            "heart",
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Whole-heart segmentation (WHS) in computed tomography (CT) and magnetic resonance imaging (MRI) is affected by acquisition shifts and heterogeneous cardiac annotations. Existing WHS systems combine architectural design, transfer learning, and generic spatial or intensity augmentation. We investigate whether changes to data augmentation and training supervision can improve cross-modality WHS while ...",
+        "key_contributions": [
+          "Whole-heart segmentation (WHS) in computed tomography (CT) and magnetic resonance imaging (MRI) is affected by acquisition shifts and heterogeneous cardiac annotations.",
+          "Existing WHS systems combine architectural design, transfer learning, and generic spatial or intensity augmentation.",
+          "We investigate whether changes to data augmentation and training supervision can improve cross-modality WHS while the segmentation architecture is held constant."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2608.31073v1.mp3"
+      }
+    },
+    {
+      "id": "2608.30897v1",
+      "title": "CAER: Causal Action Effect Reweighting for World Model Training",
+      "authors": [
+        "Jianjie Fang",
+        "Xvyuan Liu",
+        "Ziyou Wang",
+        "Rongze Tang",
+        "Zhaolu Wang",
+        "Zhuohang Li",
+        "Xin Zhang",
+        "Haisheng Su",
+        "Chen Gao",
+        "Wei Wu",
+        "Xinlei Chen",
+        "Yong Li"
+      ],
+      "abstract": "World models are becoming core infrastructure for embodied intelligence, with action-conditioned video generation providing controllable predictions of how scenes evolve after agent interventions. Yet existing models are commonly trained with space-time-uniform mean squared error, allowing abundant background tokens to dominate the gradient while sparse interaction dynamics remain under-optimized; such uniform fitting rewards reconstructing appearance rather than learning how actions change the world. We introduce Causal Action Effect Reweighting (CAER), a general training paradigm that redistributes supervision toward the tokens whose predicted future is causally affected by the action. CAER contrasts the model's own predictions with and without action conditioning to localize these tokens online, then normalizes the resulting effect map into a weight that preserves the total coefficient mass and changes only where it is spent. This online signal requires no external annotations or offline preprocessing, avoids additional data-processing time, and scales naturally with model and dataset size. Experiments across heterogeneous action-conditioned world-model tasks show that CAER converges to better solutions than uniform MSE training, with consistent improvements in the physical consistency, controllability, and visual quality of generated videos.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2608.30897v1",
+        "pdf": "https://arxiv.org/pdf/2608.30897v1"
+      },
+      "arxiv_id": "2608.30897v1",
+      "comment": "14 pages, 8 figures. Project page: https://manifoldai-research.github.io/CAER/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.7,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "World models are becoming core infrastructure for embodied intelligence, with action-conditioned video generation providing controllable predictions of how scenes evolve after agent interventions. Yet existing models are commonly trained with space-time-uniform mean squared error, allowing abundant background tokens to dominate the gradient while sparse interaction dynamics remain under-optimized;...",
+        "key_contributions": [
+          "World models are becoming core infrastructure for embodied intelligence, with action-conditioned video generation providing controllable predictions of how scenes evolve after agent interventions.",
+          "Yet existing models are commonly trained with space-time-uniform mean squared error, allowing abundant background tokens to dominate the gradient while sparse interaction dynamics remain under-optimized; such uniform fitting rewards reconstructing appearance rather than learning how actions change the world.",
+          "We introduce Causal Action Effect Reweighting (CAER), a general training paradigm that redistributes supervision toward the tokens whose predicted future is causally affected by the action."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2608.30897v1.mp3"
+      }
+    },
+    {
+      "id": "2608.31105v1",
+      "title": "BLOOM-WILT: Logit Tilting for Behaviour Elicitation in Automated LLM Auditing",
+      "authors": [
+        "Adrians Skapars",
+        "Edoardo Manino"
+      ],
+      "abstract": "Users of a deployed language model routinely encounter behaviours that testing almost never surfaces, since deployment puts the model through orders of magnitude more interactions than any evaluation can simulate. Automated auditors make testing cheap to scale and flexible enough to cover almost any specified behaviour, yet their lack of optimisation pressure makes them sample-inefficient. To address this shortcoming, we introduce BLOOM-WILT, a full auditing pipeline that elicits natural multi-turn instances of rare behaviours, without training cost or access beyond the target's next-token distribution. On the input side, WILT's auditor model revises its conversational strategy across rounds, learning from previous scored interactions. On the output side, WILT adaptively reweights the target's decoding using the model's own distribution conditioned on an elicitation prompt, so that behaviour-relevant generations are sampled ahead of others it finds equally probable when unprompted. We evaluate WILT across 4 target models and 8 behaviours, where it beats the baseline auditor in 30 of the 32 settings and overturns the previous model safety rankings. WILT raises average behaviour presence from 51% to 100% when eliciting self-harm encouragement from Qwen3.5-4B, beating every elicitation method we port into the same pipeline at matched compute, without pushing output probability below the baseline's.",
+      "published": "2026-08-31",
+      "updated": "2026-08-31",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2608.31105v1",
+        "pdf": "https://arxiv.org/pdf/2608.31105v1"
+      },
+      "arxiv_id": "2608.31105v1",
+      "comment": "10 pages, 5 figures, 3 tables. Code: https://github.com/AdrSkapars/bloom-wilt",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.65,
@@ -644,14 +648,14 @@
         }
       },
       "ai_summaries": {
-        "short": "A code world model accepted by a sampling gate can be exactly right on everything the gate can see and arbitrarily wrong beyond it. We characterize what a certified model can know, and what its errors can cost, when the omission is an annular freeze mode enclosing an unreachable interior. The gate quotient makes the question precise: acceptance-with-certainty determines the model exactly on the re...",
+        "short": "Users of a deployed language model routinely encounter behaviours that testing almost never surfaces, since deployment puts the model through orders of magnitude more interactions than any evaluation can simulate. Automated auditors make testing cheap to scale and flexible enough to cover almost any specified behaviour, yet their lack of optimisation pressure makes them sample-inefficient. To addr...",
         "key_contributions": [
-          "A code world model accepted by a sampling gate can be exactly right on everything the gate can see and arbitrarily wrong beyond it.",
-          "We characterize what a certified model can know, and what its errors can cost, when the omission is an annular freeze mode enclosing an unreachable interior.",
-          "The gate quotient makes the question precise: acceptance-with-certainty determines the model exactly on the reachable query set; beyond reach is gauge."
+          "Users of a deployed language model routinely encounter behaviours that testing almost never surfaces, since deployment puts the model through orders of magnitude more interactions than any evaluation can simulate.",
+          "Automated auditors make testing cheap to scale and flexible enough to cover almost any specified behaviour, yet their lack of optimisation pressure makes them sample-inefficient.",
+          "To address this shortcoming, we introduce BLOOM-WILT, a full auditing pipeline that elicits natural multi-turn instances of rare behaviours, without training cost or access beyond the target's next-token distribution."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2608.28541v1.mp3"
+        "audio_url": "/audio/2608.31105v1.mp3"
       }
     }
   ]

@@ -3,41 +3,43 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2609.11650v1",
-      "title": "Self-Supervised Cardiac Phase Detection via Single-Parameter Latent Orbits",
+      "id": "2609.17068v1",
+      "title": "Beyond In-Distribution Metrics: A Systematic Out-of-Distribution Evaluation of Congenital Heart Disease Segmentation",
       "authors": [
-        "John Bonnici",
-        "Matthew Baugh",
-        "Aleksandra Kulbaka",
-        "Sarah Cechnicka",
-        "Bernhard Kainz",
-        "Alberto Gomez"
+        "Aniketh Vijesh",
+        "Shrisharanyan Vasu",
+        "Abhijit Ramesh",
+        "Clare Pomeroy-Ward",
+        "Harikrishnan Anil Maya",
+        "Sarin Xavier",
+        "Mahesh Kappanayil",
+        "Gilad Gressel"
       ],
-      "abstract": "Accurate identification of end-diastole (ED) and end-systole (ES) in echocardiography underpins the quantification of ventricular function, yet manual selection of these key frames is subjective and introduces clinically significant inter-operator variability. Recent self-supervised methods either prescribe strict periodic trajectories or learn an unconstrained low-dimensional motion subspace from reconstruction or registration objectives. The former offers interpretability but imposes restrictive assumptions on temporal progression, whereas the latter leaves cardiac phase implicit and ED/ES must be recovered through post-hoc geometric processing of the learned trajectory. We translate the physiological observation that cardiac phase is a one-dimensional signal into a prior by constraining the latent motion component to a single-parameter latent orbit, i.e., a global linear trajectory in latent space indexed by a bounded scalar phase variable. Mapping this variable through a sinusoidal nonlinearity yields an oscillatory motion signal with consistent temporal ordering, enabling direct identification of ED and ES from the learned phase signal. This inductive bias allows the model to capture an interpretable representation of the cardiac cycle, while maintaining flexibility to capture irregular heartbeats. Trained on EchoNet-Dynamic without annotations, our minimal single-parameter cardiac phase model learns an effective latent orbit, significantly improves upon the previous state of the art in ED localisation and matches it in ES localisation while using a more constrained representation and fewer training epochs. This demonstrates that a principled physiological inductive bias can match or exceed the performance of more complex representations. Code is available at: https://github.com/BonniciJ/OrbitalEcho/",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
+      "abstract": "Congenital heart disease (CHD) diagnosis and surgical planning often require patient-specific 3D anatomical models, but manual segmentation is labor-intensive, particularly in complex anatomies. Although deep-learning methods can automate this process, they are typically evaluated in-distribution, despite clinically relevant shifts in scanner, protocol, institution, population, and imaging modality. We present, to our knowledge, the first systematic evaluation of out-of-distribution (OOD) generalization in CHD segmentation, using ImageCHD as a held-out target cohort. We compare representative segmentation architectures under combined CT and CMR training, CT-only training, self-supervised pretraining, and limited target-domain adaptation. In-distribution performance proves to be a poor indicator of cross-cohort robustness: nnU-Net achieves the highest validation Dice (0.77) but falls to 0.51 on ImageCHD, while SwinUNETR generalizes substantially better, reaching 0.67 Dice. MAE and JEPA pretraining provide only modest additional benefit, suggesting that architecture contributes more to robustness than the tested pretraining strategies in this setting. When limited target-domain supervision is introduced, all SwinUNETR variants exceed 0.76 Dice with only 11 labeled ImageCHD cases. These findings demonstrate that conventional in-distribution evaluation can obscure clinically important generalization failures and support explicit cross-dataset testing as a key component of CHD segmentation evaluation.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
       "categories": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.11650v1",
-        "pdf": "https://arxiv.org/pdf/2609.11650v1"
+        "paper": "http://arxiv.org/abs/2609.17068v1",
+        "pdf": "https://arxiv.org/pdf/2609.17068v1"
       },
-      "arxiv_id": "2609.11650v1",
-      "comment": "Accepted for oral presentation at the ASMUS workshop at MICCAI 2026",
+      "arxiv_id": "2609.17068v1",
+      "comment": "12 pages, 6 figures, 2 tables. Accepted at STACOM 2026, held in conjunction with MICCAI 2026",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 5.300847457627118,
+      "relevance_score": 5.345762711864406,
       "score_breakdown": {
-        "total_score": 5.3,
+        "total_score": 5.35,
         "field_match": {
-          "score": 2.63,
+          "score": 1.86,
           "matches": [
-            "cardiac",
             "heart",
             "self-supervised",
-            "registration"
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -47,7 +49,78 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
           "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Congenital heart disease (CHD) diagnosis and surgical planning often require patient-specific 3D anatomical models, but manual segmentation is labor-intensive, particularly in complex anatomies. Although deep-learning methods can automate this process, they are typically evaluated in-distribution, despite clinically relevant shifts in scanner, protocol, institution, population, and imaging modalit...",
+        "key_contributions": [
+          "Congenital heart disease (CHD) diagnosis and surgical planning often require patient-specific 3D anatomical models, but manual segmentation is labor-intensive, particularly in complex anatomies.",
+          "Although deep-learning methods can automate this process, they are typically evaluated in-distribution, despite clinically relevant shifts in scanner, protocol, institution, population, and imaging modality.",
+          "We present, to our knowledge, the first systematic evaluation of out-of-distribution (OOD) generalization in CHD segmentation, using ImageCHD as a held-out target cohort."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2609.17068v1.mp3"
+      }
+    },
+    {
+      "id": "2609.17248v1",
+      "title": "Video-HolmesV2: Can MLLMs Reason with Spatio-Temporal Audio-Visual Evidence in Long Videos?",
+      "authors": [
+        "Zhaoyang Wei",
+        "Zipeng Wang",
+        "Yushe Cao",
+        "Chenhui Qiang",
+        "Shuaibing Cheng",
+        "Xuesong Yang",
+        "Sen Nie",
+        "Bowen Jiang",
+        "Wenchao Ding",
+        "Yanchao Hao",
+        "Zheng Wei",
+        "Xuehui Yu",
+        "Zhenjun Han"
+      ],
+      "abstract": "Multimodal Large Language Models have demonstrated impressive video understanding, yet their ability to reason over long-form narratives is often masked by visual-centric evaluations and inefficient context processing. Existing benchmarks over-rely on visual heuristics while marginalizing auditory cues, effectively reducing models to \"silent observers\" that bypass genuine cross-modal reasoning. Moreover, standard dense sampling creates an evidence-context trade-off: increasing frames to capture evidence inevitably leads to attention distraction and token explosion. To bridge these gaps, we present Video-HolmesV2, a novel benchmark designed for Deep Audio-Visual Coupling. Unlike previous works, it enforces an Evidence-Based Evaluation, requiring models to justify answers with precise spatio-temporal audio-visual evidence, thereby reducing confounding effects of guessing and hallucinated evidence. To support this, we introduce: (1) a Multi-Model Cross-Verification pipeline to ensure task rigor; (2) a Spatio-temporal Evidence-Aware Metric for fine-grained calibration. Furthermore, we propose an Audio-Text Guided Token Compression framework. By fusing task intent with auditory anchors, our method distills high-value reasoning cues to mitigate long-context noise. In our evaluation, even strong proprietary models achieve below 60% accuracy, while our approach outperforms comparable open-source omni-models.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2609.17248v1",
+        "pdf": "https://arxiv.org/pdf/2609.17248v1"
+      },
+      "arxiv_id": "2609.17248v1",
+      "comment": "Accepted by ECCV2026",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.55,
+      "score_breakdown": {
+        "total_score": 4.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -61,46 +134,110 @@
         }
       },
       "ai_summaries": {
-        "short": "Accurate identification of end-diastole (ED) and end-systole (ES) in echocardiography underpins the quantification of ventricular function, yet manual selection of these key frames is subjective and introduces clinically significant inter-operator variability. Recent self-supervised methods either prescribe strict periodic trajectories or learn an unconstrained low-dimensional motion subspace from...",
+        "short": "Multimodal Large Language Models have demonstrated impressive video understanding, yet their ability to reason over long-form narratives is often masked by visual-centric evaluations and inefficient context processing. Existing benchmarks over-rely on visual heuristics while marginalizing auditory cues, effectively reducing models to \"silent observers\" that bypass genuine cross-modal reasoning. Mo...",
         "key_contributions": [
-          "Accurate identification of end-diastole (ED) and end-systole (ES) in echocardiography underpins the quantification of ventricular function, yet manual selection of these key frames is subjective and introduces clinically significant inter-operator variability.",
-          "Recent self-supervised methods either prescribe strict periodic trajectories or learn an unconstrained low-dimensional motion subspace from reconstruction or registration objectives.",
-          "The former offers interpretability but imposes restrictive assumptions on temporal progression, whereas the latter leaves cardiac phase implicit and ED/ES must be recovered through post-hoc geometric processing of the learned trajectory."
+          "Multimodal Large Language Models have demonstrated impressive video understanding, yet their ability to reason over long-form narratives is often masked by visual-centric evaluations and inefficient context processing.",
+          "Existing benchmarks over-rely on visual heuristics while marginalizing auditory cues, effectively reducing models to \"silent observers\" that bypass genuine cross-modal reasoning.",
+          "Moreover, standard dense sampling creates an evidence-context trade-off: increasing frames to capture evidence inevitably leads to attention distraction and token explosion."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2609.11650v1.mp3"
+        "audio_url": "/audio/2609.17248v1.mp3"
       }
     },
     {
-      "id": "2609.11506v1",
-      "title": "UBone3D: Physics-Rectified Conditional Flow Matching for Anatomical 3D Shape Completion from Ultrasound",
+      "id": "2609.17387v1",
+      "title": "PanoGS-SLAM: Panoramic 3D Gaussian Splatting SLAM",
       "authors": [
-        "Weiying Chen",
-        "Yuchong Gao",
-        "Siyuan Li",
-        "Marek Reformat",
-        "Rui Zheng",
-        "Edmond Lou"
+        "Yongqi Mao",
+        "Hao Shi",
+        "Yufan Zhang",
+        "Zhonghua Yi",
+        "Xiangfei Guo",
+        "Kaiwei Wang"
       ],
-      "abstract": "Three-dimensional ultrasound (US) is a safe, radiation-free complementary modality to CT and X-rays for longitudinal monitoring, yet its segmentation-derived partial point clouds are extremely artifact-laden. Consequently, it is challenging to recover a clean and complete anatomical structure from such US point clouds. In this paper, we present UBone3D, a novel framework based on physics-rectified conditional flow matching (CFM) that performs point cloud completion directly from partial US observations. UBone3D models deterministic physics artifacts (e.g., surface thickening, streaking, dropouts) via a simulated physics proxy, and introduces test-time physics rectification to steer the shape completion. At inference, the completion is jointly steered by two decoupled forces: (1) anatomical plausibility enforced by a CT-trained generative shape prior, BoneFM, and (2) physics consistency enforced by USimNet in the ultrasound formation space. Extensive experiments on simulated and in-vivo data demonstrate significant improvements in reconstruction accuracy and anatomical fidelity over existing baselines.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
+      "abstract": "Real-time dense SLAM is a core capability for robotics applications that require robust localization and high- quality mapping in dynamic or fast-changing environments. Recent 3D Gaussian Splatting (3DGS)-based SLAM methods have shown promising performance, but most are designed for narrow-FoV pinhole cameras, where limited angular coverage weakens pose observability and often leads to unstable photo- metric optimization under rapid motion and large viewpoint changes. We present PanoGS-SLAM, the first panoramic dense SLAM system built on 3D Gaussian Splatting. Our method per- forms differentiable rendering and pose optimization directly in the spherical domain, enabling omnidirectional photometric constraints for more stable tracking. To improve geometric consistency and robustness, we introduce (1) a sphere-consistent photometric loss that compensates for the area distortion of equirectangular projection, and (2) a depth-guided Gaussian initialization strategy that stabilizes incremental mapping in newly observed regions. Extensive experiments on both real and synthetic panoramic benchmarks (PALVIO and SynPano) show that PanoGS-SLAM consistently outperforms geometric and GS-based baselines in tracking accuracy and rendering quality, while achieving fast front-end convergence and real-time perfor- mance. In addition, controlled field-of-view experiments reveal a clear monotonic improvement in optimization conditioning and convergence stability as angular coverage increases, high- lighting the fundamental role of sensing geometry in shaping the optimization landscape of differentiable Gaussian-based SLAM. The source code will be made publicly available.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
       "categories": [
-        "cs.CV",
-        "eess.IV"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.11506v1",
-        "pdf": "https://arxiv.org/pdf/2609.11506v1"
+        "paper": "http://arxiv.org/abs/2609.17387v1",
+        "pdf": "https://arxiv.org/pdf/2609.17387v1"
       },
-      "arxiv_id": "2609.11506v1",
-      "comment": "Accepted to ECCV 2026. Camera-ready Author Version",
+      "arxiv_id": "2609.17387v1",
+      "comment": "",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 4.553389830508475,
+      "relevance_score": 4.177966101694915,
       "score_breakdown": {
-        "total_score": 4.55,
+        "total_score": 4.18,
+        "field_match": {
+          "score": 1.69,
+          "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Real-time dense SLAM is a core capability for robotics applications that require robust localization and high- quality mapping in dynamic or fast-changing environments. Recent 3D Gaussian Splatting (3DGS)-based SLAM methods have shown promising performance, but most are designed for narrow-FoV pinhole cameras, where limited angular coverage weakens pose observability and often leads to unstable ph...",
+        "key_contributions": [
+          "Real-time dense SLAM is a core capability for robotics applications that require robust localization and high- quality mapping in dynamic or fast-changing environments.",
+          "Recent 3D Gaussian Splatting (3DGS)-based SLAM methods have shown promising performance, but most are designed for narrow-FoV pinhole cameras, where limited angular coverage weakens pose observability and often leads to unstable photo- metric optimization under rapid motion and large viewpoint changes.",
+          "We present PanoGS-SLAM, the first panoramic dense SLAM system built on 3D Gaussian Splatting."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2609.17387v1.mp3"
+      }
+    },
+    {
+      "id": "2609.17189v1",
+      "title": "EventEgoHands++: Event-based Egocentric 3D Hand Mesh Reconstruction with Real Dataset",
+      "authors": [
+        "Ryosei Hara",
+        "Wataru Ikeda",
+        "Masashi Hatano",
+        "Mariko Isogawa"
+      ],
+      "abstract": "3D hand mesh reconstruction is a challenging yet essential task for downstream applications, including human-robot interaction and AR/VR. Although conventional cameras have been widely adopted for this task, methods that rely on them struggle in low-light environments and under severe motion blur. To address these limitations, event-based cameras have recently attracted attention for their high dynamic range and high temporal resolution. However, applying event cameras to egocentric hand reconstruction remains challenging because camera wearer's motion produces dense background events that obscure hand-specific signals. Although the first egocentric event-based approach mitigates this issue using hand segmentation, its binary hand mask does not distinguish between left and right hands. As a result, the model lacks instance-level hand information and predicts both hands even when only one or neither hand is present. This limitation leads to incorrect inter-hand relationships and degraded reconstruction accuracy. In this paper, we propose EventEgoHands++, a framework for event-based 3D hand mesh reconstruction from an egocentric viewpoint. The proposed method incorporates a Hand Detector that estimates instance-level bounding boxes and masks for both the left and right hands. Moreover, we introduce Adaptive Attention, which dynamically gates the attention based on these detection results to accurately learn the spatial relationship and mutual interactions between the hands. To train and evaluate our framework, we extend the synthetic N-HOT3D dataset and newly construct EEH-R, the largest real-world event-based egocentric hand dataset to date, comprising approximately 1M annotated frames captured in environments including low-light conditions. Extensive experiments on both synthetic and real datasets demonstrate that our method consistently outperforms the baselines.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2609.17189v1",
+        "pdf": "https://arxiv.org/pdf/2609.17189v1"
+      },
+      "arxiv_id": "2609.17189v1",
+      "comment": "Accepted to IEEE Access. Project Page: https://ryhara.github.io/EventEgoHandsV2/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.153389830508475,
+      "score_breakdown": {
+        "total_score": 4.15,
         "field_match": {
           "score": 0.51,
           "matches": [
@@ -109,8 +246,8 @@
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ECCV",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -118,132 +255,80 @@
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Three-dimensional ultrasound (US) is a safe, radiation-free complementary modality to CT and X-rays for longitudinal monitoring, yet its segmentation-derived partial point clouds are extremely artifact-laden. Consequently, it is challenging to recover a clean and complete anatomical structure from such US point clouds. In this paper, we present UBone3D, a novel framework based on physics-rectified...",
+        "short": "3D hand mesh reconstruction is a challenging yet essential task for downstream applications, including human-robot interaction and AR/VR. Although conventional cameras have been widely adopted for this task, methods that rely on them struggle in low-light environments and under severe motion blur. To address these limitations, event-based cameras have recently attracted attention for their high dy...",
         "key_contributions": [
-          "Three-dimensional ultrasound (US) is a safe, radiation-free complementary modality to CT and X-rays for longitudinal monitoring, yet its segmentation-derived partial point clouds are extremely artifact-laden.",
-          "Consequently, it is challenging to recover a clean and complete anatomical structure from such US point clouds.",
-          "In this paper, we present UBone3D, a novel framework based on physics-rectified conditional flow matching (CFM) that performs point cloud completion directly from partial US observations."
+          "3D hand mesh reconstruction is a challenging yet essential task for downstream applications, including human-robot interaction and AR/VR.",
+          "Although conventional cameras have been widely adopted for this task, methods that rely on them struggle in low-light environments and under severe motion blur.",
+          "To address these limitations, event-based cameras have recently attracted attention for their high dynamic range and high temporal resolution."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2609.11506v1.mp3"
+        "audio_url": "/audio/2609.17189v1.mp3"
       }
     },
     {
-      "id": "2609.11918v1",
-      "title": "General Quantification of Covariate and Concept Shifts",
+      "id": "2609.17523v1",
+      "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
       "authors": [
-        "Hongbo Chen",
-        "Li Charlie Xia"
+        "Shuhan Xue",
+        "Jianyuan Zhong",
+        "Ziyuan Nan",
+        "Wenbin Li",
+        "Zhaochen Yu",
+        "Jinchao Ding",
+        "Qiang Gao",
+        "Pengyu Zhan",
+        "Yuntong Zhang",
+        "Tian Cheng",
+        "Zhenfei Yin",
+        "Yingcheng Wu",
+        "Ling Yang"
       ],
-      "abstract": "Generalization under distribution shift remains a core challenge in modern machine learning, yet existing learning bound theory is limited to narrow, idealized settings and is non-estimable from samples. In this paper, we bridge the gap between theory and practical applications. We first show that existing definition of concept shift breaks when the source and target supports mismatch. Leveraging entropic optimal transport, we propose a key notion: $γ^{*}\\!$-concept shifts, and derive a general error bound unifying covariate and $γ^{*}\\!$-concept shifts, which applies to broad loss functions, label spaces, and stochastic labeling. We further develop estimators for these shifts with concentration guarantees, and the DataShifts algorithm, which can quantify distribution shifts and estimate the error bound in most applications - a rigorous and general tool for analyzing learning error under distribution shift.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
+      "abstract": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning. At its core is recursive-in-recursive self-improvement, a paradigm that couples harness evolution with model reinforcement learning: the inner recursion improves the harness with the model fixed, while the outer recursion trains the model under the improved harness. Harness evolution shapes training experience, and model learning creates new opportunities for harness adaptation. We present case studies of researcher interaction, harness refinement, and model learning, with the benchmark cases spanning four scientific task families. By releasing ScienceBuddy as a research product, we make this paradigm available to the scientific community and take a step toward discovery intelligence: scientific AI that advances through sustained collaboration with researchers and evolves alongside the research it supports. Website: http://science-buddy.io",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
       "categories": [
-        "cs.LG",
         "cs.AI",
-        "stat.ML"
+        "cs.CL"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.11918v1",
-        "pdf": "https://arxiv.org/pdf/2609.11918v1"
+        "paper": "http://arxiv.org/abs/2609.17523v1",
+        "pdf": "https://arxiv.org/pdf/2609.17523v1"
       },
-      "arxiv_id": "2609.11918v1",
-      "comment": "38 pages, 9 figures, accepted at the 43rd International Conference on Machine Learning (ICML 2026)",
+      "arxiv_id": "2609.17523v1",
+      "comment": "Website: http://science-buddy.io, Code: https://github.com/Gen-Verse/ScienceBuddy-RSI",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.300000000000001,
+      "has_code": true,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.3,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 10,
-          "venue": "ICML",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Generalization under distribution shift remains a core challenge in modern machine learning, yet existing learning bound theory is limited to narrow, idealized settings and is non-estimable from samples. In this paper, we bridge the gap between theory and practical applications. We first show that existing definition of concept shift breaks when the source and target supports mismatch. Leveraging ...",
-        "key_contributions": [
-          "Generalization under distribution shift remains a core challenge in modern machine learning, yet existing learning bound theory is limited to narrow, idealized settings and is non-estimable from samples.",
-          "In this paper, we bridge the gap between theory and practical applications.",
-          "We first show that existing definition of concept shift breaks when the source and target supports mismatch."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2609.11918v1.mp3"
-      }
-    },
-    {
-      "id": "2609.11673v1",
-      "title": "Multimodal Taxonomic Conditioning for Generative Plankton Imagery",
-      "authors": [
-        "Daniela Ivanova",
-        "Ozgu Goksu",
-        "Nicolas Pugeault"
-      ],
-      "abstract": "Automated plankton imaging produces severely long-tailed datasets, where the rare taxa of greatest ecological interest have too few images to train or evaluate classifiers reliably. We generate synthetic plankton imagery conditioned on taxonomy: a CLIP encoder is adapted on a large plankton corpus with a ranked contrastive objective extended to deep, ragged taxonomies, then frozen to condition a parameter-efficient diffusion transformer. We evaluate synthetic sample quality on distributional fidelity and downstream classifier utility.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.11673v1",
-        "pdf": "https://arxiv.org/pdf/2609.11673v1"
-      },
-      "arxiv_id": "2609.11673v1",
-      "comment": "European Conference on Computer Vision (ECCV) 2nd Workshop on Marine Vision",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.1,
-      "score_breakdown": {
-        "total_score": 4.1,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ECCV",
-          "weight": 0.25
-        },
-        "citation_potential": {
           "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -252,361 +337,49 @@
         }
       },
       "ai_summaries": {
-        "short": "Automated plankton imaging produces severely long-tailed datasets, where the rare taxa of greatest ecological interest have too few images to train or evaluate classifiers reliably. We generate synthetic plankton imagery conditioned on taxonomy: a CLIP encoder is adapted on a large plankton corpus with a ranked contrastive objective extended to deep, ragged taxonomies, then frozen to condition a p...",
+        "short": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning. At its core is recursive-in-recur...",
         "key_contributions": [
-          "Automated plankton imaging produces severely long-tailed datasets, where the rare taxa of greatest ecological interest have too few images to train or evaluate classifiers reliably.",
-          "We generate synthetic plankton imagery conditioned on taxonomy: a CLIP encoder is adapted on a large plankton corpus with a ranked contrastive objective extended to deep, ragged taxonomies, then frozen to condition a parameter-efficient diffusion transformer.",
-          "We evaluate synthetic sample quality on distributional fidelity and downstream classifier utility."
+          "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows.",
+          "ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning.",
+          "At its core is recursive-in-recursive self-improvement, a paradigm that couples harness evolution with model reinforcement learning: the inner recursion improves the harness with the model fixed, while the outer recursion trains the model under the improved harness."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2609.11673v1.mp3"
+        "audio_url": "/audio/2609.17523v1.mp3"
       }
     },
     {
-      "id": "2609.11804v1",
-      "title": "Logit Refiner: Improving Visual Autoregressive Models via Intra-Scale Dependency Modeling",
+      "id": "2609.17138v1",
+      "title": "From Foundation Embeddings to Cropland Maps: Label Efficiency, Temporal Transferability and Independent Human Validation",
       "authors": [
-        "Meimingwei Li",
-        "Stefan Andreas Baumann",
-        "Felix Krause",
-        "Björn Ommer"
+        "Mohammad Ammar Mughees",
+        "Giovanni Montefoschi",
+        "Zhongxin Chen",
+        "Maria Antonia Brovelli"
       ],
-      "abstract": "Visual Autoregressive Models (VAR) generate images through next-scale prediction, producing all tokens within each scale in parallel. We show that this parallel decoding constitutes a mean-field-style approximation that discards spatial dependencies among same-scale tokens, causing locally incoherent samples regardless of backbone capacity -- a limitation of the decoding rule. Addressing this limitation, we introduce the Logit Refiner, a lightweight autoregressive module that restores intra-scale dependencies by sequentially sampling tokens conditioned on frozen backbone features. Adding only ~10% parameters and less than 5% of the base model's training compute, it plugs into any pretrained VAR checkpoint without retraining. Controlled ablations isolate joint intra-scale sampling -- rather than additional capacity or training -- as the critical ingredient. Across backbones from 310M to 2B parameters on class-conditional ImageNet 256x256, the refiner consistently improves generation quality, enabling a 1.1B-parameter model to surpass one twice its size. The approach further generalizes to text-to-image generation, confirming that the mean-field bottleneck persists across VAR variants and is effectively alleviated by our method.\n  Project page: https://compvis.github.io/logit-refiner/",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
+      "abstract": "Geospatial foundation models provide reusable representations of satellite imagery that support downstream mapping with limited task-specific modelling. We evaluate whether annual AlphaEarth embeddings support binary cultivated-versus-non-cultivated mapping in Maine, USA, using 192 spatially separated patches and labels derived from the USDA Cropland Data Layer (CDL). Without fine-tuning the foundation model, a lightweight classifier reaches 93.7% overall accuracy and 90.8% balanced accuracy on held-out patches. Logistic regression is within 0.3 percentage points of a gradient-boosted ensemble, while a nearest-class-centroid rule, which uses class centroids but fits no parameters, reaches 90.2%. A balanced sample of 60,000 labelled pixels is within 1.3 percentage points of the full pool of 8.6 million pixels; because pixels are spatially autocorrelated, this result concerns pixel-sample efficiency rather than 60,000 independent annotation sites. In a same-region transfer experiment, classifiers trained in one year remain accurate across 2018 to 2023. Against a blind, two-interpreter consensus at 385 randomly sampled points in one contiguous 2023 block, the AlphaEarth-plus-random-forest map agrees at 95.3% ($κ=0.82$), compared with 91.7% for the CDL ($κ=0.72$; exact two-sided McNemar $p=0.0161$). This local result is consistent with partial smoothing of CDL label noise, but it does not establish statewide correction of the reference product. On the same points, the difference from a fine-tuned TerraMind segmentation model is not statistically significant (95.3% versus 93.5%; $p=0.14$), and the experiment is not a controlled comparison of computational cost. These results support frozen geospatial embeddings as a low-compute candidate for regional cropland mapping, subject to the limits of a single-state study, a 30 m-derived training reference, and a one-block human validation.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
       "categories": [
         "cs.CV",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.11804v1",
-        "pdf": "https://arxiv.org/pdf/2609.11804v1"
-      },
-      "arxiv_id": "2609.11804v1",
-      "comment": "ECCV 2026",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.05,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 10,
-          "venue": "ECCV",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Visual Autoregressive Models (VAR) generate images through next-scale prediction, producing all tokens within each scale in parallel. We show that this parallel decoding constitutes a mean-field-style approximation that discards spatial dependencies among same-scale tokens, causing locally incoherent samples regardless of backbone capacity -- a limitation of the decoding rule. Addressing this limi...",
-        "key_contributions": [
-          "Visual Autoregressive Models (VAR) generate images through next-scale prediction, producing all tokens within each scale in parallel.",
-          "We show that this parallel decoding constitutes a mean-field-style approximation that discards spatial dependencies among same-scale tokens, causing locally incoherent samples regardless of backbone capacity -- a limitation of the decoding rule.",
-          "Addressing this limitation, we introduce the Logit Refiner, a lightweight autoregressive module that restores intra-scale dependencies by sequentially sampling tokens conditioned on frozen backbone features."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2609.11804v1.mp3"
-      }
-    },
-    {
-      "id": "2609.11929v1",
-      "title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
-      "authors": [
-        "Haiwen Diao",
-        "Jiahao Wang",
-        "Chenjing Ding",
-        "Hanming Deng",
-        "Jiangnan Chen",
-        "Ruixi Zhang",
-        "Ruohui Wang",
-        "Wenwen Tong",
-        "Xiangyu Fan",
-        "Yubo Wang",
-        "Yue Zhu",
-        "Yuwei Niu",
-        "Zhengqi Bai",
-        "Zhiqian Lin",
-        "Zhitao Yang",
-        "Zhongang Cai",
-        "Bo Yang",
-        "Chen Feng",
-        "Chengguang Lv",
-        "Guangjia Liu",
-        "Guanlin Wang",
-        "Hanyu Zhang",
-        "Haojia Yu",
-        "Hongcan Xiao",
-        "Hongli Wang",
-        "Huan Wu",
-        "Huaping Zhong",
-        "Jian Fang",
-        "Jianan Fan",
-        "Jiaqi Li",
-        "Jiefan Lu",
-        "Jing Zuo",
-        "Jingcheng Ni",
-        "Junxiang Xu",
-        "Linjun Dai",
-        "Mutian Xu",
-        "Peishen Yan",
-        "Penghao Wu",
-        "Ruijie Mao",
-        "Ruisi Wang",
-        "Shihao Bai",
-        "Shuang Yang",
-        "Shuya Yang",
-        "Shuyan Zheng",
-        "Silei Wu",
-        "Siying Li",
-        "Tao Chu",
-        "Tianbo Zhong",
-        "Tongxi Zhou",
-        "Weichao Luo",
-        "Weichen Fan",
-        "Wenhao Jia",
-        "Wenjie Gao",
-        "Xiangli Kong",
-        "Yan Li",
-        "Yang Yong",
-        "Zimo Wen",
-        "Zixuan Qian",
-        "Wenxiu Sun",
-        "Ruihao Gong",
-        "Quan Wang",
-        "Lewei Lu",
-        "Lei Yang",
-        "Ziwei Liu",
-        "Dahua Lin"
-      ],
-      "abstract": "We launch SenseNova-U1.5, an 8B-MoT native unified multimodal model that understands, reasons about, and generates visual content within an encoder-free and VAE-free architecture. We strengthen its visual interface through spatially coherent patch reconstruction and scale its training with carefully curated generation and editing data, improved task formulation, structural prompt enhancement, and native resolutions of up to 4K. For post-training, we optimize specialized experts for visual aesthetics, bilingual text rendering, infographic generation, and image editing, and consolidate their capabilities through multi-expert on-policy distillation. Across extensive evaluations, SenseNova-U1.5 largely advances image fidelity, text rendering, complex composition, multi-reference editing, and interleaved generation, while improving instruction following and preserving subject identity, geometry, and unmodified regions. Despite limited exposure to structured formats in its generation data, SenseNova-U1.5 generalizes effectively to long, complex, and structured visual instructions, further proving that multimodal understanding can transfer to visual planning and creation. Together, these findings position native unified modelling as a promising path towards systems that perceive, reason and create within a fully end-to-end framework. We will open-source training code, including supervised fine-tuning, reinforcement learning, and on-policy distillation.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.11929v1",
-        "pdf": "https://arxiv.org/pdf/2609.11929v1"
-      },
-      "arxiv_id": "2609.11929v1",
-      "comment": "Project page: https://github.com/OpenSenseNova/SenseNova-U1",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8,
-      "score_breakdown": {
-        "total_score": 3.8,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We launch SenseNova-U1.5, an 8B-MoT native unified multimodal model that understands, reasons about, and generates visual content within an encoder-free and VAE-free architecture. We strengthen its visual interface through spatially coherent patch reconstruction and scale its training with carefully curated generation and editing data, improved task formulation, structural prompt enhancement, and ...",
-        "key_contributions": [
-          "We launch SenseNova-U1.",
-          "5, an 8B-MoT native unified multimodal model that understands, reasons about, and generates visual content within an encoder-free and VAE-free architecture.",
-          "We strengthen its visual interface through spatially coherent patch reconstruction and scale its training with carefully curated generation and editing data, improved task formulation, structural prompt enhancement, and native resolutions of up to 4K."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2609.11929v1.mp3"
-      }
-    },
-    {
-      "id": "2609.11717v1",
-      "title": "MC-DeTra: Motion-Consistent Joint Object Detection and Socially-Aware Trajectory Forecasting in Bird's-Eye-View Images",
-      "authors": [
-        "Vladislav Diuzhev",
-        "Dmitry Yudin"
-      ],
-      "abstract": "Unified models for object detection and trajectory forecasting aim to merge perception and prediction for autonomous driving, refining actor trajectories directly over shared bird's-eye-view (BEV) images rasterized from LiDAR and high-definition maps. Their accuracy on dynamic, moving actors, however, remains the hardest part of the task, and the strongest such model, DeTra, has no public implementation. We contribute an openly released DeTra reimplementation with documented approximations, and on top of it MC-DeTra: a family of motion-consistency mechanisms that add supervision through two annotation-derived auxiliary signals -- each actor's observed past motion and the occupancy of the surrounding traffic that forms its social context -- and one inter-output consistency constraint that aligns an actor's predicted heading with its predicted direction of motion. Every proposed loss is train-only and inference-safe: it shapes the shared BEV representation during training and is removed at test time, adding no inference latency. On the Waymo Open Dataset, evaluated under a strict, detection-conditioned forecasting protocol, MC-DeTra improves dynamic, socially-situated trajectory forecasting while preserving or improving detection accuracy; a gradient-based loss-calibration analysis exposes how the auxiliary objectives compete at the shared backbone, and our ablation identifies which signals contribute most. We release code, configurations, and evaluation tooling at https://github.com/diuzhevVlad/MC-DeTra.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.11717v1",
-        "pdf": "https://arxiv.org/pdf/2609.11717v1"
-      },
-      "arxiv_id": "2609.11717v1",
-      "comment": "16 pages, 4 figures. Code: https://github.com/diuzhevVlad/MC-DeTra",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.75,
-      "score_breakdown": {
-        "total_score": 3.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Unified models for object detection and trajectory forecasting aim to merge perception and prediction for autonomous driving, refining actor trajectories directly over shared bird's-eye-view (BEV) images rasterized from LiDAR and high-definition maps. Their accuracy on dynamic, moving actors, however, remains the hardest part of the task, and the strongest such model, DeTra, has no public implemen...",
-        "key_contributions": [
-          "Unified models for object detection and trajectory forecasting aim to merge perception and prediction for autonomous driving, refining actor trajectories directly over shared bird's-eye-view (BEV) images rasterized from LiDAR and high-definition maps.",
-          "Their accuracy on dynamic, moving actors, however, remains the hardest part of the task, and the strongest such model, DeTra, has no public implementation.",
-          "We contribute an openly released DeTra reimplementation with documented approximations, and on top of it MC-DeTra: a family of motion-consistency mechanisms that add supervision through two annotation-derived auxiliary signals -- each actor's observed past motion and the occupancy of the surrounding traffic that forms its social context -- and one inter-output consistency constraint that aligns an actor's predicted heading with its predicted direction of motion."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2609.11717v1.mp3"
-      }
-    },
-    {
-      "id": "2609.11504v1",
-      "title": "DeFiFlowBench: Benchmarking and Improving Safe Executability in Natural-Language DeFi Workflow Synthesis",
-      "authors": [
-        "Abhinav Rajeev Kumar",
-        "Harshit Arora",
-        "Varun Singh",
-        "Manikandan Nanjappan"
-      ],
-      "abstract": "A structurally valid DeFi workflow can still authorize a costly trade. We introduce DeFiFlowBench, a benchmark of 207 team-authored prompts for natural-language DeFi workflow synthesis. It measures graph coverage, configuration completeness, and declared safety predicates, then tests supported trade configurations on a local EVM. Direct, constrained, and few-shot prompting produce 14-19 unsafe held-out executions per configuration under a fixed 5% price-impact cap. A slippage bound derived from a quote does not prevent the price impact of the order itself. We propose Koan-Safe, which combines a prompt-only intent parser, a replaceable generator, and structural repair with default safety parameters. On 75 held-out workflow prompts, its hybrid variant scores 0.67 on the static safety proxy, compared with 0.33 for the best baseline. Koan-Safe records no unsafe executions on the saved benchmark outputs. A matched-candidate ablation produces 14-17 unsafe executions when enforcement is disabled. Additional tests expose the limits of default injection: permissive existing thresholds can still authorize unsafe trades. A separately evaluated policy cap addresses this failure on a 36-case diagnostic grid. These results support explicit trade protections and execution-based evaluation, while distinguishing declared safety from a general guarantee.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
-      "categories": [
         "cs.LG",
-        "cs.SE"
+        "eess.IV"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.11504v1",
-        "pdf": "https://arxiv.org/pdf/2609.11504v1"
+        "paper": "http://arxiv.org/abs/2609.17138v1",
+        "pdf": "https://arxiv.org/pdf/2609.17138v1"
       },
-      "arxiv_id": "2609.11504v1",
-      "comment": "Code and benchmark: https://github.com/Varun-2538/Koan",
+      "arxiv_id": "2609.17138v1",
+      "comment": "23 pages, 10 figures. Code: https://github.com/Black-Lights/alphaearth-cropland-maine",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.7,
+      "relevance_score": 3.7033898305084745,
       "score_breakdown": {
         "total_score": 3.7,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "A structurally valid DeFi workflow can still authorize a costly trade. We introduce DeFiFlowBench, a benchmark of 207 team-authored prompts for natural-language DeFi workflow synthesis. It measures graph coverage, configuration completeness, and declared safety predicates, then tests supported trade configurations on a local EVM. Direct, constrained, and few-shot prompting produce 14-19 unsafe hel...",
-        "key_contributions": [
-          "A structurally valid DeFi workflow can still authorize a costly trade.",
-          "We introduce DeFiFlowBench, a benchmark of 207 team-authored prompts for natural-language DeFi workflow synthesis.",
-          "It measures graph coverage, configuration completeness, and declared safety predicates, then tests supported trade configurations on a local EVM."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2609.11504v1.mp3"
-      }
-    },
-    {
-      "id": "2609.11894v1",
-      "title": "3D Point Splatting for mmWave Radar Novel View Synthesis",
-      "authors": [
-        "Adnan Armouti",
-        "Yixuan Gao",
-        "Rajalakshmi Nandakumar"
-      ],
-      "abstract": "Solving novel view synthesis (NVS) for millimeter-wave (mmWave) radar requires a renderer that is physically faithful, complex-valued, and multi-viewpoint-tractable. No prior method achieves these three properties simultaneously. Differentiable Monte Carlo (MC) ray tracers implement the radar forward model directly with explicit material modeling and complex outputs, but do not scale to the multi-view optimization NVS demands. Optical-NVS ports of NeRF, hash grids, and 3D Gaussians train fast but discard phase and replace explicit material modeling with opaque learned features, restricting them to power-only range-azimuth (RA) magnitudes. We propose 3D Point Splatting (3DPS), the first differentiable point renderer for radar, derived directly from the standard solid-angle form of the radar equation. Each oriented 3D point carries an ITU-R P.2040 material model, evaluated in closed form, with the resulting complex phasor splatted into range bins through a precomputed point spread function (PSF). The complex-valued output makes the renderer product-agnostic. The same optimized scene yields analog-to-digital converter (ADC), complex range profile (CRP), and RA outputs through standard fast Fourier transform (FFT) pipelines without retraining for each format. On six outdoor ColoRadar scenes, 3DPS reaches 0.587 mean Pearson correlation on held-out RA images. This is between 1.7x and 5.2x the three optical-NVS baselines (RadarSplat, Radar Fields, DART). Training takes approximately 3 minutes per scene on a single RTX 4090.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
-      "categories": [
-        "cs.CV",
-        "cs.GR",
-        "cs.LG",
-        "eess.SP"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.11894v1",
-        "pdf": "https://arxiv.org/pdf/2609.11894v1"
-      },
-      "arxiv_id": "2609.11894v1",
-      "comment": "Under Review",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.676271186440678,
-      "score_breakdown": {
-        "total_score": 3.68,
-        "field_match": {
-          "score": 1.44,
+          "score": 0.51,
           "matches": [
-            "3d gaussian",
-            "nerf"
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -616,68 +389,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
           "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Solving novel view synthesis (NVS) for millimeter-wave (mmWave) radar requires a renderer that is physically faithful, complex-valued, and multi-viewpoint-tractable. No prior method achieves these three properties simultaneously. Differentiable Monte Carlo (MC) ray tracers implement the radar forward model directly with explicit material modeling and complex outputs, but do not scale to the multi-...",
-        "key_contributions": [
-          "Solving novel view synthesis (NVS) for millimeter-wave (mmWave) radar requires a renderer that is physically faithful, complex-valued, and multi-viewpoint-tractable.",
-          "No prior method achieves these three properties simultaneously.",
-          "Differentiable Monte Carlo (MC) ray tracers implement the radar forward model directly with explicit material modeling and complex outputs, but do not scale to the multi-view optimization NVS demands."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2609.11894v1.mp3"
-      }
-    },
-    {
-      "id": "2609.11548v1",
-      "title": "World in World: Explore the World with World Models",
-      "authors": [
-        "Chenxi Song",
-        "Yanming Yang",
-        "Chi Zhang"
-      ],
-      "abstract": "Autoregressive video world models enable interactive, long-horizon exploration, but flexible control remains challenging. Exploring a source video from new viewpoints requires the generated rollout to remain synchronised with the recorded event, place observed content in the requested view, plausibly complete newly exposed regions, and recover previously generated appearance on revisits. Existing methods typically address these requirements through task-specific modules or additional training. We present World in World, a training-free inference-time interface that converts heterogeneous control evidence into camera- and time-labelled clean visual states, which are read through the native self attention of a frozen causal video model. The evidence comprises source-video observations, target-view scene projections, geometry renderings that guide completion of newly exposed subject regions, and retrieved generated states beyond the rolling cache. Each evidence source carries token-level support and its own availability schedule. A correspondence router combines persistent point identities with geometry to establish token correspondences, guiding supported queries towards matching source-video tokens. Evidence-wise attention CFG (EWA) then independently regulates each auxiliary channel's additional contribution using attention responses from the same denoising forward pass. The shared interface supports camera-controlled rerendering, long-horizon revisiting, and human-motion transfer with the same frozen backbone. We evaluate World in World on camera-controlled video rerendering under diverse viewpoint changes, assessing perceptual quality, temporal consistency, and camera-following accuracy.",
-      "published": "2026-09-10",
-      "updated": "2026-09-10",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.11548v1",
-        "pdf": "https://arxiv.org/pdf/2609.11548v1"
-      },
-      "arxiv_id": "2609.11548v1",
-      "comment": "Project Page: https://chenxi-song.github.io/worldinworld",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.65,
-      "score_breakdown": {
-        "total_score": 3.65,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -691,14 +403,279 @@
         }
       },
       "ai_summaries": {
-        "short": "Autoregressive video world models enable interactive, long-horizon exploration, but flexible control remains challenging. Exploring a source video from new viewpoints requires the generated rollout to remain synchronised with the recorded event, place observed content in the requested view, plausibly complete newly exposed regions, and recover previously generated appearance on revisits. Existing ...",
+        "short": "Geospatial foundation models provide reusable representations of satellite imagery that support downstream mapping with limited task-specific modelling. We evaluate whether annual AlphaEarth embeddings support binary cultivated-versus-non-cultivated mapping in Maine, USA, using 192 spatially separated patches and labels derived from the USDA Cropland Data Layer (CDL). Without fine-tuning the found...",
         "key_contributions": [
-          "Autoregressive video world models enable interactive, long-horizon exploration, but flexible control remains challenging.",
-          "Exploring a source video from new viewpoints requires the generated rollout to remain synchronised with the recorded event, place observed content in the requested view, plausibly complete newly exposed regions, and recover previously generated appearance on revisits.",
-          "Existing methods typically address these requirements through task-specific modules or additional training."
+          "Geospatial foundation models provide reusable representations of satellite imagery that support downstream mapping with limited task-specific modelling.",
+          "We evaluate whether annual AlphaEarth embeddings support binary cultivated-versus-non-cultivated mapping in Maine, USA, using 192 spatially separated patches and labels derived from the USDA Cropland Data Layer (CDL).",
+          "Without fine-tuning the foundation model, a lightweight classifier reaches 93."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2609.11548v1.mp3"
+        "audio_url": "/audio/2609.17138v1.mp3"
+      }
+    },
+    {
+      "id": "2609.17413v1",
+      "title": "SSC-Priors: Exploring Semantic and Visibility Priors to Boost Lidar Semantic Scene Completion",
+      "authors": [
+        "Tetiana Martyniuk",
+        "Jonathan Seele",
+        "Alexandre Boulch",
+        "Gilles Puy",
+        "Renaud Marlet",
+        "Raoul de Charette"
+      ],
+      "abstract": "This paper investigates easy strategies to boost the performance of existing networks for lidar semantic scene completion (SSC) without requiring complex architectural redesigns. The fact is that, over the last years, SSC methods have mostly pursued architectural innovations, making the models heavier and more complex, e.g., by jointly training a point cloud semantic segmentation branch. In this work, we take a step back and explore two priors used as simple ingredients (possibly noisy) to improve existing approaches: semantic pseudo-labels and sensor visibility information. Concretely, we provide both kinds of information directly as additional inputs to a given SSC network, requiring only a minimal adaptation of the original architecture. We first demonstrate that endowing input point clouds with semantic pseudo-labels from off-the-shelf segmenters significantly improves the performance of existing SSC models. In fact, by evaluating these models against an oracle, we establish that high-quality semantic priors are a primary driver of semantic gains (mIoU), and that the SSC model can be trained just once with ground-truth semantics and then exploited without retraining using any segmenter. Furthermore, we equip the input lidar point cloud with visibility information that distinguishes between empty spaces (between the lidar and a scanned point) and unknown spaces (outside of lines of sight), providing a secondary performance boost across the tested architectures. We study the design space of data for representing visibility information and bound the remaining headroom with a ground-truth oracle on the free-space labels. On SemanticKITTI, these enhancements make older models competitive with state-of-the-art systems across four architectures, in one case even outperforming them. On the SSCBench-nuScenes benchmark, both priors also transfer with the sparser 32-beam sensor.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2609.17413v1",
+        "pdf": "https://arxiv.org/pdf/2609.17413v1"
+      },
+      "arxiv_id": "2609.17413v1",
+      "comment": "Extended version of arXiv:2606.03992",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.653389830508474,
+      "score_breakdown": {
+        "total_score": 3.65,
+        "field_match": {
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "This paper investigates easy strategies to boost the performance of existing networks for lidar semantic scene completion (SSC) without requiring complex architectural redesigns. The fact is that, over the last years, SSC methods have mostly pursued architectural innovations, making the models heavier and more complex, e.g., by jointly training a point cloud semantic segmentation branch. In this w...",
+        "key_contributions": [
+          "This paper investigates easy strategies to boost the performance of existing networks for lidar semantic scene completion (SSC) without requiring complex architectural redesigns.",
+          "The fact is that, over the last years, SSC methods have mostly pursued architectural innovations, making the models heavier and more complex, e.",
+          "g."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2609.17413v1.mp3"
+      }
+    },
+    {
+      "id": "2609.17169v1",
+      "title": "MUMINS: Metadata-conditioned Uncertainty-aware Medical Image Next-state Synthesis",
+      "authors": [
+        "Anna Oliveras",
+        "Roger Marí",
+        "Rafael Redondo",
+        "Oriol Guardià",
+        "Cynthia Ifeyinwa Ugwu",
+        "Ana Tost",
+        "Bhalaji Nagarajan",
+        "Carolina Migliorelli",
+        "Vicent Ribas",
+        "Petia Radeva"
+      ],
+      "abstract": "Forecasting anatomical changes such as tumor growth and neurodegeneration is a challenging generative vision task. Morphological evolution is subtle relative to static anatomy, highly patient-specific, and inherently stochastic. Existing methods struggle with several issues: deterministic networks ignore biological stochasticity, while standard diffusion models require computationally prohibitive multi-pass sampling to quantify uncertainty. We propose MUMINS (Metadata-conditioned Uncertainty-aware Medical Image Next-state Synthesis), an efficient diffusion framework that jointly diffuses a baseline scan and its follow-up residual, summed to synthesize the follow-up scan, while concurrently predicting a spatial uncertainty map, in a single reverse diffusion process. Conditioned on the time interval and relevant metadata, it preserves fine-grained anatomy by dynamically re-injecting the baseline as a soft anchor at every denoising step, and a negative-log-likelihood head learns the uncertainty map to explicitly flag error-prone regions. Designed without organ-specific heuristics, the same architecture is reused across anatomies via separate, dataset-specific retraining. Extensive evaluations demonstrate that dataset-specific retraining of MUMINS matches or outperforms dedicated, domain-specific state-of-the-art methods on lung CT (PNG) and brain MRI (OASIS-3). Project page: https://github.com/aolivtous/MUMINS.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2609.17169v1",
+        "pdf": "https://arxiv.org/pdf/2609.17169v1"
+      },
+      "arxiv_id": "2609.17169v1",
+      "comment": "Supplementary material to follow in future versions",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.6050847457627118,
+      "score_breakdown": {
+        "total_score": 3.61,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "medical image"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Forecasting anatomical changes such as tumor growth and neurodegeneration is a challenging generative vision task. Morphological evolution is subtle relative to static anatomy, highly patient-specific, and inherently stochastic. Existing methods struggle with several issues: deterministic networks ignore biological stochasticity, while standard diffusion models require computationally prohibitive ...",
+        "key_contributions": [
+          "Forecasting anatomical changes such as tumor growth and neurodegeneration is a challenging generative vision task.",
+          "Morphological evolution is subtle relative to static anatomy, highly patient-specific, and inherently stochastic.",
+          "Existing methods struggle with several issues: deterministic networks ignore biological stochasticity, while standard diffusion models require computationally prohibitive multi-pass sampling to quantify uncertainty."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2609.17169v1.mp3"
+      }
+    },
+    {
+      "id": "2609.17414v1",
+      "title": "SlotDiT: Object-Centric Representations for Diffusion Transformers",
+      "authors": [
+        "Gjergj Plepi",
+        "Sven Behnke"
+      ],
+      "abstract": "Text-conditioned latent diffusion models perform strongly in video generation and are promising backbones for robotic applications. However, existing approaches rely on pixel-level or VAE-based latent representations that lack explicit semantic structure, leaving the impact of the representation space largely unexplored. Slot-based object-centric representations offer a structured alternative by decomposing scenes into object-level latents, or slots. While they have shown success in dynamics modeling and planning, they have not yet been explored for diffusion-based generative modeling. We introduce SlotDiT, a text-guided Diffusion Transformer (DiT) that operates in a slot-based latent space. Given a reference image and a language instruction, SlotDiT decomposes the scene into object-centric slots representing individual entities. Conditioned on the instruction and observed scene context, the model autoregressively denoises future slot trajectories to predict scene dynamics. To systematically investigate latent-space design for diffusion transformers, we compare slot-based representations against VAE-based and semantics-aligned alternatives within a unified DiT framework. Our experiments show that using slots as DiT latents yields competitive video generation quality while consistently improving task-completion rates across four robotic datasets. Furthermore, their compact representation provides a computationally efficient alternative to VAE-based and semantics-aligned latent spaces. Overall, our results demonstrate that object-centric structure is a powerful inductive bias for diffusion-based generative modeling in robotic environments. The project page is available at https://slot-dit.github.io/.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2609.17414v1",
+        "pdf": "https://arxiv.org/pdf/2609.17414v1"
+      },
+      "arxiv_id": "2609.17414v1",
+      "comment": "Accepted at BMVC 2026. Project page: https://slot-dit.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.6,
+      "score_breakdown": {
+        "total_score": 3.6,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 5.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Text-conditioned latent diffusion models perform strongly in video generation and are promising backbones for robotic applications. However, existing approaches rely on pixel-level or VAE-based latent representations that lack explicit semantic structure, leaving the impact of the representation space largely unexplored. Slot-based object-centric representations offer a structured alternative by d...",
+        "key_contributions": [
+          "Text-conditioned latent diffusion models perform strongly in video generation and are promising backbones for robotic applications.",
+          "However, existing approaches rely on pixel-level or VAE-based latent representations that lack explicit semantic structure, leaving the impact of the representation space largely unexplored.",
+          "Slot-based object-centric representations offer a structured alternative by decomposing scenes into object-level latents, or slots."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2609.17414v1.mp3"
+      }
+    },
+    {
+      "id": "2609.17291v1",
+      "title": "Extracting ontology-compliant knowledge from scientific text describing irradiated materials using large language models",
+      "authors": [
+        "Marco Luca Sbodio",
+        "Marcos Martínez Galindo",
+        "Vanessa Lopez",
+        "Blanca Biel",
+        "Pablo Canca",
+        "Pedro Delgado",
+        "Jesús I. Mendieta-Moreno",
+        "Raphael Tack",
+        "Maria J. Caturla"
+      ],
+      "abstract": "The quest for new materials increasingly relies on predictive models and comprehensive simulations that span scales from atomic to macroscopic levels. However, essential data necessary for these models and simulations are often embedded in scientific literature as unstructured text, limiting reusability and posing challenges for researchers seeking to leverage existing knowledge effectively. While extracting structured data from unstructured text using large language models is gaining popularity, traditional methods typically generate key-value pairs data with straightforward schemas. In contrast, we introduce eolas, a modular pipeline that uses large language models to automatically transform scientific documents into knowledge graphs aligned with a specified ontology. We demonstrate eolas effectiveness in extracting useful information for scientists studying materials designed to endure the extreme temperatures and radiation levels found in fusion reactors. While a human expert might spend between thirty to ninety minutes extracting relevant data from an article, eolas can generate high-quality knowledge graphs in just a few minutes. These are presented in a tabular format with faceted navigation for easy human validation. Additionally, we introduce the first benchmark dataset designed to assess large language models capabilities in constructing knowledge graphs within the domain of irradiated materials. The analysis of 168 experiments using our dataset, various large language models and prompting techniques provides key insights that we summarize into practical guidelines for effectively extracting knowledge graphs aligned with an input ontology.",
+      "published": "2026-09-15",
+      "updated": "2026-09-15",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "links": {
+        "paper": "http://arxiv.org/abs/2609.17291v1",
+        "pdf": "https://arxiv.org/pdf/2609.17291v1"
+      },
+      "arxiv_id": "2609.17291v1",
+      "comment": "",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.5499999999999994,
+      "score_breakdown": {
+        "total_score": 3.55,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The quest for new materials increasingly relies on predictive models and comprehensive simulations that span scales from atomic to macroscopic levels. However, essential data necessary for these models and simulations are often embedded in scientific literature as unstructured text, limiting reusability and posing challenges for researchers seeking to leverage existing knowledge effectively. While...",
+        "key_contributions": [
+          "The quest for new materials increasingly relies on predictive models and comprehensive simulations that span scales from atomic to macroscopic levels.",
+          "However, essential data necessary for these models and simulations are often embedded in scientific literature as unstructured text, limiting reusability and posing challenges for researchers seeking to leverage existing knowledge effectively.",
+          "While extracting structured data from unstructured text using large language models is gaining popularity, traditional methods typically generate key-value pairs data with straightforward schemas."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2609.17291v1.mp3"
       }
     }
   ]

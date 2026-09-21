@@ -1,62 +1,50 @@
 ---
 title: 'MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning'
-
 authors:
-  - admin
-  - Fenghe Tang
-  - Yingtai Li
-  - Lixia Han
-  - Jian Lu
-  - Zihang Jiang
-  - S. Kevin Zhou
-
-date: '2026-02-01T00:00:00Z'
+- admin
+- Fenghe Tang
+- Rongsheng Wang
+- Yingtai Li
+- Lixia Han
+- Jian Lu
+- Zihang Jiang
+- S. Kevin Zhou
+author_notes:
+- Equal contribution
+- Equal contribution
+- ''
+- ''
+- ''
+- ''
+- Corresponding author
+- Corresponding author
+date: '2026-01-01T00:00:00Z'
+publishDate: '2026-01-01T00:00:00Z'
+date_precision: year
+publication_year: 2026
 doi: ''
-
-publishDate: '2026-02-01T00:00:00Z'
-
-publication_types: ['1']
-
-publication: 'AAAI Conference on Artificial Intelligence (Under Review)'
-publication_short: 'AAAI 2026 (Under Review)'
-
-abstract: 'Voxel-level masked reconstruction pre-training suffers from anatomical discontinuity and parameter inefficiency in medical 3D data. We propose MedGMAE, the first work to introduce 3D Gaussian representations into medical image self-supervised pre-training, achieving continuous and parameter-efficient representation. We design a hierarchical residual structure for coarse-to-fine reconstruction and implement sparse masked CUDA volumetric rendering acceleration. Our pre-trained Gaussian decoder demonstrates zero-shot capabilities and accelerates 3DGS-based CT reconstruction convergence by 1.39×, while reducing parameters by 99% compared to voxel-based methods.'
-
-summary: 'First work introducing 3D Gaussian representations into medical image self-supervised pre-training with 99% parameter reduction and superior downstream task performance.'
-
-tags:
-  - Self-supervised Learning
-  - 3D Gaussian Representation
-  - Medical Imaging
-  - Masked Autoencoder
-
+publication_types:
+- '1'
+publication: International Conference on Learning Representations (ICLR 2026)
+publication_short: ICLR 2026
+publication_status: Published
+abstract: Gaussian masked autoencoding for self-supervised learning from medical volumes, using a hierarchical residual
+  Gaussian decoder and sparse CUDA volume rendering.
+summary: Gaussian masked autoencoding for self-supervised learning from medical volumes, using a hierarchical residual
+  Gaussian decoder and sparse CUDA volume rendering.
 featured: true
-
-url_pdf: ''
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
-
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
-
-projects: []
-slides: ""
+url_source: https://iclr.cc/virtual/2026/poster/10008844
+url_pdf: https://openreview.net/pdf?id=Z2XIRLv535
+url_code: https://github.com/windrise/MedGMAE
+tags:
+- Representation Learning
+date_format: '2006'
 ---
 
-**Key Contributions:**
+Gaussian masked autoencoding for self-supervised learning from medical volumes, using a hierarchical residual Gaussian decoder and sparse CUDA volume rendering.
 
-- **Novel Representation**: First work to introduce 3D Gaussian representations into medical image self-supervised pre-training
-- **Parameter Efficiency**: 99% parameter reduction compared to voxel-based methods
-- **Hierarchical Architecture**: Coarse-to-fine reconstruction with hierarchical residual structure
-- **Computational Efficiency**: Sparse masked CUDA volumetric rendering acceleration
-- **Superior Performance**: Outperforms SOTA methods on downstream tasks (segmentation, registration, classification)
-- **Zero-shot Capability**: Pre-trained Gaussian decoder accelerates 3DGS-based CT reconstruction 1.39× faster
+**Published in:** International Conference on Learning Representations (ICLR 2026).
 
-**Research Challenge**: Voxel-level masked reconstruction pre-training in medical 3D data suffers from anatomical discontinuity and parameter inefficiency.
+**Equal contribution:** Xueming Fu, Fenghe Tang.
+
+**Corresponding authors:** Zihang Jiang, S. Kevin Zhou.

@@ -265,6 +265,22 @@ class StreamingTests(unittest.TestCase):
             self.assertNotIn("private", str(caught.exception))
             self.assertEqual(len(self.opener.requests), 1)
 
+    def test_only_observed_upstream_error_envelope_is_fallback_eligible(self):
+        upstream = {"error": {"type": "upstream_error", "code": "upstream_error",
+                              "message": "private", "param": None, "responseText": "private"}}
+        with self.assertRaises(review.ProviderUnavailable) as caught:
+            self.request(sse(upstream))
+        self.assertNotIn("private", str(caught.exception))
+        invalid = [{"error": "upstream_error"},
+                   {"error": {"type": "upstream_error", "code": "unknown"}},
+                   {"error": {"type": "unknown", "code": "upstream_error"}},
+                   {"error": {"type": "invalid_request_error", "code": "invalid_api_key"}},
+                   {**upstream, "choices": []}]
+        for envelope in invalid:
+            with self.subTest(envelope=envelope), self.assertRaises(review.ReviewError) as caught:
+                self.request(sse(envelope))
+            self.assertNotIsInstance(caught.exception, review.ProviderUnavailable)
+
     def test_interrupted_stream_is_not_retried_after_partial_text(self):
         class InterruptedStream(BytesIO):
             def readline(self, size=-1):
@@ -480,6 +496,28 @@ class FallbackTests(unittest.TestCase):
         result = review.model_review(api, self.config, "diff")
         self.assertEqual(result, ("备用审查", self.config.fallback_model))
         self.assertEqual(len(self.opener.requests), 2)
+
+    def test_http_200_upstream_error_discards_partial_text_and_uses_fallback(self):
+        upstream = {"error": {"type": "upstream_error", "code": "upstream_error", "param": None,
+                              "message": ENV["AMD_API_KEY"], "responseText": ENV["GITHUB_TOKEN"]}}
+        for prefix in ([], [event("private partial primary text")]):
+            api = self.api(sse(*prefix, upstream), sse(event("备用审查", "stop")))
+            output = StringIO()
+            with self.subTest(partial=bool(prefix)), redirect_stdout(output):
+                result = review.model_review(api, self.config, "diff")
+            self.assertEqual(result, ("备用审查", self.config.fallback_model))
+            self.assertEqual(len(self.opener.requests), 2)
+            self.sleep.assert_not_called()  # Never replay a started model stream.
+            for secret in (ENV["AMD_API_KEY"], ENV["GITHUB_TOKEN"], "private"):
+                self.assertNotIn(secret, output.getvalue())
+
+    def test_unknown_stream_error_never_falls_back(self):
+        api = self.api(sse({"error": {"type": "unknown", "code": "unknown", "message": "private"}}),
+                       sse(event("unused", "stop")))
+        with self.assertRaises(review.ReviewError) as caught:
+            review.model_review(api, self.config, "diff")
+        self.assertNotIsInstance(caught.exception, review.ProviderUnavailable)
+        self.assertEqual(len(self.opener.requests), 1)
 
     def test_invalid_or_incomplete_streams_never_start_fallback(self):
         invalid = [b"data: private-invalid-json\n\n", sse(event("partial", "length")),

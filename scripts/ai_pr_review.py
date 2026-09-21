@@ -214,7 +214,15 @@ def read_sse(response, deadline, monotonic):
             return {"choices": [{"finish_reason": "stop", "message": {"content": "".join(chunks)}}]}
         try:
             event = json.loads(data)
-            if not isinstance(event, dict) or "error" in event:
+            if not isinstance(event, dict):
+                raise ValueError
+            if "error" in event:
+                error = event["error"]
+                # AMD can report this backend failure inside an HTTP 200 stream.
+                # Recognize only the observed envelope; never expose its message/body.
+                if (isinstance(error, dict) and error.get("type") == "upstream_error"
+                        and error.get("code") == "upstream_error" and "choices" not in event):
+                    raise ProviderUnavailable("AMD streaming API reported an upstream error")
                 raise ValueError
             choices = event.get("choices", [])
             if not isinstance(choices, list) or len(choices) > 1:

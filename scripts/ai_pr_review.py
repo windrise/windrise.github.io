@@ -5,6 +5,7 @@ import argparse
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+from http.client import HTTPException
 import html
 import hashlib
 import json
@@ -71,10 +72,12 @@ class NoRedirect(HTTPRedirectHandler):
 
 
 class JsonAPI:
-    def __init__(self, origin, token, *, github=False, opener=None, sleep=time.sleep):
+    def __init__(self, origin, token, *, github=False, opener=None, sleep=time.sleep,
+                 monotonic=time.monotonic):
         self.origin, self.token, self.github = origin, token, github
         self.opener = opener or build_opener(NoRedirect())
         self.sleep = sleep
+        self.monotonic = monotonic
 
     def request(self, method, path, payload=None):
         url = self.origin + path
@@ -82,7 +85,9 @@ class JsonAPI:
         allowed = "api.github.com" if self.github else "developer.amd.com.cn"
         if parsed.scheme != "https" or parsed.netloc != allowed or parsed.fragment:
             raise ReviewError("Blocked API request outside the allowed HTTPS origin")
-        headers = {"Authorization": f"Bearer {self.token}", "Accept": "application/json",
+        streaming = not self.github and isinstance(payload, dict) and payload.get("stream") is True
+        headers = {"Authorization": f"Bearer {self.token}",
+                   "Accept": "text/event-stream" if streaming else "application/json",
                    "Content-Type": "application/json", "User-Agent": "windrise-pr-review"}
         if self.github:
             headers["X-GitHub-Api-Version"] = "2022-11-28"
@@ -90,29 +95,104 @@ class JsonAPI:
         # A GitHub POST may have succeeded despite a lost response; do not duplicate it.
         attempts = 1 if self.github and method != "GET" else 3
         service = "GitHub" if self.github else "AMD"
+        deadline = None if self.github else self.monotonic() + 660
         for attempt in range(attempts):
+            stream_opened = False
+            timeout = 30 if self.github else min(600, deadline - self.monotonic())
+            if timeout <= 0:
+                raise ReviewError("AMD API request exhausted the total retry time budget")
             try:
                 request = Request(url, data=data, headers=headers, method=method)
-                with self.opener.open(request, timeout=90) as response:
+                with self.opener.open(request, timeout=timeout) as response:
+                    if streaming:
+                        stream_opened = True
+                        return read_sse(response, deadline, self.monotonic)
                     raw = response.read(MAX_RESPONSE_BYTES + 1)
+                if deadline is not None and self.monotonic() >= deadline:
+                    raise ReviewError("AMD API request exhausted the total retry time budget")
                 if len(raw) > MAX_RESPONSE_BYTES:
                     raise ReviewError(f"{service} response exceeds the size limit")
                 return json.loads(raw)
             except HTTPError as error:
                 status, retry_after = error.code, error.headers.get("Retry-After", "")
                 error.close()
-                if (status == 429 or 500 <= status <= 599) and attempt + 1 < attempts:
+                if (not stream_opened and (status == 429 or 500 <= status <= 599)
+                        and attempt + 1 < attempts):
                     delay = retry_delay(retry_after, attempt)
                     if delay is None:
                         raise ReviewError(f"{service} API request failed (HTTP {status}); "
                                           "server retry delay exceeds the retry budget") from None
+                    if deadline is not None and delay >= deadline - self.monotonic():
+                        raise ReviewError("AMD API request exhausted the total retry time budget") from None
                     self.sleep(delay)
                     continue
                 raise ReviewError(f"{service} API request failed (HTTP {status})") from None
-            except (URLError, TimeoutError, OSError):
+            except (URLError, TimeoutError, OSError, HTTPException) as error:
+                cause = error.reason if isinstance(error, URLError) else error
+                if isinstance(cause, TimeoutError):
+                    raise ReviewError(f"{service} API request timed out (timeout {timeout:g}s; "
+                                      f"attempt {attempt + 1}/{attempts})") from None
                 raise ReviewError(f"{service} API network request failed") from None
             except (ValueError, UnicodeError):
                 raise ReviewError(f"{service} API returned invalid JSON") from None
+
+
+def read_sse(response, deadline, monotonic):
+    """Buffer final text only; an interrupted stream must never become a review."""
+    chunks, event_lines = [], []
+    wire_bytes = output_chars = 0
+    finished = False
+    while True:
+        if monotonic() >= deadline:
+            raise ReviewError("AMD API request exhausted the total retry time budget")
+        line = response.readline(min(65_536, MAX_RESPONSE_BYTES - wire_bytes) + 1)
+        wire_bytes += len(line)
+        if wire_bytes > MAX_RESPONSE_BYTES or len(line) > 65_536:
+            raise ReviewError("AMD stream exceeds the response size limit")
+        if monotonic() >= deadline:
+            raise ReviewError("AMD API request exhausted the total retry time budget")
+        if not line:
+            raise ReviewError("AMD stream ended before completion; no review posted")
+        if line.startswith(b"data:"):
+            event_lines.append(line[5:].lstrip(b" ").rstrip(b"\r\n"))
+            continue
+        if line not in (b"\n", b"\r\n") or not event_lines:
+            continue  # Comments, event IDs, and keepalives carry no completion text.
+        data, event_lines = b"\n".join(event_lines), []
+        if data.strip() == b"[DONE]":
+            if not finished:
+                raise ReviewError("AMD stream has no successful finish; no review posted")
+            return {"choices": [{"finish_reason": "stop", "message": {"content": "".join(chunks)}}]}
+        try:
+            event = json.loads(data)
+            if not isinstance(event, dict) or "error" in event:
+                raise ValueError
+            choices = event.get("choices", [])
+            if not isinstance(choices, list) or len(choices) > 1:
+                raise ValueError
+            if not choices:  # Usage-only events may follow the final content delta.
+                continue
+            choice = choices[0]
+            delta = choice.get("delta", {})
+            if choice.get("index", 0) != 0 or not isinstance(delta, dict):
+                raise ValueError
+            if delta.get("tool_calls") or delta.get("function_call"):
+                raise ValueError
+            content = delta.get("content")
+            if content is not None:
+                if not isinstance(content, str) or (finished and content):
+                    raise ValueError
+                output_chars += len(content)
+                if output_chars > MAX_OUTPUT_CHARS:
+                    raise ReviewError("AMD stream exceeds the review text size limit")
+                chunks.append(content)  # Ignore both reasoning and reasoning_content.
+            reason = choice.get("finish_reason")
+            if reason is not None:
+                if reason != "stop":
+                    raise ReviewError("AMD returned an incomplete model response; no review posted")
+                finished = True
+        except (ValueError, UnicodeError, TypeError, AttributeError):
+            raise ReviewError("AMD returned an invalid stream event; no review posted") from None
 
 
 def retry_delay(value, attempt):
@@ -218,7 +298,7 @@ def build_prompt(pr, files, context=""):
 
 def model_review(api, config, prompt):
     response = api.request("POST", "/chat/completions", {
-        "model": config.model, "max_tokens": 2000,
+        "model": config.model, "max_tokens": 2000, "stream": True,
         "messages": [{"role": "system", "content": SYSTEM_PROMPT},
                      {"role": "user", "content": prompt}],
     })

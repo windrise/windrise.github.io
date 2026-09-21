@@ -3,6 +3,7 @@
 from contextlib import redirect_stdout
 from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
+from http.client import IncompleteRead
 from io import BytesIO, StringIO
 import json
 import unittest
@@ -24,6 +25,16 @@ def response(content="在本次提供的差异范围内未发现明确缺陷", *
     return {"choices": [{"finish_reason": "stop", "message": {"content": content, **message_fields}}]}
 
 
+def event(content=None, finish=None, **delta):
+    return {"choices": [{"index": 0, "delta": {"content": content, **delta}, "finish_reason": finish}]}
+
+
+def sse(*events, done=True):
+    body = b"".join(b"data: " + json.dumps(value, ensure_ascii=False).encode() + b"\n\n"
+                    for value in events)
+    return body + (b"data: [DONE]\n\n" if done else b"")
+
+
 class FakeOpener:
     def __init__(self, *results):
         self.results = list(results)
@@ -34,6 +45,8 @@ class FakeOpener:
         result = self.results.pop(0)
         if isinstance(result, Exception):
             raise result
+        if hasattr(result, "read"):
+            return result
         return BytesIO(result if isinstance(result, bytes) else json.dumps(result).encode())
 
 
@@ -65,16 +78,18 @@ class ConfigurationTests(unittest.TestCase):
 
 class TransportTests(unittest.TestCase):
     def test_amd_auth_payload_fixed_url_and_timeout(self):
-        opener = FakeOpener(response())
+        opener = FakeOpener(sse(event("审查结论", "stop")))
         api = review.JsonAPI(review.AMD_BASE_URL, ENV["AMD_API_KEY"], opener=opener)
         config = review.Config.from_env(ENV)
         review.model_review(api, config, "diff text")
         request, timeout = opener.requests[0]
         self.assertEqual(request.full_url, review.AMD_BASE_URL + "/chat/completions")
         self.assertEqual(request.get_header("Authorization"), "Bearer " + ENV["AMD_API_KEY"])
-        self.assertEqual(timeout, 90)
+        self.assertEqual(timeout, 600)
+        self.assertEqual(request.get_header("Accept"), "text/event-stream")
         payload = json.loads(request.data)
         self.assertEqual(payload["max_tokens"], 2000)
+        self.assertTrue(payload["stream"])
         self.assertEqual(payload["model"], config.model)
         self.assertEqual(payload["messages"][1], {"role": "user", "content": "diff text"})
         self.assertNotIn("tools", payload)
@@ -87,6 +102,62 @@ class TransportTests(unittest.TestCase):
         request = opener.requests[0][0]
         self.assertEqual(request.get_header("Authorization"), "Bearer " + ENV["GITHUB_TOKEN"])
         self.assertEqual(request.get_header("X-github-api-version"), "2022-11-28")
+        self.assertEqual(opener.requests[0][1], 30)
+
+    def test_slow_retryable_error_reduces_next_timeout_to_remaining_budget(self):
+        clock = Mock(return_value=0)
+        opener = FakeOpener(http_error(503), {"ok": True})
+        original_open = opener.open
+
+        def slow_open(request, timeout):
+            clock.return_value += 599 if not opener.requests else 1
+            return original_open(request, timeout)
+
+        def sleep(seconds):
+            clock.return_value += seconds
+
+        opener.open = slow_open
+        api = review.JsonAPI(review.AMD_BASE_URL, "token", opener=opener,
+                             sleep=sleep, monotonic=clock)
+        self.assertEqual(api.request("POST", "/chat/completions", {}), {"ok": True})
+        self.assertEqual([timeout for _, timeout in opener.requests], [600, 59])
+
+    def test_retry_stops_when_backoff_would_exhaust_remaining_budget(self):
+        clock = Mock(return_value=0)
+        opener = FakeOpener(http_error(503), http_error(503), {})
+        original_open = opener.open
+        delays = []
+
+        def slow_open(request, timeout):
+            clock.return_value += 599 if not opener.requests else 56
+            return original_open(request, timeout)
+
+        def sleep(seconds):
+            delays.append(seconds)
+            clock.return_value += seconds
+
+        opener.open = slow_open
+        api = review.JsonAPI(review.AMD_BASE_URL, "token", opener=opener,
+                             sleep=sleep, monotonic=clock)
+        with self.assertRaisesRegex(review.ReviewError, "total retry time budget"):
+            api.request("POST", "/chat/completions", {})
+        self.assertEqual(len(opener.requests), 2)
+        self.assertEqual(delays, [2])
+
+    def test_timeouts_are_identified_without_leaking_exception_details_or_retrying(self):
+        for error in (TimeoutError("private-timeout-details"),
+                      URLError(TimeoutError("private-timeout-details"))):
+            for github in (False, True):
+                opener = FakeOpener(error)
+                origin = review.GITHUB_ORIGIN if github else review.AMD_BASE_URL
+                api = review.JsonAPI(origin, "token", github=github, opener=opener)
+                with self.subTest(github=github), self.assertRaises(review.ReviewError) as caught:
+                    api.request("POST", "/reviews" if github else "/chat/completions", {})
+                self.assertIn("timed out", str(caught.exception))
+                self.assertIn("30s" if github else "600s", str(caught.exception))
+                self.assertIn("attempt 1/1" if github else "attempt 1/3", str(caught.exception))
+                self.assertNotIn("private", str(caught.exception))
+                self.assertEqual(len(opener.requests), 1)
 
     def test_retry_limits_and_capped_retry_after(self):
         opener = FakeOpener(http_error(429, "20"), http_error(503, "2"), {"ok": True})
@@ -146,6 +217,72 @@ class TransportTests(unittest.TestCase):
             with self.subTest(size=len(raw)), self.assertRaises(review.ReviewError) as caught:
                 api.request("POST", "/chat/completions", {})
             self.assertNotIn("private", str(caught.exception))
+
+
+class StreamingTests(unittest.TestCase):
+    def request(self, body, **kwargs):
+        self.opener = FakeOpener(body)
+        api = review.JsonAPI(review.AMD_BASE_URL, "token", opener=self.opener, **kwargs)
+        return api.request("POST", "/chat/completions", {"stream": True})
+
+    def test_deltas_reasoning_usage_keepalives_and_multiline_events(self):
+        body = b": keepalive\n\n"
+        body += sse(event("检查", reasoning="private", reasoning_content="private"), done=False)
+        body += b'data: {"choices": [\ndata: {"delta": {"content": " complete"}, "finish_reason": "stop"}]}\n\n'
+        body += sse({"choices": [], "usage": {"completion_tokens": 3}})
+        result = self.request(body)
+        self.assertEqual(result["choices"][0]["message"]["content"], "检查 complete")
+        self.assertEqual(result["choices"][0]["finish_reason"], "stop")
+        self.assertNotIn("private", json.dumps(result))
+
+    def test_missing_terminal_or_successful_finish_is_rejected(self):
+        bodies = [sse(event("partial", "stop"), done=False), sse(event("partial")),
+                  sse(event("partial", "length")), sse(event("partial", "tool_calls"))]
+        for body in bodies:
+            with self.subTest(body_size=len(body)), self.assertRaises(review.ReviewError):
+                self.request(body)
+            self.assertEqual(len(self.opener.requests), 1)
+
+    def test_invalid_error_and_oversized_events_are_sanitized(self):
+        bodies = [b"data: private-invalid-json\n\n", sse({"error": {"message": "private"}}),
+                  sse({"choices": ["private-invalid-choice"]}),
+                  sse(event("x" * (review.MAX_OUTPUT_CHARS + 1), "stop")),
+                  b":" + b"x" * 65_536 + b"\n",
+                  (b":" + b"x" * 999 + b"\n") * 4000]
+        for body in bodies:
+            with self.subTest(body_size=len(body)), self.assertRaises(review.ReviewError) as caught:
+                self.request(body)
+            self.assertNotIn("private", str(caught.exception))
+            self.assertEqual(len(self.opener.requests), 1)
+
+    def test_interrupted_stream_is_not_retried_after_partial_text(self):
+        class InterruptedStream(BytesIO):
+            def readline(self, size=-1):
+                line = super().readline(size)
+                if not line:
+                    raise self.error
+                return line
+
+        for error in (TimeoutError("private transport details"),
+                      IncompleteRead(b"private partial bytes"), http_error(503)):
+            body = InterruptedStream(sse(event("partial"), done=False))
+            body.error = error
+            with self.subTest(error_type=type(error)), self.assertRaises(review.ReviewError) as caught:
+                self.request(body)
+            self.assertNotIn("private", str(caught.exception))
+            self.assertEqual(len(self.opener.requests), 1)
+
+    def test_stream_deadline_stops_without_postable_partial_content(self):
+        clock = Mock(return_value=0)
+
+        class SlowStream(BytesIO):
+            def readline(self, size=-1):
+                clock.return_value = 661
+                return super().readline(size)
+
+        with self.assertRaisesRegex(review.ReviewError, "total retry time budget"):
+            self.request(SlowStream(sse(event("partial", "stop"))), monotonic=clock)
+        self.assertEqual(len(self.opener.requests), 1)
 
 
 class ScopeTests(unittest.TestCase):

@@ -16,6 +16,8 @@ Only PR review uses AMD. Existing Gemini issue triage and maintainer-invoked ass
 
 The reviewer normally makes one model request per PR head commit and review context. Input is capped at 60,000 characters and output at 2,000 tokens. It reports omitted or truncated patches and retries rate-limit or transient server errors a limited number of times. Empty responses and exhausted retries fail visibly instead of posting a successful review. It skips a duplicate review for an already reviewed commit/context and checks that the PR head has not changed before posting.
 
+AMD responses are streamed to keep long generations active. Each socket operation has a timeout of at most 600 seconds, matching the provider's documented wait; retry and stream progress checks share a 660-second budget. The workflow has a hard 13-minute limit. GitHub requests have a 30-second timeout. Interrupted or incomplete streams never produce a review, and network timeouts are reported without printing credentials or response bodies. Once a stream starts, it is not retried automatically.
+
 AMD's shared model service offers free APIs; availability and account limits come from the provider. A `429` response is handled with bounded backoff. No alternate provider or paid fallback is selected automatically.
 
 ## Validation
@@ -30,4 +32,4 @@ python3 -m unittest discover -s tests -p 'test_ai_pr_review.py'
 
 After pushing a PR update, verify that `AI Assistant Dispatch` succeeds and a review from `github-actions[bot]` appears on that PR. Historical failed runs remain in Actions history.
 
-Provider reference: [AMD Radeon Cloud model APIs](https://github.com/AMD-DEV-CONTEST/Radeon-hackathon-2026-07/blob/main/Radeon-Cloud-User%20Guide/README.md#-using-model-apis-openai-compatible).
+Provider references: [AMD chat completions and timeouts](https://amd-aim.github.io/radeon-cloud-docs/api/chat-completions/) and [DeepSeek-V4.1-Flash](https://amd-aim.github.io/radeon-cloud-docs/models/deepseek-v4-1-flash/). Thinking is disabled by default for this model; the reviewer leaves `reasoning_effort` unset.

@@ -1,58 +1,39 @@
 ---
-title: 'A Muscle Synergy-Driven ANFIS Approach to Predict Continuous Knee Joint Movement'
-
+title: A Muscle Synergy-Driven ANFIS Approach to Predict Continuous Knee Joint Movement
 authors:
-  - Wenjuan Zhong
-  - admin
-  - Mingming Zhang
-
+- Wenjuan Zhong
+- admin
+- Mingming Zhang
 author_notes:
-  - 'Equal contribution'
-  - 'Equal contribution'
-  - ''
-
+- Equal contribution
+- Equal contribution
+- Corresponding author
 date: '2022-01-01T00:00:00Z'
-doi: ''
-
 publishDate: '2022-01-01T00:00:00Z'
-
-publication_types: ['2']
-
-publication: 'IEEE Transactions on Fuzzy Systems'
-publication_short: 'IEEE T-FS'
-
-abstract: 'This paper presents a muscle synergy-driven adaptive neuro-fuzzy inference system (ANFIS) approach for predicting continuous knee joint movement from sEMG signals. By incorporating muscle synergy theory, our method reduces input dimensionality while maintaining prediction accuracy, providing an efficient solution for real-time joint motion estimation.'
-
-summary: 'Muscle synergy-driven ANFIS for continuous knee joint movement prediction (IEEE T-FS 2022, Q1, IF=10.07).'
-
-tags:
-  - sEMG
-  - Muscle Synergy
-  - Fuzzy Systems
-  - Joint Movement Prediction
-
-featured: false
-
+date_precision: year
+publication_year: 2022
+doi: 10.1109/TFUZZ.2022.3158727
+publication_types:
+- '2'
+publication: IEEE Transactions on Fuzzy Systems 30(6):1553–1563
+publication_short: IEEE Transactions on Fuzzy Systems
+publication_status: Published
+abstract: A muscle synergy-driven ANFIS model for continuous knee-joint movement prediction.
+summary: A muscle synergy-driven ANFIS model for continuous knee-joint movement prediction.
+featured: true
+url_source: https://ieeexplore.ieee.org/document/9735420
 url_pdf: ''
 url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
-
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
-
-projects: []
-slides: ""
+tags:
+- Rehabilitation
+- Machine Learning
+date_format: '2006'
 ---
 
-**Published**: IEEE Transactions on Fuzzy Systems 2022 (Q1, IF=10.07)
+A muscle synergy-driven ANFIS model for continuous knee-joint movement prediction.
 
-**Key Innovation**: Combines muscle synergy theory with adaptive neuro-fuzzy inference system for efficient and accurate joint movement prediction
+**Published in:** IEEE Transactions on Fuzzy Systems 30(6):1553–1563.
 
-**Note**: Co-first author (*)
+**Equal contribution:** Wenjuan Zhong, Xueming Fu.
+
+**Corresponding authors:** Mingming Zhang.

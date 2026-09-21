@@ -1,64 +1,53 @@
 ---
 title: 'Dyna3DGR: 4D Cardiac Motion Tracking with Dynamic 3D Gaussian Representation'
-
 authors:
-  - admin
-  - Pei Wu
-  - Yingtai Li
-  - Junhao Mei
-  - Jian Lu
-  - Gao-Jun Teng
-  - S. Kevin Zhou
-
-date: '2025-10-01T00:00:00Z'
-doi: ''
-
-publishDate: '2025-01-15T00:00:00Z'
-
-publication_types: ['1']
-
-publication: 'International Conference on Medical Image Computing and Computer-Assisted Intervention'
-publication_short: 'MICCAI 2025 (CCF-B)'
-
-abstract: 'Accurate 4D cardiac motion tracking from dynamic cardiac MRI is extremely challenging due to the homogeneous characteristics of myocardial tissue and lack of distinct anatomical landmarks. Image registration-based methods struggle to maintain topological consistency, while representation-based methods often lose important image-level details. We propose Dyna3DGR, a unified framework that introduces 3D Gaussians as representation space primitives and aligns them with image space through differentiable volumetric rendering, achieving topology-consistent and physically plausible cardiac motion estimation.'
-
-summary: '4D cardiac motion tracking using dynamic 3D Gaussian representations with 17.73% Dice improvement and 12.63% SSIM improvement.'
-
-tags:
-  - 4D Cardiac Motion Tracking
-  - 3D Gaussian Representation
-  - Medical Imaging
-  - Cardiac MRI
-
+- admin
+- Pei Wu
+- Yingtai Li
+- Xin Luo
+- Zihang Jiang
+- Junhao Mei
+- Jian Lu
+- Gao-Jun Teng
+- S. Kevin Zhou
+author_notes:
+- ''
+- ''
+- ''
+- ''
+- ''
+- ''
+- ''
+- ''
+- ''
+date: '2025-09-20T00:00:00Z'
+publishDate: '2025-09-20T00:00:00Z'
+date_precision: day
+publication_year: 2025
+doi: 10.1007/978-3-032-04937-7_16
+publication_types:
+- '1'
+publication: MICCAI 2025, LNCS 15961, pp. 164–174
+publication_short: MICCAI 2025
+publication_status: Published
+abstract: Dynamic 3D Gaussian representations and differentiable volume rendering for continuous 4D cardiac motion
+  tracking.
+summary: Dynamic 3D Gaussian representations and differentiable volume rendering for continuous 4D cardiac motion
+  tracking.
 featured: true
-
-url_pdf: ''
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
-
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
-
-projects: []
-slides: ""
+url_source: https://papers.miccai.org/miccai-2025/0266-Paper2303.html
+url_pdf: https://papers.miccai.org/miccai-2025/paper/2303_paper.pdf
+url_code: https://github.com/windrise/Dyna3DGR
+tags:
+- 3D Gaussian Representations
+- Medical Vision
+links:
+- name: arXiv
+  url: https://arxiv.org/abs/2507.16608
+- name: Publisher
+  url: https://link.springer.com/chapter/10.1007/978-3-032-04937-7_16
 ---
 
-**Highlights:**
+Dynamic 3D Gaussian representations and differentiable volume rendering for continuous 4D cardiac motion tracking.
 
-- **Control Point-based Motion Model**: Novel motion field model based on control nodes
-- **3D Gaussian Representation**: Uses 3D Gaussians as representation space primitives
-- **Differentiable Rendering**: Aligns representation space with image space through differentiable volumetric rendering
-- **Topology Consistency**: Achieves topology-consistent and physically plausible cardiac motion estimation
-- **Superior Performance**:
-  - Dice score improvement: 17.73%
-  - SSIM improvement: 12.63%
-  - Evaluated on 4D dynamic cardiac MRI datasets
-
-**Research Challenge**: The homogeneous characteristics of myocardial tissue and lack of distinct anatomical landmarks make accurate 4D cardiac motion tracking from dynamic cardiac MRI extremely difficult. Existing image registration methods struggle with topological consistency, while representation-based methods lose important image-level details.
+**Published in:** MICCAI 2025, LNCS 15961, pp. 164–174.

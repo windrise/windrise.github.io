@@ -1,4 +1,4 @@
-name: '🔀 Gemini Dispatch'
+name: 'AI Assistant Dispatch'
 
 on:
   pull_request_review_comment:
@@ -10,6 +10,8 @@ on:
   pull_request:
     types:
       - 'opened'
+      - 'synchronize'
+      - 'reopened'
   issues:
     types:
       - 'opened'
@@ -93,7 +95,7 @@ jobs:
             const request = process.env.REQUEST;
             core.setOutput('request', request);
 
-            if (eventType === 'pull_request.opened') {
+            if (['pull_request.opened', 'pull_request.synchronize', 'pull_request.reopened'].includes(eventType)) {
               core.setOutput('command', 'review');
             } else if (['issues.opened', 'issues.reopened'].includes(eventType)) {
               core.setOutput('command', 'triage');
@@ -127,11 +129,9 @@ jobs:
     needs: 'dispatch'
     if: |-
       ${{ needs.dispatch.outputs.command == 'review' }}
-    uses: './.github/workflows/gemini-review.yml'
+    uses: './.github/workflows/ai-pr-review.yml'
     permissions:
       contents: 'read'
-      id-token: 'write'
-      issues: 'write'
       pull-requests: 'write'
     with:
       additional_context: '${{ needs.dispatch.outputs.additional_context }}'

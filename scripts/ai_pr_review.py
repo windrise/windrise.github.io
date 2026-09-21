@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Post a bounded, comment-only PR review using AMD's hosted DeepSeek API."""
+"""Post a bounded, comment-only PR review using AMD's hosted model API."""
 
 import argparse
 from dataclasses import dataclass
@@ -22,6 +22,7 @@ GITHUB_ORIGIN = "https://api.github.com"
 MAX_PROMPT_CHARS = 60_000
 MAX_RESPONSE_BYTES = 4_000_000
 MAX_OUTPUT_CHARS = 24_000
+MODEL_TIME_BUDGET = 660
 SYSTEM_PROMPT = """你是代码审查助手。用简洁中文 Markdown 报告有证据的缺陷，最多 5 项。
 仅依据提供的差异，指出文件、新版本行号、触发条件和具体影响；无法确定时说明不确定性。
 不要编造缺陷，不要泛泛建议格式或重构。没有发现时写“在本次提供的差异范围内未发现明确缺陷”。
@@ -34,6 +35,10 @@ class ReviewError(Exception):
     """An error whose message is safe to print in public workflow logs."""
 
 
+class ProviderUnavailable(ReviewError):
+    """An AMD availability failure eligible for a configured fallback model."""
+
+
 @dataclass(frozen=True)
 class Config:
     github_token: str
@@ -43,6 +48,7 @@ class Config:
     model: str
     base_url: str
     additional_context: str
+    fallback_model: str = ""
 
     @classmethod
     def from_env(cls, env=os.environ):
@@ -62,8 +68,13 @@ class Config:
         model = env.get("AMD_MODEL", "DeepSeek-V4.1-Flash").strip()
         if not model or len(model) > 200 or any(ord(c) < 32 for c in model):
             raise ReviewError("Invalid AMD_MODEL")
+        fallback = env.get("AMD_FALLBACK_MODEL", "").strip()
+        if len(fallback) > 200 or any(ord(c) < 32 for c in fallback):
+            raise ReviewError("Invalid AMD_FALLBACK_MODEL")
+        if fallback == model or fallback == "none":
+            fallback = ""  # A second name must not retry the same unavailable model.
         return cls(env["GITHUB_TOKEN"], repo, int(number), env["AMD_API_KEY"],
-                   model, base, env.get("ADDITIONAL_CONTEXT", "")[:2000])
+                   model, base, env.get("ADDITIONAL_CONTEXT", "")[:2000], fallback)
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -79,7 +90,7 @@ class JsonAPI:
         self.sleep = sleep
         self.monotonic = monotonic
 
-    def request(self, method, path, payload=None):
+    def request(self, method, path, payload=None, *, deadline=None):
         url = self.origin + path
         parsed = urlsplit(url)
         allowed = "api.github.com" if self.github else "developer.amd.com.cn"
@@ -95,7 +106,8 @@ class JsonAPI:
         # A GitHub POST may have succeeded despite a lost response; do not duplicate it.
         attempts = 1 if self.github and method != "GET" else 3
         service = "GitHub" if self.github else "AMD"
-        deadline = None if self.github else self.monotonic() + 660
+        if not self.github and deadline is None:
+            deadline = self.monotonic() + MODEL_TIME_BUDGET
         for attempt in range(attempts):
             stream_opened = False
             timeout = 30 if self.github else min(600, deadline - self.monotonic())
@@ -116,23 +128,26 @@ class JsonAPI:
             except HTTPError as error:
                 status, retry_after = error.code, error.headers.get("Retry-After", "")
                 error.close()
-                if (not stream_opened and (status == 429 or 500 <= status <= 599)
+                unavailable = status == 429 or 500 <= status <= 599
+                error_type = ProviderUnavailable if not self.github and unavailable else ReviewError
+                if (not stream_opened and unavailable
                         and attempt + 1 < attempts):
                     delay = retry_delay(retry_after, attempt)
                     if delay is None:
-                        raise ReviewError(f"{service} API request failed (HTTP {status}); "
-                                          "server retry delay exceeds the retry budget") from None
+                        raise error_type(f"{service} API request failed (HTTP {status}); "
+                                         "server retry delay exceeds the retry budget") from None
                     if deadline is not None and delay >= deadline - self.monotonic():
                         raise ReviewError("AMD API request exhausted the total retry time budget") from None
                     self.sleep(delay)
                     continue
-                raise ReviewError(f"{service} API request failed (HTTP {status})") from None
+                raise error_type(f"{service} API request failed (HTTP {status})") from None
             except (URLError, TimeoutError, OSError, HTTPException) as error:
                 cause = error.reason if isinstance(error, URLError) else error
+                error_type = ReviewError if self.github else ProviderUnavailable
                 if isinstance(cause, TimeoutError):
-                    raise ReviewError(f"{service} API request timed out (timeout {timeout:g}s; "
-                                      f"attempt {attempt + 1}/{attempts})") from None
-                raise ReviewError(f"{service} API network request failed") from None
+                    raise error_type(f"{service} API request timed out (timeout {timeout:g}s; "
+                                     f"attempt {attempt + 1}/{attempts})") from None
+                raise error_type(f"{service} API network request failed") from None
             except (ValueError, UnicodeError):
                 raise ReviewError(f"{service} API returned invalid JSON") from None
 
@@ -297,11 +312,26 @@ def build_prompt(pr, files, context=""):
 
 
 def model_review(api, config, prompt):
-    response = api.request("POST", "/chat/completions", {
-        "model": config.model, "max_tokens": 2000, "stream": True,
-        "messages": [{"role": "system", "content": SYSTEM_PROMPT},
-                     {"role": "user", "content": prompt}],
-    })
+    deadline = api.monotonic() + MODEL_TIME_BUDGET
+    models = [config.model] + ([config.fallback_model] if config.fallback_model else [])
+    for index, model in enumerate(models):
+        if api.monotonic() >= deadline:
+            raise ReviewError("AMD API request exhausted the total retry time budget")
+        payload = {
+            "model": model, "max_tokens": 2000, "stream": True,
+            "messages": [{"role": "system", "content": SYSTEM_PROMPT},
+                         {"role": "user", "content": prompt}],
+        }
+        if model == "Qwen3.8-Flash-Next":
+            payload["reasoning_effort"] = "none"
+        try:
+            response = api.request("POST", "/chat/completions", payload, deadline=deadline)
+            break
+        except ProviderUnavailable:
+            if index + 1 == len(models):
+                raise
+            # Reuse the same deadline and key; never expose either model's partial output.
+            print("Primary AMD model unavailable; attempting the configured fallback.")
     try:
         choice = response["choices"][0]
         content = choice["message"]["content"]
@@ -314,7 +344,7 @@ def model_review(api, config, prompt):
             or "<think" in content.lower()
             or config.amd_key in content or config.github_token in content):
         raise ReviewError("AMD returned invalid review text; no review posted")
-    return content.strip()  # Never use or print reasoning_content.
+    return content.strip(), model  # Never use or print reasoning_content.
 
 
 def run(config, *, dry_run=False, github=None, amd=None):
@@ -331,9 +361,10 @@ def run(config, *, dry_run=False, github=None, amd=None):
         return
     files = get_pages(github, path + "/files", 30)
     prompt, scope, has_diff = build_prompt(pr, files, config.additional_context)
-    conclusion = model_review(amd, config, prompt) if has_diff else ""
-    body = (f"{marker(sha, config.additional_context)}\n### AMD DeepSeek 自动审查\n\n"
-            f"提交：`{sha}`\n\n{scope}\n\n{conclusion}").rstrip()
+    conclusion, used_model = model_review(amd, config, prompt) if has_diff else ("", "")
+    attribution = f"模型：<code>{html.escape(used_model)}</code>\n\n" if used_model else ""
+    body = (f"{marker(sha, config.additional_context)}\n### AMD 自动审查\n\n"
+            f"提交：`{sha}`\n\n{attribution}{scope}\n\n{conclusion}").rstrip()
     # Another run may have completed during model inference.
     if not dry_run and already_reviewed(get_pages(github, path + "/reviews", 100),
                                         sha, config.additional_context):

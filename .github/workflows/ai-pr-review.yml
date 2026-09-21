@@ -1,4 +1,4 @@
-name: 'AI PR Review (AMD DeepSeek)'
+name: 'AI PR Review (AMD)'
 
 on:
   workflow_call:
@@ -32,12 +32,13 @@ jobs:
       - name: 'Test review helper'
         run: python3 -m unittest discover -s tests -p 'test_ai_pr_review.py'
 
-      - name: 'Review pull request with AMD DeepSeek'
+      - name: 'Review pull request with AMD'
         env:
           GITHUB_TOKEN: '${{ github.token }}'
           PR_NUMBER: '${{ github.event.pull_request.number || github.event.issue.number }}'
           AMD_API_KEY: '${{ secrets.AMD_API_KEY }}'
           AMD_BASE_URL: 'https://developer.amd.com.cn/radeon/api/v1'
           AMD_MODEL: "${{ vars.AMD_REVIEW_MODEL || 'DeepSeek-V4.1-Flash' }}"
+          AMD_FALLBACK_MODEL: "${{ vars.AMD_REVIEW_FALLBACK_MODEL || 'Qwen3.8-Flash-Next' }}"
           ADDITIONAL_CONTEXT: '${{ inputs.additional_context }}'
         run: python3 scripts/ai_pr_review.py

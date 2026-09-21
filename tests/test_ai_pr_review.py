@@ -72,8 +72,16 @@ class ConfigurationTests(unittest.TestCase):
     def test_default_model_and_bounded_context(self):
         config = review.Config.from_env({**ENV, "ADDITIONAL_CONTEXT": "x" * 3000})
         self.assertEqual(config.model, "DeepSeek-V4.1-Flash")
+        self.assertEqual(config.fallback_model, "")
         self.assertEqual(config.base_url, review.AMD_BASE_URL)
         self.assertEqual(len(config.additional_context), 2000)
+
+    def test_fallback_is_validated_and_identical_model_is_disabled(self):
+        for value in ("DeepSeek-V4.1-Flash", "none", ""):
+            self.assertEqual(review.Config.from_env({**ENV, "AMD_FALLBACK_MODEL": value})
+                             .fallback_model, "")
+        with self.assertRaisesRegex(review.ReviewError, "Invalid AMD_FALLBACK_MODEL"):
+            review.Config.from_env({**ENV, "AMD_FALLBACK_MODEL": "bad\nmodel"})
 
 
 class TransportTests(unittest.TestCase):
@@ -316,10 +324,126 @@ class ScopeTests(unittest.TestCase):
         self.assertIn("page=2", api.request.call_args.args[1])
 
 
+class FallbackTests(unittest.TestCase):
+    def setUp(self):
+        self.config = review.Config.from_env({**ENV, "AMD_FALLBACK_MODEL": "Qwen3.8-Flash-Next"})
+        self.clock = Mock(return_value=0)
+
+    def api(self, *results):
+        self.opener = FakeOpener(*results)
+        self.sleep = Mock()
+        return review.JsonAPI(review.AMD_BASE_URL, ENV["AMD_API_KEY"], opener=self.opener,
+                              sleep=self.sleep, monotonic=self.clock)
+
+    def test_default_off_never_falls_back_on_provider_failure(self):
+        api = self.api(TimeoutError("private"), sse(event("unused", "stop")))
+        with self.assertRaises(review.ProviderUnavailable):
+            review.model_review(api, review.Config.from_env(ENV), "diff")
+        self.assertEqual(len(self.opener.requests), 1)
+
+    def test_reasoning_override_is_specific_to_qwen_flash_next(self):
+        for model in ("Qwen3.8-Flash-Next", "Qwen3.8-27B", "DeepSeek-V4.1-Flash"):
+            config = review.Config.from_env({**ENV, "AMD_MODEL": model})
+            api = self.api(sse(event("审查结论", "stop")))
+            review.model_review(api, config, "diff")
+            payload = json.loads(self.opener.requests[0][0].data)
+            with self.subTest(model=model):
+                if model == "Qwen3.8-Flash-Next":
+                    self.assertEqual(payload["reasoning_effort"], "none")
+                else:
+                    self.assertNotIn("reasoning_effort", payload)
+
+    def test_transient_errors_exhaust_primary_retries_then_use_fallback_once(self):
+        api = self.api(http_error(429), http_error(503), http_error(503),
+                       sse(event("备用审查", "stop")))
+        text, model = review.model_review(api, self.config, "diff")
+        self.assertEqual((text, model), ("备用审查", self.config.fallback_model))
+        payloads = [json.loads(req.data) for req, _ in self.opener.requests]
+        self.assertEqual([p["model"] for p in payloads], [self.config.model] * 3 + [model])
+        self.assertNotIn("reasoning_effort", payloads[0])
+        self.assertEqual(payloads[-1]["reasoning_effort"], "none")
+        self.assertEqual([c.args[0] for c in self.sleep.call_args_list], [2, 4])
+
+    def test_network_failure_switches_without_retrying_primary_and_reuses_budget(self):
+        api = self.api(TimeoutError("private"), sse(event("备用审查", "stop")))
+        original_open = self.opener.open
+
+        def slow_open(request, timeout):
+            if not self.opener.requests:
+                self.clock.return_value += 600
+            return original_open(request, timeout)
+
+        self.opener.open = slow_open
+        review.model_review(api, self.config, "diff")
+        self.assertEqual([timeout for _, timeout in self.opener.requests], [600, 60])
+        self.sleep.assert_not_called()
+
+    def test_exhausted_budget_never_starts_fallback(self):
+        api = self.api(TimeoutError("private"), sse(event("unused", "stop")))
+        original_open = self.opener.open
+
+        def slow_open(request, timeout):
+            self.clock.return_value = 661
+            return original_open(request, timeout)
+
+        self.opener.open = slow_open
+        with self.assertRaisesRegex(review.ReviewError, "total retry time budget"):
+            review.model_review(api, self.config, "diff")
+        self.assertEqual(len(self.opener.requests), 1)
+
+    def test_transport_failure_discards_partial_primary_text_before_fallback(self):
+        class InterruptedStream(BytesIO):
+            def readline(self, size=-1):
+                line = super().readline(size)
+                if not line:
+                    raise IncompleteRead(b"private partial bytes")
+                return line
+
+        api = self.api(InterruptedStream(sse(event("private primary text"), done=False)),
+                       sse(event("备用审查", "stop")))
+        result = review.model_review(api, self.config, "diff")
+        self.assertEqual(result, ("备用审查", self.config.fallback_model))
+        self.assertEqual(len(self.opener.requests), 2)
+
+    def test_invalid_or_incomplete_streams_never_start_fallback(self):
+        invalid = [b"data: private-invalid-json\n\n", sse(event("partial", "length")),
+                   sse(event("partial", "stop"), done=False), sse(event("", "stop")),
+                   sse(event(ENV["AMD_API_KEY"], "stop"))]
+        for body in invalid:
+            api = self.api(body, sse(event("unused", "stop")))
+            with self.subTest(body_size=len(body)), self.assertRaises(review.ReviewError) as caught:
+                review.model_review(api, self.config, "diff")
+            self.assertNotIsInstance(caught.exception, review.ProviderUnavailable)
+            self.assertEqual(len(self.opener.requests), 1)
+
+    def test_auth_configuration_and_github_errors_are_ineligible(self):
+        for status in (302, 400, 401, 403, 404):
+            api = self.api(http_error(status), sse(event("unused", "stop")))
+            with self.subTest(status=status), self.assertRaises(review.ReviewError) as caught:
+                review.model_review(api, self.config, "diff")
+            self.assertNotIsInstance(caught.exception, review.ProviderUnavailable)
+            self.assertEqual(len(self.opener.requests), 1)
+        api = review.JsonAPI(review.GITHUB_ORIGIN, "token", github=True,
+                             opener=FakeOpener(http_error(503)))
+        with self.assertRaises(review.ReviewError) as caught:
+            api.request("POST", "/reviews", {})
+        self.assertNotIsInstance(caught.exception, review.ProviderUnavailable)
+
+    def test_both_models_fail_safely_without_switching_back(self):
+        api = self.api(URLError(ENV["AMD_API_KEY"]), TimeoutError(ENV["GITHUB_TOKEN"]))
+        output = StringIO()
+        with redirect_stdout(output), self.assertRaises(review.ProviderUnavailable) as caught:
+            review.model_review(api, self.config, "diff")
+        self.assertEqual(len(self.opener.requests), 2)
+        for key in (ENV["AMD_API_KEY"], ENV["GITHUB_TOKEN"]):
+            self.assertNotIn(key, str(caught.exception) + output.getvalue())
+
+
 class ReviewFlowTests(unittest.TestCase):
     def setUp(self):
         self.config = review.Config.from_env(ENV)
         self.github, self.amd = Mock(), Mock()
+        self.amd.monotonic.return_value = 0
         self.amd.request.return_value = response()
         self.output = StringIO()
 
@@ -337,7 +461,18 @@ class ReviewFlowTests(unittest.TestCase):
         self.assertEqual(payload["commit_id"], SHA)
         self.assertIn(review.marker(SHA), payload["body"])
         self.assertIn("未执行测试", payload["body"])
+        self.assertIn("模型：<code>DeepSeek-V4.1-Flash</code>", payload["body"])
         self.assertEqual(self.amd.request.call_count, 1)
+
+    def test_fallback_review_attributes_actual_model_and_keeps_marker(self):
+        self.config = review.Config.from_env({**ENV, "AMD_FALLBACK_MODEL": "Qwen3.8-Flash-Next"})
+        self.amd.request.side_effect = [review.ProviderUnavailable("AMD unavailable"), response()]
+        self.run_review([PR, [], [FILE], [], PR, {}])
+        body = self.github.request.call_args.args[2]["body"]
+        self.assertIn("模型：<code>Qwen3.8-Flash-Next</code>", body)
+        self.assertIn(review.marker(SHA), body)
+        self.assertNotIn("DeepSeek", body)
+        self.assertEqual([c.kwargs["deadline"] for c in self.amd.request.call_args_list], [660, 660])
 
     def test_duplicate_bot_review_skips_model_and_post(self):
         previous = {"user": {"login": "github-actions[bot]"}, "body": review.marker(SHA)}
@@ -373,6 +508,7 @@ class ReviewFlowTests(unittest.TestCase):
         self.run_review([PR, [], [{"filename": "binary.png"}], [], PR, {}])
         self.amd.request.assert_not_called()
         self.assertIn("未作出代码质量判断", self.github.request.call_args.args[2]["body"])
+        self.assertNotIn("模型：", self.github.request.call_args.args[2]["body"])
 
     def test_dry_run_does_not_post_and_does_not_print_reasoning(self):
         self.amd.request.return_value = response(reasoning_content="private-reasoning")

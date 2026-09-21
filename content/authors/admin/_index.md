@@ -1,15 +1,13 @@
 ---
-title: Xueming Fu (付学明)
+title: Xueming Fu
 role: PhD Researcher
-bio: I study Gaussian representations for 3D/4D medical vision, generative 3D modeling, and coding agents for GPU scientific computing.
-name_zh: 付学明
-advisors: Prof. S. Kevin Zhou · Prof. Gao-Jun Teng
-about_short: My work connects continuous 3D representations, multiview diffusion, and verifiable coding-agent workflows, with applications in medical reconstruction, 3D asset generation, and scientific simulation.
+bio: I study Gaussian representations for 3D/4D medical vision and generative 3D modeling.
+advisors: Prof. S. Kevin Zhou
+about_short: My work connects continuous 3D representations and multiview diffusion, with applications in medical reconstruction and 3D asset generation.
 
 interests:
   - Gaussian Representations and 4D Medical Vision
   - Generative 3D and Multiview Diffusion
-  - Coding Agents and GPU Scientific Computing
 
 social:
   - icon: envelope
@@ -51,10 +49,10 @@ authors:
   - admin
 ---
 
-I am Xueming Fu (付学明), a PhD researcher in Electronic Information at the University of Science and Technology of China (USTC), supervised by Prof. S. Kevin Zhou and Prof. Gao-Jun Teng.
+I am Xueming Fu, a PhD researcher in Electronic Information at the University of Science and Technology of China (USTC), supervised by Prof. S. Kevin Zhou.
 
-My research centers on **Gaussian representations and 3D/4D medical vision**, including cardiac motion tracking, sparse-view coronary reconstruction, and self-supervised volumetric representation learning. I also work on **generative 3D modeling and multiview diffusion**, as well as **coding agents for GPU scientific computing**.
+My research centers on **Gaussian representations and 3D/4D medical vision**, including cardiac motion tracking, sparse-view coronary reconstruction, and self-supervised volumetric representation learning. I also work on **generative 3D modeling and multiview diffusion**.
 
 I received my MSc in Electronic Information from Southern University of Science and Technology (SUSTech) in 2023, where I worked on physiological signal modeling with Prof. Mingming Zhang and Prof. Yefeng Zheng. I received my BSc in Computer Science and Technology from Xidian University (XDU) in 2019, with a focus on computer vision.
 
-My research experience includes internships at Tencent Youtu Lab, Suzhou Artificial Intelligence Laboratory, and Tencent Youtu Tianyan Lab, alongside a conditional 3D medical image generation project with Jiangsu Provincial Government Hospital.
+My research experience includes internships at Tencent Youtu Lab and Tencent Youtu Tianyan Lab, alongside a conditional 3D medical image generation project with Jiangsu Provincial Government Hospital.

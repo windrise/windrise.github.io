@@ -59,8 +59,8 @@ test.describe('Papers page smoke tests', () => {
       await expect(textarea).toBeVisible();
     }
 
-    // Close
-    await page.locator('[data-notes-close]').first().click();
+    // Target the close button; the backdrop also has data-notes-close.
+    await modal.getByRole('button', { name: 'Close', exact: true }).click();
     await expect(modal).toBeHidden();
   });
 

@@ -1,6 +1,6 @@
 # Personal homepage
 
-The homepage uses Hugo's `layouts/index.html` with the `academic` styles and publication filters. The self-contained `gaussian-scene` partial adds a procedural, Gaussian-inspired 3D geometry study with pointer and keyboard rotation, two shapes, pause/play, and a static SVG fallback. It is a visual illustration, not a reconstruction result from a paper.
+The homepage uses Hugo's `layouts/index.html` with the `academic` styles and publication filters. A simple profile introduction leads into research, publications, experience, and honors.
 
 ## Updating content
 
@@ -34,6 +34,4 @@ BASE_URL=http://127.0.0.1:1313 npm run test:homepage
 BASE_URL=http://127.0.0.1:1313 npm run test:e2e
 ```
 
-Homepage tests use a separate configuration so the scheduled Papers UI checks continue testing their deployed page without a deployment race. Check the desktop and mobile layouts visually after styling changes, in addition to running the tests. The 3D scene respects reduced motion and pauses when offscreen or in a hidden tab.
-
-Design references: [Bruno Simon](https://bruno-simon.com/) for spatial interaction and [WebSplatter](https://websplatter.github.io/) for an embedded, explorable 3D scene alongside readable research content. No code or visual assets from these sites are copied.
+Homepage tests use a separate configuration so the scheduled Papers UI checks continue testing their deployed page without a deployment race. Check the desktop and mobile layouts visually after styling changes, in addition to running the tests.

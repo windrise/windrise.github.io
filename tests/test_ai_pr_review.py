@@ -6,8 +6,10 @@ from email.utils import format_datetime
 from http.client import IncompleteRead
 from io import BytesIO, StringIO
 import json
+import signal
+import time
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 from urllib.error import HTTPError, URLError
 
 from scripts import ai_pr_review as review
@@ -291,6 +293,80 @@ class StreamingTests(unittest.TestCase):
         with self.assertRaisesRegex(review.ReviewError, "total retry time budget"):
             self.request(SlowStream(sse(event("partial", "stop"))), monotonic=clock)
         self.assertEqual(len(self.opener.requests), 1)
+
+
+@unittest.skipUnless(hasattr(signal, "setitimer"), "POSIX deadline enforcement")
+class DeadlineTests(unittest.TestCase):
+    def test_deadline_interrupts_blocked_sse_read_without_fallback_and_cleans_up(self):
+        completed_read = []
+
+        class BlockingStream(BytesIO):
+            def readline(self, size=-1):
+                time.sleep(0.15)
+                completed_read.append(True)
+                return super().readline(size)
+
+        stream = BlockingStream(sse(event("partial", "stop")))
+        opener = FakeOpener(stream, sse(event("unused fallback", "stop")))
+        api = review.JsonAPI(review.AMD_BASE_URL, ENV["AMD_API_KEY"], opener=opener)
+        config = review.Config.from_env({**ENV, "AMD_FALLBACK_MODEL": "Qwen3.8-Flash-Next"})
+        previous_handler = signal.getsignal(signal.SIGALRM)
+        with patch.object(review, "MODEL_TIME_BUDGET", 0.02):
+            with self.assertRaisesRegex(review.ReviewError, "total retry time budget") as caught:
+                review.model_review(api, config, "diff")
+        self.assertNotIsInstance(caught.exception, review.ProviderUnavailable)
+        self.assertEqual(completed_read, [])  # The blocking operation itself was interrupted.
+        self.assertEqual(len(opener.requests), 1)
+        self.assertTrue(stream.closed)
+        self.assertEqual(signal.getitimer(signal.ITIMER_REAL), (0.0, 0.0))
+        self.assertEqual(signal.getsignal(signal.SIGALRM), previous_handler)
+
+    def test_deadline_also_interrupts_wait_for_response_headers(self):
+        completed_open = []
+
+        class BlockingOpener:
+            def open(self, request, timeout):
+                time.sleep(0.15)
+                completed_open.append(True)
+                return BytesIO(b"{}")
+
+        api = review.JsonAPI(review.AMD_BASE_URL, "token", opener=BlockingOpener())
+        with self.assertRaisesRegex(review.ReviewError, "total retry time budget"):
+            api.request("POST", "/chat/completions", {}, deadline=time.monotonic() + 0.02)
+        self.assertEqual(completed_open, [])
+        self.assertEqual(signal.getitimer(signal.ITIMER_REAL), (0.0, 0.0))
+
+    def test_success_restores_previous_signal_handler_and_cancels_timer(self):
+        previous_handler = signal.getsignal(signal.SIGALRM)
+        custom_handler = Mock()
+        signal.signal(signal.SIGALRM, custom_handler)
+        try:
+            api = review.JsonAPI(review.AMD_BASE_URL, "token", opener=FakeOpener({"ok": True}))
+            self.assertEqual(api.request("POST", "/chat/completions", {}), {"ok": True})
+            self.assertIs(signal.getsignal(signal.SIGALRM), custom_handler)
+            self.assertEqual(signal.getitimer(signal.ITIMER_REAL), (0.0, 0.0))
+            custom_handler.assert_not_called()
+        finally:
+            signal.signal(signal.SIGALRM, previous_handler)
+
+    def test_active_timer_is_rejected_without_replacing_it_or_its_handler(self):
+        previous_handler = signal.getsignal(signal.SIGALRM)
+        custom_handler = Mock()
+        signal.signal(signal.SIGALRM, custom_handler)
+        signal.setitimer(signal.ITIMER_REAL, 30, 2)
+        try:
+            opener = FakeOpener({})
+            api = review.JsonAPI(review.AMD_BASE_URL, "token", opener=opener)
+            with self.assertRaisesRegex(review.ReviewError, "another interval timer is active"):
+                api.request("POST", "/chat/completions", {})
+            self.assertEqual(opener.requests, [])
+            self.assertIs(signal.getsignal(signal.SIGALRM), custom_handler)
+            remaining, interval = signal.getitimer(signal.ITIMER_REAL)
+            self.assertGreater(remaining, 0)
+            self.assertEqual(interval, 2)
+        finally:
+            signal.setitimer(signal.ITIMER_REAL, 0)
+            signal.signal(signal.SIGALRM, previous_handler)
 
 
 class ScopeTests(unittest.TestCase):

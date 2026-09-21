@@ -2,6 +2,7 @@
 """Post a bounded, comment-only PR review using AMD's hosted model API."""
 
 import argparse
+from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -11,7 +12,9 @@ import hashlib
 import json
 import os
 import re
+import signal
 import sys
+import threading
 import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
@@ -82,6 +85,31 @@ class NoRedirect(HTTPRedirectHandler):
         return None  # Never forward either credential through an HTTP redirect.
 
 
+@contextmanager
+def enforce_deadline(deadline, monotonic):
+    """Interrupt blocking I/O in this POSIX CLI, without leaving a worker running."""
+    remaining = deadline - monotonic()
+    if remaining <= 0:
+        raise ReviewError("AMD API request exhausted the total retry time budget")
+    if (not hasattr(signal, "setitimer")
+            or threading.current_thread() is not threading.main_thread()):
+        raise ReviewError("AMD review deadlines require the main thread on a POSIX platform")
+    if signal.getitimer(signal.ITIMER_REAL)[0] > 0:
+        raise ReviewError("Cannot enforce AMD review deadline while another interval timer is active")
+    previous_handler = signal.getsignal(signal.SIGALRM)
+
+    def expired(signum, frame):
+        raise ReviewError("AMD API request exhausted the total retry time budget")
+
+    signal.signal(signal.SIGALRM, expired)
+    try:
+        signal.setitimer(signal.ITIMER_REAL, remaining)
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous_handler)
+
+
 class JsonAPI:
     def __init__(self, origin, token, *, github=False, opener=None, sleep=time.sleep,
                  monotonic=time.monotonic):
@@ -91,6 +119,14 @@ class JsonAPI:
         self.monotonic = monotonic
 
     def request(self, method, path, payload=None, *, deadline=None):
+        if self.github:
+            return self._request(method, path, payload)
+        if deadline is None:
+            deadline = self.monotonic() + MODEL_TIME_BUDGET
+        with enforce_deadline(deadline, self.monotonic):
+            return self._request(method, path, payload, deadline=deadline)
+
+    def _request(self, method, path, payload=None, *, deadline=None):
         url = self.origin + path
         parsed = urlsplit(url)
         allowed = "api.github.com" if self.github else "developer.amd.com.cn"
@@ -106,8 +142,6 @@ class JsonAPI:
         # A GitHub POST may have succeeded despite a lost response; do not duplicate it.
         attempts = 1 if self.github and method != "GET" else 3
         service = "GitHub" if self.github else "AMD"
-        if not self.github and deadline is None:
-            deadline = self.monotonic() + MODEL_TIME_BUDGET
         for attempt in range(attempts):
             stream_opened = False
             timeout = 30 if self.github else min(600, deadline - self.monotonic())

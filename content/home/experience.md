@@ -19,7 +19,7 @@ experience:
     description: |2-
         Research focus on 3D/4D medical image reconstruction:
 
-        * Supervised by Prof. S. Kevin Zhou and Prof. Gao-Jun Teng
+        * Supervised by Prof. S. Kevin Zhou
         * Developing 3D Gaussian representations for medical imaging
         * 4D cardiac motion tracking from dynamic MRI
         * Sparse-view coronary artery reconstruction from X-ray

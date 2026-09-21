@@ -1,0 +1,43 @@
+name: 'AI PR Review (AMD DeepSeek)'
+
+on:
+  workflow_call:
+    inputs:
+      additional_context:
+        type: 'string'
+        description: 'Additional review context from the maintainer'
+        required: false
+
+concurrency:
+  group: 'ai-pr-review-${{ github.event.pull_request.number || github.event.issue.number }}'
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: 'ubuntu-latest'
+    timeout-minutes: 7
+    permissions:
+      contents: 'read'
+      pull-requests: 'write'
+    steps:
+      - name: 'Checkout review helper'
+        uses: 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' # ratchet:actions/checkout@v5
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts/ai_pr_review.py
+            tests/test_ai_pr_review.py
+          sparse-checkout-cone-mode: false
+
+      - name: 'Test review helper'
+        run: python3 -m unittest discover -s tests -p 'test_ai_pr_review.py'
+
+      - name: 'Review pull request with AMD DeepSeek'
+        env:
+          GITHUB_TOKEN: '${{ github.token }}'
+          PR_NUMBER: '${{ github.event.pull_request.number || github.event.issue.number }}'
+          AMD_API_KEY: '${{ secrets.AMD_API_KEY }}'
+          AMD_BASE_URL: 'https://developer.amd.com.cn/radeon/api/v1'
+          AMD_MODEL: "${{ vars.AMD_REVIEW_MODEL || 'DeepSeek-V4.1-Flash' }}"
+          ADDITIONAL_CONTEXT: '${{ inputs.additional_context }}'
+        run: python3 scripts/ai_pr_review.py

@@ -625,6 +625,7 @@ Detailed guides available in `/docs/`:
 - `QUICK_START.md` - Get started in 5 minutes
 - `SETUP_GUIDE.md` - Complete setup instructions
 - `API_SETUP.md` - API key configuration
+- [AI_PR_REVIEW.md](docs/AI_PR_REVIEW.md) - AMD DeepSeek automated pull request review
 - `PAPER_AUTOMATION_PLAN.md` - Full automation strategy
 - `PRIORITY1_FEATURES.md` - Mindmap & Citation Tracking guide
 - `QA_SYSTEM_GUIDE.md` - Local Q&A System complete guide

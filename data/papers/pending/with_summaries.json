@@ -3,47 +3,232 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2609.38177v1",
-      "title": "Imagine3D-LLM: Teaching MLLMs to Imagine 3D Scenes Before Answering",
+      "id": "2610.02045v1",
+      "title": "Form and Void: Entangled Composition through an Autonomous AI Agent",
       "authors": [
-        "Jaewoo Jung",
-        "Hyeonseo Yu",
-        "Honggyu An",
-        "Jisang Han",
-        "Mungyeom Kim",
-        "Minkyeong Jeon",
-        "Heeseong Shin",
-        "Wonjun Moon",
-        "Federico Tombari",
-        "Daniel Barath",
-        "Marc Pollefeys",
-        "Seungryong Kim",
-        "Sunghwan Hong"
+        "Shiwen Wang",
+        "Jian Yang",
+        "Xu Wang",
+        "Xincan Wang",
+        "Weiming Dong"
       ],
-      "abstract": "Reasoning about the 3D world from multi-view images remains a fundamental challenge for Multimodal Large Language Models (MLLMs). While modern MLLMs handle single-image inputs effectively, they struggle to integrate evidence across viewpoints into a coherent 3D understanding. A growing body of work attempts to close this gap by injecting 3D awareness into MLLMs, either by boosting fine-grained pixel-level cross-view correspondence or by fusing features from 3D geometry foundation models, yet a substantial gap to human reasoning persists. In this work, we revisit human spatial reasoning, which suggests that rather than relying on fine-grained geometry cues, humans roughly identify common objects across views, infer the relative geometry between viewpoints, and assemble a coarse 3D layout of the scene. Inspired by this process, we introduce Imagine3D-LLM, an MLLM that learns to assemble a similar compact 3D representation of the scene and conditions its answer on this representation. Concretely, we append a small set of learnable summary tokens after the image tokens, decode them into a compact 3D Gaussian Splatting representation supervised by a photometric reconstruction loss, and train jointly with the standard next-token prediction objective. Notably, although only the summary tokens receive direct reconstruction supervision, this objective also induces stronger cross-frame correspondence within the LLM's underlying image features, suggesting that learning to reconstruct propagates 3D-aware signals throughout the model. As a result, Imagine3D-LLM consistently outperforms prior approaches across multiple spatial reasoning and 3D understanding benchmarks, suggesting that imagining the scene can be more effective than being told its pixel-wise geometry.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
+      "abstract": "Positive and negative space is a fundamental principle in visual composition, supporting visually coherent forms and layered semantic relationships. Generating such compositions is challenging because it requires coordinated control over two semantic concepts that share a common boundary. Although recent text-to-image models and multimodal large language models (MLLMs) have achieved strong performance in image generation and visual understanding, positive-negative space generation remains difficult, particularly under direct single-pass prompting. In this work, we present the \\textbf{F}orm \\textbf{a}nd \\textbf{V}oid \\textbf{A}gent (\\textbf{FaV-A}), a multimodal agent designed for staged positive-negative space generation. FaV-A follows a progressive workflow: it first generates a base object, then analyzes its shape and spatial structure to identify candidate negative-space semantics, and finally produces compositional instructions for the final image generation stage. Experimental results and ablation analyses suggest that FaV-A provides a more effective framework than direct zero-shot MLLM baselines for producing visually coherent and semantically aligned positive-negative space compositions.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
       "categories": [
         "cs.CV",
-        "cs.CL"
+        "cs.MA"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.38177v1",
-        "pdf": "https://arxiv.org/pdf/2609.38177v1"
+        "paper": "http://arxiv.org/abs/2610.02045v1",
+        "pdf": "https://arxiv.org/pdf/2610.02045v1"
       },
-      "arxiv_id": "2609.38177v1",
-      "comment": "NeurIPS 2026; Project Page: https://cvlab-kaist.github.io/Imagine3D-LLM",
+      "arxiv_id": "2610.02045v1",
+      "comment": "",
+      "journal_ref": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, 2026, pp. 8987-8995",
+      "has_code": false,
+      "relevance_score": 4.35,
+      "score_breakdown": {
+        "total_score": 4.35,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "CVPR",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Positive and negative space is a fundamental principle in visual composition, supporting visually coherent forms and layered semantic relationships. Generating such compositions is challenging because it requires coordinated control over two semantic concepts that share a common boundary. Although recent text-to-image models and multimodal large language models (MLLMs) have achieved strong perform...",
+        "key_contributions": [
+          "Positive and negative space is a fundamental principle in visual composition, supporting visually coherent forms and layered semantic relationships.",
+          "Generating such compositions is challenging because it requires coordinated control over two semantic concepts that share a common boundary.",
+          "Although recent text-to-image models and multimodal large language models (MLLMs) have achieved strong performance in image generation and visual understanding, positive-negative space generation remains difficult, particularly under direct single-pass prompting."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2610.02122v1",
+      "title": "Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows",
+      "authors": [
+        "Gabriel Tomitsuka",
+        "Arman Raayatsanati",
+        "Emma Xing",
+        "Duke Gand",
+        "Joseph J Ma"
+      ],
+      "abstract": "Real-world enterprise data science and analytics workflows require reasoning across dozens of tables, performing statistical analyses, and acting on the results. Established text-to-SQL benchmarks evaluate query generation alone, and audits have found their answer keys frequently wrong. Because real enterprise warehouses are too sensitive to release, these benchmarks are built on public datasets where a business event fits in a single table. We introduce Argo-Bench, an evaluation framework comprising 210 data science and analytics tasks. Drawing on public data, peer-reviewed industry literature, and regulatory filings, we simulate a food delivery platform in New York City at true scale, with 81 million orders in 2024, grounded economics, fraud patterns, and marketplace incentives. We export this world to an ERP warehouse of 235 tables and 7.5 billion rows, modeled on the Oracle E-Business Suite schema. The simulator's ground-truth state is withheld from the warehouse the agent sees, so tasks require reconstructing facts by navigating the warehouse before acting on them. Argo-Bench goes beyond text-to-SQL: the agent files actions such as banning fraudulent accounts, allocating courier incentive budgets, or issuing back pay, and the grader scores each by its consequences in the simulator. Every task has an executable reference solution that demonstrates solvability using only the warehouse. The strongest of 14 frontier and open-weight models scores 95 or higher on only 34.8% of tasks and averages 59.5 points. We hope Argo-Bench drives progress toward agents that understand, navigate, and act within real data environments.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2610.02122v1",
+        "pdf": "https://arxiv.org/pdf/2610.02122v1"
+      },
+      "arxiv_id": "2610.02122v1",
+      "comment": "41 pages, 4 figures, 18 tables. Code: https://github.com/TextQLLabs/Argo-Bench. Data: https://huggingface.co/datasets/textql/Argo-Bench. Website: https://argo-bench.com",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.527966101694915,
+      "relevance_score": 4.1000000000000005,
       "score_breakdown": {
-        "total_score": 4.53,
+        "total_score": 4.1,
         "field_match": {
-          "score": 1.69,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 8.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Real-world enterprise data science and analytics workflows require reasoning across dozens of tables, performing statistical analyses, and acting on the results. Established text-to-SQL benchmarks evaluate query generation alone, and audits have found their answer keys frequently wrong. Because real enterprise warehouses are too sensitive to release, these benchmarks are built on public datasets w...",
+        "key_contributions": [
+          "Real-world enterprise data science and analytics workflows require reasoning across dozens of tables, performing statistical analyses, and acting on the results.",
+          "Established text-to-SQL benchmarks evaluate query generation alone, and audits have found their answer keys frequently wrong.",
+          "Because real enterprise warehouses are too sensitive to release, these benchmarks are built on public datasets where a business event fits in a single table."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2610.02196v1",
+      "title": "InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation",
+      "authors": [
+        "Zhuo Lin",
+        "Sirui Xu",
+        "Liuyu Bian",
+        "Yu-Xiong Wang",
+        "Liang-Yan Gui"
+      ],
+      "abstract": "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining. Our key insight is that a broad controller already holds much of the competence a new task needs, and that this competence becomes accessible through an interface between planning and control that is expressive enough to specify contact-rich, multi-stage interactions, yet executable and measurable enough that execution feedback can guide planning from experience. InterEvolve realizes this interface with two components. First, we develop an object-aware forward-backward (FB) behavioral foundation model, whose object residuals on a frozen body prior turn a new reward about the body or objects into loco-manipulation behavior at test time. Second, we specify tasks as reward programs: staged rewards with completion conditions and tunable constants. A large language model (LLM) agent revises the program structure in context, drawing on execution feedback and a skill library of verified programs, while a numerical optimizer tunes its constants. With every candidate verified across parallel simulation scenarios, the program explores new ways to induce, repurpose, and compose the controller's existing motor competence for the task at hand, and thus improves over iterations. Experiments show that human-designed rewards leave much of the FB model's loco-manipulation competence untapped, whereas the programs InterEvolve evolves release it, sometimes through novel strategies. It further produces behaviors for diverse tasks, complex scenes, and long-horizon compositions in simulation, and evolved skills run autonomously on a physical Unitree G1 from egocentric onboard perception.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2610.02196v1",
+        "pdf": "https://arxiv.org/pdf/2610.02196v1"
+      },
+      "arxiv_id": "2610.02196v1",
+      "comment": "Project page: https://sirui-xu.github.io/InterEvolve",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.1,
+      "score_breakdown": {
+        "total_score": 4.1,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining. Our key insight is that a broad controller already holds much of the competence a new task needs, and that this competence becomes accessible through an interface bet...",
+        "key_contributions": [
+          "We study test-time evolution for humanoid loco-manipulation: solving tasks that a controller was never trained for by repurposing its existing skills, improving from its own attempts, and retaining what it learns, without retraining.",
+          "Our key insight is that a broad controller already holds much of the competence a new task needs, and that this competence becomes accessible through an interface between planning and control that is expressive enough to specify contact-rich, multi-stage interactions, yet executable and measurable enough that execution feedback can guide planning from experience.",
+          "InterEvolve realizes this interface with two components."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2610.02201v1",
+      "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
+      "authors": [
+        "Tianjiao Yu",
+        "Xinzhuo Li",
+        "Yifan Shen",
+        "Ying Shen",
+        "Kiet A. Nguyen",
+        "Adheesh Sunil Juvekar",
+        "Ismini Lourentzou"
+      ],
+      "abstract": "High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes. We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact sliding-window slice latents. Instead of generating expensive voxel tokens, SILSA uses a fixed set of overlapping slices along the three canonical axes, where each token summarizes a local depth window to preserve cross-sectional continuity and support single-stage rectified-flow generation. A Slice VAE encodes oriented surface samples into multi-axis slice latents and reconstructs them with a sparse volumetric decoder, while a Volumetric Anchor Lattice coordinates directional slice streams through a shared 3D workspace. To preserve structural correctness, we introduce slice-level topology supervision that matches persistence diagrams and aligns Betti transitions across neighboring slices. Experiments show that SILSA improves structural fidelity while substantially reducing generation cost. SILSA improves PSNR by $8.7\\%$, coverage by $5.96$ absolute points, and Betti error by $9.2\\%$ over the strongest baseline, while using $70.0\\%$ fewer tokens than the next-most compact baseline and over $98\\%$ fewer tokens than sparse or hierarchical tokenizers, effectively reducing training memory by $40.4\\%$ and inference time by $58.5\\%$. Qualitative results further show improved preservation of thin structures, repeated components, and long-range connectivity.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2610.02201v1",
+        "pdf": "https://arxiv.org/pdf/2610.02201v1"
+      },
+      "arxiv_id": "2610.02201v1",
+      "comment": "Accepted at NeurIPS 2026. Project link: https://plan-lab.github.io/silsa",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.03728813559322,
+      "score_breakdown": {
+        "total_score": 4.04,
+        "field_match": {
+          "score": 0.59,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "volumetric"
           ],
           "weight": 0.4
         },
@@ -62,182 +247,49 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 5.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reasoning about the 3D world from multi-view images remains a fundamental challenge for Multimodal Large Language Models (MLLMs). While modern MLLMs handle single-image inputs effectively, they struggle to integrate evidence across viewpoints into a coherent 3D understanding. A growing body of work attempts to close this gap by injecting 3D awareness into MLLMs, either by boosting fine-grained pix...",
+        "short": "High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes. We introduce SILSA, a topology-aware 3D generat...",
         "key_contributions": [
-          "Reasoning about the 3D world from multi-view images remains a fundamental challenge for Multimodal Large Language Models (MLLMs).",
-          "While modern MLLMs handle single-image inputs effectively, they struggle to integrate evidence across viewpoints into a coherent 3D understanding.",
-          "A growing body of work attempts to close this gap by injecting 3D awareness into MLLMs, either by boosting fine-grained pixel-level cross-view correspondence or by fusing features from 3D geometry foundation models, yet a substantial gap to human reasoning persists."
+          "High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry.",
+          "While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes.",
+          "We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact sliding-window slice latents."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2609.38180v1",
-      "title": "Point2Part: Unified 3D Partitioning from Point Prompts",
+      "id": "2610.02200v1",
+      "title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
       "authors": [
-        "Hao-Tang Tsui",
-        "Yu-Rou Tuan",
-        "Xiaoxuan Ma",
-        "Nicolas Ugrinovic",
-        "Takaaki Shiratori",
-        "Kris Kitani"
+        "Qiushi Han",
+        "Keya Hu",
+        "Linlu Qiu",
+        "Cathy Wu",
+        "Kaiming He"
       ],
-      "abstract": "Existing 3D part decomposition methods do not necessarily partition the original shape into non-overlapping parts that collectively cover the entire shape, allowing overlaps or gaps that hinder downstream part-level applications. We instead formulate part decomposition as a joint partitioning of the entire shape, where the predicted parts are non-overlapping and jointly recover the entire shape. Our key insight is that part decomposition should consider all desired parts jointly, rather than modeling each part independently. To this end, we develop a promptable model for 3D part decomposition from images or meshes. Users can specify desired parts through 3D point prompts for controllable decomposition. Given one point prompt per desired part, our model produces the corresponding parts as a complete partition of the entire shape. We build on a pretrained 3D generation model and first obtain a shape latent from either an input image or mesh. We then introduce a prompt encoder that maps each 3D point prompt to a part token while attending to the shape latent. To decode the desired parts, we propose a novel part decoder jointly scoring the entire shape against all part tokens in a coarse-to-fine manner, assigning every position within the shape volume to exactly one part. We perform part decomposition in this shared shape latent space, enabling a unified model for image-to-part generation, mesh-to-part generation, and part segmentation. Our method outperforms existing works on all part-quality metrics across all three tasks, and improves compatibility among parts by an order of magnitude over previous SOTA methods. Code and models will be released.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
+      "abstract": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in complex visual environments.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
       "categories": [
+        "cs.AI",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.38180v1",
-        "pdf": "https://arxiv.org/pdf/2609.38180v1"
+        "paper": "http://arxiv.org/abs/2610.02200v1",
+        "pdf": "https://arxiv.org/pdf/2610.02200v1"
       },
-      "arxiv_id": "2609.38180v1",
-      "comment": "Project Page: https://henrytsui000.github.io/Point2Part",
+      "arxiv_id": "2610.02200v1",
+      "comment": "Tech report. An early version of this manuscript was in a blogpost published in Aug 5, 2026: https://vista-research.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.353389830508474,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.35,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 9.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Existing 3D part decomposition methods do not necessarily partition the original shape into non-overlapping parts that collectively cover the entire shape, allowing overlaps or gaps that hinder downstream part-level applications. We instead formulate part decomposition as a joint partitioning of the entire shape, where the predicted parts are non-overlapping and jointly recover the entire shape. O...",
-        "key_contributions": [
-          "Existing 3D part decomposition methods do not necessarily partition the original shape into non-overlapping parts that collectively cover the entire shape, allowing overlaps or gaps that hinder downstream part-level applications.",
-          "We instead formulate part decomposition as a joint partitioning of the entire shape, where the predicted parts are non-overlapping and jointly recover the entire shape.",
-          "Our key insight is that part decomposition should consider all desired parts jointly, rather than modeling each part independently."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2609.38165v1",
-      "title": "Cropland PAtteRNS: Parallel Dimensional Attention Networks and Attention to Dataset Disparity for Crop Segmentation in Satellite Imagery Time Series Data",
-      "authors": [
-        "Joseph Metcalfe",
-        "Sara Sharifzadeh",
-        "Fabio Caraffini"
-      ],
-      "abstract": "The landscape of satellite imagery time series datasets and boundary-pushing architectures for cropland segmentation has never been richer. However, in this gold rush, important truths are being missed on both fronts, as a drive for the most novel concepts or the largest datasets pushes finer details to the side. In this paper, we present our hybrid transformer-convolutional model, Cropland Parallel Attention and Refinement Network for Segmentation (PAtteRNS), the first model to use self-attention mechanisms separately for each of the temporal, spectral, and spatial aspects of Sentinel-2 multispectral SITS data. To achieve fully-factorised attention in our proposed model, we introduce a novel parallel transformer architecture which significantly reduces the computational complexity of triple-factorised self-attention. We validate our architecture with an in-depth ablation study, and analyse the performance of our model against state-of-the-art crop segmentation models on multiple tile-size variants of the popular PASTIS and MTLCC datasets. Our findings show our model to outperform all others in the task of crop class segmentation, verified across multiple important segmentation metrics, with especially strong performance against compared models seen in the often under-reported parcel delineation quality, for which we use the Boundary IoU metric. We also find that flawed class groupings within datasets can have a significant negative impact on model performance, and report that alternate tile-size variants of crop segmentation datasets produce results incomparable to one-another, invalidating fair comparison between model performance when trained on different tile-sizes. Based on these findings, we suggest further work is required to standardise best practices when constructing SITS crop segmentation datasets, and to enable future dynamic-tile-sizing for ideal model performance.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.38165v1",
-        "pdf": "https://arxiv.org/pdf/2609.38165v1"
-      },
-      "arxiv_id": "2609.38165v1",
-      "comment": "Main body: 19 pages, 7 figures; Appendices: 15 pages, 16 figures. All code and models associated with this work are available at https://github.com/JoeMetc/CroplandPAtteRNS , along with preparation guides for the two publicly available crop segmentation datasets used in this work",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.203389830508474,
-      "score_breakdown": {
-        "total_score": 4.2,
-        "field_match": {
-          "score": 0.51,
-          "matches": [
-            "segmentation"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The landscape of satellite imagery time series datasets and boundary-pushing architectures for cropland segmentation has never been richer. However, in this gold rush, important truths are being missed on both fronts, as a drive for the most novel concepts or the largest datasets pushes finer details to the side. In this paper, we present our hybrid transformer-convolutional model, Cropland Parall...",
-        "key_contributions": [
-          "The landscape of satellite imagery time series datasets and boundary-pushing architectures for cropland segmentation has never been richer.",
-          "However, in this gold rush, important truths are being missed on both fronts, as a drive for the most novel concepts or the largest datasets pushes finer details to the side.",
-          "In this paper, we present our hybrid transformer-convolutional model, Cropland Parallel Attention and Refinement Network for Segmentation (PAtteRNS), the first model to use self-attention mechanisms separately for each of the temporal, spectral, and spatial aspects of Sentinel-2 multispectral SITS data."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2609.38172v1",
-      "title": "Counterfactual Video Generation Enables Scalable Humanoid Loco-Manipulation",
-      "authors": [
-        "Zihan Wang",
-        "Zhen Wu",
-        "Pieter Abbeel",
-        "Rocky Duan",
-        "Jitendra Malik",
-        "Carmelo Sferrazza",
-        "C. Karen Liu",
-        "Guanya Shi",
-        "Angjoo Kanazawa"
-      ],
-      "abstract": "Teaching humanoids loco-manipulation skills, such as carrying diverse objects, via visual imitation is a promising path toward generalist robots. However, collecting diverse, high-quality interaction videos, such as clips that clearly show a person's full body and unoccluded interactions with objects, poses a practical barrier to scaling this approach. We propose PRISM, a real-to-sim-to-real framework that overcomes this limitation by amplifying a handful of real videos into a large, diverse training set. PRISM first generates hundreds of diverse \"counterfactual\" human-object interaction videos via video-to-video (V2V) generation from a few exemplar real videos. Our contact-anchored real-to-sim pipeline then reconstructs both human and object motions, retargeting this imperfect video data into physically plausible trajectories. The intra-class variability across these counterfactual videos lets us train a single policy that generalizes to unseen objects within each category. We demonstrate the full pipeline by deploying this policy on a real robot without any real-world fine-tuning. Using only onboard depth observations, our humanoid picks up, carries, and drops objects, including boxes, barrels, bins, and balls, across novel instances, sizes, and initial configurations.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
-      "categories": [
-        "cs.RO",
-        "cs.CV",
-        "cs.GR"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.38172v1",
-        "pdf": "https://arxiv.org/pdf/2609.38172v1"
-      },
-      "arxiv_id": "2609.38172v1",
-      "comment": "published at CoRL 2026. Project page: https://prism-real2sim2real.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -258,177 +310,44 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Teaching humanoids loco-manipulation skills, such as carrying diverse objects, via visual imitation is a promising path toward generalist robots. However, collecting diverse, high-quality interaction videos, such as clips that clearly show a person's full body and unoccluded interactions with objects, poses a practical barrier to scaling this approach. We propose PRISM, a real-to-sim-to-real frame...",
+        "short": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless vi...",
         "key_contributions": [
-          "Teaching humanoids loco-manipulation skills, such as carrying diverse objects, via visual imitation is a promising path toward generalist robots.",
-          "However, collecting diverse, high-quality interaction videos, such as clips that clearly show a person's full body and unoccluded interactions with objects, poses a practical barrier to scaling this approach.",
-          "We propose PRISM, a real-to-sim-to-real framework that overcomes this limitation by amplifying a handful of real videos into a large, diverse training set."
+          "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments.",
+          "We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision.",
+          "VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2609.38119v1",
-      "title": "VideoLoop: Looped Working Memory Against Semantic Thrashing in Long-Form Video Agents",
+      "id": "2610.02199v1",
+      "title": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
       "authors": [
-        "Jinfa Huang",
-        "Jianming Xu",
-        "Jingyang Lin",
-        "Zhengyuan Yang",
-        "Jiebo Luo"
+        "Jichao Jiang",
+        "Cristian McGee",
+        "El Houcine Bergou",
+        "Hanqin Cai",
+        "Aritra Dutta"
       ],
-      "abstract": "Long-form video understanding requires multimodal agents to iteratively gather evidence over many reasoning steps. However, most existing agentic methods suffer from semantic thrashing: as append-only working memory grows, attention to key evidence collapses, and the agent loses access to what it has already found. First, we provide a structural argument showing that append-only memory can incorporate newly observed target evidence, but cannot remove accumulated noise or prevent ordered context growth without a rewrite operator. Second, motivated by this analysis, we propose VideoLoop, a multimodal agent with two coupled loops. The outer loop reasons over the video and the inner loop, after each step, retrieves artifacts from an unbounded filesystem of past observations and intermediate analysis, and rewrites a bounded working memory. Extensive experiments demonstrate the effectiveness of VideoLoop, which improves four popular LVLM backbones in a plug-and-play manner, with an average gain of 4.2% points over baseline on VideoMME (long). Further analysis of working memory suggests that VideoLoop mitigates semantic thrashing: on the hardest quarter of VideoMME (long) questions, a blind judge that reads only the agent's context answers 81.1% correctly, versus 60.9% for the append-only agent. With Gemini 3.1 Pro, VideoLoop reaches 88.3% on VideoMME (long), 88.8% on VideoMMMU, and 80.9% on LongVideoBench (long).",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.38119v1",
-        "pdf": "https://arxiv.org/pdf/2609.38119v1"
-      },
-      "arxiv_id": "2609.38119v1",
-      "comment": "Code: https://github.com/philipxjm/videoloop",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Long-form video understanding requires multimodal agents to iteratively gather evidence over many reasoning steps. However, most existing agentic methods suffer from semantic thrashing: as append-only working memory grows, attention to key evidence collapses, and the agent loses access to what it has already found. First, we provide a structural argument showing that append-only memory can incorpo...",
-        "key_contributions": [
-          "Long-form video understanding requires multimodal agents to iteratively gather evidence over many reasoning steps.",
-          "However, most existing agentic methods suffer from semantic thrashing: as append-only working memory grows, attention to key evidence collapses, and the agent loses access to what it has already found.",
-          "First, we provide a structural argument showing that append-only memory can incorporate newly observed target evidence, but cannot remove accumulated noise or prevent ordered context growth without a rewrite operator."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2609.38081v1",
-      "title": "Traversing the solution space of neural networks with Hessian Null Space Continuation",
-      "authors": [
-        "Ann Huang",
-        "Mitchell Ostrow",
-        "Zhouyang Lu",
-        "William T. Redman",
-        "Leo Kozachkov",
-        "Kanaka Rajan"
-      ],
-      "abstract": "On a single task, deep networks can learn many solutions, depending on their optimizer, training data, architecture, and hyperparameters. Many of these solutions are mode-connected: rather than isolated points in weight space, they are connected by low-loss regions. Yet how their internal computation varies within these regions is unknown. A parallel line of work has identified the degeneracy of neural representations: many networks reach similar training loss with distinct internal structures. However, it is unclear how these solutions are related in weight space. We unify these subfields and show for the first time that many different internal mechanisms exist within a local mode-connected region in weight space. To do so, we introduce Hessian Null Space Continuation (HNC), a scalable method that uses local curvature to traverse regions of weight space that preserve network function, and can be steered toward solutions with specified properties. In RNNs trained on a memory task, HNC reaches drastically different representations and dynamics with maintained behavior. In ImageNet-trained Vision Transformers, HNC finds representations that differ more from the original network than any independently trained model with a different architecture or objective. In reinforcement-learning agents, HNC uncovers a distinct navigation strategy at comparable return and exposes reward hacking in an AI Safety Gridworld. Finally, HNC measures the local geometry of the solution set, showing how model size and task complexity shape its dimension and functional sensitivity. Our results show that a surprisingly large amount of representational diversity exists near a single trained solution, unseen by standard gradient-based optimization. HNC identifies and quantifies this diversity, opening new possibilities for mechanistic understanding of solution spaces and for model merging, editing, and fine-tuning.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
+      "abstract": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. Still, its geometry differs from AdamW and can lead to performance degradation when fine-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-descent direction under a dimension-normalized $1\\to1$ operator norm by selecting the sign of the largest magnitude entry in each column of two-dimensional weight matrices. This retains first-order gradients while making optimizer state memory nearly negligible. Our practical TACO optimizer maintains only a small set of low precision gradient components per column, reducing persistent optimizer state by $174\\times$ relative to AdamW8bit (from 27.7 GB to 0.16 GB) and peak training memory by $2.9\\times$ (from 80.6 GB to 27.5 GB) on OPT-13B, while achieving comparable accuracy and runtime. TACO further enables full-parameter fine-tuning of 30-32B-parameter models on a single 80 GB H100 GPU across multiple model families and tasks.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
       "categories": [
         "cs.LG",
-        "q-bio.NC",
-        "stat.ML"
+        "math.OC"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.38081v1",
-        "pdf": "https://arxiv.org/pdf/2609.38081v1"
+        "paper": "http://arxiv.org/abs/2610.02199v1",
+        "pdf": "https://arxiv.org/pdf/2610.02199v1"
       },
-      "arxiv_id": "2609.38081v1",
-      "comment": "55 pages, 39 figures. Project page and code: https://ann-huang-0.github.io/Hessian-null-space-continuation/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.95,
-      "score_breakdown": {
-        "total_score": 3.95,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "On a single task, deep networks can learn many solutions, depending on their optimizer, training data, architecture, and hyperparameters. Many of these solutions are mode-connected: rather than isolated points in weight space, they are connected by low-loss regions. Yet how their internal computation varies within these regions is unknown. A parallel line of work has identified the degeneracy of n...",
-        "key_contributions": [
-          "On a single task, deep networks can learn many solutions, depending on their optimizer, training data, architecture, and hyperparameters.",
-          "Many of these solutions are mode-connected: rather than isolated points in weight space, they are connected by low-loss regions.",
-          "Yet how their internal computation varies within these regions is unknown."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2609.38146v1",
-      "title": "LIFT: Layout-In-Future Video Generation under Large Viewpoint Change via On-Policy Self-Distillation",
-      "authors": [
-        "Shengxiang Ji",
-        "Boyang Wang",
-        "Haiyang Xu",
-        "Bingnan Li",
-        "Yucheng Mao",
-        "Zeyuan Chen",
-        "Xiaojun Shan",
-        "Xiang Zhang",
-        "Gang Hua",
-        "Jianwen Xie",
-        "Zezhou Cheng",
-        "Zhuowen Tu"
-      ],
-      "abstract": "We introduce LIFT, a unified image-to-video generation framework that complements camera control with Layout-In-FuTure control, enabling users to specify what should appear in a future view and where it should appear. This addresses a practical need in controllable video generation: given an initial image, users often care not only about how the camera moves, but also about what the scene should look like at key future moments, especially the final frame. Existing camera controls specify viewpoint trajectories, while text prompts provide only coarse semantic guidance; neither precisely determines the content and spatial layout of future views. This limitation becomes particularly pronounced under large viewpoint changes, where the camera reveals regions that are not visible in the first frame. LIFT therefore uses the last-frame layout as an explicit control signal for the desired future scene. Since learning from such sparse layout guidance is substantially more challenging than conditioning on dense per-frame layouts, we introduce on-policy self-distillation (OPSD) to transfer the control capability of a dense-layout teacher to a last-frame-layout student. We further curate LIFT-Vista, a dataset featuring large viewpoint changes with camera and temporally consistent layout annotations. Experiments show that LIFT improves video quality, future-layout controllability, and camera controllability over other methods.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2609.38146v1",
-        "pdf": "https://arxiv.org/pdf/2609.38146v1"
-      },
-      "arxiv_id": "2609.38146v1",
-      "comment": "Project Page: https://jsxzs.github.io/LIFT/",
+      "arxiv_id": "2610.02199v1",
+      "comment": "24 pages, 7 figures, 10 tables. Code available at https://github.com/Jichao2357/TACO_optimizer",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.9,
@@ -459,49 +378,109 @@
         }
       },
       "ai_summaries": {
-        "short": "We introduce LIFT, a unified image-to-video generation framework that complements camera control with Layout-In-FuTure control, enabling users to specify what should appear in a future view and where it should appear. This addresses a practical need in controllable video generation: given an initial image, users often care not only about how the camera moves, but also about what the scene should l...",
+        "short": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. S...",
         "key_contributions": [
-          "We introduce LIFT, a unified image-to-video generation framework that complements camera control with Layout-In-FuTure control, enabling users to specify what should appear in a future view and where it should appear.",
-          "This addresses a practical need in controllable video generation: given an initial image, users often care not only about how the camera moves, but also about what the scene should look like at key future moments, especially the final frame.",
-          "Existing camera controls specify viewpoint trajectories, while text prompts provide only coarse semantic guidance; neither precisely determines the content and spatial layout of future views."
+          "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs.",
+          "Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state.",
+          "The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2609.38054v1",
-      "title": "Pow3R-SLAM: Real-Time RGB-D SLAM with 3D Reconstruction Priors",
+      "id": "2610.02197v1",
+      "title": "HiPhy: Hierarchical Alignment for Physically-Plausible Multi-Principle Video Generation",
       "authors": [
-        "Christopher Kolios",
-        "Ishaan Mehta",
-        "Sasa Janjic",
-        "Yeganeh Bahoo",
-        "Sajad Saeedi"
+        "Tahira Kazimi",
+        "Shubhankar Borse",
+        "Munawar Hayat",
+        "Fatih Porikli",
+        "Pinar Yanardag"
       ],
-      "abstract": "We present Pow3R-SLAM, a real-time RGB-D simultaneous localization and mapping (SLAM) system that uses Pow3R for tracking and mapping. Inspired by MASt3R-SLAM, a recent work on monocular SLAM using two-view 3D reconstruction priors, we extend the work to incorporate depth as a prior on the network's prediction, rather than as geometry to fuse. Where traditional RGB-D SLAM systems struggle with sparsity in the depth images, Pow3R utilizes the available depth to give a better-conditioned pointmap, while inferring the depths in empty regions from the two-view photometric, depth, and intrinsic data. Evaluated against MASt3R-SLAM following its protocol on 24 sequences from TUM, 7-Scenes, and Replica, Pow3R-SLAM runs 1.6x faster in wall time, has 15% lower mean trajectory error, a 3.1x lower unscaled error, and produces denser maps, with a 30% lower Chamfer distance. We also introduce a hybrid variant that runs 2.1x faster than MASt3R-SLAM at 25.3 frames per second (FPS), while maintaining improved tracking and mapping accuracy. Against ORB-SLAM3 in RGB-D mode, Pow3R-SLAM is more accurate on TUM, 7-Scenes, and ETH3D-SLAM, and completes every TUM sequence. While Pow3R-SLAM can struggle on a small set of self-similar scenes, its overall performance shows that adding depth as a prior for two-view 3D reconstruction SLAM can be beneficial. A project webpage is available at: https://ChrisKolios.github.io/Pow3R-SLAM , and code will be made open-source upon acceptance.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
+      "abstract": "Video generation models have achieved remarkable visual fidelity and have strong potential to become general-purpose world simulators. Despite this progress, they still fail to generate videos which adhere to laws of physics. The problem becomes even more apparent in realistic settings where multiple physical principles must work together within the same video; for example, \"a balloon floating upward while steam rises from a pot\" requires buoyancy and fluid dynamics to unfold coherently and simultaneously. Yet existing methods largely ignore multi-principle interactions, focusing on a single principle per video. We propose HiPhy (Hierarchical Physical Alignment), a reinforcement learning framework that grounds video generation in physical laws through a dual-level objective: locally enforcing the temporal dynamics of individual physical principles, and globally ensuring the physical and semantic coherence of the entire scene. To support multi-principle generation, we construct a 50K-prompt dataset and introduce a prompt benchmark MultiPhyBench, spanning a diverse range of co-occurring physical events. Our experiments show that HiPhy significantly outperforms prior methods and baselines, improving physical commonsense and semantic alignment significantly across various benchmarks, with the largest gains on scenes involving multiple concurrent physical principles where competing methods degrade most sharply.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
       "categories": [
-        "cs.RO",
         "cs.CV"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.38054v1",
-        "pdf": "https://arxiv.org/pdf/2609.38054v1"
+        "paper": "http://arxiv.org/abs/2610.02197v1",
+        "pdf": "https://arxiv.org/pdf/2610.02197v1"
       },
-      "arxiv_id": "2609.38054v1",
-      "comment": "9 pages, 4 figures, 4 tables. Project page: https://chriskolios.github.io/Pow3R-SLAM/",
+      "arxiv_id": "2610.02197v1",
+      "comment": "Project page: https://hiphy-video.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.88728813559322,
+      "relevance_score": 3.9,
       "score_breakdown": {
-        "total_score": 3.89,
+        "total_score": 3.9,
         "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Video generation models have achieved remarkable visual fidelity and have strong potential to become general-purpose world simulators. Despite this progress, they still fail to generate videos which adhere to laws of physics. The problem becomes even more apparent in realistic settings where multiple physical principles must work together within the same video; for example, \"a balloon floating upw...",
+        "key_contributions": [
+          "Video generation models have achieved remarkable visual fidelity and have strong potential to become general-purpose world simulators.",
+          "Despite this progress, they still fail to generate videos which adhere to laws of physics.",
+          "The problem becomes even more apparent in realistic settings where multiple physical principles must work together within the same video; for example, \"a balloon floating upward while steam rises from a pot\" requires buoyancy and fluid dynamics to unfold coherently and simultaneously."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2610.02206v1",
+      "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
+      "authors": [
+        "Pengfei Li",
+        "Naufal Suryanto",
+        "Sicheng Zhang",
+        "Muzammal Naseer"
+      ],
+      "abstract": "LLMs are increasingly applied to cybersecurity workflows, where they are expected to translate analysts' intent into tool invocations. However, existing evaluations focus on knowledge-based assessments or end-to-end agentic tasks, and do not directly measure LLMs' ability to generate executable commands for real-world cybersecurity tools. This gap is critical because cybersecurity operations rely on strict command-line interfaces (CLIs), where minor syntax errors, incorrect flag--value bindings, or argument misordering can invalidate execution. We introduce KaliBench, a fine-grained benchmark and dataset for natural-language--to--CLI translation on Kali Linux, comprising 8,504 query--command pairs spanning 1,642 tools across 23 capability dimensions and 5 security phases. KaliBench is constructed via a manuscript-grounded pipeline with deterministic canonicalization and alias-aware evaluation, enabling precise and reproducible assessment of tool selection and argument construction. To ensure both semantic correctness and practical executability, we develop a multi-stage verification pipeline that combines LLM-based validation, sandboxed terminal execution, and human-in-the-loop refinement. Building on these fine-grained, deterministic signals, KaliBench further enables runtime-free verifiable rewards for training. Across three evaluation modes and 24 configurations of general-purpose and security-focused open-weight models, no open-weight model exceeds 42% exact-command accuracy in the unrestricted setting, highlighting the difficulty of accurate CLI-based cybersecurity tool use without explicit tool hints. We further show that supervised fine-tuning and reinforcement learning with verifiable rewards derived from KaliBench significantly improve an 8B model and achieve performance comparable to a 685B MoE model.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "primary_category": "cs.CL",
+      "links": {
+        "paper": "http://arxiv.org/abs/2610.02206v1",
+        "pdf": "https://arxiv.org/pdf/2610.02206v1"
+      },
+      "arxiv_id": "2610.02206v1",
+      "comment": "Accepted at NeurIPS 2026 Evaluations and Datasets Track. Project page: https://risys-lab.github.io/KaliBench/ | Github: https://github.com/RISys-Lab/KaliBench",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.85,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -519,49 +498,44 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 7.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We present Pow3R-SLAM, a real-time RGB-D simultaneous localization and mapping (SLAM) system that uses Pow3R for tracking and mapping. Inspired by MASt3R-SLAM, a recent work on monocular SLAM using two-view 3D reconstruction priors, we extend the work to incorporate depth as a prior on the network's prediction, rather than as geometry to fuse. Where traditional RGB-D SLAM systems struggle with spa...",
+        "short": "LLMs are increasingly applied to cybersecurity workflows, where they are expected to translate analysts' intent into tool invocations. However, existing evaluations focus on knowledge-based assessments or end-to-end agentic tasks, and do not directly measure LLMs' ability to generate executable commands for real-world cybersecurity tools. This gap is critical because cybersecurity operations rely ...",
         "key_contributions": [
-          "We present Pow3R-SLAM, a real-time RGB-D simultaneous localization and mapping (SLAM) system that uses Pow3R for tracking and mapping.",
-          "Inspired by MASt3R-SLAM, a recent work on monocular SLAM using two-view 3D reconstruction priors, we extend the work to incorporate depth as a prior on the network's prediction, rather than as geometry to fuse.",
-          "Where traditional RGB-D SLAM systems struggle with sparsity in the depth images, Pow3R utilizes the available depth to give a better-conditioned pointmap, while inferring the depths in empty regions from the two-view photometric, depth, and intrinsic data."
+          "LLMs are increasingly applied to cybersecurity workflows, where they are expected to translate analysts' intent into tool invocations.",
+          "However, existing evaluations focus on knowledge-based assessments or end-to-end agentic tasks, and do not directly measure LLMs' ability to generate executable commands for real-world cybersecurity tools.",
+          "This gap is critical because cybersecurity operations rely on strict command-line interfaces (CLIs), where minor syntax errors, incorrect flag--value bindings, or argument misordering can invalidate execution."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2609.38140v1",
-      "title": "Breaking the Uniformity Trap: Scaling Video Diffusion Model via SplitMoE",
+      "id": "2610.02198v1",
+      "title": "FERPO: Forward Entropy-Regularized Policy Optimization",
       "authors": [
-        "Yu Xu",
-        "Yuxin Zhang",
-        "Xiao Yang",
-        "Haotian Yang",
-        "Yizhi Wang",
-        "Xinwei Huang",
-        "Minxuan Lin",
-        "Angtian Wang",
-        "Chongyang Ma",
-        "Fan Tang"
+        "Sebastian Sanokowski",
+        "Alireza Sarmadi",
+        "Majid Khadiv"
       ],
-      "abstract": "Mixture-of-Experts (MoE), popularized by large language models, is a promising paradigm for scaling visual generative models. However, conventional token-wise MoE routes tokens independently within a homogeneous expert pool and regularizes expert usage toward uniformity, making it poorly matched to video data that is spatiotemporally redundant and semantically long-tailed. We show that existing visual MoEs fall into a uniformity trap: semantically under-organized routing, compounded by uniform expert-usage regularization, scatters coherent patches across disparate experts, causing routing fragmentation and structural distortion. To address this, we propose SplitMoE, a split-role sparse architecture that breaks the shackles of uniformity. To accommodate the inherent semantic imbalance, we explicitly bifurcate the expert pool into semantic experts and generic experts, with semantic experts capturing high-level semantic abstraction and generic experts preserving residual visual information and flexible generative capacity. Leveraging prototype-guided routing and pull-push regularization, SplitMoE enables tokens to cluster naturally by semantic attributes rather than arbitrary balancing constraints. Extensive results show that under an equivalent activated-parameter budget, SplitMoE outperforms traditional load-balanced MoEs in convergence speed, routing coherence, and video generation quality across standard benchmarks. By revealing an emergent coarse-to-fine denoising logic, SplitMoE provides the community with a modality-aware scaling path, serving as a critical reference for building large-scale video world models.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
+      "abstract": "Several state-of-the-art methods for online reinforcement learning in continuous control improve policies using action gradients of a learned critic. However, critics are typically trained to predict returns, and accurate value predictions do not necessarily yield accurate action derivatives, potentially leading to unreliable policy updates. We propose Forward Entropy-Regularized Policy Optimization (FERPO), an on-policy maximum entropy reinforcement learning algorithm that performs policy improvement using critic values without differentiating the critic with respect to actions. FERPO derives an optimal target action distribution from a policy-improvement objective regularized by entropy and Kullback-Leibler (KL) divergence. We then fit the actor to this target by minimizing a forward-KL objective, estimated using self-normalized importance sampling (SNIS) with actions drawn from the rollout policy. By limiting the target distribution's deviation from the rollout policy, the KL regularization helps keep these importance weights well behaved. In contrast to reverse-KL objectives, which can favor a subset of the target distribution's modes, the forward-KL objective encourages coverage of multiple high-value modes and thereby promotes exploration. Experiments and ablations on MuJoCo Playground and ManiSkill show competitive performance and sample-efficiency gains. Computational benchmarks also demonstrate faster actor updates than Relative Entropy Pathwise Policy Optimization (REPPO).",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
       "categories": [
-        "cs.CV",
-        "cs.AI"
+        "cs.LG",
+        "cs.AI",
+        "cs.RO",
+        "stat.ML"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.38140v1",
-        "pdf": "https://arxiv.org/pdf/2609.38140v1"
+        "paper": "http://arxiv.org/abs/2610.02198v1",
+        "pdf": "https://arxiv.org/pdf/2610.02198v1"
       },
-      "arxiv_id": "2609.38140v1",
-      "comment": "Accepted as a Spotlight paper at NeurIPS 2026. Project page: https://yuci-gpt.github.io/SplitMoE/",
+      "arxiv_id": "2610.02198v1",
+      "comment": "Code: https://github.com/Atarilab/FERPO",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8499999999999996,
@@ -592,41 +566,42 @@
         }
       },
       "ai_summaries": {
-        "short": "Mixture-of-Experts (MoE), popularized by large language models, is a promising paradigm for scaling visual generative models. However, conventional token-wise MoE routes tokens independently within a homogeneous expert pool and regularizes expert usage toward uniformity, making it poorly matched to video data that is spatiotemporally redundant and semantically long-tailed. We show that existing vi...",
+        "short": "Several state-of-the-art methods for online reinforcement learning in continuous control improve policies using action gradients of a learned critic. However, critics are typically trained to predict returns, and accurate value predictions do not necessarily yield accurate action derivatives, potentially leading to unreliable policy updates. We propose Forward Entropy-Regularized Policy Optimizati...",
         "key_contributions": [
-          "Mixture-of-Experts (MoE), popularized by large language models, is a promising paradigm for scaling visual generative models.",
-          "However, conventional token-wise MoE routes tokens independently within a homogeneous expert pool and regularizes expert usage toward uniformity, making it poorly matched to video data that is spatiotemporally redundant and semantically long-tailed.",
-          "We show that existing visual MoEs fall into a uniformity trap: semantically under-organized routing, compounded by uniform expert-usage regularization, scatters coherent patches across disparate experts, causing routing fragmentation and structural distortion."
+          "Several state-of-the-art methods for online reinforcement learning in continuous control improve policies using action gradients of a learned critic.",
+          "However, critics are typically trained to predict returns, and accurate value predictions do not necessarily yield accurate action derivatives, potentially leading to unreliable policy updates.",
+          "We propose Forward Entropy-Regularized Policy Optimization (FERPO), an on-policy maximum entropy reinforcement learning algorithm that performs policy improvement using critic values without differentiating the critic with respect to actions."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2609.38021v1",
-      "title": "Auditable Long-Term Memory: A Deterministic Retrieval Chain Measured at 479/475 of 500 on LongMemEval-S",
+      "id": "2610.02190v1",
+      "title": "Trust the Direction, Search the Step: Zero-and-First-Order Methods for LLM Fine-Tuning",
       "authors": [
-        "Christopher J. Chanhnourack"
+        "Cristian McGee",
+        "El Houcine Bergou",
+        "Aritra Dutta"
       ],
-      "abstract": "We evaluate an auditable long-term memory system on LongMemEval-S. Its retrieval chain uses hybrid candidate retrieval, cross-encoder reranking, coverage-first packet compilation, and deterministic reasoning scaffolds; an LLM is used only as a replaceable final reader. The chain places all gold sessions in the candidate pool for 468/470 answerable questions and produces gold-complete packets for 462/470. With a Claude Opus reader called through an unpinned CLI alias, two 500-question passes score 479/500 and 475/500 under GPT-4o. The 72 answerable knowledge-update rows used a substantively modified scoring prompt whose effect under the official text has not been measured. The pair straddles Chronos High's published 478/500; differences in reader generation, scoring prompt, and possibly data version, plus within-system variance, establish neither superiority nor equivalence. A grok-4.6-high reader on the same packets scores 476/474, while a maximum-reasoning-effort agentic variant regresses to 461/465. The headline passes differ on eight verdict-flip rows. A second judge agrees with the headline judge on 493/500 rows (98.6%) in each pass and scores both passes 472/500; the official judge also flips three verdicts when re-scoring byte-identical pass-1 answers. Negative controls rejected a verifier that repaired three wrong drafts but broke eleven correct drafts. All components were developed on the same 500 questions, with no held-out evaluation or independent human adjudication; retrieval and scaffold method sources and transcript-derived audits are held; and the headline reader received extra operator context, its complete requests were not retained, and MCP tool availability is unresolved. We release materialized packets, scaffolds, reader outputs, judge verdicts, and controls for inspection and re-scoring.",
-      "published": "2026-09-29",
-      "updated": "2026-09-29",
+      "abstract": "Step-size selection remains a central challenge in large-scale neural network optimization; conservative steps slow convergence, while aggressive steps can destabilize it. We combine \\textbf{Z}ero-and-\\textbf{F}irst-\\textbf{O}rder optimization~(ZFO) and propose a lightweight framework that decouples direction selection from step-size. ZFO uses a trusted first-order optimizer to determine the direction and performs zeroth-order evaluations only along this one-dimensional subspace to choose how far to move. Using the current {gradient information} and two additional objective function evaluations, ZFO instances construct a local model of the objective function along the proposed direction and select a curvature-aware step within a bounded search interval. This yields an adaptive step-selection mechanism that costs less than a full line search. We provide theoretical guarantees to show that shared-sample evaluations produce reliable finite-difference curvature estimates, that the induced local model selects a near-optimal step along the search interval, and that ZFO converges to a neighborhood of a stationary point. Across the evaluated settings, language models and datasets, ZFO frequently improves optimization and final performance relative to fixed-step first-order baselines, with the magnitude and preferred local model depending on the objective. Our code is publicly available at: https://github.com/nizswan/Zeroth-First-Order-Framework.",
+      "published": "2026-10-01",
+      "updated": "2026-10-01",
       "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.IR"
+        "cs.LG",
+        "math.OC"
       ],
-      "primary_category": "cs.CL",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2609.38021v1",
-        "pdf": "https://arxiv.org/pdf/2609.38021v1"
+        "paper": "http://arxiv.org/abs/2610.02190v1",
+        "pdf": "https://arxiv.org/pdf/2610.02190v1"
       },
-      "arxiv_id": "2609.38021v1",
-      "comment": "Technical report, 14 pages. Evidence repository (reader outputs, judge verdicts, control records, judge harness): https://github.com/cjchanh/longmemeval-evidence (MIT). Re-scoring any run under the official judge costs about $1.28",
-      "journal_ref": "",
+      "arxiv_id": "2610.02190v1",
+      "comment": "Accepted to 40th Conference on Neural Information Processing Systems (NeurIPS 2026). Code: https://github.com/nizswan/Zeroth-First-Order-Framework",
+      "journal_ref": "40th Conference on Neural Information Processing Systems (NeurIPS 2026)",
       "has_code": true,
-      "relevance_score": 3.8,
+      "relevance_score": 3.8499999999999996,
       "score_breakdown": {
-        "total_score": 3.8,
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -647,16 +622,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "We evaluate an auditable long-term memory system on LongMemEval-S. Its retrieval chain uses hybrid candidate retrieval, cross-encoder reranking, coverage-first packet compilation, and deterministic reasoning scaffolds; an LLM is used only as a replaceable final reader. The chain places all gold sessions in the candidate pool for 468/470 answerable questions and produces gold-complete packets for 4...",
+        "short": "Step-size selection remains a central challenge in large-scale neural network optimization; conservative steps slow convergence, while aggressive steps can destabilize it. We combine \\textbf{Z}ero-and-\\textbf{F}irst-\\textbf{O}rder optimization~(ZFO) and propose a lightweight framework that decouples direction selection from step-size. ZFO uses a trusted first-order optimizer to determine the direc...",
         "key_contributions": [
-          "We evaluate an auditable long-term memory system on LongMemEval-S.",
-          "Its retrieval chain uses hybrid candidate retrieval, cross-encoder reranking, coverage-first packet compilation, and deterministic reasoning scaffolds; an LLM is used only as a replaceable final reader.",
-          "The chain places all gold sessions in the candidate pool for 468/470 answerable questions and produces gold-complete packets for 462/470."
+          "Step-size selection remains a central challenge in large-scale neural network optimization; conservative steps slow convergence, while aggressive steps can destabilize it.",
+          "We combine \\textbf{Z}ero-and-\\textbf{F}irst-\\textbf{O}rder optimization~(ZFO) and propose a lightweight framework that decouples direction selection from step-size.",
+          "ZFO uses a trusted first-order optimizer to determine the direction and performs zeroth-order evaluations only along this one-dimensional subspace to choose how far to move."
         ],
         "provider": "gemini"
       }

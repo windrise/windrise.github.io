@@ -2,6 +2,7 @@
 theme: default
 title: {{TITLE_JSON}}
 routerMode: hash
+wakeLock: false
 colorSchema: light
 fonts:
   sans: 'Noto Sans CJK SC, Microsoft YaHei, sans-serif'

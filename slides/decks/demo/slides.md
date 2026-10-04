@@ -3,6 +3,7 @@ theme: default
 title: Slidev 起步
 info: Markdown 驱动的演示工作台
 routerMode: hash
+wakeLock: false
 colorSchema: light
 fonts:
   sans: 'Noto Sans CJK SC, Microsoft YaHei, sans-serif'

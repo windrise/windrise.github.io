@@ -43,6 +43,14 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      - name: Setup Node for Slidev
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: slides/package-lock.json
+      - name: Install Slidev dependencies
+        run: npm ci --prefix slides
       - name: Install Node.js dependencies
         run: |
           # Some devDependencies (e.g., Playwright) may try to download large browser binaries on install.
@@ -62,6 +70,13 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Build Slidev presentations
+        run: |
+          npm test --prefix slides
+          npm run build --prefix slides
+          test -f public/index.html
+          test ! -e public/slides
+          cp -R slides/dist/slides public/slides
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

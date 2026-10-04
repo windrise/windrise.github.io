@@ -1,0 +1,40 @@
+name: Slidev checks
+
+on:
+  pull_request:
+    paths:
+      - 'slides/**'
+      - '.github/workflows/slides-check.yml'
+      - '.github/workflows/hugo.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'slides/**'
+      - '.github/workflows/slides-check.yml'
+      - '.github/workflows/hugo.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  slides:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: slides/package-lock.json
+      - run: npm ci --prefix slides
+      - run: npm test --prefix slides
+      - run: npm run build --prefix slides
+      - name: Check all published entry points
+        run: node slides/scripts/check-build.mjs
+      - name: Install browser test dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Check static preview and deep links
+        run: node slides/scripts/smoke.mjs

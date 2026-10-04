@@ -28,9 +28,10 @@ try {
     const parsed = parseSync(await readFile(sourcePath, 'utf8'), sourcePath);
     for (let i = 1; i <= parsed.slides.length; i++) {
       await page.goto(`${baseURL}/slides/${deck.slug}/#/${i}`);
-      await expect(page.locator('.slidev-layout').first()).toBeVisible();
+      const currentSlide = page.locator(`#slide-content [data-slidev-no="${i}"] .slidev-layout`);
+      await expect(currentSlide).toBeVisible();
       await page.reload();
-      await expect(page.locator('.slidev-layout').first()).toBeVisible();
+      await expect(currentSlide).toBeVisible();
       assert.equal(new URL(page.url()).hash.split('?')[0], `#/${i}`);
       if (shots) {
         await page.waitForTimeout(400); // Let slide transition animations settle for screenshots.
@@ -40,7 +41,7 @@ try {
     // A backward step from page 2 cannot be intercepted by first-page reveal animations.
     if (parsed.slides.length > 1) {
       await page.goto(`${baseURL}/slides/${deck.slug}/#/2`);
-      await expect(page.locator('.slidev-layout').first()).toBeVisible();
+      await expect(page.locator('#slide-content [data-slidev-no="2"] .slidev-layout')).toBeVisible();
       await page.keyboard.press('ArrowLeft');
       await page.waitForURL(url => url.hash.split('?')[0] === '#/1');
     }

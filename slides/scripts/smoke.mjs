@@ -19,7 +19,7 @@ try {
   page.on('pageerror', error => errors.push(error.message));
   page.on('response', response => { if (response.url().startsWith(baseURL) && response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
   assert.equal((await page.goto(`${baseURL}/slides/`)).status(), 200);
-  await expect(page.getByRole('heading', { name: '从读懂一篇，到讲清一个问题。' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /从读懂一篇，\s*到讲清一个问题。/ })).toBeVisible();
   await expect(page.getByRole('link', { name: '进入论文库', exact: true })).toHaveAttribute('href', '/reading/reading.html');
   const legacy = page.locator('details').filter({ has: page.getByText('此前的 Slidev 演示', { exact: true }) });
   await expect(legacy).not.toHaveAttribute('open');

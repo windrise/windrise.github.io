@@ -1,6 +1,7 @@
 ---
 theme: default
 routerMode: hash
+wakeLock: false
 fonts:
   provider: none
   sans: system-ui

@@ -84,3 +84,11 @@ node slides/scripts/smoke.mjs
 ```
 
 它会临时启动静态预览，检查清单内各公开演示的页码直达、刷新、键盘返回和移动端目录布局。设置 `SLIDES_SCREENSHOTS=/tmp/slides-shots` 可保存截图；CI 的 Slidev checks 会执行此检查。浏览器测试需要允许运行 Chromium 的环境。
+
+## 论文阅读与汇报
+
+`/reading/reading.html` 提供公共阅读快照。`static/reading/` 与 `slides/decks/trellis2/slides.md` 由 Rise Research Workbench 的同一份正文生成，不直接维护副本。当前5篇元信息、1篇TRELLIS2深读初稿，六页汇报明确保留作者报告/未复现边界；旧demo原URL保留。
+
+来源仓库本机版本：a348e86（2026-10-07），library及web/reading为canonical。导出manifest记录每个公共文件的SHA256。个人阅读状态和笔记不在此仓库；新版修订在源库待审区检查后再导出。源码同步工具位于Rise/tools/reading_integration。
+
+本轮：原有6项npm测试通过，两份deck构建成功，浏览器检查六页正文、目录与旧演示折叠。Slidev53的FloatingVue/Popper patch控制台错误仍存在，未改依赖；正文/翻页展示已检查，其他演示工具不在本轮验收范围。

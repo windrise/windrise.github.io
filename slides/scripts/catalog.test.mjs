@@ -16,3 +16,11 @@ test('escapes metadata and only links explicitly published decks', () => {
   assert.ok(!html.includes('<script>'));
   assert.equal(escapeHtml('"&<>\''), '&quot;&amp;&lt;&gt;&#39;');
 });
+test('learning decks get a visible section and legacy decks remain', () => {
+  const html = renderIndex([demo, { ...demo, slug:'course', origin:'learning' }, { ...demo, slug:'paper', origin:'reading' }]);
+  assert.ok(html.includes('aria-label="项目式课程"'));
+  assert.equal((html.match(/href="\.\/course\/"/g)||[]).length,1);
+  assert.ok(html.indexOf('href="./course/"') < html.indexOf('<details>'));
+  assert.ok(html.includes('href="./demo/"'));
+  assert.ok(html.includes('href="./paper/"'));
+});

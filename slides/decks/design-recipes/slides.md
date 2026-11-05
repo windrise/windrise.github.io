@@ -1,73 +1,993 @@
 ---
 theme: default
-title: 动态设计配方 · DataMagic × Slidev
+title: DataMagic · 全量动态设计配方
 routerMode: hash
 wakeLock: false
-transition: fade
-colorSchema: light
+transition: none
+colorSchema: dark
 fonts:
   provider: none
   sans: system-ui
 drawings:
   persist: false
 ---
-<div class="eyebrow">DESIGN RECIPES / 01</div>
 
-# 把数据讲清楚，<br>让动画有理由。
-
-<div class="intro">两种可重播、可拖动、可复制的动态配方。<br>从 DataMagic 的叙事方法，走到原生 Slidev / Vue。</div>
-
-<div class="chips"><span>排名揭晓</span><span>趋势游标</span><span>可编辑源码</span></div>
-
-<div class="foot">灵感与配方来源：HKUST Dial Lab · DataMagic（MIT）<br>本页所有数据均为合成示例，不代表实验结果。</div>
-
----
-
-<div class="eyebrow">RECIPE 01 / RANKED REVEAL</div>
-
-# 同一尺度，让比较一眼可见
-
-<RecipePlayer />
-
-<div class="caption">重播或拖动进度：条长和数值由同一进度驱动。顺序固定，不制造排名变化。</div>
-
----
-
-<div class="eyebrow">RECIPE 02 / TIMELINE TRAVEL</div>
-
-# 沿着时间，指出转折发生在哪里
-
-<RecipePlayer kind="timeline" />
-
-<div class="caption">保留全程上下文，移动游标只负责引导视线。固定纵轴，不用缩放夸大变化。</div>
-
----
-
-<div class="eyebrow">CHOOSE WITH INTENT</div>
-
-# 先选论点，再选配方
-
-<div class="recipe-grid"><div><b>比较 2–5 个对象</b><h3>RankedReveal</h3><p>共同零基线、清楚单位。<br>适合方案比较与消融实验。</p></div><div><b>解释时间转折</b><h3>ChartTimelineTravel</h3><p>保留趋势、明确插值。<br>适合里程碑与训练进程。</p></div></div>
-
-<div class="principle">一页一个结论 · 一次只引导一个焦点 · 动效不改变数据含义</div>
-
-<div class="caption">不适合：负数排名、超过 5 行的长榜单、含缺失值却未解释的时间序列。先整理数据或选其他图。</div>
-
----
-
-<div class="eyebrow">COPY / ADAPT / VERIFY</div>
-
-# 下一份演示，直接从配方开始
-
-1. 在源码的 slides/recipes/README.md 选择配方与数据约束。
-2. 将 RecipePlayer.vue 和 motion.mjs 复制到新演示的 components/。
-3. 在 Markdown 中传入 rows 或 points，写清单位、数据来源和结论。
-4. 检查终态、重播、拖动、减少动效、深链接与刷新。
-
-<div class="links"><a href="./reference/README.md" target="_blank">读取生成指南与示例 ↗</a><a href="./reference/index.json" target="_blank">Agent 配方索引 ↗</a><a href="https://datamagic.chat/cards/" target="_blank">浏览 DataMagic 原始配方库 ↗</a></div>
-
-<div class="foot">这里是精选兼容实现，不是把 React / Remotion 项目直接塞入 Slidev。<br>上游版权与 MIT 许可见 slides/recipes/THIRD_PARTY_LICENSES.md。</div>
+<DataMagicPlayer gallery />
 
 <style>
-.slidev-layout{background:#f6f3ec;color:#172c3c;padding:42px 56px;font-family:system-ui!important}.slidev-layout h1{font-size:39px;font-weight:750;line-height:1.25;letter-spacing:-1px;margin:14px 0 24px}.eyebrow{font-size:12px;letter-spacing:2px;color:#557568;font-weight:700}.intro{font-size:24px;line-height:1.7;color:#48616d;margin-top:28px}.chips{display:flex;gap:12px;margin-top:28px}.chips span{border:1px solid #b7c9bf;border-radius:20px;padding:8px 18px;color:#355d4f;font-size:15px}.foot{font-size:13px;color:#627480;line-height:1.7;margin-top:30px}.caption{font-size:13px;color:#627480;margin-top:15px;line-height:1.7}.recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}.recipe-grid>div{background:#fff;border:1px solid #d7ded6;border-radius:15px;padding:25px}.recipe-grid b{font-size:14px;color:#557568}.recipe-grid h3{font-size:24px;margin:14px 0}.recipe-grid p{font-size:18px;line-height:1.7;color:#627480}.principle{font-size:20px;margin-top:28px;color:#355d4f}.slidev-layout li{font-size:20px;line-height:1.7;margin-bottom:12px}.links{display:flex;gap:30px;margin-top:26px;font-size:16px}.links a{color:#22735b}
+.slidev-layout { background: #0d1420; color: #e9edf3; padding: 36px 44px; font-family: system-ui, sans-serif; }
+.slidev-layout a { border-bottom: none; }
 </style>
+
+---
+layout: default
+title: "Presenter-to-Data Handoff"
+---
+
+<DataMagicPlayer id="PresenterDataTakeover" />
+
+---
+layout: default
+title: "Contrast Hook & Contribution Story"
+---
+
+<DataMagicPlayer id="ContrastContributionStory" />
+
+---
+layout: default
+title: "Persistent Tier Board"
+---
+
+<DataMagicPlayer id="PersistentTierBoard" />
+
+---
+layout: default
+title: "Character Presenter & Perspective Board"
+---
+
+<DataMagicPlayer id="CharacterPerspectiveBoard" />
+
+---
+layout: default
+title: "Portrait Countdown Ranking"
+---
+
+<DataMagicPlayer id="PortraitRankedReveal" />
+
+---
+layout: default
+title: "Presenter Evidence Board"
+---
+
+<DataMagicPlayer id="PresenterEvidenceBoard" />
+
+---
+layout: default
+title: "Footage to Evidence"
+---
+
+<DataMagicPlayer id="FootageEvidenceReveal" />
+
+---
+layout: default
+title: "Countdown Ranking Reveal"
+---
+
+<DataMagicPlayer id="RankedReveal" />
+
+---
+layout: default
+title: "Bar Chart Race"
+---
+
+<DataMagicPlayer id="BarChartRace" />
+
+---
+layout: default
+title: "Editorial Ledger Race"
+---
+
+<DataMagicPlayer id="EditorialLedgerRace" />
+
+---
+layout: default
+title: "Cinematic Track Race"
+---
+
+<DataMagicPlayer id="CinematicTrackRace" />
+
+---
+layout: default
+title: "Contextual Percent Overlay"
+---
+
+<DataMagicPlayer id="SpatialPercentOverlay" />
+
+---
+layout: default
+title: "Bump Chart Story"
+---
+
+<DataMagicPlayer id="BumpChartStory" />
+
+---
+layout: default
+title: "Data Magnifier Lens"
+---
+
+<DataMagicPlayer id="DataMagnifierLens" />
+
+---
+layout: default
+title: "Source to Insight"
+---
+
+<DataMagicPlayer id="SourceToInsight" />
+
+---
+layout: default
+title: "Choropleth Rank Map"
+---
+
+<DataMagicPlayer id="ChoroplethRankMap" />
+
+---
+layout: default
+title: "Map Route Accumulation"
+---
+
+<DataMagicPlayer id="MapRouteAccumulation" />
+
+---
+layout: default
+title: "Chart Focus Push"
+---
+
+<DataMagicPlayer id="ChartFocusPush" />
+
+---
+layout: default
+title: "Chart Timeline Travel"
+---
+
+<DataMagicPlayer id="ChartTimelineTravel" />
+
+---
+layout: default
+title: "Crane Rise Dashboard"
+---
+
+<DataMagicPlayer id="CraneRiseDashboard" />
+
+---
+layout: default
+title: "Parallax Map Glide"
+---
+
+<DataMagicPlayer id="ParallaxMapGlide" />
+
+---
+layout: default
+title: "Pull Back Isolation"
+---
+
+<DataMagicPlayer id="PullBackIsolation" />
+
+---
+layout: default
+title: "Split Context Comparison"
+---
+
+<DataMagicPlayer id="SplitContextComparison" />
+
+---
+layout: default
+title: "Negative Space Chart Dock"
+---
+
+<DataMagicPlayer id="NegativeSpaceChartDock" />
+
+---
+layout: default
+title: "Source to Reconstruction"
+---
+
+<DataMagicPlayer id="SourceToReconstruction" />
+
+---
+layout: default
+title: "Presenter Chart Stage"
+---
+
+<DataMagicPlayer id="PresenterChartStage" />
+
+---
+layout: default
+title: "Shared Data Element Transition"
+---
+
+<DataMagicPlayer id="SharedDataElementTransition" />
+
+---
+layout: default
+title: "Four-shot Story Generator"
+---
+
+<DataMagicPlayer id="StorySequenceGenerator" />
+
+---
+layout: default
+title: "Generated Video Metric Overlay"
+---
+
+<DataMagicPlayer id="VideoMetricOverlay" />
+
+---
+layout: default
+title: "Tracked Video Callout"
+---
+
+<DataMagicPlayer id="TrackedVideoCallout" />
+
+---
+layout: default
+title: "Basic Bar Chart"
+---
+
+<DataMagicPlayer id="BasicBarChart" />
+
+---
+layout: default
+title: "Basic Line Chart"
+---
+
+<DataMagicPlayer id="BasicLineChart" />
+
+---
+layout: default
+title: "Basic Pie Chart"
+---
+
+<DataMagicPlayer id="BasicPieChart" />
+
+---
+layout: default
+title: "Basic Stat Cards"
+---
+
+<DataMagicPlayer id="BasicStatCards" />
+
+---
+layout: default
+title: "Opening Editorial Title"
+---
+
+<DataMagicPlayer id="OpeningEditorialTitle" />
+
+---
+layout: default
+title: "Opening Executive Brief"
+---
+
+<DataMagicPlayer id="OpeningExecutiveBrief" />
+
+---
+layout: default
+title: "Opening Data Grid"
+---
+
+<DataMagicPlayer id="OpeningDataGrid" />
+
+---
+layout: default
+title: "Opening Split Metrics"
+---
+
+<DataMagicPlayer id="OpeningSplitMetrics" />
+
+---
+layout: default
+title: "Opening Cinematic Headline"
+---
+
+<DataMagicPlayer id="OpeningCinematicHeadline" />
+
+---
+layout: default
+title: "Hero Number Spotlight"
+---
+
+<DataMagicPlayer id="HeroNumberSpotlight" />
+
+---
+layout: default
+title: "KPI Micro Dashboard"
+---
+
+<DataMagicPlayer id="KpiMicroDashboard" />
+
+---
+layout: default
+title: "Dark KPI Micro Dashboard"
+---
+
+<DataMagicPlayer id="DarkKpiMicroDashboard" />
+
+---
+layout: default
+title: "Stat Cards KPI Trio"
+---
+
+<DataMagicPlayer id="StatCardsKpiTrio" />
+
+---
+layout: default
+title: "Quarterly Revenue Grouped Bar"
+---
+
+<DataMagicPlayer id="QuarterlyRevenueGroupedBar" />
+
+---
+layout: default
+title: "Swiss Minimal Report"
+---
+
+<DataMagicPlayer id="SwissMinimalReport" />
+
+---
+layout: default
+title: "Coffee Rating Horizontal Ranking"
+---
+
+<DataMagicPlayer id="CoffeeRatingHorizontalRanking" />
+
+---
+layout: default
+title: "Department Headcount Dark Bar"
+---
+
+<DataMagicPlayer id="DepartmentHeadcountDarkBar" />
+
+---
+layout: default
+title: "Sales by Region Dark Column"
+---
+
+<DataMagicPlayer id="SalesByRegionDarkColumn" />
+
+---
+layout: default
+title: "Executive Horizontal Bars"
+---
+
+<DataMagicPlayer id="ExecutiveHorizontalBars" />
+
+---
+layout: default
+title: "Compact Column KPI"
+---
+
+<DataMagicPlayer id="CompactColumnKpi" />
+
+---
+layout: default
+title: "Margin Shift by Channel"
+---
+
+<DataMagicPlayer id="MarginSlopeComparison" />
+
+---
+layout: default
+title: "Metric Trend Ribbon"
+---
+
+<DataMagicPlayer id="MetricTrendRibbon" />
+
+---
+layout: default
+title: "Light Focus Line"
+---
+
+<DataMagicPlayer id="LightFocusLine" />
+
+---
+layout: default
+title: "Editorial Data Story"
+---
+
+<DataMagicPlayer id="EditorialDataStory" />
+
+---
+layout: default
+title: "Dark Editorial Trend"
+---
+
+<DataMagicPlayer id="DarkEditorialTrend" />
+
+---
+layout: default
+title: "Dark Signal Trendline"
+---
+
+<DataMagicPlayer id="DarkSignalTrendline" />
+
+---
+layout: default
+title: "Dual Series Pulse Line"
+---
+
+<DataMagicPlayer id="DualSeriesPulseLine" />
+
+---
+layout: default
+title: "Slope Change Ranking"
+---
+
+<DataMagicPlayer id="SlopeChangeRanking" />
+
+---
+layout: default
+title: "Market Share Donut"
+---
+
+<DataMagicPlayer id="MarketShareDonut" />
+
+---
+layout: default
+title: "Nested Ring Share"
+---
+
+<DataMagicPlayer id="NestedRingShare" />
+
+---
+layout: default
+title: "Semi Gauge Progress"
+---
+
+<DataMagicPlayer id="SemiGaugeProgress" />
+
+---
+layout: default
+title: "Customer Segment Map"
+---
+
+<DataMagicPlayer id="CustomerSegmentsScatter" />
+
+---
+layout: default
+title: "Portfolio Bubble Matrix"
+---
+
+<DataMagicPlayer id="PortfolioBubbleMatrix" />
+
+---
+layout: default
+title: "Product Performance Radar"
+---
+
+<DataMagicPlayer id="ProductPerformanceRadar" />
+
+---
+layout: default
+title: "Radar Performance Profile"
+---
+
+<DataMagicPlayer id="RadarPerformanceProfile" />
+
+---
+layout: default
+title: "Light Radar Scorecard"
+---
+
+<DataMagicPlayer id="LightRadarScorecard" />
+
+---
+layout: default
+title: "Scatter Opportunity Map"
+---
+
+<DataMagicPlayer id="ScatterOpportunityMap" />
+
+---
+layout: default
+title: "Correlation Heatmap Matrix"
+---
+
+<DataMagicPlayer id="CorrelationHeatmapMatrix" />
+
+---
+layout: default
+title: "Dark Correlation Matrix"
+---
+
+<DataMagicPlayer id="DarkCorrelationMatrix" />
+
+---
+layout: default
+title: "Weekly Activity Heatmap"
+---
+
+<DataMagicPlayer id="WeeklyActivityHeatmap" />
+
+---
+layout: default
+title: "Waterfall Profit Bridge"
+---
+
+<DataMagicPlayer id="WaterfallProfitBridge" />
+
+---
+layout: default
+title: "Revenue Waterfall Bridge"
+---
+
+<DataMagicPlayer id="RevenueWaterfallBridge" />
+
+---
+layout: default
+title: "Conversion Funnel"
+---
+
+<DataMagicPlayer id="ConversionFunnelClean" />
+
+---
+layout: default
+title: "Supply Flow Sankey"
+---
+
+<DataMagicPlayer id="SupplyFlowSankey" />
+
+---
+layout: default
+title: "Supply Chain Sankey Flow"
+---
+
+<DataMagicPlayer id="SupplyChainSankeyFlow" />
+
+---
+layout: default
+title: "Market Treemap Mosaic"
+---
+
+<DataMagicPlayer id="MarketTreemapMosaic" />
+
+---
+layout: default
+title: "Cyber Command Center"
+---
+
+<DataMagicPlayer id="CyberCommandCenter" />
+
+---
+layout: default
+title: "Luxury Black Gold Metrics"
+---
+
+<DataMagicPlayer id="LuxuryBlackGoldMetrics" />
+
+---
+layout: default
+title: "Timeline Milestones"
+---
+
+<DataMagicPlayer id="TimelineMilestones" />
+
+---
+layout: default
+title: "Timeline Milestone Roadmap"
+---
+
+<DataMagicPlayer id="TimelineMilestoneRoadmap" />
+
+---
+layout: default
+title: "Narrative Chapter Title"
+---
+
+<DataMagicPlayer id="NarrativeChapterTitle" />
+
+---
+layout: default
+title: "Narrative Question"
+---
+
+<DataMagicPlayer id="NarrativeQuestion" />
+
+---
+layout: default
+title: "Narrative Quote"
+---
+
+<DataMagicPlayer id="NarrativeQuote" />
+
+---
+layout: default
+title: "Narrative Stat Hook"
+---
+
+<DataMagicPlayer id="NarrativeStatHook" />
+
+---
+layout: default
+title: "Narrative Context"
+---
+
+<DataMagicPlayer id="NarrativeContext" />
+
+---
+layout: default
+title: "Narrative Bullets"
+---
+
+<DataMagicPlayer id="NarrativeBullets" />
+
+---
+layout: default
+title: "Narrative Versus"
+---
+
+<DataMagicPlayer id="NarrativeVersus" />
+
+---
+layout: default
+title: "Narrative Definition"
+---
+
+<DataMagicPlayer id="NarrativeDefinition" />
+
+---
+layout: default
+title: "Narrative Before After"
+---
+
+<DataMagicPlayer id="NarrativeBeforeAfter" />
+
+---
+layout: default
+title: "Narrative Mini Timeline"
+---
+
+<DataMagicPlayer id="NarrativeMiniTimeline" />
+
+---
+layout: default
+title: "Closing Simple Outro"
+---
+
+<DataMagicPlayer id="ClosingSimpleOutro" />
+
+---
+layout: default
+title: "Closing Gradient Signal"
+---
+
+<DataMagicPlayer id="ClosingGradientSignal" />
+
+---
+layout: default
+title: "Closing Light Outro"
+---
+
+<DataMagicPlayer id="ClosingLightOutro" />
+
+---
+layout: default
+title: "Closing Key Takeaways"
+---
+
+<DataMagicPlayer id="ClosingKeyTakeaways" />
+
+---
+layout: default
+title: "Closing Metric Summary"
+---
+
+<DataMagicPlayer id="ClosingMetricSummary" />
+
+---
+layout: default
+title: "Closing Action Plan"
+---
+
+<DataMagicPlayer id="ClosingActionPlan" />
+
+---
+layout: default
+title: "Dense Ranking Table"
+---
+
+<DataMagicPlayer id="DenseRankingTable" />
+
+---
+layout: default
+title: "Multi-Slice Donut"
+---
+
+<DataMagicPlayer id="MultiSliceDonut" />
+
+---
+layout: default
+title: "Long Trendline"
+---
+
+<DataMagicPlayer id="LongTrendline" />
+
+---
+layout: default
+title: "Dense Scatter Cloud"
+---
+
+<DataMagicPlayer id="DenseScatterCloud" />
+
+---
+layout: default
+title: "Wide Comparison Grid"
+---
+
+<DataMagicPlayer id="WideComparisonGrid" />
+
+---
+layout: default
+title: "Long Flow Sankey"
+---
+
+<DataMagicPlayer id="LongFlowSankey" />
+
+---
+layout: default
+title: "Horizontal Bar Matrix"
+---
+
+<DataMagicPlayer id="HorizontalBarMatrix" />
+
+---
+layout: default
+title: "Leaderboard Card Grid"
+---
+
+<DataMagicPlayer id="LeaderboardCardGrid" />
+
+---
+layout: default
+title: "Stepped Bar Strip"
+---
+
+<DataMagicPlayer id="SteppedBarStrip" />
+
+---
+layout: default
+title: "Stacked Share Bar"
+---
+
+<DataMagicPlayer id="StackedShareBar" />
+
+---
+layout: default
+title: "Segment Treemap Vertical"
+---
+
+<DataMagicPlayer id="SegmentTreemapVertical" />
+
+---
+layout: default
+title: "Race Track Share"
+---
+
+<DataMagicPlayer id="RaceTrackShare" />
+
+---
+layout: default
+title: "Multi-Entity Scatter Matrix"
+---
+
+<DataMagicPlayer id="MultiEntityScatterMatrix" />
+
+---
+layout: default
+title: "Quadrant Split Scatter"
+---
+
+<DataMagicPlayer id="QuadrantSplitScatter" />
+
+---
+layout: default
+title: "Labeled Scatter Grid"
+---
+
+<DataMagicPlayer id="LabeledScatterGrid" />
+
+---
+layout: default
+title: "Small Multiples Trend"
+---
+
+<DataMagicPlayer id="SmallMultiplesTrend" />
+
+---
+layout: default
+title: "Stepped Line Ranking"
+---
+
+<DataMagicPlayer id="SteppedLineRanking" />
+
+---
+layout: default
+title: "Area Stack Trend"
+---
+
+<DataMagicPlayer id="AreaStackTrend" />
+
+---
+layout: default
+title: "Clean Trend Card"
+---
+
+<DataMagicPlayer id="CleanTrendCard" />
+
+---
+layout: default
+title: "Bright Scatter Grid"
+---
+
+<DataMagicPlayer id="BrightScatterGrid" />
+
+---
+layout: default
+title: "Light Comparison Panel"
+---
+
+<DataMagicPlayer id="LightComparisonPanel" />
+
+---
+layout: default
+title: "Dark Comparison Panel"
+---
+
+<DataMagicPlayer id="DarkComparisonPanel" />
+
+---
+layout: default
+title: "Dark Compact Bar Ranking"
+---
+
+<DataMagicPlayer id="DarkCompactBarRanking" />
+
+---
+layout: default
+title: "Dark Compact Donut Share"
+---
+
+<DataMagicPlayer id="DarkCompactDonutShare" />
+
+---
+layout: default
+title: "Dark Compact Scatter Panel"
+---
+
+<DataMagicPlayer id="DarkCompactScatterPanel" />
+
+---
+layout: default
+title: "Narrative Chapter Title Light"
+---
+
+<DataMagicPlayer id="NarrativeChapterTitleLight" />
+
+---
+layout: default
+title: "Narrative Stat Hook Light"
+---
+
+<DataMagicPlayer id="NarrativeStatHookLight" />
+
+---
+layout: default
+title: "Narrative Bullets Light"
+---
+
+<DataMagicPlayer id="NarrativeBulletsLight" />
+
+---
+layout: default
+title: "Narrative Quote Light"
+---
+
+<DataMagicPlayer id="NarrativeQuoteLight" />
+
+---
+layout: default
+title: "Narrative Context Light"
+---
+
+<DataMagicPlayer id="NarrativeContextLight" />
+
+---
+layout: default
+title: "Narrative Context Illustrated"
+---
+
+<DataMagicPlayer id="NarrativeContextIllustrated" />
+
+---
+layout: default
+title: "Narrative Stat Hook Illustrated"
+---
+
+<DataMagicPlayer id="NarrativeStatHookIllustrated" />
+
+---
+layout: default
+title: "Narrative Bullets Illustrated"
+---
+
+<DataMagicPlayer id="NarrativeBulletsIllustrated" />
+
+---
+layout: default
+title: "Narrative Chapter Title Illustrated"
+---
+
+<DataMagicPlayer id="NarrativeChapterTitleIllustrated" />
+
+---
+layout: default
+title: "Narrative Quote Illustrated"
+---
+
+<DataMagicPlayer id="NarrativeQuoteIllustrated" />
+
+---
+layout: default
+title: "Light Dense Ranking Bar"
+---
+
+<DataMagicPlayer id="LightDenseRankingBar" />
+
+---
+layout: default
+title: "Light Multi-Slice Pie"
+---
+
+<DataMagicPlayer id="LightMultiSlicePie" />
+
+---
+layout: default
+title: "Light Dense Scatter"
+---
+
+<DataMagicPlayer id="LightDenseScatter" />
+
+---
+layout: default
+title: "Light Flow Sankey"
+---
+
+<DataMagicPlayer id="LightFlowSankey" />
+
+---
+layout: default
+title: "Light Wide Comparison"
+---
+
+<DataMagicPlayer id="LightWideComparison" />
+
+---
+layout: default
+title: "Dark Waterfall Bridge"
+---
+
+<DataMagicPlayer id="DarkWaterfallBridge" />
+
+---
+layout: default
+title: "Dark Timeline Milestones"
+---
+
+<DataMagicPlayer id="DarkTimelineMilestones" />
+
+---
+layout: default
+title: "Light Hero Number"
+---
+
+<DataMagicPlayer id="LightHeroNumber" />

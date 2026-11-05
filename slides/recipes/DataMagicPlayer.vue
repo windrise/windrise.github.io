@@ -1,6 +1,7 @@
 <script setup>
 import { computed, defineComponent, h, markRaw, nextTick, onBeforeUnmount, onErrorCaptured, onMounted, ref, shallowRef, watch } from 'vue'
 import catalog from './catalog.json'
+import replacements from './assets-replacements/mapping.json'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/600.css'
 import '@fontsource/inter/700.css'
@@ -19,6 +20,7 @@ const frame = ref(0), playing = ref(false), reduced = ref(false)
 const payload = shallowRef({}), draft = ref(''), error = ref(''), runtimeError = ref('')
 const bundle = shallowRef(null), loading = ref(false)
 const viewport = ref(null), host = ref(null), shadow = shallowRef(null), size = ref({ width: 850, height: 340 })
+const usesReplacement = computed(() => /Illustrated$/.test(selected.value) || selected.value === 'SpatialPercentOverlay' || replacements.mappings.some(item => JSON.stringify(payload.value).includes(item.source) || JSON.stringify(payload.value).includes('replacements/' + item.replacement)))
 const frames = computed(() => Math.max(1, Number(recipe.value?.frames) || 180))
 const fps = computed(() => Number(recipe.value?.fps) || 30)
 const width = computed(() => Number(recipe.value?.width) || 1280)
@@ -129,7 +131,7 @@ onBeforeUnmount(() => { stop(); observer?.disconnect(); media?.removeEventListen
         <aside v-if="editing" class="dm-editor"><div class="dm-editor-heading"><b>配方参数 · JSON</b><button @click="reset">恢复示例</button></div><textarea v-model="draft" aria-label="Recipe JSON data" spellcheck="false" /><p v-if="error" class="dm-error" role="alert">{{ error }}</p><div class="dm-editor-actions"><span>本地预览，不会上传</span><button class="dm-primary" @click="apply">应用参数</button></div></aside>
       </div>
       <div class="dm-controls"><button class="dm-primary dm-play" :aria-label="playing ? 'Pause animation' : 'Play animation'" @click="playing ? stop() : play()">{{ playing ? 'Ⅱ 暂停' : '▶ 播放' }}</button><button aria-label="Replay animation" @click="replay">↺ 重播</button><input type="range" min="0" :max="frames - 1" :value="frame" aria-label="Animation frame" @input="scrub"><output>{{ frame }} / {{ frames - 1 }}</output><span>{{ (frame / fps).toFixed(2) }}s</span></div>
-      <footer class="dm-footer"><span>{{ width }} × {{ height }} · {{ fps }} fps · {{ reduced ? '减少动效已开启 · 手动播放' : '手动播放 · 可逐帧拖动' }}</span><a :href="`#/${pageOf(selected)}`">此配方链接 ↗</a><a href="./reference/README.md" target="_blank" rel="noopener">使用指南 ↗</a><a href="https://datamagic.chat/cards/" target="_blank" rel="noopener">DataMagic · MIT ↗</a></footer>
+      <footer class="dm-footer"><span>{{ width }} × {{ height }} · {{ fps }} fps · {{ reduced ? '减少动效已开启 · 手动播放' : '手动播放 · 可逐帧拖动' }}</span><a v-if="usesReplacement" href="./reference/assets-replacements/mapping.json" target="_blank" rel="noopener" style="color:#f5d79d">自制背景替代 · 非原素材</a><a :href="`#/${pageOf(selected)}`">此配方链接 ↗</a><a href="./reference/README.md" target="_blank" rel="noopener">使用指南 ↗</a><a href="https://datamagic.chat/cards/" target="_blank" rel="noopener">DataMagic · MIT ↗</a></footer>
     </template>
   </section>
 </template>

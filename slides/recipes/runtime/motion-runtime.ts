@@ -1,5 +1,5 @@
 /** Native Vue frame primitives and numerical easing, with no Remotion runtime. */
-import {computed, defineComponent, h, inject, provide, ref, watch, onMounted, onBeforeUnmount} from 'vue';
+import {computed, defineComponent, h, inject, provide, ref, watch, onMounted, onBeforeUnmount, nextTick} from 'vue';
 import React, {normalizeStyle} from './vue-runtime';
 import assetReplacements from '../assets-replacements/mapping.json';
 export type VideoConfig={fps:number;width:number;height:number;durationInFrames:number;id?:string};
@@ -32,10 +32,51 @@ export const Sequence=defineComponent({name:'Sequence',inheritAttrs:false,props:
 }});
 /** Paused video seeks to the frame context. Browser decoding is asynchronous, not export-grade frame extraction. */
 export const OffthreadVideo=defineComponent({name:'FrameVideo',inheritAttrs:false,setup(_,{attrs}){
-  const parent:any=inject(MotionContext,computed(()=>defaults));const video=ref<HTMLVideoElement|null>(null);
-  const seek=()=>{const el=video.value;if(!el)return;el.pause();const fps=parent.value.fps;const frame=Math.max(0,parent.value.frame*Number(attrs.playbackRate??1)+Number(attrs.startFrom??attrs.trimBefore??0));const target=frame/fps;const end=Number.isFinite(el.duration)?Math.max(0,el.duration-1/fps):target;const t=Math.min(target,end);if(el.readyState&&Math.abs(el.currentTime-t)>0.0001)el.currentTime=t;};
-  watch(()=>[parent.value.frame,parent.value.fps,attrs.src],()=>seek(),{flush:'post'});onMounted(seek);onBeforeUnmount(()=>video.value?.pause());
-  return()=>{const {startFrom,trimBefore,endAt,trimAfter,playbackRate,children,...rest}=attrs;if (/\.(svg|png|webp|jpe?g)(?:[?#]|$)/i.test(String(attrs.src??''))) return h('img',{src:attrs.src,alt:attrs.alt??'Illustrative replacement for source footage',style:normalizeStyle(attrs.style),'data-media-replacement':'still-image'});return h('video',{...rest,ref:video,style:normalizeStyle(attrs.style),muted:attrs.muted??true,playsinline:true,preload:'auto',onLoadedmetadata:seek,onCanplay:seek,'data-frame-seek':parent.value.frame});};
+  const parent:any=inject(MotionContext,computed(()=>defaults));
+  const video=ref<HTMLVideoElement|null>(null),duration=ref(Infinity);
+  const ready=ref(false),revision=ref(0),presentedTime=ref<number|null>(null),error=ref<string|null>(null);
+  const requestedTime=computed(()=>Math.max(0,parent.value.frame*Number(attrs.playbackRate??1)+Number(attrs.startFrom??attrs.trimBefore??0))/parent.value.fps);
+  const targetTime=computed(()=>Math.min(requestedTime.value,Number.isFinite(duration.value)?Math.max(0,duration.value-1/parent.value.fps):Infinity));
+  let callback:number|undefined,raf:number|undefined,disposed=false;
+  let presentedRevision=-1;
+  const cancelPending=()=>{const el=video.value;if(callback!==undefined&&el?.cancelVideoFrameCallback)el.cancelVideoFrameCallback(callback);callback=undefined;if(raf!==undefined)cancelAnimationFrame(raf);raf=undefined;};
+  const atTarget=()=>{const el=video.value;return !!el&&el.readyState>=2&&!el.seeking&&Math.abs(el.currentTime-targetTime.value)<.0001;};
+  // Two animation frames also allow the newly decoded image to reach the compositor.
+  const finish=()=>{const version=revision.value;if(!atTarget()||ready.value)return;if(video.value?.requestVideoFrameCallback&&presentedRevision!==version)return;
+    if(raf!==undefined)cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>{raf=requestAnimationFrame(()=>{raf=undefined;if(!disposed&&revision.value===version&&atTarget()&&(!video.value?.requestVideoFrameCallback||presentedRevision===version))ready.value=true;});});
+  };
+  const awaitPresentedFrame=()=>{const el=video.value;if(!el||!el.requestVideoFrameCallback||callback!==undefined)return;const version=revision.value;
+    callback=el.requestVideoFrameCallback((_now,metadata)=>{callback=undefined;if(disposed||version!==revision.value)return;
+      // mediaTime is a decoded source-frame timestamp, which can precede the exact seek time.
+      presentedTime.value=metadata.mediaTime;
+      if(Math.abs(metadata.mediaTime-targetTime.value)<=1/parent.value.fps+.001){presentedRevision=version;finish();}
+      else awaitPresentedFrame();
+    });
+  };
+  const seek=()=>{const el=video.value;if(!el||disposed)return;el.pause();if(el.readyState<1)return;
+    const alreadyPresented=presentedTime.value!==null&&Math.abs(presentedTime.value-targetTime.value)<=1/parent.value.fps+.001;
+    if(Math.abs(el.currentTime-targetTime.value)>.0001){awaitPresentedFrame();el.currentTime=targetTime.value;}
+    else if(!el.seeking&&el.readyState>=2&&alreadyPresented){presentedRevision=revision.value;finish();}
+    else {awaitPresentedFrame();finish();}
+  };
+  watch(()=>[targetTime.value,attrs.src],(_value,previous)=>{
+    cancelPending();revision.value++;ready.value=false;error.value=null;presentedRevision=-1;
+    // Clear the DOM flag immediately, before Vue's next DOM patch or media events.
+    if(video.value)video.value.dataset.frameReady='false';
+    if(previous&&previous[1]!==attrs.src){duration.value=Infinity;presentedTime.value=null;}
+    nextTick(seek);
+  },{flush:'sync',immediate:true});
+  const metadata=()=>{duration.value=video.value?.duration??Infinity;seek();};
+  const loaded=()=>{seek();finish();};
+  const failed=()=>{ready.value=false;error.value=video.value?.error?.message||'Media failed to load or decode';};
+  onMounted(()=>{awaitPresentedFrame();seek();});
+  onBeforeUnmount(()=>{disposed=true;cancelPending();video.value?.pause();});
+  return()=>{const {startFrom,trimBefore,endAt,trimAfter,playbackRate,children,...rest}=attrs;
+    if (/\.(svg|png|webp|jpe?g)(?:[?#]|$)/i.test(String(attrs.src??''))) return h('img',{src:attrs.src,alt:attrs.alt??'Illustrative replacement for source footage',style:normalizeStyle(attrs.style),'data-media-replacement':'still-image'});
+    return h('video',{...rest,ref:video,style:normalizeStyle(attrs.style),muted:attrs.muted??true,playsinline:true,preload:'auto',onLoadedmetadata:metadata,onLoadeddata:loaded,onCanplay:finish,onSeeked:finish,onError:failed,
+      'data-frame-seek':parent.value.frame,'data-frame-target-time':targetTime.value,'data-frame-ready':String(ready.value),'data-frame-version':revision.value,'data-frame-presented-time':presentedTime.value??'','data-frame-error':error.value??''});
+  };
 }});
 export const Audio=OffthreadVideo;
 export type Extrapolation='extend'|'clamp'|'identity'|'wrap';

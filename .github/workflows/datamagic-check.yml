@@ -30,7 +30,7 @@ jobs:
         run: |
           node slides/scripts/datamagic-reference.mjs
           .reference-upstream/cards/node_modules/.bin/vite build --config .reference-site/vite.config.mjs
-      - name: Compare all 139 native Vue recipes at three keyframes
+      - name: Compare all 139 recipes and narrative transition keyframes
         env:
           DATAMAGIC_REFERENCE_URL: http://127.0.0.1:4174/
         run: |
@@ -44,4 +44,11 @@ jobs:
         with:
           name: datamagic-source-fidelity
           path: reports/datamagic/
+          retention-days: 14
+      - name: Preserve compact comparison report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: datamagic-comparison-report
+          path: reports/datamagic/report.json
           retention-days: 14

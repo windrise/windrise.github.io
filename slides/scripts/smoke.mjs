@@ -60,5 +60,5 @@ try {
   console.log(`Browser checks passed: ${decks.length} deck(s), static deep links, reload, backward navigation, catalog layout`);
 } finally { if (browser) await browser.close(); if (server && server.exitCode === null) { const exited = once(server, 'exit'); server.kill(); await exited; } }
 
-// Validate the reusable dynamic recipe controls after the existing deck regression.
-await import('./recipes-smoke.mjs');
+// Full controls, all 139 source renderers and source comparisons are checked by
+// datamagic-smoke.mjs in the separate DataMagic source fidelity workflow.

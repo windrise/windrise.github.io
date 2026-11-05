@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { keyframes } from './datamagic-test-utils.mjs'
+import { keyframes, recipeKeyframes } from './datamagic-test-utils.mjs'
 test('native frame samples include start, midpoint, and final valid frame', () => {
   assert.deepEqual(keyframes(180), [0, 90, 179])
   assert.deepEqual(keyframes(1), [0])
@@ -28,3 +28,10 @@ test('pixel comparisons report measured differences and reject dimensions', asyn
     await assert.rejects(comparePng(path.join(dir, 'a.png'), path.join(dir, 'small.png'), path.join(dir, 'diff.png')), /dimensions differ/)
   } finally { await fs.rm(dir, { recursive: true, force: true }) }
 })
+
+test('narrative samples cover early springs and scene boundaries', () => {
+  const frames = recipeKeyframes({id: 'StorySequenceGenerator', frames: 360, native: true});
+  for (const frame of [0,8,18,89,90,179,180,269,270,359]) assert.ok(frames.includes(frame));
+  assert.equal(frames.length, new Set(frames).size);
+  assert.deepEqual([...frames].sort((a,b)=>a-b), frames);
+});

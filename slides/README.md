@@ -95,4 +95,4 @@ node slides/scripts/smoke.mjs
 
 ## 动态设计配方
 
-新增 [DataMagic × Slidev 精选参考](./recipes/README.md)：两种原生 Vue/SVG 动态示例、可复制源码、数据约束与未来生成提示。在线入口 `/slides/design-recipes/`。不改变原有课件和主页。
+新增 [DataMagic × Slidev 完整参考](./recipes/README.md)：139项逐源映射的原生 Vue 动态配方、可编辑数据、逐帧控件及来源/许可清单。在线入口 `/slides/design-recipes/`。不改变原有课件和主页。

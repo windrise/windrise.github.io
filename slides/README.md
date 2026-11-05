@@ -92,3 +92,7 @@ node slides/scripts/smoke.mjs
 来源仓库本机版本：a348e86（2026-10-07），library及web/reading为canonical。导出manifest记录每个公共文件的SHA256。个人阅读状态和笔记不在此仓库；新版修订在源库待审区检查后再导出。源码同步工具位于Rise/tools/reading_integration。
 
 本轮：原有6项npm测试通过，两份deck构建成功，浏览器检查六页正文、目录与旧演示折叠。Slidev53的FloatingVue/Popper patch控制台错误仍存在，未改依赖；正文/翻页展示已检查，其他演示工具不在本轮验收范围。
+
+## 动态设计配方
+
+新增 [DataMagic × Slidev 精选参考](./recipes/README.md)：两种原生 Vue/SVG 动态示例、可复制源码、数据约束与未来生成提示。在线入口 `/slides/design-recipes/`。不改变原有课件和主页。

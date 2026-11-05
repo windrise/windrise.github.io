@@ -21,6 +21,6 @@ for (const deck of published) {
   if (result.error) throw result.error;
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
-await cp(new URL('recipes/', root), new URL('slides/design-recipes/reference/', dist), { recursive: true });
+if (published.some(deck => deck.slug === 'design-recipes')) await cp(new URL('recipes/', root), new URL('slides/design-recipes/reference/', dist), { recursive: true });
 await writeFile(new URL('slides/index.html', dist), renderIndex(decks));
 console.log(`Built ${published.length} public deck(s) in slides/dist/slides/`);

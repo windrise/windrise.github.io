@@ -1,4 +1,4 @@
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { validateSource } from './source.mjs';
@@ -21,5 +21,6 @@ for (const deck of published) {
   if (result.error) throw result.error;
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
+await cp(new URL('recipes/', root), new URL('slides/design-recipes/reference/', dist), { recursive: true });
 await writeFile(new URL('slides/index.html', dist), renderIndex(decks));
 console.log(`Built ${published.length} public deck(s) in slides/dist/slides/`);

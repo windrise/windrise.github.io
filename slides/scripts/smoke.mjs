@@ -59,3 +59,6 @@ try {
   assert.deepEqual(errors, [], 'no browser errors or missing local resources');
   console.log(`Browser checks passed: ${decks.length} deck(s), static deep links, reload, backward navigation, catalog layout`);
 } finally { if (browser) await browser.close(); server?.kill(); }
+
+// Validate the reusable dynamic recipe controls after the existing deck regression.
+await import('./recipes-smoke.mjs');

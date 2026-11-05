@@ -9,7 +9,7 @@ const cursor = computed(() => timelineFrame(props.points, progress.value))
 const min = computed(() => Math.min(0, ...props.points.map(p=>p.value)))
 const max = computed(() => Math.max(1,...props.points.map(p=>p.value)))
 const x = i => 55 + i/(props.points.length-1)*650
-const y = v => 210-(v-min.value)/(max.value-min.value)*175
+const y = v => { const range = max.value - min.value; const offset = v - min.value; const scaled = offset / range * 175; return 210 - scaled }
 const line = computed(() => props.points.map((p,i)=>`${x(i)},${y(p.value)}`).join(' '))
 function pause(){ playing.value=false; cancelAnimationFrame(raf) }
 function tick(time){ if(!playing.value)return; if(last!=null) progress.value=Math.min(1,progress.value+(time-last)/4000); last=time; if(progress.value<1)raf=requestAnimationFrame(tick); else pause() }

@@ -9,6 +9,7 @@ test('serves subpaths, assets and redirects; rejects missing/traversal paths', a
   const directory = await mkdtemp(join(tmpdir(), 'slidev-preview-'));
   const dist = join(directory, 'dist');
   await mkdir(join(dist, 'slides', 'demo'), { recursive: true });
+  await writeFile(join(dist, 'slides', 'demo', 'video.mp4'), Buffer.from('0123456789'));
   await writeFile(join(directory, 'outside.txt'), 'not public');
   await writeFile(join(dist, 'slides', 'demo', 'index.html'), '<h1>Demo</h1>');
   await writeFile(join(dist, 'slides', 'demo', 'app.js'), 'console.log("demo")');
@@ -25,5 +26,9 @@ test('serves subpaths, assets and redirects; rejects missing/traversal paths', a
     assert.equal((await fetch(origin + '/slides/demo/app.js')).headers.get('content-type'), 'text/javascript');
     assert.equal((await fetch(origin + '/%2e%2e%2foutside.txt')).status, 404);
     assert.equal((await fetch(origin + '/missing')).status, 404);
+    const video = await fetch(origin+'/slides/demo/video.mp4'); assert.equal(video.headers.get('content-type'),'video/mp4');assert.equal(video.headers.get('content-length'),'10');
+    const segment = await fetch(origin+'/slides/demo/video.mp4',{headers:{Range:'bytes=3-6'}});assert.equal(segment.status,206);assert.equal(segment.headers.get('content-range'),'bytes 3-6/10');assert.equal(await segment.text(),'3456');
+    const tail = await fetch(origin+'/slides/demo/video.mp4',{headers:{Range:'bytes=-3'}});assert.equal(await tail.text(),'789');
+    assert.equal((await fetch(origin+'/slides/demo/video.mp4',{headers:{Range:'bytes=30-'}})).status,416);
   } finally { await new Promise(resolve => server.close(resolve)); await rm(directory, { recursive: true }); }
 });

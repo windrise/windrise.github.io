@@ -1,3 +1,5 @@
+Full-source port notice: 139 catalog entries retain their distinct upstream source mappings. JSX is compiled to native Vue VNodes; the source-compatible factory name React is not the React runtime. See LICENSES.md for asset-by-asset terms and seven intentional background substitutions. Inter OFL notice is shipped in public/datamagic/fonts/LICENSE-Inter.txt.
+
 # DataMagic attribution
 
 Design recipe reference: https://github.com/HKUSTDial/DataMagic

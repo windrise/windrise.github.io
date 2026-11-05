@@ -1,0 +1,54 @@
+name: DataMagic source fidelity
+on:
+  pull_request:
+    paths: ['slides/**', '.github/workflows/datamagic-check.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fidelity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: slides/package-lock.json
+      - run: npm ci --prefix slides && npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test --prefix slides && npm run build --prefix slides
+      - name: Check out pinned source for independent reference rendering
+        uses: actions/checkout@v4
+        with:
+          repository: HKUSTDial/DataMagic
+          ref: 3a66365b6dcab798efc76baf54a3039d0b273f2c
+          path: .reference-upstream
+      - run: npm ci --prefix .reference-upstream/cards --ignore-scripts
+      - name: Build test-only original React reference
+        run: |
+          node slides/scripts/datamagic-reference.mjs
+          .reference-upstream/cards/node_modules/.bin/vite build --config .reference-site/vite.config.mjs
+      - name: Compare all 139 recipes and narrative transition keyframes
+        env:
+          DATAMAGIC_REFERENCE_URL: http://127.0.0.1:4174/
+        run: |
+          node slides/scripts/preview.mjs > /tmp/slides-preview.log 2>&1 &
+          .reference-upstream/cards/node_modules/.bin/vite preview --config .reference-site/vite.config.mjs --host 127.0.0.1 --port 4174 > /tmp/datamagic-reference.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/slides/ >/dev/null && curl -fsS http://127.0.0.1:4174/ >/dev/null && break; sleep 1; done
+          node slides/scripts/datamagic-smoke.mjs
+      - name: Preserve per-recipe evidence, source pairs, and differences
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: datamagic-source-fidelity
+          path: reports/datamagic/
+          retention-days: 14
+      - name: Preserve compact comparison report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: datamagic-comparison-report
+          path: reports/datamagic/report.json
+          retention-days: 14

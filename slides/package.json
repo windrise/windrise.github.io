@@ -10,12 +10,19 @@
     "new": "node scripts/new.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/preview.mjs",
-    "test": "node --test scripts/*.test.mjs",
-    "export": "slidev export decks/demo/slides.md"
+    "test": "node --test scripts/*.test.mjs && node recipes/runtime/run-tests.mjs && node recipes/runtime/smoke-all.mjs",
+    "export": "slidev export decks/demo/slides.md",
+    "port:datamagic": "node scripts/port-datamagic.mjs"
   },
   "devDependencies": {
+    "@fontsource/inter": "^5.2.8",
     "@slidev/cli": "53.0.0",
     "@slidev/theme-default": "0.25.0",
+    "ajv": "^8.20.0",
+    "d3-geo": "3.1.1",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0",
+    "typescript": "6.0.3",
     "yaml": "2.9.1"
   }
 }

@@ -1,3 +1,4 @@
+import './materialize-datamagic.mjs';
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -19,8 +20,8 @@ const cli = fileURLToPath(new URL('node_modules/@slidev/cli/bin/slidev.mjs', roo
 for (const deck of published) {
   const result = spawnSync(process.execPath, [cli, 'build', `decks/${deck.slug}/slides.md`, '--base', `/slides/${deck.slug}/`, '--out', fileURLToPath(new URL(`slides/${deck.slug}/`, dist)), '--without-notes'], { cwd: fileURLToPath(root), stdio: 'inherit' });
   if (result.error) throw result.error;
-  if (result.status !== 0) process.exit(result.status ?? 1);
+  if (result.status !== 0) { console.error(`Slidev build failed for ${deck.slug}: status=${result.status}, signal=${result.signal}`); process.exit(result.status ?? 1); }
 }
-if (published.some(deck => deck.slug === 'design-recipes')) await cp(new URL('recipes/', root), new URL('slides/design-recipes/reference/', dist), { recursive: true });
+if (published.some(deck => deck.slug === 'design-recipes')) await cp(new URL('recipes/', root), new URL('slides/design-recipes/reference/', dist), { recursive: true, filter: source => !source.includes('/asset-data') });
 await writeFile(new URL('slides/index.html', dist), renderIndex(decks));
 console.log(`Built ${published.length} public deck(s) in slides/dist/slides/`);

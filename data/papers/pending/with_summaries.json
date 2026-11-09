@@ -3,40 +3,44 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2611.08330v1",
-      "title": "InstantHand: Feed-Forward 3D Gaussian Splatting for Animatable Hand Avatar Reconstruction from a Single Image",
+      "id": "2611.09714v1",
+      "title": "Beyond Segmentation: Enriching ImageCAS with Coronary Ostia Landmarks, Rooted Centerline Graphs, and Open-Weight Localization Models",
       "authors": [
-        "Chanho Kim",
-        "Muhammad Salman Ali",
-        "Kyeonghwan Gwak",
-        "Muhammad Shaheryar",
-        "Incheol Park",
-        "Jeongwan On",
-        "Seungryul Baek"
+        "Matteo Leccardi",
+        "Andrea Moglia",
+        "Marco Morandini",
+        "Michele Brembilla",
+        "Alessandro Nicosia",
+        "Andrea Penserini",
+        "Christian Brandini",
+        "Ender Konukoglu",
+        "Marco Marcon",
+        "Luca Mainardi",
+        "Pietro Cerveri"
       ],
-      "abstract": "Hand avatar reconstruction typically relies on multi-view capture or per-subject optimization, limiting its scalability. We introduce InstantHand, a feed-forward framework that constructs an animatable 3D Gaussian hand avatar from a single image using off-the-shelf MANO, camera, and mask estimates, without test-time optimization. Image-averaged losses provide insufficient supervision for alpha leakage, which thickens thin finger contours. To address this issue, we propose a Soft Alpha Band regularizer that concentrates supervision on silhouette boundaries. Furthermore, colors regressed from image features can drift toward a learned prior even in observed regions. Our Reliability-gated Appearance Transfer preserves observed appearance by transferring source colors according to each Gaussian's rendering contribution, while completing unobserved regions using the learned prior conditioned on global source identity. InstantHand constructs an avatar in 2.84 seconds and renders at 161 FPS, matching per-subject-optimized baselines on InterHand2.6M and remaining competitive in zero-shot evaluation on HanCo.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "Coronary ostia and centerlines are key reference points for automated analysis of coronary computed tomography angiography (CCTA), from surgical planning to intraoperative vessel tracking. However, the only public ostium annotations cover 77 non-gated aortic scans, not CCTA, while CAT08 and ASOCA (32 and 40 CCTA scans) mark the ostia only implicitly, as centerline start points. This work enriches ImageCAS, the largest public dataset for coronary artery segmentation, with ostium annotations for its 1000 patients and centerline graphs rooted at these new ostia, making it, to the authors' knowledge, the largest public dataset for ostium localization and the only one with centerlines following the official ImageCAS masks and starting at annotated ostia. Three annotators marked each ostium in the first 500 volumes; in the next 500, the candidates of a model trained on the first batch were corrected (human-in-the-loop). Six 3D localization models, trained on ImageCAS, CAT08 and ASOCA, were benchmarked on 58 held-out volumes (50 ImageCAS, 4 CAT08, 4 ASOCA). SwinUNETR-V2 and nnResUNet localized all ostia without failure (>5 mm error), with median errors of 0.70-0.87 mm. Trained on CAT08 and ASOCA alone, SwinUNETR-V2 fails on 34% of right and 53% of left ostia, whereas adding 250 ImageCAS volumes removes all failures. The centerlines were extracted by a deterministic, quality-controlled minimal-path procedure; on ASOCA, they cover a median of 99.5% of the reference length, with a median per-patient mean distance of 0.22 mm between matched reference points and centerlines. Annotations, centerlines, code, and weights are available at https://hal9000-lab.github.io/.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
+        "eess.IV",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "eess.IV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08330v1",
-        "pdf": "https://arxiv.org/pdf/2611.08330v1"
+        "paper": "http://arxiv.org/abs/2611.09714v1",
+        "pdf": "https://arxiv.org/pdf/2611.09714v1"
       },
-      "arxiv_id": "2611.08330v1",
-      "comment": "NeurIPS 2026. Project page: https://coolho1129.github.io/InstantHand-page/",
+      "arxiv_id": "2611.09714v1",
+      "comment": "52 pages including the appendices. Dataset, centerlines, code and model weights: https://hal9000-lab.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.477966101694915,
+      "relevance_score": 4.403389830508475,
       "score_breakdown": {
-        "total_score": 4.48,
+        "total_score": 4.4,
         "field_match": {
-          "score": 1.69,
+          "score": 0.51,
           "matches": [
-            "3d gaussian",
-            "gaussian splatting"
+            "segmentation"
           ],
           "weight": 0.4
         },
@@ -46,7 +50,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -55,41 +59,54 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Hand avatar reconstruction typically relies on multi-view capture or per-subject optimization, limiting its scalability. We introduce InstantHand, a feed-forward framework that constructs an animatable 3D Gaussian hand avatar from a single image using off-the-shelf MANO, camera, and mask estimates, without test-time optimization. Image-averaged losses provide insufficient supervision for alpha lea...",
+        "short": "Coronary ostia and centerlines are key reference points for automated analysis of coronary computed tomography angiography (CCTA), from surgical planning to intraoperative vessel tracking. However, the only public ostium annotations cover 77 non-gated aortic scans, not CCTA, while CAT08 and ASOCA (32 and 40 CCTA scans) mark the ostia only implicitly, as centerline start points. This work enriches ...",
         "key_contributions": [
-          "Hand avatar reconstruction typically relies on multi-view capture or per-subject optimization, limiting its scalability.",
-          "We introduce InstantHand, a feed-forward framework that constructs an animatable 3D Gaussian hand avatar from a single image using off-the-shelf MANO, camera, and mask estimates, without test-time optimization.",
-          "Image-averaged losses provide insufficient supervision for alpha leakage, which thickens thin finger contours."
+          "Coronary ostia and centerlines are key reference points for automated analysis of coronary computed tomography angiography (CCTA), from surgical planning to intraoperative vessel tracking.",
+          "However, the only public ostium annotations cover 77 non-gated aortic scans, not CCTA, while CAT08 and ASOCA (32 and 40 CCTA scans) mark the ostia only implicitly, as centerline start points.",
+          "This work enriches ImageCAS, the largest public dataset for coronary artery segmentation, with ostium annotations for its 1000 patients and centerline graphs rooted at these new ostia, making it, to the authors' knowledge, the largest public dataset for ostium localization and the only one with centerlines following the official ImageCAS masks and starting at annotated ostia."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.08436v1",
-      "title": "SM4RT: Cascaded Feed-forward Model for 4D Reconstruction",
+      "id": "2611.09892v1",
+      "title": "On Agentic Manipulation Policies",
       "authors": [
-        "Pang-Chi Lo",
-        "Jhao-Syun Lai",
-        "Tsung-Wei Ke"
+        "Chen Chen",
+        "Omid Bagherieh",
+        "Naveen Nikamanth Appiah Balaji",
+        "Jesse T. Gonzalez",
+        "Negin Heravi",
+        "Fahad Islam",
+        "Xueting Li",
+        "Jean-Baptiste Regli",
+        "Kejia Ren",
+        "Petr Švec",
+        "David J. Yoon",
+        "Matthias Müller",
+        "Vladlen Koltun"
       ],
-      "abstract": "We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos. While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and then bootstrapping motion estimation from the predicted structure. By expressing each pixel's 3D motion in its corresponding camera frame, SM4RT reduces ambiguity arising from camera motion. To address the sparsity of real-world motion labels, SM4RT further incorporates a weakly supervised loss that regularizes unlabeled point motions using labeled point positions at the other time step. We evaluate motion estimation on three dynamic-scene datasets--Kubric, Waymo, and Point Odyssey--and SM4RT achieves the best performance on most metrics compared with prior baselines. We additionally benchmark geometry reconstruction on five dynamic scene datasets and show that SM4RT achieves competitive performance with state-of-the-art methods. Overall, our unified framework demonstrates that combining geometry reconstruction and motion estimation in a cascade not only avoids performance trade-offs but also enhances motion estimation through improved geometric reasoning.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds. We present AMP1, a reference harness that runs unchanged across single-arm, bimanual, and mobile manipulation. AMP1 achieves state-of-the-art results on the RoboLab-120 and CaP-Gym benchmarks, with no demonstrations or task-specific training. On RoboLab-120, AMP1 reaches an 85.6\\% success rate zero-shot, compared to 49.2\\% and 42.9\\% for leading VLA and WAM policies. The agent succeeds zero-shot in 104 of 108 real-world trials spanning twelve tasks and three robot instances, reducing failure rates by 20x and 15x relative to strong VLA and WAM baselines. The basic harness supplies no grasping, pushing, or placing skills; the agent develops its own strategies, such as searching for hidden objects, using objects as tools, and calibrating its cameras. With the addition of a persistent memory store, the agent can also learn from experience: an augmented harness with a memory representation that is carried across episodes lowers the failure rate on RoboDojo bimanual manipulation tasks by 4.6x relative to zero-shot deployment. Our analysis suggests that AMPs are substantially more general and robust than specialist manipulation policies, providing a promising foundation for robot manipulation.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
-        "cs.CV"
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08436v1",
-        "pdf": "https://arxiv.org/pdf/2611.08436v1"
+        "paper": "http://arxiv.org/abs/2611.09892v1",
+        "pdf": "https://arxiv.org/pdf/2611.09892v1"
       },
-      "arxiv_id": "2611.08436v1",
-      "comment": "Project page: https://sm4rt-eailab.github.io/",
+      "arxiv_id": "2611.09892v1",
+      "comment": "Videos and code available at: https://apple-aiml-research.github.io/ml-amp/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 4.1000000000000005,
@@ -120,120 +137,48 @@
         }
       },
       "ai_summaries": {
-        "short": "We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos. While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and the...",
+        "short": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly,...",
         "key_contributions": [
-          "We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos.",
-          "While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and then bootstrapping motion estimation from the predicted structure.",
-          "By expressing each pixel's 3D motion in its corresponding camera frame, SM4RT reduces ambiguity arising from camera motion."
+          "Recent work on robot manipulation has focused on specialist policies trained on demonstrations.",
+          "We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs).",
+          "We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.08407v1",
-      "title": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
+      "id": "2611.09880v1",
+      "title": "ZeoBench: A Benchmark for Self-Supervised Learning on 3D Zeolite Representations",
       "authors": [
-        "Vongani H. Maluleke",
-        "James Ni",
-        "Kie Horiuchi",
-        "Lea Wilken",
-        "Jiahui Lei",
-        "Evonne Ng",
-        "Roei Herzig",
-        "Jitendra Malik",
-        "Trevor Darrell",
-        "Angjoo Kanazawa"
+        "Aaron Sun",
+        "Yachan Liu",
+        "Ping Yang",
+        "Peng Bai",
+        "Subhransu Maji"
       ],
-      "abstract": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are occluded, while a low-level whole-body tracking controller executes the generated motion on the robot. To train the system, we introduce a two-phase adaptive retargeting procedure that retargets one interaction partner to the robot while morphing the other partner to preserve contact dynamics, reachability, and relative body scale. We apply this procedure across five motion-capture datasets to produce a new Human-Humanoid Interaction (HHI) benchmark of 260 hours of human-humanoid interactions. Our results demonstrate that Social Humanoid produces coordinated, human-aligned behavior across diverse interaction types in simulation and the real world. Project page: https://von31.github.io/social-humanoid/",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
-      "categories": [
-        "cs.RO",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.08407v1",
-        "pdf": "https://arxiv.org/pdf/2611.08407v1"
-      },
-      "arxiv_id": "2611.08407v1",
-      "comment": "CoRL 2026, Project page: https://von31.github.io/social-humanoid/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.050000000000001,
-      "score_breakdown": {
-        "total_score": 4.05,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 8.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy per...",
-        "key_contributions": [
-          "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another.",
-          "To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion.",
-          "Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are occluded, while a low-level whole-body tracking controller executes the generated motion on the robot."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2611.08185v1",
-      "title": "Multimodal Hierarchical Mixture-of-Experts for 3D Medical Vision-Language Modeling",
-      "authors": [
-        "Gizem Mert",
-        "Szymon Płotka",
-        "Pedro R. A. S. Bassi",
-        "Wenxuan Li",
-        "Zongwei Zhou",
-        "Jarosław B. Ćwikła",
-        "Arkadiusz Sitek",
-        "Ewa Szczurek"
-      ],
-      "abstract": "Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization. Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy. We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context. To our knowledge, MedHiVE is the first framework to route both vision and text tokens through a two-level SMoE hierarchy organized by anatomical scale, coupling this with report-derived anatomy-level contrastive alignment for 3D medical imaging. This replaces the direct region-text alignment of statically pooled features and vision-only hierarchical routing of prior work with dynamic, slot-based cross-modal information flow across anatomical scales. MedHiVE operates via a two-level, learnable token-routing mechanism, where local image and text features are first routed through a local SMoE and then fused by a global SMoE into unified multimodal representations. Contrastive learning aligns both anatomy-level and global vision-language representations in a unified space. Pre-trained on 25,000+ CT scans with anatomical supervision, MedHiVE consistently surpasses 11 state-of-the-art methods across 6 datasets on 3 tasks: segmentation, classification, and detection, demonstrating the importance of hierarchical modeling. The code for MedHiVE is at github.com/szczurek-lab/MedHiVE.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "Zeolites are an important class of porous crystalline materials with broad applications in gas storage, separations, and catalysis. Although hundreds of thousands of experimentally realized and hypothetical zeolite structures are known, identifying materials optimized for a target application remains challenging because property labels are expensive to obtain and available only for limited structure-molecule pairs. While prior work has demonstrated that 3D neural representations can predict zeolite properties effectively, it remains unclear which representation-learning strategies are most effective in the low-data regime relevant to materials discovery. We present ZeoBench, a benchmark for self-supervised learning on dense 3D representations of all-silica zeolites, and evaluate the resulting features on six existing downstream adsorption-property prediction tasks, across a range of training set sizes. Our study compares self-supervised 3D pretraining on volumetric zeolite data, adaptations of image-pretrained 2D ConvNets and vision transformers to 3D via multiview and channel-inflation strategies, and 3D ConvNets pretrained on out-of-domain volumetric datasets, alongside hand-crafted descriptors and supervised baselines. Using our pretraining and evaluation framework, we find self-supervised 3D representations outperform existing methods and achieve state-of-the-art performance across both in-domain label regimes and for the unseen domain of metal organic frameworks. Learned representations consistently outperform hand-crafted descriptors, and convolutional architectures are generally more effective than vision transformers in this setting. These results establish ZeoBench as a practical benchmark for 3D representation learning in zeolites and provide guidance for data-limited adsorption property prediction.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08185v1",
-        "pdf": "https://arxiv.org/pdf/2611.08185v1"
+        "paper": "http://arxiv.org/abs/2611.09880v1",
+        "pdf": "https://arxiv.org/pdf/2611.09880v1"
       },
-      "arxiv_id": "2611.08185v1",
-      "comment": "Accepted at WACV 2027. Copyright 2027 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for all other uses",
+      "arxiv_id": "2611.09880v1",
+      "comment": "NeurIPS 2026 Datasets and Benchmarks Track",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.858474576271186,
+      "relevance_score": 3.958474576271186,
       "score_breakdown": {
-        "total_score": 3.86,
+        "total_score": 3.96,
         "field_match": {
           "score": 1.27,
           "matches": [
-            "medical imaging",
-            "segmentation"
+            "self-supervised",
+            "volumetric"
           ],
           "weight": 0.4
         },
@@ -252,44 +197,48 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 7.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization. Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy. We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning t...",
+        "short": "Zeolites are an important class of porous crystalline materials with broad applications in gas storage, separations, and catalysis. Although hundreds of thousands of experimentally realized and hypothetical zeolite structures are known, identifying materials optimized for a target application remains challenging because property labels are expensive to obtain and available only for limited structu...",
         "key_contributions": [
-          "Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization.",
-          "Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy.",
-          "We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context."
+          "Zeolites are an important class of porous crystalline materials with broad applications in gas storage, separations, and catalysis.",
+          "Although hundreds of thousands of experimentally realized and hypothetical zeolite structures are known, identifying materials optimized for a target application remains challenging because property labels are expensive to obtain and available only for limited structure-molecule pairs.",
+          "While prior work has demonstrated that 3D neural representations can predict zeolite properties effectively, it remains unclear which representation-learning strategies are most effective in the low-data regime relevant to materials discovery."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.08352v1",
-      "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
+      "id": "2611.09894v1",
+      "title": "Video-Coder: Reinforcing Agentic Coding for Video Generation",
       "authors": [
-        "Thanapong Intharah",
-        "Zhichao Gao",
-        "Yiliang Liu",
-        "Hao Dong"
+        "Chaoyang Wang",
+        "Sicheng Gao",
+        "Junan Hu",
+        "Kunyang Li",
+        "Dongyang Chen",
+        "Yiyang Zhou",
+        "Huaxiu Yao",
+        "Yong Jae Lee",
+        "Radu Timofte",
+        "Yuzhang Shang"
       ],
-      "abstract": "Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view. Published methods for each part of a guide are evaluated in separate simulators. We asked whether these methods, combined into one guide, are good enough.\n  Methods: We built USB Gym, a testbed whose standard engine simulates ultrasound from public patient CT, with a network drawing organ textures from CT labels. Its guide has three replaceable parts (slots), an organ segmenter, a controller and a reward, which received 20 published methods, each run on the same 60 episodes of six held-out patients. In each slot, a published method replaced ours only if detectably better on these patients. The better of this combination and our original guide on 20 new CTs is the benchmark baseline. A pose oracle, reading the exact probe pose available only in simulation, set the reference. The results below are exploratory.\n  Results: On these CTs, the probe started on average 16.0 mm from the target view; the pose oracle brought it to 1.5 mm. Of the results known when the combination was fixed, only an image-similarity reward (SSIM) was slightly but detectably better, so the combination was our guide with that reward. This combination was the benchmark baseline, ending at 13.7 mm (16% of the oracle's progress).\n  Conclusions: Combining untuned published methods with ours did not guide the probe near the target view; the task remains under-explored. The testbed accepts new methods; no guide was tested on hardware.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency. However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging. In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and executes code to construct a dynamic 3D scene (Draft Video) that provides structure and motion signals to downstream video generators. To support this paradigm, we design a dedicated data pipeline and curate two high-quality datasets, Video-Coder-SFT-6k and Video-Coder-RL-2k, which contain diverse prompts and ground-truth reference videos. We further develop the Video- Coder Harness, a unified interactive environment integrating code execution, 3D scene rendering, and execution feedback for agent training and inference. We then train Video-Coder with SFT fol- lowed by harness-native agentic reinforcement learning with dual reward feedback, which combines execution-based and video-based rewards. Additionally, we design an annealing training strategy that gradually reduces the execution reward over time, allowing the model to rely more on the video reward in the later training stages. Experiments show that Video-Coder achieves significant gains, improving Minimax-H3 by approximately 7 points on PhyGenBench and 24 points on VBench-2.0. We hope this work can serve as an open foundation for coding agents in video generation, and we fully open-source our data, models, and code",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
-        "cs.CV",
-        "cs.LG",
-        "cs.RO"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08352v1",
-        "pdf": "https://arxiv.org/pdf/2611.08352v1"
+        "paper": "http://arxiv.org/abs/2611.09894v1",
+        "pdf": "https://arxiv.org/pdf/2611.09894v1"
       },
-      "arxiv_id": "2611.08352v1",
-      "comment": "75 pages; supplementary material (62 pages) as an ancillary file. Submitted to Computer Methods and Programs in Biomedicine. Code: https://github.com/tohnperfect/USBGym",
+      "arxiv_id": "2611.09894v1",
+      "comment": "Project Page:https://cywang735.github.io/Video-Coder/ Code: https://github.com/CYWang735/Video-Coder",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8499999999999996,
@@ -320,182 +269,40 @@
         }
       },
       "ai_summaries": {
-        "short": "Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view. Published methods for each part of a guide are evaluated in separate simulators. We asked whether these methods, combined into one guide, are good enough.\n  Methods: We built USB Gym, a testbed whose standard engine simulates ultrasound from public patient CT, with a network drawin...",
+        "short": "Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency. However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging. In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and ex...",
         "key_contributions": [
-          "Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view.",
-          "Published methods for each part of a guide are evaluated in separate simulators.",
-          "We asked whether these methods, combined into one guide, are good enough."
+          "Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency.",
+          "However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging.",
+          "In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and executes code to construct a dynamic 3D scene (Draft Video) that provides structure and motion signals to downstream video generators."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.08318v1",
-      "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+      "id": "2611.09715v1",
+      "title": "Intent-Aware Caching for Efficient LLM Serving",
       "authors": [
-        "Wenbo Huang",
-        "Jianxin Bi",
-        "Shunyu Yang",
-        "Ruiyang Si",
-        "Rui Ni",
-        "Qiang Wang",
-        "Shulong Jiang",
-        "Yintianrun Zhang",
-        "Feixiang Ruan",
-        "Kewei Zhang",
-        "Ye Huang",
-        "Shukai Gong",
-        "Daquan Zhou"
+        "Kazi Hasan Ibn Arif",
+        "JinYi Yoon",
+        "Dimitrios S. Nikolopoulos",
+        "Hans Vandierendonck",
+        "Deepu John",
+        "Bo Ji"
       ],
-      "abstract": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. Several recent works expose the benchmark's success criteria to the learning agent, a practice we call Criteria Exposure (CE). These criteria, originally written to verify policies trained by imitation learning, often demand more than the corresponding language instructions, so a score from such a verifier may not faithfully reflect whether the instructed task was completed, especially for robot-control programs written by an agent. As embodied coding agents report ever higher benchmark scores, a natural question arises: when a coding agent is exposed to the benchmark's criteria, does it generate code that better performs the instructed task, or code that simply overfits to the verification criteria? We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions. More importantly, the skills the agent develops under CE transfer poorly across tasks. We further propose instruction-faithful criteria and show that they better reflect the performance of agent-generated programs.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "Modern LLM serving systems use prefix caching to accelerate multi-turn conversational workloads. They cache the key-value states of previous conversation prefixes and reuse them when subsequent requests share the same prefix, to avoid redundant prefill computation and reduce serving latency. However, achieving a high cache hit rate remains challenging because cache reuse depends on whether a conversation continues and how soon the next turn arrives. Our analysis of real workloads shows that user intent is a useful signal for this behavior, as different intents exhibit different continuation probabilities and inter-turn delays. Based on this key insight, we propose Intent-Aware Caching (IAC), an online eviction policy that classifies requests by intent, learns lightweight reuse statistics from recent serving logs and leverages these statistics to guide an oracle-inspired eviction strategy. Extensive evaluation on real workloads (WildChat and ShareChat) shows that IAC reaches a 34.6% cache hit rate. This substantially outperforms both the previous learning-based approach (18.8%) and traditional methods such as least recently used (LRU, 12.2%), while reducing average serving latency by up to 46.1%.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
         "cs.AI",
-        "cs.RO"
+        "cs.LG"
       ],
       "primary_category": "cs.AI",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08318v1",
-        "pdf": "https://arxiv.org/pdf/2611.08318v1"
+        "paper": "http://arxiv.org/abs/2611.09715v1",
+        "pdf": "https://arxiv.org/pdf/2611.09715v1"
       },
-      "arxiv_id": "2611.08318v1",
-      "comment": "22 pages, 8 figures, 10 tables. Project page: https://dagroup-pku.github.io/PyRUA-Lean/RSIJudge",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. Several recent works expose the benchmark's success criteria to the learning agent, a practice we call Criteria Exposure (CE). These criteria, originally written to verify policies trained by imitation learning, often demand more than the corresponding language instructions, so a score from...",
-        "key_contributions": [
-          "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks.",
-          "Several recent works expose the benchmark's success criteria to the learning agent, a practice we call Criteria Exposure (CE).",
-          "These criteria, originally written to verify policies trained by imitation learning, often demand more than the corresponding language instructions, so a score from such a verifier may not faithfully reflect whether the instructed task was completed, especially for robot-control programs written by an agent."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2611.08372v1",
-      "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
-      "authors": [
-        "Sateesh Kumar",
-        "Arnav Balaji",
-        "Arpit Bahety",
-        "Skand Peri",
-        "Georgios Pavlakos",
-        "Roberto Martín-Martín"
-      ],
-      "abstract": "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented. We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. Our key insight is that standard MoMa data collection naturally provides the multiview observations needed to reconstruct both the static scene and the manipulated object in 3D. MOMASPLAT combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to separately reconstruct the scene and manipulated object, render them from novel viewpoints, and generate geometrically consistent synthetic demonstrations paired with transformed actions. We evaluate MOMASPLAT on five real-world mobile manipulation tasks involving both rigid and articulated objects across three scenes, and validate the fidelity of its synthesized demonstrations against ground truth in simulation. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.08372v1",
-        "pdf": "https://arxiv.org/pdf/2611.08372v1"
-      },
-      "arxiv_id": "2611.08372v1",
-      "comment": "Project page: https://robin-lab.cs.utexas.edu/momasplat",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.8279661016949147,
-      "score_breakdown": {
-        "total_score": 3.83,
-        "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synt...",
-        "key_contributions": [
-          "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint.",
-          "This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints.",
-          "Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2611.08156v1",
-      "title": "La-JEPA: Compact Robot Policies with Latent World Modeling",
-      "authors": [
-        "Mateo Clémente",
-        "George Z. Xue",
-        "Amin Abyaneh",
-        "Liheng Ma",
-        "Rui Heng Yang",
-        "Tongtong Cao",
-        "Zhanguang Zhang",
-        "Yingxue Zhang"
-      ],
-      "abstract": "World-action models adapt pretrained video generators, and vision-language-action models build on pretrained vision-language backbones; both tie policy architecture and inference cost to large transformers designed for generation rather than control. It remains unclear how much these generation-oriented choices affect control. In this work, we introduce Latent Action JEPA (La-JEPA), a compact world-action model whose policy transformer is trained from scratch in the feature space of a pretrained V-JEPA 2.1 encoder. Following Fast-WAM, La-JEPA learns to predict future features jointly with actions during training and generates only actions at inference. Among policies without embodied pretraining, La-JEPA achieves state-of-the-art performance in clean and randomized RoboTwin 2.0 scenes and on LIBERO-Plus with correct instructions, while using far fewer parameters than the strongest competing policies. It runs substantially faster than Fast-WAM at comparable performance and outperforms the closest JEPA-based methods, LeapBot-WA and JEPA-WAM, on LIBERO-Plus and RoboTwin 2.0 without their pretrained policy backbones. On four real-robot tasks, its average success is comparable to pi0.5 and above non-embodied-pretrained baselines. Through a design study of the choices behind La-JEPA, we show that JEPA features outperform video VAE latents, most clearly out of distribution, and that training-time future prediction choices significantly impact the policy even when future prediction is skipped at inference. We correct the LIBERO-Plus instructions, as the officially released evaluator corrupts them for most variants, and re-evaluate several strong open baselines. Without a generative pretrained policy backbone, La-JEPA is better and faster than far larger policies, suggesting that robot foundation models may benefit from architectures designed for control rather than inherited from generation.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
-      "categories": [
-        "cs.RO",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.RO",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.08156v1",
-        "pdf": "https://arxiv.org/pdf/2611.08156v1"
-      },
-      "arxiv_id": "2611.08156v1",
-      "comment": "30 pages, 6 figures. Code: https://github.com/mt-clemente/lajepa",
+      "arxiv_id": "2611.09715v1",
+      "comment": "NeurIPS 2026 | Code: https://github.com/hasanar1f/intent-aware-caching",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8,
@@ -526,43 +333,96 @@
         }
       },
       "ai_summaries": {
-        "short": "World-action models adapt pretrained video generators, and vision-language-action models build on pretrained vision-language backbones; both tie policy architecture and inference cost to large transformers designed for generation rather than control. It remains unclear how much these generation-oriented choices affect control. In this work, we introduce Latent Action JEPA (La-JEPA), a compact worl...",
+        "short": "Modern LLM serving systems use prefix caching to accelerate multi-turn conversational workloads. They cache the key-value states of previous conversation prefixes and reuse them when subsequent requests share the same prefix, to avoid redundant prefill computation and reduce serving latency. However, achieving a high cache hit rate remains challenging because cache reuse depends on whether a conve...",
         "key_contributions": [
-          "World-action models adapt pretrained video generators, and vision-language-action models build on pretrained vision-language backbones; both tie policy architecture and inference cost to large transformers designed for generation rather than control.",
-          "It remains unclear how much these generation-oriented choices affect control.",
-          "In this work, we introduce Latent Action JEPA (La-JEPA), a compact world-action model whose policy transformer is trained from scratch in the feature space of a pretrained V-JEPA 2."
+          "Modern LLM serving systems use prefix caching to accelerate multi-turn conversational workloads.",
+          "They cache the key-value states of previous conversation prefixes and reuse them when subsequent requests share the same prefix, to avoid redundant prefill computation and reduce serving latency.",
+          "However, achieving a high cache hit rate remains challenging because cache reuse depends on whether a conversation continues and how soon the next turn arrives."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.08425v1",
-      "title": "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing",
+      "id": "2611.09709v1",
+      "title": "RidgeFill: Training-Free Late-Layer Cache Fill for Faster Prefill",
       "authors": [
-        "Michal P. Podolinsky",
-        "Yunhao Yang",
-        "Daniel Little",
-        "Hong Lu",
-        "Rohan Siva",
-        "Olin Goudey",
-        "Neel P. Bhatt",
-        "Matthias Scheutz",
-        "Ufuk Topcu"
+        "Dylan Johnston",
+        "Robert P. Smith"
       ],
-      "abstract": "Vision-Language-Action models (VLAs) enable general-purpose embodied intelligence, but their performance is brittle under distribution shift, where unanticipated failures can damage equipment or endanger people. Deploying VLAs in real-world systems therefore requires a runtime monitor that is timely, calibrated, and informative while being efficient enough to run on the edge. Existing methods fail to fulfill these requirements. We present VLA-Tug, a lightweight probe over the latent layers of a VLA backbone that improves early failure detection and bounds the missed-detection and false-alarm rates, with minimal inference overhead. We show that supervising on the pre-failure segment of a trajectory increases early failure detection at matched false-positive rates by up to 30% over the strongest learned baseline. Under shift to unseen tasks, the bounds on missed-detection and false-alarm rates remain valid in up to 86% of runs, versus at most 21% for baselines. Unlike existing methods, VLA-Tug predicts the failure mode to enable corrective actions, raising top-3 accuracy on unseen tasks by up to 44% over a majority baseline. VLA-Tug enables real-time monitoring where the well-timed and informative probe supports lightweight steering that improves task success. We release a dataset of 3,180 annotated manipulation episodes to support future work on latent failure detection in VLAs at https://vla-tug.github.io.",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model. RidgeFill retrofits it onto models that were never trained for it: the map is a ridge regression fitted once in closed form from one pass over calibration text, the layer's own projections run unchanged, and a chosen set of rows, the last few thousand tokens, and every decoding step run the full model. Nothing is trained and no token is dropped.\n  Most of the work was in measurement, finding a repeatable methodology. Loss averaged over all tokens hides RidgeFill's error. Needle retrieval in the filled region, loss on tokens that depend on distant context, and splice tests that swap filled keys or values for exact ones show which component carries it: the keys on Llama-3.1-8B, half of it in their scale, and the values and the recurrent state on Qwen3.5-9B.\n  On Qwen3.8-27B in a llama.cpp fork on an A100, time to first token is 1.25 to 1.31x faster at 16K to 120K tokens with the maps in VRAM; RULER changes by -1.2 and -1.4 points and LongBench v2 by -1.4; the 95 % intervals include zero but do not rule out losses of a few points. On Qwen3.8-Flash-Next in vLLM it is 1.50 to 1.60x faster than exact at 9K to 32K tokens, with RULER's needle tasks at 99.8 against 100.0 and perplexity on novel tokens 2.65 % higher [-0.02 %, +4.93 %]. On three 8 to 9B reference models, at the same split and tail as the identity fill, the fitted map retrieves 49.1 and 49.6 more filled-region RULER points on the two dense models (at that split Llama's loss is worse), and its long-document loss is +/-0.03 nats of the released SwiftKV checkpoint's.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
-        "cs.RO",
-        "cs.AI"
+        "cs.LG",
+        "cs.CL"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08425v1",
-        "pdf": "https://arxiv.org/pdf/2611.08425v1"
+        "paper": "http://arxiv.org/abs/2611.09709v1",
+        "pdf": "https://arxiv.org/pdf/2611.09709v1"
       },
-      "arxiv_id": "2611.08425v1",
-      "comment": "Code, videos, and dataset available at https://vla-tug.github.io",
+      "arxiv_id": "2611.09709v1",
+      "comment": "50 pages, 15 figures, 38 tables. Code and data: https://github.com/Approximate-Science/ridgefill-data",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8,
+      "score_breakdown": {
+        "total_score": 3.8,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model. RidgeFill retrofits it onto ...",
+        "key_contributions": [
+          "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt.",
+          "The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction.",
+          "The design follows YOCO and DeepSeek-V4."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2611.09573v1",
+      "title": "Half-precision inference of AI weather prediction models: negligible loss of skill at a fraction of the cost",
+      "authors": [
+        "Stefan Siegert"
+      ],
+      "abstract": "AI weather prediction models are released with 32-bit (fp32) weights and run in fp32 by default, although current GPUs compute much faster in 16-bit formats. We run five publicly available models -- Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet -- on a single 16 GB GPU from 52 initial dates in 2024, in fp32 and with their networks in half precision (fp16), and verify the forecasts against ERA5. The physical state must stay in fp32: converting the whole model rounds it in physical units, which in fp16 overflows and in bf16 discards meaningful information. With the state, its normalisation and denormalisation in fp32, running the network in fp16 changes the global RMSE by at most 1.4%, and by about 0.5% or less for four of the five models, equivalent to less than one hour of lead time up to day 8 and at most two hours at day 10. The differences show no systematic pattern by region, scale or for tropical and extratropical storms, apart from a small tropical penalty in FourCastNet, and fp16 leaves the CRPS, spread and calibration of Aurora's ensemble almost unchanged. No value overflowed fp16's numeric range (+/-65,504); the largest stay 38 to 544 times below it. A 10-day forecast in fp16 is 1.3-3.5 times faster than in fp32 and uses 1.4-3.7 times less energy. Sensitivity experiments show that rules of thumb from other applications of reduced precision carry over only partly: the first and last layers dominate for some models but not for others, and no type of layer is sensitive on its own. For running AI weather models on a single GPU, fp16 with the state in fp32 is practically lossless at a fraction of the cost. bf16, often preferred for its wider range, is as fast but less accurate than fp16 for every model, and simple 8-bit quantisation costs far more skill.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
+      "categories": [
+        "physics.ao-ph",
+        "cs.LG",
+        "cs.PF"
+      ],
+      "primary_category": "physics.ao-ph",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.09573v1",
+        "pdf": "https://arxiv.org/pdf/2611.09573v1"
+      },
+      "arxiv_id": "2611.09573v1",
+      "comment": "40 pages, 15 figures, 9 tables. Code: https://github.com/sieste/ai-nwp-fp16",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.75,
@@ -593,47 +453,45 @@
         }
       },
       "ai_summaries": {
-        "short": "Vision-Language-Action models (VLAs) enable general-purpose embodied intelligence, but their performance is brittle under distribution shift, where unanticipated failures can damage equipment or endanger people. Deploying VLAs in real-world systems therefore requires a runtime monitor that is timely, calibrated, and informative while being efficient enough to run on the edge. Existing methods fail...",
+        "short": "AI weather prediction models are released with 32-bit (fp32) weights and run in fp32 by default, although current GPUs compute much faster in 16-bit formats. We run five publicly available models -- Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet -- on a single 16 GB GPU from 52 initial dates in 2024, in fp32 and with their networks in half precision (fp16), and verify the forecasts against E...",
         "key_contributions": [
-          "Vision-Language-Action models (VLAs) enable general-purpose embodied intelligence, but their performance is brittle under distribution shift, where unanticipated failures can damage equipment or endanger people.",
-          "Deploying VLAs in real-world systems therefore requires a runtime monitor that is timely, calibrated, and informative while being efficient enough to run on the edge.",
-          "Existing methods fail to fulfill these requirements."
+          "AI weather prediction models are released with 32-bit (fp32) weights and run in fp32 by default, although current GPUs compute much faster in 16-bit formats.",
+          "We run five publicly available models -- Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet -- on a single 16 GB GPU from 52 initial dates in 2024, in fp32 and with their networks in half precision (fp16), and verify the forecasts against ERA5.",
+          "The physical state must stay in fp32: converting the whole model rounds it in physical units, which in fp16 overflows and in bf16 discards meaningful information."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.08288v1",
-      "title": "Hierarchical Incremental Beta Splatting for Online Reconstruction",
+      "id": "2611.09655v1",
+      "title": "Decoupled Mode Connectivity for Base-to-Novel Generalization in Vision-Language Models",
       "authors": [
-        "Linus Franke"
+        "Imad Eddine Marouf",
+        "Khalid Oublal",
+        "Enzo Tartaglione",
+        "Stéphane Lathuilière"
       ],
-      "abstract": "Online 3D Gaussian Splatting reconstructs a scene during capture: each keyframe spawns primitives once and refines them for only a few dozen iterations, leaving little chance to fix poor initialization or missing detail. Gaussians are also inherently soft, needing many overlaps for solid surfaces. We present Hierarchical Incremental Beta Splatting (HIBS), which brings beta kernels to incremental reconstruction. Their shape parameter interpolates between a soft, Gaussian-like profile and a flat-topped, near-opaque surfel, acting as a confidence dial for geometry. Our confidence-aware spawning uses geometric observability and multi-view depth agreement to initialize both opacity and shape, producing solid primitives where geometry is verifiable and soft, correctable primitives where it is not. As online densification, error-driven relocation recycles stale primitives into photometric-error hotspots. Bounded beta kernel support enables exact tile culling and faster rasterization, and a closed-form, shape-preserving merging formulation provides a level-of-detail (LOD) hierarchy for fast optimization and real-time rendering. On Mip-NeRF 360 in the on-the-fly protocol, HIBS improves PSNR by up to 0.8 dB while reducing optimization time by up to 40%. Project page: https://linus-franke.com/hibs/",
-      "published": "2026-11-05",
-      "updated": "2026-11-05",
+      "abstract": "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt. The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space. Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments no single-prompt loss design clearly improves on the cosine\n  baseline. We propose Decoupled Mode Connectivity (DMC), which gives each objective its own prompt. Starting from a base-trained prompt, DMC trains a\n  specialization prompt and a generalization prompt, and merges their text features with a fixed coefficient at test time, at the inference cost of a single\n  prompt. A linear mode connectivity (LMC) corridor in text-feature space keeps the classification loss low for every classifier interpolated between the two\n  endpoints, and a Visual Anchor KL term preserves CLIP's zero-shot class-similarity distribution of each image during specialization. We further argue that\n  such regularizers should satisfy class-permutation invariance (CPI), and show via Fano's inequality, in an idealized model, that violating CPI\n  lower-bounds the drop in novel accuracy by a term proportional to the mutual information between the prompt and the base-class labels. Across 11 datasets,\n  DMC improves the average harmonic mean of base and novel accuracy over MergeTune for both CoOp and KgCoOp, and its interpolation curves pass beyond the\n  single-prompt operating point, shifting the base-novel frontier rather than trading along it. Code is available at https://github.com/IemProg/DMC.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
       "categories": [
-        "cs.CV",
-        "cs.GR"
+        "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.08288v1",
-        "pdf": "https://arxiv.org/pdf/2611.08288v1"
+        "paper": "http://arxiv.org/abs/2611.09655v1",
+        "pdf": "https://arxiv.org/pdf/2611.09655v1"
       },
-      "arxiv_id": "2611.08288v1",
-      "comment": "accepted to WACV 2027, project page: https://linus-franke.com/hibs/",
+      "arxiv_id": "2611.09655v1",
+      "comment": "Accepted at NeurIPS 2026. 46 pages (10 main + references, appendix and checklist), 15 figures. Project page: https://iemprog.github.io/DMC/ Code:https://github.com/IemProg/DMC",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.7152542372881356,
+      "has_code": true,
+      "relevance_score": 3.7,
       "score_breakdown": {
-        "total_score": 3.72,
+        "total_score": 3.7,
         "field_match": {
-          "score": 2.29,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting",
-            "nerf"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -642,7 +500,129 @@
           "weight": 0.25
         },
         "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt. The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space. Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments n...",
+        "key_contributions": [
+          "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt.",
+          "The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space.",
+          "Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments no single-prompt loss design clearly improves on the cosine\n  baseline."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2611.09642v1",
+      "title": "NAVE: A Normalized, Adaptive Conformer for Antarctic Whale Vocalization Detection",
+      "authors": [
+        "Matthias Nagl",
+        "Paul Primus",
+        "Gerhard Widmer"
+      ],
+      "abstract": "Antarctic whale vocalization detection requires temporally localizing call boundaries in long underwater recordings and classifying them into predefined call types. Training reliable machine learning models for this task is difficult due to the variability and sparsity of whale calls in passive acoustic monitoring datasets. These difficulties are further amplified by time-varying noise that can mask whale calls and by site-specific ambient sound characteristics to which a trained model may not generalize. In this work, we present NAVE, a Conformer-based detector that improves whale-call detection via three components. First, its input representation combines per-bin complex mean subtraction, which suppresses constant site-specific ambient sound characteristics, with an additional per-channel energy normalization (PCEN) channel that adapts to temporal variations in the noise floor. Second, a frequency-dynamic stem processes these noise-aware representations with convolutions that adapt across the characteristic frequency bands of the target call types. Third, we use a Conformer backbone with a convolution kernel matched to the duration of the target calls that adds an inductive bias and improves temporal localization. We evaluate NAVE on BioDCASE 2026 Task 2 using leave-one-site-out cross-validation across the validation sites, which approximates deployment on unseen recording sites. A single NAVE model with a tuned per-class threshold exceeds the stronger WhaleVAD-BPN baseline, using no boundary-proposal network and no search over post-processing parameters. A controlled ablation study shows that the normalized front-end and a duration-matched convolutional kernel each contribute substantially to recovering the D downsweep, the hardest class for previous detectors, with the wide kernel giving the largest aggregate gain.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
+      "categories": [
+        "eess.AS",
+        "cs.LG",
+        "cs.SD"
+      ],
+      "primary_category": "eess.AS",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.09642v1",
+        "pdf": "https://arxiv.org/pdf/2611.09642v1"
+      },
+      "arxiv_id": "2611.09642v1",
+      "comment": "5 pages, 3 figures, 2 tables. Accepted at the Detection and Classification of Acoustic Scenes and Events (DCASE) 2026 Workshop. Code: https://github.com/TheFruitGuy/NAVE-SED",
+      "journal_ref": "Proceedings of the 11th Workshop on Detection and Classification of Acoustic Scenes and Events (DCASE 2026), Boston, USA, pp. 1-5, 2026",
+      "has_code": true,
+      "relevance_score": 3.7,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
           "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Antarctic whale vocalization detection requires temporally localizing call boundaries in long underwater recordings and classifying them into predefined call types. Training reliable machine learning models for this task is difficult due to the variability and sparsity of whale calls in passive acoustic monitoring datasets. These difficulties are further amplified by time-varying noise that can ma...",
+        "key_contributions": [
+          "Antarctic whale vocalization detection requires temporally localizing call boundaries in long underwater recordings and classifying them into predefined call types.",
+          "Training reliable machine learning models for this task is difficult due to the variability and sparsity of whale calls in passive acoustic monitoring datasets.",
+          "These difficulties are further amplified by time-varying noise that can mask whale calls and by site-specific ambient sound characteristics to which a trained model may not generalize."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2611.09599v1",
+      "title": "Dual-Region Slice Aggregation for CT-Based Renal Tumor Classification",
+      "authors": [
+        "Yuan Liang",
+        "Sourav Bhattacharjee",
+        "Abraham Campbell"
+      ],
+      "abstract": "Clear cell renal cell carcinoma (ccRCC) is the most common kidney cancer in adults. We present a region-aware architecture for CT-based ccRCC classification. Tumor and 0--10 mm peritumoral context are pooled separately from shared frozen DINOv3 feature maps. A shared position-aware slice aggregator precedes fixed training-only principal component analysis (PCA). The resulting representations are fused with radiomics using two scalar feature gates. Evaluation on KiTS23 and 111 external cases yields internal test and external AUCs of 0.8078\\pm0.0154 and 0.9094\\pm0.0015. Compared with matched single-tumor readout, mean AUC increases by 1.50 and 2.34 percentage points, respectively. Early-PCA and reconstruction controls yield lower internal mean AUCs, while external AUC is similar for early and late PCA. These findings highlight the joint role of regional readout and slice aggregation in adapting frozen visual features to renal CT.",
+      "published": "2026-11-06",
+      "updated": "2026-11-06",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.09599v1",
+        "pdf": "https://arxiv.org/pdf/2611.09599v1"
+      },
+      "arxiv_id": "2611.09599v1",
+      "comment": "Submitted to IEEE ISBI 2027",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 3.7,
+      "score_breakdown": {
+        "total_score": 3.7,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 8,
+          "venue": "ISBI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -656,11 +636,11 @@
         }
       },
       "ai_summaries": {
-        "short": "Online 3D Gaussian Splatting reconstructs a scene during capture: each keyframe spawns primitives once and refines them for only a few dozen iterations, leaving little chance to fix poor initialization or missing detail. Gaussians are also inherently soft, needing many overlaps for solid surfaces. We present Hierarchical Incremental Beta Splatting (HIBS), which brings beta kernels to incremental r...",
+        "short": "Clear cell renal cell carcinoma (ccRCC) is the most common kidney cancer in adults. We present a region-aware architecture for CT-based ccRCC classification. Tumor and 0--10 mm peritumoral context are pooled separately from shared frozen DINOv3 feature maps. A shared position-aware slice aggregator precedes fixed training-only principal component analysis (PCA). The resulting representations are f...",
         "key_contributions": [
-          "Online 3D Gaussian Splatting reconstructs a scene during capture: each keyframe spawns primitives once and refines them for only a few dozen iterations, leaving little chance to fix poor initialization or missing detail.",
-          "Gaussians are also inherently soft, needing many overlaps for solid surfaces.",
-          "We present Hierarchical Incremental Beta Splatting (HIBS), which brings beta kernels to incremental reconstruction."
+          "Clear cell renal cell carcinoma (ccRCC) is the most common kidney cancer in adults.",
+          "We present a region-aware architecture for CT-based ccRCC classification.",
+          "Tumor and 0--10 mm peritumoral context are pooled separately from shared frozen DINOv3 feature maps."
         ],
         "provider": "gemini"
       }

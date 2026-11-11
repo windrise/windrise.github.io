@@ -1,3 +1,8 @@
+> **Review workflow update:** The label-based approval instructions below are historical.
+> Use a new comment containing exactly `/approve <arxiv-id>` for one paper, by a
+> current repository writer. `approved`/`rejected`/`starred` labels and bare comments
+> do not process papers. See [PAPER_REVIEW.md](PAPER_REVIEW.md) for current behavior.
+
 
 # 🚀 论文自动化系统 - 设置指南
 
@@ -391,3 +396,4 @@ gh issue list --label "paper-review" --json number,title | \
 有任何问题随时查看文档或创建 issue。
 
 Happy reading! 📚✨
+

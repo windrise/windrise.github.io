@@ -4,6 +4,7 @@ Process Approved Papers from GitHub Issues
 Reads approved papers and adds them to the collection
 """
 
+from review_snapshot import load_snapshot, parse_approval
 import argparse
 import json
 import os
@@ -42,31 +43,6 @@ def get_issue_content(issue_number: int) -> str:
 
     data = json.loads(result.stdout)
     return data.get("body", "")
-
-
-def load_pending_papers() -> List[dict]:
-    """Load papers from pending directory"""
-    pending_files = [
-        "data/papers/pending/with_audio.json",
-        "data/papers/pending/with_summaries.json",
-        "data/papers/pending/filtered.json"
-    ]
-
-    for filepath in pending_files:
-        if os.path.exists(filepath):
-            with open(filepath, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                return data.get("papers", [])
-
-    return []
-
-
-def parse_arxiv_id_from_issue(issue_body: str) -> List[str]:
-    """Extract arXiv IDs from issue body"""
-    # Pattern: **arXiv:** [2308.04079](https://arxiv.org/abs/2308.04079)
-    pattern = r'\*\*arXiv:\*\*\s*\[([^\]]+)\]'
-    matches = re.findall(pattern, issue_body)
-    return matches
 
 
 def categorize_paper(paper: dict, existing_categories: List[dict]) -> List[str]:
@@ -162,7 +138,7 @@ def convert_to_yaml_paper(paper: dict, existing_categories: List[dict]) -> dict:
     return yaml_paper
 
 
-def process_approved_papers(issue_number: int):
+def process_approved_papers(issue_number: int, comment_body: str):
     """Main processing function"""
     print(f"📋 Processing issue #{issue_number}...")
 
@@ -173,23 +149,26 @@ def process_approved_papers(issue_number: int):
 
     # Get existing arXiv IDs to avoid duplicates
     existing_arxiv_ids = {
-        p.get("arxiv_id") for p in existing_papers if p.get("arxiv_id")
+        re.sub(r"v[0-9]+$", "", p["arxiv_id"]) for p in existing_papers if p.get("arxiv_id")
     }
 
     # Get issue content
     issue_body = get_issue_content(issue_number)
-    arxiv_ids = parse_arxiv_id_from_issue(issue_body)
+    arxiv_ids = [parse_approval(comment_body)]
 
     print(f"Found {len(arxiv_ids)} papers in issue")
 
     # Load pending papers with full data
-    pending_papers = load_pending_papers()
+    pending_papers = load_snapshot(issue_body, issue_number)
     pending_by_arxiv = {p.get("arxiv_id"): p for p in pending_papers}
+
+    if arxiv_ids[0] not in pending_by_arxiv:
+        raise ValueError("Requested paper is not in this issue snapshot")
 
     # Process each arXiv ID
     added_count = 0
     for arxiv_id in arxiv_ids:
-        if arxiv_id in existing_arxiv_ids:
+        if re.sub(r"v[0-9]+$", "", arxiv_id) in existing_arxiv_ids:
             print(f"⏭️  Skipping {arxiv_id} (already exists)")
             continue
 
@@ -236,7 +215,13 @@ def main():
     args = parser.parse_args()
 
     try:
-        process_approved_papers(args.issue_number)
+        # Read comment data from the event file, never interpolate it into a shell.
+        with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as f:
+            event = json.load(f)
+        if (event.get("action") != "created" or event.get("issue", {}).get("number") != args.issue_number
+                or "pull_request" in event.get("issue", {})):
+            raise ValueError("Expected a newly created issue comment")
+        process_approved_papers(args.issue_number, event["comment"]["body"])
     except Exception as e:
         print(f"❌ Error: {e}")
         raise
@@ -244,3 +229,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

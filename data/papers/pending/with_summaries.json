@@ -3,44 +3,168 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2611.09714v1",
-      "title": "Beyond Segmentation: Enriching ImageCAS with Coronary Ostia Landmarks, Rooted Centerline Graphs, and Open-Weight Localization Models",
+      "id": "2611.17331v1",
+      "title": "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models",
       "authors": [
-        "Matteo Leccardi",
-        "Andrea Moglia",
-        "Marco Morandini",
-        "Michele Brembilla",
-        "Alessandro Nicosia",
-        "Andrea Penserini",
-        "Christian Brandini",
-        "Ender Konukoglu",
-        "Marco Marcon",
-        "Luca Mainardi",
-        "Pietro Cerveri"
+        "Chin-Yang Lin",
+        "Ryo Hachiuma",
+        "Jaesung Choe",
+        "Min-Hung Chen",
+        "Yu-Chiang Frank Wang",
+        "Yen-Yu Lin",
+        "Wei-Chen Chiu",
+        "Yu-Lun Liu",
+        "Cheng Sun"
       ],
-      "abstract": "Coronary ostia and centerlines are key reference points for automated analysis of coronary computed tomography angiography (CCTA), from surgical planning to intraoperative vessel tracking. However, the only public ostium annotations cover 77 non-gated aortic scans, not CCTA, while CAT08 and ASOCA (32 and 40 CCTA scans) mark the ostia only implicitly, as centerline start points. This work enriches ImageCAS, the largest public dataset for coronary artery segmentation, with ostium annotations for its 1000 patients and centerline graphs rooted at these new ostia, making it, to the authors' knowledge, the largest public dataset for ostium localization and the only one with centerlines following the official ImageCAS masks and starting at annotated ostia. Three annotators marked each ostium in the first 500 volumes; in the next 500, the candidates of a model trained on the first batch were corrected (human-in-the-loop). Six 3D localization models, trained on ImageCAS, CAT08 and ASOCA, were benchmarked on 58 held-out volumes (50 ImageCAS, 4 CAT08, 4 ASOCA). SwinUNETR-V2 and nnResUNet localized all ostia without failure (>5 mm error), with median errors of 0.70-0.87 mm. Trained on CAT08 and ASOCA alone, SwinUNETR-V2 fails on 34% of right and 53% of left ostia, whereas adding 250 ImageCAS volumes removes all failures. The centerlines were extracted by a deterministic, quality-controlled minimal-path procedure; on ASOCA, they cover a median of 99.5% of the reference length, with a median per-patient mean distance of 0.22 mm between matched reference points and centerlines. Annotations, centerlines, code, and weights are available at https://hal9000-lab.github.io/.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding. The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality. The second key addresses a modality misalignment between context prefilling and novel-view rendering: we disentangle context tokens into camera-only context rendering tokens to serve as TTB input, and context ground-truth tokens with image content to serve as the TTB mapping target, ensuring the baked MLPs are relieved of the modality generalization challenge between context and novel-view processing. Our method achieves up to **23x** rendering speedup with quality on par with the state-of-the-art across several benchmarks. Project page: https://test-time-baking.github.io",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
-        "eess.IV",
         "cs.CV"
       ],
-      "primary_category": "eess.IV",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09714v1",
-        "pdf": "https://arxiv.org/pdf/2611.09714v1"
+        "paper": "http://arxiv.org/abs/2611.17331v1",
+        "pdf": "https://arxiv.org/pdf/2611.17331v1"
       },
-      "arxiv_id": "2611.09714v1",
-      "comment": "52 pages including the appendices. Dataset, centerlines, code and model weights: https://hal9000-lab.github.io/",
+      "arxiv_id": "2611.17331v1",
+      "comment": "NeurIPS 2026 (Spotlight). Project page: https://test-time-baking.github.io",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.403389830508475,
+      "relevance_score": 4.3,
       "score_breakdown": {
-        "total_score": 4.4,
+        "total_score": 4.3,
         "field_match": {
-          "score": 0.51,
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 10.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a ligh...",
+        "key_contributions": [
+          "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality.",
+          "We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding.",
+          "The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2611.17298v1",
+      "title": "Consistent Video-to-Video Translation via Explicit Correspondences",
+      "authors": [
+        "Gaurav Parmar",
+        "Zhengqi Li",
+        "Richard Zhang",
+        "Jun-Yan Zhu",
+        "Srinivasa Narasimhan",
+        "Eli Shechtman",
+        "Yotam Nitzan"
+      ],
+      "abstract": "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency. However, recent methods achieve speed by restricting attention to a fixed-length causal window. This limits long-range consistency whenever relevant history falls outside the context window. To address this limitation, we introduce vid2vid-long, a correspondence-based approach grounded in a simple observation. Video-to-video translation provides an explicit cross-frame reference: the regions that match in the input video should match in the output video too. Concretely, we compute patch-level correspondences in the input, guiding retrieval of previously generated outputs in the corresponding regions, and condition the model on these patches through correspondence cross-attention. Our experiments demonstrate that vid2vid-long consistently improves long-range temporal consistency across recent video models while preserving generation quality and real-time performance.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.17298v1",
+        "pdf": "https://arxiv.org/pdf/2611.17298v1"
+      },
+      "arxiv_id": "2611.17298v1",
+      "comment": "ECCV 2026. Project Website: https://www.cs.cmu.edu/~vid2vid-long/",
+      "journal_ref": "",
+      "has_code": false,
+      "relevance_score": 4.25,
+      "score_breakdown": {
+        "total_score": 4.25,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 10,
+          "venue": "ECCV",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency. However, recent methods achieve speed by restricting attention to a fixed-length causal window. This limits long-range consistency whenever relevant history falls outside the context window. To address this limitation, we introduce vid2vid-long, a correspondence-based approach gr...",
+        "key_contributions": [
+          "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency.",
+          "However, recent methods achieve speed by restricting attention to a fixed-length causal window.",
+          "This limits long-range consistency whenever relevant history falls outside the context window."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2611.17302v1",
+      "title": "FLEX-LBP: Learning Local Binary Patterns with Exact Binary Inference for Texture Classification",
+      "authors": [
+        "Mohamed Alimoussa",
+        "Amal El Kaid"
+      ],
+      "abstract": "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging. Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset. We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts. A straight-through estimator acts only in the backward pass, so the deployed descriptor is an interpretable hard-binary LBP with 90 learnable parameters and unchanged inference cost. In a controlled ablation on six color texture benchmarks, the component worth learning is dataset-dependent. One configuration, applied unchanged everywhere, learns the geometry and thresholds with the color transform frozen. It improves the nearest-neighbor accuracy of the identical fixed descriptor by 3.55 points on average over five seeds, significantly on five of six benchmarks and never significantly worse. With a linear discriminant readout, it gains 0.9 points; the fully learned descriptor gains 2.7 and has the highest mean. FLEX-LBP is more accurate than five classical LBP-family descriptors, PCANet and a neural LBP on five of six benchmarks. Its mean nearest-neighbor accuracy exceeds that of frozen ImageNet ResNet-50 features (23.5 million parameters). On the Kather colorectal cancer histology benchmark, the fully learned descriptor reaches 93.8%, significantly above the best classical descriptor (Completed LBP, 92.8%). The learned radii adapt in directions that recur across seeds. Noise drowns single-pixel comparisons and illuminant change flips inter-channel ones; median sampling or gray-world normalization restores 96-97%. The code is available as a drop-in PyTorch layer at https://github.com/medalimoussa/FLEX-LBP.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.17302v1",
+        "pdf": "https://arxiv.org/pdf/2611.17302v1"
+      },
+      "arxiv_id": "2611.17302v1",
+      "comment": "21 pages, 5 figures, 8 tables. Code: https://github.com/medalimoussa/FLEX-LBP",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.055084745762712,
+      "score_breakdown": {
+        "total_score": 4.06,
+        "field_match": {
+          "score": 0.76,
           "matches": [
-            "segmentation"
+            "medical imaging"
           ],
           "weight": 0.4
         },
@@ -50,7 +174,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -64,54 +188,51 @@
         }
       },
       "ai_summaries": {
-        "short": "Coronary ostia and centerlines are key reference points for automated analysis of coronary computed tomography angiography (CCTA), from surgical planning to intraoperative vessel tracking. However, the only public ostium annotations cover 77 non-gated aortic scans, not CCTA, while CAT08 and ASOCA (32 and 40 CCTA scans) mark the ostia only implicitly, as centerline start points. This work enriches ...",
+        "short": "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging. Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset. We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts. A straight-through...",
         "key_contributions": [
-          "Coronary ostia and centerlines are key reference points for automated analysis of coronary computed tomography angiography (CCTA), from surgical planning to intraoperative vessel tracking.",
-          "However, the only public ostium annotations cover 77 non-gated aortic scans, not CCTA, while CAT08 and ASOCA (32 and 40 CCTA scans) mark the ostia only implicitly, as centerline start points.",
-          "This work enriches ImageCAS, the largest public dataset for coronary artery segmentation, with ostium annotations for its 1000 patients and centerline graphs rooted at these new ostia, making it, to the authors' knowledge, the largest public dataset for ostium localization and the only one with centerlines following the official ImageCAS masks and starting at annotated ostia."
+          "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging.",
+          "Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset.",
+          "We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.09892v1",
-      "title": "On Agentic Manipulation Policies",
+      "id": "2611.17334v1",
+      "title": "Unbundling Multimodal Vision Encoding",
       "authors": [
-        "Chen Chen",
-        "Omid Bagherieh",
-        "Naveen Nikamanth Appiah Balaji",
-        "Jesse T. Gonzalez",
-        "Negin Heravi",
-        "Fahad Islam",
-        "Xueting Li",
-        "Jean-Baptiste Regli",
-        "Kejia Ren",
-        "Petr Švec",
-        "David J. Yoon",
-        "Matthias Müller",
-        "Vladlen Koltun"
+        "Ellis Brown",
+        "Chris Hoang",
+        "Shengyi Qian",
+        "Shang-Wen Li",
+        "Mike Lewis",
+        "Marjan Ghazvininejad",
+        "Luke Zettlemoyer",
+        "Lucas Beyer",
+        "Mengye Ren",
+        "Jakob Verbeek",
+        "Saining Xie",
+        "Hu Xu"
       ],
-      "abstract": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds. We present AMP1, a reference harness that runs unchanged across single-arm, bimanual, and mobile manipulation. AMP1 achieves state-of-the-art results on the RoboLab-120 and CaP-Gym benchmarks, with no demonstrations or task-specific training. On RoboLab-120, AMP1 reaches an 85.6\\% success rate zero-shot, compared to 49.2\\% and 42.9\\% for leading VLA and WAM policies. The agent succeeds zero-shot in 104 of 108 real-world trials spanning twelve tasks and three robot instances, reducing failure rates by 20x and 15x relative to strong VLA and WAM baselines. The basic harness supplies no grasping, pushing, or placing skills; the agent develops its own strategies, such as searching for hidden objects, using objects as tools, and calibrating its cameras. With the addition of a persistent memory store, the agent can also learn from experience: an augmented harness with a memory representation that is carried across episodes lowers the failure rate on RoboDojo bimanual manipulation tasks by 4.6x relative to zero-shot deployment. Our analysis suggests that AMPs are substantially more general and robust than specialist manipulation policies, providing a promising foundation for robot manipulation.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone). Because published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage. What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count. Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token. These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model. Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
-        "cs.RO",
-        "cs.AI",
         "cs.CV",
         "cs.LG"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09892v1",
-        "pdf": "https://arxiv.org/pdf/2611.09892v1"
+        "paper": "http://arxiv.org/abs/2611.17334v1",
+        "pdf": "https://arxiv.org/pdf/2611.17334v1"
       },
-      "arxiv_id": "2611.09892v1",
-      "comment": "Videos and code available at: https://apple-aiml-research.github.io/ml-amp/",
+      "arxiv_id": "2611.17334v1",
+      "comment": "Project page: https://unbundling.github.io",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.1000000000000005,
+      "relevance_score": 4.0,
       "score_breakdown": {
-        "total_score": 4.1,
+        "total_score": 4.0,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -132,53 +253,49 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.5,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly,...",
+        "short": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e....",
         "key_contributions": [
-          "Recent work on robot manipulation has focused on specialist policies trained on demonstrations.",
-          "We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs).",
-          "We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds."
+          "How multimodal language models should encode visual input remains up for debate.",
+          "Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely.",
+          "Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.09880v1",
-      "title": "ZeoBench: A Benchmark for Self-Supervised Learning on 3D Zeolite Representations",
+      "id": "2611.17190v1",
+      "title": "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes",
       "authors": [
-        "Aaron Sun",
-        "Yachan Liu",
-        "Ping Yang",
-        "Peng Bai",
-        "Subhransu Maji"
+        "Robert Fonod",
+        "Nikolas Geroliminis"
       ],
-      "abstract": "Zeolites are an important class of porous crystalline materials with broad applications in gas storage, separations, and catalysis. Although hundreds of thousands of experimentally realized and hypothetical zeolite structures are known, identifying materials optimized for a target application remains challenging because property labels are expensive to obtain and available only for limited structure-molecule pairs. While prior work has demonstrated that 3D neural representations can predict zeolite properties effectively, it remains unclear which representation-learning strategies are most effective in the low-data regime relevant to materials discovery. We present ZeoBench, a benchmark for self-supervised learning on dense 3D representations of all-silica zeolites, and evaluate the resulting features on six existing downstream adsorption-property prediction tasks, across a range of training set sizes. Our study compares self-supervised 3D pretraining on volumetric zeolite data, adaptations of image-pretrained 2D ConvNets and vision transformers to 3D via multiview and channel-inflation strategies, and 3D ConvNets pretrained on out-of-domain volumetric datasets, alongside hand-crafted descriptors and supervised baselines. Using our pretraining and evaluation framework, we find self-supervised 3D representations outperform existing methods and achieve state-of-the-art performance across both in-domain label regimes and for the unseen domain of metal organic frameworks. Learned representations consistently outperform hand-crafted descriptors, and convolutional architectures are generally more effective than vision transformers in this setting. These results establish ZeoBench as a practical benchmark for 3D representation learning in zeolites and provide guidance for data-limited adsorption property prediction.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag. A two-part benchmark measures it and the object masking meant to prevent it. A static protocol scores ten pipelines under exactly known homographies on 4K aerial frames, tuned on a site-disjoint split at a matched resolution and feature budget. A dynamic protocol scores them at an offline and a real-time budget on hovers selected from the video alone to span the amount and coherence of moving foreground, plus a stationary control. It measures background alignment, object position error and the share of a moving group's displacement an estimate follows, against a pseudo-ground-truth reference audited with manually annotated ground control points, which also score every candidate. On static scenes, tuned AKAZE, RootSIFT, SIFT and BRISK lead, retuning the matcher thresholds raises the mean average accuracy (mAA) by at most 0.0062, and masking costs less than 0.005. Unmasked ORB is captured on 28 of 304 real-time dynamic pairs and on 6 offline; its real-time captured estimates have a median corner error of 18.8 px yet typical inlier counts and ratios. Masking removes capture for every pipeline and leaves the leading pipelines unchanged. Code, data and results are released.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09880v1",
-        "pdf": "https://arxiv.org/pdf/2611.09880v1"
+        "paper": "http://arxiv.org/abs/2611.17190v1",
+        "pdf": "https://arxiv.org/pdf/2611.17190v1"
       },
-      "arxiv_id": "2611.09880v1",
-      "comment": "NeurIPS 2026 Datasets and Benchmarks Track",
+      "arxiv_id": "2611.17190v1",
+      "comment": "50 pages, 17 figures, 24 tables. Code at https://github.com/rfonod/stabilo-benchmark and data at https://doi.org/10.5281/zenodo.23623540 and https://doi.org/10.5281/zenodo.15050577",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.958474576271186,
+      "has_code": true,
+      "relevance_score": 3.903389830508474,
       "score_breakdown": {
-        "total_score": 3.96,
+        "total_score": 3.9,
         "field_match": {
-          "score": 1.27,
+          "score": 0.51,
           "matches": [
-            "self-supervised",
-            "volumetric"
+            "registration"
           ],
           "weight": 0.4
         },
@@ -188,57 +305,118 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 8.0,
+          "score": 6.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
-          "score": 7.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Zeolites are an important class of porous crystalline materials with broad applications in gas storage, separations, and catalysis. Although hundreds of thousands of experimentally realized and hypothetical zeolite structures are known, identifying materials optimized for a target application remains challenging because property labels are expensive to obtain and available only for limited structu...",
+        "short": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate towa...",
         "key_contributions": [
-          "Zeolites are an important class of porous crystalline materials with broad applications in gas storage, separations, and catalysis.",
-          "Although hundreds of thousands of experimentally realized and hypothetical zeolite structures are known, identifying materials optimized for a target application remains challenging because property labels are expensive to obtain and available only for limited structure-molecule pairs.",
-          "While prior work has demonstrated that 3D neural representations can predict zeolite properties effectively, it remains unclear which representation-learning strategies are most effective in the low-data regime relevant to materials discovery."
+          "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable.",
+          "The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves.",
+          "Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.09894v1",
-      "title": "Video-Coder: Reinforcing Agentic Coding for Video Generation",
+      "id": "2611.17129v1",
+      "title": "Paper-Faithful Federated Learning: Scientific Checks for Practitioner and Agent Development",
       "authors": [
-        "Chaoyang Wang",
-        "Sicheng Gao",
-        "Junan Hu",
-        "Kunyang Li",
-        "Dongyang Chen",
-        "Yiyang Zhou",
-        "Huaxiu Yao",
-        "Yong Jae Lee",
-        "Radu Timofte",
-        "Yuzhang Shang"
+        "Ali Dadras",
+        "Alp Yurtsever"
       ],
-      "abstract": "Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency. However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging. In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and executes code to construct a dynamic 3D scene (Draft Video) that provides structure and motion signals to downstream video generators. To support this paradigm, we design a dedicated data pipeline and curate two high-quality datasets, Video-Coder-SFT-6k and Video-Coder-RL-2k, which contain diverse prompts and ground-truth reference videos. We further develop the Video- Coder Harness, a unified interactive environment integrating code execution, 3D scene rendering, and execution feedback for agent training and inference. We then train Video-Coder with SFT fol- lowed by harness-native agentic reinforcement learning with dual reward feedback, which combines execution-based and video-based rewards. Additionally, we design an annealing training strategy that gradually reduces the execution reward over time, allowing the model to rely more on the video reward in the later training stages. Experiments show that Video-Coder achieves significant gains, improving Minimax-H3 by approximately 7 points on PhyGenBench and 24 points on VBench-2.0. We hope this work can serve as an open foundation for coding agents in video generation, and we fully open-source our data, models, and code",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol. Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail. We present FedBrew, a research codebase for controlled and reproducible federated learning experiments. Its focus is controlled simulation with checks of specified conditions of the intended experimental protocol. FedBrew uses configuration checks, identifiable client data partitions, checkpoint recovery checks, self-describing run records, and development-time checks of scientific conditions. These checks assess, for example, whether client partitions are disjoint and exhaustive and aggregation weights match the prescribed rule; numerical and recovery checks examine non-finite client model states and interrupted runs. The same structure also provides clear extension points and automated checks for new algorithms, datasets, models, and tasks, whether they are added by researchers or AI coding agents. FedBrew therefore supports reproducible and inspectable FL experiments through checks of specified software and scientific conditions and the run records associated with reported results.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
-        "cs.CV"
+        "cs.LG",
+        "cs.SE"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09894v1",
-        "pdf": "https://arxiv.org/pdf/2611.09894v1"
+        "paper": "http://arxiv.org/abs/2611.17129v1",
+        "pdf": "https://arxiv.org/pdf/2611.17129v1"
       },
-      "arxiv_id": "2611.09894v1",
-      "comment": "Project Page:https://cywang735.github.io/Video-Coder/ Code: https://github.com/CYWang735/Video-Coder",
+      "arxiv_id": "2611.17129v1",
+      "comment": "13 pages, 2 tables. Code: https://github.com/DadrasAli/fedbrew",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol. Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail. We present FedBrew, a research codebase for controlled and r...",
+        "key_contributions": [
+          "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol.",
+          "Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail.",
+          "We present FedBrew, a research codebase for controlled and reproducible federated learning experiments."
+        ],
+        "provider": "gemini"
+      }
+    },
+    {
+      "id": "2611.17294v1",
+      "title": "Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon",
+      "authors": [
+        "Haozhe Wang",
+        "Lina Chen",
+        "Fanqi Wan",
+        "Qi Han",
+        "Yinmin Zhang",
+        "Zheng Ge",
+        "Daxin Jiang",
+        "Junchi Yan"
+      ],
+      "abstract": "On-device inference requires kernels that make effective use of local accelerators. Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions. These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout. We present Metal Sandbox, infrastructure that combines restricted per-instance file access, native command execution, and command-level scheduling across interconnected Macs. Each agent retains its workspace and private development environment. Parallel commands can run concurrently, while serial commands share one execution slot per node; eligible waiting commands can migrate to available Macs and return results to the original agent. Integration with Harbor supports task execution, automatic verification, and rollout collection through a common workflow. Controlled experiments on four Mac mini M4 nodes achieve $1.68\\times$--$2.05\\times$ gains in command throughput under concentrated demand. Sixteen static agent traces give an estimated $2.14\\times$ sustained-throughput gain for four sessions per node versus one, assuming continuously replenished sessions and unchanged mean durations. Replaying these measured traces under dynamic scheduling reduces mean tool waiting by 18.8% and batch elapsed time by 22.3%, assuming unchanged phase durations. Metal Sandbox and its Harbor integration are open-source on GitHub.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.DC"
+      ],
+      "primary_category": "cs.LG",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.17294v1",
+        "pdf": "https://arxiv.org/pdf/2611.17294v1"
+      },
+      "arxiv_id": "2611.17294v1",
+      "comment": "16 pages, 7 figures, 5 tables. Code available at https://github.com/WangHaoZhe/metal-sandbox and https://github.com/WangHaoZhe/harbor",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8499999999999996,
@@ -269,45 +447,44 @@
         }
       },
       "ai_summaries": {
-        "short": "Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency. However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging. In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and ex...",
+        "short": "On-device inference requires kernels that make effective use of local accelerators. Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions. These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout. We present Metal Sandbox, infrastruc...",
         "key_contributions": [
-          "Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency.",
-          "However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging.",
-          "In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and executes code to construct a dynamic 3D scene (Draft Video) that provides structure and motion signals to downstream video generators."
+          "On-device inference requires kernels that make effective use of local accelerators.",
+          "Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions.",
+          "These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.09715v1",
-      "title": "Intent-Aware Caching for Efficient LLM Serving",
+      "id": "2611.17169v1",
+      "title": "Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing",
       "authors": [
-        "Kazi Hasan Ibn Arif",
-        "JinYi Yoon",
-        "Dimitrios S. Nikolopoulos",
-        "Hans Vandierendonck",
-        "Deepu John",
-        "Bo Ji"
+        "Umar Ahmed",
+        "Maxim Dunaev",
+        "Mohammad Nour Al Awad",
+        "Sergey Ivanov",
+        "Ivan Khodnenko"
       ],
-      "abstract": "Modern LLM serving systems use prefix caching to accelerate multi-turn conversational workloads. They cache the key-value states of previous conversation prefixes and reuse them when subsequent requests share the same prefix, to avoid redundant prefill computation and reduce serving latency. However, achieving a high cache hit rate remains challenging because cache reuse depends on whether a conversation continues and how soon the next turn arrives. Our analysis of real workloads shows that user intent is a useful signal for this behavior, as different intents exhibit different continuation probabilities and inter-turn delays. Based on this key insight, we propose Intent-Aware Caching (IAC), an online eviction policy that classifies requests by intent, learns lightweight reuse statistics from recent serving logs and leverages these statistics to guide an oracle-inspired eviction strategy. Extensive evaluation on real workloads (WildChat and ShareChat) shows that IAC reaches a 34.6% cache hit rate. This substantially outperforms both the previous learning-based approach (18.8%) and traditional methods such as least recently used (LRU, 12.2%), while reducing average serving latency by up to 46.1%.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order, including two matched-length pairs that vary surface form at fixed length. Across 300 runs (5 training pool sizes, 5 seeds) with a hierarchical bootstrap and Holm correction fixed before the results were read, shortening alone never helps, but writing the target in ordinary words does. The word encoding is the most accurate format on both models (87.5% vs. 85.8% exact match for the native s-expression on Qwen) while emitting 4.1x fewer tokens, and it cuts the silent error rate by 2.3x on Qwen and 1.8x on LFM2, separating at every pool size. Error analysis locates much of the gain in negation. All runs also learn to refuse off-menu input (held out: 95.9-99.0% handled) and to apply in-utterance self-corrections. Strict refusal has a measured price: 2.1-10.1% of real, mostly polite, orders are refused.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
-        "cs.AI",
+        "cs.CL",
         "cs.LG"
       ],
-      "primary_category": "cs.AI",
+      "primary_category": "cs.CL",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09715v1",
-        "pdf": "https://arxiv.org/pdf/2611.09715v1"
+        "paper": "http://arxiv.org/abs/2611.17169v1",
+        "pdf": "https://arxiv.org/pdf/2611.17169v1"
       },
-      "arxiv_id": "2611.09715v1",
-      "comment": "NeurIPS 2026 | Code: https://github.com/hasanar1f/intent-aware-caching",
+      "arxiv_id": "2611.17169v1",
+      "comment": "10 pages, 6 figures, 11 tables. Code and models: https://github.com/UmarGit/coffee-llm",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8,
+      "relevance_score": 3.8499999999999996,
       "score_breakdown": {
-        "total_score": 3.8,
+        "total_score": 3.85,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -328,49 +505,50 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Modern LLM serving systems use prefix caching to accelerate multi-turn conversational workloads. They cache the key-value states of previous conversation prefixes and reuse them when subsequent requests share the same prefix, to avoid redundant prefill computation and reduce serving latency. However, achieving a high cache hit rate remains challenging because cache reuse depends on whether a conve...",
+        "short": "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order,...",
         "key_contributions": [
-          "Modern LLM serving systems use prefix caching to accelerate multi-turn conversational workloads.",
-          "They cache the key-value states of previous conversation prefixes and reuse them when subsequent requests share the same prefix, to avoid redundant prefill computation and reduce serving latency.",
-          "However, achieving a high cache hit rate remains challenging because cache reuse depends on whether a conversation continues and how soon the next turn arrives."
+          "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell.",
+          "We ask whether the output format, a free design choice, controls how often this happens.",
+          "On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.09709v1",
-      "title": "RidgeFill: Training-Free Late-Layer Cache Fill for Faster Prefill",
+      "id": "2611.17019v1",
+      "title": "Temporal Regularized Learning: Self-Supervised Learning Local in Space and Time",
       "authors": [
-        "Dylan Johnston",
-        "Robert P. Smith"
+        "Davide Wiest"
       ],
-      "abstract": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model. RidgeFill retrofits it onto models that were never trained for it: the map is a ridge regression fitted once in closed form from one pass over calibration text, the layer's own projections run unchanged, and a chosen set of rows, the last few thousand tokens, and every decoding step run the full model. Nothing is trained and no token is dropped.\n  Most of the work was in measurement, finding a repeatable methodology. Loss averaged over all tokens hides RidgeFill's error. Needle retrieval in the filled region, loss on tokens that depend on distant context, and splice tests that swap filled keys or values for exact ones show which component carries it: the keys on Llama-3.1-8B, half of it in their scale, and the values and the recurrent state on Qwen3.5-9B.\n  On Qwen3.8-27B in a llama.cpp fork on an A100, time to first token is 1.25 to 1.31x faster at 16K to 120K tokens with the maps in VRAM; RULER changes by -1.2 and -1.4 points and LongBench v2 by -1.4; the 95 % intervals include zero but do not rule out losses of a few points. On Qwen3.8-Flash-Next in vLLM it is 1.50 to 1.60x faster than exact at 9K to 32K tokens, with RULER's needle tasks at 99.8 against 100.0 and perplexity on novel tokens 2.65 % higher [-0.02 %, +4.93 %]. On three 8 to 9B reference models, at the same split and tail as the identity fill, the fitted map retrieves 49.1 and 49.6 more filled-region RULER points on the two dense models (at that split Llama's loss is worse), and its long-document loss is +/-0.03 nats of the released SwiftKV checkpoint's.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "Layer-local self-supervised objectives remove the backward pass between layers, but almost all still compute their loss over a batch of samples and are therefore local in space but not in time. We introduce Temporal Regularized Learning (TeReL), a spatially and temporally local learning rule for self-supervised representation learning from sequential input streams. The key idea is to instantiate a VICReg-style objective with temporally adjacent positives and non-differentiated running population statistics, yielding a per-neuron online loss with bounded state. The objective is a soft form of Slow Feature Analysis, and its gradient is a Hebbian update of the feedforward weights and an anti-Hebbian update of one lateral matrix per layer. The aim of the experiments is to show that the rule works in a small network, not to compete with backpropagation. On a class-chunked MNIST stream, a two-layer fully connected network trained with batch size one outperforms random features (96.48% versus 95.09% linear-probe accuracy) and classical SFA, and a variant that relaxes both locality constraints is comparable to supervised backpropagation. Because training and inference use the same computation, the network can keep learning from unlabeled data during inference without loss of accuracy.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
         "cs.LG",
-        "cs.CL"
+        "stat.ML"
       ],
       "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09709v1",
-        "pdf": "https://arxiv.org/pdf/2611.09709v1"
+        "paper": "http://arxiv.org/abs/2611.17019v1",
+        "pdf": "https://arxiv.org/pdf/2611.17019v1"
       },
-      "arxiv_id": "2611.09709v1",
-      "comment": "50 pages, 15 figures, 38 tables. Code and data: https://github.com/Approximate-Science/ridgefill-data",
+      "arxiv_id": "2611.17019v1",
+      "comment": "13 pages, 4 figures. Code: https://github.com/Axym-Labs/TeReL",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.8,
+      "relevance_score": 3.7711864406779663,
       "score_breakdown": {
-        "total_score": 3.8,
+        "total_score": 3.77,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.68,
+          "matches": [
+            "self-supervised"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
@@ -379,7 +557,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 5.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -393,236 +571,55 @@
         }
       },
       "ai_summaries": {
-        "short": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model. RidgeFill retrofits it onto ...",
+        "short": "Layer-local self-supervised objectives remove the backward pass between layers, but almost all still compute their loss over a batch of samples and are therefore local in space but not in time. We introduce Temporal Regularized Learning (TeReL), a spatially and temporally local learning rule for self-supervised representation learning from sequential input streams. The key idea is to instantiate a...",
         "key_contributions": [
-          "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt.",
-          "The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction.",
-          "The design follows YOCO and DeepSeek-V4."
+          "Layer-local self-supervised objectives remove the backward pass between layers, but almost all still compute their loss over a batch of samples and are therefore local in space but not in time.",
+          "We introduce Temporal Regularized Learning (TeReL), a spatially and temporally local learning rule for self-supervised representation learning from sequential input streams.",
+          "The key idea is to instantiate a VICReg-style objective with temporally adjacent positives and non-differentiated running population statistics, yielding a per-neuron online loss with bounded state."
         ],
         "provider": "gemini"
       }
     },
     {
-      "id": "2611.09573v1",
-      "title": "Half-precision inference of AI weather prediction models: negligible loss of skill at a fraction of the cost",
+      "id": "2611.17146v1",
+      "title": "HiVE-VQA: Hierarchical Interaction via Volumetric Embedding for Video Quality Assessment",
       "authors": [
-        "Stefan Siegert"
+        "Robbie Hamilton",
+        "Fan Zhang",
+        "David Bull"
       ],
-      "abstract": "AI weather prediction models are released with 32-bit (fp32) weights and run in fp32 by default, although current GPUs compute much faster in 16-bit formats. We run five publicly available models -- Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet -- on a single 16 GB GPU from 52 initial dates in 2024, in fp32 and with their networks in half precision (fp16), and verify the forecasts against ERA5. The physical state must stay in fp32: converting the whole model rounds it in physical units, which in fp16 overflows and in bf16 discards meaningful information. With the state, its normalisation and denormalisation in fp32, running the network in fp16 changes the global RMSE by at most 1.4%, and by about 0.5% or less for four of the five models, equivalent to less than one hour of lead time up to day 8 and at most two hours at day 10. The differences show no systematic pattern by region, scale or for tropical and extratropical storms, apart from a small tropical penalty in FourCastNet, and fp16 leaves the CRPS, spread and calibration of Aurora's ensemble almost unchanged. No value overflowed fp16's numeric range (+/-65,504); the largest stay 38 to 544 times below it. A 10-day forecast in fp16 is 1.3-3.5 times faster than in fp32 and uses 1.4-3.7 times less energy. Sensitivity experiments show that rules of thumb from other applications of reduced precision carry over only partly: the first and last layers dominate for some models but not for others, and no type of layer is sensitive on its own. For running AI weather models on a single GPU, fp16 with the state in fp32 is practically lossless at a fraction of the cost. bf16, often preferred for its wider range, is as fast but less accurate than fp16 for every model, and simple 8-bit quantisation costs far more skill.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
-      "categories": [
-        "physics.ao-ph",
-        "cs.LG",
-        "cs.PF"
-      ],
-      "primary_category": "physics.ao-ph",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.09573v1",
-        "pdf": "https://arxiv.org/pdf/2611.09573v1"
-      },
-      "arxiv_id": "2611.09573v1",
-      "comment": "40 pages, 15 figures, 9 tables. Code: https://github.com/sieste/ai-nwp-fp16",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.75,
-      "score_breakdown": {
-        "total_score": 3.75,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "AI weather prediction models are released with 32-bit (fp32) weights and run in fp32 by default, although current GPUs compute much faster in 16-bit formats. We run five publicly available models -- Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet -- on a single 16 GB GPU from 52 initial dates in 2024, in fp32 and with their networks in half precision (fp16), and verify the forecasts against E...",
-        "key_contributions": [
-          "AI weather prediction models are released with 32-bit (fp32) weights and run in fp32 by default, although current GPUs compute much faster in 16-bit formats.",
-          "We run five publicly available models -- Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet -- on a single 16 GB GPU from 52 initial dates in 2024, in fp32 and with their networks in half precision (fp16), and verify the forecasts against ERA5.",
-          "The physical state must stay in fp32: converting the whole model rounds it in physical units, which in fp16 overflows and in bf16 discards meaningful information."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2611.09655v1",
-      "title": "Decoupled Mode Connectivity for Base-to-Novel Generalization in Vision-Language Models",
-      "authors": [
-        "Imad Eddine Marouf",
-        "Khalid Oublal",
-        "Enzo Tartaglione",
-        "Stéphane Lathuilière"
-      ],
-      "abstract": "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt. The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space. Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments no single-prompt loss design clearly improves on the cosine\n  baseline. We propose Decoupled Mode Connectivity (DMC), which gives each objective its own prompt. Starting from a base-trained prompt, DMC trains a\n  specialization prompt and a generalization prompt, and merges their text features with a fixed coefficient at test time, at the inference cost of a single\n  prompt. A linear mode connectivity (LMC) corridor in text-feature space keeps the classification loss low for every classifier interpolated between the two\n  endpoints, and a Visual Anchor KL term preserves CLIP's zero-shot class-similarity distribution of each image during specialization. We further argue that\n  such regularizers should satisfy class-permutation invariance (CPI), and show via Fano's inequality, in an idealized model, that violating CPI\n  lower-bounds the drop in novel accuracy by a term proportional to the mutual information between the prompt and the base-class labels. Across 11 datasets,\n  DMC improves the average harmonic mean of base and novel accuracy over MergeTune for both CoOp and KgCoOp, and its interpolation curves pass beyond the\n  single-prompt operating point, shifting the base-novel frontier rather than trading along it. Code is available at https://github.com/IemProg/DMC.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
+      "abstract": "The proliferation of user-generated video content has made accurate and robust no-reference video quality assessment (NR-VQA) a highly important challenge. Existing research increasingly relies on architecturally complex multi-branch pipelines or computationally intensive fine-tuning of single-branch backbones. In this paper, we investigate whether a single frozen video foundation model can serve as an effective NR-VQA backbone, and propose HiVE-VQA, the first framework (to our knowledge) to apply a JEPA-based video encoder to this task. HiVE-VQA extracts token grids from multiple depths of a pre-trained V-JEPA 2.1 encoder and stacks them into a hierarchical spatio-temporal volume, which a compact 3D convolutional head fuses across its layer, spatial, and temporal axes, combining low-level distortion cues from shallow layers with the semantic and temporal context captured at greater depths. The encoder remains frozen throughout, so only the head is trained: 5.2M parameters (5.7\\% of the total), with no auxiliary multi-modal models and an inference cost that is invariant to video resolution. Trained solely on LSVQ and evaluated without any fine-tuning, HiVE-VQA outperforms 17 state-of-the-art (SOTA) methods in SROCC and PLCC on both intra-dataset (LSVQ-test, LSVQ-1080p) and cross-dataset (KoNViD-1k, LIVE-VQC) benchmarks. These results indicate that hierarchical, depth-wise fusion of features from a single frozen video foundation model provides a more effective and efficient basis for NR-VQA than task-specific multi-network fusion. Code and model checkpoints are available at https://github.com/RobHam99/HiVE-VQA.",
+      "published": "2026-11-12",
+      "updated": "2026-11-12",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.09655v1",
-        "pdf": "https://arxiv.org/pdf/2611.09655v1"
+        "paper": "http://arxiv.org/abs/2611.17146v1",
+        "pdf": "https://arxiv.org/pdf/2611.17146v1"
       },
-      "arxiv_id": "2611.09655v1",
-      "comment": "Accepted at NeurIPS 2026. 46 pages (10 main + references, appendix and checklist), 15 figures. Project page: https://iemprog.github.io/DMC/ Code:https://github.com/IemProg/DMC",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.7,
-      "score_breakdown": {
-        "total_score": 3.7,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt. The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space. Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments n...",
-        "key_contributions": [
-          "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt.",
-          "The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space.",
-          "Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments no single-prompt loss design clearly improves on the cosine\n  baseline."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2611.09642v1",
-      "title": "NAVE: A Normalized, Adaptive Conformer for Antarctic Whale Vocalization Detection",
-      "authors": [
-        "Matthias Nagl",
-        "Paul Primus",
-        "Gerhard Widmer"
-      ],
-      "abstract": "Antarctic whale vocalization detection requires temporally localizing call boundaries in long underwater recordings and classifying them into predefined call types. Training reliable machine learning models for this task is difficult due to the variability and sparsity of whale calls in passive acoustic monitoring datasets. These difficulties are further amplified by time-varying noise that can mask whale calls and by site-specific ambient sound characteristics to which a trained model may not generalize. In this work, we present NAVE, a Conformer-based detector that improves whale-call detection via three components. First, its input representation combines per-bin complex mean subtraction, which suppresses constant site-specific ambient sound characteristics, with an additional per-channel energy normalization (PCEN) channel that adapts to temporal variations in the noise floor. Second, a frequency-dynamic stem processes these noise-aware representations with convolutions that adapt across the characteristic frequency bands of the target call types. Third, we use a Conformer backbone with a convolution kernel matched to the duration of the target calls that adds an inductive bias and improves temporal localization. We evaluate NAVE on BioDCASE 2026 Task 2 using leave-one-site-out cross-validation across the validation sites, which approximates deployment on unseen recording sites. A single NAVE model with a tuned per-class threshold exceeds the stronger WhaleVAD-BPN baseline, using no boundary-proposal network and no search over post-processing parameters. A controlled ablation study shows that the normalized front-end and a duration-matched convolutional kernel each contribute substantially to recovering the D downsweep, the hardest class for previous detectors, with the wide kernel giving the largest aggregate gain.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
-      "categories": [
-        "eess.AS",
-        "cs.LG",
-        "cs.SD"
-      ],
-      "primary_category": "eess.AS",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.09642v1",
-        "pdf": "https://arxiv.org/pdf/2611.09642v1"
-      },
-      "arxiv_id": "2611.09642v1",
-      "comment": "5 pages, 3 figures, 2 tables. Accepted at the Detection and Classification of Acoustic Scenes and Events (DCASE) 2026 Workshop. Code: https://github.com/TheFruitGuy/NAVE-SED",
-      "journal_ref": "Proceedings of the 11th Workshop on Detection and Classification of Acoustic Scenes and Events (DCASE 2026), Boston, USA, pp. 1-5, 2026",
-      "has_code": true,
-      "relevance_score": 3.7,
-      "score_breakdown": {
-        "total_score": 3.7,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Antarctic whale vocalization detection requires temporally localizing call boundaries in long underwater recordings and classifying them into predefined call types. Training reliable machine learning models for this task is difficult due to the variability and sparsity of whale calls in passive acoustic monitoring datasets. These difficulties are further amplified by time-varying noise that can ma...",
-        "key_contributions": [
-          "Antarctic whale vocalization detection requires temporally localizing call boundaries in long underwater recordings and classifying them into predefined call types.",
-          "Training reliable machine learning models for this task is difficult due to the variability and sparsity of whale calls in passive acoustic monitoring datasets.",
-          "These difficulties are further amplified by time-varying noise that can mask whale calls and by site-specific ambient sound characteristics to which a trained model may not generalize."
-        ],
-        "provider": "gemini"
-      }
-    },
-    {
-      "id": "2611.09599v1",
-      "title": "Dual-Region Slice Aggregation for CT-Based Renal Tumor Classification",
-      "authors": [
-        "Yuan Liang",
-        "Sourav Bhattacharjee",
-        "Abraham Campbell"
-      ],
-      "abstract": "Clear cell renal cell carcinoma (ccRCC) is the most common kidney cancer in adults. We present a region-aware architecture for CT-based ccRCC classification. Tumor and 0--10 mm peritumoral context are pooled separately from shared frozen DINOv3 feature maps. A shared position-aware slice aggregator precedes fixed training-only principal component analysis (PCA). The resulting representations are fused with radiomics using two scalar feature gates. Evaluation on KiTS23 and 111 external cases yields internal test and external AUCs of 0.8078\\pm0.0154 and 0.9094\\pm0.0015. Compared with matched single-tumor readout, mean AUC increases by 1.50 and 2.34 percentage points, respectively. Early-PCA and reconstruction controls yield lower internal mean AUCs, while external AUC is similar for early and late PCA. These findings highlight the joint role of regional readout and slice aggregation in adapting frozen visual features to renal CT.",
-      "published": "2026-11-06",
-      "updated": "2026-11-06",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.09599v1",
-        "pdf": "https://arxiv.org/pdf/2611.09599v1"
-      },
-      "arxiv_id": "2611.09599v1",
-      "comment": "Submitted to IEEE ISBI 2027",
+      "arxiv_id": "2611.17146v1",
+      "comment": "Accepted to WACV 2027, 11 pages, 3 figures, 6 tables",
       "journal_ref": "",
       "has_code": false,
-      "relevance_score": 3.7,
+      "relevance_score": 3.73728813559322,
       "score_breakdown": {
-        "total_score": 3.7,
+        "total_score": 3.74,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.59,
+          "matches": [
+            "volumetric"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
-          "score": 8,
-          "venue": "ISBI",
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -631,16 +628,16 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Clear cell renal cell carcinoma (ccRCC) is the most common kidney cancer in adults. We present a region-aware architecture for CT-based ccRCC classification. Tumor and 0--10 mm peritumoral context are pooled separately from shared frozen DINOv3 feature maps. A shared position-aware slice aggregator precedes fixed training-only principal component analysis (PCA). The resulting representations are f...",
+        "short": "The proliferation of user-generated video content has made accurate and robust no-reference video quality assessment (NR-VQA) a highly important challenge. Existing research increasingly relies on architecturally complex multi-branch pipelines or computationally intensive fine-tuning of single-branch backbones. In this paper, we investigate whether a single frozen video foundation model can serve ...",
         "key_contributions": [
-          "Clear cell renal cell carcinoma (ccRCC) is the most common kidney cancer in adults.",
-          "We present a region-aware architecture for CT-based ccRCC classification.",
-          "Tumor and 0--10 mm peritumoral context are pooled separately from shared frozen DINOv3 feature maps."
+          "The proliferation of user-generated video content has made accurate and robust no-reference video quality assessment (NR-VQA) a highly important challenge.",
+          "Existing research increasingly relies on architecturally complex multi-branch pipelines or computationally intensive fine-tuning of single-branch backbones.",
+          "In this paper, we investigate whether a single frozen video foundation model can serve as an effective NR-VQA backbone, and propose HiVE-VQA, the first framework (to our knowledge) to apply a JEPA-based video encoder to this task."
         ],
         "provider": "gemini"
       }

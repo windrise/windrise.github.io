@@ -1,0 +1,22 @@
+name: Paper Review Regression Tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/*review*'
+      - 'scripts/process_approved_papers.py'
+      - 'tests/test_paper_review.py'
+      - '.github/workflows/*paper*'
+      - 'data/papers/review-snapshots/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install PyYAML
+      - run: python -m unittest discover -s tests -p 'test_paper_review.py' -v

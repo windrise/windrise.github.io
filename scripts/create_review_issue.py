@@ -4,7 +4,9 @@ Create GitHub Issue for Paper Review
 Generates an issue with papers needing review
 """
 
+import argparse
 import json
+from review_snapshot import save_snapshot, encode
 import os
 import subprocess
 from datetime import datetime
@@ -59,9 +61,8 @@ Found **{len(papers)}** relevant papers today. Please review and approve/reject.
 **Links:** [📄 Paper]({paper_url}) | [📥 PDF]({pdf_url})
 
 **Actions:**
-- ✅ Approve: Add label `approved` and comment "approve"
-- ❌ Reject: Add label `rejected` and comment "reject"
-- ⭐ Important: Add label `starred`
+- ✅ Approve only this paper: comment `/approve {arxiv_id}`
+- Skip: leave this paper unapproved. Issue labels do not approve papers.
 
 ---
 
@@ -70,15 +71,15 @@ Found **{len(papers)}** relevant papers today. Please review and approve/reject.
     body += """
 ## How to Review
 
-1. Read the summaries above
-2. Check paper links for more details
-3. Add labels to indicate your decision:
-   - `approved` - Add to collection
-   - `rejected` - Skip this paper
-   - `starred` - Mark as particularly important
-4. Comment "approve" or "reject" to trigger automation
+1. Read the summaries and check the paper links.
+2. A repository writer comments `/approve <arxiv-id>` using the exact ID above.
+3. Use one command and one paper per new comment. Bare `approve`, batch commands,
+   edited comments, and issue labels do not trigger approval.
+4. Leave unwanted papers unapproved. Approval adds to the collection; it is not undone
+   by editing/deleting the comment. Keep this issue open for remaining papers.
 
-**Note:** Papers with `approved` label will be automatically added to the collection.
+Each review uses its fixed snapshot, never the latest shared pending files.
+
 """
 
     return body
@@ -106,14 +107,23 @@ def ensure_labels_exist():
         )
 
 
-def create_issue(papers: list):
+def create_issue(papers: list, prepare_only: bool = False):
     """Create GitHub issue using gh CLI"""
     if not papers:
         print("⚠️  No papers to review - skipping issue creation")
         print("   This might be normal if no relevant papers were found today.")
         return
 
-    body = create_issue_body(papers)
+    digest = save_snapshot(papers)
+    if prepare_only:
+        return
+    committed = subprocess.run(
+        ["git", "show", f"HEAD:data/papers/review-snapshots/{digest}.json"],
+        capture_output=True, check=True
+    ).stdout
+    if committed != encode(papers):
+        raise ValueError("Publish only after the exact snapshot has been committed and pushed")
+    body = create_issue_body(papers) + f"\n<!-- paper-review-snapshot: {digest} -->\n"
     title = f"📚 Paper Review - {datetime.now().strftime('%Y-%m-%d')}"
 
     # Save body to temp file
@@ -143,7 +153,7 @@ def create_issue(papers: list):
             print(f"✅ Issue created successfully!")
             print(result.stdout)
         else:
-            print(f"❌ Error creating issue: {result.stderr}")
+            raise RuntimeError(f"Error creating issue: {result.stderr}")
 
     except FileNotFoundError:
         print("❌ Error: 'gh' CLI not found")
@@ -152,6 +162,9 @@ def create_issue(papers: list):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--prepare-only", action="store_true")
+    args = parser.parse_args()
     input_file = "data/papers/pending/with_audio.json"
 
     if not os.path.exists(input_file):
@@ -168,8 +181,9 @@ def main():
         papers = data.get("papers", [])
 
     print(f"📋 Creating review issue for {len(papers)} papers...")
-    create_issue(papers)
+    create_issue(papers, prepare_only=args.prepare_only)
 
 
 if __name__ == "__main__":
     main()
+

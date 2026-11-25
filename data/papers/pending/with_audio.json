@@ -3,105 +3,37 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2611.17331v1",
-      "title": "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models",
+      "id": "2611.33147v1",
+      "title": "One Take, Many Cameras: Audio-Grounded Shot Synthesis for Dialogue Re-Cinematography",
       "authors": [
-        "Chin-Yang Lin",
-        "Ryo Hachiuma",
-        "Jaesung Choe",
-        "Min-Hung Chen",
-        "Yu-Chiang Frank Wang",
-        "Yen-Yu Lin",
-        "Wei-Chen Chiu",
-        "Yu-Lun Liu",
-        "Cheng Sun"
+        "Anthony Chen",
+        "Naomi Ken Korem",
+        "Matan Ben-Yosef",
+        "Tavi Halperin",
+        "Urska Jelercic",
+        "Ofir Bibi",
+        "Daniel Cohen-Or",
+        "Or Patashnik",
+        "Maneesh Agrawala"
       ],
-      "abstract": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding. The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality. The second key addresses a modality misalignment between context prefilling and novel-view rendering: we disentangle context tokens into camera-only context rendering tokens to serve as TTB input, and context ground-truth tokens with image content to serve as the TTB mapping target, ensuring the baked MLPs are relieved of the modality generalization challenge between context and novel-view processing. Our method achieves up to **23x** rendering speedup with quality on par with the state-of-the-art across several benchmarks. Project page: https://test-time-baking.github.io",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
+      "abstract": "Creating a dialogue scene typically requires cutting between multiple views (e.g., close-ups, medium shots, and over-the-shoulder shots) of the actors. Yet capturing such coverage is costly and in many settings unavailable. We study dialogue re-cinematography: synthesizing additional shots from a single wide-angle dialogue video. Existing video generators can synthesize new shots, but rely on visual cues alone, so when the source video barely shows the lips, the generated lip motion fails to match the speech. Our key observation is that the speech audio is view-invariant: it constrains lip motion in any target view. Building on this insight, we adapt a pretrained audio-visual diffusion model to generate the new shot from a target frame that specifies the view, a source video that contains the performance, and the speech audio that drives lip motion. In multi-person scenes, however, pretrained audio-visual models drive every visible face with the same speech, causing speech leakage, where silent listeners mouth the speaker's words. We therefore introduce speaker-aware audio gating, a training-free module that lets the audio drive only the faces that speak in the target shot. On a cinematic paired-view benchmark spanning diverse viewpoints and framings, our method lowers perceptual error by 59%, landmark error by 56%, and speech leakage by 97% relative to the strongest baseline, Wan 3.0. Our method also remains robust on in-the-wild scenes, highlighting its potential for film post-production.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.17331v1",
-        "pdf": "https://arxiv.org/pdf/2611.17331v1"
+        "paper": "http://arxiv.org/abs/2611.33147v1",
+        "pdf": "https://arxiv.org/pdf/2611.33147v1"
       },
-      "arxiv_id": "2611.17331v1",
-      "comment": "NeurIPS 2026 (Spotlight). Project page: https://test-time-baking.github.io",
+      "arxiv_id": "2611.33147v1",
+      "comment": "Project page: https://recinematography.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.3,
+      "relevance_score": 5.25,
       "score_breakdown": {
-        "total_score": 4.3,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 10.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a ligh...",
-        "key_contributions": [
-          "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality.",
-          "We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding.",
-          "The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.17331v1.mp3"
-      }
-    },
-    {
-      "id": "2611.17298v1",
-      "title": "Consistent Video-to-Video Translation via Explicit Correspondences",
-      "authors": [
-        "Gaurav Parmar",
-        "Zhengqi Li",
-        "Richard Zhang",
-        "Jun-Yan Zhu",
-        "Srinivasa Narasimhan",
-        "Eli Shechtman",
-        "Yotam Nitzan"
-      ],
-      "abstract": "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency. However, recent methods achieve speed by restricting attention to a fixed-length causal window. This limits long-range consistency whenever relevant history falls outside the context window. To address this limitation, we introduce vid2vid-long, a correspondence-based approach grounded in a simple observation. Video-to-video translation provides an explicit cross-frame reference: the regions that match in the input video should match in the output video too. Concretely, we compute patch-level correspondences in the input, guiding retrieval of previously generated outputs in the corresponding regions, and condition the model on these patches through correspondence cross-attention. Our experiments demonstrate that vid2vid-long consistently improves long-range temporal consistency across recent video models while preserving generation quality and real-time performance.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.GR",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.17298v1",
-        "pdf": "https://arxiv.org/pdf/2611.17298v1"
-      },
-      "arxiv_id": "2611.17298v1",
-      "comment": "ECCV 2026. Project Website: https://www.cs.cmu.edu/~vid2vid-long/",
-      "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 4.25,
-      "score_breakdown": {
-        "total_score": 4.25,
+        "total_score": 5.25,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -109,141 +41,7 @@
         },
         "venue_quality": {
           "score": 10,
-          "venue": "ECCV",
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 3.0,
-          "has_code": false,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency. However, recent methods achieve speed by restricting attention to a fixed-length causal window. This limits long-range consistency whenever relevant history falls outside the context window. To address this limitation, we introduce vid2vid-long, a correspondence-based approach gr...",
-        "key_contributions": [
-          "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency.",
-          "However, recent methods achieve speed by restricting attention to a fixed-length causal window.",
-          "This limits long-range consistency whenever relevant history falls outside the context window."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.17298v1.mp3"
-      }
-    },
-    {
-      "id": "2611.17302v1",
-      "title": "FLEX-LBP: Learning Local Binary Patterns with Exact Binary Inference for Texture Classification",
-      "authors": [
-        "Mohamed Alimoussa",
-        "Amal El Kaid"
-      ],
-      "abstract": "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging. Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset. We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts. A straight-through estimator acts only in the backward pass, so the deployed descriptor is an interpretable hard-binary LBP with 90 learnable parameters and unchanged inference cost. In a controlled ablation on six color texture benchmarks, the component worth learning is dataset-dependent. One configuration, applied unchanged everywhere, learns the geometry and thresholds with the color transform frozen. It improves the nearest-neighbor accuracy of the identical fixed descriptor by 3.55 points on average over five seeds, significantly on five of six benchmarks and never significantly worse. With a linear discriminant readout, it gains 0.9 points; the fully learned descriptor gains 2.7 and has the highest mean. FLEX-LBP is more accurate than five classical LBP-family descriptors, PCANet and a neural LBP on five of six benchmarks. Its mean nearest-neighbor accuracy exceeds that of frozen ImageNet ResNet-50 features (23.5 million parameters). On the Kather colorectal cancer histology benchmark, the fully learned descriptor reaches 93.8%, significantly above the best classical descriptor (Completed LBP, 92.8%). The learned radii adapt in directions that recur across seeds. Noise drowns single-pixel comparisons and illuminant change flips inter-channel ones; median sampling or gray-world normalization restores 96-97%. The code is available as a drop-in PyTorch layer at https://github.com/medalimoussa/FLEX-LBP.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.17302v1",
-        "pdf": "https://arxiv.org/pdf/2611.17302v1"
-      },
-      "arxiv_id": "2611.17302v1",
-      "comment": "21 pages, 5 figures, 8 tables. Code: https://github.com/medalimoussa/FLEX-LBP",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.055084745762712,
-      "score_breakdown": {
-        "total_score": 4.06,
-        "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical imaging"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 6.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging. Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset. We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts. A straight-through...",
-        "key_contributions": [
-          "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging.",
-          "Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset.",
-          "We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.17302v1.mp3"
-      }
-    },
-    {
-      "id": "2611.17334v1",
-      "title": "Unbundling Multimodal Vision Encoding",
-      "authors": [
-        "Ellis Brown",
-        "Chris Hoang",
-        "Shengyi Qian",
-        "Shang-Wen Li",
-        "Mike Lewis",
-        "Marjan Ghazvininejad",
-        "Luke Zettlemoyer",
-        "Lucas Beyer",
-        "Mengye Ren",
-        "Jakob Verbeek",
-        "Saining Xie",
-        "Hu Xu"
-      ],
-      "abstract": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone). Because published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage. What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count. Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token. These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model. Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.17334v1",
-        "pdf": "https://arxiv.org/pdf/2611.17334v1"
-      },
-      "arxiv_id": "2611.17334v1",
-      "comment": "Project page: https://unbundling.github.io",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.0,
-      "score_breakdown": {
-        "total_score": 4.0,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
+          "venue": "TOG",
           "weight": 0.25
         },
         "citation_potential": {
@@ -261,44 +59,118 @@
         }
       },
       "ai_summaries": {
-        "short": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e....",
+        "short": "Creating a dialogue scene typically requires cutting between multiple views (e.g., close-ups, medium shots, and over-the-shoulder shots) of the actors. Yet capturing such coverage is costly and in many settings unavailable. We study dialogue re-cinematography: synthesizing additional shots from a single wide-angle dialogue video. Existing video generators can synthesize new shots, but rely on visu...",
         "key_contributions": [
-          "How multimodal language models should encode visual input remains up for debate.",
-          "Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely.",
-          "Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i."
+          "Creating a dialogue scene typically requires cutting between multiple views (e.",
+          "g.",
+          ", close-ups, medium shots, and over-the-shoulder shots) of the actors."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.17334v1.mp3"
+        "audio_url": "/audio/2611.33147v1.mp3"
       }
     },
     {
-      "id": "2611.17190v1",
-      "title": "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes",
+      "id": "2611.33145v1",
+      "title": "Lost on Campus: Evaluating Embodied Spatial Reasoning of Vision-Language Models in the Wild",
       "authors": [
-        "Robert Fonod",
-        "Nikolas Geroliminis"
+        "Zehan Zheng",
+        "Yanyuan Chen",
+        "Deming Li",
+        "Yutao Tang",
+        "Jianwen Xie",
+        "Alan Yuille",
+        "Jieneng Chen",
+        "Cheng Peng"
       ],
-      "abstract": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag. A two-part benchmark measures it and the object masking meant to prevent it. A static protocol scores ten pipelines under exactly known homographies on 4K aerial frames, tuned on a site-disjoint split at a matched resolution and feature budget. A dynamic protocol scores them at an offline and a real-time budget on hovers selected from the video alone to span the amount and coherence of moving foreground, plus a stationary control. It measures background alignment, object position error and the share of a moving group's displacement an estimate follows, against a pseudo-ground-truth reference audited with manually annotated ground control points, which also score every candidate. On static scenes, tuned AKAZE, RootSIFT, SIFT and BRISK lead, retuning the matcher thresholds raises the mean average accuracy (mAA) by at most 0.0062, and masking costs less than 0.005. Unmasked ORB is captured on 28 of 304 real-time dynamic pairs and on 6 offline; its real-time captured estimates have a median corner error of 18.8 px yet typical inlier counts and ratios. Masking removes capture for every pipeline and leaves the leading pipelines unchanged. Code, data and results are released.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
+      "abstract": "Embodied Spatial Reasoning (ESR) is central to deploying Vision-Language Models (VLMs) in real-world embodied tasks, yet remains inadequately evaluated. Existing benchmarks primarily assess spatial reasoning in static images or synthetic indoor environments, where semantic shortcuts often suffice, making it difficult to faithfully evaluate spatial reasoning capabilities in the wild. In light of this, we present Lost on Campus, a benchmark for evaluating ESR in large-scale real-world outdoor 3D environments reconstructed by 3D Gaussian Splatting. Our benchmark introduces a unified reasoning-action evaluation framework that seamlessly integrates diagnostic QA for isolated reasoning with closed-loop interactive navigation for active reasoning under multimodal instructions. To enable fine-grained diagnosis, we evaluate six capability aspects of ESR: action grounding, spatial foresight, metric awareness, goal-directed planning, ego-allocentric localization, and spatio-temporal consistency. Extensive experiments reveal that: (i) Compared to indoor settings, real-world outdoor environments impose substantially higher demands on spatial reasoning, where existing models exhibit poor performance; (ii) VLMs still struggle with fine-grained visual alignment, with failures in spatial foresight and ego-allocentric localization emerging as primary bottlenecks; (iii) Improving multimodal interaction capabilities and long-term spatial reasoning is crucial for advancing embodied intelligence. These findings highlight that faithful evaluation of ESR demands benchmarks tightly coupling perception, reasoning and action within realistic and continuous environments.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.17190v1",
-        "pdf": "https://arxiv.org/pdf/2611.17190v1"
+        "paper": "http://arxiv.org/abs/2611.33145v1",
+        "pdf": "https://arxiv.org/pdf/2611.33145v1"
       },
-      "arxiv_id": "2611.17190v1",
-      "comment": "50 pages, 17 figures, 24 tables. Code at https://github.com/rfonod/stabilo-benchmark and data at https://doi.org/10.5281/zenodo.23623540 and https://doi.org/10.5281/zenodo.15050577",
+      "arxiv_id": "2611.33145v1",
+      "comment": "NeurIPS 2026. Project page: https://dyfcalid.github.io/Lost-on-Campus/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.903389830508474,
+      "relevance_score": 4.577966101694916,
       "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 4.58,
         "field_match": {
-          "score": 0.51,
+          "score": 1.69,
           "matches": [
+            "3d gaussian",
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Embodied Spatial Reasoning (ESR) is central to deploying Vision-Language Models (VLMs) in real-world embodied tasks, yet remains inadequately evaluated. Existing benchmarks primarily assess spatial reasoning in static images or synthetic indoor environments, where semantic shortcuts often suffice, making it difficult to faithfully evaluate spatial reasoning capabilities in the wild. In light of th...",
+        "key_contributions": [
+          "Embodied Spatial Reasoning (ESR) is central to deploying Vision-Language Models (VLMs) in real-world embodied tasks, yet remains inadequately evaluated.",
+          "Existing benchmarks primarily assess spatial reasoning in static images or synthetic indoor environments, where semantic shortcuts often suffice, making it difficult to faithfully evaluate spatial reasoning capabilities in the wild.",
+          "In light of this, we present Lost on Campus, a benchmark for evaluating ESR in large-scale real-world outdoor 3D environments reconstructed by 3D Gaussian Splatting."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.33145v1.mp3"
+      }
+    },
+    {
+      "id": "2611.32903v1",
+      "title": "IMPACT-Seg: Consistent Anatomical Segmentation and Representation Learning Across CT, CBCT, and MRI",
+      "authors": [
+        "Cédric Hémon",
+        "Valentin Boussot",
+        "Matthew McCormick",
+        "Lukas Zimmermann",
+        "Christopher Kurz",
+        "Guillaume Landry"
+      ],
+      "abstract": "Computed tomography (CT), cone-beam CT (CBCT), and magnetic resonance imaging (MRI) provide complementary representations of the same underlying anatomy, yet substantial differences in image appearance challenge consistent segmentation and deformable registration in adaptive radiotherapy. We investigate whether dense anatomical segmentation supervision can promote cross-modality correspondence without explicit feature alignment. We introduce IMPACT-Seg, which segments 126 structures across CT, CBCT, and MRI using shared network parameters. A collection of 8,290 volumes was assembled from public cohorts through label harmonization, model-assisted pseudo-label completion, iterative refinement, and 2,864 physics-based CBCT simulations with voxel-aligned CT labels. Unpaired images were used to jointly train 2.5D and 3D residual-encoder networks.\n  On 139 real CBCTs, IMPACT-Seg 3D achieved a mean Dice of 0.842 versus 0.671 for the strongest comparator. On 497 voxel-aligned CT-simulated-CBCT pairs, the CT-to-CBCT Dice decrease was 0.022 versus 0.153-0.178 for competing methods. On independent pancreatic radiotherapy CBCTs, gastrointestinal Dice was 0.735 versus 0.634 for TotalSegmentator. Prediction agreement reached 0.881 on registered CT-CBCT and 0.790 on CT-MRI pairs. Adding MRI training data reduced CT-MRI encoder feature retrieval error from 36.8 to 3.2 mm. Registration pipelines incorporating IMPACT-Seg features ranked first on two multimodal Learn2Reg benchmarks. The 3D model segmented a whole-body CT in 15 s.\n  These findings show that dense anatomical segmentation supervision can support consistent anatomical representations across modalities, with applications to both segmentation and registration. Code, datasets, and pretrained models are available at https://github.com/HEMONCedric/IMPACTSeg.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.32903v1",
+        "pdf": "https://arxiv.org/pdf/2611.32903v1"
+      },
+      "arxiv_id": "2611.32903v1",
+      "comment": "preprint (https://github.com/HEMONCedric/IMPACTSeg, https://huggingface.co/HCedric/IMPACTSeg)",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.5067796610169495,
+      "score_breakdown": {
+        "total_score": 4.51,
+        "field_match": {
+          "score": 1.02,
+          "matches": [
+            "segmentation",
             "registration"
           ],
           "weight": 0.4
@@ -309,7 +181,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 6.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -318,42 +190,189 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.5,
+          "score": 6.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate towa...",
+        "short": "Computed tomography (CT), cone-beam CT (CBCT), and magnetic resonance imaging (MRI) provide complementary representations of the same underlying anatomy, yet substantial differences in image appearance challenge consistent segmentation and deformable registration in adaptive radiotherapy. We investigate whether dense anatomical segmentation supervision can promote cross-modality correspondence wit...",
         "key_contributions": [
-          "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable.",
-          "The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves.",
-          "Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag."
+          "Computed tomography (CT), cone-beam CT (CBCT), and magnetic resonance imaging (MRI) provide complementary representations of the same underlying anatomy, yet substantial differences in image appearance challenge consistent segmentation and deformable registration in adaptive radiotherapy.",
+          "We investigate whether dense anatomical segmentation supervision can promote cross-modality correspondence without explicit feature alignment.",
+          "We introduce IMPACT-Seg, which segments 126 structures across CT, CBCT, and MRI using shared network parameters."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.17190v1.mp3"
+        "audio_url": "/audio/2611.32903v1.mp3"
       }
     },
     {
-      "id": "2611.17129v1",
-      "title": "Paper-Faithful Federated Learning: Scientific Checks for Practitioner and Agent Development",
+      "id": "2611.33151v1",
+      "title": "BioLoom: Scaling Biomedical Vision-Language Models by Learning from the Structure of Scientific Articles",
       "authors": [
-        "Ali Dadras",
-        "Alp Yurtsever"
+        "Yuwei Yang",
+        "Xiaoxiao Sun",
+        "Alejandro Lozano",
+        "Yuan-Sen Ting",
+        "Yuhui Yuan",
+        "Liang Zheng",
+        "Serena Yeung-Levy"
       ],
-      "abstract": "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol. Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail. We present FedBrew, a research codebase for controlled and reproducible federated learning experiments. Its focus is controlled simulation with checks of specified conditions of the intended experimental protocol. FedBrew uses configuration checks, identifiable client data partitions, checkpoint recovery checks, self-describing run records, and development-time checks of scientific conditions. These checks assess, for example, whether client partitions are disjoint and exhaustive and aggregation weights match the prescribed rule; numerical and recovery checks examine non-finite client model states and interrupted runs. The same structure also provides clear extension points and automated checks for new algorithms, datasets, models, and tasks, whether they are added by researchers or AI coding agents. FedBrew therefore supports reproducible and inspectable FL experiments through checks of specified software and scientific conditions and the run records associated with reported results.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
+      "abstract": "The development of biomedical vision-language models (VLMs) with contrastive image-text pretraining has been driven by scaling to increasingly large and diverse image-text datasets. Beyond scaling, further progress can come from learning richer representations from existing data. We hypothesize that the structure of scientific literature itself provides an additional source of supervision: figures, panels, captions, and accompanying article text encode rich relationships across modalities. Yet, treating these as independent image-text pairs overlooks their relationships. To address this limitation, we incorporate these structural relationships into contrastive image-text supervision. We preserve exact image-text matches while introducing weaker positive supervision for related pairs, such as a panel and the caption of a sibling panel. We upweight cross-article negatives of the same content type to encourage finer discrimination. We also enrich panel descriptions using visual content, original figure captions, and mentioning paragraphs. Pairing panels with these descriptions and whole figures with their original captions yields Loom52M, a dataset of 52.4 million image-text pairs spanning scientific charts and biomedical images. Using Loom52M, BioLoom (DFN-2B) achieves 56.82% domain-balanced mean accuracy across 67 zero-shot classification tasks from 43 datasets in 10 domains, compared with 48.77% for MedPMC-CLIP. On BioLoomBench with concise captions and BioMedFlickr, it achieves bidirectional mean Recall@1 of 63.20% and 10.59%, versus 46.37% and 7.55% for the respective strongest evaluated baselines, BiomedCLIP and MedPMC-CLIP. Code, datasets, benchmarks, and models are available at https://bioloom-clip.github.io/.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
       "categories": [
-        "cs.LG",
-        "cs.SE"
+        "cs.CV",
+        "cs.LG"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.17129v1",
-        "pdf": "https://arxiv.org/pdf/2611.17129v1"
+        "paper": "http://arxiv.org/abs/2611.33151v1",
+        "pdf": "https://arxiv.org/pdf/2611.33151v1"
       },
-      "arxiv_id": "2611.17129v1",
-      "comment": "13 pages, 2 tables. Code: https://github.com/DadrasAli/fedbrew",
+      "arxiv_id": "2611.33151v1",
+      "comment": "Project page: https://bioloom-clip.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.205084745762711,
+      "score_breakdown": {
+        "total_score": 4.21,
+        "field_match": {
+          "score": 0.76,
+          "matches": [
+            "medical image"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The development of biomedical vision-language models (VLMs) with contrastive image-text pretraining has been driven by scaling to increasingly large and diverse image-text datasets. Beyond scaling, further progress can come from learning richer representations from existing data. We hypothesize that the structure of scientific literature itself provides an additional source of supervision: figures...",
+        "key_contributions": [
+          "The development of biomedical vision-language models (VLMs) with contrastive image-text pretraining has been driven by scaling to increasingly large and diverse image-text datasets.",
+          "Beyond scaling, further progress can come from learning richer representations from existing data.",
+          "We hypothesize that the structure of scientific literature itself provides an additional source of supervision: figures, panels, captions, and accompanying article text encode rich relationships across modalities."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.33151v1.mp3"
+      }
+    },
+    {
+      "id": "2611.33137v1",
+      "title": "Physicl Scenes: An Artist-created 3D Dataset for Learning Perception and Action",
+      "authors": [
+        "Yueh-Cheng Liu",
+        "Snehal Jauhri",
+        "Matthias Nießner",
+        "Angela Dai"
+      ],
+      "abstract": "We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning household rooms, public interiors, and outdoor spaces. The dataset combines detailed geometry, physically based materials, and carefully composed environments with object- and part-level semantic annotations, providing rich, joint supervision for visual and embodied learning. We demonstrate its value as training data across inverse rendering, 3D reconstruction, scene understanding, and mobile manipulation. Across these tasks, training state-of-the-art methods with our scenes improves performance over alternative synthetic datasets. In addition, we introduce a mobile manipulation benchmark, evaluating vision-language-action models performing physical pick and place in diverse 3D scenes with realistic layouts, and using our part annotations to also score where each object is grasped. Our dataset will be released publicly to facilitate research in visual and embodied AI.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.33137v1",
+        "pdf": "https://arxiv.org/pdf/2611.33137v1"
+      },
+      "arxiv_id": "2611.33137v1",
+      "comment": "Project: https://liu115.github.io/physicl video: https://youtu.be/UgyQFQSU-oc",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.13728813559322,
+      "score_breakdown": {
+        "total_score": 4.14,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning household rooms, public interiors, and outdoor spaces. The dataset combines detailed geometry, physically based materials, and carefully composed environments with object- and part-level semantic annotations, providing rich, joint supervision for visual and embodied learning. We demonstrate its...",
+        "key_contributions": [
+          "We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning household rooms, public interiors, and outdoor spaces.",
+          "The dataset combines detailed geometry, physically based materials, and carefully composed environments with object- and part-level semantic annotations, providing rich, joint supervision for visual and embodied learning.",
+          "We demonstrate its value as training data across inverse rendering, 3D reconstruction, scene understanding, and mobile manipulation."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.33137v1.mp3"
+      }
+    },
+    {
+      "id": "2611.33020v1",
+      "title": "GRAPE-Bench: When Vision Degrades, Does Video Reasoning Hold?",
+      "authors": [
+        "Ce Zhang",
+        "Junyi He",
+        "Tianshi Ming",
+        "Jinxi He",
+        "Jianshu Zhang",
+        "Xiyuan Yang",
+        "Jianuo Zhu",
+        "Yicheng Tao",
+        "Xiyu Luo",
+        "Minghao Fu",
+        "Jiahui Zhu",
+        "Kehan Guo",
+        "Yunzhong Xiao",
+        "Jingyang Lin",
+        "Wei Chow",
+        "Lingdong Kong",
+        "Katia Sycara",
+        "Yaqi Xie"
+      ],
+      "abstract": "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios. Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they can make the simpler judgments that matter for safe driving. To this end, we introduce GRAPE-Bench, which jointly evaluates video reasoning across visual degradation conditions and question difficulty. It combines a synthetic set spanning twelve corruption types across daily-life and driving videos with real-world footage of driving at night or in rain, snow, or fog. Each video is paired with three progressively challenging questions, from fundamental judgments with potential safety implications to demanding reasoning stress tests. Across open-weight and frontier models, we observe ranking reversals between synthetic and real-world conditions and level-specific weaknesses obscured by overall accuracy. Synthetic-data fine-tuning improves Qwen3.5-9B's real-world accuracy from 76.7% to 81.1%, while clean-privileged on-policy distillation reaches 80.4% in a separate reasoning-enabled setting. Through preference steering, we further demonstrate continuous control over a frozen model's trade-off between safety-relevant judgments and challenging reasoning, with little change in overall accuracy. Together, GRAPE-Bench provides a unified testbed for evaluating, improving, and controlling video reasoning under degraded visual conditions.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.33020v1",
+        "pdf": "https://arxiv.org/pdf/2611.33020v1"
+      },
+      "arxiv_id": "2611.33020v1",
+      "comment": "Project page: https://zhangce01.github.io/grape-bench/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.9,
@@ -384,242 +403,45 @@
         }
       },
       "ai_summaries": {
-        "short": "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol. Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail. We present FedBrew, a research codebase for controlled and r...",
+        "short": "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios. Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they...",
         "key_contributions": [
-          "Federated learning experiments can produce reasonable-looking results even when the experiment implementation differs from the intended experimental protocol.",
-          "Small errors in configuration, data partitioning, aggregation, randomness, evaluation, or checkpoint recovery may therefore affect a comparison without causing the program to fail.",
-          "We present FedBrew, a research codebase for controlled and reproducible federated learning experiments."
+          "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios.",
+          "Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they can make the simpler judgments that matter for safe driving.",
+          "To this end, we introduce GRAPE-Bench, which jointly evaluates video reasoning across visual degradation conditions and question difficulty."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.17129v1.mp3"
+        "audio_url": "/audio/2611.33020v1.mp3"
       }
     },
     {
-      "id": "2611.17294v1",
-      "title": "Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon",
+      "id": "2611.33016v1",
+      "title": "RePix-VFI: Re-rendering Observed Pixels for Video Frame Interpolation with Generative Priors from One-Step Diffusion",
       "authors": [
-        "Haozhe Wang",
-        "Lina Chen",
-        "Fanqi Wan",
-        "Qi Han",
-        "Yinmin Zhang",
-        "Zheng Ge",
-        "Daxin Jiang",
-        "Junchi Yan"
+        "Dayeon Kim",
+        "Jeonghyeok Do",
+        "Munchurl Kim"
       ],
-      "abstract": "On-device inference requires kernels that make effective use of local accelerators. Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions. These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout. We present Metal Sandbox, infrastructure that combines restricted per-instance file access, native command execution, and command-level scheduling across interconnected Macs. Each agent retains its workspace and private development environment. Parallel commands can run concurrently, while serial commands share one execution slot per node; eligible waiting commands can migrate to available Macs and return results to the original agent. Integration with Harbor supports task execution, automatic verification, and rollout collection through a common workflow. Controlled experiments on four Mac mini M4 nodes achieve $1.68\\times$--$2.05\\times$ gains in command throughput under concentrated demand. Sixteen static agent traces give an estimated $2.14\\times$ sustained-throughput gain for four sessions per node versus one, assuming continuously replenished sessions and unchanged mean durations. Replaying these measured traces under dynamic scheduling reduces mean tool waiting by 18.8% and batch elapsed time by 22.3%, assuming unchanged phase durations. Metal Sandbox and its Harbor integration are open-source on GitHub.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "cs.DC"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.17294v1",
-        "pdf": "https://arxiv.org/pdf/2611.17294v1"
-      },
-      "arxiv_id": "2611.17294v1",
-      "comment": "16 pages, 7 figures, 5 tables. Code available at https://github.com/WangHaoZhe/metal-sandbox and https://github.com/WangHaoZhe/harbor",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "On-device inference requires kernels that make effective use of local accelerators. Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions. These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout. We present Metal Sandbox, infrastruc...",
-        "key_contributions": [
-          "On-device inference requires kernels that make effective use of local accelerators.",
-          "Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions.",
-          "These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.17294v1.mp3"
-      }
-    },
-    {
-      "id": "2611.17169v1",
-      "title": "Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing",
-      "authors": [
-        "Umar Ahmed",
-        "Maxim Dunaev",
-        "Mohammad Nour Al Awad",
-        "Sergey Ivanov",
-        "Ivan Khodnenko"
-      ],
-      "abstract": "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order, including two matched-length pairs that vary surface form at fixed length. Across 300 runs (5 training pool sizes, 5 seeds) with a hierarchical bootstrap and Holm correction fixed before the results were read, shortening alone never helps, but writing the target in ordinary words does. The word encoding is the most accurate format on both models (87.5% vs. 85.8% exact match for the native s-expression on Qwen) while emitting 4.1x fewer tokens, and it cuts the silent error rate by 2.3x on Qwen and 1.8x on LFM2, separating at every pool size. Error analysis locates much of the gain in negation. All runs also learn to refuse off-menu input (held out: 95.9-99.0% handled) and to apply in-utterance self-corrections. Strict refusal has a measured price: 2.1-10.1% of real, mostly polite, orders are refused.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
-      "categories": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "primary_category": "cs.CL",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.17169v1",
-        "pdf": "https://arxiv.org/pdf/2611.17169v1"
-      },
-      "arxiv_id": "2611.17169v1",
-      "comment": "10 pages, 6 figures, 11 tables. Code and models: https://github.com/UmarGit/coffee-llm",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.8499999999999996,
-      "score_breakdown": {
-        "total_score": 3.85,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.5,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order,...",
-        "key_contributions": [
-          "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell.",
-          "We ask whether the output format, a free design choice, controls how often this happens.",
-          "On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.17169v1.mp3"
-      }
-    },
-    {
-      "id": "2611.17019v1",
-      "title": "Temporal Regularized Learning: Self-Supervised Learning Local in Space and Time",
-      "authors": [
-        "Davide Wiest"
-      ],
-      "abstract": "Layer-local self-supervised objectives remove the backward pass between layers, but almost all still compute their loss over a batch of samples and are therefore local in space but not in time. We introduce Temporal Regularized Learning (TeReL), a spatially and temporally local learning rule for self-supervised representation learning from sequential input streams. The key idea is to instantiate a VICReg-style objective with temporally adjacent positives and non-differentiated running population statistics, yielding a per-neuron online loss with bounded state. The objective is a soft form of Slow Feature Analysis, and its gradient is a Hebbian update of the feedforward weights and an anti-Hebbian update of one lateral matrix per layer. The aim of the experiments is to show that the rule works in a small network, not to compete with backpropagation. On a class-chunked MNIST stream, a two-layer fully connected network trained with batch size one outperforms random features (96.48% versus 95.09% linear-probe accuracy) and classical SFA, and a variant that relaxes both locality constraints is comparable to supervised backpropagation. Because training and inference use the same computation, the network can keep learning from unlabeled data during inference without loss of accuracy.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "primary_category": "cs.LG",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.17019v1",
-        "pdf": "https://arxiv.org/pdf/2611.17019v1"
-      },
-      "arxiv_id": "2611.17019v1",
-      "comment": "13 pages, 4 figures. Code: https://github.com/Axym-Labs/TeReL",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.7711864406779663,
-      "score_breakdown": {
-        "total_score": 3.77,
-        "field_match": {
-          "score": 0.68,
-          "matches": [
-            "self-supervised"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 5.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 5.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Layer-local self-supervised objectives remove the backward pass between layers, but almost all still compute their loss over a batch of samples and are therefore local in space but not in time. We introduce Temporal Regularized Learning (TeReL), a spatially and temporally local learning rule for self-supervised representation learning from sequential input streams. The key idea is to instantiate a...",
-        "key_contributions": [
-          "Layer-local self-supervised objectives remove the backward pass between layers, but almost all still compute their loss over a batch of samples and are therefore local in space but not in time.",
-          "We introduce Temporal Regularized Learning (TeReL), a spatially and temporally local learning rule for self-supervised representation learning from sequential input streams.",
-          "The key idea is to instantiate a VICReg-style objective with temporally adjacent positives and non-differentiated running population statistics, yielding a per-neuron online loss with bounded state."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.17019v1.mp3"
-      }
-    },
-    {
-      "id": "2611.17146v1",
-      "title": "HiVE-VQA: Hierarchical Interaction via Volumetric Embedding for Video Quality Assessment",
-      "authors": [
-        "Robbie Hamilton",
-        "Fan Zhang",
-        "David Bull"
-      ],
-      "abstract": "The proliferation of user-generated video content has made accurate and robust no-reference video quality assessment (NR-VQA) a highly important challenge. Existing research increasingly relies on architecturally complex multi-branch pipelines or computationally intensive fine-tuning of single-branch backbones. In this paper, we investigate whether a single frozen video foundation model can serve as an effective NR-VQA backbone, and propose HiVE-VQA, the first framework (to our knowledge) to apply a JEPA-based video encoder to this task. HiVE-VQA extracts token grids from multiple depths of a pre-trained V-JEPA 2.1 encoder and stacks them into a hierarchical spatio-temporal volume, which a compact 3D convolutional head fuses across its layer, spatial, and temporal axes, combining low-level distortion cues from shallow layers with the semantic and temporal context captured at greater depths. The encoder remains frozen throughout, so only the head is trained: 5.2M parameters (5.7\\% of the total), with no auxiliary multi-modal models and an inference cost that is invariant to video resolution. Trained solely on LSVQ and evaluated without any fine-tuning, HiVE-VQA outperforms 17 state-of-the-art (SOTA) methods in SROCC and PLCC on both intra-dataset (LSVQ-test, LSVQ-1080p) and cross-dataset (KoNViD-1k, LIVE-VQC) benchmarks. These results indicate that hierarchical, depth-wise fusion of features from a single frozen video foundation model provides a more effective and efficient basis for NR-VQA than task-specific multi-network fusion. Code and model checkpoints are available at https://github.com/RobHam99/HiVE-VQA.",
-      "published": "2026-11-12",
-      "updated": "2026-11-12",
+      "abstract": "Multi-frame video frame interpolation (VFI) aims to reconstruct dense video from sparse keyframes, requiring accurate intermediate motion and faithful appearance. As temporal gaps grow, flow-based methods can retain observed textures but misplace them under ambiguous motion, whereas iterative latent-diffusion models can synthesize plausible content but incur substantial sampling costs and may alter details during reconstruction with a variational autoencoder (VAE). We present RePix-VFI, named for Re-rendering observed Pixels, a multi-frame VFI framework that couples draft-conditioned one-step video diffusion with reconstruction from observed keyframes. A pretrained video diffusion model refines a flow-rendered draft of the whole window in a single forward pass. For each target frame, our generative readback matches its two bounding keyframes to the generated prediction using an optical-flow estimator. The resulting correspondences guide re-rendering of original keyframe RGB pixels outside the VAE. A lightweight appearance fusion head combines these renderings with generated appearance. Experiments on benchmark datasets demonstrate significant improvements in reconstruction and perceptual quality. On SNU-FILM at $\\times$8 and $\\times$16, RePix-VFI achieves the highest PSNR and the lowest LPIPS, FloLPIPS, and tOF among the compared methods, exceeding the best evaluated diffusion-based baseline by 1.71 and 1.48dB in PSNR, respectively. It also runs 32--42$\\times$ faster than the state-of-the-art multi-frame VFI diffusion model.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.17146v1",
-        "pdf": "https://arxiv.org/pdf/2611.17146v1"
+        "paper": "http://arxiv.org/abs/2611.33016v1",
+        "pdf": "https://arxiv.org/pdf/2611.33016v1"
       },
-      "arxiv_id": "2611.17146v1",
-      "comment": "Accepted to WACV 2027, 11 pages, 3 figures, 6 tables",
+      "arxiv_id": "2611.33016v1",
+      "comment": "Please visit our project page at https://kaist-viclab.github.io/RePix-VFI_site",
       "journal_ref": "",
-      "has_code": false,
-      "relevance_score": 3.73728813559322,
+      "has_code": true,
+      "relevance_score": 3.9,
       "score_breakdown": {
-        "total_score": 3.74,
+        "total_score": 3.9,
         "field_match": {
-          "score": 0.59,
-          "matches": [
-            "volumetric"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -628,12 +450,12 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 9.0,
+          "score": 7.0,
           "weight": 0.15
         },
         "code_availability": {
-          "score": 3.0,
-          "has_code": false,
+          "score": 10.0,
+          "has_code": true,
           "weight": 0.1
         },
         "practicality": {
@@ -642,14 +464,211 @@
         }
       },
       "ai_summaries": {
-        "short": "The proliferation of user-generated video content has made accurate and robust no-reference video quality assessment (NR-VQA) a highly important challenge. Existing research increasingly relies on architecturally complex multi-branch pipelines or computationally intensive fine-tuning of single-branch backbones. In this paper, we investigate whether a single frozen video foundation model can serve ...",
+        "short": "Multi-frame video frame interpolation (VFI) aims to reconstruct dense video from sparse keyframes, requiring accurate intermediate motion and faithful appearance. As temporal gaps grow, flow-based methods can retain observed textures but misplace them under ambiguous motion, whereas iterative latent-diffusion models can synthesize plausible content but incur substantial sampling costs and may alte...",
         "key_contributions": [
-          "The proliferation of user-generated video content has made accurate and robust no-reference video quality assessment (NR-VQA) a highly important challenge.",
-          "Existing research increasingly relies on architecturally complex multi-branch pipelines or computationally intensive fine-tuning of single-branch backbones.",
-          "In this paper, we investigate whether a single frozen video foundation model can serve as an effective NR-VQA backbone, and propose HiVE-VQA, the first framework (to our knowledge) to apply a JEPA-based video encoder to this task."
+          "Multi-frame video frame interpolation (VFI) aims to reconstruct dense video from sparse keyframes, requiring accurate intermediate motion and faithful appearance.",
+          "As temporal gaps grow, flow-based methods can retain observed textures but misplace them under ambiguous motion, whereas iterative latent-diffusion models can synthesize plausible content but incur substantial sampling costs and may alter details during reconstruction with a variational autoencoder (VAE).",
+          "We present RePix-VFI, named for Re-rendering observed Pixels, a multi-frame VFI framework that couples draft-conditioned one-step video diffusion with reconstruction from observed keyframes."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.17146v1.mp3"
+        "audio_url": "/audio/2611.33016v1.mp3"
+      }
+    },
+    {
+      "id": "2611.32896v1",
+      "title": "DualSpec: Spectral Reconstruction with Optimized Stereo Cameras",
+      "authors": [
+        "Luca Cogo",
+        "Marco Buzzelli",
+        "Simone Bianco",
+        "Raimondo Schettini"
+      ],
+      "abstract": "Spectral imaging captures information that ordinary RGB sensors cannot, but dedicated spectral cameras can be expensive and bulky. Recovering dense spectra from RGB images offers an accessible alternative, but distinct spectra can produce the same camera response, generating an ambiguity that even more advanced recovery algorithms cannot always resolve. Therefore, increasing the spectral information captured at acquisition is essential. We propose DualSpec, a stereo acquisition framework that jointly optimizes two external optical filters and a reconstruction network. Each filter is placed in front of a standard RGB camera, and the two are designed to produce six responses that provide complementary information for the network. Experiments across reconstruction architectures and spectral ranges show that DualSpec reduces mean spectral angle error by 36-72% relative to a single RGB camera and by 11-29% relative to stereo pairs selected from commercial filters. Cross-dataset evaluations, including a new benchmark of spectral images captured from displaced viewpoints, show that the method generalizes and remains robust to viewpoint misalignment, while analyses of thin-film approximations support optical feasibility.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.32896v1",
+        "pdf": "https://arxiv.org/pdf/2611.32896v1"
+      },
+      "arxiv_id": "2611.32896v1",
+      "comment": "Project Page: https://lucacogo.github.io/DualSpec/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Spectral imaging captures information that ordinary RGB sensors cannot, but dedicated spectral cameras can be expensive and bulky. Recovering dense spectra from RGB images offers an accessible alternative, but distinct spectra can produce the same camera response, generating an ambiguity that even more advanced recovery algorithms cannot always resolve. Therefore, increasing the spectral informati...",
+        "key_contributions": [
+          "Spectral imaging captures information that ordinary RGB sensors cannot, but dedicated spectral cameras can be expensive and bulky.",
+          "Recovering dense spectra from RGB images offers an accessible alternative, but distinct spectra can produce the same camera response, generating an ambiguity that even more advanced recovery algorithms cannot always resolve.",
+          "Therefore, increasing the spectral information captured at acquisition is essential."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.32896v1.mp3"
+      }
+    },
+    {
+      "id": "2611.33157v1",
+      "title": "PointX: Multi-View Consistent Intrinsics by Querying Surface Points",
+      "authors": [
+        "Miguel Farinha",
+        "Sam Sartor",
+        "Iliyan Georgiev",
+        "Giuseppe Vecchio",
+        "Ronald Clark",
+        "Michael Fischer"
+      ],
+      "abstract": "The appearance of a scene is determined by the albedo, roughness, metallicity and normal of every point on its surface, and by the light that reaches it, its irradiance. Recovering these intrinsics from images is ambiguous, and methods that predict them per pixel give the same surface point a different decomposition in every view. We introduce PointX, a simple feed-forward model that predicts intrinsics per 3D surface point instead. A multi-view transformer encodes a set of unposed images, and for any queried surface point, PointX pools the point's tokens across the views in which it appears and decodes the point's intrinsics once. Each point of a 3D reconstruction of the scene, such as a point cloud or a mesh, thus receives a single prediction, which is exactly consistent across views by construction and enables view-consistent relighting and editing. The same model also predicts per-view maps, from one image or many, by querying the point seen at every pixel. These maps agree across views up to the precision of the estimated geometry and correspondences. PointX is significantly more consistent than existing methods, while remaining competitive in accuracy from a single image and improving as views are added. Project page: https://pointx-paper.github.io/",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.33157v1",
+        "pdf": "https://arxiv.org/pdf/2611.33157v1"
+      },
+      "arxiv_id": "2611.33157v1",
+      "comment": "Project page: https://pointx-paper.github.io/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.88728813559322,
+      "score_breakdown": {
+        "total_score": 3.89,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 6.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "The appearance of a scene is determined by the albedo, roughness, metallicity and normal of every point on its surface, and by the light that reaches it, its irradiance. Recovering these intrinsics from images is ambiguous, and methods that predict them per pixel give the same surface point a different decomposition in every view. We introduce PointX, a simple feed-forward model that predicts intr...",
+        "key_contributions": [
+          "The appearance of a scene is determined by the albedo, roughness, metallicity and normal of every point on its surface, and by the light that reaches it, its irradiance.",
+          "Recovering these intrinsics from images is ambiguous, and methods that predict them per pixel give the same surface point a different decomposition in every view.",
+          "We introduce PointX, a simple feed-forward model that predicts intrinsics per 3D surface point instead."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.33157v1.mp3"
+      }
+    },
+    {
+      "id": "2611.33143v1",
+      "title": "ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification",
+      "authors": [
+        "Xingjian Ran",
+        "Xiaoye Mo",
+        "Sihao Liu",
+        "Li Luo",
+        "Taiqiang Wu",
+        "Ji Zhao",
+        "Wenqi Shao",
+        "Hongyang Li",
+        "Jiaqi Wang",
+        "Bo Dai"
+      ],
+      "abstract": "Embodied spatial intelligence requires agents to gather information through exploration and interaction, then use it to reason and act. Existing benchmarks insufficiently distinguish correct outcomes from completion of these task requirements. We introduce ROAM-Bench to evaluate these abilities under robot motion and collision constraints. Independent checks use simulation state and episode records to assess outcomes and task requirements, with stronger checks of geometry, coverage, or placement. It comprises 250 manually validated tasks across 11 types in five groups and 27 indoor environments, covering object and room search, counting, geometric judgments, direction reasoning, and relocation. Human evaluators achieve 84% strict task success on 100 sampled tasks, with every correct outcome satisfying the required checks. Across seven frontier vision-language models, we identify two complementary failure modes: correct outcomes with unmet task requirements, and incorrect outcomes despite passing stronger checks. Oracle-input diagnostics show that more complete target observations and calibrated feedback improve final spatial judgments.",
+      "published": "2026-11-24",
+      "updated": "2026-11-24",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "primary_category": "cs.RO",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.33143v1",
+        "pdf": "https://arxiv.org/pdf/2611.33143v1"
+      },
+      "arxiv_id": "2611.33143v1",
+      "comment": "Project page: https://rxjfighting.github.io/ROAM-Bench/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Embodied spatial intelligence requires agents to gather information through exploration and interaction, then use it to reason and act. Existing benchmarks insufficiently distinguish correct outcomes from completion of these task requirements. We introduce ROAM-Bench to evaluate these abilities under robot motion and collision constraints. Independent checks use simulation state and episode record...",
+        "key_contributions": [
+          "Embodied spatial intelligence requires agents to gather information through exploration and interaction, then use it to reason and act.",
+          "Existing benchmarks insufficiently distinguish correct outcomes from completion of these task requirements.",
+          "We introduce ROAM-Bench to evaluate these abilities under robot motion and collision constraints."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.33143v1.mp3"
       }
     }
   ]

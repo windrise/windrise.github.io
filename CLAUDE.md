@@ -57,7 +57,7 @@ python scripts/web_qa.py                            # Web interface
 
 # Paper management
 python scripts/create_review_issue.py
-python scripts/process_approved_papers.py --issue-number 123
+python -m unittest discover -s tests -p "test_paper_review.py"
 ```
 
 ## Core Architecture
@@ -93,7 +93,7 @@ python scripts/process_approved_papers.py --issue-number 123
 **Key Design Principles:**
 - Zero-cost operation using free APIs (Gemini, Groq, ZhipuAI)
 - Multi-API fallback for reliability
-- Human-in-the-loop via GitHub Issues with label-based approval
+- Human-in-the-loop via GitHub Issues with explicit single-paper comment approval
 - All data stored in version-controlled YAML
 
 ### 3. Data Schema (data/papers/papers.yaml)
@@ -173,7 +173,7 @@ The **all-papers-enhanced.html** shortcode provides:
 
 ### GitHub Actions Workflows (.github/workflows/)
 - `daily-paper-update.yml` - Daily automated paper collection (cron: 0 0 * * *)
-- `process-approved-papers.yml` - Process approved papers via issue labels
+- `process-approved-papers.yml` - Process one paper via `/approve <arxiv-id>` comments
 - `weekly-citation-update.yml` - Update citation counts weekly
 - `hugo.yml` - Build and deploy Hugo site to GitHub Pages
 
@@ -189,8 +189,8 @@ The **all-papers-enhanced.html** shortcode provides:
 
 **Automated Review:**
 1. Check daily GitHub Issues for new papers
-2. Add labels: `approved`, `rejected`, or `starred`
-3. Workflow automatically processes labeled papers
+2. A repository writer posts `/approve <arxiv-id>` for one paper
+3. Workflow validates the command and loads that issue’s fixed snapshot
 4. Approved papers added to `papers.yaml` and site rebuilt
 
 ### Testing Changes Locally
@@ -351,3 +351,4 @@ Comprehensive guides in `/docs/`:
 - `QA_SYSTEM_GUIDE.md` - Local Q&A System guide
 - `READING_NOTES_DESIGN.md` - Reading notes system design
 - `TROUBLESHOOTING.md` - Common issues and solutions
+

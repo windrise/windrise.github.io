@@ -3,45 +3,188 @@
   "total_papers": 10,
   "papers": [
     {
-      "id": "2611.33147v1",
-      "title": "One Take, Many Cameras: Audio-Grounded Shot Synthesis for Dialogue Re-Cinematography",
+      "id": "2611.34795v1",
+      "title": "CIRKDV2: Cross-Image Relational Knowledge Distillation with Contextual Modeling for Efficient Semantic Segmentation",
       "authors": [
-        "Anthony Chen",
-        "Naomi Ken Korem",
-        "Matan Ben-Yosef",
-        "Tavi Halperin",
-        "Urska Jelercic",
-        "Ofir Bibi",
-        "Daniel Cohen-Or",
-        "Or Patashnik",
-        "Maneesh Agrawala"
+        "Chuanguang Yang",
+        "Yu Wang",
+        "Chengqing Yu",
+        "Xinqiang Yu",
+        "Weilun Feng",
+        "Yuqi Li",
+        "Zhulin An",
+        "Libo Huang",
+        "Boyu Diao",
+        "Fei Wang",
+        "Fuzhen Zhuang",
+        "Yongjun Xu",
+        "Yingli Tian",
+        "Tingwen Huang",
+        "Yongduan Song"
       ],
-      "abstract": "Creating a dialogue scene typically requires cutting between multiple views (e.g., close-ups, medium shots, and over-the-shoulder shots) of the actors. Yet capturing such coverage is costly and in many settings unavailable. We study dialogue re-cinematography: synthesizing additional shots from a single wide-angle dialogue video. Existing video generators can synthesize new shots, but rely on visual cues alone, so when the source video barely shows the lips, the generated lip motion fails to match the speech. Our key observation is that the speech audio is view-invariant: it constrains lip motion in any target view. Building on this insight, we adapt a pretrained audio-visual diffusion model to generate the new shot from a target frame that specifies the view, a source video that contains the performance, and the speech audio that drives lip motion. In multi-person scenes, however, pretrained audio-visual models drive every visible face with the same speech, causing speech leakage, where silent listeners mouth the speaker's words. We therefore introduce speaker-aware audio gating, a training-free module that lets the audio drive only the faces that speak in the target shot. On a cinematic paired-view benchmark spanning diverse viewpoints and framings, our method lowers perceptual error by 59%, landmark error by 56%, and speech leakage by 97% relative to the strongest baseline, Wan 3.0. Our method also remains robust on in-the-wild scenes, highlighting its potential for film post-production.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
+      "abstract": "Existing Knowledge Distillation (KD) methods for semantic segmentation often guide the student to mimic the teacher's structured information generated from an individual image. However, they ignore the global semantic relations across various images that are valuable for KD. This paper proposes Cross-Image Relational KD V2 (CIRKDV2), which focuses on transferring structured pixel-to-pixel, pixel-to-region, and channel-to-channel relations modeled from global images in the dataset. A large teacher network often constructs a well-structured feature space in terms of global contextual dependencies. CIRKDV2 makes the student mimic the better structured semantic relations of the teacher, thus improving the feature representational capability. Beyond relational distillation, we further propose contextual feature distillation by using context aggregation to augment student pixel embeddings to match the semantic level with the teacher. This avoids the semantic gap problem between the teacher and student occurred in traditional feature distillation studies. Experimental results on Cityscapes, ADE20K, Pascal VOC, and COCO-Stuff-164K demonstrate that CIRKDV2 outperforms the state-of-the-art semantic segmentation distillation methods by large margins across various network architectures. Our code and pre-trained models are publicly available at https://github.com/winycg/CIRKD.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.33147v1",
-        "pdf": "https://arxiv.org/pdf/2611.33147v1"
+        "paper": "http://arxiv.org/abs/2611.34795v1",
+        "pdf": "https://arxiv.org/pdf/2611.34795v1"
       },
-      "arxiv_id": "2611.33147v1",
-      "comment": "Project page: https://recinematography.github.io/",
+      "arxiv_id": "2611.34795v1",
+      "comment": "18 pages, Accepted by TPAMI",
       "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 5.25,
+      "has_code": false,
+      "relevance_score": 4.603389830508474,
       "score_breakdown": {
-        "total_score": 5.25,
+        "total_score": 4.6,
         "field_match": {
-          "score": 0.0,
-          "matches": [],
+          "score": 0.51,
+          "matches": [
+            "segmentation"
+          ],
           "weight": 0.4
         },
         "venue_quality": {
           "score": 10,
-          "venue": "TOG",
+          "venue": "PAMI",
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 3.0,
+          "has_code": false,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Existing Knowledge Distillation (KD) methods for semantic segmentation often guide the student to mimic the teacher's structured information generated from an individual image. However, they ignore the global semantic relations across various images that are valuable for KD. This paper proposes Cross-Image Relational KD V2 (CIRKDV2), which focuses on transferring structured pixel-to-pixel, pixel-t...",
+        "key_contributions": [
+          "Existing Knowledge Distillation (KD) methods for semantic segmentation often guide the student to mimic the teacher's structured information generated from an individual image.",
+          "However, they ignore the global semantic relations across various images that are valuable for KD.",
+          "This paper proposes Cross-Image Relational KD V2 (CIRKDV2), which focuses on transferring structured pixel-to-pixel, pixel-to-region, and channel-to-channel relations modeled from global images in the dataset."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.34795v1.mp3"
+      }
+    },
+    {
+      "id": "2611.34939v1",
+      "title": "A Mesh for Every Moment",
+      "authors": [
+        "Roy Or-El",
+        "Jeong Joon Park",
+        "Ira Kemelmacher-Shlizerman"
+      ],
+      "abstract": "We present MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame. Existing dynamic Gaussian splatting methods either model appearance alone or target isolated objects segmented by foreground masks, and all of them recover meshes by TSDF fusion or Poisson reconstruction, whose fixed grids limit the detail they can capture. At the core of MEMO is a per-Gaussian motion model inspired by Gaussian processes, which represents each Gaussian's position and rotation over time as a combination of temporal Gaussian kernels. The model keeps every Gaussian a valid surface element throughout the sequence and carries an implicit representation of the dynamic geometry, so a mesh can be derived at any time from a field defined by the Gaussians. Although common in real captures, large and fast motion poses a challenge that dynamic Gaussian splatting methods usually overlook. To account for it, we design a track-based initialization scheme that fits each Gaussian's initial trajectory to point tracks in closed form. We evaluate MEMO on Blender-Moments, a new benchmark of nine animated scenes with ground-truth meshes at every frame, and on two real-world datasets. MEMO reconstructs the most accurate geometry among state-of-the-art methods, and remains competitive in novel-view synthesis and training time. Project page: https://memo-4d.github.io",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.34939v1",
+        "pdf": "https://arxiv.org/pdf/2611.34939v1"
+      },
+      "arxiv_id": "2611.34939v1",
+      "comment": "Project page: https://memo-4d.github.io",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.588983050847458,
+      "score_breakdown": {
+        "total_score": 4.59,
+        "field_match": {
+          "score": 0.85,
+          "matches": [
+            "gaussian splatting"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 9.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "We present MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame. Existing dynamic Gaussian splatting methods either model appearance alone or target isolated objects segmented by foreground masks, and all of them recover meshes by TSDF fusion or Poisson reconstruction, whose...",
+        "key_contributions": [
+          "We present MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame.",
+          "Existing dynamic Gaussian splatting methods either model appearance alone or target isolated objects segmented by foreground masks, and all of them recover meshes by TSDF fusion or Poisson reconstruction, whose fixed grids limit the detail they can capture.",
+          "At the core of MEMO is a per-Gaussian motion model inspired by Gaussian processes, which represents each Gaussian's position and rotation over time as a combination of temporal Gaussian kernels."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.34939v1.mp3"
+      }
+    },
+    {
+      "id": "2611.34810v1",
+      "title": "WorldExpand: Building Coherent 3D Worlds via Sparse Joint Panoramic Expansion",
+      "authors": [
+        "Yuyang Yin",
+        "Chenjie Cao",
+        "Xuhui Zuo",
+        "Yuning Gong",
+        "Pengfei Wang",
+        "Junta Wu",
+        "Zhenwei Wang",
+        "Yao Zhao",
+        "Tengfei Wang",
+        "Yunchao Wei",
+        "Chunchao Guo"
+      ],
+      "abstract": "Constructing complete 3D worlds from a single panorama is challenging because large portions of the scene remain unobserved. Existing panoramic-video methods expand spatial coverage through dense sequential generation, but neighboring frames contain substantial redundancy, long trajectories accumulate errors, and independently generated directions may be inconsistent. We present WorldExpand, which formulates single-panorama world expansion as the generation of sparse, complementary, and high-resolution panoramic observations. This representation concentrates the generation budget on informative scene regions and preserves the fine-grained details required for 3D construction. WorldExpand addresses two key challenges: where to observe and how to synthesize. Our Coverage-Guided View Selection identifies informative target locations using scene-adaptive quadrants and warp-based coverage scores, while our Joint Panoramic Diffusion uses Gaussian-splatting-based geometric warps to jointly synthesize four pose-grounded and cross-view-consistent panoramas. A diagnostic-guided global--local attention schedule retains global attention only in sensitive layers, reducing the training and inference costs of high-resolution joint generation. The resulting posed panoramas can be directly fed into an existing reconstruction pipeline to build an explicit 3D representation. Experiments show that WorldExpand recovers content behind occluders and around distant corners, improves both novel-view synthesis and downstream 3D reconstruction metrics across various datasets, and generalizes robustly to diverse in-the-wild scenes. WorldExpand runs significantly faster than the state-of-the-art panoramic-video method while producing higher-resolution observations with stronger cross-view consistency.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.34810v1",
+        "pdf": "https://arxiv.org/pdf/2611.34810v1"
+      },
+      "arxiv_id": "2611.34810v1",
+      "comment": "Project Page: https://yuyangyin.github.io/WorldExpand_web/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 4.237288135593221,
+      "score_breakdown": {
+        "total_score": 4.24,
+        "field_match": {
+          "score": 0.59,
+          "matches": [
+            "3d reconstruction"
+          ],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
           "weight": 0.25
         },
         "citation_potential": {
@@ -59,53 +202,48 @@
         }
       },
       "ai_summaries": {
-        "short": "Creating a dialogue scene typically requires cutting between multiple views (e.g., close-ups, medium shots, and over-the-shoulder shots) of the actors. Yet capturing such coverage is costly and in many settings unavailable. We study dialogue re-cinematography: synthesizing additional shots from a single wide-angle dialogue video. Existing video generators can synthesize new shots, but rely on visu...",
+        "short": "Constructing complete 3D worlds from a single panorama is challenging because large portions of the scene remain unobserved. Existing panoramic-video methods expand spatial coverage through dense sequential generation, but neighboring frames contain substantial redundancy, long trajectories accumulate errors, and independently generated directions may be inconsistent. We present WorldExpand, which...",
         "key_contributions": [
-          "Creating a dialogue scene typically requires cutting between multiple views (e.",
-          "g.",
-          ", close-ups, medium shots, and over-the-shoulder shots) of the actors."
+          "Constructing complete 3D worlds from a single panorama is challenging because large portions of the scene remain unobserved.",
+          "Existing panoramic-video methods expand spatial coverage through dense sequential generation, but neighboring frames contain substantial redundancy, long trajectories accumulate errors, and independently generated directions may be inconsistent.",
+          "We present WorldExpand, which formulates single-panorama world expansion as the generation of sparse, complementary, and high-resolution panoramic observations."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.33147v1.mp3"
+        "audio_url": "/audio/2611.34810v1.mp3"
       }
     },
     {
-      "id": "2611.33145v1",
-      "title": "Lost on Campus: Evaluating Embodied Spatial Reasoning of Vision-Language Models in the Wild",
+      "id": "2611.34907v1",
+      "title": "Agentic LongLive: Asynchronous Agentic Memory for Long Video Generation",
       "authors": [
-        "Zehan Zheng",
-        "Yanyuan Chen",
-        "Deming Li",
-        "Yutao Tang",
-        "Jianwen Xie",
-        "Alan Yuille",
-        "Jieneng Chen",
-        "Cheng Peng"
+        "Shaoteng Liu",
+        "Shuai Yang",
+        "Wei Huang",
+        "Luozhou Wang",
+        "Song Han",
+        "Yukang Chen"
       ],
-      "abstract": "Embodied Spatial Reasoning (ESR) is central to deploying Vision-Language Models (VLMs) in real-world embodied tasks, yet remains inadequately evaluated. Existing benchmarks primarily assess spatial reasoning in static images or synthetic indoor environments, where semantic shortcuts often suffice, making it difficult to faithfully evaluate spatial reasoning capabilities in the wild. In light of this, we present Lost on Campus, a benchmark for evaluating ESR in large-scale real-world outdoor 3D environments reconstructed by 3D Gaussian Splatting. Our benchmark introduces a unified reasoning-action evaluation framework that seamlessly integrates diagnostic QA for isolated reasoning with closed-loop interactive navigation for active reasoning under multimodal instructions. To enable fine-grained diagnosis, we evaluate six capability aspects of ESR: action grounding, spatial foresight, metric awareness, goal-directed planning, ego-allocentric localization, and spatio-temporal consistency. Extensive experiments reveal that: (i) Compared to indoor settings, real-world outdoor environments impose substantially higher demands on spatial reasoning, where existing models exhibit poor performance; (ii) VLMs still struggle with fine-grained visual alignment, with failures in spatial foresight and ego-allocentric localization emerging as primary bottlenecks; (iii) Improving multimodal interaction capabilities and long-term spatial reasoning is crucial for advancing embodied intelligence. These findings highlight that faithful evaluation of ESR demands benchmarks tightly coupling perception, reasoning and action within realistic and continuous environments.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
+      "abstract": "Real-time autoregressive video generators stream minutes of video and accept new prompts on the fly, but struggle to keep people, objects, and places consistent over a long interactive story. Agent systems provide such memory for offline multi-shot generation, yet they read the whole script in advance, plan each shot before generating it, and regenerate failed shots, which a live stream does not allow. We present Agentic LongLive, an asynchronous agentic memory for long video generation. A memory agent on separate GPUs reads only the prompts revealed so far, never the generated video, and keeps a text state and evolving images for every person, object, and scene. From this entity memory it composes a global image and a per-shot memory image, which an auxiliary GPU prefills into the generator's attention sink before the next shot starts, and writes entity cards for the prompts that name them, so the video never waits for memory and video errors are not written back. A small language model, trained with reinforcement learning and an image reward calibrated using downstream video outcomes, decides what to remember before the next prompt is known. On LongStory-Online, a new benchmark of 25 stories (857 shots) revealed one shot at a time, Agentic LongLive improves persistent-state accuracy of LongLive-2.0, its base generator, by 26.3 points, protagonist identity by 44.9, and revisited-place consistency by 40.4, at about 1% extra generation time on H100. The full system streams faster than real time on one 8xB200 node with the generator in BF16 (34.3 FPS), keeps image quality stable over 14-minute stories, and improves identity on two MiniMax-H3 generators, one of which, LongLive-H3, also runs in real time with it. To our knowledge, it is the first real-time video generator with text and image memory kept by an LLM agent.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.33145v1",
-        "pdf": "https://arxiv.org/pdf/2611.33145v1"
+        "paper": "http://arxiv.org/abs/2611.34907v1",
+        "pdf": "https://arxiv.org/pdf/2611.34907v1"
       },
-      "arxiv_id": "2611.33145v1",
-      "comment": "NeurIPS 2026. Project page: https://dyfcalid.github.io/Lost-on-Campus/",
+      "arxiv_id": "2611.34907v1",
+      "comment": "28 pages, 12 figures. Project page: https://nvlabs.github.io/LongLive/Agentic-LongLive/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.577966101694916,
+      "relevance_score": 4.1499999999999995,
       "score_breakdown": {
-        "total_score": 4.58,
+        "total_score": 4.15,
         "field_match": {
-          "score": 1.69,
-          "matches": [
-            "3d gaussian",
-            "gaussian splatting"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -114,7 +252,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 9.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -123,56 +261,61 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Embodied Spatial Reasoning (ESR) is central to deploying Vision-Language Models (VLMs) in real-world embodied tasks, yet remains inadequately evaluated. Existing benchmarks primarily assess spatial reasoning in static images or synthetic indoor environments, where semantic shortcuts often suffice, making it difficult to faithfully evaluate spatial reasoning capabilities in the wild. In light of th...",
+        "short": "Real-time autoregressive video generators stream minutes of video and accept new prompts on the fly, but struggle to keep people, objects, and places consistent over a long interactive story. Agent systems provide such memory for offline multi-shot generation, yet they read the whole script in advance, plan each shot before generating it, and regenerate failed shots, which a live stream does not a...",
         "key_contributions": [
-          "Embodied Spatial Reasoning (ESR) is central to deploying Vision-Language Models (VLMs) in real-world embodied tasks, yet remains inadequately evaluated.",
-          "Existing benchmarks primarily assess spatial reasoning in static images or synthetic indoor environments, where semantic shortcuts often suffice, making it difficult to faithfully evaluate spatial reasoning capabilities in the wild.",
-          "In light of this, we present Lost on Campus, a benchmark for evaluating ESR in large-scale real-world outdoor 3D environments reconstructed by 3D Gaussian Splatting."
+          "Real-time autoregressive video generators stream minutes of video and accept new prompts on the fly, but struggle to keep people, objects, and places consistent over a long interactive story.",
+          "Agent systems provide such memory for offline multi-shot generation, yet they read the whole script in advance, plan each shot before generating it, and regenerate failed shots, which a live stream does not allow.",
+          "We present Agentic LongLive, an asynchronous agentic memory for long video generation."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.33145v1.mp3"
+        "audio_url": "/audio/2611.34907v1.mp3"
       }
     },
     {
-      "id": "2611.32903v1",
-      "title": "IMPACT-Seg: Consistent Anatomical Segmentation and Representation Learning Across CT, CBCT, and MRI",
+      "id": "2611.34849v1",
+      "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
       "authors": [
-        "Cédric Hémon",
-        "Valentin Boussot",
-        "Matthew McCormick",
-        "Lukas Zimmermann",
-        "Christopher Kurz",
-        "Guillaume Landry"
+        "Yongchang Zhang",
+        "Jie Huang",
+        "Yunhe Ni",
+        "Ningyu Zhou",
+        "Guangyu Zhao",
+        "Ruixun Liu",
+        "Rui Huang",
+        "Yidi Wu",
+        "TianZe Zhang",
+        "Zixiang Jiang",
+        "Xiang Li",
+        "Kevin Shen",
+        "Yiwu Zhong"
       ],
-      "abstract": "Computed tomography (CT), cone-beam CT (CBCT), and magnetic resonance imaging (MRI) provide complementary representations of the same underlying anatomy, yet substantial differences in image appearance challenge consistent segmentation and deformable registration in adaptive radiotherapy. We investigate whether dense anatomical segmentation supervision can promote cross-modality correspondence without explicit feature alignment. We introduce IMPACT-Seg, which segments 126 structures across CT, CBCT, and MRI using shared network parameters. A collection of 8,290 volumes was assembled from public cohorts through label harmonization, model-assisted pseudo-label completion, iterative refinement, and 2,864 physics-based CBCT simulations with voxel-aligned CT labels. Unpaired images were used to jointly train 2.5D and 3D residual-encoder networks.\n  On 139 real CBCTs, IMPACT-Seg 3D achieved a mean Dice of 0.842 versus 0.671 for the strongest comparator. On 497 voxel-aligned CT-simulated-CBCT pairs, the CT-to-CBCT Dice decrease was 0.022 versus 0.153-0.178 for competing methods. On independent pancreatic radiotherapy CBCTs, gastrointestinal Dice was 0.735 versus 0.634 for TotalSegmentator. Prediction agreement reached 0.881 on registered CT-CBCT and 0.790 on CT-MRI pairs. Adding MRI training data reduced CT-MRI encoder feature retrieval error from 36.8 to 3.2 mm. Registration pipelines incorporating IMPACT-Seg features ranked first on two multimodal Learn2Reg benchmarks. The 3D model segmented a whole-body CT in 15 s.\n  These findings show that dense anatomical segmentation supervision can support consistent anatomical representations across modalities, with applications to both segmentation and registration. Code, datasets, and pretrained models are available at https://github.com/HEMONCedric/IMPACTSeg.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
+      "abstract": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry. Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them. However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline. This leads to $N \\times M$ integrations when evaluating $N$ methods on $M$ benchmarks. To this end, we present Real2SimLab, a unified platform for real-to-simulation transfer. It evaluates a method by running its written program and scoring the output simulation with the original scorer of each benchmark. Moreover, Real2SimLab provides a pipeline to create training data and reward annotations for real-to-simulation methods. Our pipeline carefully avoids data contamination by filtering out the video recordings that exist in benchmarks. For each video recording, a program is first produced, and then our pipeline computes its reward with the same code that Real2SimLab uses for evaluation. So far, it supports 47 coding agents and 5 non-agent methods on 6 benchmarks. Both the platform and Awesome-Real2Sim, our research map of nearly 300 real-to-simulation papers, are open source, and we invite the Real2SimHub community to build them together.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
       "categories": [
+        "cs.RO",
         "cs.CV"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.RO",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.32903v1",
-        "pdf": "https://arxiv.org/pdf/2611.32903v1"
+        "paper": "http://arxiv.org/abs/2611.34849v1",
+        "pdf": "https://arxiv.org/pdf/2611.34849v1"
       },
-      "arxiv_id": "2611.32903v1",
-      "comment": "preprint (https://github.com/HEMONCedric/IMPACTSeg, https://huggingface.co/HCedric/IMPACTSeg)",
+      "arxiv_id": "2611.34849v1",
+      "comment": "Project page: https://real2simhub.github.io/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.5067796610169495,
+      "relevance_score": 4.1000000000000005,
       "score_breakdown": {
-        "total_score": 4.51,
+        "total_score": 4.1,
         "field_match": {
-          "score": 1.02,
-          "matches": [
-            "segmentation",
-            "registration"
-          ],
+          "score": 0.0,
+          "matches": [],
           "weight": 0.4
         },
         "venue_quality": {
@@ -195,189 +338,46 @@
         }
       },
       "ai_summaries": {
-        "short": "Computed tomography (CT), cone-beam CT (CBCT), and magnetic resonance imaging (MRI) provide complementary representations of the same underlying anatomy, yet substantial differences in image appearance challenge consistent segmentation and deformable registration in adaptive radiotherapy. We investigate whether dense anatomical segmentation supervision can promote cross-modality correspondence wit...",
+        "short": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry. Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them. However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline. This leads t...",
         "key_contributions": [
-          "Computed tomography (CT), cone-beam CT (CBCT), and magnetic resonance imaging (MRI) provide complementary representations of the same underlying anatomy, yet substantial differences in image appearance challenge consistent segmentation and deformable registration in adaptive radiotherapy.",
-          "We investigate whether dense anatomical segmentation supervision can promote cross-modality correspondence without explicit feature alignment.",
-          "We introduce IMPACT-Seg, which segments 126 structures across CT, CBCT, and MRI using shared network parameters."
+          "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry.",
+          "Recently, coding agents have become capable of generating simulation programs from video recordings, and several benchmarks have been proposed to evaluate them.",
+          "However, each individual benchmark defines its own inputs, deliverables, and scoring pipeline."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.32903v1.mp3"
+        "audio_url": "/audio/2611.34849v1.mp3"
       }
     },
     {
-      "id": "2611.33151v1",
-      "title": "BioLoom: Scaling Biomedical Vision-Language Models by Learning from the Structure of Scientific Articles",
+      "id": "2611.34821v1",
+      "title": "LoopTitan: What Does Parameter Revisit Buy a Mixture-of-Experts?",
       "authors": [
-        "Yuwei Yang",
-        "Xiaoxiao Sun",
-        "Alejandro Lozano",
-        "Yuan-Sen Ting",
-        "Yuhui Yuan",
-        "Liang Zheng",
-        "Serena Yeung-Levy"
+        "Zichen Tian",
+        "Yudong Lu",
+        "Xuansheng Wu",
+        "Na Zou",
+        "Xia Hu",
+        "Guanchu Wang",
+        "Qianru Sun"
       ],
-      "abstract": "The development of biomedical vision-language models (VLMs) with contrastive image-text pretraining has been driven by scaling to increasingly large and diverse image-text datasets. Beyond scaling, further progress can come from learning richer representations from existing data. We hypothesize that the structure of scientific literature itself provides an additional source of supervision: figures, panels, captions, and accompanying article text encode rich relationships across modalities. Yet, treating these as independent image-text pairs overlooks their relationships. To address this limitation, we incorporate these structural relationships into contrastive image-text supervision. We preserve exact image-text matches while introducing weaker positive supervision for related pairs, such as a panel and the caption of a sibling panel. We upweight cross-article negatives of the same content type to encourage finer discrimination. We also enrich panel descriptions using visual content, original figure captions, and mentioning paragraphs. Pairing panels with these descriptions and whole figures with their original captions yields Loom52M, a dataset of 52.4 million image-text pairs spanning scientific charts and biomedical images. Using Loom52M, BioLoom (DFN-2B) achieves 56.82% domain-balanced mean accuracy across 67 zero-shot classification tasks from 43 datasets in 10 domains, compared with 48.77% for MedPMC-CLIP. On BioLoomBench with concise captions and BioMedFlickr, it achieves bidirectional mean Recall@1 of 63.20% and 10.59%, versus 46.37% and 7.55% for the respective strongest evaluated baselines, BiomedCLIP and MedPMC-CLIP. Code, datasets, benchmarks, and models are available at https://bioloom-clip.github.io/.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
+      "abstract": "Looped Mixture-of-Experts (MoE) architectures revisit layer parameters across depths. This design increases effective depth without adding parameters. Recent looped MoE studies report substantial gains over the standard MoE at matched budgets (parameters, FLOPs and KV cache). However, the reported gains still confound parameter revisit with other design choices, e.g., network shape and residual scale. We ask, what does parameter revisit itself buy? Using matched non-revisit controls, we find that parameter revisit itself buys almost nothing. We argue that revisit only offers a freedom an MoE already has, i.e., trading experts for depth (more layers, fewer experts each) at fixed parameters. First, at matched budgets, we decompose the state-of-the-art looped recipe, with revisit last. A non-revisit control retains all the gain. Most comes from network shape, and the rest from residual scale. We prove this scale acts as a lower learning rate on revisited layers. This helps under AdamW's uneven layer step sizes, but disappears under Muon, which keeps them nearly equal. Second, beyond matched budgets, we evaluate revisit by adding compute at fixed parameters. One extra visit gains more than doubling the experts. Yet without revisit, a deeper standard MoE at equal parameters and compute obtains 90.2% of that gain under Muon. Overall, gains come from network shape, the optimizer and added compute, which a standard MoE can adopt. Accordingly, we propose LoopTitan-Base as a stronger MoE baseline. Under Muon, it matches the strongest looped recipe without revisit or residual scale. We open-source LoopTitan and release 17 pretrained models (including LoopTitan-Base and the control). Our experiment record is public as GitHub issues, with predictions pre-registered and the full exploration history kept. This is our Phase 1 technical report, laying the foundation for follow-up studies.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
       "categories": [
-        "cs.CV",
         "cs.LG"
       ],
-      "primary_category": "cs.CV",
+      "primary_category": "cs.LG",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.33151v1",
-        "pdf": "https://arxiv.org/pdf/2611.33151v1"
+        "paper": "http://arxiv.org/abs/2611.34821v1",
+        "pdf": "https://arxiv.org/pdf/2611.34821v1"
       },
-      "arxiv_id": "2611.33151v1",
-      "comment": "Project page: https://bioloom-clip.github.io/",
+      "arxiv_id": "2611.34821v1",
+      "comment": "45 pages. Phase 1 technical report. Project page: https://datamllab.github.io/LoopTitan/ ; code: https://github.com/datamllab/LoopTitan ; models: https://huggingface.co/NaturalScale",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 4.205084745762711,
+      "relevance_score": 3.95,
       "score_breakdown": {
-        "total_score": 4.21,
-        "field_match": {
-          "score": 0.76,
-          "matches": [
-            "medical image"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "The development of biomedical vision-language models (VLMs) with contrastive image-text pretraining has been driven by scaling to increasingly large and diverse image-text datasets. Beyond scaling, further progress can come from learning richer representations from existing data. We hypothesize that the structure of scientific literature itself provides an additional source of supervision: figures...",
-        "key_contributions": [
-          "The development of biomedical vision-language models (VLMs) with contrastive image-text pretraining has been driven by scaling to increasingly large and diverse image-text datasets.",
-          "Beyond scaling, further progress can come from learning richer representations from existing data.",
-          "We hypothesize that the structure of scientific literature itself provides an additional source of supervision: figures, panels, captions, and accompanying article text encode rich relationships across modalities."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.33151v1.mp3"
-      }
-    },
-    {
-      "id": "2611.33137v1",
-      "title": "Physicl Scenes: An Artist-created 3D Dataset for Learning Perception and Action",
-      "authors": [
-        "Yueh-Cheng Liu",
-        "Snehal Jauhri",
-        "Matthias Nießner",
-        "Angela Dai"
-      ],
-      "abstract": "We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning household rooms, public interiors, and outdoor spaces. The dataset combines detailed geometry, physically based materials, and carefully composed environments with object- and part-level semantic annotations, providing rich, joint supervision for visual and embodied learning. We demonstrate its value as training data across inverse rendering, 3D reconstruction, scene understanding, and mobile manipulation. Across these tasks, training state-of-the-art methods with our scenes improves performance over alternative synthetic datasets. In addition, we introduce a mobile manipulation benchmark, evaluating vision-language-action models performing physical pick and place in diverse 3D scenes with realistic layouts, and using our part annotations to also score where each object is grasped. Our dataset will be released publicly to facilitate research in visual and embodied AI.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.33137v1",
-        "pdf": "https://arxiv.org/pdf/2611.33137v1"
-      },
-      "arxiv_id": "2611.33137v1",
-      "comment": "Project: https://liu115.github.io/physicl video: https://youtu.be/UgyQFQSU-oc",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 4.13728813559322,
-      "score_breakdown": {
-        "total_score": 4.14,
-        "field_match": {
-          "score": 0.59,
-          "matches": [
-            "3d reconstruction"
-          ],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning household rooms, public interiors, and outdoor spaces. The dataset combines detailed geometry, physically based materials, and carefully composed environments with object- and part-level semantic annotations, providing rich, joint supervision for visual and embodied learning. We demonstrate its...",
-        "key_contributions": [
-          "We present Physicl Scenes, a high-quality artist-created and curated dataset of 6,499 3D scenes spanning household rooms, public interiors, and outdoor spaces.",
-          "The dataset combines detailed geometry, physically based materials, and carefully composed environments with object- and part-level semantic annotations, providing rich, joint supervision for visual and embodied learning.",
-          "We demonstrate its value as training data across inverse rendering, 3D reconstruction, scene understanding, and mobile manipulation."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.33137v1.mp3"
-      }
-    },
-    {
-      "id": "2611.33020v1",
-      "title": "GRAPE-Bench: When Vision Degrades, Does Video Reasoning Hold?",
-      "authors": [
-        "Ce Zhang",
-        "Junyi He",
-        "Tianshi Ming",
-        "Jinxi He",
-        "Jianshu Zhang",
-        "Xiyuan Yang",
-        "Jianuo Zhu",
-        "Yicheng Tao",
-        "Xiyu Luo",
-        "Minghao Fu",
-        "Jiahui Zhu",
-        "Kehan Guo",
-        "Yunzhong Xiao",
-        "Jingyang Lin",
-        "Wei Chow",
-        "Lingdong Kong",
-        "Katia Sycara",
-        "Yaqi Xie"
-      ],
-      "abstract": "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios. Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they can make the simpler judgments that matter for safe driving. To this end, we introduce GRAPE-Bench, which jointly evaluates video reasoning across visual degradation conditions and question difficulty. It combines a synthetic set spanning twelve corruption types across daily-life and driving videos with real-world footage of driving at night or in rain, snow, or fog. Each video is paired with three progressively challenging questions, from fundamental judgments with potential safety implications to demanding reasoning stress tests. Across open-weight and frontier models, we observe ranking reversals between synthetic and real-world conditions and level-specific weaknesses obscured by overall accuracy. Synthetic-data fine-tuning improves Qwen3.5-9B's real-world accuracy from 76.7% to 81.1%, while clean-privileged on-policy distillation reaches 80.4% in a separate reasoning-enabled setting. Through preference steering, we further demonstrate continuous control over a frozen model's trade-off between safety-relevant judgments and challenging reasoning, with little change in overall accuracy. Together, GRAPE-Bench provides a unified testbed for evaluating, improving, and controlling video reasoning under degraded visual conditions.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.33020v1",
-        "pdf": "https://arxiv.org/pdf/2611.33020v1"
-      },
-      "arxiv_id": "2611.33020v1",
-      "comment": "Project page: https://zhangce01.github.io/grape-bench/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
-      "score_breakdown": {
-        "total_score": 3.9,
+        "total_score": 3.95,
         "field_match": {
           "score": 0.0,
           "matches": [],
@@ -389,7 +389,7 @@
           "weight": 0.25
         },
         "citation_potential": {
-          "score": 7.0,
+          "score": 8.0,
           "weight": 0.15
         },
         "code_availability": {
@@ -398,173 +398,48 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios. Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they...",
-        "key_contributions": [
-          "Despite strong performance on standard benchmarks, video reasoning models remain vulnerable to visual degradation, raising concerns about their reliability in safety-critical scenarios.",
-          "Existing benchmarks address this concern in part by simulating visual degradation or probing model reasoning with challenging questions, leaving open how well models handle naturally degraded video and whether they can make the simpler judgments that matter for safe driving.",
-          "To this end, we introduce GRAPE-Bench, which jointly evaluates video reasoning across visual degradation conditions and question difficulty."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.33020v1.mp3"
-      }
-    },
-    {
-      "id": "2611.33016v1",
-      "title": "RePix-VFI: Re-rendering Observed Pixels for Video Frame Interpolation with Generative Priors from One-Step Diffusion",
-      "authors": [
-        "Dayeon Kim",
-        "Jeonghyeok Do",
-        "Munchurl Kim"
-      ],
-      "abstract": "Multi-frame video frame interpolation (VFI) aims to reconstruct dense video from sparse keyframes, requiring accurate intermediate motion and faithful appearance. As temporal gaps grow, flow-based methods can retain observed textures but misplace them under ambiguous motion, whereas iterative latent-diffusion models can synthesize plausible content but incur substantial sampling costs and may alter details during reconstruction with a variational autoencoder (VAE). We present RePix-VFI, named for Re-rendering observed Pixels, a multi-frame VFI framework that couples draft-conditioned one-step video diffusion with reconstruction from observed keyframes. A pretrained video diffusion model refines a flow-rendered draft of the whole window in a single forward pass. For each target frame, our generative readback matches its two bounding keyframes to the generated prediction using an optical-flow estimator. The resulting correspondences guide re-rendering of original keyframe RGB pixels outside the VAE. A lightweight appearance fusion head combines these renderings with generated appearance. Experiments on benchmark datasets demonstrate significant improvements in reconstruction and perceptual quality. On SNU-FILM at $\\times$8 and $\\times$16, RePix-VFI achieves the highest PSNR and the lowest LPIPS, FloLPIPS, and tOF among the compared methods, exceeding the best evaluated diffusion-based baseline by 1.71 and 1.48dB in PSNR, respectively. It also runs 32--42$\\times$ faster than the state-of-the-art multi-frame VFI diffusion model.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.33016v1",
-        "pdf": "https://arxiv.org/pdf/2611.33016v1"
-      },
-      "arxiv_id": "2611.33016v1",
-      "comment": "Please visit our project page at https://kaist-viclab.github.io/RePix-VFI_site",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.9,
-      "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
           "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "Multi-frame video frame interpolation (VFI) aims to reconstruct dense video from sparse keyframes, requiring accurate intermediate motion and faithful appearance. As temporal gaps grow, flow-based methods can retain observed textures but misplace them under ambiguous motion, whereas iterative latent-diffusion models can synthesize plausible content but incur substantial sampling costs and may alte...",
+        "short": "Looped Mixture-of-Experts (MoE) architectures revisit layer parameters across depths. This design increases effective depth without adding parameters. Recent looped MoE studies report substantial gains over the standard MoE at matched budgets (parameters, FLOPs and KV cache). However, the reported gains still confound parameter revisit with other design choices, e.g., network shape and residual sc...",
         "key_contributions": [
-          "Multi-frame video frame interpolation (VFI) aims to reconstruct dense video from sparse keyframes, requiring accurate intermediate motion and faithful appearance.",
-          "As temporal gaps grow, flow-based methods can retain observed textures but misplace them under ambiguous motion, whereas iterative latent-diffusion models can synthesize plausible content but incur substantial sampling costs and may alter details during reconstruction with a variational autoencoder (VAE).",
-          "We present RePix-VFI, named for Re-rendering observed Pixels, a multi-frame VFI framework that couples draft-conditioned one-step video diffusion with reconstruction from observed keyframes."
+          "Looped Mixture-of-Experts (MoE) architectures revisit layer parameters across depths.",
+          "This design increases effective depth without adding parameters.",
+          "Recent looped MoE studies report substantial gains over the standard MoE at matched budgets (parameters, FLOPs and KV cache)."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.33016v1.mp3"
+        "audio_url": "/audio/2611.34821v1.mp3"
       }
     },
     {
-      "id": "2611.32896v1",
-      "title": "DualSpec: Spectral Reconstruction with Optimized Stereo Cameras",
+      "id": "2611.34944v1",
+      "title": "AnyCam: Anything Can Represent Camera for Video Generation",
       "authors": [
-        "Luca Cogo",
-        "Marco Buzzelli",
-        "Simone Bianco",
-        "Raimondo Schettini"
+        "Weijie Lyu",
+        "Zhixin Shu",
+        "Yuntian Ke",
+        "Ming-Hsuan Yang"
       ],
-      "abstract": "Spectral imaging captures information that ordinary RGB sensors cannot, but dedicated spectral cameras can be expensive and bulky. Recovering dense spectra from RGB images offers an accessible alternative, but distinct spectra can produce the same camera response, generating an ambiguity that even more advanced recovery algorithms cannot always resolve. Therefore, increasing the spectral information captured at acquisition is essential. We propose DualSpec, a stereo acquisition framework that jointly optimizes two external optical filters and a reconstruction network. Each filter is placed in front of a standard RGB camera, and the two are designed to produce six responses that provide complementary information for the network. Experiments across reconstruction architectures and spectral ranges show that DualSpec reduces mean spectral angle error by 36-72% relative to a single RGB camera and by 11-29% relative to stereo pairs selected from commercial filters. Cross-dataset evaluations, including a new benchmark of spectral images captured from displaced viewpoints, show that the method generalizes and remains robust to viewpoint misalignment, while analyses of thin-film approximations support optical feasibility.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
+      "abstract": "Camera-controlled video generation re-renders a video along a target camera trajectory, yet moving the camera around an object, the most natural way to change the viewpoint of an object-centric scene, remains difficult. Existing methods condition either on camera parameters, which are scale-ambiguous in monocular video, or on explicit geometry such as warped point clouds or depth, which breaks down under large viewpoint changes. We present AnyCam, a method that represents the camera with an anchor object in the scene: we reconstruct it in 3D and render it along the target trajectory, a camera signal that is scale-aware, view-complete and easy to specify relative to the object. A video diffusion model transfers the content and dynamics of the source video to the new viewpoint. Its H-Concat layout aligns source and target frames in time, so the model can be distilled into AnyCam-AR, a streaming few-step generator for on-the-fly camera control. Both models are trained on paired videos with pixel-aligned anchor renderings from multi-camera videos and static-scene captures. Experiments on diverse datasets and trajectories show that AnyCam performs favorably against camera-controlled video generation and 3D reconstruction methods in camera control and visual quality.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
       "categories": [
         "cs.CV"
       ],
       "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.32896v1",
-        "pdf": "https://arxiv.org/pdf/2611.32896v1"
+        "paper": "http://arxiv.org/abs/2611.34944v1",
+        "pdf": "https://arxiv.org/pdf/2611.34944v1"
       },
-      "arxiv_id": "2611.32896v1",
-      "comment": "Project Page: https://lucacogo.github.io/DualSpec/",
+      "arxiv_id": "2611.34944v1",
+      "comment": "Project page: https://weijielyu.github.io/AnyCam/",
       "journal_ref": "",
       "has_code": true,
-      "relevance_score": 3.9,
+      "relevance_score": 3.93728813559322,
       "score_breakdown": {
-        "total_score": 3.9,
-        "field_match": {
-          "score": 0.0,
-          "matches": [],
-          "weight": 0.4
-        },
-        "venue_quality": {
-          "score": 5.0,
-          "venue": null,
-          "weight": 0.25
-        },
-        "citation_potential": {
-          "score": 7.0,
-          "weight": 0.15
-        },
-        "code_availability": {
-          "score": 10.0,
-          "has_code": true,
-          "weight": 0.1
-        },
-        "practicality": {
-          "score": 6.0,
-          "weight": 0.1
-        }
-      },
-      "ai_summaries": {
-        "short": "Spectral imaging captures information that ordinary RGB sensors cannot, but dedicated spectral cameras can be expensive and bulky. Recovering dense spectra from RGB images offers an accessible alternative, but distinct spectra can produce the same camera response, generating an ambiguity that even more advanced recovery algorithms cannot always resolve. Therefore, increasing the spectral informati...",
-        "key_contributions": [
-          "Spectral imaging captures information that ordinary RGB sensors cannot, but dedicated spectral cameras can be expensive and bulky.",
-          "Recovering dense spectra from RGB images offers an accessible alternative, but distinct spectra can produce the same camera response, generating an ambiguity that even more advanced recovery algorithms cannot always resolve.",
-          "Therefore, increasing the spectral information captured at acquisition is essential."
-        ],
-        "provider": "gemini",
-        "audio_url": "/audio/2611.32896v1.mp3"
-      }
-    },
-    {
-      "id": "2611.33157v1",
-      "title": "PointX: Multi-View Consistent Intrinsics by Querying Surface Points",
-      "authors": [
-        "Miguel Farinha",
-        "Sam Sartor",
-        "Iliyan Georgiev",
-        "Giuseppe Vecchio",
-        "Ronald Clark",
-        "Michael Fischer"
-      ],
-      "abstract": "The appearance of a scene is determined by the albedo, roughness, metallicity and normal of every point on its surface, and by the light that reaches it, its irradiance. Recovering these intrinsics from images is ambiguous, and methods that predict them per pixel give the same surface point a different decomposition in every view. We introduce PointX, a simple feed-forward model that predicts intrinsics per 3D surface point instead. A multi-view transformer encodes a set of unposed images, and for any queried surface point, PointX pools the point's tokens across the views in which it appears and decodes the point's intrinsics once. Each point of a 3D reconstruction of the scene, such as a point cloud or a mesh, thus receives a single prediction, which is exactly consistent across views by construction and enables view-consistent relighting and editing. The same model also predicts per-view maps, from one image or many, by querying the point seen at every pixel. These maps agree across views up to the precision of the estimated geometry and correspondences. PointX is significantly more consistent than existing methods, while remaining competitive in accuracy from a single image and improving as views are added. Project page: https://pointx-paper.github.io/",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
-      "categories": [
-        "cs.CV"
-      ],
-      "primary_category": "cs.CV",
-      "links": {
-        "paper": "http://arxiv.org/abs/2611.33157v1",
-        "pdf": "https://arxiv.org/pdf/2611.33157v1"
-      },
-      "arxiv_id": "2611.33157v1",
-      "comment": "Project page: https://pointx-paper.github.io/",
-      "journal_ref": "",
-      "has_code": true,
-      "relevance_score": 3.88728813559322,
-      "score_breakdown": {
-        "total_score": 3.89,
+        "total_score": 3.94,
         "field_match": {
           "score": 0.59,
           "matches": [
@@ -587,50 +462,106 @@
           "weight": 0.1
         },
         "practicality": {
-          "score": 5.0,
+          "score": 5.5,
           "weight": 0.1
         }
       },
       "ai_summaries": {
-        "short": "The appearance of a scene is determined by the albedo, roughness, metallicity and normal of every point on its surface, and by the light that reaches it, its irradiance. Recovering these intrinsics from images is ambiguous, and methods that predict them per pixel give the same surface point a different decomposition in every view. We introduce PointX, a simple feed-forward model that predicts intr...",
+        "short": "Camera-controlled video generation re-renders a video along a target camera trajectory, yet moving the camera around an object, the most natural way to change the viewpoint of an object-centric scene, remains difficult. Existing methods condition either on camera parameters, which are scale-ambiguous in monocular video, or on explicit geometry such as warped point clouds or depth, which breaks dow...",
         "key_contributions": [
-          "The appearance of a scene is determined by the albedo, roughness, metallicity and normal of every point on its surface, and by the light that reaches it, its irradiance.",
-          "Recovering these intrinsics from images is ambiguous, and methods that predict them per pixel give the same surface point a different decomposition in every view.",
-          "We introduce PointX, a simple feed-forward model that predicts intrinsics per 3D surface point instead."
+          "Camera-controlled video generation re-renders a video along a target camera trajectory, yet moving the camera around an object, the most natural way to change the viewpoint of an object-centric scene, remains difficult.",
+          "Existing methods condition either on camera parameters, which are scale-ambiguous in monocular video, or on explicit geometry such as warped point clouds or depth, which breaks down under large viewpoint changes.",
+          "We present AnyCam, a method that represents the camera with an anchor object in the scene: we reconstruct it in 3D and render it along the target trajectory, a camera signal that is scale-aware, view-complete and easy to specify relative to the object."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.33157v1.mp3"
+        "audio_url": "/audio/2611.34944v1.mp3"
       }
     },
     {
-      "id": "2611.33143v1",
-      "title": "ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification",
+      "id": "2611.34870v1",
+      "title": "Shape-Aware Three-Way Merge for RDF Knowledge Graphs: The schema defines the conflict: an implementation and evaluation",
       "authors": [
-        "Xingjian Ran",
-        "Xiaoye Mo",
-        "Sihao Liu",
-        "Li Luo",
-        "Taiqiang Wu",
-        "Ji Zhao",
-        "Wenqi Shao",
-        "Hongyang Li",
-        "Jiaqi Wang",
-        "Bo Dai"
+        "Steve Brown"
       ],
-      "abstract": "Embodied spatial intelligence requires agents to gather information through exploration and interaction, then use it to reason and act. Existing benchmarks insufficiently distinguish correct outcomes from completion of these task requirements. We introduce ROAM-Bench to evaluate these abilities under robot motion and collision constraints. Independent checks use simulation state and episode records to assess outcomes and task requirements, with stronger checks of geometry, coverage, or placement. It comprises 250 manually validated tasks across 11 types in five groups and 27 indoor environments, covering object and room search, counting, geometric judgments, direction reasoning, and relocation. Human evaluators achieve 84% strict task success on 100 sampled tasks, with every correct outcome satisfying the required checks. Across seven frontier vision-language models, we identify two complementary failure modes: correct outcomes with unmet task requirements, and incorrect outcomes despite passing stronger checks. Oracle-input diagnostics show that more complete target observations and calibrated feedback improve final spatial judgments.",
-      "published": "2026-11-24",
-      "updated": "2026-11-24",
+      "abstract": "Merging RDF serializations creates ordering conflicts and misses semantic ones. We describe and evaluate a three-way merge in which the schema defines a conflict: set algebra combines canonical triples, and a slot is contended only where a SHACL shape bounds its cardinality and both sides' changes cannot stand within that bound. Unbounded predicates union; contended slots go to a person. The same shapes graph validates the result. We do not claim the first three-way merge for RDF. Our contribution is an implementation in a production multi-agent store and an evaluation against a reimplementation of Quit Store's Context Merge overlap rule, which it extends rather than replaces, and six other strategies. Across five synthetic seeds, the shape-aware operator raised 33 conflicts, all true positives as judged by the same shapes that define them, with no triples lost or fabricated and no SHACL violations admitted. The context-overlap baseline, counted per slot, detected the same 33 conflicts but asked 845 questions. A replay built from recorded production incidents covers 105 human alias repairs (93 after excluding 12 chained pairs) and 939 duplicate-value incidents. It reproduces a triple-level limit: different names for one entity remain invisible (0 of 93 alias repairs detected, matching 0 of 21 synthetic cases). In a study of evolving shape contracts, merging shape declarations first handles the tested cardinality changes, while datatype evolution exposes a detector blind spot caught by post-merge validation. An oracle that reads no shapes agrees with the shipped operator on the facts and history of all 23 reachable single-slot cases. Under wrong shapes, a missing bound loses data silently and a spurious one only adds questions. The supported claim is fewer human decisions with nothing silently lost, for cardinality conflicts in one deployment, not general merge correctness.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
       "categories": [
-        "cs.RO",
+        "cs.DB",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "primary_category": "cs.DB",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.34870v1",
+        "pdf": "https://arxiv.org/pdf/2611.34870v1"
+      },
+      "arxiv_id": "2611.34870v1",
+      "comment": "19 pages. Artifact, benchmark and replay corpus at https://github.com/intigraph/quipu ; every table names the command that regenerates it",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.9,
+      "score_breakdown": {
+        "total_score": 3.9,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 6.0,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Merging RDF serializations creates ordering conflicts and misses semantic ones. We describe and evaluate a three-way merge in which the schema defines a conflict: set algebra combines canonical triples, and a slot is contended only where a SHACL shape bounds its cardinality and both sides' changes cannot stand within that bound. Unbounded predicates union; contended slots go to a person. The same ...",
+        "key_contributions": [
+          "Merging RDF serializations creates ordering conflicts and misses semantic ones.",
+          "We describe and evaluate a three-way merge in which the schema defines a conflict: set algebra combines canonical triples, and a slot is contended only where a SHACL shape bounds its cardinality and both sides' changes cannot stand within that bound.",
+          "Unbounded predicates union; contended slots go to a person."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.34870v1.mp3"
+      }
+    },
+    {
+      "id": "2611.34940v1",
+      "title": "LuxAvatar: Real-Time Relightable Head Avatars via Causal Neural Shading of 3D Intrinsic Proxies",
+      "authors": [
+        "Yipengjing Sun",
+        "Chenyang Wang",
+        "Boyao Zhou",
+        "Jiapeng Zhu",
+        "Ka Leong Cheng",
+        "Shengping Zhang"
+      ],
+      "abstract": "We present LuxAvatar, a feed-forward framework for real-time head avatar animation and relighting from a single portrait. To achieve both 3D controllability and complex facial light transport, we factorize avatar synthesis into an animatable 3D intrinsic Gaussian proxy and a causal autoregressive neural shader. This proxy disentangles canonical geometry and reflectance attributes, rapidly rasterizing deformed Gaussians into view- and motion-consistent PBR buffers. Conditioned on these buffers, our neural shader formulates forward rendering as a conditional video diffusion process, bypassing explicit PBR computation to synthesize realistic shading effects under target illumination. We achieve real-time streaming through heterogeneous distillation from a pretrained multi-step bidirectional relighting teacher to a two-step causal autoregressive neural shader, inheriting broad synthetic lighting priors while minimizing conditioning and decoding latency. To further specialize these priors to human heads, we construct a hybrid relighting dataset for domain-specific fine-tuning, capturing authentic facial dynamics and physically grounded light transport. Extensive experiments show that our framework enables 3D-controllable, real-time portrait animation and relighting, outperforming state-of-the-art methods in visual fidelity, motion control, and lighting accuracy.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "categories": [
         "cs.CV"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "links": {
-        "paper": "http://arxiv.org/abs/2611.33143v1",
-        "pdf": "https://arxiv.org/pdf/2611.33143v1"
+        "paper": "http://arxiv.org/abs/2611.34940v1",
+        "pdf": "https://arxiv.org/pdf/2611.34940v1"
       },
-      "arxiv_id": "2611.33143v1",
-      "comment": "Project page: https://rxjfighting.github.io/ROAM-Bench/",
+      "arxiv_id": "2611.34940v1",
+      "comment": "Project page: https://sypj-98.github.io/luxavatar/",
       "journal_ref": "",
       "has_code": true,
       "relevance_score": 3.8499999999999996,
@@ -661,14 +592,80 @@
         }
       },
       "ai_summaries": {
-        "short": "Embodied spatial intelligence requires agents to gather information through exploration and interaction, then use it to reason and act. Existing benchmarks insufficiently distinguish correct outcomes from completion of these task requirements. We introduce ROAM-Bench to evaluate these abilities under robot motion and collision constraints. Independent checks use simulation state and episode record...",
+        "short": "We present LuxAvatar, a feed-forward framework for real-time head avatar animation and relighting from a single portrait. To achieve both 3D controllability and complex facial light transport, we factorize avatar synthesis into an animatable 3D intrinsic Gaussian proxy and a causal autoregressive neural shader. This proxy disentangles canonical geometry and reflectance attributes, rapidly rasteriz...",
         "key_contributions": [
-          "Embodied spatial intelligence requires agents to gather information through exploration and interaction, then use it to reason and act.",
-          "Existing benchmarks insufficiently distinguish correct outcomes from completion of these task requirements.",
-          "We introduce ROAM-Bench to evaluate these abilities under robot motion and collision constraints."
+          "We present LuxAvatar, a feed-forward framework for real-time head avatar animation and relighting from a single portrait.",
+          "To achieve both 3D controllability and complex facial light transport, we factorize avatar synthesis into an animatable 3D intrinsic Gaussian proxy and a causal autoregressive neural shader.",
+          "This proxy disentangles canonical geometry and reflectance attributes, rapidly rasterizing deformed Gaussians into view- and motion-consistent PBR buffers."
         ],
         "provider": "gemini",
-        "audio_url": "/audio/2611.33143v1.mp3"
+        "audio_url": "/audio/2611.34940v1.mp3"
+      }
+    },
+    {
+      "id": "2611.34929v1",
+      "title": "High-Fidelity Image Matting with Pixel-Space Diffusion Transformers",
+      "authors": [
+        "Baihan Yang",
+        "Xin Lin",
+        "Yufan Wei",
+        "Baiang Li",
+        "Yuheng Liu",
+        "Juanxi Tian",
+        "Xiaohui Xie",
+        "Truong Nguyen"
+      ],
+      "abstract": "Diffusion models have shown strong potential for image matting by transferring generative priors learned from large-scale pretraining. However, existing approaches largely rely on latent diffusion models, whose compressed representations and VAE-based reconstruction introduce a mismatch with the high-frequency precision required for matting. We present PixelMatte, a framework that adapts pretrained pixel-space diffusion transformers for high-fidelity image matting. We show that strong image-conditioned matting capabilities can be acquired even from a pure text-to-image model without paired image-to-image pretraining. Our approach reuses the backbone's native patch embedding to jointly process the input image, trimap, and noisy alpha matte as spatially aligned tokens, enabling direct pixel-space prediction without additional condition encoders or adapters. With pixel-accurate synthetic supervision and real-image fine-tuning, PixelMatte predicts alpha mattes in a single forward pass. Two lightweight calibration modules, LayerShift and High-Pass Refiner, further improve regional opacity accuracy and boundary fidelity. Experiments across four benchmarks and two distinct pixel diffusion backbones demonstrate substantial improvements over existing methods, reducing SAD and gradient errors by 24-44% relative to RenderMatte on P3M-500-NP and AM-2K, while achieving competitive performance on AIM-500 and RenderMatte-2K. These results demonstrate the effectiveness of pixel-space generative priors for precision-sensitive image matting. Project page: https://white-yc.github.io/pixelmatte/.",
+      "published": "2026-11-25",
+      "updated": "2026-11-25",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "links": {
+        "paper": "http://arxiv.org/abs/2611.34929v1",
+        "pdf": "https://arxiv.org/pdf/2611.34929v1"
+      },
+      "arxiv_id": "2611.34929v1",
+      "comment": "11 pages, 5 figures, 5 tables. Project page: https://white-yc.github.io/pixelmatte/",
+      "journal_ref": "",
+      "has_code": true,
+      "relevance_score": 3.8499999999999996,
+      "score_breakdown": {
+        "total_score": 3.85,
+        "field_match": {
+          "score": 0.0,
+          "matches": [],
+          "weight": 0.4
+        },
+        "venue_quality": {
+          "score": 5.0,
+          "venue": null,
+          "weight": 0.25
+        },
+        "citation_potential": {
+          "score": 7.0,
+          "weight": 0.15
+        },
+        "code_availability": {
+          "score": 10.0,
+          "has_code": true,
+          "weight": 0.1
+        },
+        "practicality": {
+          "score": 5.5,
+          "weight": 0.1
+        }
+      },
+      "ai_summaries": {
+        "short": "Diffusion models have shown strong potential for image matting by transferring generative priors learned from large-scale pretraining. However, existing approaches largely rely on latent diffusion models, whose compressed representations and VAE-based reconstruction introduce a mismatch with the high-frequency precision required for matting. We present PixelMatte, a framework that adapts pretraine...",
+        "key_contributions": [
+          "Diffusion models have shown strong potential for image matting by transferring generative priors learned from large-scale pretraining.",
+          "However, existing approaches largely rely on latent diffusion models, whose compressed representations and VAE-based reconstruction introduce a mismatch with the high-frequency precision required for matting.",
+          "We present PixelMatte, a framework that adapts pretrained pixel-space diffusion transformers for high-fidelity image matting."
+        ],
+        "provider": "gemini",
+        "audio_url": "/audio/2611.34929v1.mp3"
       }
     }
   ]
